@@ -1,0 +1,22 @@
+.login-heading {
+    text-align: center;
+    font-weight: 900;
+    border-bottom: 1px solid;
+}
+.logo-brand {
+    font-weight: 600;
+    font-size: 28px;
+}
+.theme-color{
+	color: #1976d2 !important;
+}
+.logo-bg {
+    background-color: #1976d2;
+    color: #fff;
+    padding: 0px 15px;
+}
+.profile-text .text-muted {
+    font-size: 12px;
+    margin-top: -10px;
+    margin-bottom: 0;
+}

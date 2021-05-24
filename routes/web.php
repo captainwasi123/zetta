@@ -28,7 +28,16 @@ Route::get('/', function () {
 
 	Route::prefix('admin')->namespace('admin')->group(function(){
 		
-		Route::get('/', 'adminController@index');
+		//Authentication
+		Route::get('/login', 'authController@login');
+		Route::post('/login', 'authController@loginAttempt');
+		Route::get('/logout', 'authController@logout')->name('admin.logout');
+
+		//Middleware
+		Route::middleware('adminAuth')->group(function(){
+			
+			Route::get('/', 'adminController@index')->name('admin.dashboard');
+		});
 
 	});
 
