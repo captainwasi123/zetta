@@ -1,4 +1,4 @@
-@extends('web.buddy.include.master')
+@extends('web.coach.include.master')
 @section('title', 'Registration Form')
 
 @section('content')
