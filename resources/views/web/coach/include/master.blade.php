@@ -9,9 +9,9 @@
       <meta name="author" content="">
       <!-- Favicon icon -->
       <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
-      <title> Dashboard - Zetta Sports Buddy </title>
+      <title> Dashboard - Zetta Sports coach </title>
 
-    @include('web.buddy.include.style')
+    @include('web.coach.include.style')
     @yield('addStyle')
 </head>
 
@@ -23,14 +23,14 @@
         <!-- ============================================================== -->
         <!-- Topbar header - style you can find in pages.scss -->
         <!-- ============================================================== -->
-            @include('web.buddy.include.header')
+            @include('web.coach.include.header')
         <!-- ============================================================== -->
         <!-- End Topbar header -->
         <!-- ============================================================== -->
         <!-- ============================================================== -->
         <!-- Left Sidebar - style you can find in sidebar.scss  -->
         <!-- ============================================================== -->
-            @include('web.buddy.include.sidebar')
+            @include('web.coach.include.sidebar')
         <!-- ============================================================== -->
         <!-- End Left Sidebar - style you can find in sidebar.scss  -->
         <!-- ============================================================== -->
@@ -83,7 +83,7 @@
     <!-- All Jquery -->
     <!-- ============================================================== -->
     
-    @include('web.buddy.include.script')
+    @include('web.coach.include.script')
     @yield('addScript')
 
 </body>
