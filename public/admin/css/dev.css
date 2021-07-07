@@ -1,0 +1,66 @@
+.login-heading {
+    text-align: center;
+    font-weight: 900;
+    border-bottom: 1px solid;
+}
+.logo-brand {
+    font-weight: 600;
+    font-size: 28px;
+}
+.theme-color{
+	color: #1976d2 !important;
+}
+.logo-bg {
+    background-color: #1976d2;
+    color: #fff;
+    padding: 0px 15px;
+}
+.profile-text .text-muted {
+    font-size: 12px;
+    margin-top: -10px;
+    margin-bottom: 0;
+}
+.sidebar-nav ul li.nav-small-cap {
+    font-size: 15px;
+    border-bottom: 1px solid #e6e6e6;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+.db-heading h6 {
+    border-top: 1px solid #e6e6e6;
+    padding: 5px 0px 0px 0px;
+}
+.db-heading h2 {
+    font-weight: 700;
+    font-size: 32px;
+}
+.cut-text { 
+  text-overflow: ellipsis;
+  overflow: hidden; 
+  width: 160px; 
+  height: 1.2em; 
+  white-space: nowrap;
+}
+.thumbnail {
+    width: 30px;
+}
+.sidebar-nav>ul>li>a.active {
+    background: #24293314 !important;
+}
+.m-b-25{
+    margin-bottom: 25px;
+}
+.tab-pane.active {
+    min-height: 550px;
+}
+.popup-gallery img {
+    height: 210px;
+}
+.dropify-message p {
+    text-align: center;
+}
+.contact-list td img {
+    width: 30px;
+    height: 30px;
+}

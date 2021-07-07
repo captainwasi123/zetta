@@ -1,78 +1,214 @@
-@extends('admin.support.master')
+@extends('admin.includes.master')
 @section('title', 'Dashboard')
-@section('page_title', 'Dashboard')
 @section('content')
 
-<!-- ============================================================== -->
-                <!-- Start Page Content -->
-                <!-- ============================================================== -->
+<div class="row">
+    <!-- Column -->
+    <div class="col-lg-3 col-md-6">
+        <div class="card">
+            <div class="card-body mb-0">
                 <!-- Row -->
-                <div class="card-group">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-12">
-                                    <h2 class="m-b-0"><i class="mdi mdi-account-multiple text-info"></i></h2>
-                                    <h3 class="">{{$helper}}</h3>
-                                    <h6 class="card-subtitle">Total Helpers</h6></div>
-                                <div class="col-12">
-                                    <div class="progress">
-                                        <div class="progress-bar bg-info" role="progressbar" style="width: 85%; height: 6px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Column -->
-                    <!-- Column -->
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-12">
-                                    <h2 class="m-b-0"><i class="mdi mdi-account-multiple text-success"></i></h2>
-                                    <h3 class="">{{$agency}}</h3>
-                                    <h6 class="card-subtitle">Total Agency</h6></div>
-                                <div class="col-12">
-                                    <div class="progress">
-                                        <div class="progress-bar bg-success" role="progressbar" style="width: 40%; height: 6px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Column -->
-                    <!-- Column -->
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-12">
-                                    <h2 class="m-b-0"><i class="mdi mdi-account-multiple text-purple"></i></h2>
-                                    <h3 class="">{{$employer}}</h3>
-                                    <h6 class="card-subtitle">Total Employers</h6></div>
-                                <div class="col-12">
-                                    <div class="progress">
-                                        <div class="progress-bar bg-primary" role="progressbar" style="width: 56%; height: 6px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Column -->
-                    <!-- Column -->
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-12">
-                                    <h2 class="m-b-0"><i class="mdi mdi-buffer text-warning"></i></h2>
-                                    <h3 class="">{{$total_orders}}</h3>
-                                    <h6 class="card-subtitle">Total Orders</h6></div>
-                                <div class="col-12">
-                                    <div class="progress">
-                                        <div class="progress-bar bg-warning" role="progressbar" style="width: 26%; height: 6px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                <div class="row">
+                    <div class="col-12 db-heading"><h2>2376</h2>
+                        <h6>Members</h6></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Column -->
+    <div class="col-lg-3 col-md-6">
+        <div class="card">
+            <div class="card-body mb-0">
+                <!-- Row -->
+                <div class="row">
+                    <div class="col-12 db-heading"><h2>2376</h2>
+                        <h6>Listings</h6></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Column -->
+    <div class="col-lg-3 col-md-6">
+        <div class="card">
+            <div class="card-body mb-0">
+                <!-- Row -->
+                <div class="row">
+                    <div class="col-12 db-heading"><h2>2376</h2>
+                        <h6>Orders</h6></div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Column -->
+    <div class="col-lg-3 col-md-6">
+        <div class="card">
+            <div class="card-body mb-0">
+                <!-- Row -->
+                <div class="row">
+                    <div class="col-12 db-heading"><h2>2376</h2>
+                        <h6>Inquiries</h6></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <h3>Accommodation</h3>
+    </div>
+
+    <!-- Listings -->
+
+        <!-- Column -->
+        <div class="col-lg-3 col-md-6">
+            <div class="card card-success">
+                <div class="card-body mb-0">
+                    <!-- Row -->
+                    <div class="row">
+                        <div class="col-12 db-heading"><h2 class="text-white">2376</h2>
+                            <h6 class="text-white">Listings</h6></div>
                     </div>
                 </div>
+            </div>
+        </div>
+        <!-- Column -->
+        <div class="col-lg-3 col-md-6">
+            <div class="card">
+                <div class="card-body mb-0">
+                    <!-- Row -->
+                    <div class="row">
+                        <div class="col-12 db-heading"><h2>2376</h2>
+                            <h6>Pending</h6></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Column -->
+        <div class="col-lg-3 col-md-6">
+            <div class="card">
+                <div class="card-body mb-0">
+                    <!-- Row -->
+                    <div class="row">
+                        <div class="col-12 db-heading"><h2>2376</h2>
+                            <h6>Published</h6></div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Column -->
+        <div class="col-lg-3 col-md-6">
+            <div class="card">
+                <div class="card-body mb-0">
+                    <!-- Row -->
+                    <div class="row">
+                        <div class="col-12 db-heading"><h2>2376</h2>
+                            <h6>Rejected</h6></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    <!-- Orders -->
+
+        <!-- Column -->
+        <div class="col-lg-3 col-md-6">
+            <div class="card card-info">
+                <div class="card-body mb-0">
+                    <!-- Row -->
+                    <div class="row">
+                        <div class="col-12 db-heading"><h2 class="text-white">2376</h2>
+                            <h6 class="text-white">Orders</h6></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Column -->
+        <div class="col-lg-3 col-md-6">
+            <div class="card">
+                <div class="card-body mb-0">
+                    <!-- Row -->
+                    <div class="row">
+                        <div class="col-12 db-heading"><h2>2376</h2>
+                            <h6>Pending</h6></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Column -->
+        <div class="col-lg-3 col-md-6">
+            <div class="card">
+                <div class="card-body mb-0">
+                    <!-- Row -->
+                    <div class="row">
+                        <div class="col-12 db-heading"><h2>2376</h2>
+                            <h6>Completed</h6></div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Column -->
+        <div class="col-lg-3 col-md-6">
+            <div class="card">
+                <div class="card-body mb-0">
+                    <!-- Row -->
+                    <div class="row">
+                        <div class="col-12 db-heading"><h2>2376</h2>
+                            <h6>Cancelled</h6></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-12">
+        <h3>Art</h3>
+    </div>
+
+    <!-- Column -->
+    <div class="col-lg-4 col-md-4">
+        <div class="card card-success">
+            <div class="card-body mb-0">
+                <!-- Row -->
+                <div class="row">
+                    <div class="col-12 db-heading"><h2 class="text-white">2376</h2>
+                        <h6 class="text-white">Products</h6></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Column -->
+    <div class="col-lg-4 col-md-4">
+        <div class="card">
+            <div class="card-body mb-0">
+                <!-- Row -->
+                <div class="row">
+                    <div class="col-12 db-heading"><h2>2376</h2>
+                        <h6>Orders</h6></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Column -->
+    <div class="col-lg-4 col-md-4">
+        <div class="card card-warning">
+            <div class="card-body mb-0">
+                <!-- Row -->
+                <div class="row">
+                    <div class="col-12 db-heading"><h2 class="text-white">2376</h2>
+                        <h6 class="text-white">Inquiries</h6></div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 @endsection
