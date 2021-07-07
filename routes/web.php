@@ -39,13 +39,11 @@ use Illuminate\Support\Facades\Route;
 			Route::get('auth/facebook/callback', 'facebookController@handleFacebookCallback');
 
 
-	
 
-
-	//Helper
+//Coach
 
 	Route::prefix('coach')->namespace('coach')->group(function(){
-		Route::get('profile', 'CoachController@index')->name('coach.dashboard');
+		Route::get('/', 'CoachController@index')->name('coach.dashboard');
 		Route::get('lesson/favourite', 'CoachController@lesson_favourite')->name('coach.lesson.favourite');
 		Route::get('equipment', 'CoachController@equipment')->name('coach.equipment');
 		Route::get('my-wallet', 'CoachController@my_wallet')->name('coach.my_wallet');
@@ -62,9 +60,10 @@ use Illuminate\Support\Facades\Route;
 		
 	// Authentication
 
-		Route::get('/admin', 'adminController@index')->name('admin.dashboard');
-		Route::get('/admin/login', 'adminController@login');
-		Route::get('/admin/logout', 'adminController@logout');
+		Route::prefix('admin')->group(function(){
+			Route::get('/', 'adminController@index')->name('admin.dashboard');
+			Route::get('login', 'adminController@login');
+			Route::get('logout', 'adminController@logout');
 
-		Route::post('/admin/login', 'adminController@loginAttempt');
-
+			Route::post('login', 'adminController@loginAttempt');
+		});

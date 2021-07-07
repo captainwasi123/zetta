@@ -14,32 +14,32 @@ class CoachController extends Controller
     
   public function index(){
       
-      return view('web.coach.dashboard');
+      return view('coach.dashboard');
     }
     
     public function lesson_favourite()
     {
-      return view('web.coach.lesson_favourite');
+      return view('coach.lesson_favourite');
     }
 
     public function equipment()
     {
-      return view('web.coach.equipment');
+      return view('coach.equipment');
     
     }
 
     public function my_wallet()
     {
-      return view('web.coach.my_wallet');
+      return view('coach.my_wallet');
     }
 
     public function my_account()
     {
-      return view('web.coach.my_account');
+      return view('coach.my_account');
     }
 
     public function order()
     {
-      return view('web.coach.order');
+      return view('coach.order');
     }
 }
