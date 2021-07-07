@@ -1,9 +1,3 @@
- @if(env('IS_LIVE') == 0)
-   <script type="text/javascript">
-    window.location = "{{ url('/maintenance') }}";
-   </script>
- @endif
-
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
    <head>
