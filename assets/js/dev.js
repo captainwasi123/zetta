@@ -269,9 +269,8 @@ $( "#register-form" ).submit(function( event ) {
             $('#r_error').css({display: 'none'});
             var elements    = '<input type="password" placeholder="New Password" name="password" required>';
             elements        += '<input type="password" placeholder="Confirm Password" name="confirmation_password" required>';
-            elements        += 'I am a / an: <input type="radio" class="radio-button" name="user_type" value="1" checked> Employer';
-            elements        += '<input type="radio" class="radio-button" name="user_type" value="2" > Helper';
-            elements        += '<input type="radio" class="radio-button" name="user_type" value="3" > Agency';
+            elements        += 'I am a / an: <input type="radio" class="radio-button" name="user_type" value="1" checked> Buddy';
+            elements        += '<input type="radio" class="radio-button" name="user_type" value="2" > Coach';
             $('#r_fields').html(elements);
         }
 

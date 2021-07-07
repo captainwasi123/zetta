@@ -137,21 +137,14 @@
                      <label class="form-check-label" for="employer">
                         <div class="form-check">
                            <input class="form-check-input" type="radio" name="usertype" value="1" id="employer" checked>
-                           Employer
+                           Buddy
                         </div>
                      </label>
 
                      <label class="form-check-label" for="helper">
                         <div class="form-check">
                            <input class="form-check-input" type="radio" name="usertype" value="2" id="helper">
-                           Helper
-                        </div>
-                     </label>
-
-                     <label class="form-check-label" for="agency">
-                        <div class="form-check">
-                           <input class="form-check-input" type="radio" name="usertype" value="3" id="agency">
-                           Agency
+                           Coach
                         </div>
                      </label>
 
