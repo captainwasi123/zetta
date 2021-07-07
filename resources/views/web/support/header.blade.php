@@ -1,19 +1,6 @@
 <header class="header-style2">
    <div class="container">
-      <div class="logo">
-         <a href="{{URL::to('/')}}"> <img src="{{URL::to('/')}}/assets/images/logo.png"> </a>
-      </div>
-      <div class="search-form">
-         <button class="search-toggle"> <i class="fa fa-search"> </i> </button>
-         <form method="get" action="{{URL::to('/searchResult')}}">
-            <i class="fa fa-search"> </i>
-            <input type="text" placeholder="Find helpers or agencies" name="query" value="{{isset($_GET['query']) ? $_GET['query'] : ''}}">
-            <button> Search </button>
-         </form>
-      </div>
-      <div class="navbar-handler">
-         <img src="{{URL::to('/')}}/assets/images/hamburger.png">  
-      </div>
+      
       <div class="navbar-custom">
             @if(Auth::check())
                 @if(Auth::user()->type == '3' || Auth::user()->type == '1')
