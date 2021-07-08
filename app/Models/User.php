@@ -6,6 +6,9 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use App\Models\country;
+use App\Models\userLang;
+use App\Models\userCategory;
 
 class User extends Authenticatable
 {
@@ -54,5 +57,14 @@ class User extends Authenticatable
     }
 
 
+    public function country(){
+        return $this->belongsTo(country::class, 'country_id');
+    }
     
+    public function langs(){
+        return $this->hasMany(userLang::class, 'user_id', 'id');
+    }
+    public function category(){
+        return $this->hasMany(userCategory::class, 'user_id', 'id');
+    }
 }

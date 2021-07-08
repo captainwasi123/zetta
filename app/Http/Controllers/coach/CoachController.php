@@ -33,11 +33,6 @@ class CoachController extends Controller
       return view('coach.my_wallet');
     }
 
-    public function my_account()
-    {
-      return view('coach.my_account');
-    }
-
     public function order()
     {
       return view('coach.order');

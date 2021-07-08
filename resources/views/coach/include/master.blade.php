@@ -5,10 +5,9 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <!-- Tell the browser to be responsive to screen width -->
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="description" content="">
-      <meta name="author" content="">
+      <meta name="host" content="{{URL::to('/coach')}}">
       <!-- Favicon icon -->
-      <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="{{URL::to('/')}}/assets/user_dashboard/assets/images/favicon.png">
       <title> Dashboard - Zetta Sports coach </title>
 
     @include('coach.include.style')
@@ -84,6 +83,32 @@
     <!-- ============================================================== -->
     
     @include('coach.include.script')
+    
+    @if(session()->has('success'))
+        <script type="text/javascript">
+            !function($) {
+                "use strict";
+
+                var SweetAlert = function() {};
+
+                //examples 
+                SweetAlert.prototype.init = function() {
+                    var data = "{{ session()->get('success') }}";
+                    swal("Success!", data, "success");
+                },
+                //init
+                $.SweetAlert = new SweetAlert, $.SweetAlert.Constructor = SweetAlert
+            }(window.jQuery),
+
+            //initializing 
+            function($) {
+                "use strict";
+                $.SweetAlert.init()
+            }(window.jQuery);
+        </script>
+
+    @endif
+
     @yield('addScript')
 
 </body>

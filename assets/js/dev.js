@@ -26,7 +26,7 @@ $(document).ready(function(){
         $('#lang_block').append('<tr><td><input type="text" class="noboder" name="lang[]" required></td><td><select name="langlevel[]"><option> Basic </option><option> Intermediate </option><option> Expert </option></select></td></tr>'); 
     });
 
-    $('#profile_pic').change(function() {
+    $('#imageUpload').change(function() {
       $('#profile_form').submit();
     });
     $('#cover_pic').change(function() {

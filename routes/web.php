@@ -40,15 +40,39 @@ use Illuminate\Support\Facades\Route;
 
 
 
-//Coach
+//Middleware
 
-	Route::prefix('coach')->namespace('coach')->group(function(){
-		Route::get('/', 'CoachController@index')->name('coach.dashboard');
-		Route::get('lesson/favourite', 'CoachController@lesson_favourite')->name('coach.lesson.favourite');
-		Route::get('equipment', 'CoachController@equipment')->name('coach.equipment');
-		Route::get('my-wallet', 'CoachController@my_wallet')->name('coach.my_wallet');
-		Route::get('my-account', 'CoachController@my_account')->name('coach.my_account');
-		Route::get('order', 'CoachController@order')->name('coach.order');
+	Route::middleware('userAuth')->group(function(){
+		
+		//Coach
+			Route::prefix('coach')->namespace('coach')->group(function(){
+
+				Route::get('/', 'CoachController@index')->name('coach.dashboard');
+
+				//My Account
+					Route::prefix('my-account')->group(function(){
+						
+						Route::get('/', 'settingController@index')->name('coach.my_account');
+						Route::post('/upload_profile_pic', 'settingController@uploadProfilePicture')->name('coach.my_account.profileImage');
+
+						Route::post('/update_profile', 'settingController@update_profile')->name('coach.my_account.update_profile');
+
+						Route::post('/add_lang', 'settingController@add_lang')->name('coach.my_account.add_lang');
+					});
+
+				//Category
+					Route::prefix('category')->group(function(){
+
+						Route::get('/', 'categoryController@index')->name('coach.category');
+						Route::get('/add', 'categoryController@add')->name('coach.category.add');
+						Route::post('/add', 'categoryController@insert');
+					});
+
+				Route::get('lesson/favourite', 'CoachController@lesson_favourite')->name('coach.lesson.favourite');
+				Route::get('equipment', 'CoachController@equipment')->name('coach.equipment');
+				Route::get('my-wallet', 'CoachController@my_wallet')->name('coach.my_wallet');
+				Route::get('order', 'CoachController@order')->name('coach.order');
+			});
 	});
 
 

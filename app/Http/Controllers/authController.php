@@ -37,25 +37,14 @@ class authController extends Controller
             exit();
         }
     	if(Auth::attempt(['email' => $data['email'], 'password' => $data['password'], 'status' => '1'])){
-            return '/coach/profile';
+            if($check->type == '1'){
+                return '/buddy';
+            }else{
+                return '/coach';
+            }
     	}else{
     		return 'incorrect';
     	}
-    }
-
-    function profilePic(Request $request){
-        if(Auth::check()){
-            $file = $request->file('profileImage');
-            $filename = Auth::id().'-'.date('dmyHis').'.'.$file->getClientOriginalExtension();
-            $u = User::find(Auth::id());
-            $u->profile_img = $filename;
-            $u->save();
-            $file->move(base_path('/public/profile_img/'), $filename);
-
-            return redirect()->back();
-        }else{
-            return redirect('/');
-        }
     }
 
     function coverPic(Request $request){
