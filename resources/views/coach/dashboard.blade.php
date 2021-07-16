@@ -19,28 +19,28 @@
                                                 </div>
                                                 <ul class="chatonline style-none ">
                                                    <li>
-                                                      <a href="javascript:void(0)"><img src="{{URL::to('/')}}/assets/web/assets/images/users/1.jpg" alt="user-img" class="img-circle"> <span class="col-white"> Minhaj <small class="bg-green">online</small></span> <b class="col-silver"> Hello , How are you sir? </b> </a>
+                                                      <a href="javascript:void(0)"><img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/users/1.jpg" alt="user-img" class="img-circle"> <span class="col-white"> Minhaj <small class="bg-green">online</small></span> <b class="col-silver"> Hello , How are you sir? </b> </a>
                                                    </li>
                                                    <li>
-                                                      <a href="javascript:void(0)" ><img src="{{URL::to('/')}}/assets/web/assets/images/users/2.jpg" alt="user-img" class="img-circle"> <span class="col-white"> Maxella <small class="bg-green">Away</small></span> <b class="col-silver"> Hello , How are you sir? </b> </a>
+                                                      <a href="javascript:void(0)" ><img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/users/2.jpg" alt="user-img" class="img-circle"> <span class="col-white"> Maxella <small class="bg-green">Away</small></span> <b class="col-silver"> Hello , How are you sir? </b> </a>
                                                    </li>
                                                    <li>
-                                                      <a href="javascript:void(0)"><img src="{{URL::to('/')}}/assets/web/assets/images/users/3.jpg" alt="user-img" class="img-circle"> <span class="col-white"> Peter <small class="bg-danger">Busy</small></span> <b class="col-silver"> Hello , How are you sir? </b> </a>
+                                                      <a href="javascript:void(0)"><img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/users/3.jpg" alt="user-img" class="img-circle"> <span class="col-white"> Peter <small class="bg-danger">Busy</small></span> <b class="col-silver"> Hello , How are you sir? </b> </a>
                                                    </li>
                                                    <li>
-                                                      <a href="javascript:void(0)"><img src="{{URL::to('/')}}/assets/web/assets/images/users/4.jpg" alt="user-img" class="img-circle"> <span class="col-white">Jane Doe <small class="bg-danger">Offline</small></span> <b class="col-silver"> Hello , How are you sir? </b> </a>
+                                                      <a href="javascript:void(0)"><img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/users/4.jpg" alt="user-img" class="img-circle"> <span class="col-white">Jane Doe <small class="bg-danger">Offline</small></span> <b class="col-silver"> Hello , How are you sir? </b> </a>
                                                    </li>
                                                    <li>
-                                                      <a href="javascript:void(0)"><img src="{{URL::to('/')}}/assets/web/assets/images/users/5.jpg" alt="user-img" class="img-circle"> <span class="col-white"> Jonathon <small class="bg-green">online</small></span> <b class="col-silver"> Hello , How are you sir? </b> </a>
+                                                      <a href="javascript:void(0)"><img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/users/5.jpg" alt="user-img" class="img-circle"> <span class="col-white"> Jonathon <small class="bg-green">online</small></span> <b class="col-silver"> Hello , How are you sir? </b> </a>
                                                    </li>
                                                    <li>
-                                                      <a href="javascript:void(0)"><img src="{{URL::to('/')}}/assets/web/assets/images/users/6.jpg" alt="user-img" class="img-circle"> <span class="col-white"> Tahar Roman <small class="bg-green">online</small></span> <b class="col-silver"> Hello , How are you sir? </b> </a>
+                                                      <a href="javascript:void(0)"><img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/users/6.jpg" alt="user-img" class="img-circle"> <span class="col-white"> Tahar Roman <small class="bg-green">online</small></span> <b class="col-silver"> Hello , How are you sir? </b> </a>
                                                    </li>
                                                    <li>
-                                                      <a href="javascript:void(0)"><img src="{{URL::to('/')}}/assets/web/assets/images/users/7.jpg" alt="user-img" class="img-circle"> <span class="col-white"> Ben Cobert <small class="bg-danger">online</small></span> <b class="col-silver"> Hello , How are you sir? </b> </a>
+                                                      <a href="javascript:void(0)"><img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/users/7.jpg" alt="user-img" class="img-circle"> <span class="col-white"> Ben Cobert <small class="bg-danger">online</small></span> <b class="col-silver"> Hello , How are you sir? </b> </a>
                                                    </li>
                                                    <li>
-                                                      <a href="javascript:void(0)"><img src="{{URL::to('/')}}/assets/web/assets/images/users/8.jpg" alt="user-img" class="img-circle"> <span class="col-white">Pwandeep rajan <small class="bg-green">online</small></span> <b class="col-silver"> Hello , How are you sir? </b></a>
+                                                      <a href="javascript:void(0)"><img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/users/8.jpg" alt="user-img" class="img-circle"> <span class="col-white">Pwandeep rajan <small class="bg-green">online</small></span> <b class="col-silver"> Hello , How are you sir? </b></a>
                                                    </li>
                                                    <li class="p-20"></li>
                                                 </ul>
@@ -77,7 +77,7 @@
                                                          <tbody>
                                                             <tr>
                                                                <td>
-                                                                  <a href="javascript:void(0)"><img src="{{URL::to('/')}}/assets/web/assets/images/users/5.jpg" alt="user" width="40" class="img-circle"> Equipment 1 </a>
+                                                                  <a href="javascript:void(0)"><img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/users/5.jpg" alt="user" width="40" class="img-circle"> Equipment 1 </a>
                                                                </td>
                                                                <td>  $21 </td>
                                                                <td>1:100  </td>
@@ -86,7 +86,7 @@
                                                             </tr>
                                                             <tr>
                                                                <td>
-                                                                  <a href="javascript:void(0)"><img src="{{URL::to('/')}}/assets/web/assets/images/users/5.jpg" alt="user" width="40" class="img-circle"> Equipment 1 </a>
+                                                                  <a href="javascript:void(0)"><img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/users/5.jpg" alt="user" width="40" class="img-circle"> Equipment 1 </a>
                                                                </td>
                                                                <td>  $21 </td>
                                                                <td>1:100  </td>
@@ -95,7 +95,7 @@
                                                             </tr>
                                                             <tr>
                                                                <td>
-                                                                  <a href="javascript:void(0)"><img src="{{URL::to('/')}}/assets/web/assets/images/users/5.jpg" alt="user" width="40" class="img-circle"> Equipment 1 </a>
+                                                                  <a href="javascript:void(0)"><img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/users/5.jpg" alt="user" width="40" class="img-circle"> Equipment 1 </a>
                                                                </td>
                                                                <td>  $21 </td>
                                                                <td>1:100  </td>
@@ -104,7 +104,7 @@
                                                             </tr>
                                                             <tr>
                                                                <td>
-                                                                  <a href="javascript:void(0)"><img src="{{URL::to('/')}}/assets/web/assets/images/users/5.jpg" alt="user" width="40" class="img-circle"> Equipment 1 </a>
+                                                                  <a href="javascript:void(0)"><img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/users/5.jpg" alt="user" width="40" class="img-circle"> Equipment 1 </a>
                                                                </td>
                                                                <td>  $21 </td>
                                                                <td>1:100  </td>

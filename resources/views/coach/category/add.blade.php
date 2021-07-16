@@ -1,5 +1,5 @@
 @extends('coach.include.master')
-@section('title', 'Registration Form')
+@section('title', 'Add Sports Category')
 
 @section('content')
 <div class="box-wrapper1">
@@ -14,7 +14,7 @@
          <div class="row center-row">
             <div class="col-md-3 col-lg-3 col-12">
                <div class="field-name">
-                  <img src="{{URL::to('/')}}/assets/user_dashboard/assets/images/field-icon16.png">
+                  <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/field-icon16.png">
                   <h5> Sports Category </h5>
                </div>
             </div>
@@ -25,7 +25,7 @@
          <div class="row center-row">
             <div class="col-md-3 col-lg-3 col-12">
                <div class="field-name">
-                  <img src="{{URL::to('/')}}/assets/user_dashboard/assets/images/field-icon17.png">
+                  <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/field-icon17.png">
                   <h5> Accomplishment </h5>
                </div>
             </div>
@@ -36,7 +36,7 @@
          <div class="row center-row">
             <div class="col-md-3 col-lg-3 col-12">
                <div class="field-name">
-                  <img src="{{URL::to('/')}}/assets/user_dashboard/assets/images/field-icon18.png">
+                  <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/field-icon18.png">
                   <h5> Skills Level </h5>
                </div>
             </div>

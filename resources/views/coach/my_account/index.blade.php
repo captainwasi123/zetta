@@ -18,7 +18,7 @@
                         @if(empty(Auth::user()->profile_img))
                           background-image: url('{{URL::to('/')}}/public/user-placeholder.jpg');
                         @else
-                          background-image: url('{{URL::to('/')}}/public/user/profile_img/{{Auth::user()->profile_img}}');
+                          background-image: url('{{URL::to('/')}}/public/storage/user/profile_img/{{Auth::user()->profile_img}}');
                         @endif
                      ">
                      </div>
@@ -42,7 +42,7 @@
          <div class="row center-row">
             <div class="col-md-4 col-lg-4 col-12">
                <div class="field-name">
-                  <img src="{{URL::to('/')}}/assets/user_dashboard/assets/images/field-icon1.png">
+                  <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/field-icon1.png">
                   <h5> Full Name </h5>
                </div>
             </div>
@@ -55,7 +55,7 @@
          <div class="row center-row">
             <div class="col-md-4 col-lg-4 col-12">
                <div class="field-name">
-                  <img src="{{URL::to('/')}}/assets/user_dashboard/assets/images/field-icon3.png">
+                  <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/field-icon3.png">
                   <h5> Gender </h5>
                </div>
             </div>
@@ -68,7 +68,7 @@
          <div class="row center-row">
             <div class="col-md-4 col-lg-4 col-12">
                <div class="field-name">
-                  <img src="{{URL::to('/')}}/assets/user_dashboard/assets/images/field-icon1.png">
+                  <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/field-icon1.png">
                   <h5> Email Address </h5>
                </div>
             </div>
@@ -81,7 +81,7 @@
          <div class="row center-row">
             <div class="col-md-4 col-lg-4 col-12">
                <div class="field-name">
-                  <img src="{{URL::to('/')}}/assets/user_dashboard/assets/images/field-icon19.png">
+                  <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/field-icon19.png">
                   <h5> Availability </h5>
                </div>
             </div>
@@ -108,7 +108,7 @@
          <div class="row center-row m-t-30">
             <div class="col-md-4 col-lg-4 col-12">
                <div class="field-name">
-                  <img src="{{URL::to('/')}}/assets/user_dashboard/assets/images/field-icon13.png">
+                  <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/field-icon13.png">
                   <h5> Country </h5>
                </div>
             </div>
@@ -121,7 +121,7 @@
          <div class="row center-row">
             <div class="col-md-4 col-lg-4 col-12">
                <div class="field-name">
-                  <img src="{{URL::to('/')}}/assets/user_dashboard/assets/images/field-icon3.png">
+                  <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/field-icon3.png">
                   <h5> City </h5>
                </div>
             </div>
@@ -134,7 +134,7 @@
          <div class="row m-b-20">
             <div class="col-md-4 col-lg-4 col-12">
                <div class="field-name m-t-15">
-                  <img src="{{URL::to('/')}}/assets/user_dashboard/assets/images/field-icon12.png">
+                  <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/field-icon12.png">
                   <h5> Choose File </h5>
                </div>
             </div>
@@ -146,7 +146,7 @@
          <div class="row m-b-20">
             <div class="col-md-4 col-lg-4 col-12">
                <div class="field-name m-t-15">
-                  <img src="{{URL::to('/')}}/assets/user_dashboard/assets/images/field-icon15.png">
+                  <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/field-icon15.png">
                   <h5> ID Proof </h5>
                </div>
             </div>
@@ -158,7 +158,7 @@
          <div class="row m-b-20">
             <div class="col-md-4 col-lg-4 col-12">
                <div class="field-name m-t-15">
-                  <img src="{{URL::to('/')}}/assets/user_dashboard/assets/images/field-icon3.png">
+                  <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/field-icon3.png">
                   <h5> Address Proof</h5>
                </div>
             </div>
@@ -171,7 +171,7 @@
          <div class="row">
          <div class="col-md-4 col-lg-4 col-12">
             <div class="field-name">
-               <img src="{{URL::to('/')}}/assets/user_dashboard/assets/images/add-pic-icon.png">
+               <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/add-pic-icon.png">
                <h5> Add Media </h5>
             </div>
          </div>
@@ -219,14 +219,30 @@
                </div>
             </div>
             <div class="profile-value1">
-               <h5 class="col-purple"> Education <a href="" class="submit-btn1"> <i class="fa fa-plus"></i> Add New </a> </h5>
-               <input type="text" value="Bachelor of Sports" class="form-field1 disabled-field p-0 off-border" name="" readonly="">
-               <input type="text" value="Masters In Literature" class="form-field1 disabled-field p-0 off-border" name="" readonly="">
+               <h5 class="col-purple"> Education 
+                  <a href="javascript:void(0)" class="submit-btn1" data-toggle="modal" data-target="#addEduModal"> 
+                     <i class="fa fa-plus"></i> Add New 
+                  </a> 
+               </h5>
+               @foreach(Auth::user()->education as $val)
+                  <div class="edu_block">
+                     <p>{{$val->degree}}</p>
+                     <span>{{$val->institute}} - {{$val->finish_year}}</span>
+                  </div>
+               @endforeach
             </div>
             <div class="profile-value1">
-               <h5 class="col-purple"> Certification <a href="" class="submit-btn1"> <i class="fa fa-plus"></i> Add New </a> </h5>
-               <input type="text" value="MS Office Automation Cert" class="form-field1 disabled-field p-0 off-border" name="" readonly="">
-               <input type="text" value="MS Office Automation Cert" class="form-field1 disabled-field p-0 off-border" name="" readonly="">
+               <h5 class="col-purple"> Certificate 
+                  <a href="javascript:void(0)" class="submit-btn1" data-toggle="modal" data-target="#addCertificateModal"> 
+                     <i class="fa fa-plus"></i> Add New 
+                  </a> 
+               </h5>
+               @foreach(Auth::user()->certificate as $val)
+                  <div class="edu_block">
+                     <p>{{$val->certificate}}</p>
+                     <span>{{$val->institute}}</span>
+                  </div>
+               @endforeach
             </div>
          </div>
       </div>
@@ -239,10 +255,10 @@
                <div class="col-md-6 col-lg-6 col-sm-6 col-12">
                   <div class="lesson-block lesson-block3">
                      <div class="lesson-image-block">
-                        <img src="{{URL::to('/')}}/assets/user_dashboard/assets/images/lesson-image1.jpg">
+                        <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/lesson-image1.jpg">
                      </div>
                      <div class="lesson-info-block">
-                        <h4> <img src="{{URL::to('/')}}/assets/user_dashboard/assets/images/avatar.jpg"> Della 785 <span> Yoga Coach </span>  </h4>
+                        <h4> <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/avatar.jpg"> Della 785 <span> Yoga Coach </span>  </h4>
                         <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
                         <h6> <i class="fa fa-star col-yellow"> </i> 5.0 </h6>
                      </div>
@@ -255,10 +271,10 @@
                <div class="col-md-6 col-lg-6 col-sm-6 col-12">
                   <div class="lesson-block lesson-block3">
                      <div class="lesson-image-block">
-                        <img src="{{URL::to('/')}}/assets/user_dashboard/assets/images/lesson-image1.jpg">
+                        <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/lesson-image1.jpg">
                      </div>
                      <div class="lesson-info-block">
-                        <h4> <img src="{{URL::to('/')}}/assets/user_dashboard/assets/images/avatar.jpg"> Della 785 <span> Yoga Coach </span>  </h4>
+                        <h4> <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/avatar.jpg"> Della 785 <span> Yoga Coach </span>  </h4>
                         <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
                         <h6> <i class="fa fa-star col-yellow"> </i> 5.0 </h6>
                      </div>
@@ -271,10 +287,10 @@
                <div class="col-md-6 col-lg-6 col-sm-6 col-12">
                   <div class="lesson-block lesson-block3">
                      <div class="lesson-image-block">
-                        <img src="{{URL::to('/')}}/assets/user_dashboard/assets/images/lesson-image1.jpg">
+                        <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/lesson-image1.jpg">
                      </div>
                      <div class="lesson-info-block">
-                        <h4> <img src="{{URL::to('/')}}/assets/user_dashboard/assets/images/avatar.jpg"> Della 785 <span> Yoga Coach </span>  </h4>
+                        <h4> <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/avatar.jpg"> Della 785 <span> Yoga Coach </span>  </h4>
                         <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
                         <h6> <i class="fa fa-star col-yellow"> </i> 5.0 </h6>
                      </div>
@@ -287,10 +303,10 @@
                <div class="col-md-6 col-lg-6 col-sm-6 col-12">
                   <div class="lesson-block lesson-block3">
                      <div class="lesson-image-block">
-                        <img src="{{URL::to('/')}}/assets/user_dashboard/assets/images/lesson-image1.jpg">
+                        <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/lesson-image1.jpg">
                      </div>
                      <div class="lesson-info-block">
-                        <h4> <img src="{{URL::to('/')}}/assets/user_dashboard/assets/images/avatar.jpg"> Della 785 <span> Yoga Coach </span>  </h4>
+                        <h4> <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/avatar.jpg"> Della 785 <span> Yoga Coach </span>  </h4>
                         <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
                         <h6> <i class="fa fa-star col-yellow"> </i> 5.0 </h6>
                      </div>
@@ -303,10 +319,10 @@
                <div class="col-md-6 col-lg-6 col-sm-6 col-12">
                   <div class="lesson-block lesson-block3">
                      <div class="lesson-image-block">
-                        <img src="{{URL::to('/')}}/assets/user_dashboard/assets/images/lesson-image1.jpg">
+                        <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/lesson-image1.jpg">
                      </div>
                      <div class="lesson-info-block">
-                        <h4> <img src="{{URL::to('/')}}/assets/user_dashboard/assets/images/avatar.jpg"> Della 785 <span> Yoga Coach </span>  </h4>
+                        <h4> <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/avatar.jpg"> Della 785 <span> Yoga Coach </span>  </h4>
                         <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
                         <h6> <i class="fa fa-star col-yellow"> </i> 5.0 </h6>
                      </div>
@@ -319,10 +335,10 @@
                <div class="col-md-6 col-lg-6 col-sm-6 col-12">
                   <div class="lesson-block lesson-block3">
                      <div class="lesson-image-block">
-                        <img src="{{URL::to('/')}}/assets/user_dashboard/assets/images/lesson-image1.jpg">
+                        <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/lesson-image1.jpg">
                      </div>
                      <div class="lesson-info-block">
-                        <h4> <img src="{{URL::to('/')}}/assets/user_dashboard/assets/images/avatar.jpg"> Della 785 <span> Yoga Coach </span>  </h4>
+                        <h4> <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/avatar.jpg"> Della 785 <span> Yoga Coach </span>  </h4>
                         <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
                         <h6> <i class="fa fa-star col-yellow"> </i> 5.0 </h6>
                      </div>
@@ -335,10 +351,10 @@
                <div class="col-md-6 col-lg-6 col-sm-6 col-12">
                   <div class="lesson-block lesson-block3">
                      <div class="lesson-image-block">
-                        <img src="{{URL::to('/')}}/assets/user_dashboard/assets/images/lesson-image1.jpg">
+                        <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/lesson-image1.jpg">
                      </div>
                      <div class="lesson-info-block">
-                        <h4> <img src="{{URL::to('/')}}/assets/user_dashboard/assets/images/avatar.jpg"> Della 785 <span> Yoga Coach </span>  </h4>
+                        <h4> <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/avatar.jpg"> Della 785 <span> Yoga Coach </span>  </h4>
                         <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
                         <h6> <i class="fa fa-star col-yellow"> </i> 5.0 </h6>
                      </div>
@@ -351,10 +367,10 @@
                <div class="col-md-6 col-lg-6 col-sm-6 col-12">
                   <div class="lesson-block lesson-block3">
                      <div class="lesson-image-block">
-                        <img src="{{URL::to('/')}}/assets/user_dashboard/assets/images/lesson-image1.jpg">
+                        <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/lesson-image1.jpg">
                      </div>
                      <div class="lesson-info-block">
-                        <h4> <img src="{{URL::to('/')}}/assets/user_dashboard/assets/images/avatar.jpg"> Della 785 <span> Yoga Coach </span>  </h4>
+                        <h4> <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/avatar.jpg"> Della 785 <span> Yoga Coach </span>  </h4>
                         <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
                         <h6> <i class="fa fa-star col-yellow"> </i> 5.0 </h6>
                      </div>
@@ -517,6 +533,90 @@
               <div class="modal-footer">
                   <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Close</button>
                   <button type="submit" class="btn btn-primary waves-effect">Add Language</button>
+              </div>
+            </form>
+         </div>
+         <!-- /.modal-content -->
+      </div>
+      <!-- /.modal-dialog -->
+   </div>
+
+
+   <!-- Add Education -->
+   <div id="addEduModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+         <div class="modal-content">
+            <form method="post" action="{{route('coach.my_account.add_edu')}}">
+               @csrf
+              <div class="modal-header">
+                  <h4 class="modal-title" id="myModalLabel">Add Education</h4>
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+              </div>
+              <div class="modal-body">
+                  <div class="row">
+                     <div class="col-md-12">
+                        <label>Degree</label>
+                        <input type="text" name="degree" class="form-control" required>
+                     </div>
+                  </div>
+                  <br>
+                  <div class="row">
+                     <div class="col-md-8">
+                        <label>Institute</label>
+                        <input type="text" name="institute" class="form-control" required>
+                     </div>
+                     <div class="col-md-4">
+                        <label>Finish Year</label>
+                        <select name="finish_year" class="form-control" required>
+                           <option value="" disabled selected>Select</option>
+                           @php $sy = date('Y'); @endphp
+                           @for($x=$sy; $x>($sy-30); $x--)
+                              <option>{{$x}}</option>
+                           @endfor
+                        </select>
+                     </div>
+                  </div>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Close</button>
+                  <button type="submit" class="btn btn-primary waves-effect">Add Education</button>
+              </div>
+            </form>
+         </div>
+         <!-- /.modal-content -->
+      </div>
+      <!-- /.modal-dialog -->
+   </div>
+
+
+   <!-- Add Certificate -->
+   <div id="addCertificateModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+         <div class="modal-content">
+            <form method="post" action="{{route('coach.my_account.add_certificate')}}">
+               @csrf
+              <div class="modal-header">
+                  <h4 class="modal-title" id="myModalLabel">Add Certificate</h4>
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+              </div>
+              <div class="modal-body">
+                  <div class="row">
+                     <div class="col-md-12">
+                        <label>Certificate</label>
+                        <input type="text" name="certificate" class="form-control" required>
+                     </div>
+                  </div>
+                  <br>
+                  <div class="row">
+                     <div class="col-md-12">
+                        <label>Institute</label>
+                        <input type="text" name="institute" class="form-control" required>
+                     </div>
+                  </div>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Close</button>
+                  <button type="submit" class="btn btn-primary waves-effect">Add Certificate</button>
               </div>
             </form>
          </div>

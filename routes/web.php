@@ -58,6 +58,10 @@ use Illuminate\Support\Facades\Route;
 						Route::post('/update_profile', 'settingController@update_profile')->name('coach.my_account.update_profile');
 
 						Route::post('/add_lang', 'settingController@add_lang')->name('coach.my_account.add_lang');
+
+						Route::post('/add_edu', 'settingController@add_edu')->name('coach.my_account.add_edu');
+
+						Route::post('/add_certificate', 'settingController@add_certificate')->name('coach.my_account.add_certificate');
 					});
 
 				//Category
@@ -66,10 +70,114 @@ use Illuminate\Support\Facades\Route;
 						Route::get('/', 'categoryController@index')->name('coach.category');
 						Route::get('/add', 'categoryController@add')->name('coach.category.add');
 						Route::post('/add', 'categoryController@insert');
+
+						Route::get('/edit/{id}', 'categoryController@edit')->name('coach.category.edit');
+						Route::post('/update', 'categoryController@update')->name('coach.category.update');
+
+						Route::get('/delete/{id}', 'categoryController@delete')->name('coach.category.delete');
+					});
+
+				//Equipment
+					Route::prefix('equipment')->group(function(){
+
+						Route::get('/', 'equipmentController@index')->name('coach.equipment');
+						Route::get('/add', 'equipmentController@add')->name('coach.equipment.add');
+						Route::post('/add', 'equipmentController@insert');
+
+						Route::get('/edit/{id}', 'equipmentController@edit')->name('coach.equipment.edit');
+						Route::post('/update', 'equipmentController@update')->name('coach.equipment.update');
+
+						Route::get('/delete/{id}', 'equipmentController@delete')->name('coach.equipment.delete');
+					});
+
+				//Lessons
+					Route::prefix('lessons')->group(function(){
+
+						Route::get('/', 'lessonsController@index')->name('coach.lesson');
+						Route::get('/add', 'lessonsController@add')->name('coach.lesson.add');
+						Route::post('/add', 'lessonsController@insert');
+
+						Route::get('/edit/{id}', 'lessonsController@edit')->name('coach.lesson.edit');
+						Route::post('/update', 'lessonsController@update')->name('coach.lesson.update');
+
+						Route::get('/delete/{id}', 'lessonsController@delete')->name('coach.lesson.delete');
+					});
+
+				//Availability
+					Route::prefix('availability')->group(function(){
+
+						Route::get('/', 'availabilityController@index')->name('coach.availability');
+						Route::get('/add', 'availabilityController@add')->name('coach.availability.add');
+						Route::post('/add/slot', 'availabilityController@insertSlot')->name('coach.availability.addSlot');
+						Route::post('/add/holiday', 'availabilityController@insertHoliday')->name('coach.availability.addHoliday');
+
+						Route::get('/delete/{id}', 'availabilityController@delete')->name('coach.availability.delete');
+						Route::get('/delete/holiday/{id}', 'availabilityController@deleteHoliday')->name('coach.availability.delete.holiday');
+					});
+			});
+
+
+
+		//Sports Buddy
+			Route::prefix('buddy')->namespace('buddy')->group(function(){
+
+				Route::get('/', 'buddyController@index')->name('buddy.dashboard');
+
+				//My Account
+					Route::prefix('my-account')->group(function(){
+						
+						Route::get('/', 'settingController@index')->name('buddy.my_account');
+						Route::post('/upload_profile_pic', 'settingController@uploadProfilePicture')->name('buddy.my_account.profileImage');
+
+						Route::post('/update_profile', 'settingController@update_profile')->name('buddy.my_account.update_profile');
+
+						Route::post('/add_lang', 'settingController@add_lang')->name('buddy.my_account.add_lang');
+
+						Route::post('/add_edu', 'settingController@add_edu')->name('buddy.my_account.add_edu');
+
+						Route::post('/add_certificate', 'settingController@add_certificate')->name('buddy.my_account.add_certificate');
+					});
+
+				//Category
+					Route::prefix('category')->group(function(){
+
+						Route::get('/', 'categoryController@index')->name('buddy.category');
+						Route::get('/add', 'categoryController@add')->name('buddy.category.add');
+						Route::post('/add', 'categoryController@insert');
+
+						Route::get('/edit/{id}', 'categoryController@edit')->name('buddy.category.edit');
+						Route::post('/update', 'categoryController@update')->name('buddy.category.update');
+
+						Route::get('/delete/{id}', 'categoryController@delete')->name('buddy.category.delete');
+					});
+
+				//Equipment
+					Route::prefix('equipment')->group(function(){
+
+						Route::get('/', 'equipmentController@index')->name('buddy.equipment');
+						Route::get('/add', 'equipmentController@add')->name('buddy.equipment.add');
+						Route::post('/add', 'equipmentController@insert');
+
+						Route::get('/edit/{id}', 'equipmentController@edit')->name('buddy.equipment.edit');
+						Route::post('/update', 'equipmentController@update')->name('buddy.equipment.update');
+
+						Route::get('/delete/{id}', 'equipmentController@delete')->name('buddy.equipment.delete');
+					});
+
+				//Activity
+					Route::prefix('activity')->group(function(){
+
+						Route::get('/', 'activityController@index')->name('buddy.activity');
+						Route::get('/add', 'activityController@add')->name('buddy.activity.add');
+						Route::post('/add', 'activityController@insert');
+
+						Route::get('/edit/{id}', 'activityController@edit')->name('buddy.activity.edit');
+						Route::post('/update', 'activityController@update')->name('buddy.activity.update');
+
+						Route::get('/delete/{id}', 'activityController@delete')->name('buddy.activity.delete');
 					});
 
 				Route::get('lesson/favourite', 'CoachController@lesson_favourite')->name('coach.lesson.favourite');
-				Route::get('equipment', 'CoachController@equipment')->name('coach.equipment');
 				Route::get('my-wallet', 'CoachController@my_wallet')->name('coach.my_wallet');
 				Route::get('order', 'CoachController@order')->name('coach.order');
 			});

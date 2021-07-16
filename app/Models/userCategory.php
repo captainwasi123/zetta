@@ -19,4 +19,12 @@ class userCategory extends Model
         $c->skill_level = $data['skill_level'];
         $c->save();
     }
+
+    public static function updateCategory(array $data){
+        $c = userCategory::find(base64_decode($data['cid']));
+        $c->name = $data['category'];
+        $c->accomplishment = $data['accomp'];
+        $c->skill_level = $data['skill_level'];
+        $c->save();
+    }
 }

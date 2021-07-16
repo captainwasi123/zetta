@@ -1,0 +1,21 @@
+<script src="{{URL::to('/')}}/assets/user_dashboard/plugins/jquery/jquery.min.js"></script>
+<script src="{{URL::to('/')}}/assets/user_dashboard/plugins/bootstrap/js/popper.min.js"></script>
+<script src="{{URL::to('/')}}/assets/user_dashboard/buddy/js/jquery.slimscroll.js"></script>
+<script src="{{URL::to('/')}}/assets/user_dashboard/buddy/js/waves.js"></script>
+<script src="{{URL::to('/')}}/assets/user_dashboard/buddy/js/sidebarmenu.js"></script>
+<script src="{{URL::to('/')}}/assets/user_dashboard/plugins/sticky-kit-master/dist/sticky-kit.min.js"></script>
+<script src="{{URL::to('/')}}/assets/user_dashboard/buddy/js/custom.min.js"></script>
+<script src="{{URL::to('/')}}/assets/user_dashboard/plugins/calendar/jquery-ui.min.js"></script>
+<script src="{{URL::to('/')}}/assets/user_dashboard/plugins/moment/moment.js"></script>
+<script src="{{URL::to('/')}}/assets/user_dashboard/plugins/calendar/dist/fullcalendar.min.js"></script>
+<script src="{{URL::to('/')}}/assets/user_dashboard/plugins/calendar/dist/cal-init.js"></script>
+<script src="{{URL::to('/')}}/assets/user_dashboard/plugins/sparkline/jquery.sparkline.min.js"></script>
+<script src="{{URL::to('/')}}/assets/user_dashboard/plugins/raphael/raphael-min.js"></script>
+<script src="{{URL::to('/')}}/assets/user_dashboard/plugins/morrisjs/morris.min.js"></script>
+<script src="{{URL::to('/')}}/assets/user_dashboard/buddy/js/dashboard1.js"></script>
+<script src="{{URL::to('/')}}/assets/user_dashboard/plugins/styleswitcher/jQuery.style.switcher.js"></script>
+<script src="{{URL::to('/')}}/assets/user_dashboard/buddy/js/dev_buddy.js"></script>
+<script src="{{URL::to('/')}}/assets/user_dashboard/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script src="{{URL::to('/')}}/assets/user_dashboard/plugins/sweetalert/sweetalert.min.js"></script>
+<script src="{{URL::to('/')}}/assets/user_dashboard/plugins/sweetalert/jquery.sweet-alert.custom.js"></script>
+

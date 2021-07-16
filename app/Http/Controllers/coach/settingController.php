@@ -8,6 +8,8 @@ use Auth;
 use App\Models\User;
 use App\Models\country;
 use App\Models\userLang;
+use App\Models\userEducation;
+use App\Models\userCertificate;
 
 class settingController extends Controller
 {
@@ -27,7 +29,7 @@ class settingController extends Controller
         $u = User::find(Auth::id());
         $u->profile_img = $filename;
         $u->save();
-        $file->move(base_path('/public/user/profile_img/'), $filename);
+        $file->move(base_path('/public/storage/user/profile_img/'), $filename);
 
         return redirect()->back();
     }
@@ -52,5 +54,19 @@ class settingController extends Controller
         userLang::addLang($data);
 
         return redirect()->back()->with('success', 'New Language Added.');
+    }
+
+     function add_edu(Request $request){
+        $data = $request->all();
+        userEducation::addEdu($data);
+
+        return redirect()->back()->with('success', 'New Education Added.');
+    }
+
+    function add_certificate(Request $request){
+        $data = $request->all();
+        userCertificate::addCertificate($data);
+
+        return redirect()->back()->with('success', 'New Certificate Added.');
     }
 }

@@ -22,11 +22,6 @@ class CoachController extends Controller
       return view('coach.lesson_favourite');
     }
 
-    public function equipment()
-    {
-      return view('coach.equipment');
-    
-    }
 
     public function my_wallet()
     {

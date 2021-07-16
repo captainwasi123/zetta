@@ -2,7 +2,7 @@
             <nav class="navbar top-navbar navbar-expand-md navbar-light">
                <div class="navbar-header">
                   <a class="navbar-brand" href="">
-                  <img src="{{URL::to('/')}}/assets/user_dashboard/assets/images/zetta-logo.jpg">
+                  <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/zetta-logo.jpg">
                   </a>
                </div>
                <div class="navbar-collapse">

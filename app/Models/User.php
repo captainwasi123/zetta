@@ -9,6 +9,9 @@ use Illuminate\Notifications\Notifiable;
 use App\Models\country;
 use App\Models\userLang;
 use App\Models\userCategory;
+use App\Models\userEducation;
+use App\Models\userCertificate;
+use App\Models\userEquipment;
 
 class User extends Authenticatable
 {
@@ -66,5 +69,14 @@ class User extends Authenticatable
     }
     public function category(){
         return $this->hasMany(userCategory::class, 'user_id', 'id');
+    }
+    public function education(){
+        return $this->hasMany(userEducation::class, 'user_id', 'id')->orderBy('finish_year', 'desc');
+    }
+    public function certificate(){
+        return $this->hasMany(userCertificate::class, 'user_id', 'id');
+    }
+    public function equipment(){
+        return $this->hasMany(userEquipment::class, 'user_id', 'id');
     }
 }

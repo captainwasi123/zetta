@@ -7,8 +7,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="host" content="{{URL::to('/coach')}}">
       <!-- Favicon icon -->
-      <link rel="icon" type="image/png" sizes="16x16" href="{{URL::to('/')}}/assets/user_dashboard/assets/images/favicon.png">
-      <title> Dashboard - Zetta Sports coach </title>
+      <link rel="icon" type="image/png" sizes="16x16" href="{{URL::to('/')}}/assets/user_dashboard/coach/images/favicon.png">
+      <title> @yield('title') - Coach | ZETTA </title>
 
     @include('coach.include.style')
     @yield('addStyle')
