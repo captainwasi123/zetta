@@ -12,7 +12,7 @@
    </head>
    <body>
       <!-- Header Section Starts Here -->
-         @include('web.support.header')   
+         @include('web.support.header2')   
       <!-- Header Section Ends Here -->
       <!-- Banner Section Starts Here -->
          @yield('content')

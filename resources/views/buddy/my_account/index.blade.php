@@ -18,7 +18,7 @@
                         @if(empty(Auth::user()->profile_img))
                           background-image: url('{{URL::to('/')}}/public/user-placeholder.jpg');
                         @else
-                          background-image: url('{{URL::to('/')}}/public/user/profile_img/{{Auth::user()->profile_img}}');
+                          background-image: url('{{URL::to('/')}}/public/storage/user/profile_img/{{Auth::user()->profile_img}}');
                         @endif
                      ">
                      </div>

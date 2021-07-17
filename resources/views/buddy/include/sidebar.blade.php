@@ -6,7 +6,7 @@
          <p> <a href=""> <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/coin-icon.png"> </a> <span> Z COINS <b> 250 </b> </span> <a href=""> <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/heart-icon.png"> </a>  </p>
       </div>
       <div class="user-profile">
-         <div class="profile-img"> <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/users/profile.png" alt="user" />
+         <div class="profile-img"> <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{Auth::user()->profile_img}}" alt="user" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';"/>
          </div>
          <div class="account-btn1 text-center">
             <a href="{{route('buddy.my_account')}}" class="custom-btn2"> My Account </a>

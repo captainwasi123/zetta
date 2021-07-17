@@ -39,7 +39,7 @@
                 <div class="card-body">
                     <form class="form-horizontal form-material" method="post">
                         @csrf
-                        <h1 class="login-heading">MICAHHA</h1>
+                        <h1 class="login-heading">{{env('APP_NAME')}}</h1>
                         <h3 class="box-title m-b-20">Sign In  <small>(Administration)</small></h3>
                         @if(session()->has('error'))
                             <div class="alert alert-danger">

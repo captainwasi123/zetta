@@ -1,0 +1,213 @@
+
+.join-pop-head {
+    text-align: center;
+    margin-bottom: 10px;
+    position: relative;
+    float: left;
+    width: 100%;
+}
+
+.join-pop-head h3 {
+    margin: 0px;
+    color: black;
+    font-weight: 600;
+    font-size: 26px;
+    letter-spacing: 0.5px;
+    margin: 25px 0px 20px 0px;
+}
+
+
+.modal-content {
+    float: left;
+    width: 100%;
+}
+
+
+.join-pop-head button.close {
+    opacity: 1;
+    color: white;
+    font-size: 25px;
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    background: #9a49ff;
+    text-shadow: none !important;
+    width: 36px;
+    height: 36px !important;
+    border-radius: 100%;
+    outline: none !important;
+    box-shadow: none !important
+}
+
+
+.join-social {
+    float: left;
+    width: 100%;
+    text-align: center;
+    padding: 0px 30px;
+    margin-bottom:  5px;
+}
+
+.join-social a {
+    display: block;
+    width: 100%;
+    border: 1px solid silver;
+    color: #797979;
+    padding: 12px 0px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    font-weight: 500;
+    font-size: 16px;
+    position: relative;
+}
+
+
+.join-social a i {
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    color: #466da0;
+    font-size: 17px;
+}
+
+.join-or {
+    float: left;
+    width: 100%;
+    padding: 0px 30px;
+    text-align: center;
+    margin: 16px 0px 15px 0px;
+}
+.join-or p {
+    margin: 0px;
+    color: grey;
+    font-size: 20px;
+    border-top: 2px solid #d4d3d3;
+}
+
+.join-or p b {
+    display: inline-block;
+    background: white;
+    padding: 0px 15px;
+    margin-top: -30px;
+    vertical-align: middle;
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-size: 17px;
+}
+.join-form {
+    float: left;
+    width: 100%;
+    padding: 0px 30px;
+    border-bottom: 1px solid silver;
+    padding-bottom: 15px;
+}
+
+.join-form form input {
+    width: 100%;
+    height: 45px;
+    padding: 0px 15px;
+    border: 1px solid silver;
+    border-radius: 5px;
+    font-size: 14px;
+    letter-spacing: 0.6px;
+    color: black;
+    outline: none;
+    margin-bottom: 15px;
+}
+.join-form form button {
+    background: #9a49ff;
+    width: 100%;
+    height: 44px;
+    border: none;
+    color: white;
+    font-size: 16px;
+    letter-spacing: 0.6px;
+    border-radius: 5px;
+    margin-bottom: 16px;
+    outline: none;
+}
+
+
+.join-form form p {
+    color: black;
+    font-size: 13px;
+    text-align: center;
+}
+
+.join-already {
+    float: left;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+}
+
+
+
+
+.join-already p {
+    color: black;
+    font-size: 13px;
+    letter-spacing: 0.3px;
+    margin: 0px;
+}
+
+
+
+
+
+.join-form form button:hover , .join-pop-head button.close:hover {
+background:#000 ;
+}
+.join-social a:hover {
+background:#4267b2 !important;
+color:white !important;
+}
+.join-social a:hover i {
+    color:white !important;
+}
+
+.join-social a {
+    font-size: 14px;
+}
+
+.modal-dialog {
+    top: 20%;
+}
+
+
+.r_success_block {
+    text-align: center;
+    padding: 40px;
+}
+.success_gif {
+    height: 100px;
+    margin-bottom: 28px;
+}
+
+.descrip {
+  display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.banner-sec .label-field3 select {
+    height: 52px;
+    padding-left: 35px;
+}
+.label-field3 select {
+    width: 100%;
+    border: none;
+    height: 42px;
+    letter-spacing: 0.3px;
+    color: black;
+    padding: 0px 10px 0px 30px;
+}
+.bg-dark2 h4 {
+    color: white;
+}
+.zoom-tag {
+    right: -35px !important;
+    top: 5px !important;
+}

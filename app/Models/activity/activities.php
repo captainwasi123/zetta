@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\activity\equipments;
 use App\Models\activity\locations;
 use Auth;
+use App\Models\User;
 
 class activities extends Model
 {
@@ -83,5 +84,9 @@ class activities extends Model
 
     public function locations(){
         return $this->hasMany(locations::class, 'activity_id', 'id');
+    }
+
+    public function user(){
+        return $this->belongsTo(User::class, 'user_id');
     }
 }

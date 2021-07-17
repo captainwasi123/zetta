@@ -11,7 +11,7 @@
     <meta name="host" content="{{URL::to('/admin')}}">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="{{URL::to('/public/admin/')}}/assets/images/favicon.png">
-    <title>@yield('title') | Admin | Micahha</title>
+    <title>@yield('title') | Admin | {{env('APP_NAME')}}</title>
     
     @include('admin.includes.style')
     @yield('addStyle')

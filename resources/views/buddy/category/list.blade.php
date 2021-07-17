@@ -16,7 +16,7 @@
                         <div class="block-element">
                            <div class="row">
                               <div class="col-md-12 col-12 col-sm-12 col-lg-12 text-right mob-text-left">
-                                 <a href="{{route('coach.category.add')}}" class="custom-btn2 m-b-10"> Add Category </a>
+                                 <a href="{{route('buddy.category.add')}}" class="custom-btn2 m-b-10"> Request Category </a>
                               </div>
                            </div>
                            <div class="block-element pl-4">
@@ -29,28 +29,18 @@
                                        <table class="table table-hover contact-list" data-page-size="10">
                                           <thead>
                                              <tr>
-                                                <th> Category </th>
-                                                <th class="text-center"> Accomplishment </th>
-                                                <th class="text-center"> Skills Level </th>
-                                                <th class="text-center"> Settings </th>
+                                                <th style="width: 10%;">#</th>
+                                                <th style="width: 90%"> Category Name </th>
                                              </tr>
                                           </thead>
                                           <tbody>
-                                             @foreach(Auth::user()->category as $val)
+                                             @foreach($data as $key => $val)
                                                 <tr>
-                                                   <td>
-                                                      {{$val->name}}
-                                                   </td>
-                                                   <td class="text-center">  {{$val->accomplishment}} </td>
-                                                   <td class="text-center"> {{$val->skill_level}} </td>
-                                                   <td class="text-center">
-                                                      <a href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/wheel-icon.png"> </a>
-                                                      <div class="dropdown-menu animated flipInY" style="">
-                                                         <a href="{{route('buddy.category.edit', base64_encode($val->id))}}" class="dropdown-item"><i class="fa fa-pencil"></i> Edit </a>
-                                                         <div class="dropdown-divider"></div>
-                                                         <a href="javascript:void(0)" class="dropdown-item deleteItem" data-href="{{route('buddy.category.delete', base64_encode($val->id))}}"><i class="fa fa-trash"></i> Delete </a>
-                                                      </div>
-                                                   </td>
+                                                <td>{{++$key}}</td>
+                                                <td>
+                                                    <img src="{{URL::to('/public/storage/settings/category/'.$val->image)}}" width="30px">
+                                                    {{$val->name}}
+                                                </td>
                                                 </tr>
                                              @endforeach
                                           </tbody>

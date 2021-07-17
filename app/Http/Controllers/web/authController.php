@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\web;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\userFavorite;
@@ -40,7 +41,7 @@ class authController extends Controller
             if($check->type == '1'){
                 return '/buddy';
             }else{
-                return '/coach';
+                return '/buddy';
             }
     	}else{
     		return 'incorrect';

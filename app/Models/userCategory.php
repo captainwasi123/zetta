@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Auth;
+use App\Models\User;
 
 class userCategory extends Model
 {
@@ -15,16 +16,11 @@ class userCategory extends Model
         $c = new userCategory;
         $c->user_id = Auth::id();
         $c->name = $data['category'];
-        $c->accomplishment = $data['accomp'];
-        $c->skill_level = $data['skill_level'];
         $c->save();
     }
 
-    public static function updateCategory(array $data){
-        $c = userCategory::find(base64_decode($data['cid']));
-        $c->name = $data['category'];
-        $c->accomplishment = $data['accomp'];
-        $c->skill_level = $data['skill_level'];
-        $c->save();
+
+    public function user(){
+        return $this->belongsTo(User::class, 'user_id');
     }
 }

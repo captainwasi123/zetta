@@ -15,32 +15,48 @@ use Illuminate\Support\Facades\Route;
 
 
 // Web Routes
+	Route::namespace('web')->group(function(){
 
-	// Main Pages
-		Route::get('/', 'webController@index');
-		
-
-
-	// User Authentication
-		Route::post('/register', 'authController@register');
-		Route::post('/login', 'authController@login');
-		Route::get('/logout', 'authController@logout');
-
-		
-
-		//Login With Google
-
-			Route::get('auth/google', 'googleController@redirectToGoogle');
-			Route::get('auth/google/callback', 'googleController@handleGoogleCallback');
-
-		//Login With Facebook
-
-			Route::get('auth/facebook', 'facebookController@redirectToFacebook');
-			Route::get('auth/facebook/callback', 'facebookController@handleFacebookCallback');
+		// Main Pages
+			Route::get('/', 'webController@index');
+			Route::get('/search', 'webController@search')->name('web.search');
+			Route::get('/filter/{val}/{type}', 'webController@filter')->name('web.filter');	
 
 
+		// User Authentication
+			Route::post('/register', 'authController@register');
+			Route::post('/login', 'authController@login');
+			Route::get('/logout', 'authController@logout')->name('logout');
 
-//Middleware
+			
+
+			//Login With Google
+
+				Route::get('auth/google', 'googleController@redirectToGoogle');
+				Route::get('auth/google/callback', 'googleController@handleGoogleCallback');
+
+			//Login With Facebook
+
+				Route::get('auth/facebook', 'facebookController@redirectToFacebook');
+				Route::get('auth/facebook/callback', 'facebookController@handleFacebookCallback');
+
+
+		//Activities
+			Route::prefix('activity')->group(function(){
+
+				Route::get('details/{id}', 'webController@activityDetails')->name('activity.details');
+			});
+
+
+		//Lessons
+			Route::prefix('lesson')->group(function(){
+
+				Route::get('details/{id}', 'webController@lessonDetails')->name('lesson.details');
+			});
+	});
+
+
+//User Dashboard
 
 	Route::middleware('userAuth')->group(function(){
 		
@@ -192,10 +208,39 @@ use Illuminate\Support\Facades\Route;
 		
 	// Authentication
 
-		Route::prefix('admin')->group(function(){
-			Route::get('/', 'adminController@index')->name('admin.dashboard');
-			Route::get('login', 'adminController@login');
+		Route::prefix('admin')->namespace('admin')->group(function(){
+			Route::get('login', 'adminController@login')->name('admin.login');
 			Route::get('logout', 'adminController@logout');
-
 			Route::post('login', 'adminController@loginAttempt');
+
+			//Middleware
+				Route::middleware('adminAuth')->group(function(){
+					
+					Route::get('/', 'adminController@index')->name('admin.dashboard');
+
+
+					//settings
+					Route::prefix('settings')->group(function(){
+
+
+						//Sports Category
+						Route::prefix('category')->group(function(){
+
+							Route::get('/', 'settingController@category')->name('admin.setting.category');
+							Route::get('add', 'settingController@categoryAdd')->name('admin.setting.category.add');
+
+							Route::get('edit/{id}', 'settingController@categoryEdit')->name('admin.setting.category.edit');
+
+							Route::get('delete/{id}', 'settingController@categoryDelete');
+
+
+							Route::post('add', 'settingController@categoryInsert');
+							Route::post('update', 'settingController@categoryUpdate')->name('admin.setting.category.update');
+
+
+							Route::get('/requests', 'settingController@categoryRequest')->name('admin.setting.category.requests');
+							Route::get('request/delete/{id}', 'settingController@categoryRequestDelete');
+						});
+					});
+				});
 		});

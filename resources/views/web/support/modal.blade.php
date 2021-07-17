@@ -17,7 +17,7 @@
             <form id="register-form" action="{{URL::to('/register')}}">
                {{csrf_field()}}
                <input type="email" placeholder="Enter your email" name="email" required>
-               <span id="r_error" class="error_span">Email already exists.</span>
+               <span id="r_error" class="error_span"></span>
                <div id="r_fields">
                   
                </div>
@@ -50,7 +50,7 @@
                {{csrf_field()}}
                <input type="email" placeholder="Enter your email" name="email" required>
                <input type="password" placeholder="Enter your password" name="password" required>
-               <span id="l_error" class="error_span">Email already exists.</span>
+               <span id="l_error" class="error_span"></span>
                <button type="submit"> Sign In  </button>
             </form>
          </div>
