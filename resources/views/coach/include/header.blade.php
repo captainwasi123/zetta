@@ -11,7 +11,7 @@
                      <li class="nav-item m-l-10"> <a class="nav-link sidebartoggler hidden-sm-down text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="ti-menu"></i></a> </li>
                   </ul>
                   <ul class="navbar-nav my-lg-0">
-                     <a href="" class="custom-btn1"> SWITCH TO SPORTS BUDDY </a>
+                     <a href="{{URL::to('/buddy')}}" class="custom-btn1"> SWITCH TO SPORTS BUDDY </a>
                   </ul>
                </div>
             </nav>

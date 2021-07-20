@@ -966,10 +966,6 @@ span.inform-box1 i {
 .col-green {
     color:#4caf50 !important ;
 }
-.custom-table1 {
-    max-height: 700px !important;
-}
-
 
 .order-sorting-text a {
     color: grey;
@@ -992,11 +988,6 @@ span.inform-box1 i {
     background:grey !important;
 }
 
-
-.custom-table1 {
-    max-height: 700px !important;
-    overflow-x: visible !important;
-}
 
 
 .custom-table1 table tbody tr td a::after {

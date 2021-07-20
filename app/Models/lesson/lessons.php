@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\lesson\Equipments;
 use App\Models\lesson\Locations;
 use App\Models\lesson\Packages;
+use App\Models\lesson\orders;
 use App\Models\User;
 use Auth;
 
@@ -124,6 +125,13 @@ class lessons extends Model
 
     public function packages(){
         return $this->hasMany(Packages::class, 'lesson_id', 'id');
+    }
+
+    public function activeOrders(){
+        return $this->hasMany(orders::class, 'lesson_id', 'id')->where('status', '1');
+    }
+    public function cancelOrders(){
+        return $this->hasMany(orders::class, 'lesson_id', 'id')->where('status', '2');
     }
 
     public function user(){

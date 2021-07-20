@@ -55,8 +55,8 @@
                                                                   <img src="{{URL::to('/public/storage/user/lessons/main_image/'.$val->cover_img)}}"> 
                                                                   {{$val->title}}
                                                                </td>
-                                                               <td class="text-center">  0 </td>
-                                                               <td class="text-center"> 0 </td>
+                                                               <td class="text-center"> <a href="">{{count($val->activeOrders)}} - View</a> </td>
+                                                               <td class="text-center"> {{count($val->cancelOrders)}} </td>
                                                                <td class="text-center">
                                                                  <div class="dropdown-wrapper">
                                                                   <a href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"> <i class="fa fa-caret-down"> </i> </a>

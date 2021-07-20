@@ -69,4 +69,28 @@ class settingController extends Controller
 
         return redirect()->back()->with('success', 'New Certificate Added.');
     }
+
+    function addProof(Request $request){
+        $file = $request->file('document');
+        $filename = Auth::id().'-'.date('dmyHis').'.'.$file->getClientOriginalExtension();
+        $u = User::find(Auth::id());
+        $u->add_proof_status = '1';
+        $u->add_proof_doc = $filename;
+        $u->save();
+        $file->move(base_path('/public/storage/user/add_proof/'), $filename);
+
+        return redirect()->back();
+    }
+
+    function idProof(Request $request){
+        $file = $request->file('document');
+        $filename = Auth::id().'-'.date('dmyHis').'.'.$file->getClientOriginalExtension();
+        $u = User::find(Auth::id());
+        $u->id_proof_status = '1';
+        $u->id_proof_doc = $filename;
+        $u->save();
+        $file->move(base_path('/public/storage/user/id_proof/'), $filename);
+
+        return redirect()->back();
+    }
 }

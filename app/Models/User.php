@@ -12,6 +12,8 @@ use App\Models\userCategory;
 use App\Models\userEducation;
 use App\Models\userCertificate;
 use App\Models\userEquipment;
+use App\Models\lesson\lessons;
+use App\Models\activity\activities;
 
 class User extends Authenticatable
 {
@@ -79,4 +81,13 @@ class User extends Authenticatable
     public function equipment(){
         return $this->hasMany(userEquipment::class, 'user_id', 'id');
     }
+
+
+    public function lessons(){
+        return $this->hasMany(lessons::class, 'user_id', 'id');
+    }
+    public function activities(){
+        return $this->hasMany(activities::class, 'user_id', 'id');
+    }
+
 }

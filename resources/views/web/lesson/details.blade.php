@@ -244,7 +244,7 @@
                               @endforeach
                            </ul>
                            <div class="block-element2 m-t-30">
-                              <p class="m-b-10" >  <a href="javascript:void(0)" class="block-element2 bg-purple col-white rounded custom-btn1 text-center"> Continue ({{'$ '.number_format($data->packages[0]->price)}})  </a> </p>
+                              <p class="m-b-10" >  <a href="{{URL::to('/cart/lesson/'.base64_encode($data->id).'/basic')}}" class="block-element2 bg-purple col-white rounded custom-btn1 text-center"> Continue ({{'$ '.number_format($data->packages[0]->price)}})  </a> </p>
                            </div>
                         </div>
                      </div>
@@ -268,7 +268,7 @@
                               @endforeach
                            </ul>
                            <div class="block-element2 m-t-30">
-                              <p class="m-b-10" >  <a href="javascript:void(0)" class="block-element2 bg-purple col-white rounded custom-btn1 text-center"> Continue ({{'$ '.number_format($data->packages[1]->price)}})  </a> </p>
+                              <p class="m-b-10" >  <a href="{{URL::to('/cart/lesson/'.base64_encode($data->id).'/standard')}}" class="block-element2 bg-purple col-white rounded custom-btn1 text-center"> Continue ({{'$ '.number_format($data->packages[1]->price)}})  </a> </p>
                            </div>
                         </div>
                        </div>
@@ -292,7 +292,7 @@
                               @endforeach
                            </ul>
                            <div class="block-element2 m-t-30">
-                              <p class="m-b-10" >  <a href="javascript:void(0)" class="block-element2 bg-purple col-white rounded custom-btn1 text-center"> Continue ({{'$ '.number_format($data->packages[2]->price)}})  </a> </p>
+                              <p class="m-b-10" >  <a href="{{URL::to('/cart/lesson/'.base64_encode($data->id).'/premium')}}" class="block-element2 bg-purple col-white rounded custom-btn1 text-center"> Continue ({{'$ '.number_format($data->packages[2]->price)}})  </a> </p>
                            </div>
                         </div>
                        </div>

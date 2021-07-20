@@ -186,7 +186,7 @@
             <div class="col-md-4 col-lg-2 col-sm-4">
                   <div class="lesson-block2">
                      <div class="lesson-image-block2">
-                        <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{Auth::user()->profile_img}}" alt="user" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';">
+                        <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{$val->profile_img}}" alt="user" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';">
                      </div>
                      <div class="lesson-title-block2">  
                         <h4>

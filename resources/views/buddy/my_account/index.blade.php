@@ -106,7 +106,7 @@
                </p>
             </div>
          </div>
-         <div class="row m-b-20">
+         <!-- <div class="row m-b-20">
             <div class="col-md-4 col-lg-4 col-12">
                <div class="field-name m-t-15">
                   <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/field-icon12.png">
@@ -117,31 +117,57 @@
                <input type="file" name="" class="form-field1 ">
                <span class="info-tag1"> Allowed File types are jpg, jpeg, doc, docs, pdf </span>
             </div>
-         </div>
-         <div class="row m-b-20">
-            <div class="col-md-4 col-lg-4 col-12">
-               <div class="field-name m-t-15">
-                  <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/field-icon15.png">
-                  <h5> ID Proof </h5>
+         </div> -->
+         <form method="post" id="id_proof_form" action="{{route('buddy.my_account.idProof')}}" enctype="multipart/form-data">
+            @csrf
+            <div class="row m-b-20">
+               <div class="col-md-4 col-lg-4 col-12">
+                  <div class="field-name m-t-15">
+                     <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/field-icon15.png">
+                     <h5> ID Proof </h5>
+                  </div>
+               </div>
+               <div class="col-md-8 col-lg-8 col-12">
+                  @if(empty(Auth::user()->id_proof_status))
+                     <input type="file" id="id_proof_field" name="document" class="form-field1" required>
+                     <span class="info-tag1"> Allowed File types are jpg, jpeg, doc, docs, pdf </span>
+                  @elseif(Auth::user()->id_proof_status == '1')
+                     <p class="form-field1 text-right mob-text-left off-border color-orange">
+                        In-Review
+                     </p>
+                  @elseif(Auth::user()->id_proof_status == '2')
+                     <p class="form-field1 text-right mob-text-left off-border">
+                        Verified <img src="{{URL::to('/assets/user_dashboard/tick.png')}}" width="20px" style="margin-top:-4px;">
+                     </p>
+                  @endif
                </div>
             </div>
-            <div class="col-md-8 col-lg-8 col-12">
-               <input type="file" name="" class="form-field1 ">
-               <span class="info-tag1"> Allowed File types are jpg, jpeg, doc, docs, pdf </span>
-            </div>
-         </div>
-         <div class="row m-b-20">
-            <div class="col-md-4 col-lg-4 col-12">
-               <div class="field-name m-t-15">
-                  <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/field-icon3.png">
-                  <h5> Address Proof</h5>
+         </form>
+         <form method="post" id="add_proof_form" action="{{route('buddy.my_account.addProof')}}" enctype="multipart/form-data">
+            @csrf
+            <div class="row m-b-20">
+               <div class="col-md-4 col-lg-4 col-12">
+                  <div class="field-name m-t-15">
+                     <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/field-icon3.png">
+                     <h5> Address Proof</h5>
+                  </div>
+               </div>
+               <div class="col-md-8 col-lg-8 col-12">
+                  @if(empty(Auth::user()->add_proof_status))
+                     <input type="file" name="document" id="add_proof_field" class="form-field1 " required>
+                     <span class="info-tag1"> Allowed File types are jpg, jpeg, doc, docs, pdf </span>
+                  @elseif(Auth::user()->add_proof_status == '1')
+                     <p class="form-field1 text-right mob-text-left off-border color-orange">
+                        In-Review
+                     </p>
+                  @elseif(Auth::user()->add_proof_status == '2')
+                     <p class="form-field1 text-right mob-text-left off-border">
+                        Verified <img src="{{URL::to('/assets/user_dashboard/tick.png')}}" width="20px" style="margin-top:-4px;">
+                     </p>
+                  @endif
                </div>
             </div>
-            <div class="col-md-8 col-lg-8 col-12">
-               <input type="file" name="" class="form-field1 ">
-               <span class="info-tag1"> Allowed File types are jpg, jpeg, doc, docs, pdf </span>
-            </div>
-         </div>
+         </form>
 
 
       </div>
@@ -213,134 +239,25 @@
          </div>
          <div class="block-element">
             <div class="row">
-               <div class="col-md-6 col-lg-6 col-sm-6 col-12">
-                  <div class="lesson-block lesson-block3">
-                     <div class="lesson-image-block">
-                        <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/lesson-image1.jpg">
-                     </div>
-                     <div class="lesson-info-block">
-                        <h4> <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/avatar.jpg"> Della 785 <span> Yoga Coach </span>  </h4>
-                        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                        <h6> <i class="fa fa-star col-yellow"> </i> 5.0 </h6>
-                     </div>
-                     <div class="lesson-rating-block">
-                        <a href="" class="col-red"> <i class="fa fa-heart"></i> </a>
-                        <span> STARTING AT <b> $800 </b> </span>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-md-6 col-lg-6 col-sm-6 col-12">
-                  <div class="lesson-block lesson-block3">
-                     <div class="lesson-image-block">
-                        <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/lesson-image1.jpg">
-                     </div>
-                     <div class="lesson-info-block">
-                        <h4> <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/avatar.jpg"> Della 785 <span> Yoga Coach </span>  </h4>
-                        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                        <h6> <i class="fa fa-star col-yellow"> </i> 5.0 </h6>
-                     </div>
-                     <div class="lesson-rating-block">
-                        <a href="" class="col-red"> <i class="fa fa-heart"></i> </a>
-                        <span> STARTING AT <b> $800 </b> </span>
+               @foreach(Auth::user()->activities as $val)
+                  <div class="col-md-6 col-lg-6 col-sm-6 col-12">
+                     <div class="lesson-block lesson-block3">
+                        <div class="lesson-image-block">
+                           <img src="{{URL::to('/public/storage/user/activity/main_image/'.$val->cover_img)}}">
+                        </div>
+                        <div class="lesson-info-block">
+                           <h4> <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{empty($val->user) ? '' : $val->user->profile_img}}" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';"> {{empty($val->user) ? 'Unknown' : $val->user->fname.' '.$val->user->lname}} <span> Sports Buddy </span>  </h4>
+                           <p class="descrip">
+                              {{$val->description}}
+                           </p>
+                           <h6> <i class="fa fa-star col-yellow"> </i> 5.0 </h6>
+                        </div>
+                        <div class="lesson-rating-block">
+                           <span> STARTING AT <b> FREE </b> </span>
+                        </div>
                      </div>
                   </div>
-               </div>
-               <div class="col-md-6 col-lg-6 col-sm-6 col-12">
-                  <div class="lesson-block lesson-block3">
-                     <div class="lesson-image-block">
-                        <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/lesson-image1.jpg">
-                     </div>
-                     <div class="lesson-info-block">
-                        <h4> <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/avatar.jpg"> Della 785 <span> Yoga Coach </span>  </h4>
-                        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                        <h6> <i class="fa fa-star col-yellow"> </i> 5.0 </h6>
-                     </div>
-                     <div class="lesson-rating-block">
-                        <a href="" class="col-red"> <i class="fa fa-heart"></i> </a>
-                        <span> STARTING AT <b> $800 </b> </span>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-md-6 col-lg-6 col-sm-6 col-12">
-                  <div class="lesson-block lesson-block3">
-                     <div class="lesson-image-block">
-                        <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/lesson-image1.jpg">
-                     </div>
-                     <div class="lesson-info-block">
-                        <h4> <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/avatar.jpg"> Della 785 <span> Yoga Coach </span>  </h4>
-                        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                        <h6> <i class="fa fa-star col-yellow"> </i> 5.0 </h6>
-                     </div>
-                     <div class="lesson-rating-block">
-                        <a href="" class="col-red"> <i class="fa fa-heart"></i> </a>
-                        <span> STARTING AT <b> $800 </b> </span>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-md-6 col-lg-6 col-sm-6 col-12">
-                  <div class="lesson-block lesson-block3">
-                     <div class="lesson-image-block">
-                        <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/lesson-image1.jpg">
-                     </div>
-                     <div class="lesson-info-block">
-                        <h4> <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/avatar.jpg"> Della 785 <span> Yoga Coach </span>  </h4>
-                        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                        <h6> <i class="fa fa-star col-yellow"> </i> 5.0 </h6>
-                     </div>
-                     <div class="lesson-rating-block">
-                        <a href="" class="col-red"> <i class="fa fa-heart"></i> </a>
-                        <span> STARTING AT <b> $800 </b> </span>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-md-6 col-lg-6 col-sm-6 col-12">
-                  <div class="lesson-block lesson-block3">
-                     <div class="lesson-image-block">
-                        <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/lesson-image1.jpg">
-                     </div>
-                     <div class="lesson-info-block">
-                        <h4> <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/avatar.jpg"> Della 785 <span> Yoga Coach </span>  </h4>
-                        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                        <h6> <i class="fa fa-star col-yellow"> </i> 5.0 </h6>
-                     </div>
-                     <div class="lesson-rating-block">
-                        <a href="" class="col-red"> <i class="fa fa-heart"></i> </a>
-                        <span> STARTING AT <b> $800 </b> </span>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-md-6 col-lg-6 col-sm-6 col-12">
-                  <div class="lesson-block lesson-block3">
-                     <div class="lesson-image-block">
-                        <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/lesson-image1.jpg">
-                     </div>
-                     <div class="lesson-info-block">
-                        <h4> <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/avatar.jpg"> Della 785 <span> Yoga Coach </span>  </h4>
-                        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                        <h6> <i class="fa fa-star col-yellow"> </i> 5.0 </h6>
-                     </div>
-                     <div class="lesson-rating-block">
-                        <a href="" class="col-red"> <i class="fa fa-heart"></i> </a>
-                        <span> STARTING AT <b> $800 </b> </span>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-md-6 col-lg-6 col-sm-6 col-12">
-                  <div class="lesson-block lesson-block3">
-                     <div class="lesson-image-block">
-                        <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/lesson-image1.jpg">
-                     </div>
-                     <div class="lesson-info-block">
-                        <h4> <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/avatar.jpg"> Della 785 <span> Yoga Coach </span>  </h4>
-                        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                        <h6> <i class="fa fa-star col-yellow"> </i> 5.0 </h6>
-                     </div>
-                     <div class="lesson-rating-block">
-                        <a href="" class="col-red"> <i class="fa fa-heart"></i> </a>
-                        <span> STARTING AT <b> $800 </b> </span>
-                     </div>
-                  </div>
-               </div>
+               @endforeach
             </div>
          </div>
       </div>

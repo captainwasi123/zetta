@@ -62,6 +62,9 @@ class webController extends Controller
                                     ->latest()->paginate(18);
 
                 return view('web.filter.buddies')->with($data);
+            }else{
+
+                return redirect('/');
             }
         }
 

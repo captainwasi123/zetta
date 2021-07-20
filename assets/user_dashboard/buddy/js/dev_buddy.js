@@ -38,7 +38,17 @@ $(document).ready(function(){
         var data = '<br><div class="location-field"><input type="text" placeholder="Location" class="form-field1" name="location[]" required></div>';
         $('#location_block').append(data);
     });
+
+    $(document).on('change', '#id_proof_field', function(){
+        $('#id_proof_form').submit();
+    });
+
+    $(document).on('change', '#add_proof_field', function(){
+        $('#add_proof_form').submit();
+    });
+
 });
+
 
 !function($) {
     "use strict";

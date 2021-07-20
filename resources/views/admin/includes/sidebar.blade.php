@@ -25,6 +25,38 @@
                         <span class="hide-menu">Dashboard</span>
                     </a>
                 </li>
+                <li> 
+                    <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                        <i class="mdi mdi-account-multiple-outline"></i>
+                        <span class="hide-menu">All Users</span>
+                    </a>
+                    <ul aria-expanded="false" class="collapse">
+                        <li><a href="{{route('admin.users.active')}}">Active</a></li>
+                        <li><a href="{{route('admin.users.blocked')}}">Blocked</a></li>
+                        <li><a href="{{route('admin.users.id_proof')}}">ID Proof Request</a></li>
+                        <li><a href="{{route('admin.users.add_proof')}}">Addr. Proof Request</a></li>
+                    </ul>
+                </li>
+                <li> 
+                    <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                        <i class="mdi mdi-dumbbell"></i>
+                        <span class="hide-menu">All Lessons</span>
+                    </a>
+                    <ul aria-expanded="false" class="collapse">
+                        <li><a href="{{route('admin.lessons.active')}}">Active</a></li>
+                        <li><a href="{{route('admin.lessons.blocked')}}">Blocked</a></li>
+                    </ul>
+                </li>
+                <li> 
+                    <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                        <i class="mdi mdi-run-fast"></i>
+                        <span class="hide-menu">All Activities</span>
+                    </a>
+                    <ul aria-expanded="false" class="collapse">
+                        <li><a href="{{route('admin.activities.active')}}">Active</a></li>
+                        <li><a href="{{route('admin.activities.blocked')}}">Blocked</a></li>
+                    </ul>
+                </li>
 
                 <li class="nav-small-cap">Settings</li>
                 <li> 

@@ -48,7 +48,7 @@
                         </a> 
                      </li>
                      <li> 
-                        <a href="{{route('coach.order')}}" > 
+                        <a href="{{route('coach.orders')}}" > 
                            <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/nav-icon6.png"> 
                            <span class="hide-menu">  Orders  </span> 
                         </a> 

@@ -22,6 +22,12 @@ use Illuminate\Support\Facades\Route;
 			Route::get('/search', 'webController@search')->name('web.search');
 			Route::get('/filter/{val}/{type}', 'webController@filter')->name('web.filter');	
 
+			Route::get('cart/{type}/{id}/{package}', 'cartController@cart');
+
+			Route::middleware('userAuth')->group(function(){
+
+				Route::post('checkout', 'cartController@checkout')->name('web.checkout');
+			});
 
 		// User Authentication
 			Route::post('/register', 'authController@register');
@@ -78,6 +84,10 @@ use Illuminate\Support\Facades\Route;
 						Route::post('/add_edu', 'settingController@add_edu')->name('coach.my_account.add_edu');
 
 						Route::post('/add_certificate', 'settingController@add_certificate')->name('coach.my_account.add_certificate');
+
+
+						Route::post('id_proof', 'settingController@idProof')->name('coach.my_account.idProof');
+						Route::post('add_proof', 'settingController@addProof')->name('coach.my_account.addProof');
 					});
 
 				//Category
@@ -130,6 +140,12 @@ use Illuminate\Support\Facades\Route;
 						Route::get('/delete/{id}', 'availabilityController@delete')->name('coach.availability.delete');
 						Route::get('/delete/holiday/{id}', 'availabilityController@deleteHoliday')->name('coach.availability.delete.holiday');
 					});
+
+				//Orders
+					Route::prefix('orders')->group(function(){
+
+						Route::get('/', 'orderController@index')->name('coach.orders');
+					});
 			});
 
 
@@ -152,6 +168,11 @@ use Illuminate\Support\Facades\Route;
 						Route::post('/add_edu', 'settingController@add_edu')->name('buddy.my_account.add_edu');
 
 						Route::post('/add_certificate', 'settingController@add_certificate')->name('buddy.my_account.add_certificate');
+
+
+
+						Route::post('id_proof', 'settingController@idProof')->name('buddy.my_account.idProof');
+						Route::post('add_proof', 'settingController@addProof')->name('buddy.my_account.addProof');
 					});
 
 				//Category
@@ -219,28 +240,68 @@ use Illuminate\Support\Facades\Route;
 					Route::get('/', 'adminController@index')->name('admin.dashboard');
 
 
-					//settings
-					Route::prefix('settings')->group(function(){
+					//All Users
+						Route::prefix('users')->group(function(){
+
+							Route::get('active', 'userController@active')->name('admin.users.active');
+							Route::get('blocked', 'userController@blocked')->name('admin.users.blocked');
+
+							Route::get('block/{id}', 'userController@block');
+							Route::get('activate/{id}', 'userController@activate');
 
 
-						//Sports Category
-						Route::prefix('category')->group(function(){
-
-							Route::get('/', 'settingController@category')->name('admin.setting.category');
-							Route::get('add', 'settingController@categoryAdd')->name('admin.setting.category.add');
-
-							Route::get('edit/{id}', 'settingController@categoryEdit')->name('admin.setting.category.edit');
-
-							Route::get('delete/{id}', 'settingController@categoryDelete');
-
-
-							Route::post('add', 'settingController@categoryInsert');
-							Route::post('update', 'settingController@categoryUpdate')->name('admin.setting.category.update');
-
-
-							Route::get('/requests', 'settingController@categoryRequest')->name('admin.setting.category.requests');
-							Route::get('request/delete/{id}', 'settingController@categoryRequestDelete');
+							Route::get('idProof', 'userController@idProof')->name('admin.users.id_proof');
+							Route::get('addProof', 'userController@addProof')->name('admin.users.add_proof');
+							Route::get('idProof/approve/{id}', 'userController@idProofApprove');
+							Route::get('idProof/reject/{id}', 'userController@idProofReject');
+							Route::get('addProof/approve/{id}', 'userController@addProofApprove');
+							Route::get('addProof/reject/{id}', 'userController@addProofReject');
 						});
-					});
+
+
+					//All Lessons
+						Route::prefix('lessons')->group(function(){
+
+							Route::get('active', 'lessonsController@active')->name('admin.lessons.active');
+							Route::get('blocked', 'lessonsController@blocked')->name('admin.lessons.blocked');
+
+							Route::get('block/{id}', 'lessonsController@block');
+							Route::get('activate/{id}', 'lessonsController@activate');
+						});
+
+
+					//All Activities
+						Route::prefix('activities')->group(function(){
+
+							Route::get('active', 'activityController@active')->name('admin.activities.active');
+							Route::get('blocked', 'activityController@blocked')->name('admin.activities.blocked');
+
+							Route::get('block/{id}', 'activityController@block');
+							Route::get('activate/{id}', 'activityController@activate');
+						});
+
+					//settings
+						Route::prefix('settings')->group(function(){
+
+
+							//Sports Category
+							Route::prefix('category')->group(function(){
+
+								Route::get('/', 'settingController@category')->name('admin.setting.category');
+								Route::get('add', 'settingController@categoryAdd')->name('admin.setting.category.add');
+
+								Route::get('edit/{id}', 'settingController@categoryEdit')->name('admin.setting.category.edit');
+
+								Route::get('delete/{id}', 'settingController@categoryDelete');
+
+
+								Route::post('add', 'settingController@categoryInsert');
+								Route::post('update', 'settingController@categoryUpdate')->name('admin.setting.category.update');
+
+
+								Route::get('/requests', 'settingController@categoryRequest')->name('admin.setting.category.requests');
+								Route::get('request/delete/{id}', 'settingController@categoryRequestDelete');
+							});
+						});
 				});
 		});
