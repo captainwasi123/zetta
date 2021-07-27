@@ -5,7 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Auth;
-use App\Models\admin;
+use App\Models\Admin;
 use App\Models\admin\role;
 use App\Models\User;
 use Illuminate\Support\Arr;
