@@ -10,7 +10,7 @@ class userController extends Controller
 {
     //
     function active(){
-        $data = User::where('status', '1')->latest()->get();
+        $data = User::with('country')->where('status', '1')->latest()->get();
 
         return view('admin.users.active', ['data' => $data]);
     }

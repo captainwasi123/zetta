@@ -39,7 +39,7 @@ class lessonsController extends Controller
 
             lessons::updateImage($id, $filename);
         }
-        
+
         return redirect()->back()->with('success', 'New Lesson Added.');
     }
 
@@ -68,7 +68,7 @@ class lessonsController extends Controller
 
             lessons::updateImage($id, $filename);
         }
-        
+
         return redirect()->back()->with('success', 'Lesson Updated.');
     }
 

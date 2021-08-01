@@ -10,6 +10,7 @@ use App\Models\country;
 use App\Models\userLang;
 use App\Models\userEducation;
 use App\Models\userCertificate;
+use App\Models\userMedia;
 
 class settingController extends Controller
 {
@@ -43,6 +44,9 @@ class settingController extends Controller
         $u->city = $data['city'];
         $u->gender = $data['gender'];
         $u->availability = $data['availability'];
+        $u->address = $data['address'];
+        $u->lat = $data['lat'];
+        $u->lng = $data['lng'];
         $u->description = $data['description'];
         $u->save();
 
@@ -69,7 +73,7 @@ class settingController extends Controller
 
         return redirect()->back()->with('success', 'New Certificate Added.');
     }
-    
+
 
     function addProof(Request $request){
         $file = $request->file('document');
@@ -93,5 +97,18 @@ class settingController extends Controller
         $file->move(base_path('/public/storage/user/id_proof/'), $filename);
 
         return redirect()->back();
+    }
+
+    function addMedia(Request $request){
+        $media = new userMedia();
+        $file = $request->file('video');
+        $filename = Auth::id().'-'.date('dmyHis').'.'.$file->getClientOriginalExtension();
+        $media->user_id = Auth::user()->id;
+        $media->media =  $filename;
+        $media->status = 1;
+        $media->save();
+        $file->move(base_path('/public/storage/user/media/'), $filename);
+
+        return redirect()->back()->with('success', 'New Media Added.');
     }
 }

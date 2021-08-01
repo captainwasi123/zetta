@@ -41,11 +41,15 @@
             <div class="row">
                <div class="col-md-2 col-lg-2 col-sm-12 col-12 order-lg-2 order-md-2">
                   <div class="all-filters2">
-                     <button class="buddy-btn active"> Friends </button>   
-                     <button class="buddy-btn"> Online Coach </button>
-                     <button class="buddy-btn"> Group Coach </button>
-                     <button class="buddy-btn"> Private Coach </button>
-                     <button class="buddy-btn"> Girls Coach </button>
+                     {{-- <button class="buddy-btn active"> Friends </button> --}}
+                     <a class="buddy-btn" href="{{route('web.search.filter','friend')}}">Friends</a>
+                     <a class="buddy-btn" href="{{route('web.search.filter','online_coach')}}">Online Coach</a>
+                     <a class="buddy-btn" href="{{route('web.search.filter','group_coach')}}">Group Coach</a>
+                     <a class="buddy-btn" href="{{route('web.search.filter','private_coach')}}">Private Coach</a>
+                     <a class="buddy-btn" href="{{route('web.search.filter','girl')}}">Girl Coach</a>
+                     {{-- <button class="buddy-btn"> Online Coach </button> --}}
+                     {{-- <button class="buddy-btn"> Private Coach </button> --}}
+                     {{-- <button class="buddy-btn"> Girls Coach </button> --}}
                      <button class="buddy-btn"> Find My Teacher </button>
                   </div>
                </div>
@@ -55,55 +59,55 @@
                         <div class="buddy-box1">
                            <div class="buddy-box">
                               <div>
-                                 <img src="{{URL::to('/assets/website')}}/images/buddy-image1.jpg">      
+                                 <img src="{{URL::to('/assets/website')}}/images/buddy-image1.jpg">
                               </div>
                               <h4 class="col-white gotham-regular"> Aubrey </h4>
-                              <h5> <span class="col-white"> 5.0 </span> <i class="fa fa-star col-purple"> </i> 
-                                 <span class="col-white"> 1 Review </span> <img src="{{URL::to('/assets/website')}}/images/buddy-icon1.jpg"> 
+                              <h5> <span class="col-white"> 5.0 </span> <i class="fa fa-star col-purple"> </i>
+                                 <span class="col-white"> 1 Review </span> <img src="{{URL::to('/assets/website')}}/images/buddy-icon1.jpg">
                               </h5>
                            </div>
                         </div>
                         <div class="buddy-box2">
                            <div class="buddy-box ">
                               <div>
-                                 <img src="{{URL::to('/assets/website')}}/images/buddy-image2.jpg">      
+                                 <img src="{{URL::to('/assets/website')}}/images/buddy-image2.jpg">
                               </div>
                               <h4 class="col-white gotham-regular"> Aubrey </h4>
-                              <h5> <span class="col-white"> 5.0 </span> <i class="fa fa-star col-purple"> </i> 
-                                 <span class="col-white"> 1 Review </span> <img src="{{URL::to('/assets/website')}}/images/buddy-icon1.jpg"> 
+                              <h5> <span class="col-white"> 5.0 </span> <i class="fa fa-star col-purple"> </i>
+                                 <span class="col-white"> 1 Review </span> <img src="{{URL::to('/assets/website')}}/images/buddy-icon1.jpg">
                               </h5>
                            </div>
                         </div>
                         <div class="buddy-box3">
                            <div class="buddy-box ">
                               <div>
-                                 <img src="{{URL::to('/assets/website')}}/images/buddy-image3.jpg">      
+                                 <img src="{{URL::to('/assets/website')}}/images/buddy-image3.jpg">
                               </div>
                               <h4 class="col-white gotham-regular"> Aubrey </h4>
-                              <h5> <span class="col-white"> 5.0 </span> <i class="fa fa-star col-purple"> </i> 
-                                 <span class="col-white"> 1 Review </span> <img src="{{URL::to('/assets/website')}}/images/buddy-icon1.jpg"> 
+                              <h5> <span class="col-white"> 5.0 </span> <i class="fa fa-star col-purple"> </i>
+                                 <span class="col-white"> 1 Review </span> <img src="{{URL::to('/assets/website')}}/images/buddy-icon1.jpg">
                               </h5>
                            </div>
                         </div>
                         <div class="buddy-box4">
                            <div class="buddy-box ">
                               <div>
-                                 <img src="{{URL::to('/assets/website')}}/images/buddy-image4.jpg">      
+                                 <img src="{{URL::to('/assets/website')}}/images/buddy-image4.jpg">
                               </div>
                               <h4 class="col-white gotham-regular"> Aubrey </h4>
-                              <h5> <span class="col-white"> 5.0 </span> <i class="fa fa-star col-purple"> </i> 
-                                 <span class="col-white"> 1 Review </span> <img src="{{URL::to('/assets/website')}}/images/buddy-icon1.jpg"> 
+                              <h5> <span class="col-white"> 5.0 </span> <i class="fa fa-star col-purple"> </i>
+                                 <span class="col-white"> 1 Review </span> <img src="{{URL::to('/assets/website')}}/images/buddy-icon1.jpg">
                               </h5>
                            </div>
                         </div>
                         <div class="buddy-box5">
                            <div class="buddy-box">
                               <div>
-                                 <img src="{{URL::to('/assets/website')}}/images/buddy-image5.jpg">      
+                                 <img src="{{URL::to('/assets/website')}}/images/buddy-image5.jpg">
                               </div>
                               <h4 class="col-white gotham-regular"> Aubrey </h4>
-                              <h5> <span class="col-white"> 5.0 </span> <i class="fa fa-star col-purple"> </i> 
-                                 <span class="col-white"> 1 Review </span> <img src="{{URL::to('/assets/website')}}/images/buddy-icon1.jpg"> 
+                              <h5> <span class="col-white"> 5.0 </span> <i class="fa fa-star col-purple"> </i>
+                                 <span class="col-white"> 1 Review </span> <img src="{{URL::to('/assets/website')}}/images/buddy-icon1.jpg">
                               </h5>
                            </div>
                         </div>
@@ -122,6 +126,7 @@
             </div>
             <div class="boxes-slider1 arrows1">
                @foreach($activities as $val)
+
                   <div>
                      <a href="{{route('activity.details', base64_encode($val->id))}}">
                         <div class="lesson-block">
@@ -129,7 +134,7 @@
                               <img src="{{URL::to('/public/storage/user/activity/main_image/'.$val->cover_img)}}">
                            </div>
                            <div class="lesson-title-block">
-                              <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{empty($val->user) ? '' : $val->user->profile_img}}" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';">   
+                              <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{empty($val->user) ? '' : $val->user->profile_img}}" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';">
                               <h4>  {{empty($val->user) ? 'Unknown' : $val->user->fname.' '.$val->user->lname}} <span>Sports Buddy </span>  </h4>
                            </div>
                            <div class="lesson-info-block">
@@ -165,14 +170,14 @@
                               <img src="{{URL::to('/public/storage/user/lessons/main_image/'.$val->cover_img)}}">
                            </div>
                            <div class="lesson-title-block">
-                              <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{empty($val->user) ? '' : $val->user->profile_img}}" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';">   
+                              <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{empty($val->user) ? '' : $val->user->profile_img}}" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';">
                               <h4> {{empty($val->user) ? 'Unknown' : $val->user->fname.' '.$val->user->lname}} <span> Coach </span>  </h4>
                               @if($val->availability != '2')
                                  <div class="zoom-tag"> <img src="{{URL::to('/assets/website')}}/images/zoom-logo.png"></div>
                               @endif
                            </div>
                            <div class="lesson-info-block">
-                              <p class="descrip"> 
+                              <p class="descrip">
                                  {{$val->description}}
                               </p>
                               <h6 class="col-white m-b-15"> <i class="fa fa-star col-yellow"> </i> 5.0 </h6>
@@ -196,7 +201,7 @@
                <h2 class="col-white gotham-bold text-center m-b-20 text-center"> Reviews from Customers </h2>
                <p class="col-white text-center" style="max-width: 600px;margin:auto">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
                   ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud
-                  exercitation ullamco laboris.  
+                  exercitation ullamco laboris.
                </p>
             </div>
             <div class="boxes-slider2 arrows1">
@@ -229,8 +234,9 @@
       </section>
       <!-- Page Content Ends Here -->
       <!-- Contact Map Section Starts Here -->
-      <section class="contact-map">
+      <section class="contact-map" id="mapa">
          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2761.3733645583543!2d6.148813815099483!3d46.203027191861324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478c652e1684fd1f%3A0x5bc95524fc281d4b!2sRue%20du%20Port%203%2C%201204%20Gen%C3%A8ve%2C%20Switzerland!5e0!3m2!1sen!2s!4v1626247013749!5m2!1sen!2s" width="100%" height="550" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
       </section>
-
+<input type="hidden" id="lat">
+<input type="hidden" id="lng">
 @endsection

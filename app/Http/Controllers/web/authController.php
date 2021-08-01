@@ -10,7 +10,7 @@ use Auth;
 
 class authController extends Controller
 {
-    
+
     function register(Request $request){
     	$data = $request->all();
     	if(empty($data['password'])){
@@ -84,7 +84,7 @@ class authController extends Controller
         if(Auth::check()){
             $id = base64_decode($id);
             userFavorite::where('favor_id', $id)->where('user_id', Auth::id())->delete();
-            
+
             return redirect()->back();
         }else{
             return redirect('/');
@@ -94,7 +94,7 @@ class authController extends Controller
     function savedProfile(){
         if(Auth::check()){
             $data = userFavorite::where('user_id', Auth::id())->get();
-            
+
             return view('web.saved', ['databelt' => $data]);
         }else{
             return redirect('/');

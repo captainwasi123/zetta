@@ -12,7 +12,7 @@ use App\Models\userEducation;
 use App\Models\userCertificate;
 
 class settingController extends Controller
-{ 
+{
 
     //
 
@@ -42,6 +42,9 @@ class settingController extends Controller
         $u->lname = $data['last_name'];
         $u->country_id = $data['country'];
         $u->city = $data['city'];
+        $u->address = $data['address'];
+        $u->lat = $data['lat'];
+        $u->lng = $data['lng'];
         $u->gender = $data['gender'];
         $u->description = $data['description'];
         $u->save();

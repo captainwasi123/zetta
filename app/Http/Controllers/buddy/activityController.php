@@ -39,7 +39,7 @@ class activityController extends Controller
 
             activities::updateImage($id, $filename);
         }
-        
+
         return redirect()->back()->with('success', 'New Activity Added.');
     }
 
@@ -67,7 +67,7 @@ class activityController extends Controller
 
             activities::updateImage($id, $filename);
         }
-        
+
         return redirect()->back()->with('success', 'Activity Update.');
     }
 

@@ -16,8 +16,8 @@
 
  </head>
    <body class="fix-header fix-sidebar card-no-border">
-      
-      <!-- All Page Content Starts Here -->   
+
+      <!-- All Page Content Starts Here -->
       <div id="main-wrapper">
         <!-- ============================================================== -->
         <!-- Topbar header - style you can find in pages.scss -->
@@ -43,7 +43,7 @@
                   <h3 class="text-themecolor">Dashboard <i class="fa fa-home"> </i> </h3>
                   <ol class="breadcrumb">
                      <li class="breadcrumb-item"><a href="javascript:void(0)">Sports Buddy </a></li>
- 
+
                   </ol>
                </div>
             </div>
@@ -81,9 +81,9 @@
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
-    
+
     @include('buddy.include.script')
-    
+
     @if(session()->has('success'))
         <script type="text/javascript">
             !function($) {
@@ -91,7 +91,7 @@
 
                 var SweetAlert = function() {};
 
-                //examples 
+                //examples
                 SweetAlert.prototype.init = function() {
                     var data = "{{ session()->get('success') }}";
                     swal("Success!", data, "success");
@@ -100,7 +100,7 @@
                 $.SweetAlert = new SweetAlert, $.SweetAlert.Constructor = SweetAlert
             }(window.jQuery),
 
-            //initializing 
+            //initializing
             function($) {
                 "use strict";
                 $.SweetAlert.init()

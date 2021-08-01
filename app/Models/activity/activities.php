@@ -23,11 +23,11 @@ class activities extends Model
         $l->group_members = empty($data['group_members']) ? null : $data['group_members'];
         $l->activity_type = $data['activityType'];
         $l->status = '1';
-        $l->save(); 
+        $l->save();
         $id = $l->id;
 
         activities::addEquipment($id, $data['equipments']);
-        activities::addLocation($id, $data['location']);
+        activities::addLocation($id, $data);
         return $id;
     }
 
@@ -38,7 +38,7 @@ class activities extends Model
         $l->location_covered = $data['locationType'];
         $l->group_members = empty($data['group_members']) ? null : $data['group_members'];
         $l->activity_type = $data['activityType'];
-        $l->save(); 
+        $l->save();
         $id = $l->id;
 
 
@@ -46,7 +46,7 @@ class activities extends Model
         locations::where('activity_id', $id)->delete();
 
         activities::addEquipment($id, $data['equipments']);
-        activities::addLocation($id, $data['location']);
+        activities::addLocation($id, $data);
         return $id;
     }
 
@@ -62,12 +62,21 @@ class activities extends Model
     }
 
     public static function addLocation($id, array $data){
-        foreach($data as $val){
-            $e = new locations;
-            $e->activity_id = $id;
-            $e->address = $val;
-            $e->save();
+        $new = [];
+        foreach($data['location'] as $k => $val){
+            $new[$k]['activity_id'] = $id;
+            $new[$k]['address'] = $val;
+            $new[$k]['lat'] = $data['lat'];
+            $new[$k]['lng'] = $data['lng'];
+
+            // $e = new Locations;
+            // $e->lesson_id = $id;
+            // $e->address = $val;
+            // $e->lat = $data['lat'];
+            // $e->lat = $data['lng'];
+            // $e->save();
         }
+        Locations::insert($new);
     }
 
     public static function updateImage($id, $filename){

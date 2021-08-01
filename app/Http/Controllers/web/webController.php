@@ -7,11 +7,13 @@ use Illuminate\Http\Request;
 use Auth;
 use App\Models\activity\activities;
 use App\Models\lesson\lessons;
+use App\Models\lesson\Locations;
 use App\Models\User;
+use Illuminate\Support\Facades\DB;
 
 class webController extends Controller
 {
-    
+
     function index(){
         $data = array(
         	'lessons' => lessons::where('status', '1')->latest()->limit(10)->get(),
@@ -26,7 +28,7 @@ class webController extends Controller
 
         function search(Request $request){
             $data = $request->all();
-            
+
             return redirect('/filter/'.$data['val'].'/'.$data['type']);
         }
         function filter($val, $type){
@@ -51,7 +53,7 @@ class webController extends Controller
                                     ->latest()->paginate(18);
 
                 return view('web.filter.coaches')->with($data);
-            
+
             }elseif($type == 'Sports Buddies'){
                 $data['buddies'] = User::where('status', '1')
                                     ->where('type', '2')
@@ -63,8 +65,34 @@ class webController extends Controller
 
                 return view('web.filter.buddies')->with($data);
             }else{
-
                 return redirect('/');
+            }
+        }
+
+        function search_filter($type){
+            $lesson = lessons::with('user');
+            if($type == 'online_coach'){
+                $data = array('search_data' => array('val' => 'Online Coach', 'type' => $type));
+                $data['coaches'] = $lesson ->where('availability',1)->groupBy('user_id')->paginate(18);
+                return view('web.filter.search_filter')->with($data);
+            }elseif($type == 'group_coach'){
+                $data = array('search_data' => array('val' => 'Group Coach', 'type' => $type));
+                $data['coaches'] = $lesson ->where('participants','=',1)->groupBy('user_id')->paginate(18);
+                return view('web.filter.search_filter')->with($data);
+            }elseif($type == 'private_coach'){
+                $data = array('search_data' => array('val' => 'Private Coach', 'type' => $type));
+                $data['coaches'] = $lesson ->where('participants','=',0)->groupBy('user_id')->paginate(18);
+                return view('web.filter.search_filter')->with($data);
+            }elseif($type == 'girl'){
+                $data = array('search_data' => array('val' => 'Girl Coach', 'type' => $type));
+                $data['coaches'] = User::where('gender','Female')
+                ->paginate(18);
+                return view('web.filter.search_filter')->with($data);
+            }elseif($type == 'friend'){
+                $data = array('search_data' => array('val' => 'Friend', 'type' => $type));
+                $data['coaches'] = User::where('type','1')
+                ->paginate(18);
+                return view('web.filter.search_filter')->with($data);
             }
         }
 
@@ -90,10 +118,30 @@ class webController extends Controller
         function lessonDetails($id){
             $id = base64_decode($id);
             $data = lessons::find($id);
+            $less_location = Locations::where('lesson_id',$id)->get();
+
             if(!empty($data->id)){
                 $tlessons = lessons::where('status', '1')->where('user_id', $data->user_id)->latest()->limit(10)->get();
                 $olessons = lessons::where('status', '1')->where('user_id', '!=', $data->user_id)->latest()->limit(10)->get();
-                return view('web.lesson.details', ['data' => $data, 'tlessons' => $tlessons, 'olessons' => $olessons]);
+                // foreach ($less_location as $key => $value) {
+                //     $location[$key]['lat'] = $value->lat;
+                //     $location[$key]['lng'] = $value->lng;
+                // }
+                // dd($location);
+                return view('web.lesson.details', ['data' => $data, 'tlessons' => $tlessons, 'olessons' => $olessons,'location' => $less_location]);
+            }else{
+                return redirect()->back();
+            }
+        }
+
+    // Coach Details
+
+        function coachDetails($id)
+        {
+            $id = base64_decode($id);
+            $data = User::with(['country','langs','category','education','certificate','equipment','lessons','activities','media'])->find($id);
+            if(!empty($data->id)){
+                return view('web.users_profile', ['data' => $data]);
             }else{
                 return redirect()->back();
             }

@@ -19,13 +19,13 @@
         <nav class="sidebar-nav">
             <ul id="sidebarnav">
                 <li class="nav-devider"></li>
-                <li> 
+                <li>
                     <a class="waves-effect waves-dark" href="{{route('admin.dashboard')}}" aria-expanded="false">
                         <i class="mdi mdi-gauge"></i>
                         <span class="hide-menu">Dashboard</span>
                     </a>
                 </li>
-                <li> 
+                <li>
                     <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
                         <i class="mdi mdi-account-multiple-outline"></i>
                         <span class="hide-menu">All Users</span>
@@ -37,7 +37,7 @@
                         <li><a href="{{route('admin.users.add_proof')}}">Addr. Proof Request</a></li>
                     </ul>
                 </li>
-                <li> 
+                <li>
                     <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
                         <i class="mdi mdi-dumbbell"></i>
                         <span class="hide-menu">All Lessons</span>
@@ -47,7 +47,7 @@
                         <li><a href="{{route('admin.lessons.blocked')}}">Blocked</a></li>
                     </ul>
                 </li>
-                <li> 
+                <li>
                     <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
                         <i class="mdi mdi-run-fast"></i>
                         <span class="hide-menu">All Activities</span>
@@ -59,7 +59,7 @@
                 </li>
 
                 <li class="nav-small-cap">Settings</li>
-                <li> 
+                <li>
                     <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
                         <i class="mdi mdi-soccer"></i>
                         <span class="hide-menu">Sports Category</span>

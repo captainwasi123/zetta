@@ -65,7 +65,7 @@ class User extends Authenticatable
     public function country(){
         return $this->belongsTo(country::class, 'country_id');
     }
-    
+
     public function langs(){
         return $this->hasMany(userLang::class, 'user_id', 'id');
     }
@@ -88,6 +88,11 @@ class User extends Authenticatable
     }
     public function activities(){
         return $this->hasMany(activities::class, 'user_id', 'id');
+    }
+
+    public function media()
+    {
+        return $this->hasMany(userMedia::class, 'user_id', 'id');
     }
 
 }

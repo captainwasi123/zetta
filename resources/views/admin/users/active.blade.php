@@ -36,7 +36,7 @@
                                     <td>{{$val->fname.' '.$val->lname}}</td>
                                     <td>{{$val->email}}</td>
                                     <td>{{$val->gender}}</td>
-                                    <td>{{$val->country->nicename}}</td>
+                                    <td>{{@$val->country->nicename}}</td>
                                     <td>{{count($val->lessons)}}</td>
                                     <td>{{count($val->activities)}}</td>
                                     <td>{{date('d-M-Y h:i a', strtotime($val->created_at))}}

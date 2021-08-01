@@ -64,7 +64,7 @@
                <div class="dropdown-menu keep-open">
                   <div class="filters-main-bg">
                      <div class="filter-date">
-                        <input type="date" format="" name="">  
+                        <input type="date" format="" name="">
                      </div>
                   </div>
                </div>
@@ -91,7 +91,7 @@
                <div class="dropdown-menu keep-open">
                   <div class="filters-main-bg">
                      <div class="filter-date">
-                        <input type="time" name="" value="now">   
+                        <input type="time" name="" value="now">
                      </div>
                   </div>
                </div>
@@ -145,14 +145,14 @@
                <div class="dropdown-menu keep-open">
                   <div class="filters-main-bg">
                      <div class="gender-filter">
-                        <label class="container-radio col-black no-margin m-b-0"> Male 
+                        <label class="container-radio col-black no-margin m-b-0"> Male
                         <input type="radio" checked="checked" name="radio">
                         <span class="checkmark"></span>
-                        </label> 
+                        </label>
                         <label class="container-radio col-black no-margin m-b-0"> Female
                         <input type="radio" checked="checked" name="radio">
                         <span class="checkmark"></span>
-                        </label> 
+                        </label>
                      </div>
                   </div>
                </div>
@@ -164,11 +164,11 @@
                <div class="dropdown-menu keep-open">
                   <div class="filters-main-bg">
                      <div class="filters-rating">
-                        <button class="col-black active"> 5 star </button> 
-                        <button class="col-black"> 4 star </button>  
-                        <button class="col-black"> 3 star </button>  
-                        <button class="col-black"> 2 star </button>  
-                        <button class="col-black"> 1 star </button>  
+                        <button class="col-black active"> 5 star </button>
+                        <button class="col-black"> 4 star </button>
+                        <button class="col-black"> 3 star </button>
+                        <button class="col-black"> 2 star </button>
+                        <button class="col-black"> 1 star </button>
                      </div>
                   </div>
                </div>
@@ -188,12 +188,14 @@
                      <div class="lesson-image-block2">
                         <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{Auth::user()->profile_img}}" alt="user" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';">
                      </div>
-                     <div class="lesson-title-block2">  
+                     <div class="lesson-title-block2">
                         <h4>
-                           {{$val->fname.' '.$val->lname}} 
+                            <a href="{{route('web.user.details',base64_encode($val->id))}}">
+                           {{$val->fname.' '.$val->lname}}
+                            </a>
                            <img src="{{URL::to('/assets/website')}}/images/zoom-logo.png" style="width:15px;">
                         </h4>
-                        
+
                      </div>
                      <div class="lesson-info-block text-center">
                         <p class="descrip">
@@ -209,7 +211,7 @@
          @endforeach
       </div>
 
-      {{$coaches->links()}}
+      {{@$coaches->links()}}
    </div>
 </section>
 

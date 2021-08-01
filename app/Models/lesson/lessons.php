@@ -27,11 +27,11 @@ class lessons extends Model
         $l->group_members = empty($data['group_members']) ? null : $data['group_members'];
         $l->availability = $data['availability'];
         $l->status = '1';
-        $l->save(); 
+        $l->save();
         $id = $l->id;
 
         lessons::addEquipment($id, $data['equipments']);
-        lessons::addLocation($id, $data['location']);
+        lessons::addLocation($id, $data);
         $pack = array(
             'basic' => array(
                 'price' => $data['price_basic'],
@@ -60,15 +60,15 @@ class lessons extends Model
         $l->participants = $data['participants'];
         $l->group_members = empty($data['group_members']) ? null : $data['group_members'];
         $l->availability = $data['availability'];
-        $l->save(); 
+        $l->save();
         $id = $l->id;
 
         Equipments::where('lesson_id', $id)->delete();
         Locations::where('lesson_id', $id)->delete();
         Packages::where('lesson_id', $id)->delete();
-        
+
         lessons::addEquipment($id, $data['equipments']);
-        lessons::addLocation($id, $data['location']);
+        lessons::addLocation($id, $data);
         $pack = array(
             'basic' => array(
                 'price' => $data['price_basic'],
@@ -89,21 +89,34 @@ class lessons extends Model
     }
 
     public static function addEquipment($id, array $data){
-        foreach($data as $val){
-            $e = new Equipments;
-            $e->lesson_id = $id;
-            $e->equip_id = $val;
-            $e->save();
+        $new=[];
+        foreach($data as $k => $val){
+            $new[$k]['lesson_id'] = $id;
+            $new[$k]['equip_id'] = $val;
+            // $e = new Equipments;
+            // $e->lesson_id = $id;
+            // $e->equip_id = $val;
+            // $e->save();
         }
+        Equipments::insert($new);
     }
 
     public static function addLocation($id, array $data){
-        foreach($data as $val){
-            $e = new Locations;
-            $e->lesson_id = $id;
-            $e->address = $val;
-            $e->save();
+        $new1= [];
+        foreach($data['location'] as $k => $val){
+            $new1[$k]['lesson_id'] = $id;
+            $new1[$k]['address'] = $val;
+            $new1[$k]['lat'] = $data['lat'];
+            $new1[$k]['lng'] = $data['lng'];
+
+            // $e = new Locations;
+            // $e->lesson_id = $id;
+            // $e->address = $val;
+            // $e->lat = $data['lat'];
+            // $e->lat = $data['lng'];
+            // $e->save();
         }
+        Locations::insert($new1);
     }
 
     public static function updateImage($id, $filename){

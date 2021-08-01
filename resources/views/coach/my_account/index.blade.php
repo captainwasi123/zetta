@@ -30,13 +30,13 @@
             <h4 class="col-white"> Hi, Coach </h4>
             <p class="col-silver"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod </p>
             <a href="javascript:void(0)" class="default_link" data-toggle="modal" data-target="#editProfileModal">Edit Profile</a>
-            <h5> 
-               <i class="fa fa-star col-yellow"> </i> 
-               <i class="fa fa-star col-yellow"> </i> 
-               <i class="fa fa-star col-yellow"> </i> 
-               <i class="fa fa-star col-yellow"> </i> 
-               <i class="fa fa-star col-yellow"> </i> 
-               <b class="col-white"> 5.0 </b> 
+            <h5>
+               <i class="fa fa-star col-yellow"> </i>
+               <i class="fa fa-star col-yellow"> </i>
+               <i class="fa fa-star col-yellow"> </i>
+               <i class="fa fa-star col-yellow"> </i>
+               <i class="fa fa-star col-yellow"> </i>
+               <b class="col-white"> 5.0 </b>
             </h5>
          </div>
          <div class="row center-row">
@@ -193,7 +193,23 @@
                </div>
             </div>
          </form>
-<!-- 
+         <form action="{{route('coach.my_account.addMedia')}}" method="post" id="add_media" enctype="multipart/form-data">
+            @csrf
+         <div class="row">
+            <div class="col-md-4 col-lg-4 col-12">
+               <div class="field-name">
+                  <img src="{{asset('public/admin')}}/assets/images/add-pic-icon.png">
+                  <h5> Add Media </h5>
+               </div>
+            </div>
+            <div class="col-md-8 col-lg-8 col-12">
+               <div class="pic-uploader1">
+                  <input accept="video/*" type="file" id="addMedia" name="video" class="dropify off-border" data-max-file-size="2M" data-height="50"/>
+               </div>
+            </div>
+         </div>
+        </form>
+<!--
          <div class="row">
             <div class="col-md-4 col-lg-4 col-12">
                <div class="field-name">
@@ -221,10 +237,10 @@
                </p>
             </div>
             <div class="profile-value1">
-               <h5 class="col-purple"> Languages 
-                  <a href="javascript:void(0)" class="submit-btn1" data-toggle="modal" data-target="#addLangModal"> 
-                     <i class="fa fa-plus"></i> Add New 
-                  </a> 
+               <h5 class="col-purple"> Languages
+                  <a href="javascript:void(0)" class="submit-btn1" data-toggle="modal" data-target="#addLangModal">
+                     <i class="fa fa-plus"></i> Add New
+                  </a>
                </h5>
                <div class="lang-1">
                   @foreach(Auth::user()->langs as $val)
@@ -233,10 +249,10 @@
                </div>
             </div>
             <div class="profile-value1">
-               <h5 class="col-purple"> Sports Category 
-                  <a href="{{route('coach.category.add')}}" class="submit-btn1"> 
-                     <i class="fa fa-plus"></i> Add New 
-                  </a> 
+               <h5 class="col-purple"> Sports Category
+                  <a href="{{route('coach.category.add')}}" class="submit-btn1">
+                     <i class="fa fa-plus"></i> Add New
+                  </a>
                </h5>
                <div class="category-sports">
                   @foreach(Auth::user()->category as $val)
@@ -245,10 +261,10 @@
                </div>
             </div>
             <div class="profile-value1">
-               <h5 class="col-purple"> Education 
-                  <a href="javascript:void(0)" class="submit-btn1" data-toggle="modal" data-target="#addEduModal"> 
-                     <i class="fa fa-plus"></i> Add New 
-                  </a> 
+               <h5 class="col-purple"> Education
+                  <a href="javascript:void(0)" class="submit-btn1" data-toggle="modal" data-target="#addEduModal">
+                     <i class="fa fa-plus"></i> Add New
+                  </a>
                </h5>
                @foreach(Auth::user()->education as $val)
                   <div class="edu_block">
@@ -258,10 +274,10 @@
                @endforeach
             </div>
             <div class="profile-value1">
-               <h5 class="col-purple"> Certificate 
-                  <a href="javascript:void(0)" class="submit-btn1" data-toggle="modal" data-target="#addCertificateModal"> 
-                     <i class="fa fa-plus"></i> Add New 
-                  </a> 
+               <h5 class="col-purple"> Certificate
+                  <a href="javascript:void(0)" class="submit-btn1" data-toggle="modal" data-target="#addCertificateModal">
+                     <i class="fa fa-plus"></i> Add New
+                  </a>
                </h5>
                @foreach(Auth::user()->certificate as $val)
                   <div class="edu_block">
@@ -286,7 +302,7 @@
                         </div>
                         <div class="lesson-info-block">
                            <h4> <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{empty($val->user) ? '' : $val->user->profile_img}}" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';"> {{empty($val->user) ? 'Unknown' : $val->user->fname.' '.$val->user->lname}} <span> Coach </span>  </h4>
-                           <p class="descrip"> 
+                           <p class="descrip">
                               {{$val->description}}
                            </p>
                            <h6> <i class="fa fa-star col-yellow"> </i> 5.0 </h6>
@@ -349,6 +365,15 @@
                         <label>City</label>
                         <input type="text" name="city" class="form-control" value="{{Auth::user()->city}}" required>
                      </div>
+                  </div>
+                  <br>
+                  <div class="row">
+                     <div class="col-md-12">
+                        <label>Address</label>
+                        <textarea class="form-control" name="address" id="address" cols="5" rows="4">{{Auth::user()->address}}</textarea>
+                     </div>
+                     <input type="hidden" name="lat" id="lat">
+                     <input type="hidden" name="lng" id="lng">
                   </div>
                   <br>
                   <div class="row">
@@ -545,4 +570,51 @@
 </div>
 
 
+@endsection
+@section('addScript')
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key={{env('GOOGLE_MAP_KEY')}}&libraries=places"></script>
+<script>
+    $(document ).ready(function() {
+        getLocation();
+    });
+
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+            alert("Geolocation is not supported by this browser.");
+        }
+    }
+
+    function showPosition(position) {
+        // initMap(position.coords.latitude,position.coords.longitude);
+        console.log(position);
+        $('#lat').val(position.coords.latitude);
+        $('#lng').val(position.coords.longitude);
+    }
+
+    $('#addMedia').change(function (e) {
+        e.preventDefault();
+        // alert();
+        $('#add_media').submit();
+    });
+
+</script>
+
+{{-- <script type="text/javascript">
+    function initMap(lat,lng) {
+    const myLatLng = { lat: lat, lng: lng };
+    const map = new google.maps.Map(document.getElementById("mapa"), {
+        zoom: 15,
+        center: myLatLng,
+    });
+    new google.maps.Marker({
+        position: myLatLng,
+        map,
+        title: "Hello World!",
+    });
+}
+
+</script> --}}
 @endsection

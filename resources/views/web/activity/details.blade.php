@@ -47,15 +47,15 @@
             </div>
             <div class="lesson-holder-title">
                <div class="lesson-title-block">
-                  <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{empty($data->user) ? '' : $data->user->profile_img}}" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';">   
+                  <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{empty($data->user) ? '' : $data->user->profile_img}}" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';">
                   <h4>  {{empty($data->user) ? 'Unknown' : $data->user->fname.' '.$data->user->lname}} <span> Sports Buddy </span>  </h4>
                </div>
                <div class="lesson-holder-review">
-                  <i class="fa fa-star col-purple"> </i> 
-                  <i class="fa fa-star col-purple"> </i> 
-                  <i class="fa fa-star col-purple"> </i> 
-                  <i class="fa fa-star col-purple"> </i> 
-                  <i class="fa fa-star col-purple"> </i> 
+                  <i class="fa fa-star col-purple"> </i>
+                  <i class="fa fa-star col-purple"> </i>
+                  <i class="fa fa-star col-purple"> </i>
+                  <i class="fa fa-star col-purple"> </i>
+                  <i class="fa fa-star col-purple"> </i>
                   <b class="col-purple"> 5.0 </b>
                </div>
             </div>
@@ -75,22 +75,22 @@
                <div class="review-box">
                   <img src="{{URL::to('/assets/website')}}/images/profile-image1.jpg">
                   <h5 class="col-white"> <b class="col-purple"> Lennon <i class="fa fa-star"> </i> </b> 5.0 </h5>
-                  <p class="col-white"> That would be good please share any reference or similar website interms of features 
-                     and functionality you need. 
+                  <p class="col-white"> That would be good please share any reference or similar website interms of features
+                     and functionality you need.
                   </p>
                </div>
                <div class="review-box">
                   <img src="{{URL::to('/assets/website')}}/images/profile-image1.jpg">
                   <h5 class="col-white"> <b class="col-purple"> Lennon <i class="fa fa-star"> </i> </b> 5.0 </h5>
-                  <p class="col-white"> That would be good please share any reference or similar website interms of features 
-                     and functionality you need. 
+                  <p class="col-white"> That would be good please share any reference or similar website interms of features
+                     and functionality you need.
                   </p>
                </div>
                <div class="review-box">
                   <img src="{{URL::to('/assets/website')}}/images/profile-image1.jpg">
                   <h5 class="col-white"> <b class="col-purple"> Lennon <i class="fa fa-star"> </i> </b> 5.0 </h5>
-                  <p class="col-white"> That would be good please share any reference or similar website interms of features 
-                     and functionality you need. 
+                  <p class="col-white"> That would be good please share any reference or similar website interms of features
+                     and functionality you need.
                   </p>
                </div>
             </div>
@@ -124,7 +124,7 @@
                         </div>
                      </div>
                      <div class="col-md-7 col-lg-7 col-12">
-                        <input type="text" class="form-field3" value="{{empty($data->user) ? 'Unknown' : $data->user->city}}" readonly="" name="">  
+                        <input type="text" class="form-field3" value="{{empty($data->user) ? 'Unknown' : $data->user->city}}" readonly="" name="">
                      </div>
                   </div>
                   <div class="row center-row m-b-20">
@@ -135,7 +135,7 @@
                         </div>
                      </div>
                      <div class="col-md-7 col-lg-7 col-12">
-                        <input type="text" class="form-field3" value="@foreach($data->user->category as $val){{$val->name}}, @endforeach" readonly="" name="">   
+                        <input type="text" class="form-field3" value="@foreach($data->user->category as $val){{$val->name}}, @endforeach" readonly="" name="">
                      </div>
                   </div>
                </div>
@@ -269,7 +269,7 @@
                         <img src="{{URL::to('/public/storage/user/activity/main_image/'.$val->cover_img)}}">
                      </div>
                      <div class="lesson-title-block">
-                        <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{empty($val->user) ? '' : $val->user->profile_img}}" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';">   
+                        <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{empty($val->user) ? '' : $val->user->profile_img}}" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';">
                         <h4>  {{empty($val->user) ? 'Unknown' : $val->user->fname.' '.$val->user->lname}} <span>Coach </span>  </h4>
                      </div>
                      <div class="lesson-info-block">
@@ -305,7 +305,7 @@
                         <img src="{{URL::to('/public/storage/user/activity/main_image/'.$val->cover_img)}}">
                      </div>
                      <div class="lesson-title-block">
-                        <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{empty($val->user) ? '' : $val->user->profile_img}}" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';">   
+                        <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{empty($val->user) ? '' : $val->user->profile_img}}" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';">
                         <h4>  {{empty($val->user) ? 'Unknown' : $val->user->fname.' '.$val->user->lname}} <span>Coach </span>  </h4>
                      </div>
                      <div class="lesson-info-block">

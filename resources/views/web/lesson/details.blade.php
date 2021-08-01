@@ -1,8 +1,28 @@
 @extends('web.support.master2')
 @section('title', $data->title.' | Activity Details')
-
+@section('addStyle')
+<style>
+    #mapa {
+        height: 200px;
+    }
+    #map > div{
+        height: 200px!important;
+        width: 100%!important;
+        position: relative!important;
+        top: auto!important;
+        right: 0px!important;
+    }
+</style>
+@endsection
 @section('content')
-
+@if (count($data->locations) > 0)
+    @foreach ($data->locations as $locat)
+        @if ($locat->lat != null && $locat->lng != null)
+            <input type="hidden" id="lat" value="{{$locat->lat}}">
+            <input type="hidden" id="lng" value="{{$locat->lng}}">
+        @endif
+    @endforeach
+@endif
 <section class="action-bar">
    <div class="container">
       <div class="all-actions arrows1">
@@ -47,15 +67,15 @@
             </div>
             <div class="lesson-holder-title">
                <div class="lesson-title-block">
-                  <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{empty($data->user) ? '' : $data->user->profile_img}}" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';">   
+                  <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{empty($data->user) ? '' : $data->user->profile_img}}" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';">
                   <h4>  {{empty($data->user) ? 'Unknown' : $data->user->fname.' '.$data->user->lname}} <span> Coach </span>  </h4>
                </div>
                <div class="lesson-holder-review">
-                  <i class="fa fa-star col-purple"> </i> 
-                  <i class="fa fa-star col-purple"> </i> 
-                  <i class="fa fa-star col-purple"> </i> 
-                  <i class="fa fa-star col-purple"> </i> 
-                  <i class="fa fa-star col-purple"> </i> 
+                  <i class="fa fa-star col-purple"> </i>
+                  <i class="fa fa-star col-purple"> </i>
+                  <i class="fa fa-star col-purple"> </i>
+                  <i class="fa fa-star col-purple"> </i>
+                  <i class="fa fa-star col-purple"> </i>
                   <b class="col-purple"> 5.0 </b>
                </div>
             </div>
@@ -75,22 +95,22 @@
                <div class="review-box">
                   <img src="{{URL::to('/assets/website')}}/images/profile-image1.jpg">
                   <h5 class="col-white"> <b class="col-purple"> Lennon <i class="fa fa-star"> </i> </b> 5.0 </h5>
-                  <p class="col-white"> That would be good please share any reference or similar website interms of features 
-                     and functionality you need. 
+                  <p class="col-white"> That would be good please share any reference or similar website interms of features
+                     and functionality you need.
                   </p>
                </div>
                <div class="review-box">
                   <img src="{{URL::to('/assets/website')}}/images/profile-image1.jpg">
                   <h5 class="col-white"> <b class="col-purple"> Lennon <i class="fa fa-star"> </i> </b> 5.0 </h5>
-                  <p class="col-white"> That would be good please share any reference or similar website interms of features 
-                     and functionality you need. 
+                  <p class="col-white"> That would be good please share any reference or similar website interms of features
+                     and functionality you need.
                   </p>
                </div>
                <div class="review-box">
                   <img src="{{URL::to('/assets/website')}}/images/profile-image1.jpg">
                   <h5 class="col-white"> <b class="col-purple"> Lennon <i class="fa fa-star"> </i> </b> 5.0 </h5>
-                  <p class="col-white"> That would be good please share any reference or similar website interms of features 
-                     and functionality you need. 
+                  <p class="col-white"> That would be good please share any reference or similar website interms of features
+                     and functionality you need.
                   </p>
                </div>
             </div>
@@ -123,7 +143,7 @@
                         </div>
                      </div>
                      <div class="col-md-7 col-lg-7 col-12">
-                        <input type="text" class="form-field3" value="{{empty($data->user) ? 'Unknown' : $data->user->city}}" readonly="" name="">  
+                        <input type="text" class="form-field3" value="{{empty($data->user) ? 'Unknown' : $data->user->city}}" readonly="" name="">
                      </div>
                   </div>
                   <div class="row center-row m-b-20">
@@ -134,7 +154,7 @@
                         </div>
                      </div>
                      <div class="col-md-7 col-lg-7 col-12">
-                        <input type="text" class="form-field3" value="@foreach($data->user->category as $val){{$val->name}}, @endforeach" readonly="" name="">   
+                        <input type="text" class="form-field3" value="@foreach($data->user->category as $val){{$val->name}}, @endforeach" readonly="" name="">
                      </div>
                   </div>
                </div>
@@ -228,18 +248,18 @@
                      <div class="tab-pane active" id="tabs-1" role="tabpanel">
                         <div class="package-content">
                            <div class="package-content-head">
-                              <h3 class="m-b-20 col-white"> 
-                                 Basic Package 
-                                 <b class="col-purple"> {{'$ '.number_format($data->packages[0]->price)}} </b> 
+                              <h3 class="m-b-20 col-white">
+                                 Basic Package
+                                 <b class="col-purple"> {{'$ '.number_format($data->packages[0]->price)}} </b>
                               </h3>
                               <p class="col-white m-b-20">
-                                 Services  
+                                 Services
                               </p>
                            </div>
                            <ul class="list-type1 no-border">
                               @foreach($data->packages[0]->details as $val)
-                                 <li class="block-element2"> 
-                                    <i class="fa fa-check col-purple"> </i> {{$val->service}} 
+                                 <li class="block-element2">
+                                    <i class="fa fa-check col-purple"> </i> {{$val->service}}
                                  </li>
                               @endforeach
                            </ul>
@@ -252,18 +272,18 @@
                        <div class="tab-pane " id="tabs-2" role="tabpanel">
                        <div class="package-content">
                            <div class="package-content-head">
-                              <h3 class="m-b-20 col-white"> 
-                                 Standard Package 
-                                 <b class="col-purple"> {{'$ '.number_format($data->packages[1]->price)}} </b> 
+                              <h3 class="m-b-20 col-white">
+                                 Standard Package
+                                 <b class="col-purple"> {{'$ '.number_format($data->packages[1]->price)}} </b>
                               </h3>
                               <p class="col-white m-b-20">
-                                 Services  
+                                 Services
                               </p>
                            </div>
                            <ul class="list-type1 no-border">
                               @foreach($data->packages[1]->details as $val)
-                                 <li class="block-element2"> 
-                                    <i class="fa fa-check col-purple"> </i> {{$val->service}} 
+                                 <li class="block-element2">
+                                    <i class="fa fa-check col-purple"> </i> {{$val->service}}
                                  </li>
                               @endforeach
                            </ul>
@@ -276,18 +296,18 @@
                        <div class="tab-pane " id="tabs-3" role="tabpanel">
                        <div class="package-content">
                            <div class="package-content-head">
-                              <h3 class="m-b-20 col-white"> 
-                                 Premium Package 
-                                 <b class="col-purple"> {{'$ '.number_format($data->packages[2]->price)}} </b> 
+                              <h3 class="m-b-20 col-white">
+                                 Premium Package
+                                 <b class="col-purple"> {{'$ '.number_format($data->packages[2]->price)}} </b>
                               </h3>
                               <p class="col-white m-b-20">
-                                 Services  
+                                 Services
                               </p>
                            </div>
                            <ul class="list-type1 no-border">
                               @foreach($data->packages[2]->details as $val)
-                                 <li class="block-element2"> 
-                                    <i class="fa fa-check col-purple"> </i> {{$val->service}} 
+                                 <li class="block-element2">
+                                    <i class="fa fa-check col-purple"> </i> {{$val->service}}
                                  </li>
                               @endforeach
                            </ul>
@@ -305,7 +325,7 @@
                </div>
             </div>
 
-            <div class="packages-map block-element3 m-t-30">
+            <div class="packages-map block-element3 m-t-30" id="mapa">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.2889612081335!2d-0.08991633469164506!3d51.507914468487286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876035159bb13c5%3A0xa61e28267c3563ac!2sLondon%20Bridge!5e0!3m2!1sen!2s!4v1626273315297!5m2!1sen!2s" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
 
@@ -330,14 +350,14 @@
                         <img src="{{URL::to('/public/storage/user/lessons/main_image/'.$val->cover_img)}}">
                      </div>
                      <div class="lesson-title-block">
-                        <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{empty($val->user) ? '' : $val->user->profile_img}}" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';">   
+                        <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{empty($val->user) ? '' : $val->user->profile_img}}" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';">
                         <h4> {{empty($val->user) ? 'Unknown' : $val->user->fname.' '.$val->user->lname}} <span> Coach </span>  </h4>
                         @if($val->availability != '2')
                            <div class="zoom-tag"> <img src="{{URL::to('/assets/website')}}/images/zoom-logo.png"> Only Zoom Classes </div>
                         @endif
                      </div>
                      <div class="lesson-info-block">
-                        <p class="descrip"> 
+                        <p class="descrip">
                            {{$val->description}}
                         </p>
                         <h6 class="col-white m-b-15"> <i class="fa fa-star col-yellow"> </i> 5.0 </h6>
@@ -369,14 +389,14 @@
                         <img src="{{URL::to('/public/storage/user/lessons/main_image/'.$val->cover_img)}}">
                      </div>
                      <div class="lesson-title-block">
-                        <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{empty($val->user) ? '' : $val->user->profile_img}}" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';">   
+                        <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{empty($val->user) ? '' : $val->user->profile_img}}" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';">
                         <h4> {{empty($val->user) ? 'Unknown' : $val->user->fname.' '.$val->user->lname}} <span> Coach </span>  </h4>
                         @if($val->availability != '2')
                            <div class="zoom-tag"> <img src="{{URL::to('/assets/website')}}/images/zoom-logo.png"> Only Zoom Classes </div>
                         @endif
                      </div>
                      <div class="lesson-info-block">
-                        <p class="descrip"> 
+                        <p class="descrip">
                            {{$val->description}}
                         </p>
                         <h6 class="col-white m-b-15"> <i class="fa fa-star col-yellow"> </i> 5.0 </h6>
@@ -392,5 +412,42 @@
       </div>
    </div>
 </section>
+<input type="hidden" id="lat">
+<input type="hidden" id="lng">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key={{env('GOOGLE_MAP_KEY')}}&libraries=places"></script>
 
+<script type="text/javascript">
+	$(document).ready(function() {
+
+    var locations = [
+        @foreach ($location as $val)
+            {{'[1,'.$val->lat.','.$val->lng.',1],'}}
+        @endforeach
+    ];
+
+    var map = new google.maps.Map(document.getElementById('mapa'), {
+      zoom: 10,
+      center: new google.maps.LatLng(locations[0][1] , locations[0][2]),
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+
+    var infowindow = new google.maps.InfoWindow();
+
+    var marker, i;
+
+    for (i = 0; i < locations.length; i++) {
+      marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        map: map
+      });
+      marker.setValues({id :locations[i][3]});
+
+    }
+
+  });
+
+
+  </script>
 @endsection

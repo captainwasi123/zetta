@@ -1,7 +1,7 @@
 <header class="header-1 header-2">
    <div class="container-fluid">
       <div class="logo">
-         <a href="{{URL::to('/')}}"> <img src="{{URL::to('/assets/website')}}/images/zetta-logo.png"> </a> 
+         <a href="{{URL::to('/')}}"> <img src="{{URL::to('/assets/website')}}/images/zetta-logo.png"> </a>
       </div>
       <div class="lang-option">
          <button class="flag-1"> <img src="{{URL::to('/assets/website')}}/images/flag-1.jpg"> </button>

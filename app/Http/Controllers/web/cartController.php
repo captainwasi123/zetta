@@ -28,7 +28,7 @@ class cartController extends Controller
             case 'premium':
                 $packk = 2;
                 break;
-            
+
             default:
                 // code...
                 break;

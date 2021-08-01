@@ -27,16 +27,16 @@
             </form>
          </div>
          <div class="profile-pic-details">
-            <h4 class="col-white"> Hi, Coach </h4>
+            <h4 class="col-white"> Hi, Buddy </h4>
             <p class="col-silver"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod </p>
             <a href="javascript:void(0)" class="default_link" data-toggle="modal" data-target="#editProfileModal">Edit Profile</a>
-            <h5> 
-               <i class="fa fa-star col-yellow"> </i> 
-               <i class="fa fa-star col-yellow"> </i> 
-               <i class="fa fa-star col-yellow"> </i> 
-               <i class="fa fa-star col-yellow"> </i> 
-               <i class="fa fa-star col-yellow"> </i> 
-               <b class="col-white"> 5.0 </b> 
+            <h5>
+               <i class="fa fa-star col-yellow"> </i>
+               <i class="fa fa-star col-yellow"> </i>
+               <i class="fa fa-star col-yellow"> </i>
+               <i class="fa fa-star col-yellow"> </i>
+               <i class="fa fa-star col-yellow"> </i>
+               <b class="col-white"> 5.0 </b>
             </h5>
          </div>
          <div class="row center-row">
@@ -68,7 +68,7 @@
          <div class="row center-row">
             <div class="col-md-4 col-lg-4 col-12">
                <div class="field-name">
-                  <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/field-icon1.png">
+                  <img src="{{URL::to('/')}}/public/admin/assets/images/field-icon17.png">
                   <h5> Email Address </h5>
                </div>
             </div>
@@ -106,6 +106,7 @@
                </p>
             </div>
          </div>
+
          <!-- <div class="row m-b-20">
             <div class="col-md-4 col-lg-4 col-12">
                <div class="field-name m-t-15">
@@ -169,7 +170,6 @@
             </div>
          </form>
 
-
       </div>
    </div>
    <div class="row m-t-30">
@@ -182,10 +182,10 @@
                </p>
             </div>
             <div class="profile-value1">
-               <h5 class="col-purple"> Languages 
-                  <a href="javascript:void(0)" class="submit-btn1" data-toggle="modal" data-target="#addLangModal"> 
-                     <i class="fa fa-plus"></i> Add New 
-                  </a> 
+               <h5 class="col-purple"> Languages
+                  <a href="javascript:void(0)" class="submit-btn1" data-toggle="modal" data-target="#addLangModal">
+                     <i class="fa fa-plus"></i> Add New
+                  </a>
                </h5>
                <div class="lang-1">
                   @foreach(Auth::user()->langs as $val)
@@ -194,10 +194,10 @@
                </div>
             </div>
             <div class="profile-value1">
-               <h5 class="col-purple"> Sports Category 
-                  <a href="{{route('buddy.category.add')}}" class="submit-btn1"> 
-                     <i class="fa fa-plus"></i> Add New 
-                  </a> 
+               <h5 class="col-purple"> Sports Category
+                  <a href="{{route('buddy.category.add')}}" class="submit-btn1">
+                     <i class="fa fa-plus"></i> Add New
+                  </a>
                </h5>
                <div class="category-sports">
                   @foreach(Auth::user()->category as $val)
@@ -206,10 +206,10 @@
                </div>
             </div>
             <div class="profile-value1">
-               <h5 class="col-purple"> Education 
-                  <a href="javascript:void(0)" class="submit-btn1" data-toggle="modal" data-target="#addEduModal"> 
-                     <i class="fa fa-plus"></i> Add New 
-                  </a> 
+               <h5 class="col-purple"> Education
+                  <a href="javascript:void(0)" class="submit-btn1" data-toggle="modal" data-target="#addEduModal">
+                     <i class="fa fa-plus"></i> Add New
+                  </a>
                </h5>
                @foreach(Auth::user()->education as $val)
                   <div class="edu_block">
@@ -219,10 +219,10 @@
                @endforeach
             </div>
             <div class="profile-value1">
-               <h5 class="col-purple"> Certificate 
-                  <a href="javascript:void(0)" class="submit-btn1" data-toggle="modal" data-target="#addCertificateModal"> 
-                     <i class="fa fa-plus"></i> Add New 
-                  </a> 
+               <h5 class="col-purple"> Certificate
+                  <a href="javascript:void(0)" class="submit-btn1" data-toggle="modal" data-target="#addCertificateModal">
+                     <i class="fa fa-plus"></i> Add New
+                  </a>
                </h5>
                @foreach(Auth::user()->certificate as $val)
                   <div class="edu_block">
@@ -311,6 +311,15 @@
                         <input type="text" name="city" class="form-control" value="{{Auth::user()->city}}" required>
                      </div>
                   </div>
+                  <br>
+                  <div class="row">
+                    <div class="col-md-12">
+                       <label>Address</label>
+                       <textarea class="form-control" name="address" id="address" cols="5" rows="4">{{Auth::user()->address}}</textarea>
+                       <input type="hidden" name="lat" id="lat">
+                       <input type="hidden" name="lng" id="lng">
+                    </div>
+                 </div>
                   <br>
                   <div class="row">
                      <div class="col-md-12">
@@ -480,4 +489,45 @@
 </div>
 
 
+@endsection
+@section('addScript')
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key={{env('GOOGLE_MAP_KEY')}}&libraries=places"></script>
+<script>
+    $(document ).ready(function() {
+        getLocation();
+    });
+
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+            alert("Geolocation is not supported by this browser.");
+        }
+    }
+
+    function showPosition(position) {
+        // initMap(position.coords.latitude,position.coords.longitude);
+        console.log(position);
+        $('#lat').val(position.coords.latitude);
+        $('#lng').val(position.coords.longitude);
+    }
+
+</script>
+
+{{-- <script type="text/javascript">
+    function initMap(lat,lng) {
+    const myLatLng = { lat: lat, lng: lng };
+    const map = new google.maps.Map(document.getElementById("mapa"), {
+        zoom: 15,
+        center: myLatLng,
+    });
+    new google.maps.Marker({
+        position: myLatLng,
+        map,
+        title: "Hello World!",
+    });
+}
+
+</script> --}}
 @endsection

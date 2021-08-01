@@ -20,7 +20,8 @@ use Illuminate\Support\Facades\Route;
 		// Main Pages
 			Route::get('/', 'webController@index');
 			Route::get('/search', 'webController@search')->name('web.search');
-			Route::get('/filter/{val}/{type}', 'webController@filter')->name('web.filter');	
+			Route::get('/filter/{val}/{type}', 'webController@filter')->name('web.filter');
+            ROute::get('/filter/{type}','webController@search_filter')->name('web.search.filter');
 
 			Route::get('cart/{type}/{id}/{package}', 'cartController@cart');
 
@@ -34,7 +35,7 @@ use Illuminate\Support\Facades\Route;
 			Route::post('/login', 'authController@login');
 			Route::get('/logout', 'authController@logout')->name('logout');
 
-			
+
 
 			//Login With Google
 
@@ -59,13 +60,16 @@ use Illuminate\Support\Facades\Route;
 
 				Route::get('details/{id}', 'webController@lessonDetails')->name('lesson.details');
 			});
+        // Profile Details
+            Route::get('Coach/details/{id}','webController@coachDetails')->name('web.user.details');
+
 	});
 
 
 //User Dashboard
 
 	Route::middleware('userAuth')->group(function(){
-		
+
 		//Coach
 			Route::prefix('coach')->namespace('coach')->group(function(){
 
@@ -73,7 +77,7 @@ use Illuminate\Support\Facades\Route;
 
 				//My Account
 					Route::prefix('my-account')->group(function(){
-						
+
 						Route::get('/', 'settingController@index')->name('coach.my_account');
 						Route::post('/upload_profile_pic', 'settingController@uploadProfilePicture')->name('coach.my_account.profileImage');
 
@@ -88,6 +92,8 @@ use Illuminate\Support\Facades\Route;
 
 						Route::post('id_proof', 'settingController@idProof')->name('coach.my_account.idProof');
 						Route::post('add_proof', 'settingController@addProof')->name('coach.my_account.addProof');
+
+                        Route::post('add_media', 'settingController@addMedia')->name('coach.my_account.addMedia');
 					});
 
 				//Category
@@ -146,6 +152,9 @@ use Illuminate\Support\Facades\Route;
 
 						Route::get('/', 'orderController@index')->name('coach.orders');
 					});
+
+                    Route::get('/my_account_area/','CoachController@my_account_area')->name('coach.my.account_area');
+                    Route::get('/wallet','CoachController@my_wallet')->name('coach.my_wallet');
 			});
 
 
@@ -157,7 +166,7 @@ use Illuminate\Support\Facades\Route;
 
 				//My Account
 					Route::prefix('my-account')->group(function(){
-						
+
 						Route::get('/', 'settingController@index')->name('buddy.my_account');
 						Route::post('/upload_profile_pic', 'settingController@uploadProfilePicture')->name('buddy.my_account.profileImage');
 
@@ -215,8 +224,11 @@ use Illuminate\Support\Facades\Route;
 					});
 
 				Route::get('lesson/favourite', 'CoachController@lesson_favourite')->name('coach.lesson.favourite');
-				Route::get('my-wallet', 'CoachController@my_wallet')->name('coach.my_wallet');
-				Route::get('order', 'CoachController@order')->name('coach.order');
+				Route::get('my-wallet', 'buddyController@my_wallet')->name('buddy.my_wallet');
+				Route::get('order', 'buddyController@my_orders')->name('buddy.order');
+                Route::get('friends', 'buddyController@my_friends')->name('buddy.friends');
+                Route::get('analytics-and-redeem', 'buddyController@analytics_and_redeem')->name('buddy.analytics_and_redeem');
+                Route::get('my_account_area', 'buddyController@my_account_area')->name('buddy.my_account_area');
 			});
 	});
 
@@ -226,7 +238,7 @@ use Illuminate\Support\Facades\Route;
 
 // Admin Routes
 
-		
+
 	// Authentication
 
 		Route::prefix('admin')->namespace('admin')->group(function(){
@@ -236,7 +248,7 @@ use Illuminate\Support\Facades\Route;
 
 			//Middleware
 				Route::middleware('adminAuth')->group(function(){
-					
+
 					Route::get('/', 'adminController@index')->name('admin.dashboard');
 
 

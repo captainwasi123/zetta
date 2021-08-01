@@ -45,18 +45,18 @@
                         <td>
                            <a href="javascript:void(0)"><img src="{{URL::to('/')}}/public/storage/user/profile_img/{{empty($val->buyer) ? '' : $val->buyer->profile_img}}" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';" width="40" class="img-circle" /> {{empty($val->buyer) ? 'Unknown' : $val->buyer->fname.' '.$val->buyer->lname}} </a>
                         </td>
-                        <td> 
+                        <td>
                            <span class="label bg-green2"> Custom Order </span>
-                            {{empty($val->lesson) ? '' : $val->lesson->title}} 
+                            {{empty($val->lesson) ? '' : $val->lesson->title}}
                          </td>
                         <td> {{'$'.number_format($val->price, 2)}} </td>
                         <td> {{'$'.number_format($val->commision, 2)}} </td>
                         <td> {{'$'.number_format($val->earning, 2)}} </td>
                         <td>
-                           @if($val->status == '1') 
-                              <span class="label bg-success"> Active </span> 
+                           @if($val->status == '1')
+                              <span class="label bg-success"> Active </span>
                            @else
-                              <span class="label bg-danger"> Cancelled </span> 
+                              <span class="label bg-danger"> Cancelled </span>
                            @endif
                         </td>
                      </tr>

@@ -67,15 +67,27 @@
                                                       <table class="table table-hover contact-list" data-page-size="10">
                                                          <thead>
                                                             <tr>
-                                                               <th> Account Number  </th>
+                                                               <th> Buyer  </th>
                                                                <th> Price </th>
                                                                <th> Date </th>
-                                                               <th> Time </th>
+                                                               {{-- <th> Time </th> --}}
                                                                <th> Actions </th>
                                                             </tr>
                                                          </thead>
                                                          <tbody>
-                                                            <tr>
+                                                            @foreach ($orders as $val)
+                                                                <tr>
+                                                                    <td>
+                                                                    <a href="javascript:void(0)"><img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/users/5.jpg" alt="user" width="40" class="img-circle"> {{$val->buyer->fname . " " .$val->buyer->lname}} </a>
+                                                                    </td>
+                                                                    <td>  ${{$val->price}} </td>
+                                                                    {{-- <td>1:100  </td> --}}
+                                                                    <td> {{$val->created_at->format('d-m-y')}} </td>
+                                                                    <td>  <a href="" class="label bg-green2">  View </a> </td>
+                                                                </tr>
+                                                            @endforeach
+
+                                                            {{-- <tr>
                                                                <td>
                                                                   <a href="javascript:void(0)"><img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/users/5.jpg" alt="user" width="40" class="img-circle"> Equipment 1 </a>
                                                                </td>
@@ -101,16 +113,7 @@
                                                                <td>1:100  </td>
                                                                <td> 0:00 </td>
                                                                <td>  <a href="" class="label bg-green2">  View </a> </td>
-                                                            </tr>
-                                                            <tr>
-                                                               <td>
-                                                                  <a href="javascript:void(0)"><img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/users/5.jpg" alt="user" width="40" class="img-circle"> Equipment 1 </a>
-                                                               </td>
-                                                               <td>  $21 </td>
-                                                               <td>1:100  </td>
-                                                               <td> 0:00 </td>
-                                                               <td>  <a href="" class="label bg-green2">  View </a> </td>
-                                                            </tr>
+                                                            </tr> --}}
                                                          </tbody>
                                                       </table>
                                                    </div>

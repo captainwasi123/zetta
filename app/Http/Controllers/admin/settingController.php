@@ -16,7 +16,7 @@ class settingController extends Controller
             return view('admin.setting.category.index', ['data' => $data]);
         }
         function categoryAdd(){
-            
+
             return view('admin.setting.category.add');
         }
         function categoryInsert(Request $request){
@@ -30,7 +30,7 @@ class settingController extends Controller
                 $file->move(base_path('/public/storage/settings/category/'), $filename);
                 sportsCategory::addFeatureImage($id, $filename);
             }
-            
+
             return redirect()->back()->with('success', 'New Category Added.');
         }
 
@@ -52,7 +52,7 @@ class settingController extends Controller
                 $file->move(base_path('/public/storage/settings/category/'), $filename);
                 sportsCategory::addFeatureImage($id, $filename);
             }
-            
+
             return redirect()->back()->with('success', 'Category Updated.');
         }
 

@@ -17,58 +17,58 @@
       </div>
       <nav class="sidebar-nav">
          <ul id="sidebarnav">
-            <li> 
-               <a href="{{route('buddy.dashboard')}}"> 
-                  <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/nav-icon1.png"> 
-                  <span class="hide-menu">  Agenda </span>   
-               </a> 
+            <li>
+               <a href="{{route('buddy.dashboard')}}">
+                  <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/nav-icon1.png">
+                  <span class="hide-menu">  Agenda </span>
+               </a>
             </li>
-            <li> 
-               <a href="{{route('buddy.category')}}"> 
-                  <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/nav-icon2.png"> 
-                  <span class="hide-menu">   Sports Category </span>  
+            <li>
+               <a href="{{route('buddy.category')}}">
+                  <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/nav-icon2.png">
+                  <span class="hide-menu">   Sports Category </span>
                </a> </li>
-            <li> 
-               <a href="{{route('buddy.activity')}}"> 
-                  <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/nav-icon3.png"> 
-                  <span class="hide-menu">   Activity  </span> 
-               </a> 
+            <li>
+               <a href="{{route('buddy.activity')}}">
+                  <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/nav-icon3.png">
+                  <span class="hide-menu">   Activity  </span>
+               </a>
             </li>
-            <li> 
-               <a href="{{route('buddy.equipment')}}"> 
-                  <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/nav-icon4.png">  
-                  <span class="hide-menu">  Equipment </span>  
-               </a> 
+            <li>
+               <a href="{{route('buddy.equipment')}}">
+                  <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/nav-icon4.png">
+                  <span class="hide-menu">  Equipment </span>
+               </a>
             </li>
-            <li> 
-               <a href="javascript:void(0)"> 
+            <li>
+               <a href="{{route('buddy.friends')}}">
                   <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/friend-icon.png">
-                  <span class="hide-menu">   Friends  </span>  
-               </a> 
+                  <span class="hide-menu">   Friends  </span>
+               </a>
             </li>
-            <li> 
-               <a href="javascript:void(0)"> 
-                  <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/nav-icon9.png"> 
-                  <span class="hide-menu">  Analytics &amp; Redeem  </span> 
-               </a> 
+            <li>
+               <a href="{{route('buddy.analytics_and_redeem')}}">
+                  <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/nav-icon9.png">
+                  <span class="hide-menu">  Analytics &amp; Redeem  </span>
+               </a>
             </li>
-            <li> 
-               <a href="javascript:void(0)"> 
-                  <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/nav-icon6.png"> 
-                  <span class="hide-menu">  Orders  </span> 
-               </a> 
+            <li>
+               <a href="{{route('buddy.order')}}">
+                  <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/nav-icon6.png">
+                  <span class="hide-menu">  Orders  </span>
+               </a>
             </li>
-            <li> 
-               <a href="javascript:void(0)"> 
-                  <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/nav-icon7.png"> 
-                  <span class="hide-menu">   My Account Area </span>  
-               </a> 
+            <li>
+               <a href="{{route('buddy.my_account')}}">
+                  <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/nav-icon7.png">
+                  <span class="hide-menu">   My Account Area </span>
+               </a>
             </li>
-            <li> 
-               <a href="javascript:void(0)"> 
-                  <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/nav-icon8.png"> 
-                  <span class="hide-menu">   Wallet </span>  
-               </a> 
+            <li>
+               <a href="{{route('buddy.my_wallet')}}">
+                  <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/nav-icon8.png">
+                  <span class="hide-menu">   Wallet </span>
+               </a>
             </li>
          </ul>
       </nav>

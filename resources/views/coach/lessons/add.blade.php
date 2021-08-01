@@ -44,7 +44,7 @@
                      </div>
                   </div>
                   <div class="col-md-8 col-lg-8 col-12">
-                     <select class="select2 select2-multiple" style="width: 100%" name="equipments[]" multiple="multiple" data-placeholder="">
+                     <select class="select2 select2-multiple" style="width: 100%" name="equipments[]" multiple="multiple" data-placeholder="" required>
                         @foreach($equip as $val)
                            <option value="{{$val->id}}">{{$val->name}}</option>
                         @endforeach
@@ -61,6 +61,9 @@
                   <div class="col-md-8 col-lg-8 col-12" id="location_block">
                      <div class="location-field">
                         <input type="text" placeholder="Location" class="form-field1" name="location[]" required>
+
+                        <input type="hidden" name="lat" id="lat">
+                        <input type="hidden" name="lng" id="lng">
                      </div>
                   </div>
                </div>
@@ -126,7 +129,7 @@
                         </label>
                      </div>
                      <div class="inc-dec inline-1 increment-holder1" id="participants_block">
-                         
+
                      </div>
                   </div>
                </div>
@@ -181,14 +184,14 @@
                   </thead>
                   <tbody>
                      <tr>
-                        <td> 
+                        <td>
                            <input class="table-field1" type="number" placeholder="Price" name="price_basic" required>
                         </td>
-                        <td> 
-                           <input class="table-field1" type="number" placeholder="Price" name="price_standard" required> 
+                        <td>
+                           <input class="table-field1" type="number" placeholder="Price" name="price_standard" required>
                         </td>
-                        <td> 
-                           <input class="table-field1" type="number" placeholder="Price" name="price_premium" required> 
+                        <td>
+                           <input class="table-field1" type="number" placeholder="Price" name="price_premium" required>
                         </td>
                      </tr>
                      <tr>
@@ -251,7 +254,8 @@
     <script src="{{URL::to('/')}}/assets/user_dashboard/plugins/select2/dist/js/select2.full.min.js" type="text/javascript"></script>
    <script src="{{URL::to('/')}}/assets/user_dashboard/plugins/dropify/dist/js/dropify.min.js"></script>
    <script src="{{URL::to('/')}}/assets/user_dashboard/plugins/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.js" type="text/javascript"></script>
-
+   <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key={{env('GOOGLE_MAP_KEY')}}&libraries=places"></script>
 <script type="text/javascript">
    jQuery(document).ready(function() {
 
@@ -260,6 +264,29 @@
        $(".select2").select2();
 
    });
+</script>
+
+
+<script>
+    $(document ).ready(function() {
+        getLocation();
+    });
+
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+            alert("Geolocation is not supported by this browser.");
+        }
+    }
+
+    function showPosition(position) {
+        // initMap(position.coords.latitude,position.coords.longitude);
+        console.log(position);
+        $('#lat').val(position.coords.latitude);
+        $('#lng').val(position.coords.longitude);
+    }
+
 </script>
 
 @endsection
