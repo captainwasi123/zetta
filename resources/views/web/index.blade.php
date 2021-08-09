@@ -208,7 +208,7 @@
                            </div>
                            <div class="lesson-info-block">
                               <p class="descrip">
-                                 {{$val->description}}
+                                 {{ Str::substr($val->description, 0, 30)}} ...
                               </p>
                               <h6 class="col-white m-b-15"> <i class="fa fa-star col-yellow"> </i> 5.0 </h6>
                            </div>

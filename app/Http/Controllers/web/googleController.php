@@ -30,16 +30,8 @@ class googleController extends Controller
             if($finduser){
      
                 Auth::login($finduser);
-    			
-    			if(Auth::user()->type == '2' && count(Auth::user()->skills) == '0'){
-	                return redirect('/helper/rule_1');
-	            }else if(Auth::user()->type == '3' && empty(Auth::user()->details)){
-	                return redirect('/agency/rule_1');
-	            }else if(Auth::user()->type == '1' && empty(Auth::user()->details)){
-	                return redirect('/employer/rule_1');
-	            }else{
-	                return redirect('/');
-	            }
+
+	            return redirect('/');
      
             }else{
                 $newUser = User::create([
