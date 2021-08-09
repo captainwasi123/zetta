@@ -12,6 +12,7 @@ use App\Models\userCategory;
 use App\Models\userEducation;
 use App\Models\userCertificate;
 use App\Models\userEquipment;
+use App\Models\userWallet;
 use App\Models\lesson\lessons;
 use App\Models\activity\activities;
 
@@ -62,6 +63,10 @@ class User extends Authenticatable
         $u->save();
     }
 
+
+    public function wallet(){
+        return $this->belongsTo(userWallet::class, 'id', 'user_id');
+    }
 
     public function country(){
         return $this->belongsTo(country::class, 'country_id');

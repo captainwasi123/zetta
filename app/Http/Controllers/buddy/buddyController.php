@@ -4,9 +4,11 @@ namespace App\Http\Controllers\buddy;
 
 use App\Http\Controllers\Controller;
 use App\Models\CoachRequest;
-use App\Models\lesson\orders;
+use App\Models\ActivityOrders;
 use App\Models\User;
+use App\Models\earningHistory;
 use Illuminate\Http\Request;
+use Auth;
 
 class buddyController extends Controller
 {
@@ -18,13 +20,19 @@ class buddyController extends Controller
 
     public function my_orders()
     {
-        return view('buddy.orders');
+        $orders = ActivityOrders::where('seller_id', Auth::id())->where('status',1)->latest()->get();
+
+        return view('buddy.orders', ['orders' => $orders]);
     }
 
     public function my_wallet()
     {
-        $data['orders'] = orders::with(['buyer','lesson'])->where('seller_id', \Auth::id())->where('status',1)->latest()->get();
-        return view('buddy.my_account.wallet');
+        $data = array(
+            'totalEarning' => earningHistory::where('user_id', Auth::id())->sum('amount'),
+            'currMonthEarning' => earningHistory::where('user_id', Auth::id())->whereMonth('created_at', date('m'))->sum('amount')
+        );
+
+        return view('buddy.my_account.wallet')->with($data);
     }
 
     public function my_friends()

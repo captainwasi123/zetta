@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
 use App\Models\lesson\lessons;
+use App\Models\userWallet;
 use Auth;
 
 class orders extends Model
@@ -22,9 +23,10 @@ class orders extends Model
         $o->price = $data['price'];
         $o->commision = $data['commision'];
         $o->earning = $data['earning'];
-        $o->status = '1';
+        $o->status = '0';
         $o->save();
 
+        userWallet::addBalance($data['seller_id'], $data['earning']);
         return $o->id;
     }
 

@@ -12,6 +12,9 @@ use App\Models\saleSetting;
 use App\Models\userEquipment;
 use Auth;
 
+use Stripe;
+use StripeClient;
+
 class cartController extends Controller
 {
     //
@@ -78,7 +81,7 @@ class cartController extends Controller
         $pack = base64_decode($data['pack_id']);
         $type = base64_decode($data['type']);
         $saleSetting = saleSetting::first();
-
+        $priceDed = 0;
         if($type == 'lesson'){
             $lesson = lessons::find($lid);
             $odata = array(
@@ -89,11 +92,10 @@ class cartController extends Controller
                 'commision' =>  ($lesson->packages[$pack]->price/100)*$saleSetting->commision,
                 'earning' => ($lesson->packages[$pack]->price - ($lesson->packages[$pack]->price/100)*$saleSetting->commision)
             );
+
+            $priceDed = $odata['price'];
             $oid = lessonOrders::newOrder($odata);
-
-            return redirect()->back()->with('success', 'Order Submited. Order#: '.$oid);
         }
-
         if($type == 'activity'){
             $data = $request->all();
             $aid = base64_decode($data['lid']);
@@ -121,9 +123,42 @@ class cartController extends Controller
                 'commision' =>  ($price/100)*$saleSetting->commision,
                 'earning' => ($price - ($price/100)*$saleSetting->commision)
             );
+
+            $priceDed = $odata['price'];
             $oid = ActivityOrders::newOrder($odata);
-            return redirect()->back()->with('success', 'Order Submited. Order#: '.$oid);
         }
 
+        return view('web.payment', ['type' => $type, 'id' => $oid, 'amount' => $priceDed]);
+
+    }
+
+    //Payment
+    public function stripePayment(Request $request)
+    {
+        \Stripe\Stripe::setApiKey(
+          env('STRIPE_PRIVATE_KEY')
+        );
+        $charge_amount = $request->get('amount')*100;
+        $paymentIntent = \Stripe\PaymentIntent::create([
+          'amount' => $charge_amount,
+          'currency' => 'usd'
+        ]);
+        
+        return response()->json($paymentIntent);
+       
+    }
+    
+    public function orderComfirmed($id, $type){
+        if($type == 'lesson'){
+            $d = lessonOrders::find($id);
+            $d->status = '1';
+            $d->save();
+        }elseif($type == 'activity'){
+            $d = ActivityOrders::find($id);
+            $d->status = '1';
+            $d->save();
+        }
+
+        return 'success';
     }
 }

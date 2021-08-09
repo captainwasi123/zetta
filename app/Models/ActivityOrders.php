@@ -4,6 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\activity\activities;
+use App\Models\userWallet;
+use Auth;
 
 class ActivityOrders extends Model
 {
@@ -14,13 +17,14 @@ class ActivityOrders extends Model
         $o = new ActivityOrders;
         $o->activity_id = $data['activity_id'];
         $o->seller_id = $data['seller_id'];
-        $o->buyer_id = \Auth::id();
+        $o->buyer_id = Auth::id();
         $o->price = $data['price'];
         $o->commision = $data['commision'];
         $o->earning = $data['earning'];
-        $o->status = '1';
+        $o->status = '0';
         $o->save();
 
+        userWallet::addBalance($data['seller_id'], $data['earning']);
         return $o->id;
     }
 
@@ -33,6 +37,6 @@ class ActivityOrders extends Model
     }
 
     public function activity(){
-        return $this->belongsTo(lessons::class, 'activity_id');
+        return $this->belongsTo(activities::class, 'activity_id');
     }
 }

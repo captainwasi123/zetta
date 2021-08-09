@@ -13,7 +13,7 @@
         </div>
         <div class="col-md-6 col-lg-6 col-sm-6 col-12">
         <div class="wallet-price text-right mob-text-left">
-            <h4 class="col-green"> <a class="fund-btn2 m-r-15"> Expeceted Earnings </a> $300.00 </h4>
+            <h4 class="col-green"> <a class="fund-btn2 m-r-15"> Expeceted Earnings </a> ${{empty(Auth::user()->wallet) ? '0.00' : number_format(Auth::user()->wallet->balance, 2)}} </h4>
         </div>
         </div>
     </div>
@@ -23,7 +23,7 @@
         <div class="col-md-4 col-lg-4 col-sm-4 col-12 m-b-30">
         <div class="wallet-box2 bg-purple2">
             <h6> Total Earning </h6>
-            <h3> $30,895 </h3>
+            <h3> ${{number_format($totalEarning, 2)}} </h3>
         </div>
         </div>
         <div class="col-md-4 col-lg-4 col-sm-4 col-12 m-b-30">
@@ -34,8 +34,8 @@
         </div>
         <div class="col-md-4 col-lg-4 col-sm-4 col-12 m-b-30">
         <div class="wallet-box2 bg-grey2">
-            <h6> Earn in May </h6>
-            <h3> $1200 </h3>
+            <h6> Earn in <strong>{{date('F')}}</strong> </h6>
+            <h3> ${{number_format($currMonthEarning, 2)}} </h3>
         </div>
         </div>
     </div>
