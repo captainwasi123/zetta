@@ -10,9 +10,20 @@
          </div>
          <div class="account-btn1 text-center">
             <a href="{{route('buddy.my_account')}}" class="custom-btn2"> My Account </a>
+
          </div>
+         <div class="account-btn1 text-center">
+              @if (auth()->user()->type == 2)
+                <a href="{{URL::to('/coach')}}" class="custom-btn1"> SWITCH TO Coach </a>
+            @else
+                <a href="javascript:void(0)" class="custom-btn1 coach-request"> Apply for Coach </a>
+            @endif
+
+         </div>
+
+
          <div class="profile-text">
-            <a href="" class="" > INBOX <i class="mdi mdi-email"> <b class="notif-icon1"> 5  </b> </i>  </a>
+            <a href="{{route('buddy.messages')}}" class="" > INBOX <i class="mdi mdi-email"> <b class="notif-icon1"> 5  </b> </i>  </a>
          </div>
       </div>
       <nav class="sidebar-nav">
@@ -58,12 +69,12 @@
                   <span class="hide-menu">  Orders  </span>
                </a>
             </li>
-            <li>
+            <!-- <li>
                <a href="{{route('buddy.my_account')}}">
                   <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/nav-icon7.png">
                   <span class="hide-menu">   My Account Area </span>
                </a>
-            </li>
+            </li> -->
             <li>
                <a href="{{route('buddy.my_wallet')}}">
                   <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/nav-icon8.png">

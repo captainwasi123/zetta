@@ -73,7 +73,7 @@
                   </label>
                </div>
                <div class="inc-dec inline-1 increment-holder1" id="participants_block">
-                   
+
                </div>
             </div>
          </div>
@@ -97,8 +97,29 @@
                </div>
             </div>
          </div>
-         <div class="row center-row" id="friend_block">
-            
+         {{-- <div class="row center-row" id="friend_block">
+
+         </div> --}}
+         <div class="row center-row">
+            <div class="col-md-3 col-lg-3 col-12">
+                <div class="field-name">
+                   <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/field-icon10.png">
+                   <h5> Friend Name </h5>
+                </div>
+             </div>
+            <div class="col-md-6 col-lg-6 col-12">
+                {{-- <input type="text" placeholder="" class="form-field1" name=""> --}}
+                <select name="friend" id="friend" class="form-field1">
+                    <option value="">select friend</option>
+                     @foreach ($users as $val)
+                         <option value="{{$val->id}}"
+                            @if (@$friend->friend_id == $val->id)
+                                selected
+                            @endif
+                            >{{$val->fname .' '. $val->lname}}</option>
+                     @endforeach
+                </select>
+            </div>
          </div>
          <div class="row center-row">
             <div class="col-md-3 col-lg-3 col-12">
@@ -114,6 +135,8 @@
                      <input type="text" placeholder="Location" class="form-field1" value="{{$val->address}}" name="location[]" required>
                   </div>
                @endforeach
+                <input type="hidden" name="lat" id="lat">
+                <input type="hidden" name="lng" id="lng">
             </div>
          </div>
          <div class="row">
@@ -200,12 +223,27 @@
 
 <script type="text/javascript">
    jQuery(document).ready(function() {
-
+        getLocation();
        $("input[name='tch3']").TouchSpin();
        $('.dropify').dropify();
        $(".select2").select2();
 
    });
+
+   function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+            alert("Geolocation is not supported by this browser.");
+        }
+    }
+
+    function showPosition(position) {
+        // initMap(position.coords.latitude,position.coords.longitude);
+        console.log(position);
+        $('#lat').val(position.coords.latitude);
+        $('#lng').val(position.coords.longitude);
+    }
 </script>
 
 @endsection

@@ -8,7 +8,6 @@
 
       @include('web.support.style')
       @yield('addStyle')
-
    </head>
    <body>
       <!-- Header Section Starts Here -->

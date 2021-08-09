@@ -185,13 +185,29 @@
                   <tbody>
                      <tr>
                         <td>
-                           <input class="table-field1" type="number" placeholder="Price" name="price_basic" required>
+
+                            <input class="table-field1" type="number" placeholder="Duration in min" name="duartion_basic" required>
+
+                            <input class="table-field1 mt-2" type="number" placeholder="Days" name="day_basic" required>
+
+                           <input class="table-field1 mt-2" type="number" placeholder="Price" name="price_basic" required>
+
                         </td>
                         <td>
-                           <input class="table-field1" type="number" placeholder="Price" name="price_standard" required>
+
+                            <input class="table-field1" type="number" placeholder="Duration in min" name="duartion_standard" required>
+
+                            <input class="table-field1 mt-2" type="number" placeholder="Days" name="day_standard" required>
+
+                           <input class="table-field1 mt-2" type="number" placeholder="Price" name="price_standard" required>
+
                         </td>
                         <td>
-                           <input class="table-field1" type="number" placeholder="Price" name="price_premium" required>
+                            <input class="table-field1" type="number" placeholder="Duration in min" name="duartion_premium" required>
+
+                            <input class="table-field1 mt-2" type="number" placeholder="Days" name="day_premium" required>
+
+                           <input class="table-field1 mt-2" type="number" placeholder="Price" name="price_premium" required>
                         </td>
                      </tr>
                      <tr>
@@ -233,6 +249,34 @@
                      </div>
                   </div>
                </div>
+            </div>
+            <div class="block-element m-t-30">
+                <div class="row">
+                   <div class="col-md-4 col-lg-4 col-12">
+                      <div class="field-name">
+                         <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/field-icon19.png">
+                         <h5> Availability For </h5>
+                      </div>
+                   </div>
+                   <div class="col-md-8 col-lg-8 col-12">
+                      <div class="inline-1">
+                         <label class="custom-control custom-radio">
+                         <input id="radio1" name="availability_for" type="radio" value="1" class="custom-control-input">
+                         <span class="custom-control-label"> Senior </span>
+                         </label>
+                         <br>
+                         <label class="custom-control custom-radio">
+                         <input id="radio2" name="availability_for" type="radio" value="2" class="custom-control-input">
+                         <span class="custom-control-label"> Teenagers </span>
+                         </label>
+                         <br>
+                         <label class="custom-control custom-radio">
+                         <input id="radio2" name="availability_for" type="radio" value="3" class="custom-control-input" checked>
+                         <span class="custom-control-label"> Kids </span>
+                         </label>
+                      </div>
+                   </div>
+                </div>
             </div>
          </div>
       </div>

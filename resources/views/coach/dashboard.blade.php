@@ -1,5 +1,5 @@
 @extends('coach.include.master')
-@section('title', 'Registration Form')
+@section('title', 'Dashboard')
 
 @section('content')
 <div class="box-wrapper1">
@@ -38,6 +38,21 @@
                                                    </li>
                                                    <li>
                                                       <a href="javascript:void(0)"><img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/users/7.jpg" alt="user-img" class="img-circle"> <span class="col-white"> Ben Cobert <small class="bg-danger">online</small></span> <b class="col-silver"> Hello , How are you sir? </b> </a>
+                                                   </li>
+                                                   <li>
+                                                      <a href="javascript:void(0)"><img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/users/8.jpg" alt="user-img" class="img-circle"> <span class="col-white">Pwandeep rajan <small class="bg-green">online</small></span> <b class="col-silver"> Hello , How are you sir? </b></a>
+                                                   </li>
+                                                   <li>
+                                                      <a href="javascript:void(0)"><img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/users/8.jpg" alt="user-img" class="img-circle"> <span class="col-white">Pwandeep rajan <small class="bg-green">online</small></span> <b class="col-silver"> Hello , How are you sir? </b></a>
+                                                   </li>
+                                                   <li>
+                                                      <a href="javascript:void(0)"><img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/users/8.jpg" alt="user-img" class="img-circle"> <span class="col-white">Pwandeep rajan <small class="bg-green">online</small></span> <b class="col-silver"> Hello , How are you sir? </b></a>
+                                                   </li>
+                                                   <li>
+                                                      <a href="javascript:void(0)"><img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/users/8.jpg" alt="user-img" class="img-circle"> <span class="col-white">Pwandeep rajan <small class="bg-green">online</small></span> <b class="col-silver"> Hello , How are you sir? </b></a>
+                                                   </li>
+                                                   <li>
+                                                      <a href="javascript:void(0)"><img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/users/8.jpg" alt="user-img" class="img-circle"> <span class="col-white">Pwandeep rajan <small class="bg-green">online</small></span> <b class="col-silver"> Hello , How are you sir? </b></a>
                                                    </li>
                                                    <li>
                                                       <a href="javascript:void(0)"><img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/users/8.jpg" alt="user-img" class="img-circle"> <span class="col-white">Pwandeep rajan <small class="bg-green">online</small></span> <b class="col-silver"> Hello , How are you sir? </b></a>
@@ -83,7 +98,7 @@
                                                                     <td>  ${{$val->price}} </td>
                                                                     {{-- <td>1:100  </td> --}}
                                                                     <td> {{$val->created_at->format('d-m-y')}} </td>
-                                                                    <td>  <a href="" class="label bg-green2">  View </a> </td>
+                                                                    <td>  <a href="{{route('coach.orders.view',base64_encode($val->id))}}" class="label bg-green2">  View </a> </td>
                                                                 </tr>
                                                             @endforeach
 

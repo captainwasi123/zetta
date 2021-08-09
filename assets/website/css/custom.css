@@ -2503,6 +2503,7 @@ body .container {
     float: left;
     width: 100%;
     margin-top: 15px;
+    text-align: center;
 }
 .banner-sec .search-form {
     display: block;
@@ -2539,6 +2540,27 @@ section.contact-map iframe {
 .buddy-btn {
     min-width: 100%;
 }
+
+
+header.header-2 {
+    margin-bottom: -165px;
+}
+.buddy-box4 {
+    margin-top: -30px;
+    padding-left: 75px;
+}
+.buddy-box5 {
+    margin-top: -80px;
+    padding-right: 30px;
+}
+.lesson-image-block img {
+    height: 180px !important;
+    width: 100%;
+}
+form.checkout-extra {
+    margin: 0px 140px;
+}
+
 }
 
 
@@ -2720,6 +2742,7 @@ header.header-2 {
     background: black !important;
     margin: 0px !important;
 }
+
 }
 
 
@@ -3058,4 +3081,28 @@ body .container {
     width: 100%;
     max-width: 100%;
 }
+}
+.lesson-image-block img {
+    height: 230px;
+    width: 100%;
+}
+
+
+
+
+
+@media only screen and (max-width: 767px) {
+  .all-buddies {
+    text-align: center;
+}
+.buddy-box3 {
+    text-align: center;
+}
+
+.custom-btn1 {
+    padding: 8px 18px;
+
+    font-size: 16px;
+}
+
 }

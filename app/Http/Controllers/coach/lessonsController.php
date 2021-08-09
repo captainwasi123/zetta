@@ -45,7 +45,7 @@ class lessonsController extends Controller
 
     function edit($id){
         $id = base64_decode($id);
-        $data = lessons::find($id);
+        $data = lessons::with('packages')->find($id);
         if(!empty($data->id)){
             $equip = userEquipment::where('user_id', Auth::id())->get();
 

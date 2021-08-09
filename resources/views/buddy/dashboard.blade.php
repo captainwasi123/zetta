@@ -42,6 +42,21 @@
                                     <li>
                                        <a href="javascript:void(0)"><img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/users/8.jpg" alt="user-img" class="img-circle"> <span>Pwandeep rajan <small class="bg-green">online</small></span> <b> Hello , How are you sir? </b></a>
                                     </li>
+                                    <li>
+                                       <a href="javascript:void(0)"><img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/users/8.jpg" alt="user-img" class="img-circle"> <span>Pwandeep rajan <small class="bg-green">online</small></span> <b> Hello , How are you sir? </b></a>
+                                    </li>
+                                    <li>
+                                       <a href="javascript:void(0)"><img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/users/8.jpg" alt="user-img" class="img-circle"> <span>Pwandeep rajan <small class="bg-green">online</small></span> <b> Hello , How are you sir? </b></a>
+                                    </li>
+                                    <li>
+                                       <a href="javascript:void(0)"><img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/users/8.jpg" alt="user-img" class="img-circle"> <span>Pwandeep rajan <small class="bg-green">online</small></span> <b> Hello , How are you sir? </b></a>
+                                    </li>
+                                    <li>
+                                       <a href="javascript:void(0)"><img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/users/8.jpg" alt="user-img" class="img-circle"> <span>Pwandeep rajan <small class="bg-green">online</small></span> <b> Hello , How are you sir? </b></a>
+                                    </li>
+                                    <li>
+                                       <a href="javascript:void(0)"><img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/users/8.jpg" alt="user-img" class="img-circle"> <span>Pwandeep rajan <small class="bg-green">online</small></span> <b> Hello , How are you sir? </b></a>
+                                    </li>
                                     <li class="p-20"></li>
                                  </ul>
                               </div>
@@ -49,12 +64,12 @@
                         </div>
                      </div>
                      <div class="col-md-9">
-                        <div class="  m-t-20 m-b-20" style="padding:0px 20px">
-                           <div class="sec-head1">
-                              <h3 style="color:#1d242c !important"> Timeline   </h3>
+                        <div class="  m-t-20 m-b-20" >
+                           <div class="sec-head1 ps">
+                              <h3> Timeline   </h3>
                            </div>
                         </div>
-                        <div class="card-body b-l calender-sidebar bg-white" style="background:white !important">
+                        <div class="card-body b-l calender-sidebar bg-white">
                            <div id="calendar"></div>
                         </div>
                      </div>

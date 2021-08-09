@@ -10,16 +10,19 @@ use App\Models\lesson\lessons;
 use App\Models\lesson\Locations;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
+use App\Models\activity\locations as Activity_location;
+use App\Models\userCategory;
+use App\Models\userEquipment;
+use Symfony\Component\HttpFoundation\AcceptHeader;
 
 class webController extends Controller
 {
 
     function index(){
         $data = array(
-        	'lessons' => lessons::where('status', '1')->latest()->limit(10)->get(),
-            'activities' => activities::where('status', '1')->where('activity_type', '1')->latest()->limit(10)->get(),
+        	'lessons' => lessons::with('packages')->where('status', '1')->latest()->limit(10)->get(),
+            'activities' => activities::with(['user','equipment','equipment.user_equipment'])->where('status', '1')->where('activity_type', '1')->latest()->limit(10)->get(),
         );
-
 		return view('web.index')->with($data);
     }
 
@@ -101,11 +104,14 @@ class webController extends Controller
 
         function activityDetails($id){
             $id = base64_decode($id);
-            $data = activities::find($id);
+            $data = activities::with(['equipment','equipment.user_equipment'])->find($id);
+            $location = Activity_location::where('activity_id',$id)->get();
+
+
             if(!empty($data->id)){
                 $tactivities = activities::where('status', '1')->where('user_id', $data->user_id)->latest()->limit(10)->get();
                 $oactivities = activities::where('status', '1')->where('user_id', '!=', $data->user_id)->latest()->limit(10)->get();
-                return view('web.activity.details', ['data' => $data, 'tactivities' => $tactivities, 'oactivities' => $oactivities]);
+                return view('web.activity.details', ['data' => $data, 'tactivities' => $tactivities, 'oactivities' => $oactivities,'location' => $location]);
             }else{
                 return redirect()->back();
             }
@@ -123,11 +129,6 @@ class webController extends Controller
             if(!empty($data->id)){
                 $tlessons = lessons::where('status', '1')->where('user_id', $data->user_id)->latest()->limit(10)->get();
                 $olessons = lessons::where('status', '1')->where('user_id', '!=', $data->user_id)->latest()->limit(10)->get();
-                // foreach ($less_location as $key => $value) {
-                //     $location[$key]['lat'] = $value->lat;
-                //     $location[$key]['lng'] = $value->lng;
-                // }
-                // dd($location);
                 return view('web.lesson.details', ['data' => $data, 'tlessons' => $tlessons, 'olessons' => $olessons,'location' => $less_location]);
             }else{
                 return redirect()->back();
@@ -141,9 +142,22 @@ class webController extends Controller
             $id = base64_decode($id);
             $data = User::with(['country','langs','category','education','certificate','equipment','lessons','activities','media'])->find($id);
             if(!empty($data->id)){
-                return view('web.users_profile', ['data' => $data]);
+                return view('web.profiles.coach_profile', ['data' => $data]);
             }else{
                 return redirect()->back();
             }
         }
+
+    // buddy deatils
+
+    function buddyDetails($id)
+    {
+        $id = base64_decode($id);
+        $data = User::with(['country','langs','category','education','certificate','equipment','activities','media'])->find($id);
+        if(!empty($data->id)){
+            return view('web.profiles.buddy_profile', ['data' => $data]);
+        }else{
+            return redirect()->back();
+        }
+    }
 }

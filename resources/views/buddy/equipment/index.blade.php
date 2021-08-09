@@ -67,7 +67,7 @@
                         <h3> Your Zetta Lead   </h3>
                      </div>
                      <div class="lead-details m-b-20">
-                        <p> 
+                        <p>
                            <span> <b class="bg-purple"></b> Earned ($1.132) </span>
                            <span> <b class="bg-danger"></b> Cancelled ($40)  </span>
                            <span> <b class="bg-grey"></b> Completed (10)  </span>
@@ -75,9 +75,36 @@
                         </p>
                      </div>
                      <div class="block-element">
-                        <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/lead-graph2.jpg" width="850">
+                        <div id="morris-area-chart"></div>
                      </div>
                   </div>
                </div>
 
+@endsection
+@section('addScript')
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ['Year', 'Sales', 'Expenses'],
+        ['2004',  1000,      400],
+        ['2005',  1170,      460],
+        ['2006',  660,       1120],
+        ['2007',  1030,      540]
+      ]);
+
+      var options = {
+        title: 'Company Performance',
+        curveType: 'function',
+        legend: { position: 'bottom' }
+      };
+
+      var chart = new google.visualization.LineChart(document.getElementById('morris-area-chart'));
+
+      chart.draw(data, options);
+    }
+</script>
 @endsection

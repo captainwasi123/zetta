@@ -13,11 +13,14 @@ class Packages extends Model
     public $timestamps = false;
 
     public static function addPackage($id, array $pack){
+
         if(!empty($pack['basic'])){
             $p = new Packages;
             $p->lesson_id = $id;
             $p->title = 'Basic';
             $p->price = $pack['basic']['price'];
+            $p->duration = $pack['basic']['duartion'];
+            $p->days = $pack['basic']['days'];
             $p->save();
 
             Packages::addDetails($p->id, $pack['basic']['service']);
@@ -27,6 +30,8 @@ class Packages extends Model
             $p->lesson_id = $id;
             $p->title = 'Standard';
             $p->price = $pack['standard']['price'];
+            $p->duration = $pack['standard']['duartion'];
+            $p->days = $pack['standard']['days'];
             $p->save();
 
             Packages::addDetails($p->id, $pack['standard']['service']);
@@ -36,6 +41,8 @@ class Packages extends Model
             $p->lesson_id = $id;
             $p->title = 'Premium';
             $p->price = $pack['premium']['price'];
+            $p->duration = $pack['premium']['duartion'];
+            $p->days = $pack['premium']['days'];
             $p->save();
 
             Packages::addDetails($p->id, $pack['premium']['service']);

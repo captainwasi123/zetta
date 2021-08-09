@@ -7,7 +7,9 @@ use Illuminate\Http\Request;
 use App\Models\lesson\lessons;
 use App\Models\lesson\orders as lessonOrders;
 use App\Models\activity\activities;
+use App\Models\ActivityOrders;
 use App\Models\saleSetting;
+use App\Models\userEquipment;
 use Auth;
 
 class cartController extends Controller
@@ -36,9 +38,31 @@ class cartController extends Controller
         if($type == 'lesson'){
 
             $data = lessons::find($id);
+            $price = null;
             if(!empty($data->id)){
+                return view('web.cart', ['data' => $data, 'pack' => $packk, 'type' => $type,'price'=>$price]);
+            }else{
+                return redirect('/');
+            }
+        }
 
-                return view('web.cart', ['data' => $data, 'pack' => $packk, 'type' => $type]);
+        if ($type == 'activity') {
+            $data = activities::find($id);
+            $userequipment = userEquipment::get();
+            if (count($data->equipment)>0){
+                $ids = [];
+                $price = 0;
+
+                foreach ($data->equipment as $k => $val){
+                    $ids[$k] = $val->equip_id;
+                }
+
+                foreach ($userequipment->whereIn('id',$ids) as $equ){
+                    $price += $equ->price;
+                }
+            }
+            if(!empty($data->id)){
+                return view('web.cart', ['data' => $data, 'pack' => $packk, 'type' => $type,'price'=>$price]);
             }else{
                 return redirect('/');
             }
@@ -67,6 +91,37 @@ class cartController extends Controller
             );
             $oid = lessonOrders::newOrder($odata);
 
+            return redirect()->back()->with('success', 'Order Submited. Order#: '.$oid);
+        }
+
+        if($type == 'activity'){
+            $data = $request->all();
+            $aid = base64_decode($data['lid']);
+            $pack = base64_decode($data['pack_id']);
+            $type = base64_decode($data['type']);
+            $userequipment = userEquipment::get();
+            $act = activities::find($aid);
+            if (count($act->equipment)>0){
+                $ids = [];
+                $price = 0;
+
+                foreach ($act->equipment as $k => $val){
+                    $ids[$k] = $val->equip_id;
+                }
+
+                foreach ($userequipment->whereIn('id',$ids) as $equ){
+                    $price += $equ->price;
+                }
+            }
+
+            $odata = array(
+                'activity_id' => $aid,
+                'seller_id' => $act->user_id,
+                'price' => $price,
+                'commision' =>  ($price/100)*$saleSetting->commision,
+                'earning' => ($price - ($price/100)*$saleSetting->commision)
+            );
+            $oid = ActivityOrders::newOrder($odata);
             return redirect()->back()->with('success', 'Order Submited. Order#: '.$oid);
         }
 

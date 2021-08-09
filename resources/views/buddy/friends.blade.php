@@ -1,6 +1,23 @@
 @extends('buddy.include.master')
 @section('title', 'Recently Added Friends')
 @section('content')
+
+<style type="text/css">
+  .inbox-aside {
+    max-width: 110%;
+    width: 110%;
+    max-height: 750px !important;
+  }
+
+@media only screen and (max-width: 767px) {
+  .inbox-aside {
+    max-width: 100%;
+    width: 100%;
+    max-height: 500px !important;
+}
+}
+
+</style>
 <div class="box-wrapper1">
     <div class="block-element">
        <div class="row">

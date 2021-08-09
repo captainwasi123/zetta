@@ -17,5 +17,5 @@
       <script src="{{URL::to('/')}}/assets/user_dashboard/coach/js/dev_coach.js"></script>
       <script src="{{URL::to('/')}}/assets/user_dashboard/plugins/bootstrap/js/bootstrap.min.js"></script>
       <script src="{{URL::to('/')}}/assets/user_dashboard/plugins/sweetalert/sweetalert.min.js"></script>
+      {{-- <script src="{{URL::to('/')}}/assets/user_dashboard/plugins/summernote/dist/summernote.min.js"></script> --}}
       <script src="{{URL::to('/')}}/assets/user_dashboard/plugins/sweetalert/jquery.sweet-alert.custom.js"></script>
-

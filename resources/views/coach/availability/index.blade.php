@@ -23,7 +23,7 @@
             </div>
          </div>
          <div class="row">
-            <div class="col-md-9 col-lg-9 col-md-12 col-12">
+            <div class="col-md-9 col-lg-9  col-12">
                <div class="slot-1">
                   <span class="col-white"> First Booking </span>
                   <input class="clockpicker form-field4" type="text" name="start_time" value="13:14" data-placement="bottom" data-align="top" data-autoclose="true" required>
@@ -42,8 +42,8 @@
                   </select>
                </div>
             </div>
-            <div class="col-md-3 col-lg-3 col-md-12 col-12">
-               <p>   <button class="submit-btn1 equal-btn1"> <i class="fa fa-plus"> </i> ADD </button>  </p>
+            <div class="col-md-3 col-lg-3 col-12">
+               <p>   <button class="submit-btn1 equal-btn1" style="    margin-top: 25px;"> <i class="fa fa-plus"> </i> ADD </button>  </p>
             </div>
          </div>
       </form>
@@ -92,7 +92,7 @@
          </div>
       </div>
       <div class="row">
-         <div class="col-md-5 col-lg-5 col-md-12 col-12">
+         <div class="col-md-7 col-lg-5 col-12">
             <form method="post" action="{{route('coach.availability.addHoliday')}}">
                @csrf
                <div class="slot-2">
@@ -100,7 +100,7 @@
                   <input type="text" class="form-field3 mydatepicker" name="holidate" placeholder="mm/dd/yyyy" required>
                </div>
          </div>
-         <div class="col-md-3 col-lg-3 col-md-12 col-12">
+         <div class="col-md-5 col-lg-3  col-12">
                <p>   <button class="submit-btn1 equal-btn1"> <i class="fa fa-plus"> </i> ADD </button>  </p>
             </form>
          </div>

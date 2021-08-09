@@ -53,6 +53,7 @@ class User extends Authenticatable
 
     public static function adduser(array $data){
         $u = new User;
+        $u->username = $data['username'];
         $u->email = $data['email'];
         $u->password = bcrypt($data['password']);
         $u->source = '1';
@@ -93,6 +94,16 @@ class User extends Authenticatable
     public function media()
     {
         return $this->hasMany(userMedia::class, 'user_id', 'id');
+    }
+
+    public function fav_activity()
+    {
+        return $this->hasMany(FavouriteActivity::class,'user_id','id');
+    }
+
+    public function coach_request()
+    {
+        return $this->belongsTo(CoachRequest::class ,'user_id');
     }
 
 }

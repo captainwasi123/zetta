@@ -64,7 +64,7 @@
                <div class="dropdown-menu keep-open">
                   <div class="filters-main-bg">
                      <div class="filter-date">
-                        <input type="date" format="" name="">  
+                        <input type="date" format="" name="">
                      </div>
                   </div>
                </div>
@@ -91,7 +91,7 @@
                <div class="dropdown-menu keep-open">
                   <div class="filters-main-bg">
                      <div class="filter-date">
-                        <input type="time" name="" value="now">   
+                        <input type="time" name="" value="now">
                      </div>
                   </div>
                </div>
@@ -145,14 +145,14 @@
                <div class="dropdown-menu keep-open">
                   <div class="filters-main-bg">
                      <div class="gender-filter">
-                        <label class="container-radio col-black no-margin m-b-0"> Male 
+                        <label class="container-radio col-black no-margin m-b-0"> Male
                         <input type="radio" checked="checked" name="radio">
                         <span class="checkmark"></span>
-                        </label> 
+                        </label>
                         <label class="container-radio col-black no-margin m-b-0"> Female
                         <input type="radio" checked="checked" name="radio">
                         <span class="checkmark"></span>
-                        </label> 
+                        </label>
                      </div>
                   </div>
                </div>
@@ -164,11 +164,11 @@
                <div class="dropdown-menu keep-open">
                   <div class="filters-main-bg">
                      <div class="filters-rating">
-                        <button class="col-black active"> 5 star </button> 
-                        <button class="col-black"> 4 star </button>  
-                        <button class="col-black"> 3 star </button>  
-                        <button class="col-black"> 2 star </button>  
-                        <button class="col-black"> 1 star </button>  
+                        <button class="col-black active"> 5 star </button>
+                        <button class="col-black"> 4 star </button>
+                        <button class="col-black"> 3 star </button>
+                        <button class="col-black"> 2 star </button>
+                        <button class="col-black"> 1 star </button>
                      </div>
                   </div>
                </div>
@@ -190,7 +190,7 @@
                         <img src="{{URL::to('/public/storage/user/activity/main_image/'.$val->cover_img)}}">
                      </div>
                      <div class="lesson-title-block">
-                        <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{empty($val->user) ? '' : $val->user->profile_img}}" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';">   
+                        <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{empty($val->user) ? '' : $val->user->profile_img}}" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';">
                         <h4>  {{empty($val->user) ? 'Unknown' : $val->user->fname.' '.$val->user->lname}} <span>Sports Buddy </span>  </h4>
                      </div>
                      <div class="lesson-info-block">
@@ -200,7 +200,7 @@
                         <h6 class="col-white m-b-15"> <i class="fa fa-star col-yellow"> </i> 5.0 </h6>
                      </div>
                      <div class="lesson-rating-block">
-                        <a href="" class="col-purple"> <i class="fa fa-heart col-purple"></i> </a>
+                        <a href="javascript:void(0)" data-id="{{$val->id}}" id="{{$val->id}}" class="col-purple fav_act"> <i class="fa fa-heart col-purple"></i> </a>
                         <span class="col-grey"> STARTING AT <b class="col-white"> FREE </b> </span>
                      </div>
                   </div>

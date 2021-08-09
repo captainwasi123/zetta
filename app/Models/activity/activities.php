@@ -28,6 +28,7 @@ class activities extends Model
 
         activities::addEquipment($id, $data['equipments']);
         activities::addLocation($id, $data);
+        activities::addFriend($id,$data);
         return $id;
     }
 
@@ -44,9 +45,10 @@ class activities extends Model
 
         equipments::where('activity_id', $id)->delete();
         locations::where('activity_id', $id)->delete();
-
+        friends::where('activity_id', $id)->delete();
         activities::addEquipment($id, $data['equipments']);
         activities::addLocation($id, $data);
+        activities::addFriend($id,$data);
         return $id;
     }
 
@@ -59,6 +61,13 @@ class activities extends Model
             $e->equip_id = $val;
             $e->save();
         }
+    }
+
+    public static function addFriend($id, array $data){
+            $e = new friends();
+            $e->activity_id = $id;
+            $e->friend_id = $data['friend'];
+            $e->save();
     }
 
     public static function addLocation($id, array $data){
@@ -97,5 +106,14 @@ class activities extends Model
 
     public function user(){
         return $this->belongsTo(User::class, 'user_id');
+    }
+
+    public function friend(){
+        return $this->belongsTo(friends::class,'activity_id','id');
+    }
+
+    public function fav_act()
+    {
+        return $this->belongsTo(friends::class,'activity_id');
     }
 }

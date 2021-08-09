@@ -106,7 +106,28 @@
                 $.SweetAlert.init()
             }(window.jQuery);
         </script>
+    @elseif (session()->has('pending'))
+        <script type="text/javascript">
+            !function($) {
+                "use strict";
 
+                var SweetAlert = function() {};
+
+                //examples
+                SweetAlert.prototype.init = function() {
+                    var data = "{{ session()->get('pending') }}";
+                    swal("Pending!", data, "warning");
+                },
+                //init
+                $.SweetAlert = new SweetAlert, $.SweetAlert.Constructor = SweetAlert
+            }(window.jQuery),
+
+            //initializing
+            function($) {
+                "use strict";
+                $.SweetAlert.init()
+            }(window.jQuery);
+        </script>
     @endif
 
     @yield('addScript')

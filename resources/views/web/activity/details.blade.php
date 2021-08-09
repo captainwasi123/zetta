@@ -1,6 +1,19 @@
 @extends('web.support.master2')
 @section('title', $data->title.' | Activity Details')
-
+@section('addStyle')
+<style>
+    #mapa {
+        height: 200px;
+    }
+    #map > div{
+        height: 200px!important;
+        width: 100%!important;
+        position: relative!important;
+        top: auto!important;
+        right: 0px!important;
+    }
+</style>
+@endsection
 @section('content')
 
 <section class="action-bar">
@@ -214,39 +227,71 @@
             <div class="packages-wrapper">
                <div class="packages-main">
                   <ul class="nav nav-tabs" role="tablist">
-                     <li class="nav-item">
+                     {{-- <li class="nav-item">
                         <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">Basic</a>
-                     </li>
+                     </li> --}}
                   </ul>
                   <!-- Tab panes -->
                   <div class="tab-content">
                      <div class="tab-pane active" id="tabs-1" role="tabpanel">
                         <div class="package-content">
                            <div class="package-content-head">
-                              <h3 class="m-b-20 col-white"> Basic Package <b class="col-purple"> $ 4,136 </b> </h3>
-                              <p class="col-white m-b-20"> I will teach your Fitness Boxing Sports  </p>
-                              <h5 class="col-white m-b-20"> <img src="{{URL::to('/assets/website')}}/images/clock-icon.jpg"> 9 am - 12 am </h5>
+                              <h3 class="m-b-20 col-white"> Price <b class="col-purple">
+                                @if (count($data->equipment)>0)
+                                    @php
+                                        $ids = [];
+                                        $price = 0;
+                                    @endphp
+                                    @foreach ($data->equipment as $k => $val)
+                                        @php
+                                            $price = $price+$val->user_equipment->price;
+                                            $ids[$k] = $val->equip_id;
+                                        @endphp
+                                    @endforeach
+                                     ({{'$'.number_format($price)}})
+                                @else
+                                FREE
+                                @endif </b> </h3>
+                              <p class="col-white m-b-20"> {{$data->description}}  </p>
+                              {{-- <h5 class="col-white m-b-20"> <img src="{{URL::to('/assets/website')}}/images/clock-icon.jpg"> 9 am - 12 am </h5> --}}
                            </div>
-                           <ul class="list-type1 no-border">
+                           {{-- <ul class="list-type1 no-border">
                               <li class="block-element2"> <i class="fa fa-check col-purple"> </i> Lorem Ipsum </li>
                               <li class="block-element2"> <i class="fa fa-check col-purple"> </i> Lorem Ipsum </li>
                               <li class="block-element2"> <i class="fa fa-check col-purple"> </i> Lorem Ipsum </li>
                               <li class="block-element2"> <i class="fa fa-check col-purple"> </i> Lorem Ipsum </li>
                               <li class="block-element2"> <i class="fa fa-check col-purple"> </i> Lorem Ipsum </li>
                               <li class="block-element2"> <i class="fa fa-check col-purple"> </i> Lorem Ipsum </li>
-                           </ul>
+                           </ul> --}}
                            <div class="block-element2 m-t-30">
-                              <p class="m-b-10" >  <a href="" class="block-element2 bg-purple col-white rounded custom-btn1 text-center"> Continue ($ 4,136)  </a> </p>
+                              <p class="m-b-10" >  <a href="{{URL::to('/cart/activity/'.base64_encode($data->id).'/basic')}}" class="block-element2 bg-purple col-white rounded custom-btn1 text-center"> Continue
+                                @if (count($data->equipment)>0)
+                                    @php
+                                        $ids = [];
+                                        $price = 0;
+                                    @endphp
+                                    @foreach ($data->equipment as $k => $val)
+                                        @php
+                                            $price = $price+$val->user_equipment->price;
+                                            $ids[$k] = $val->equip_id;
+                                        @endphp
+                                    @endforeach
+                                     ({{'$'.number_format($price)}})
+                                @else
+                                FREE
+                                @endif
+
+                            </a> </p>
                            </div>
                         </div>
                      </div>
                   </div>
                </div>
                <div class="block-element3 m-t-30">
-                  <p class="m-b-0" style="padding:0px 30px">   <a href="" class="block-element2 bg-white col-purple rounded custom-btn1 text-center"> Contact Coach  </a> </p>
+                  <p class="m-b-0" style="padding:0px 30px">   <a href="" class="block-element2 bg-white col-purple rounded custom-btn1 text-center"> Contact Buddy  </a> </p>
                </div>
             </div>
-            <div class="packages-map block-element3 m-t-30">
+            <div class="packages-map block-element3 m-t-30" id="mapa">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.2889612081335!2d-0.08991633469164506!3d51.507914468487286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876035159bb13c5%3A0xa61e28267c3563ac!2sLondon%20Bridge!5e0!3m2!1sen!2s!4v1626273315297!5m2!1sen!2s" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
          </div>
@@ -325,5 +370,44 @@
       </div>
    </div>
 </section>
+
+<input type="hidden" id="lat">
+<input type="hidden" id="lng">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key={{env('GOOGLE_MAP_KEY')}}&libraries=places"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+
+    var locations = [
+        @foreach ($location as $val)
+            {{'[1,'.$val->lat.','.$val->lng.',1],'}}
+        @endforeach
+    ];
+
+    var map = new google.maps.Map(document.getElementById('mapa'), {
+      zoom: 10,
+      center: new google.maps.LatLng(locations[0][1] , locations[0][2]),
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+
+    var infowindow = new google.maps.InfoWindow();
+
+    var marker, i;
+
+    for (i = 0; i < locations.length; i++) {
+      marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        map: map
+      });
+      marker.setValues({id :locations[i][3]});
+
+    }
+
+  });
+
+
+  </script>
 
 @endsection

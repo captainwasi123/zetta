@@ -13,7 +13,7 @@ class equipmentController extends Controller
     {
 
       return view('buddy.equipment.index');
-    
+
     }
 
     function add(){
@@ -24,7 +24,7 @@ class equipmentController extends Controller
     function insert(Request $request){
         $data = $request->all();
         $id = userEquipment::addEquipment($data);
-        
+
         if ($request->hasFile('main_image')) {
             $file = $request->file('main_image');
             $filename = date('dmyHis').'.'.$file->getClientOriginalExtension();
@@ -50,7 +50,7 @@ class equipmentController extends Controller
         $data = $request->all();
         $id = base64_decode($data['eid']);
         userEquipment::updateEquipment($data);
-        
+
         if ($request->hasFile('main_image')) {
             $file = $request->file('main_image');
             $filename = date('dmyHis').'.'.$file->getClientOriginalExtension();
@@ -66,7 +66,7 @@ class equipmentController extends Controller
     function delete($id){
         $id = base64_decode($id);
         $data = userEquipment::destroy($id);
-        
+
         return redirect()->back()->with('success', 'Record Deleted.');
     }
 }

@@ -18,7 +18,6 @@ class categoryController extends Controller
     }
 
     function add(){
-
         return view('buddy.category.add');
     }
 
@@ -32,7 +31,7 @@ class categoryController extends Controller
     function delete($id){
         $id = base64_decode($id);
         $data = userCategory::destroy($id);
-        
+
         return redirect()->back()->with('success', 'Record Deleted.');
     }
 }

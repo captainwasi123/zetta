@@ -139,13 +139,43 @@
                            </div>
                            <div class="lesson-info-block">
                               <p class="descrip">
-                                 {{$val->description}}
+                                 {{ Str::substr($val->description, 0, 30)}} ...
                               </p>
                               <h6 class="col-white m-b-15"> <i class="fa fa-star col-yellow"> </i> 5.0 </h6>
                            </div>
                            <div class="lesson-rating-block">
-                              <a href="" class="col-purple"> <i class="fa fa-heart col-purple"></i> </a>
-                              <span class="col-grey"> STARTING AT <b class="col-white"> FREE </b> </span>
+                              <a href="javascript:void(0)" data-id="{{$val->id}}" class="col-purple fav_act" id="{{$val->id}}" >
+                                    {{-- @foreach (auth()->user()->fav_activity as $act)
+                                        @if ($val->id == $act->activity_id && $act->user_id == auth()->user()->id)
+                                            <i class="fa fa-heart col-purple"></i>
+                                        @else (empty(auth()->user()->fav_activity))
+                                            <i class="far fa-heart col-purple"></i>
+                                        @endif
+                                    @endforeach --}}
+                                    {{-- @if ($val->fav_act->user_id == auth()->user()->id)
+                                        <i class="fa fa-heart col-purple"></i>
+                                    @else
+                                        <i class="far fa-heart col-purple"></i>
+                                    @endif --}}
+                                    <i class="far fa-heart col-purple"></i>
+                            </a>
+                              <span class="col-grey"> STARTING AT <b class="col-white">
+                                @if (count($val->equipment)>0)
+                                    @php
+                                        $ids = [];
+                                        $price = 0;
+                                    @endphp
+                                    @foreach ($val->equipment as $k => $val)
+                                        @php
+                                          $price = $price+$val->user_equipment->price;
+                                            $ids[$k] = $val->equip_id;
+                                        @endphp
+                                    @endforeach
+                                     {{'$'.number_format($price)}}
+                                @else
+                                FREE
+                                @endif
+                                  </b> </span>
                            </div>
                         </div>
                      </a>
@@ -183,8 +213,15 @@
                               <h6 class="col-white m-b-15"> <i class="fa fa-star col-yellow"> </i> 5.0 </h6>
                            </div>
                            <div class="lesson-rating-block">
-                              <a href="" class="col-purple"> <i class="fa fa-heart col-purple"></i> </a>
-                              <span class="col-grey"> STARTING AT <b class="col-white"> {{'$'.number_format($val->packages[0]->price)}} </b> </span>
+                            <a href="javascript:void(0)" class="col-purple fav_lesson " data-id="{{$val->id}}" id="{{$val->id}}" >
+                                <i class="far fa-heart col-purple"></i>
+                            </a>
+                              <span class="col-grey"> STARTING AT <b class="col-white">
+                                @if (count($val->packages)>0)
+                                {{'$'.number_format($val->packages[0]->price)}} </b>
+                                @endif
+
+                            </span>
                            </div>
                         </div>
                      </a>

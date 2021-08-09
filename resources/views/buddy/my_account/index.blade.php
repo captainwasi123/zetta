@@ -1,5 +1,5 @@
 @extends('buddy.include.master')
-@section('title', 'Registration Form')
+@section('title', 'My Account Settings')
 
 @section('content')
 <div class="box-wrapper1">
@@ -39,40 +39,40 @@
                <b class="col-white"> 5.0 </b>
             </h5>
          </div>
-         <div class="row center-row">
-            <div class="col-md-4 col-lg-4 col-12">
+         <div class="row center-row line">
+            <div class="col-md-6 col-lg-4 col-6">
                <div class="field-name">
                   <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/field-icon1.png">
                   <h5> Full Name </h5>
                </div>
             </div>
-            <div class="col-md-8 col-lg-8 col-12">
+            <div class="col-md-6 col-lg-8 col-6">
                <p class="form-field1 text-right mob-text-left off-border">
                   {{Auth::user()->fname.' '.Auth::user()->lname}}
                </p>
             </div>
          </div>
-         <div class="row center-row">
-            <div class="col-md-4 col-lg-4 col-12">
+         <div class="row center-row line">
+            <div class="col-md-6 col-lg-4 col-6">
                <div class="field-name">
                   <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/field-icon3.png">
                   <h5> Gender </h5>
                </div>
             </div>
-            <div class="col-md-8 col-lg-8 col-12">
+            <div class="col-md-6 col-lg-8 col-6">
                <p class="form-field1 text-right mob-text-left off-border">
                   {{Auth::user()->gender}}
                </p>
             </div>
          </div>
-         <div class="row center-row">
-            <div class="col-md-4 col-lg-4 col-12">
+         <div class="row center-row ">
+            <div class="col-md-6 col-lg-4 col-6">
                <div class="field-name">
                   <img src="{{URL::to('/')}}/public/admin/assets/images/field-icon17.png">
                   <h5> Email Address </h5>
                </div>
             </div>
-            <div class="col-md-8 col-lg-8 col-12">
+            <div class="col-md-6 col-lg-8 col-6">
                <p class="form-field1 text-right mob-text-left off-border">
                   {{Auth::user()->email}}
                </p>
@@ -80,27 +80,27 @@
          </div>
       </div>
       <div class="col-md-6 col-lg-6 col-sm-12 col-12">
-         <div class="row center-row m-t-30">
-            <div class="col-md-4 col-lg-4 col-12">
+         <div class="row center-row m-t-30 line">
+            <div class="col-md-6 col-lg-4 col-6">
                <div class="field-name">
                   <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/field-icon13.png">
                   <h5> Country </h5>
                </div>
             </div>
-            <div class="col-md-8 col-lg-8 col-12">
+            <div class="col-md-6 col-lg-8 col-6">
                <p class="form-field1 text-right mob-text-left off-border">
                   {{empty(Auth::user()->country) ? '-' : Auth::user()->country->country}}
                </p>
             </div>
          </div>
-         <div class="row center-row">
-            <div class="col-md-4 col-lg-4 col-12">
+         <div class="row center-row line">
+            <div class="col-md-6 col-lg-4 col-6">
                <div class="field-name">
                   <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/field-icon3.png">
                   <h5> City </h5>
                </div>
             </div>
-            <div class="col-md-8 col-lg-8 col-12">
+            <div class="col-md-6 col-lg-8 col-6">
                <p class="form-field1 text-right mob-text-left off-border">
                   {{empty(Auth::user()->city) ? '-' : Auth::user()->city}}
                </p>
@@ -121,14 +121,14 @@
          </div> -->
          <form method="post" id="id_proof_form" action="{{route('buddy.my_account.idProof')}}" enctype="multipart/form-data">
             @csrf
-            <div class="row m-b-20">
-               <div class="col-md-4 col-lg-4 col-12">
+            <div class="row m-b-20 line">
+               <div class="col-md-6 col-lg-4 col-6">
                   <div class="field-name m-t-15">
                      <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/field-icon15.png">
                      <h5> ID Proof </h5>
                   </div>
                </div>
-               <div class="col-md-8 col-lg-8 col-12">
+               <div class="col-md-6 col-lg-8 col-6">
                   @if(empty(Auth::user()->id_proof_status))
                      <input type="file" id="id_proof_field" name="document" class="form-field1" required>
                      <span class="info-tag1"> Allowed File types are jpg, jpeg, doc, docs, pdf </span>
@@ -146,14 +146,14 @@
          </form>
          <form method="post" id="add_proof_form" action="{{route('buddy.my_account.addProof')}}" enctype="multipart/form-data">
             @csrf
-            <div class="row m-b-20">
-               <div class="col-md-4 col-lg-4 col-12">
+            <div class="row m-b-20 ">
+               <div class="col-md-6 col-lg-4 col-6">
                   <div class="field-name m-t-15">
                      <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/field-icon3.png">
                      <h5> Address Proof</h5>
                   </div>
                </div>
-               <div class="col-md-8 col-lg-8 col-12">
+               <div class="col-md-6 col-lg-8 col-6">
                   @if(empty(Auth::user()->add_proof_status))
                      <input type="file" name="document" id="add_proof_field" class="form-field1 " required>
                      <span class="info-tag1"> Allowed File types are jpg, jpeg, doc, docs, pdf </span>
@@ -188,9 +188,15 @@
                   </a>
                </h5>
                <div class="lang-1">
-                  @foreach(Auth::user()->langs as $val)
-                     <p class="col-white"> {{$val->language}} <span class="col-silver"> {{$val->level}} </span> </p>
-                  @endforeach
+                    @foreach(Auth::user()->langs as $val)
+                        <p class="col-white">
+                            {{$val->language}}
+                            <span class="col-silver"> {{$val->level}} </span>
+                            <a href="javascript:void(0)" class="removeLng" data-id="{{base64_encode($val->id)}}" style="color: red";>
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </p>
+                    @endforeach
                </div>
             </div>
             <div class="profile-value1">
@@ -215,6 +221,9 @@
                   <div class="edu_block">
                      <p>{{$val->degree}}</p>
                      <span>{{$val->institute}} - {{$val->finish_year}}</span>
+                     <a href="javascript:void(0)" class="removeEdu" data-id="{{base64_encode($val->id)}}" style="color: red";>
+                        <i class="fa fa-times"></i>
+                    </a>
                   </div>
                @endforeach
             </div>
@@ -228,6 +237,9 @@
                   <div class="edu_block">
                      <p>{{$val->certificate}}</p>
                      <span>{{$val->institute}}</span>
+                     <a href="javascript:void(0)" class="removeCert" data-id="{{base64_encode($val->id)}}" style="color: red";>
+                        <i class="fa fa-times"></i>
+                    </a>
                   </div>
                @endforeach
             </div>
@@ -379,7 +391,12 @@
                   <div class="row">
                      <div class="col-md-6">
                         <label>Language</label>
-                        <input type="text" name="lang" class="form-control" required>
+                        <select class="form-control" name="lang" id="lang" required>
+                            <option value="">Select</option>
+                            @foreach ($languages as $lng)
+                                <option value="{{$lng->name}}">{{$lng->name}}</option>
+                            @endforeach
+                        </select>
                      </div>
                      <div class="col-md-6">
                         <label>Level</label>

@@ -11,8 +11,12 @@
                   <div class="account-btn1 text-center">
                      <a href="{{route('coach.my_account')}}" class="custom-btn2"> My Account </a>
                   </div>
+                  <div class="account-btn1 text-center">
+                     <a href="{{URL::to('/buddy')}}" class="custom-btn1"> SWITCH TO SPORTS BUDDY </a>
+                  </div>
+
                   <div class="profile-text">
-                     <a href="" class="" > INBOX <i class="mdi mdi-email"> <b class="notif-icon1"> 5  </b> </i>  </a>
+                     <a href="{{route('coach.messages')}}" class="" > INBOX <i class="mdi mdi-email"> <b class="notif-icon1"> 5  </b> </i>  </a>
                   </div>
                </div>
               <nav class="sidebar-nav">
@@ -36,6 +40,12 @@
                         </a>
                      </li>
                      <li>
+                        <a href="{{route('coach.friends')}}" >
+                           <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/friend-icon.png">
+                           <span class="hide-menu">   Friends </span>
+                        </a>
+                     </li>
+                     <li>
                         <a href="{{route('coach.equipment')}}" >
                            <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/nav-icon4.png">
                            <span class="hide-menu">  Equipment </span>
@@ -53,12 +63,12 @@
                            <span class="hide-menu">  Orders  </span>
                         </a>
                      </li>
-                     <li>
+                     <!-- <li>
                         <a href="{{route('coach.my_account')}}" >
                            <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/nav-icon7.png">
                            <span class="hide-menu">   My Account Area </span>
                         </a>
-                     </li>
+                     </li> -->
                      <li>
                         <a href="{{route('coach.my_wallet')}}" >
                            <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/nav-icon8.png">

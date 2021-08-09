@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\CoachRequest;
 use Illuminate\Http\Request;
 use App\Models\User;
 
@@ -83,5 +84,26 @@ class userController extends Controller
         $u->save();
 
         return redirect()->back()->with('success', 'Address proof rejected.');
+    }
+
+    public function coach_requets()
+    {
+    //   echo  $u = User::with('coach_request')->where('coach_request_status',0)->get(); dd();
+        $req = CoachRequest::with('user')->get();
+        $data['data'] = $req;
+
+        return view('admin.users.coachRequests')->with($data);
+    }
+
+    public function coach_requet_approve($id)
+    {
+        $id = base64_decode($id);
+        $req = CoachRequest::find($id);
+        $u = User::where('id',$req->user_id)->first();
+        $u->type = 2;
+        $u->coach_request_status = 1;
+        $u->save();
+        $req->delete();
+        return redirect()->back()->with('success', 'User Request For Coach Is Approved.');
     }
 }

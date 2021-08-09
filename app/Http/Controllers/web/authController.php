@@ -41,7 +41,7 @@ class authController extends Controller
             if($check->type == '1'){
                 return '/buddy';
             }else{
-                return '/buddy';
+                return '/coach';
             }
     	}else{
     		return 'incorrect';

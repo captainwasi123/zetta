@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
 body , h1, h2, h3, h4, h5, h6 {
-    font-family: 'Roboto' , sans-serif !important
+	font-family: 'Roboto' , sans-serif !important
 }
 b, strong {
     font-weight: 500;
@@ -9,45 +9,45 @@ b, strong {
 
 
 .m-t-10 {
-    margin-top: 10px !important
+	margin-top: 10px !important
 }
 
 .m-t-15 {
-    margin-top: 15px !important
+	margin-top: 15px !important
 }
 
 .m-t-20 {
-    margin-top: 20px !important
+	margin-top: 20px !important
 }
 
 .m-t-25 {
-    margin-top: 25px !important
+	margin-top: 25px !important
 }
 
 .m-t-30 {
-    margin-top: 30px !important
+	margin-top: 30px !important
 }
 
 
 .m-b-10 {
-    margin-bottom: 10px !important
+	margin-bottom: 10px !important
 }
 
 .m-b-15 {
-    margin-bottom: 15px !important
+	margin-bottom: 15px !important
 }
 
 .m-b-20 {
-    margin-bottom: 20px !important
+	margin-bottom: 20px !important
 }
 
 .m-b-25 {
-    margin-bottom: 25px !important
+	margin-bottom: 25px !important
 }
 
 
 .m-b-30 {
-    margin-bottom: 30px !important
+	margin-bottom: 30px !important
 }
 
 .m-r-10 {
@@ -659,7 +659,7 @@ label.custom-control.custom-radio {
 }
 .pic-uploader1 span.file-icon {
     font-size: 0px !important;
-    background-image: url(../images/image-icon1.png);
+    background-image: url(../../assets/images/image-icon1.png);
     width: 45px;
     height: 45px;
     display: inline-block;
@@ -820,12 +820,6 @@ span.inform-box1 i {
     line-height: 25px;
 }
 
-.inbox-aside {
-    max-width: 115%;
-    width: 115%;
-}
-
-
 .chat-sidebar-head {
     padding: 25px 15px 12px 15px;
     border-bottom: 1px solid #ececec;
@@ -833,7 +827,7 @@ span.inform-box1 i {
 
 
 .chat-sidebar-head h5 {
-    color: #3b4863;
+    color: #fff;
     font-weight: 500;
     letter-spacing: 0.5px;
     font-size: 18px;
@@ -856,10 +850,13 @@ span.inform-box1 i {
 
 
 .inbox-aside .chatonline li a span {
-    color: black;
+    color: #fff;
     font-weight: 400;
     letter-spacing: 0.4px;
     font-size: 15px;
+}
+.inbox-aside .chatonline li a span:active {
+    color: #000 !important;
 }
 
 
@@ -873,7 +870,7 @@ span.inform-box1 i {
     height: 10px;
     font-size: 0px;
     border-radius: 100%;
-    z-index: 9999;
+    z-index: 999;
     position: relative;
     background: #5de85d;
 }
@@ -896,7 +893,7 @@ span.inform-box1 i {
     height: 10px;
     font-size: 0px;
     border-radius: 100%;
-    z-index: 9999;
+    z-index: 1;
     position: relative;
     background: #5de85d;
     position: absolute;
@@ -921,11 +918,12 @@ span.inform-box1 i {
 }
 
 .inbox-aside {
-    max-width: 115%;
-    width: 115%;
-    max-height: 700px;
+    max-width: 110%;
+    width: 110%;
+    max-height: 860px !important;
     overflow-x: hidden;
     overflow-y: auto !important;
+    height: 100% !important;
  
 }
 .custom-table1 table thead th {
@@ -966,6 +964,10 @@ span.inform-box1 i {
 .col-green {
     color:#4caf50 !important ;
 }
+.custom-table1 {
+    max-height: 700px !important;
+}
+
 
 .order-sorting-text a {
     color: grey;
@@ -988,6 +990,11 @@ span.inform-box1 i {
     background:grey !important;
 }
 
+
+.custom-table1 {
+    max-height: 700px !important;
+    overflow-x: visible !important;
+}
 
 
 .custom-table1 table tbody tr td a::after {
@@ -1630,7 +1637,7 @@ a.form-edit1 {
 }
 
 .bg-blue {
-    background:#7a8dea;
+	background:#7a8dea;
 }
 
 .wallet-box2 {
@@ -1640,7 +1647,7 @@ a.form-edit1 {
     padding: 10px 0px;
 }
 .bg-grey2 {
-    background:#3b4863;
+	background:#3b4863;
 }
 .wallet-box2 h6 {
     color: white;
@@ -2343,7 +2350,7 @@ a.custom-btn5.active {
     background: #7900b8;
     bottom: -2px;
     font-size: 0px;
-    z-index: 9999;
+    z-index: 999;
 }
 table.friends-table {
     border: none;
@@ -2772,7 +2779,7 @@ border-right: none !important;
     background-repeat: no-repeat;
     background-position: left center;
     background-position-x: 10px;
-    padding-left: 40px;
+/*    padding-left: 40px;*/
     max-width: 300px;
 }
 .slot-2 .form-field3 {
@@ -2921,37 +2928,8 @@ body.mini-sidebar a.navbar-brand {
     margin-left: 0px;
     overflow: hidden;
 }
- .table-chart {
-    box-shadow: none !important;
-    width: 100% !important;
-    margin: 20px 0px !important;
-}
-
-.dropdown-wrapper {
-    display: inline-block;
-    position: relative;
-}
-.table-chart {
-    box-shadow: none !important;
-    width: 100% !important;
-    margin: 20px 0px !important;
  
-}
-
- .table-chart {
-    padding: 20px;
-    width: 100%;
-    overflow: hidden;
-    box-sizing: border-box;
-}
-
-.flot-chart-head h4 {
-    margin-bottom: 20px;
-    font-weight: 600;
-    letter-spacing: 0.6px;
-}
-
-
+ 
 
 @media screen and (max-width:992px) and (min-width:768px) { 
 .mini-sidebar.fix-sidebar .left-sidebar {
@@ -2964,6 +2942,60 @@ body.mini-sidebar a.navbar-brand {
  .page-titles {
     margin-bottom: 15px;
 }
+.submit-btn1 {
+  
+    padding: 8px 16px;
+    font-size: 14px;
+}
+.submit-btn1 i {
+    width: 20px;
+    height: 20px;
+    margin-left: -8px;
+    margin-right: 0px;
+}
+.profile-value1 h5 {
+    font-size: 16px;
+}
+.cat-button1 {
+
+    width: 110px;
+}
+.inbox-aside {
+    max-width: 140%;
+    width: 140%;
+}
+.slot-1 span {
+    max-width: 100%;
+}
+.form-field4 {
+    width: 98%;
+}
+.select-bg1 {
+    max-width: 100%;
+}
+.equal-btn1 {
+    margin-top: 5px;
+}
+.slot-2 span {
+    width: 21%;
+}
+.card-body
+{
+    padding:0px;
+}
+ul.nav.nav-tabs li {
+    margin: 0px 0px 0px 0px;
+}
+.custom-btn2 {
+    padding: 6px 8px;
+}
+.pl-4, .px-4 {
+    padding-left: 0px !important;
+}
+ul.less-triggers.nav-tabs .nav-link {
+    padding: 8px 10px !important;
+}
+
 }
 
 
@@ -2989,18 +3021,18 @@ body.mini-sidebar .user-profile, body.mini-sidebar .user-profile-header {
 .topbar .navbar-light .navbar-nav .nav-item > a.nav-link {
     font-size: 30px;
 }
-.topbar .top-navbar .navbar-header {
+/*.topbar .top-navbar .navbar-header {
     line-height: 45px;
     text-align: center;
     padding: 5px 0px;
-}
-body.mini-sidebar a.navbar-brand {
+}*/
+/*body.mini-sidebar a.navbar-brand {
     width: 35px;
     margin-left: 0px;
     overflow: hidden;
     margin-top: 4px;
     margin-bottom: -4px;
-}
+}*/
 .container-fluid {
     padding: 0 15px 25px 15px;
 }
@@ -3033,7 +3065,7 @@ body.mini-sidebar a.navbar-brand {
     max-height: 200px;
     overflow-x: hidden;
     overflow-y: auto !important;
-    margin-bottom: 40px !important;
+   /* margin-bottom: 40px !important;*/
 }
 }
 
@@ -3067,18 +3099,18 @@ body.mini-sidebar .user-profile, body.mini-sidebar .user-profile-header {
 .topbar .navbar-light .navbar-nav .nav-item > a.nav-link {
     font-size: 30px;
 }
-.topbar .top-navbar .navbar-header {
+/*.topbar .top-navbar .navbar-header {
     line-height: 45px;
     text-align: center;
     padding: 5px 0px;
-}
-body.mini-sidebar a.navbar-brand {
+}*/
+/*body.mini-sidebar a.navbar-brand {
     width: 35px;
     margin-left: 0px;
     overflow: hidden;
     margin-top: 4px;
     margin-bottom: -4px;
-}
+}*/
 .container-fluid {
     padding: 0 15px 25px 15px;
 }
@@ -3165,7 +3197,10 @@ body.mini-sidebar a.navbar-brand {
 }
 .mob-text-left {
     text-align: left !important;
+padding: 5px 0px 10px 15px;
 }
+
+
 .custom-table1 {
     max-height: 700px !important;
     overflow-x: auto !important;
@@ -3201,7 +3236,7 @@ body.mini-sidebar a.navbar-brand {
     margin-bottom: 10px !important;
 }
 .wallet-filters a {
-    margin-right: 10px !important;
+    margin-right: 0px !important;
     display: inline-block !important;
     margin-bottom: 10px !important;
 }
@@ -3282,10 +3317,10 @@ div#countdown ul li {
 .order-total-price {
     padding: 15px 15px !important;
 }
-body.mini-sidebar a.navbar-brand img {
+/*body.mini-sidebar a.navbar-brand img {
     max-width: 145px;
     margin-left: -16px;
-}
+}*/
 }
 
 
@@ -3445,3 +3480,168 @@ html body .off-border {
     font-size: 14px !important;
     color: #cecece !important;
 }
+
+
+/* Anas Code*/
+
+.chat-main-box .chat-left-aside {
+    width: 100%;
+}
+.card-no-border .card {
+
+    background: #1d242c !important;
+}
+
+td.fc-axis.fc-widget-content {
+    background: white;
+}
+.sec-head1.ps h3 {
+    padding-left: 20px;
+}
+.mini-sidebar .top-navbar .navbar-header {
+    width: 180px;
+}
+body.mini-sidebar a.navbar-brand {
+    width: 100%;
+}
+body.mini-sidebar a.navbar-brand img {
+    max-width: 100%;
+}
+.topbar .top-navbar .navbar-header {
+    line-height: 15px;
+    }
+
+
+    .header-login .dropdown button img {
+            width: 38px;
+            border-radius: 25px;
+}
+   .header-login .dropdown button {
+   background: none !important;
+    border: none !important;
+    padding: 10px 10px !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.topbar .top-navbar .navbar-nav .dropdown-menu {
+    position: absolute;
+    left: -100px;
+}
+.line {
+    border-bottom: 1px solid;
+}
+p.form-field1.text-right.mob-text-left.off-border {
+    word-break: break-all;
+}
+.dropdown-content {
+  display: none;
+}
+.show {display:block;}
+div#myDropdown img {
+    width: 100%;
+    height: 250px;
+}
+.pic-uploader1 input{
+    width: 100%;
+}
+.lesson-image-block img {
+    height: 200px;
+    width: 100%;
+}
+@media only screen and (max-width: 767px) {
+.fc-toolbar .fc-right {
+    float: left;
+    padding-left: 40px;
+}
+.fc-toolbar {
+    margin: 0px;
+    padding: 0px 0px;
+}
+.fc-toolbar .fc-center {
+    padding: 20px 0px 10px 0px;
+}
+.block-element.pl-4 {
+    padding: 0px !important;
+}
+.chat-main-box .chat-left-aside {
+    left: -250px;
+    position: absolute;
+    -webkit-transition: 0.5s ease-in;
+    -o-transition: 0.5s ease-in;
+    transition: 0.5s ease-in;
+   background: transparent !important;
+}
+.mini-sidebar .top-navbar .navbar-header {
+    width: 350px;
+}
+.box-wrapper1 {
+    padding: 20px 0px;
+}
+body.mini-sidebar a.navbar-brand {
+    width: 100%;
+}
+body.mini-sidebar a.navbar-brand img {
+    max-width: 100%;
+}
+.topbar .top-navbar .navbar-header {
+    line-height: 0px;
+    text-align: center;
+    padding: 8px 0px;
+}
+.card-body.b-l.calender-sidebar.bg-white {
+    padding: 0px;
+}
+.sec-head1.ps h3 {
+    padding-left: 0px;
+}
+.topbar .top-navbar .navbar-nav .dropdown-menu {
+    left: -100px;
+}
+.dropdown-menu.animated.flipInY.show {
+    left: -138px !important;
+}
+ul.nav.nav-tabs li {
+    margin: 0px 20px 0px 0px;
+}
+.fund-btn2 {
+    margin-left: 0px;
+}
+.wallet-btn1 {
+    
+    padding: 8px 8px;
+}
+p.form-field1.text-right.mob-text-left.off-border {
+    line-break: anywhere;
+}
+
+.submit-btn1 {
+
+    padding: 8px 20px;
+}
+.submit-btn1 i {
+
+    margin-left: -12px;
+    margin-right: 2px;
+}
+
+.slot-1 span {
+    max-width: 100%;
+}
+.form-field4 {
+    width: 98%;
+}
+.select-bg1 {
+    max-width: 100%;
+}
+.equal-btn1 {
+    margin-top: 10px !important;
+}
+.slot-2 span {
+    width: 21%;
+}
+.slot-2 .form-field3 {
+    max-width: 100%;
+}
+}
+

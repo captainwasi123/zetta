@@ -22,8 +22,8 @@
          </div>
       @else
          <div class="header-buttons">
-            <a href="javascript:void(0)" class="open-join header-btn1"> Register </a>
-            <a href="" class="header-btn2"> Become a Coach </a>
+            <a href="javascript:void(0)" class="open-join-buddy header-btn1" data-id="buddy"> Register </a>
+            <a href="javascript:void(0)" class="open-join header-btn2"> Become a Coach </a>
             <a href="javascript:void(0)" class="open-login header-btn3"> Login </a>
          </div>
       @endif

@@ -92,8 +92,22 @@
                </div>
             </div>
          </div>
-         <div class="row center-row" id="friend_block">
-
+         <div class="row center-row">
+            <div class="col-md-3 col-lg-3 col-12">
+               <div class="field-name">
+                  <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/field-icon10.png">
+                  <h5> Friend Name </h5>
+               </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-12">
+               {{-- <input type="text" placeholder="" class="form-field1" name=""> --}}
+               <select name="friend" id="friend" class="form-field1">
+                   <option value="">select friend</option>
+                    @foreach ($users as $val)
+                        <option value="{{$val->id}}">{{$val->fname .' '. $val->lname}}</option>
+                    @endforeach
+               </select>
+            </div>
          </div>
          <div class="row center-row">
             <div class="col-md-3 col-lg-3 col-12">

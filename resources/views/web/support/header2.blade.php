@@ -1,7 +1,7 @@
 <header class="header-1">
    <div class="container">
       <div class="logo">
-         <a href="{{URL::to('/')}}"> <img src="{{URL::to('/assets/website')}}/images/zetta-logo.png"> </a> 
+         <a href="{{URL::to('/')}}"> <img src="{{URL::to('/assets/website')}}/images/zetta-logo.png"> </a>
       </div>
       <div class="search-handler">
          <img src="{{URL::to('/assets/website')}}/images/hamburger.png">
@@ -41,7 +41,7 @@
       @else
          <div class="header-buttons">
             <a href="javascript:void(0)" class="open-join header-btn1"> Register </a>
-            <a href="" class="header-btn2"> Become a Coach </a>
+            <a href="javascript:void(0)" class="open-join-coach header-btn2"> Become a Coach </a>
             <a href="javascript:void(0)" class="open-login header-btn3"> Login </a>
          </div>
       @endif

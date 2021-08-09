@@ -15,14 +15,7 @@
 </style>
 @endsection
 @section('content')
-@if (count($data->locations) > 0)
-    @foreach ($data->locations as $locat)
-        @if ($locat->lat != null && $locat->lng != null)
-            <input type="hidden" id="lat" value="{{$locat->lat}}">
-            <input type="hidden" id="lng" value="{{$locat->lng}}">
-        @endif
-    @endforeach
-@endif
+
 <section class="action-bar">
    <div class="container">
       <div class="all-actions arrows1">
@@ -253,6 +246,11 @@
                                  <b class="col-purple"> {{'$ '.number_format($data->packages[0]->price)}} </b>
                               </h3>
                               <p class="col-white m-b-20">
+                                Duration
+                                <br>
+                                <b class="col-purple"> {{$data->packages[0]->duration}} </b>
+                             </p>
+                              <p class="col-white m-b-20">
                                  Services
                               </p>
                            </div>
@@ -277,6 +275,11 @@
                                  <b class="col-purple"> {{'$ '.number_format($data->packages[1]->price)}} </b>
                               </h3>
                               <p class="col-white m-b-20">
+                                Duration
+                                <br>
+                                <b class="col-purple"> {{$data->packages[1]->duration}} </b>
+                             </p>
+                              <p class="col-white m-b-20">
                                  Services
                               </p>
                            </div>
@@ -300,6 +303,11 @@
                                  Premium Package
                                  <b class="col-purple"> {{'$ '.number_format($data->packages[2]->price)}} </b>
                               </h3>
+                              <p class="col-white m-b-20">
+                                Duration
+                                <br>
+                                <b class="col-purple"> {{$data->packages[2]->duration}} </b>
+                             </p>
                               <p class="col-white m-b-20">
                                  Services
                               </p>

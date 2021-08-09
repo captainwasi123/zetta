@@ -35,6 +35,7 @@
                         <li><a href="{{route('admin.users.blocked')}}">Blocked</a></li>
                         <li><a href="{{route('admin.users.id_proof')}}">ID Proof Request</a></li>
                         <li><a href="{{route('admin.users.add_proof')}}">Addr. Proof Request</a></li>
+                        <li><a href="{{route('admin.user.coach_request')}}">Users Coach Request</a></li>
                     </ul>
                 </li>
                 <li>
@@ -68,6 +69,16 @@
                         <li><a href="{{route('admin.setting.category.add')}}">Add Category</a></li>
                         <li><a href="{{route('admin.setting.category')}}">Categories</a></li>
                         <li><a href="{{route('admin.setting.category.requests')}}">New Requests</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                        <i class="mdi mdi-earth"></i>
+                        <span class="hide-menu">Language</span>
+                    </a>
+                    <ul aria-expanded="false" class="collapse">
+                        <li><a href="{{route('admin.setting.language.add')}}">Add Language</a></li>
+                        <li><a href="{{route('admin.setting.language')}}">Languages</a></li>
                     </ul>
                 </li>
             </ul>

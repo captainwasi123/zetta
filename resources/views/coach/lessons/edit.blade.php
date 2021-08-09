@@ -64,12 +64,23 @@
                      </div>
                   </div>
                   <div class="col-md-8 col-lg-8 col-12" id="location_block">
-                     @foreach($data->locations as $key => $val)
-                        @if($key >= 1) <br> @endif
+                        @if (count($data->locations)>0)
+                            @foreach($data->locations as $key => $val)
+                                @if($key >= 1) <br> @endif
+                                <div class="location-field">
+                                <input type="text" placeholder="Location" class="form-field1" value="{{$val->address}}" name="location[]" required>
+                                </div>
+
+                                <input type="hidden" name="lat" id="lat">
+                                <input type="hidden" name="lng" id="lng">
+                            @endforeach
+                        @else
                         <div class="location-field">
-                           <input type="text" placeholder="Location" class="form-field1" value="{{$val->address}}" name="location[]" required>
+                            <input type="text" placeholder="Location" class="form-field1" name="location[]" required>
                         </div>
-                     @endforeach
+                            <input type="hidden" name="lat" id="lat">
+                            <input type="hidden" name="lng" id="lng">
+                        @endif
                   </div>
                </div>
                <div class="row">
@@ -193,28 +204,45 @@
                   </thead>
                   <tbody>
                      <tr>
-                        <td> 
-                           <input class="table-field1" type="number" placeholder="Price" name="price_basic" value="{{$data->packages[0]->price}}" required>
+                        <td>
+                            <input class="table-field1" type="number" placeholder="Duration in min" name="duartion_basic" value="{{@$data->packages[0]->duration}}" required>
+                            <input class="table-field1 mt-2" type="number" placeholder="Days" name="day_basic" value="{{@$data->packages[0]->days}}" required>
+                           <input class="table-field1 mt-2" type="number" placeholder="Price" name="price_basic" value="{{@$data->packages[0]->price}}" required>
                         </td>
-                        <td> 
-                           <input class="table-field1" type="number" placeholder="Price" name="price_standard" value="{{$data->packages[1]->price}}" required> 
+                        <td>
+                            <input class="table-field1" type="number" placeholder="Duration in min" name="duartion_standard" value="{{@$data->packages[1]->duration}}" required>
+                             <input class="table-field1 mt-2" type="number" placeholder="Days" name="day_standard" value="{{@$data->packages[1]->days}}" required>
+                           <input class="table-field1 mt-2" type="number" placeholder="Price" name="price_standard" value="{{@$data->packages[1]->price}}" required>
                         </td>
-                        <td> 
-                           <input class="table-field1" type="number" placeholder="Price" name="price_premium" value="{{$data->packages[2]->price}}" required> 
+                        <td>
+                            <input class="table-field1" type="number" placeholder="Duration in min" name="duartion_premium" value="{{@$data->packages[2]->duration}}" required>
+                            <input class="table-field1 mt-2" type="number" placeholder="Days" name="day_premium" value="{{@$data->packages[2]->days}}" required>
+                           <input class="table-field1 mt-2" type="number" placeholder="Price" name="price_premium" value="{{@$data->packages[2]->price}}" required>
                         </td>
                      </tr>
-                     @for($x=0; $x<10; $x++)
-                        @if((count($data->packages[0]->details) > $x) || (count($data->packages[1]->details) > $x) || (count($data->packages[2]->details) > $x))
-                           <tr>
-                              <td>  <textarea class="table-field1" placeholder="Service" name="service_basic[]">{{empty($data->packages[0]->details[$x]) ? '' : $data->packages[0]->details[$x]->service}}</textarea>
-                              </td>
-                              <td> <textarea class="table-field1" placeholder="Service" name="service_standard[]">{{empty($data->packages[1]->details[$x]) ? '' : $data->packages[1]->details[$x]->service}}</textarea>
-                              </td>
-                              <td> <textarea class="table-field1" placeholder="Service" name="service_premium[]">{{empty($data->packages[2]->details[$x]) ? '' : $data->packages[2]->details[$x]->service}}</textarea>
-                              </td>
-                           </tr>
-                        @endif
-                     @endfor
+                     @if(!empty(@$data->packages[0]->details) || !empty(@$data->packages[1]->details) || !empty(@$data->packages[2]->details) )
+                        @for($x=0; $x<10; $x++)
+                            @if((count(@$data->packages[0]->details) > $x) || (count(@$data->packages[1]->details) > $x) || (count(@$data->packages[2]->details) > $x))
+                            <tr>
+                                <td>  <textarea class="table-field1" placeholder="Service" name="service_basic[]">{{empty(@$data->packages[0]->details[$x]) ? '' : @$data->packages[0]->details[$x]->service}}</textarea>
+                                </td>
+                                <td> <textarea class="table-field1" placeholder="Service" name="service_standard[]">{{empty(@$data->packages[1]->details[$x]) ? '' : @$data->packages[1]->details[$x]->service}}</textarea>
+                                </td>
+                                <td> <textarea class="table-field1" placeholder="Service" name="service_premium[]">{{empty(@$data->packages[2]->details[$x]) ? '' : @$data->packages[2]->details[$x]->service}}</textarea>
+                                </td>
+                            </tr>
+                            @endif
+                        @endfor
+                     @else
+                     <tr>
+                        <td>  <textarea class="table-field1" placeholder="Service" name="service_basic[]"></textarea>
+                        </td>
+                        <td> <textarea class="table-field1" placeholder="Service" name="service_standard[]"></textarea>
+                        </td>
+                        <td> <textarea class="table-field1" placeholder="Service" name="service_premium[]"></textarea>
+                        </td>
+                    </tr>
+                     @endif
                      <tr id="package_block">
                         <td colspan="3" class="text-left p-l-10"> <a href="javascript:void(0)" class="submit-btn1 addServicePackage"> <i class="fa fa-plus"> </i> ADD </a> </td>
                      </tr>
@@ -247,6 +275,33 @@
                   </div>
                </div>
             </div>
+            <div class="block-element m-t-30">
+                <div class="row ">
+                   <div class="col-md-4 col-lg-4 col-12">
+                      <div class="field-name">
+                         <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/field-icon19.png">
+                         <h5> Availability For </h5>
+                      </div>
+                   </div>
+                   <div class="col-md-8 col-lg-8 col-12">
+                      <div class="inline-1">
+                         <label class="custom-control custom-radio">
+                         <input id="radio1" name="availability_for" type="radio" value="1" class="custom-control-input" {{$data->availability_for == '1' ? 'checked' : ''}}>
+                         <span class="custom-control-label"> Young Peoples </span>
+                         </label>
+                         <label class="custom-control custom-radio">
+                         <input id="radio2" name="availability_for" type="radio" value="2" class="custom-control-input" {{$data->availability_for == '2' ? 'checked' : ''}}>
+                         <span class="custom-control-label"> Old Peoples </span>
+                         </label>
+                         <br>
+                         <label class="custom-control custom-radio">
+                         <input id="radio2" name="availability_for" type="radio" value="3" class="custom-control-input" {{$data->availability_for == '3' ? 'checked' : ''}}>
+                         <span class="custom-control-label"> Both </span>
+                         </label>
+                      </div>
+                   </div>
+                </div>
+             </div>
          </div>
       </div>
    </form>
@@ -270,12 +325,28 @@
 
 <script type="text/javascript">
    jQuery(document).ready(function() {
-
+        getLocation();
        $("input[name='group_members']").TouchSpin();
        $('.dropify').dropify();
        $(".select2").select2();
 
    });
+
+
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+            alert("Geolocation is not supported by this browser.");
+        }
+    }
+
+    function showPosition(position) {
+        // initMap(position.coords.latitude,position.coords.longitude);
+        console.log(position);
+        $('#lat').val(position.coords.latitude);
+        $('#lng').val(position.coords.longitude);
+    }
 </script>
 
 @endsection

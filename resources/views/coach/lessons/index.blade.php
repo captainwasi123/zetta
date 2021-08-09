@@ -51,8 +51,8 @@
                                                       <tbody>
                                                          @foreach($data['active'] as $val)
                                                             <tr>
-                                                               <td class="table-image2">
-                                                                  <img src="{{URL::to('/public/storage/user/lessons/main_image/'.$val->cover_img)}}"> 
+                                                               <td id="myBtn" class="table-image2">
+                                                                  <img src="{{URL::to('/public/storage/user/lessons/main_image/'.$val->cover_img)}}">
                                                                   {{$val->title}}
                                                                </td>
                                                                <td class="text-center"> <a href="">{{count($val->activeOrders)}} - View</a> </td>
@@ -67,6 +67,14 @@
                                                                   </div>
                                                               </div>
                                                                </td>
+                                                            </tr>
+                                                             <tr style="border-bottom: 0px;">
+                                                               <td colspan="4" style="border-bottom: 0px !important;padding: 0px;">
+                                                                   <div id="myDropdown" class="dropdown-content">
+                                                                     <img src="https://dnpprojects.com/demo/zetta/assets/website/images/zetta-logo.png" >  
+                                                                   </div>
+                                                               </td>
+                                                              
                                                             </tr>
                                                          @endforeach
                                                       </tbody>
@@ -93,7 +101,7 @@
                                                             <td class="text-center">  <label style="margin-top: -25px;" class="custom-control custom-radio">
                                                                <input id="radio1" name="radio" type="radio" class="custom-control-input">
                                                                <span class="custom-control-label">  </span>
-                                                               </label> 
+                                                               </label>
                                                             </td>
                                                             <td class="table-image2">
                                                                <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/users/5.jpg"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in Nullam at
@@ -135,7 +143,7 @@
                                                             <td class="text-center">  <label style="margin-top: -25px;" class="custom-control custom-radio">
                                                                <input id="radio1" name="radio" type="radio" class="custom-control-input">
                                                                <span class="custom-control-label">  </span>
-                                                               </label> 
+                                                               </label>
                                                             </td>
                                                             <td class="table-image2">
                                                                <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/users/5.jpg"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in Nullam at
@@ -157,7 +165,7 @@
                                                             <td class="text-center">  <label style="margin-top: -25px;" class="custom-control custom-radio">
                                                                <input id="radio1" name="radio" type="radio" class="custom-control-input">
                                                                <span class="custom-control-label">  </span>
-                                                               </label> 
+                                                               </label>
                                                             </td>
                                                             <td class="table-image2">
                                                                <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/users/5.jpg"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in Nullam at
@@ -179,7 +187,7 @@
                                                             <td class="text-center">  <label style="margin-top: -25px;" class="custom-control custom-radio">
                                                                <input id="radio1" name="radio" type="radio" class="custom-control-input">
                                                                <span class="custom-control-label">  </span>
-                                                               </label> 
+                                                               </label>
                                                             </td>
                                                             <td class="table-image2">
                                                                <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/users/5.jpg"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in Nullam at
@@ -221,7 +229,7 @@
                                                             <td class="text-center">  <label style="margin-top: -25px;" class="custom-control custom-radio">
                                                                <input id="radio1" name="radio" type="radio" class="custom-control-input">
                                                                <span class="custom-control-label">  </span>
-                                                               </label> 
+                                                               </label>
                                                             </td>
                                                             <td class="table-image2">
                                                                <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/users/5.jpg"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in Nullam at
@@ -317,5 +325,22 @@
           $.plot($("#flot-bar-chart"), [barData], barOptions);
       });
     </script>
+       <script>
+// Get the button, and when the user clicks on it, execute myFunction
+document.getElementById("myBtn").onclick = function() {myFunction()};
+
+/* myFunction toggles between adding and removing the show class, which is used to hide and show the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Get the button, and when the user clicks on it, execute myFunction
+document.getElementById("myBtn1").onclick = function() {myFunction1()};
+
+/* myFunction toggles between adding and removing the show class, which is used to hide and show the dropdown content */
+function myFunction1() {
+  document.getElementById("myDropdown1").classList.toggle("show");
+}
+</script>
 
 @endsection

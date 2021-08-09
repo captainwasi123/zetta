@@ -40,12 +40,12 @@
         </div>
     </div>
 </div>
-<div class="block-element  ">
+<!-- <div class="block-element  ">
     <div class="sec-head1">
         <h3> Your Zetta Lead  </h3>
     </div>
-</div>
-<div class="block-element m-b-10">
+</div> -->
+<!-- <div class="block-element m-b-10">
     <div class="lead-details">
         <p class="col-silver">
         <span> <b class="bg-blue"></b> Earned($1,132) </span>
@@ -73,7 +73,7 @@
                 <div id="morris-area-chart"></div>
             </div>
         </div>
-</div>
+</div> -->
 <div class="block-element">
     <div class="row m-b-20">
         <div class="col-md-5 col-lg-5 col-sm-12 col-12">

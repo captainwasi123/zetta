@@ -190,7 +190,7 @@
                      </div>
                      <div class="lesson-title-block2">
                         <h4>
-                            <a href="{{route('web.user.details',base64_encode($val->id))}}">
+                            <a href="{{route('web.coach.details',base64_encode($val->id))}}">
                            {{$val->fname.' '.$val->lname}}
                             </a>
                            <img src="{{URL::to('/assets/website')}}/images/zoom-logo.png" style="width:15px;">
@@ -204,7 +204,7 @@
                      </div>
                      <div class="lesson-rating-block2">
                         <span class="col-white"> <i class="fa fa-star col-purple"> </i>  5.0  </span>
-                        <a href="javascript:void(0)" class="col-purple"> <i class="fa fa-heart col-purple"></i> </a>
+                        <a href="javascript:void(0)" class="col-purple fav_coach" data-id="{{$val->id}}" id="{{$val->id}}"> <i class="fa fa-heart col-purple"></i> </a>
                      </div>
                   </div>
                </div>

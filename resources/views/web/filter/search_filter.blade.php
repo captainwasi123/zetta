@@ -189,7 +189,7 @@
                         </div>
                         <div class="lesson-title-block2">
                             <h4>
-                                <a href="{{route('web.user.details',base64_encode($val->id))}}">
+                                <a href="{{route('web.coach.details',base64_encode($val->id))}}">
                             {{$val->fname.' '.$val->lname}}
                                 </a>
                                 @if ($val->availability == 1)
@@ -205,7 +205,7 @@
                         </div>
                         <div class="lesson-rating-block2">
                             <span class="col-white"> <i class="fa fa-star col-purple"> </i>  5.0  </span>
-                            <a href="javascript:void(0)" class="col-purple"> <i class="fa fa-heart col-purple"></i> </a>
+                            <a href="javascript:void(0)" class="col-purple fav_coach" data-id="{{$val->id}}" id="{{$val->id}}"> <i class="far fa-heart col-purple"></i> </a>
                         </div>
                     </div>
                 </div>
@@ -401,7 +401,7 @@
                         </div>
                         <div class="lesson-title-block2">
                             <h4>
-                                <a href="{{route('web.user.details',base64_encode($val->id))}}">
+                                <a href="{{route('web.coach.details',base64_encode($val->id))}}">
                             {{$val->fname.' '.$val->lname}}
                                 </a>
                                 @if ($val->availability == 1)
@@ -417,7 +417,7 @@
                         </div>
                         <div class="lesson-rating-block2">
                             <span class="col-white"> <i class="fa fa-star col-purple"> </i>  5.0  </span>
-                            <a href="javascript:void(0)" class="col-purple"> <i class="fa fa-heart col-purple"></i> </a>
+                            <a href="javascript:void(0)" class="col-purple fav_buddy" data-id="{{$val->id}}" id="{{$val->id}}"> <i class="far fa-heart col-purple"></i> </a>
                         </div>
                     </div>
                 </div>
@@ -613,11 +613,11 @@
                     <div class="col-md-4 col-lg-2 col-sm-4">
                         <div class="lesson-block2">
                             <div class="lesson-image-block2">
-                                <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{Auth::user()->profile_img}}" alt="user" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';">
+                                <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{$val->user->profile_img}}" alt="user" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';">
                             </div>
                             <div class="lesson-title-block2">
                                 <h4>
-                                    <a href="{{route('web.user.details',base64_encode($val->user->id))}}">
+                                    <a href="{{route('web.coach.details',base64_encode($val->user->id))}}">
                                 {{$val->user->fname.' '.$val->user->lname}}
                                     </a>
                                     @if ($val->availability == 1)
@@ -633,7 +633,7 @@
                             </div>
                             <div class="lesson-rating-block2">
                                 <span class="col-white"> <i class="fa fa-star col-purple"> </i>  5.0  </span>
-                                <a href="javascript:void(0)" class="col-purple"> <i class="fa fa-heart col-purple"></i> </a>
+                                <a href="javascript:void(0)" class="col-purple fav_coach" data-id="{{$val->id}}" id="{{$val->id}}"> <i class="far fa-heart col-purple "></i> </a>
                             </div>
                         </div>
                     </div>

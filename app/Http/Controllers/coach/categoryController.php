@@ -11,7 +11,7 @@ use Auth;
 class categoryController extends Controller
 {
     //
-    function index(){
+    function index(){ 
         $data = sportsCategory::orderBy('name')->get();
 
         return view('coach.category.list', ['data' => $data]);
@@ -19,7 +19,8 @@ class categoryController extends Controller
 
     function add(){
 
-        return view('coach.category.add');
+        $data = sportsCategory::orderBy('name')->get();
+        return view('coach.category.add',['data' => $data]);
     }
 
     function insert(Request $request){
@@ -32,7 +33,7 @@ class categoryController extends Controller
     function delete($id){
         $id = base64_decode($id);
         $data = userCategory::destroy($id);
-        
+
         return redirect()->back()->with('success', 'Record Deleted.');
     }
 }

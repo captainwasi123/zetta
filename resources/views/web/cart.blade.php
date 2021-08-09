@@ -55,25 +55,33 @@
             <div class="row" id="accordion">
                <div class="col-md-4 col-lg-4 col-sm-12 col-12">
                   <div class="order-image1">
-                     <img src="{{URL::to('/public/storage/user/lessons/main_image/'.$data->cover_img)}}">
+                      @if ($type == 'activity')
+                      <img src="{{asset('/public/storage/user/activity/main_image/'.$data->cover_img)}}">
+                      @endif
+                      @if ($type == 'lesson')
+                      <img src="{{URL::to('/public/storage/user/lessons/main_image/'.$data->cover_img)}}">
+                      @endif
+
                   </div>
                </div>
-               <div class="col-md-4 col-lg-4 col-sm-6 col-12">
+               <div class="col-md-8 col-lg-4 col-sm-6 col-12">
                   <div class="order-text1">
-                     <h5 class="col-white"> 
-                        {{$data->description}}  
+                     <h5 class="col-white">
+                        {{$data->description}}
                      </h5>
                      <h6 class="col-purple"> <i class="fa fa-star"> </i> <i class="fa fa-star"> </i> <i class="fa fa-star"> </i> <i class="fa fa-star"> </i> <i class="fa fa-star"> </i> <b> 5.0 </b>  </h6>
                      <button class="  collapse-btn1"   data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">  Hide what included  </button>
                   </div>
                </div>
-               <div class="col-md-4 col-lg-4 col-sm-6 col-12">
-                  
+               <div class="col-md-0 col-lg-4 col-sm-6 col-12">
+
                </div>
             </div>
             <div class="row m-t-20" id="accordion">
                <div class="col-md-12 col-lg-12">
                   <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                      @if (!empty($data->packages[$pack]->details))
+
                      <div class="basic-package-head">
                         <h4 class="col-white"> {{$data->packages[$pack]->title}} Package </h4>
                         <p class="col-white m-t-20">
@@ -85,12 +93,13 @@
                            @endforeach
                         </ul>
                      </div>
+                     @endif
                   </div>
                </div>
             </div>
          </div>
          <div class="col-md-12 col-lg-3 col-sm-12 col-12">
-            <form method="post" action="{{route('web.checkout')}}">
+            <form class="checkout-extra" method="post" action="{{route('web.checkout')}}">
                @csrf
                <input type="hidden" name="lid" value="{{base64_encode($data->id)}}">
                <input type="hidden" name="pack_id" value="{{base64_encode($pack)}}">
@@ -102,11 +111,25 @@
                      <tbody>
                         <tr>
                            <th class="col-white"> Total Amount </th>
-                           <th class="col-purple"> {{'$'.number_format($data->packages[$pack]->price)}} </th>
+                           @if ($price != null)
+                           <th class="col-purple"> {{'$'.number_format($price)}} </th>
+                            @else
+                            @if (!empty($data->packages[$pack]->price))
+                            <th class="col-purple"> {{'$'.number_format($data->packages[$pack]->price)}} </th>
+                            @endif
+                           @endif
                         </tr>
                         <tr>
                            <td colspan="2" class="text-center no-border">
-                              <button class="custom-btn1 bg-purple col-white rounded block-element2 m-t-10"> Continue to Checkout ({{'$'.number_format($data->packages[$pack]->price)}})</button> 
+                              <button class="custom-btn1 bg-purple col-white rounded block-element2 m-t-10"> Continue to Checkout
+                                @if ($price != null)
+                                   ({{'$'.number_format($price)}})
+                                @else
+                                    @if (!empty($data->packages[$pack]->price))
+                                        ({{'$'.number_format($data->packages[$pack]->price)}})
+                                    @endif
+                                @endif
+                                </button>
                               <p class="col-white m-t-10 m-b-0"> You won't be charged yet  </p>
                            </td>
                         </tr>
@@ -120,3 +143,4 @@
 </section>
 
 @endsection
+

@@ -5,14 +5,14 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="host" content="{{URL::to('/')}}">
       <title> @yield('title') | Zetta</title>
-      
+
       @include('web.support.style')
       @yield('addStyle')
 
    </head>
    <body>
       <!-- Header Section Starts Here -->
-         @include('web.support.header2')   
+         @include('web.support.header2')
       <!-- Header Section Ends Here -->
       <!-- Banner Section Starts Here -->
          @yield('content')

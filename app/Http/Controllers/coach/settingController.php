@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Auth;
 use App\Models\User;
 use App\Models\country;
+use App\Models\Language;
 use App\Models\userLang;
 use App\Models\userEducation;
 use App\Models\userCertificate;
@@ -20,6 +21,7 @@ class settingController extends Controller
     {
         $data = array(
             'countries' => country::all(),
+            'languages' => Language::all(),
         );
         return view('coach.my_account.index')->with($data);
     }
@@ -60,6 +62,13 @@ class settingController extends Controller
         return redirect()->back()->with('success', 'New Language Added.');
     }
 
+    function remover_lang($id)
+    {
+        $id = base64_decode($id);
+        userLang::find($id)->delete();
+        return redirect()->back()->with('success', 'Language Removed.');
+    }
+
      function add_edu(Request $request){
         $data = $request->all();
         userEducation::addEdu($data);
@@ -67,11 +76,23 @@ class settingController extends Controller
         return redirect()->back()->with('success', 'New Education Added.');
     }
 
+    function remove_edu($id){
+        $id = base64_decode($id);
+        userEducation::find($id)->delete();
+        return redirect()->back()->with('success', 'Education Removed.');
+    }
+
     function add_certificate(Request $request){
         $data = $request->all();
         userCertificate::addCertificate($data);
 
         return redirect()->back()->with('success', 'New Certificate Added.');
+    }
+
+    function remove_certificate($id){
+        $id = base64_decode($id);
+        userCertificate::find($id)->delete();
+        return redirect()->back()->with('success', 'Certificate Removed.');
     }
 
 

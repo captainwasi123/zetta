@@ -1,7 +1,8 @@
 @extends('buddy.include.master')
-@section('title', 'Equipments')
+@section('title', 'All Activities')
 
 @section('content')
+
 <div class="box-wrapper1">
    <div class="block-element">
       <div class="row">
@@ -46,10 +47,11 @@
                                                       </thead>
                                                       <tbody>
                                                          @foreach($data['active'] as $val)
-                                                            <tr>
-                                                               <td class="table-image2">
-                                                                  <img src="{{URL::to('/public/storage/user/activity/main_image/'.$val->cover_img)}}"> 
+                                                            <tr >
+                                                               <td id="myBtn" class="table-image2">
+                                                                  <img src="{{URL::to('/public/storage/user/activity/main_image/'.$val->cover_img)}}">
                                                                   {{$val->title}}
+                                                               
                                                                </td>
                                                                <td class="text-center">  0 </td>
                                                                <td class="text-center"> 0 </td>
@@ -63,7 +65,19 @@
                                                                   </div>
                                                               </div>
                                                                </td>
+
                                                             </tr>
+                                                            <tr style="border-bottom: 0px;">
+                                                               <td colspan="4" style="border-bottom: 0px !important;padding: 0px;">
+                                                                   <div id="myDropdown" class="dropdown-content">
+                                                                     <img src="https://dnpprojects.com/demo/zetta/assets/website/images/zetta-logo.png" >  
+                                                                   </div>
+                                                               </td>
+                                                              
+                                                            </tr>
+                                                            
+                                                           
+
                                                          @endforeach
                                                       </tbody>
                                                    </table>
@@ -84,5 +98,23 @@
       </div>
    </div>
    </div>
+
+   <script>
+// Get the button, and when the user clicks on it, execute myFunction
+document.getElementById("myBtn").onclick = function() {myFunction()};
+
+/* myFunction toggles between adding and removing the show class, which is used to hide and show the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Get the button, and when the user clicks on it, execute myFunction
+document.getElementById("myBtn1").onclick = function() {myFunction1()};
+
+/* myFunction toggles between adding and removing the show class, which is used to hide and show the dropdown content */
+function myFunction1() {
+  document.getElementById("myDropdown1").classList.toggle("show");
+}
+</script>
 
 @endsection

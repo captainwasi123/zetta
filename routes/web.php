@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FavouriteController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -60,8 +61,30 @@ use Illuminate\Support\Facades\Route;
 
 				Route::get('details/{id}', 'webController@lessonDetails')->name('lesson.details');
 			});
-        // Profile Details
-            Route::get('Coach/details/{id}','webController@coachDetails')->name('web.user.details');
+        //Coach Profile Details
+            Route::get('Coach/details/{id}','webController@coachDetails')->name('web.coach.details');
+
+       //ACtivity Profile Details
+       Route::get('buddy/details/{id}','webController@buddyDetails')->name('web.buddy.details');
+
+            Route::prefix('favourite')->group(function(){
+
+                /// add favourite lesson
+                Route::get('/lesson/add/{id}','FavouriteController@fav_lesson')->name('favourite.lesson.add');
+
+                /// add favourite activity
+                Route::get('/activity/add/{id}','FavouriteController@fav_activity')->name('favourite.activity.add');
+
+                // add favourite Lesson
+                Route::get('/lesson/add/{id}','FavouriteController@fav_lesson')->name('favourite.lesson.add');
+
+                // add favourite Coach
+                Route::get('/coach/add/{id}','FavouriteController@fav_coach')->name('favourite.coach.add');
+
+                // add favourite Buddy
+                Route::get('/buddy/add/{id}','FavouriteController@fav_buddy')->name('favourite.buddy.add');
+
+            });
 
 	});
 
@@ -74,6 +97,9 @@ use Illuminate\Support\Facades\Route;
 			Route::prefix('coach')->namespace('coach')->group(function(){
 
 				Route::get('/', 'CoachController@index')->name('coach.dashboard');
+                Route::get('/friends','CoachController@friend')->name('coach.friends');
+                Route::get('/friends/search','CoachController@search_friends')->name('coach.friends.search');
+                Route::get('/messages','CoachController@messages')->name('coach.messages');
 
 				//My Account
 					Route::prefix('my-account')->group(function(){
@@ -85,10 +111,15 @@ use Illuminate\Support\Facades\Route;
 
 						Route::post('/add_lang', 'settingController@add_lang')->name('coach.my_account.add_lang');
 
+                        Route::get('/remove_lang/{id}', 'settingController@remover_lang')->name('coach.my_account.remover_lang');
+
 						Route::post('/add_edu', 'settingController@add_edu')->name('coach.my_account.add_edu');
+
+                        Route::get('/remove_edu/{id}', 'settingController@remove_edu')->name('coach.my_account.remover_edu');
 
 						Route::post('/add_certificate', 'settingController@add_certificate')->name('coach.my_account.add_certificate');
 
+                        Route::get('/remove_certificate/{id}', 'settingController@remove_certificate')->name('coach.my_account.remove_certificate');
 
 						Route::post('id_proof', 'settingController@idProof')->name('coach.my_account.idProof');
 						Route::post('add_proof', 'settingController@addProof')->name('coach.my_account.addProof');
@@ -151,6 +182,8 @@ use Illuminate\Support\Facades\Route;
 					Route::prefix('orders')->group(function(){
 
 						Route::get('/', 'orderController@index')->name('coach.orders');
+                        Route::get('/{id}', 'orderController@orderView')->name('coach.orders.view');
+                        Route::post('/group/msg','orderController@group_order_msg')->name('coach.group.msg');
 					});
 
                     Route::get('/my_account_area/','CoachController@my_account_area')->name('coach.my.account_area');
@@ -163,6 +196,7 @@ use Illuminate\Support\Facades\Route;
 			Route::prefix('buddy')->namespace('buddy')->group(function(){
 
 				Route::get('/', 'buddyController@index')->name('buddy.dashboard');
+                Route::get('/messages','buddyController@messages')->name('buddy.messages');
 
 				//My Account
 					Route::prefix('my-account')->group(function(){
@@ -174,14 +208,20 @@ use Illuminate\Support\Facades\Route;
 
 						Route::post('/add_lang', 'settingController@add_lang')->name('buddy.my_account.add_lang');
 
+                        Route::get('/remove_lang/{id}', 'settingController@remover_lang')->name('buddy.my_account.remover_lang');
+
 						Route::post('/add_edu', 'settingController@add_edu')->name('buddy.my_account.add_edu');
+
+                        Route::get('/remove_edu/{id}', 'settingController@remove_edu')->name('coach.my_account.remover_edu');
 
 						Route::post('/add_certificate', 'settingController@add_certificate')->name('buddy.my_account.add_certificate');
 
-
+                        Route::get('/remove_certificate/{id}', 'settingController@remove_certificate')->name('coach.my_account.remove_certificate');
 
 						Route::post('id_proof', 'settingController@idProof')->name('buddy.my_account.idProof');
 						Route::post('add_proof', 'settingController@addProof')->name('buddy.my_account.addProof');
+
+                        Route::post('/coach_request','buddyController@coach_requet')->name('buddy.coach.request');
 					});
 
 				//Category
@@ -229,6 +269,7 @@ use Illuminate\Support\Facades\Route;
                 Route::get('friends', 'buddyController@my_friends')->name('buddy.friends');
                 Route::get('analytics-and-redeem', 'buddyController@analytics_and_redeem')->name('buddy.analytics_and_redeem');
                 Route::get('my_account_area', 'buddyController@my_account_area')->name('buddy.my_account_area');
+                Route::post('/coach-request','buddyController@coach_requet')->name('buddy.coach.request');
 			});
 	});
 
@@ -268,6 +309,8 @@ use Illuminate\Support\Facades\Route;
 							Route::get('idProof/reject/{id}', 'userController@idProofReject');
 							Route::get('addProof/approve/{id}', 'userController@addProofApprove');
 							Route::get('addProof/reject/{id}', 'userController@addProofReject');
+                            Route::get('all-coach-requets/', 'userController@coach_requets')->name('admin.user.coach_request');
+                            Route::get('coach/request/approve/{id}', 'userController@coach_requet_approve')->name('admin.user.coach.approve');
 						});
 
 
@@ -314,6 +357,14 @@ use Illuminate\Support\Facades\Route;
 								Route::get('/requests', 'settingController@categoryRequest')->name('admin.setting.category.requests');
 								Route::get('request/delete/{id}', 'settingController@categoryRequestDelete');
 							});
+
+                            Route::prefix('language')->group(function(){
+                                Route::get('/','LanguageController@index')->name('admin.setting.language');
+                                Route::get('add','LanguageController@language_add')->name('admin.setting.language.add');
+                                Route::post('save','LanguageController@language_save')->name('admin.setting.language.save');
+                                Route::get('edit/{id}','LanguageController@language_edit')->name('admin.setting.language.edit');
+                                Route::get('delete/{id}','LanguageController@language_delete')->name('admin.setting.language.delete');
+                            });
 						});
 				});
 		});

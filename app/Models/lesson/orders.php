@@ -17,7 +17,7 @@ class orders extends Model
         $o = new orders;
         $o->lesson_id = $data['lesson_id'];
         $o->seller_id = $data['seller_id'];
-        $o->buyer_id = Auth::id();
+        $o->buyer_id = \Auth::id();
         $o->plan = $data['plan'];
         $o->price = $data['price'];
         $o->commision = $data['commision'];
@@ -39,5 +39,10 @@ class orders extends Model
 
     public function lesson(){
         return $this->belongsTo(lessons::class, 'lesson_id');
+    }
+
+    public function forms()
+    {
+        return $this->hasMany(lessonFroms::class, 'order_id','id');
     }
 }

@@ -2,28 +2,28 @@ var host = '';
 
 
 $(document).ready(function(){
-    host = $("meta[name='host']").attr("content");  
+    host = $("meta[name='host']").attr("content");
 
     $(document).on('click', '.open-login', function(){
         $('.register-modal').modal('hide');
-        $('.login-modal').modal('show'); 
+        $('.login-modal').modal('show');
     });
     $(document).on('click', '.open-join', function(){
         $('.login-modal').modal('hide');
-        $('.register-modal').modal('show'); 
+        $('.register-modal').modal('show');
     });
     $(document).on('click', '.open-enquiry', function(){
-        $('.enquiry-modal').modal('show'); 
+        $('.enquiry-modal').modal('show');
     });
     $(document).on('click', '.open-order', function(){
         var id = $(this).data('id');
         $('#order_seller').val(id);
-        $('.order-modal').modal('show'); 
+        $('.order-modal').modal('show');
     });
 
 
     $(document).on('click', '#addlang', function(){
-        $('#lang_block').append('<tr><td><input type="text" class="noboder" name="lang[]" required></td><td><select name="langlevel[]"><option> Basic </option><option> Intermediate </option><option> Expert </option></select></td></tr>'); 
+        $('#lang_block').append('<tr><td><input type="text" class="noboder" name="lang[]" required></td><td><select name="langlevel[]"><option> Basic </option><option> Intermediate </option><option> Expert </option></select></td></tr>');
     });
 
     $('#imageUpload').change(function() {
@@ -39,6 +39,11 @@ $(document).ready(function(){
         readURL(this, pre);
     });
 
+    // $(".addMedia").change(function() {
+    //     var pre = $(this).data('preview');
+    //     readURL(this, pre);
+    // });
+
     $("#cover_pic").change(function() {
         var pre = $(this).data('preview');
         readURL(this, pre);
@@ -47,7 +52,7 @@ $(document).ready(function(){
     $(document).on('change', '.makeFavorite', function() {
         // this will contain a reference to the checkbox
         var id = $(this).data('id');
-        var element = $(this);   
+        var element = $(this);
         if (this.checked) {
             $.get(host+"/favorite/add/"+id, function(data, status){
                 if(status == 'success'){
@@ -69,7 +74,7 @@ $(document).ready(function(){
         // this will contain a reference to the checkbox
         var id = $(this).data('id');
         var val = $(this).val();
-        
+
         if (confirm('Are you sure want to change order status?')) {
             $.get(host+"/orders/status/"+id+"/"+val, function(data, status){
                 if(status == 'success'){
@@ -82,7 +87,7 @@ $(document).ready(function(){
 
     $(document).on('change', '#availability_status', function() {
         var val = $(this).val();
-        
+
         if (confirm('Are you sure want to change your status?')) {
             $.get(host+"/helper/availability_status/"+val, function(data, status){
                 if(status == 'success'){
@@ -99,7 +104,7 @@ $(document).ready(function(){
     });
 
     $(document).on('click', '.emojies', function(){
-        $('.emoji-menu').toggle(); 
+        $('.emoji-menu').toggle();
     });
 
     $(document).on('change', '#fileAttach', function() {
@@ -147,7 +152,7 @@ $(document).ready(function(){
         });
         $('.premium-modal').modal('show');
         $('#premium_content').html('<img src="'+host+'/assets/images/loader.gif" style="width: 200px;"/>');
-        
+
         $.get(host+"/premium/getPrice", function(data, status){
             if(status == 'success'){
                 $('#premium_content').html(data);
@@ -168,7 +173,7 @@ $(document).ready(function(){
         });
         $('.alert-modal').modal('show');
         $('#alert_content').html('<div class="r_success_block"><img src="'+host+'/assets/images/error-loader.gif" class="success_gif" /><br><h4>Alert.! </h4><p> '+cont+'.</p>');
-        
+
     });
 
     //limit reached
@@ -180,7 +185,7 @@ $(document).ready(function(){
         });
         $('.alert-modal').modal('show');
         $('#alert_content').html('<div class="r_success_block"><img src="'+host+'/assets/images/error-loader.gif" class="success_gif" /><br><h4>Alert.! </h4><p> '+cont+'.</p>');
-        
+
     });
 
     //null star
@@ -192,7 +197,7 @@ $(document).ready(function(){
         });
         $('.alert-modal').modal('show');
         $('#alert_content').html('<div class="r_success_block"><img src="'+host+'/assets/images/error-loader.gif" class="success_gif" /><br><h4>Sorry! </h4><p> '+cont+'.</p>');
-        
+
     });
 
 
@@ -241,10 +246,10 @@ function notiSound() {
 //Ajax
 
 $( "#register-form" ).submit(function( event ) {
- 
+
   // Stop form from submitting normally
   event.preventDefault();
- 
+
   // Get some values from elements on the page:
   var $form = $( this ),
     em = $form.find( "input[name='email']" ).val(),
@@ -253,7 +258,7 @@ $( "#register-form" ).submit(function( event ) {
     var datastrings = $(this).serialize();
     // Send the data using post
     var posting = $.post( url, datastrings );
- 
+
     // Put the results in a div
     posting.done(function( data ) {
         if(data == 'exist'){
@@ -284,10 +289,10 @@ $( "#register-form" ).submit(function( event ) {
 });
 
 $( "#login-form" ).submit(function( event ) {
- 
+
   // Stop form from submitting normally
   event.preventDefault();
- 
+
   // Get some values from elements on the page:
   var $form = $( this ),
     em = $form.find( "input[name='email']" ).val(),
@@ -324,10 +329,10 @@ $( "#login-form" ).submit(function( event ) {
 // Enquiry
 
 $( "#enquiryForm" ).submit(function( event ) {
- 
+
   // Stop form from submitting normally
   event.preventDefault();
- 
+
   // Get some values from elements on the page:
   var $form = $( this ),
     em = $form.find( "input[name='email']" ).val(),
@@ -355,10 +360,10 @@ $( "#enquiryForm" ).submit(function( event ) {
 
 //Order Book
 $( "#orderForm" ).submit(function( event ) {
- 
+
   // Stop form from submitting normally
   event.preventDefault();
- 
+
   // Get some values from elements on the page:
   var $form = $( this ),
     em = $form.find( "input[name='email']" ).val(),
@@ -386,10 +391,10 @@ $( "#orderForm" ).submit(function( event ) {
 
 //Review Submit
 $( "#reviewForm" ).submit(function( event ) {
- 
+
   // Stop form from submitting normally
   event.preventDefault();
- 
+
   // Get some values from elements on the page:
   var $form = $( this ),
     em = $form.find( "input[name='email']" ).val(),
@@ -415,10 +420,10 @@ $( "#reviewForm" ).submit(function( event ) {
 });
 
 $( "#reviewForm2" ).submit(function( event ) {
- 
+
   // Stop form from submitting normally
   event.preventDefault();
- 
+
   // Get some values from elements on the page:
   var $form = $( this ),
     em = $form.find( "input[name='email']" ).val(),
@@ -448,15 +453,15 @@ $( "#reviewForm2" ).submit(function( event ) {
 //Inbox Chat
 
 $( "#sendchat" ).submit(function( event ) {
- 
+
   // Stop form from submitting normally
   event.preventDefault();
- 
+
 
     // Get form
         var form = $('#sendchat')[0];
 
-        // Create an FormData object 
+        // Create an FormData object
         var data = new FormData(form);
 
         // disabled the submit button
@@ -493,10 +498,10 @@ $( "#sendchat" ).submit(function( event ) {
 //Helper Filter
 
 $(document).on('change', '.helper_filter', function() {
-    
+
   $('#content_block').html('<div class="r_success_block"><img src="'+host+'/assets/images/search-loader.gif" class="search_gif" />');
   // Get some values from elements on the page:
-  
+
     var token = $("#token").val();
     var skills = $("#skills").val();
     var expertise = $("#expertise").val();
@@ -520,10 +525,10 @@ $(document).on('change', '.helper_filter', function() {
 //Agency Filter
 
 $(document).on('change', '.agency_filter', function() {
-    
+
   $('#content_block').html('<div class="r_success_block"><img src="'+host+'/assets/images/search-loader.gif" class="search_gif" />');
   // Get some values from elements on the page:
-  
+
     var token = $("#token").val();
     var location = $("#location").val();
 
@@ -543,17 +548,17 @@ $(document).on('change', '.agency_filter', function() {
 //employerFilter
 
 $(document).on('change', '.employer_filter', function() {
-    
+
     $('#content_block').html('<div class="r_success_block"><img src="'+host+'/assets/images/search-loader.gif" class="search_gif" />');
     // Get some values from elements on the page:
-    
+
       var token = $("#token").val();
       var location = $("#location").val();
-  
+
       var datastrings = {_token:token, elocation:location};
       // Send the data using post
       var posting = $.post( host+'/employers', datastrings );
-  
+
       // Put the results in a div
       posting.done(function( data ) {
           $('#content_block').html(data);
@@ -568,10 +573,10 @@ $(document).on('change', '.employer_filter', function() {
 //Premium Subscribe
 
 $(document).on('submit', '#premium_formm', function( event ) {
- 
+
     // Stop form from submitting normally
   event.preventDefault();
- 
+
   // Get some values from elements on the page:
   var $form = $( this ),
     em = $form.find( "input[name='email']" ).val(),

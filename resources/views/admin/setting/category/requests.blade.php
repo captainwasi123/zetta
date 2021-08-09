@@ -32,7 +32,11 @@
                                     <td>
                                         {{$val->name}}
                                     </td>
-                                    <td>{{$val->user->fname.' '.$val->user->lname}}</td>
+                                    @if (!empty($val->user->fname) && !empty($val->user->lname))
+                                        <td>{{($val->user->fname).' '.$val->user->lname}}</td>
+                                    @else
+                                        <td></td>
+                                    @endif
                                     <td>
                                         <a href="javascript:void(0)" data-toggle="tooltip" data-original-title="Delete" class="btn btn-danger btn-sm deleteCatRequest" data-id="{{base64_encode($val->id)}}">
                                             <i class="fa fa-trash"></i>

@@ -26,6 +26,7 @@ class lessons extends Model
         $l->participants = $data['participants'];
         $l->group_members = empty($data['group_members']) ? null : $data['group_members'];
         $l->availability = $data['availability'];
+        $l->availability_for = $data['availability_for'];
         $l->status = '1';
         $l->save();
         $id = $l->id;
@@ -35,14 +36,20 @@ class lessons extends Model
         $pack = array(
             'basic' => array(
                 'price' => $data['price_basic'],
+                'duartion' => $data['duartion_basic'],
+                'days' => $data['day_basic'],
                 'service' => $data['service_basic']
             ),
             'standard' => array(
                 'price' => $data['price_standard'],
+                'duartion' => $data['duartion_standard'],
+                'days' => $data['day_standard'],
                 'service' => $data['service_standard']
             ),
             'premium' => array(
                 'price' => $data['price_premium'],
+                'duartion' => $data['duartion_premium'],
+                'days' => $data['day_premium'],
                 'service' => $data['service_premium']
             )
         );
@@ -60,6 +67,7 @@ class lessons extends Model
         $l->participants = $data['participants'];
         $l->group_members = empty($data['group_members']) ? null : $data['group_members'];
         $l->availability = $data['availability'];
+        $l->availability_for = $data['availability_for'];
         $l->save();
         $id = $l->id;
 
@@ -72,14 +80,20 @@ class lessons extends Model
         $pack = array(
             'basic' => array(
                 'price' => $data['price_basic'],
+                'duartion' => $data['duartion_basic'],
+                'days' => $data['day_basic'],
                 'service' => $data['service_basic']
             ),
             'standard' => array(
                 'price' => $data['price_standard'],
+                'duartion' => $data['duartion_standard'],
+                'days' => $data['day_standard'],
                 'service' => $data['service_standard']
             ),
             'premium' => array(
                 'price' => $data['price_premium'],
+                'duartion' => $data['duartion_premium'],
+                'days' => $data['day_premium'],
                 'service' => $data['service_premium']
             )
         );
