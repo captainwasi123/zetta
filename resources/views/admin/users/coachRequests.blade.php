@@ -31,19 +31,16 @@
                             @foreach($data as $key => $val)
                                 <tr>
                                     <td>{{++$key}}</td>
-                                    <td>{{$val->user->fname.' '.$val->user->lname}}</td>
-                                    <td>{{$val->user->email}}</td>
-                                    <td>{{$val->user->gender}}</td>
-                                    <td>{{$val->user->country->nicename}}</td>
+                                    <td>{{@$val->user->fname.' '.$val->user->lname}}</td>
+                                    <td>{{@$val->user->email}}</td>
+                                    <td>{{@$val->user->gender}}</td>
+                                    <td>{{@$val->user->country->nicename}}</td>
                                     <td>{{$val->answer}}</td>
                                     <td>
                                         <a href="javascript:void(0)" data-toggle="tooltip" data-original-title="Approve"
                                         class="btn btn-success btn-sm approveForCoach" data-id="{{base64_encode($val->id)}}">
                                             <i class="fa fa-check"></i>
                                         </a>
-                                        {{-- <a href="javascript:void(0)" data-toggle="tooltip" data-original-title="Reject" class="btn btn-danger btn-sm rejectAddProof" data-id="{{base64_encode($val->id)}}">
-                                            <i class="fa fa-close"></i>
-                                        </a> --}}
                                     </td>
                                 </tr>
                             @endforeach

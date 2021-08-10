@@ -291,8 +291,8 @@
                   <p class="m-b-0" style="padding:0px 30px">   <a href="" class="block-element2 bg-white col-purple rounded custom-btn1 text-center"> Contact Buddy  </a> </p>
                </div>
             </div>
-            <div class="packages-map block-element3 m-t-30" id="mapa">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.2889612081335!2d-0.08991633469164506!3d51.507914468487286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876035159bb13c5%3A0xa61e28267c3563ac!2sLondon%20Bridge!5e0!3m2!1sen!2s!4v1626273315297!5m2!1sen!2s" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <div class="packages-map block-element3 m-t-30" id="mapa" style="width:65% !important;">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.2889612081335!2d-0.08991633469164506!3d51.507914468487286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876035159bb13c5%3A0xa61e28267c3563ac!2sLondon%20Bridge!5e0!3m2!1sen!2s!4v1626273315297!5m2!1sen!2s" width="80%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
          </div>
       </div>
@@ -387,7 +387,7 @@
     ];
 
     var map = new google.maps.Map(document.getElementById('mapa'), {
-      zoom: 10,
+      zoom: 13,
       center: new google.maps.LatLng(locations[0][1] , locations[0][2]),
       mapTypeId: google.maps.MapTypeId.ROADMAP
     });
