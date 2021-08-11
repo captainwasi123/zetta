@@ -36,7 +36,7 @@
          <div class="container-fluid">
             <div class="sec-head1 m-b-40">
                <h2 class="col-white gotham-bold m-b-10"> The Best Sport Buddies Rated </h2>
-               <p class="col-grey m-b-0"> Each sports coach is carefully selected by the TrainMe team </p>
+               <p class="col-grey m-b-0"> Each sports coach is carefully selected by the Zettaa team </p>
             </div>
             <div class="row">
                <div class="col-md-2 col-lg-2 col-sm-12 col-12 order-lg-2 order-md-2">

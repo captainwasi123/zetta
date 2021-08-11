@@ -40,12 +40,6 @@
                         </a>
                      </li>
                      <li>
-                        <a href="{{route('coach.friends')}}" >
-                           <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/friend-icon.png">
-                           <span class="hide-menu">   Friends </span>
-                        </a>
-                     </li>
-                     <li>
                         <a href="{{route('coach.equipment')}}" >
                            <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/nav-icon4.png">
                            <span class="hide-menu">  Equipment </span>
@@ -63,12 +57,6 @@
                            <span class="hide-menu">  Orders  </span>
                         </a>
                      </li>
-                     <!-- <li>
-                        <a href="{{route('coach.my_account')}}" >
-                           <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/nav-icon7.png">
-                           <span class="hide-menu">   My Account Area </span>
-                        </a>
-                     </li> -->
                      <li>
                         <a href="{{route('coach.my_wallet')}}" >
                            <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/nav-icon8.png">

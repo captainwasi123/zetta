@@ -15,7 +15,7 @@
                <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{Auth::user()->profile_img}}" alt="user" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';"> <i class="fa fa-caret-down"> </i>
                </button>
                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="{{route('buddy.my_account')}}"> Edit Profile </a>
+                  <a class="dropdown-item" href="{{route('buddy.dashboard')}}"> Dashboard </a>
                   <a class="dropdown-item" href="{{route('logout')}}"> Logout </a>
                </div>
             </div>

@@ -34,12 +34,6 @@ class buddyController extends Controller
 
         return view('buddy.my_account.wallet')->with($data);
     }
-
-    public function my_friends()
-    {
-        return view('buddy.friends');
-    }
-
     public function analytics_and_redeem()
     {
         return view('buddy.analytics-and-redeem');

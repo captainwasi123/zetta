@@ -19,3 +19,4 @@
       <script src="{{URL::to('/')}}/assets/user_dashboard/plugins/sweetalert/sweetalert.min.js"></script>
       {{-- <script src="{{URL::to('/')}}/assets/user_dashboard/plugins/summernote/dist/summernote.min.js"></script> --}}
       <script src="{{URL::to('/')}}/assets/user_dashboard/plugins/sweetalert/jquery.sweet-alert.custom.js"></script>
+      <script src="https://js.pusher.com/7.0/pusher.min.js"></script>

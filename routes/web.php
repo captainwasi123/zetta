@@ -95,13 +95,22 @@ use Illuminate\Support\Facades\Route;
 
 	Route::middleware('userAuth')->group(function(){
 
+
 		//Coach
 			Route::prefix('coach')->namespace('coach')->group(function(){
 
 				Route::get('/', 'CoachController@index')->name('coach.dashboard');
                 Route::get('/friends','CoachController@friend')->name('coach.friends');
                 Route::get('/friends/search','CoachController@search_friends')->name('coach.friends.search');
-                Route::get('/messages','CoachController@messages')->name('coach.messages');
+
+
+				//Messenger
+					Route::prefix('inbox')->group(function(){
+						Route::get('/', 'chatController@index')->name('coach.messages');
+						Route::get('chat/{id}/{name}', 'chatController@inboxChat');
+
+						Route::post('messageSend', 'chatController@sendMessage');
+					});
 
 				//My Account
 					Route::prefix('my-account')->group(function(){
@@ -265,10 +274,15 @@ use Illuminate\Support\Facades\Route;
 						Route::get('/delete/{id}', 'activityController@delete')->name('buddy.activity.delete');
 					});
 
+				//Friends
+					Route::prefix('friends')->group(function(){	
+                		Route::get('/', 'friendController@my_friends')->name('buddy.friends');
+                		Route::get('search/{val}', 'friendController@search');
+					});
+
 				Route::get('lesson/favourite', 'CoachController@lesson_favourite')->name('coach.lesson.favourite');
 				Route::get('my-wallet', 'buddyController@my_wallet')->name('buddy.my_wallet');
 				Route::get('order', 'buddyController@my_orders')->name('buddy.order');
-                Route::get('friends', 'buddyController@my_friends')->name('buddy.friends');
                 Route::get('analytics-and-redeem', 'buddyController@analytics_and_redeem')->name('buddy.analytics_and_redeem');
                 Route::get('my_account_area', 'buddyController@my_account_area')->name('buddy.my_account_area');
                 Route::post('/coach-request','buddyController@coach_requet')->name('buddy.coach.request');

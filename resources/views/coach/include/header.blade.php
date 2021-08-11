@@ -1,7 +1,7 @@
 <header class="topbar">
             <nav class="navbar top-navbar navbar-expand-md navbar-light">
                <div class="navbar-header">
-                  <a class="navbar-brand" href="">
+                  <a class="navbar-brand" href="{{URL::to('/')}}">
                   <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/zetta-logo.png">
                   </a>
                </div>
