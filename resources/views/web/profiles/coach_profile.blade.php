@@ -1,4 +1,4 @@
-@extends('web.support.master')
+@extends('web.support.master2')
 @section('title', 'Coach Profile')
 
 @section('content')
@@ -188,7 +188,7 @@
              </div>
              <div class="row">
                 @foreach ($data->lessons as $val)
-                    <div class="col-md-4 col-lg-4 col-sm-6 col-12">
+                    <div class="col-md-6 col-lg-4 col-sm-6 col-12">
                         <div class="lesson-block">
                         <div class="lesson-image-block">
                             @if (empty($val->cover_img))
@@ -208,13 +208,13 @@
                             <h4> {{$val->title}} <span> Coach </span>  </h4>
                             <div class="zoom-tag">
                                 @if ($val->availability == '1')
-                                    <img src="{{URL::to('/public/images/zoom-logo.png')}}"> Only Zoom Classes
+                                    <img src="{{URL::to('/public/images/zoom-logo.png')}}">
                                 @endif
                             </div>
 
                         </div>
                         <div class="lesson-info-block mt-3">
-                            <p> {{$val->description}}</p>
+                            <p class="descrip"> {{$val->description}}</p>
                             <h6 class="col-white m-b-15"> <i class="fa fa-star col-yellow"> </i> 5.0 </h6>
                         </div>
                         <div class="lesson-rating-block">

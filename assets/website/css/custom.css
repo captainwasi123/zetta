@@ -794,7 +794,7 @@ section.action-bar {
 
 
 .order-image1 img {
-    width: 100%;
+    width: 55%;
 }
 
 .order-text1 {
@@ -1627,7 +1627,7 @@ border:1px solid #9a49ff !important;
 
 .lesson-banner-image div img {
     border-radius: 20px;
-    width: 100%;
+   /* width: 100%;*/
 }
 .review-slider {
     border: 1px solid #929292;
@@ -2560,7 +2560,34 @@ header.header-2 {
 form.checkout-extra {
     margin: 0px 140px;
 }
+.lesson-rating-block span {
+    font-size: 12px;
+}
+div#mapa {
+    width: 100% !important;
+} 
+.rating-bar-box>div:nth-child(3) {
+    width: 10%;
+}
 
+.rating-bar-box>div:nth-child(2) {
+    width: 60%;
+}
+.rating-bar-box>div:nth-child(1) {
+    width: 25%;
+}
+.packages-main .nav-tabs .nav-link {
+    padding: 8px 0px;
+
+    font-size: 15px;
+}
+.lesson-block2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+.order-image1 img {
+    width: 100%;
+}
 }
 
 
@@ -3088,8 +3115,9 @@ body .container {
 }
 
 
-
-
+div#mapa {
+    width:65%;
+}
 
 @media only screen and (max-width: 767px) {
   .all-buddies {
@@ -3104,5 +3132,14 @@ body .container {
 
     font-size: 16px;
 }
-
+div#mapa {
+    width: 100% ;
+}
+.lesson-block2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+.order-image1 img {
+    width: 70%;
+}
 }

@@ -1,4 +1,4 @@
-@extends('web.support.master')
+@extends('web.support.master2')
 @section('title', 'Buddy Profile')
 
 @section('content')
@@ -214,7 +214,7 @@
 
                         </div>
                         <div class="lesson-info-block mt-3">
-                            <p> {{$val->description}}</p>
+                            <p class="descrip"> {{$val->description}}</p>
                             <h6 class="col-white m-b-15"> <i class="fa fa-star col-yellow"> </i> 5.0 </h6>
                         </div>
                         <div class="lesson-rating-block">
