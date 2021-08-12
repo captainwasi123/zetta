@@ -4,29 +4,39 @@
 @section('content')
 
 @if ($search_data['type'] == 'girl')
-
-
 <section class="action-bar">
-   <div class="container">
-      <form id="stickmanForm">
-         @csrf
-         <input type="hidden" name="type" value="Search">
-         <input type="hidden" name="sValue" value="{{empty($search_data['val']) ? 'all' : $search_data['val']}}">
-         <div class="all-actions arrows1">
-            @foreach($sCategories as $val)
-               <div>
-                  <a href="javascript:void(0)" class="image-checkbox stickman"> 
-                     <input type="checkbox" id="scales" name="stickman[]" value="{{$val->name}}"> 
-                     <img src="{{URL::to('/public/storage/settings/category/'.$val->image)}}"> {{$val->name}} 
-                  </a>
-               </div>
-            @endforeach
-         </div>
-      </form>
-   </div>
+    <div class="container">
+       <div class="all-actions arrows1">
+          <div>
+             <a href=""> <img src="{{URL::to('/assets/website')}}/images/action-icon1.jpg"> Starting Excercise </a>
+          </div>
+          <div>
+             <a href=""> <img src="{{URL::to('/assets/website')}}/images/action-icon2.jpg"> Fitness Expert </a>
+          </div>
+          <div>
+             <a href=""> <img src="{{URL::to('/assets/website')}}/images/action-icon3.jpg"> Body Fitness </a>
+          </div>
+          <div>
+             <a href=""> <img src="{{URL::to('/assets/website')}}/images/action-icon4.jpg"> Martial Art </a>
+          </div>
+          <div>
+             <a href=""> <img src="{{URL::to('/assets/website')}}/images/action-icon5.jpg"> Swimming </a>
+          </div>
+          <div>
+             <a href=""> <img src="{{URL::to('/assets/website')}}/images/action-icon6.jpg"> Boxing </a>
+          </div>
+          <div>
+             <a href=""> <img src="{{URL::to('/assets/website')}}/images/action-icon7.jpg"> Fencing </a>
+          </div>
+          <div>
+             <a href=""> <img src="{{URL::to('/assets/website')}}/images/action-icon8.jpg"> Racing </a>
+          </div>
+          <div>
+             <a href=""> <img src="{{URL::to('/assets/website')}}/images/action-icon1.jpg"> Starting Excercise </a>
+          </div>
+       </div>
+    </div>
 </section>
-
-
 <section class="pad-top-40 bg-dark2">
     <div class="container">
     <div class="sec-head1 m-b-25">

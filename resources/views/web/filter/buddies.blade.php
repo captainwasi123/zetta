@@ -3,45 +3,34 @@
 
 @section('content')
 
+
 <section class="action-bar">
    <div class="container">
-      <div class="all-actions arrows1">
-         <div>
-            <a href=""> <img src="{{URL::to('/assets/website')}}/images/action-icon1.jpg"> Starting Excercise </a>
+      <form id="stickmanForm">
+         @csrf
+         <input type="hidden" name="type" value="Coaches">
+         <input type="hidden" name="sValue" value="{{empty($search_data['val']) ? 'all' : $search_data['val']}}">
+         <div class="all-actions arrows1">
+            @foreach($sCategories as $val)
+               <div>
+                  <a href="javascript:void(0)" class="image-checkbox stickman"> 
+                     <input type="checkbox" id="scales" name="stickman[]" value="{{$val->name}}"> 
+                     <img src="{{URL::to('/public/storage/settings/category/'.$val->image)}}"> {{$val->name}} 
+                  </a>
+               </div>
+            @endforeach
          </div>
-         <div>
-            <a href=""> <img src="{{URL::to('/assets/website')}}/images/action-icon2.jpg"> Fitness Expert </a>
-         </div>
-         <div>
-            <a href=""> <img src="{{URL::to('/assets/website')}}/images/action-icon3.jpg"> Body Fitness </a>
-         </div>
-         <div>
-            <a href=""> <img src="{{URL::to('/assets/website')}}/images/action-icon4.jpg"> Martial Art </a>
-         </div>
-         <div>
-            <a href=""> <img src="{{URL::to('/assets/website')}}/images/action-icon5.jpg"> Swimming </a>
-         </div>
-         <div>
-            <a href=""> <img src="{{URL::to('/assets/website')}}/images/action-icon6.jpg"> Boxing </a>
-         </div>
-         <div>
-            <a href=""> <img src="{{URL::to('/assets/website')}}/images/action-icon7.jpg"> Fencing </a>
-         </div>
-         <div>
-            <a href=""> <img src="{{URL::to('/assets/website')}}/images/action-icon8.jpg"> Racing </a>
-         </div>
-         <div>
-            <a href=""> <img src="{{URL::to('/assets/website')}}/images/action-icon1.jpg"> Starting Excercise </a>
-         </div>
-      </div>
+      </form>
    </div>
 </section>
+
+
 <!-- Action Bar Ends Here -->
 <!-- Page Content Section Starts Here -->
 <section class="pad-top-40 bg-dark2">
    <div class="container">
       <div class="sec-head1 m-b-25">
-         <h4 class="gotham-bold col-white"> Results for "{{$search_data['val']}} - Sports Buddies" </h4>
+         <h4 class="gotham-bold col-white"> Results for "{{@$search_data['val']}} - Sports Buddies" </h4>
       </div>
       @if(count($buddies) == 0)
          <h4>No Results Found.</h4>
@@ -181,7 +170,7 @@
 <!-- Page Content Starts Here -->
 <section class="pad-top-40 pad-bot-40 bg-dark2">
    <div class="container">
-      <div class="row">
+      <div class="row" id="resultBlock">
          @foreach($buddies as $val)
             <div class="col-md-4 col-lg-2 col-sm-4">
                   <div class="lesson-block2">
@@ -191,7 +180,7 @@
                      <div class="lesson-title-block2">
                         <h4>
                             <a href="{{route('web.buddy.details',base64_encode($val->id))}}">
-                                {{$val->fname.' '.$val->lname}}
+                                {{empty($val->fname) ? 'New User' : $val->fname.' '.$val->lname}}
                             </a>
                            <img src="{{URL::to('/assets/website')}}/images/zoom-logo.png" style="width:15px;">
                         </h4>
@@ -199,7 +188,7 @@
                      </div>
                      <div class="lesson-info-block text-center">
                         <p class="descrip">
-                           {{$val->description}}
+                           {{empty($val->description) ? 'No Description' : $val->description}}
                         </p>
                      </div>
                      <div class="lesson-rating-block2">

@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\Route;
 
 		// Main Pages
 			Route::get('/', 'webController@index');
+			Route::get('/all/{type}', 'webController@all')->name('web.all');
 			Route::get('/search', 'webController@search')->name('web.search');
 			Route::get('/filter/{val}/{type}', 'webController@filter')->name('web.filter');
             ROute::get('/filter/{type}','webController@search_filter')->name('web.search.filter');
@@ -27,6 +28,9 @@ use Illuminate\Support\Facades\Route;
 			Route::get('cart/{type}/{id}/{package}', 'cartController@cart');
 			Route::post('/payment/stripe', 'cartController@stripePayment')->name('stripe.submit');
 			Route::get('/order/confirmed/{id}/{type}', 'cartController@orderComfirmed');
+
+
+			Route::post('/stickman', 'webController@stickmanSearch');
 
 			Route::middleware('userAuth')->group(function(){
 

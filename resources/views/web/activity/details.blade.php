@@ -37,39 +37,6 @@
 @endsection
 @section('content')
 
-<section class="action-bar">
-   <div class="container">
-      <div class="all-actions arrows1">
-         <div>
-            <a href="" class="image-checkbox"> <input type="checkbox" id="scales" name="scales"> <img src="{{URL::to('/assets/website')}}/images/action-icon1.jpg"> Starting Excercise </a>
-         </div>
-         <div>
-            <a href="" class="image-checkbox">  <input type="checkbox" id="scales" name="scales">  <img src="{{URL::to('/assets/website')}}/images/action-icon2.jpg"> Fitness Expert </a>
-         </div>
-         <div>
-            <a href="" class="image-checkbox">  <input type="checkbox" id="scales" name="scales">  <img src="{{URL::to('/assets/website')}}/images/action-icon3.jpg"> Body Fitness </a>
-         </div>
-         <div>
-            <a href="" class="image-checkbox">  <input type="checkbox" id="scales" name="scales">  <img src="{{URL::to('/assets/website')}}/images/action-icon4.jpg"> Martial Art </a>
-         </div>
-         <div>
-            <a href="" class="image-checkbox"> <input type="checkbox" id="scales" name="scales"> <img src="{{URL::to('/assets/website')}}/images/action-icon5.jpg"> Swimming </a>
-         </div>
-         <div>
-            <a href="" class="image-checkbox"> <input type="checkbox" id="scales" name="scales"> <img src="{{URL::to('/assets/website')}}/images/action-icon6.jpg"> Boxing </a>
-         </div>
-         <div>
-            <a href="" class="image-checkbox"> <input type="checkbox" id="scales" name="scales"> <img src="{{URL::to('/assets/website')}}/images/action-icon7.jpg"> Fencing </a>
-         </div>
-         <div>
-            <a href="" class="image-checkbox"> <input type="checkbox" id="scales" name="scales"> <img src="{{URL::to('/assets/website')}}/images/action-icon8.jpg"> Racing </a>
-         </div>
-         <div>
-            <a href="" class="image-checkbox"> <input type="checkbox" id="scales" name="scales"> <img src="{{URL::to('/assets/website')}}/images/action-icon1.jpg"> Starting Excercise </a>
-         </div>
-      </div>
-   </div>
-</section>
 
 <!-- Action Bar Ends Here -->
 <!-- Page Content Section Starts Here -->
@@ -431,33 +398,5 @@
 
 
   </script>
-    <script type="text/javascript">
-    jQuery(function ($) {
-        // init the state from the input
-        $(".image-checkbox").each(function () {
-            if ($(this).find('input[type="checkbox"]').first().attr("checked")) {
-                $(this).addClass('image-checkbox-checked');
-            }
-            else {
-                $(this).removeClass('image-checkbox-checked');
-            }
-        });
-
-        // sync the state to the input
-        $(".image-checkbox").on("click", function (e) {
-            if ($(this).hasClass('image-checkbox-checked')) {
-                $(this).removeClass('image-checkbox-checked');
-                $(this).find('input[type="checkbox"]').first().removeAttr("checked");
-            }
-            else {
-                $(this).addClass('image-checkbox-checked');
-                $(this).find('input[type="checkbox"]').first().attr("checked", "checked");
-            }
-
-            e.preventDefault();
-        });
-    });
-</script>
-
 
 @endsection

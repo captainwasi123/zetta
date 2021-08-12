@@ -14,6 +14,7 @@ use App\Models\activity\locations as Activity_location;
 use App\Models\userCategory;
 use App\Models\userEquipment;
 use Symfony\Component\HttpFoundation\AcceptHeader;
+use App\Models\sportsCategory;
 
 class webController extends Controller
 {
@@ -39,18 +40,25 @@ class webController extends Controller
             return redirect('/filter/'.$data['val'].'/'.$data['type']);
         }
         function filter($val, $type){
-            $data = array('search_data' => array('val' => $val, 'type' => $type));
+            $data = array('search_data' => array('val' => $val, 'type' => $type), 'sCategories' => sportsCategory::all());
+
             if($type == 'Lessons'){
                 $data['lessons'] = lessons::where('status', '1')->where('title', 'like', '%'.$val.'%')->latest()->paginate(18);
 
                 return view('web.filter.lessons')->with($data);
 
-            }elseif($type == 'Activities'){
+            }
+
+
+            elseif($type == 'Activities'){
                 $data['activities'] = activities::where('status', '1')->where('title', 'like', '%'.$val.'%')->latest()->paginate(18);
 
                 return view('web.filter.activity')->with($data);
 
-            }elseif($type == 'Coaches'){
+            }
+
+
+            elseif($type == 'Coaches'){
                 $data['coaches'] = User::where('status', '1')
                                     ->where('type', '1')
                                     ->when(1>0, function ($q) use ($val) {
@@ -61,7 +69,10 @@ class webController extends Controller
 
                 return view('web.filter.coaches')->with($data);
 
-            }elseif($type == 'Sports Buddies'){
+            }
+
+
+            elseif($type == 'Sports Buddies'){
                 $data['buddies'] = User::where('status', '1')
                                     ->where('type', '2')
                                     ->when(1>0, function ($q) use ($val) {
@@ -103,6 +114,108 @@ class webController extends Controller
             }
         }
 
+
+    function all($type){
+        $data = array('search_data' => array('type' => $type), 'sCategories' => sportsCategory::all());
+
+        if($type == 'Lessons'){
+            $data['lessons'] = lessons::where('status', '1')->latest()->paginate(18);
+
+            return view('web.filter.lessons')->with($data);
+
+        }
+
+
+        elseif($type == 'Activities'){
+            $data['activities'] = activities::where('status', '1')->latest()->paginate(18);
+
+            return view('web.filter.activity')->with($data);
+
+        }
+
+
+        elseif($type == 'Coaches'){
+            $data['coaches'] = User::where('status', '1')
+                                ->where('type', '2')
+                                ->latest()->paginate(18);
+
+            return view('web.filter.coaches')->with($data);
+
+        }
+
+
+        elseif($type == 'Sports Buddies'){
+            $data['buddies'] = User::where('status', '1')
+                                ->where('type', '1')
+                                ->latest()->paginate(18);
+
+            return view('web.filter.buddies')->with($data);
+        }else{
+            return redirect('/');
+        }
+    }
+
+    function stickmanSearch(Request $request){
+        $rdata = $request->all();
+
+        if($rdata['type'] == 'Lessons'){
+            $data['lessons'] = lessons::where('status', '1')
+                                ->when(!empty($rdata['stickman']), function ($qq) use ($rdata){
+                                    $qq->whereHas('user', function ($query) use ($rdata) {
+                                        $query->whereHas('category', function ($q) use ($rdata) {
+                                            $q->whereIn('name', $rdata['stickman']);
+                                        });
+                                    });
+                                })
+                                ->latest()->paginate(18);
+
+            return view('web.filter.response.lessons')->with($data);
+
+        }
+
+
+        elseif($rdata['type'] == 'Activities'){
+            $data['activities'] = activities::where('status', '1')
+                                    ->when(!empty($rdata['stickman']), function ($qq) use ($rdata){
+                                        $qq->whereHas('user', function ($query) use ($rdata) {
+                                            $query->whereHas('category', function ($q) use ($rdata) {
+                                                $q->whereIn('name', $rdata['stickman']);
+                                            });
+                                        });
+                                    })
+                                    ->latest()->paginate(18);
+
+            return view('web.filter.response.activity')->with($data);
+
+        }
+
+
+        elseif($rdata['type'] == 'Coaches'){
+            $data['coaches'] = User::where('status', '1')
+                                ->where('type', '2')
+                                ->whereHas('category', function ($q) use ($rdata) {
+                                    $q->whereIn('name', $rdata['stickman']);
+                                })
+                                ->latest()->paginate(18);
+
+            return view('web.filter.response.coaches')->with($data);
+
+        }
+
+
+        elseif($rdata['type'] == 'Sports Buddies'){
+            $data['buddies'] = User::where('status', '1')
+                                ->where('type', '1')
+                                ->whereHas('category', function ($q) use ($rdata) {
+                                    $q->whereIn('name', $rdata['stickman']);
+                                })
+                                ->latest()->paginate(18);
+
+            return view('web.filter.response.buddies')->with($data);
+        }else{
+            return redirect('/');
+        }
+    }
 
     //Activities
 
