@@ -211,7 +211,15 @@ use Illuminate\Support\Facades\Route;
 			Route::prefix('buddy')->namespace('buddy')->group(function(){
 
 				Route::get('/', 'buddyController@index')->name('buddy.dashboard');
-                Route::get('/messages','buddyController@messages')->name('buddy.messages');
+
+				//Messenger
+					Route::prefix('inbox')->group(function(){
+						Route::get('/', 'chatController@index')->name('buddy.messages');
+						Route::get('chat/{id}/{name}', 'chatController@inboxChat');
+
+						Route::post('messageSend', 'chatController@sendMessage');
+					});
+
 
 				//My Account
 					Route::prefix('my-account')->group(function(){
