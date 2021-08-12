@@ -95,7 +95,7 @@
                                        <h5>{{empty($val->sender->fname) ? 'Newuser' : $val->sender->fname.' '.$val->sender->lname}}</h5>
                                        <div class="box bg-light-inverse">{{$val->message}}</div>
                                     </div>
-                                    <div class="chat-img"><img  src="{{URL::to('/')}}/public/storage/user/profile_img/{{$val->sender->profile_img}}" onerror="this.onerror=null;this.src='{{URL::to('/')}}/public/user-placeholder.jpg';"div>
+                                    <div class="chat-img"><img  src="{{URL::to('/')}}/public/storage/user/profile_img/{{$val->sender->profile_img}}" onerror="this.onerror=null;this.src='{{URL::to('/')}}/public/user-placeholder.jpg';"/></div>
                                     <div class="chat-time">{{$val->created_at->diffForHumans()}}</div>
                                     @if(!empty($val->file_attach))
                                        <div class="chatAttach">
@@ -179,7 +179,10 @@
    <script src="{{URL::to('/')}}/assets/emojies/js/util.js"></script>
    <script src="{{URL::to('/')}}/assets/emojies/js/jquery.emojiarea.js"></script>
    <script src="{{URL::to('/')}}/assets/emojies/js/emoji-picker.js"></script>
+
    <script>
+
+
       $(document).ready(function(){
          chatScrollDown();
 
@@ -197,6 +200,8 @@
         // It can be called as many times as necessary; previously converted input fields will not be converted again
         window.emojiPicker.discover();
       }); 
+
+      
    </script>
 
 

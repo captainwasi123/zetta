@@ -34,7 +34,7 @@
                     <li> <a href=""> Lab Results </a> </li>
                     <li> <a href=""> Faq </a> </li>
                     <li> <a href=""> Privacy Policy </a> </li>
-                    <li> <a href=""> Terms  </a> </li>
+                    <li> <a href="{{route('web.terms')}}"> Terms  </a> </li>
                     <li> <a href=""> Wholesale  </a> </li>
                  </ul>
               </div>

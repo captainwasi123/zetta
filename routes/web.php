@@ -33,6 +33,10 @@ use Illuminate\Support\Facades\Route;
 				Route::post('checkout', 'cartController@checkout')->name('web.checkout');
 			});
 
+			//Footer Pages
+
+			Route::get('terms', 'webController@terms')->name('web.terms');
+
 		// User Authentication
 			Route::post('/register', 'authController@register');
 			Route::post('/login', 'authController@login');

@@ -108,7 +108,14 @@ $( "#sendchat" ).submit(function( event ) {
 
 
 function chatScrollDown(){
-    $('#talksall').scrollTop($('#talksall').prop("scrollHeight"));
+    // $('#talksall').scrollTop($('#talksall').prop("scrollHeight"));
+    // $('#talksall').scrollTop($('#talksall')[0].scrollHeight);
+     // var objDiv = document.getElementById("talksall");
+     //    objDiv.scrollTop = objDiv.scrollHeight;
+
+$('#talksall').stop().animate({
+  scrollTop: $('#talksall')[0].scrollHeight
+}, 500);
 
 }
 function notiSound() {
