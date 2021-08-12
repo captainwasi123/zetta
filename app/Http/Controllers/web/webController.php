@@ -164,4 +164,13 @@ class webController extends Controller
             return redirect()->back();
         }
     }
+
+
+
+
+    //Footer Pages
+    function terms(){
+
+        return view('web.terms');
+    }
 }
