@@ -71,16 +71,15 @@ use Illuminate\Support\Facades\Route;
 
 				Route::get('details/{id}', 'webController@lessonDetails')->name('lesson.details');
 			});
+        	
         //Coach Profile Details
             Route::get('Coach/details/{id}','webController@coachDetails')->name('web.coach.details');
 
-       //ACtivity Profile Details
-       Route::get('buddy/details/{id}','webController@buddyDetails')->name('web.buddy.details');
+	    //ACtivity Profile Details
+	       	Route::get('buddy/details/{id}','webController@buddyDetails')->name('web.buddy.details');
 
             Route::prefix('favourite')->group(function(){
 
-                /// add favourite lesson
-                Route::get('/lesson/add/{id}','FavouriteController@fav_lesson')->name('favourite.lesson.add');
 
                 /// add favourite activity
                 Route::get('/activity/add/{id}','FavouriteController@fav_activity')->name('favourite.activity.add');
@@ -110,6 +109,7 @@ use Illuminate\Support\Facades\Route;
 				Route::get('/', 'CoachController@index')->name('coach.dashboard');
                 Route::get('/friends','CoachController@friend')->name('coach.friends');
                 Route::get('/friends/search','CoachController@search_friends')->name('coach.friends.search');
+
 
 
 				//Messenger
@@ -294,11 +294,22 @@ use Illuminate\Support\Facades\Route;
 					Route::prefix('friends')->group(function(){	
                 		Route::get('/', 'friendController@my_friends')->name('buddy.friends');
                 		Route::get('search/{val}', 'friendController@search');
+                		Route::get('add/{id}', 'friendController@addFriend');
+                		Route::get('remove/{id}', 'friendController@removeFriend');
+					});
+
+				//Orders
+					Route::prefix('orders')->group(function(){
+
+						Route::get('/', 'orderController@index')->name('buddy.order');
+                        Route::get('/{id}', 'orderController@orderView')->name('buddy.orders.view');
+                        Route::post('/group/msg','orderController@group_order_msg')->name('buddy.group.msg');
+
+                        Route::get('checkReview/{id}', 'orderController@checkReview');
 					});
 
 				Route::get('lesson/favourite', 'CoachController@lesson_favourite')->name('coach.lesson.favourite');
 				Route::get('my-wallet', 'buddyController@my_wallet')->name('buddy.my_wallet');
-				Route::get('order', 'buddyController@my_orders')->name('buddy.order');
                 Route::get('analytics-and-redeem', 'buddyController@analytics_and_redeem')->name('buddy.analytics_and_redeem');
                 Route::get('my_account_area', 'buddyController@my_account_area')->name('buddy.my_account_area');
                 Route::post('/coach-request','buddyController@coach_requet')->name('buddy.coach.request');

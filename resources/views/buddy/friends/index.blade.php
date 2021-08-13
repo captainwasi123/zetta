@@ -30,48 +30,35 @@
                       </div>
                    </div>
                    <div class="col-md-6 col-lg-6 col-sm-6 col-12 text-right mob-text-left">
-                      <a href="" class="col-purple friend-btn1">  Go to Friend List  <i class="fa fa-arrow-right"> </i> </a>
+                     
                    </div>
                 </div>
              </div>
              <div class="block-element m-b-20">
                 <div class="row m-t-20 marg-less1">
-                   <div class="col-md-3 col-lg-3 col-sm-6 col-12 pad-less1">
-                      <div class="friends-box m-b-25">
-                         <img src="{{asset('public')}}/admin/assets/images/users/4.jpg">
-                         <div>
-                            <h5> John Doe </h5>
-                            <h6> <span> <i class="fa fa-star  col-yellow"> </i> 5.0 </span> <span> USA </span> </h6>
+                  @foreach($recent as $val)
+                     @if($val->user_id == Auth::id())
+                      <div class="col-md-3 col-lg-3 col-sm-6 col-12 pad-less1">
+                         <div class="friends-box m-b-25">
+                            <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{$val->friend->profile_img}}" alt="user" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';">
+                            <div>
+                               <h5> {{$val->friend->fname.' '.$val->friend->lname}} </h5>
+                               <h6> <span> <i class="fa fa-star  col-yellow"> </i> 5.0 </span> <span> {{@$val->friend->country->nicename}} </span> </h6>
+                            </div>
                          </div>
                       </div>
-                   </div>
-                   <div class="col-md-3 col-lg-3 col-sm-6 col-12 pad-less1">
-                      <div class="friends-box m-b-25">
-                         <img src="{{asset('public')}}/admin/assets/images/users/5.jpg">
-                         <div>
-                            <h5> John Doe </h5>
-                            <h6> <span> <i class="fa fa-star  col-yellow"> </i> 5.0 </span> <span> USA </span> </h6>
+                     @else
+                      <div class="col-md-3 col-lg-3 col-sm-6 col-12 pad-less1">
+                         <div class="friends-box m-b-25">
+                            <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{$val->user->profile_img}}" alt="user" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';">
+                            <div>
+                               <h5> {{$val->user->fname.' '.$val->user->lname}} </h5>
+                               <h6> <span> <i class="fa fa-star  col-yellow"> </i> 5.0 </span> <span> {{@$val->user->country->nicename}} </span> </h6>
+                            </div>
                          </div>
                       </div>
-                   </div>
-                   <div class="col-md-3 col-lg-3 col-sm-6 col-12 pad-less1">
-                      <div class="friends-box m-b-25">
-                         <img src="{{asset('public')}}/admin/assets/images/users/6.jpg">
-                         <div>
-                            <h5> John Doe </h5>
-                            <h6> <span> <i class="fa fa-star  col-yellow"> </i> 5.0 </span> <span> USA </span> </h6>
-                         </div>
-                      </div>
-                   </div>
-                   <div class="col-md-3 col-lg-3 col-sm-6 col-12 pad-less1">
-                      <div class="friends-box m-b-25">
-                         <img src="{{asset('public')}}/admin/assets/images/users/7.jpg">
-                         <div>
-                            <h5> John Doe </h5>
-                            <h6> <span> <i class="fa fa-star  col-yellow"> </i> 5.0 </span> <span> USA </span> </h6>
-                         </div>
-                      </div>
-                   </div>
+                     @endif
+                  @endforeach
                 </div>
                 <div class="row m-t-20">
                    <div class="col-md-12 col-lg-12 col-lg-12">
@@ -88,23 +75,41 @@
                                   <table class="table table-hover contact-list friends-table" data-page-size="10">
                                      <tbody>
                                        @foreach($friends as $val)
+                                          @if($val->user_id == Auth::id())
                                            <tr>
                                               <td class="table-image">
-                                                 <a href="javascript:void(0)"><img src="{{asset('public')}}/admin/assets/images/users/5.jpg" alt="user" width="40" class="img-circle"> Equipment 1 <br> @dom </a>
+                                                 <a href="javascript:void(0)"><img src="{{URL::to('/')}}/public/storage/user/profile_img/{{$val->friend->profile_img}}" alt="user" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';" alt="user" width="40" class="img-circle"> {{$val->friend->fname.' '.$val->friend->lname}} <br> {{'@'.$val->friend->username}} </a>
                                               </td>
                                               <td> <i class="fa fa-star col-yellow"> </i> 4.8 </td>
-                                              <td> Country: USA </td>
-                                              <td> Since: 2020 </td>
+                                              <td> Country: {{@$val->friend->country->nicename}} </td>
+                                              <td> Since: {{date('Y', strtotime($val->friend->created_at))}} </td>
                                               <td class="">
                                                  <a href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-ellipsis-v"> </i> </a>
                                                  <div class="dropdown-menu animated flipInY" style="">
-                                                    <a href="#" class="dropdown-item">  Remove Friend </a>
-                                                    <a href="#" class="dropdown-item">  Report </a>
+                                                    <a href="{{URL::to('/buddy/inbox/chat/'.base64_encode($val->friend->id).'/'.$val->friend->fname.' '.$val->friend->lname)}}" class="dropdown-item"> Send Message </a>
                                                     <div class="dropdown-divider"></div>
-                                                    <a href="#" class="dropdown-item">  Block </a>
+                                                    <a href="javascript:void(0)" data-id="{{base64_encode($val->id)}}" class="dropdown-item removeFriend"> Remove Friend </a>
                                                  </div>
                                               </td>
                                            </tr>
+                                          @else
+                                           <tr>
+                                              <td class="table-image">
+                                                 <a href="javascript:void(0)"><img src="{{URL::to('/')}}/public/storage/user/profile_img/{{$val->user->profile_img}}" alt="user" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';" alt="user" width="40" class="img-circle"> {{$val->user->fname.' '.$val->user->lname}} <br> {{'@'.$val->user->username}} </a>
+                                              </td>
+                                              <td> <i class="fa fa-star col-yellow"> </i> 4.8 </td>
+                                              <td> Country: {{@$val->user->country->nicename}} </td>
+                                              <td> Since: {{date('Y', strtotime($val->user->created_at))}} </td>
+                                              <td class="">
+                                                 <a href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-ellipsis-v"> </i> </a>
+                                                 <div class="dropdown-menu animated flipInY" style="">
+                                                    <a href="{{URL::to('/buddy/inbox/chat/'.base64_encode($val->user->id).'/'.$val->user->fname.' '.$val->user->lname)}}" class="dropdown-item"> Send Message </a>
+                                                    <div class="dropdown-divider"></div>
+                                                    <a href="javascript:void(0)" data-id="{{base64_encode($val->id)}}" class="dropdown-item removeFriend"> Remove Friend </a>
+                                                 </div>
+                                              </td>
+                                           </tr>
+                                          @endif
                                        @endforeach
                                        @if(count($friends) == '0')
                                           <tr>

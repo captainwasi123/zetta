@@ -208,9 +208,9 @@ $(".fav_act").click(function (e) {
         data: {},
         success: function (res) {
             if(res.status == 200){
-                $('#'+id).html('<i class="fa fa-heart col-purple"></i>');
+                $('#'+id).html('');
             }else if(res.status == 300){
-                $('#'+id).html('<i class="far fa-heart col-purple"></i>');
+                $('#'+id).html('');
             }
         }
     });
@@ -229,9 +229,9 @@ $(".fav_lesson").click(function (e) {
         data: {},
         success: function (res) {
             if(res.status == 200){
-                $('#'+id).html('<i class="fa fa-heart col-purple"></i>');
+                $('#'+id).html('');
             }else if(res.status == 300){
-                $(this).html('<i class="far fa-heart col-purple"></i>');
+                $(this).html('');
             }
         }
     });
@@ -249,11 +249,10 @@ $(".fav_coach").click(function (e) {
         url: url,
         data: {},
         success: function (res) {
-            console.log(res)
             if(res.status == 200){
-                $('#'+id).html('<i class="fa fa-heart col-purple"></i>');
+                $('#'+id).html('');
             }else if(res.status == 300){
-                $('#'+id).html('<i class="far fa-heart col-purple"></i>');
+                $('#'+id).html('');
             }
         }
     });
@@ -271,9 +270,9 @@ $(".fav_buddy").click(function (e) {
         data: {},
         success: function (res) {
             if(res.status == 200){
-                $('#'+id).html('<i class="fa fa-heart col-purple"></i>');
+                $('#'+id).html('');
             }else if(res.status == 300){
-                $('#'+id).html('<i class="far fa-heart col-purple"></i>');
+                $('#'+id).html('');
             }
         }
     });

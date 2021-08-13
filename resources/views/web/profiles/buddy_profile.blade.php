@@ -3,40 +3,6 @@
 
 @section('content')
 
-
- <section class="action-bar">
-    <div class="container">
-       <div class="all-actions arrows1">
-          <div>
-             <a href=""> <img src="{{URL::to('/assets/website')}}/images/action-icon1.jpg"> Starting Excercise </a>
-          </div>
-          <div>
-             <a href=""> <img src="{{URL::to('/assets/website')}}/images/action-icon2.jpg"> Fitness Expert </a>
-          </div>
-          <div>
-             <a href=""> <img src="{{URL::to('/assets/website')}}/images/action-icon3.jpg"> Body Fitness </a>
-          </div>
-          <div>
-             <a href=""> <img src="{{URL::to('/assets/website')}}/images/action-icon4.jpg"> Martial Art </a>
-          </div>
-          <div>
-             <a href=""> <img src="{{URL::to('/assets/website')}}/images/action-icon5.jpg"> Swimming </a>
-          </div>
-          <div>
-             <a href=""> <img src="{{URL::to('/assets/website')}}/images/action-icon6.jpg"> Boxing </a>
-          </div>
-          <div>
-             <a href=""> <img src="{{URL::to('/assets/website')}}/images/action-icon7.jpg"> Fencing </a>
-          </div>
-          <div>
-             <a href=""> <img src="{{URL::to('/assets/website')}}/images/action-icon8.jpg"> Racing </a>
-          </div>
-          <div>
-             <a href=""> <img src="{{URL::to('/assets/website')}}/images/action-icon1.jpg"> Starting Excercise </a>
-          </div>
-       </div>
-    </div>
- </section>
  <!-- Action Bar Ends Here -->
  <!-- Page Content Starts Here -->
  <section class="pad-top-40 pad-bot-40 bg-dark2">
@@ -176,9 +142,7 @@
                         <div class="video-box m-b-25">
                             <video controls>
                                 <source src="{{URL::to('/')}}/public/storage/user/media/{{$media->media}}" type="video/mp4">
-                                {{-- <source src="{{URL::to('/')}}/public/storage/user/media/{{$media->media}}"" type="video/ogg"> --}}
                             </video>
-                        {{-- <img src="images/video-image1.jpg"> --}}
                         </div>
                     </div>
                  @endforeach
@@ -190,53 +154,55 @@
                 @foreach ($data->activities as $val)
                     <div class="col-md-4 col-lg-4 col-sm-6 col-12">
                         <div class="lesson-block">
-                        <div class="lesson-image-block">
-                            @if (empty($val->cover_img))
-                                <img src="{{URL::to('/public/images/lesson-image1.jpg')}}">
-                            @else
-                                <img src="{{URL::to('/public/storage/user/lessons/main_image/'.$val->cover_img)}}">
-                            @endif
+                           <div class="lesson-image-block">
+                               @if (empty($val->cover_img))
+                                   <img src="{{URL::to('/public/images/lesson-image1.jpg')}}">
+                               @else
+                                   <img src="{{URL::to('/public/storage/user/activity/main_image/'.$val->cover_img)}}">
+                               @endif
 
-                        </div>
-                        <div class="lesson-title-block">
-                            @if(empty($data->profile_img))
-                                <img src="{{URL::to('/')}}/public/user-placeholder.jpg">
-                            @else
-                                <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{$data->profile_img}}">
-                            @endif
+                           </div>
+                           <div class="lesson-title-block">
+                               @if(empty($data->profile_img))
+                                   <img src="{{URL::to('/')}}/public/user-placeholder.jpg">
+                               @else
+                                   <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{$data->profile_img}}">
+                               @endif
 
-                            <h4> {{$val->title}} <span> Coach </span>  </h4>
-                            <div class="zoom-tag">
-                                @if ($val->availability == '1')
-                                    <img src="{{URL::to('/public/images/zoom-logo.png')}}"> Only Zoom Classes
-                                @endif
-                            </div>
+                               <h4> {{$val->title}} <span> Coach </span>  </h4>
+                               <div class="zoom-tag">
+                                   @if ($val->availability == '1')
+                                       <img src="{{URL::to('/public/images/zoom-logo.png')}}"> Only Zoom Classes
+                                   @endif
+                               </div>
 
-                        </div>
-                        <div class="lesson-info-block mt-3">
-                            <p class="descrip"> {{$val->description}}</p>
-                            <h6 class="col-white m-b-15"> <i class="fa fa-star col-yellow"> </i> 5.0 </h6>
-                        </div>
-                        <div class="lesson-rating-block">
-                            <a href="" class="col-purple"> <i class="fa fa-heart col-purple"></i> </a>
-                            <span class="col-grey"> STARTING AT <b class="col-white">
-                                @if (count($val->equipment)>0)
-                                    @php
-                                        $ids = [];
-                                        $price = 0;
-                                    @endphp
-                                    @foreach ($val->equipment as $k => $val)
-                                        @php
-                                          $price = $price+$val->user_equipment->price;
-                                            $ids[$k] = $val->equip_id;
-                                        @endphp
-                                    @endforeach
-                                     {{'$'.number_format($price)}}
-                                @else
-                                FREE
-                                @endif
-                            </span>
-                        </div>
+                           </div>
+                           <div class="lesson-info-block mt-3">
+                               <p class="descrip"> {{$val->description}}</p>
+                               <h6 class="col-white m-b-15"> <i class="fa fa-star col-yellow"> </i> 5.0 </h6>
+                           </div>
+                           <div class="lesson-rating-block">
+                               <a href="" class="col-purple"> <i class="fa fa-heart col-purple"></i> </a>
+                               <span class="col-grey"> STARTING AT 
+                                    <b class="col-white">
+                                      @if (count($val->equipment)>0)
+                                          @php
+                                              $ids = [];
+                                              $price = 0;
+                                          @endphp
+                                          @foreach ($val->equipment as $k => $val)
+                                              @php
+                                                $price = $price+$val->user_equipment->price;
+                                                  $ids[$k] = $val->equip_id;
+                                              @endphp
+                                          @endforeach
+                                           {{'$'.number_format($price)}}
+                                      @else
+                                      FREE
+                                      @endif
+                                   </b>
+                               </span>
+                           </div>
                         </div>
                     </div>
                 @endforeach

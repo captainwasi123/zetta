@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\activity\equipments;
 use App\Models\activity\locations;
 use Auth;
+use App\Models\FavouriteActivity;
 use App\Models\User;
 
 class activities extends Model
@@ -115,5 +116,10 @@ class activities extends Model
     public function fav_act()
     {
         return $this->belongsTo(friends::class,'activity_id');
+    }
+
+    
+    public function favActivity(){
+        return $this->hasMany(FavouriteActivity::class, 'activity_id', 'id')->where('user_id', Auth::id());
     }
 }

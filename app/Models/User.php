@@ -15,6 +15,10 @@ use App\Models\userEquipment;
 use App\Models\userWallet;
 use App\Models\lesson\lessons;
 use App\Models\activity\activities;
+use App\Models\FavouriteCoach;
+use App\Models\FavouriteBuddy;
+use App\Models\friends;
+use Auth;
 
 class User extends Authenticatable
 {
@@ -111,4 +115,17 @@ class User extends Authenticatable
         return $this->belongsTo(CoachRequest::class ,'user_id');
     }
 
+
+    //Favorite
+        public function favCoach(){
+            return $this->hasMany(FavouriteCoach::class, 'coach_id', 'id')->where('user_id', Auth::id());
+        }
+        public function favBuddy(){
+            return $this->hasMany(FavouriteBuddy::class, 'buddy_id', 'id')->where('user_id', Auth::id());
+        }
+
+    //Check Friend
+        public function checkFriend(){
+            return $this->hasMany(friends::class, 'friend_id', 'id')->where('user_id', Auth::id());
+        }
 }

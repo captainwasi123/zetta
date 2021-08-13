@@ -54,7 +54,7 @@
                                         $price += $data->price;
                                     @endphp
                                     <tr>
-                                        <td class="table-image3"> <img src="{{asset('public/storage/user/profile_img/'.$buyer->profile_img.'')}}">  {{$buyer->fname}} </td>
+                                        <td class="table-image3"> <img src="{{asset('public/storage/user/profile_img/'.$buyer->profile_img.'')}}" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';">  {{$buyer->fname}} </td>
                                         <td class="text-center"> 01  </td>
                                         @foreach ($data->lesson->packages as $key => $duration)
                                         @if ($data->plan == $key)
@@ -77,7 +77,7 @@
                                      </tr>
                                    @else
                                   <tr>
-                                     <td class="table-image3"> <img src="{{asset('public/storage/user/profile_img/'.$data->buyer->profile_img.'')}}">  {{$data->buyer->fname}} </td>
+                                     <td class="table-image3"> <img src="{{asset('public/storage/user/profile_img/'.$data->buyer->profile_img.'')}}" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';">  {{$data->buyer->fname}} </td>
                                      <td class="text-center"> 01  </td>
                                      @foreach ($data->lesson->packages as $key => $duration)
                                      @if ($data->plan == $key)

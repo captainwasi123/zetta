@@ -9,6 +9,7 @@ use App\Models\lesson\Locations;
 use App\Models\lesson\Packages;
 use App\Models\lesson\orders;
 use App\Models\User;
+use App\Models\FavouriteLesson;
 use Auth;
 
 class lessons extends Model
@@ -163,5 +164,9 @@ class lessons extends Model
 
     public function user(){
         return $this->belongsTo(User::class, 'user_id');
+    }
+    
+    public function favLesson(){
+        return $this->hasMany(FavouriteLesson::class, 'lesson_id', 'id')->where('user_id', Auth::id());
     }
 }

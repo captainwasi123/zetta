@@ -1,4 +1,4 @@
-@extends('coach.include.master')
+@extends('buddy.include.master')
 @section('title', 'Messages')
 
 @section('content')

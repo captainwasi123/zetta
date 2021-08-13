@@ -106,6 +106,46 @@ $(document).ready(function(){
             }
         });
       });
+
+      $(document).on('click', '.addFriend', function(){
+        var id = $(this).data('id');
+        swal({
+            title: "Are you sure?",
+            text: "You want this user as friend.",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#994afe",
+            confirmButtonText: "Yes, Add Friend!",
+            cancelButtonText: "No, Cancel!",
+            closeOnConfirm: false,
+            closeOnCancel: false
+        }, function(isConfirm){
+            if (isConfirm) {
+                window.location.href = host+"/friends/add/"+id;
+            } else {
+            }
+        });
+      });
+
+      $(document).on('click', '.removeFriend', function(){
+        var id = $(this).data('id');
+        swal({
+            title: "Are you sure?",
+            text: "You want to remove this from friendlist.",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#994afe",
+            confirmButtonText: "Yes, Remove Friend!",
+            cancelButtonText: "No, Cancel!",
+            closeOnConfirm: false,
+            closeOnCancel: false
+        }, function(isConfirm){
+            if (isConfirm) {
+                window.location.href = host+"/friends/remove/"+id;
+            } else {
+            }
+        });
+      });
     },
     //init
     $.SweetAlert = new SweetAlert, $.SweetAlert.Constructor = SweetAlert

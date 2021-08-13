@@ -191,7 +191,9 @@
                         <h6 class="col-white m-b-15"> <i class="fa fa-star col-yellow"> </i> 5.0 </h6>
                      </div>
                      <div class="lesson-rating-block">
-                        <a href="javascript:void(0)" data-id="{{$val->id}}" id="{{$val->id}}" class="col-purple fav_lesson"> <i class="fa fa-heart col-purple"></i> </a>
+                        @if(count($val->favLesson) == 0)
+                           <a href="javascript:void(0)" data-id="{{$val->id}}" id="{{$val->id}}" class="col-purple fav_lesson"> <i class="fa fa-heart col-purple"></i> </a>
+                        @endif
                         <span class="col-grey"> STARTING AT <b class="col-white"> {{'$'.number_format($val->packages[0]->price)}} </b> </span>
                      </div>
                   </div>

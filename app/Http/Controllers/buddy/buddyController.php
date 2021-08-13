@@ -18,13 +18,6 @@ class buddyController extends Controller
       return view('buddy.dashboard');
     }
 
-    public function my_orders()
-    {
-        $orders = ActivityOrders::where('seller_id', Auth::id())->where('status',1)->latest()->get();
-
-        return view('buddy.orders', ['orders' => $orders]);
-    }
-
     public function my_wallet()
     {
         $data = array(

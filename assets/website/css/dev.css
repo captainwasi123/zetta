@@ -242,3 +242,10 @@ color:white !important;
     text-align: center;
     padding: 75px 25px;
 }
+
+.fav_coach {
+    float: right;
+}
+.lesson-rating-block2 .col-white {
+    float: left !important;
+}

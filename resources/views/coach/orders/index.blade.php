@@ -36,6 +36,7 @@
                      <th> Site Commision </th>
                      <th> Total Earning </th>
                      <th> Status </th>
+                     <th></th>
                   </tr>
                </thead>
                <tbody>
@@ -58,6 +59,10 @@
                            @else
                               <span class="label bg-danger"> Cancelled </span>
                            @endif
+                        </td>
+                        <td>  
+                           <a href="{{route('coach.orders.view',base64_encode($val->id))}}" class="label bg-green2">  Details 
+                           </a> 
                         </td>
                      </tr>
                   @endforeach

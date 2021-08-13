@@ -233,3 +233,7 @@ ul.less-triggers li a.nav-link.active, ul.less-triggers li a.nav-link.active {
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
   /*  background-color: #555;*/
 }
+
+.friends-box img {
+    height: 205px !important;
+}
