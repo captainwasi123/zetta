@@ -124,12 +124,13 @@ b, strong {
 }
 
  .custom-btn2 {
-    background: #4caf50;
+    background: #1d242c;
     color: white;
     font-size: 15px;
     padding: 6px 25px;
     display: inline-block;
     border-radius: 30px;
+        border: 1px solid #994afe;
 }
 
 
@@ -482,8 +483,9 @@ body.mini-sidebar a.navbar-brand img {
     color:white;
 }
  .custom-btn1:hover {
-    background:#4caf50;
+    background: #1d242c;
     color:white ;
+    border: 1px solid #994afe;
  }
 .custom-btn3:hover {
 background:#4caf50;
@@ -676,7 +678,7 @@ label.custom-control.custom-radio {
 
 .submit-btn1 {
     background: #9a49ff;
-    border: none;
+    border: 1px solid #9a49ff; 
     color: white !important;
     padding: 8px 30px;
     letter-spacing: 0.8px;
@@ -688,11 +690,12 @@ label.custom-control.custom-radio {
     display: inline-block;
 }
 .submit-btn1:hover {
-    background:#4caf50 !important;
+    background:#1d242c !important;
     color:white !important;
+    border: 1px solid #9a49ff; 
 }
 .submit-btn1:hover i {
-    color:#4caf50 !important
+    color:#9a49ff !important
 }
 .submit-btn1 i {
     background: white;
@@ -913,8 +916,11 @@ span.inform-box1 i {
 
 
 .custom-btn6:hover {
-    background:#4caf50 !important;
+    background:#994afe !important;
     color:white !important;
+}
+.chat-main-box .chat-left-aside .chat-left-inner .style-none li a.active, .chat-main-box .chat-left-aside .chat-left-inner .style-none li a:hover {
+    background: #fff;
 }
 
 .inbox-aside {
@@ -959,7 +965,7 @@ span.inform-box1 i {
     text-align: center;
 }
 .bg-green2 {
-    background:#4caf50 !important ;
+    background:#9a49ff !important ;
 }
 .col-green {
     color:#4caf50 !important ;
@@ -983,7 +989,14 @@ span.inform-box1 i {
     border: none;
 }
 .order-sorting-text a.active {
-    color:#4caf50 !important;
+    color:#fff !important;
+}
+.badge-success {
+    background-color: #994afe;
+    padding: 10px 18px;
+}
+.wallet-price.text-right.mob-text-left h4 {
+    color: #994afe !important;
 }
 
 .bg-grey {
@@ -1108,7 +1121,7 @@ textarea.form-field1 {
 }
 
 .bg-purple2 {
-    background:#7900b8 !important;
+    background:#994afe  !important;
 }
 
 .progress-1 .progress-bar {
@@ -1359,14 +1372,23 @@ div#countdown ul li span {
     background: linear-gradient( 
 0deg
  , #d4d4d4, #e0e0e0);
-    color: #1eb51e !important;
+    color: #994afe !important;
     font-weight: 700;
     font-size: 45px;
     letter-spacing: 5px;
     padding: 15px 0px 0px 0px;
 }
 
-
+/*.descrip {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}*/
+.chat-main-box.inbox-aside {
+    background: #1d242c;
+}
 .message-box1 .chat-list li .chat-content .box {
     background: none !important;
     padding: 0px 0px !important;
@@ -1714,7 +1736,14 @@ a.form-edit1 {
     height: 45px;
     padding: 0px 10px;
     border: 1px solid silver;
+    background: #1d242c;
+    color: white !important;
 }
+span.label.bg-success {
+    background-color: #994afe!important;
+}
+
+
 
 
 
@@ -1728,9 +1757,10 @@ a.form-edit1 {
     width: 55%;
     height: 40px;
     border: 1px solid silver;
-    color: grey;
+    color: white;
     letter-spacing: 0.3px;
     font-size: 14px;
+    background: #1d242c;
 }
 
 
@@ -1797,7 +1827,7 @@ a.form-edit1 {
 
 .sec-head4 h5 {
     font-weight: 500;
-    color: #3b4863;
+    color: white;
     font-size: 17px;
     letter-spacing: 0.3px;
     margin: 0px;
@@ -1805,7 +1835,7 @@ a.form-edit1 {
 
 
 .chat-person-name {
-    background: #f1f2f7;
+    background: #994afe;
     padding: 0px 15px 10px 15px;
     float: left;
     width: 100%;
@@ -1814,7 +1844,7 @@ a.form-edit1 {
 .chat-person-name h4 {
     padding: 5px 0px 0px 0px;
     font-weight: 500;
-    color: #3b4863;
+    color: white;
     font-size: 18px;
     letter-spacing: 0.3px;
     margin: 0px 0px 4px 0px;
@@ -1836,7 +1866,7 @@ a.form-edit1 {
 }
 .sec-head4 {
     padding: 22px 15px;
-    background: #f1f2f7;
+        background: #994afe;
 }
 
 
@@ -1845,20 +1875,21 @@ a.form-edit1 {
     width: 100%;
     text-align: center;
     padding: 20px 0px;
-    background: #f1f2f7;
+    background: #994afe;
 }
 .chat-about-details-head h4 {
     margin: 0px;
     font-weight: 600;
     letter-spacing: 0.3px;
     font-size: 20px;
+        color: white;
 }
 
 .chat-about-details {
     float: left;
     width: 100%;
     text-align: center;
-    background: white;
+   /* background: white;*/
     padding:30px 0px;
 }
 
@@ -1895,7 +1926,7 @@ a.form-edit1 {
 .box-wrapper2 {
     float: left;
     width: 100%;
-    background: white;
+/*    background: white;*/
     padding: 0px 15px;
 }
 
@@ -2439,7 +2470,7 @@ td.table-image a img {
 
 .submit-btn5 {
     background: #9a49ff;
-    border: none;
+    border: 1px solid #9a49ff;
     color: white !important;
     padding: 4px 20px;
     letter-spacing: 0.8px;
@@ -2450,11 +2481,12 @@ td.table-image a img {
     outline: none !important;
 }
 .submit-btn5:hover {
-    background:#4caf50 !important;
+    background:#1d242c !important;
     color:white !important;
+    border: 1px solid #9a49ff;
 }
 .submit-btn5:hover i {
-    color:#4caf50 !important
+    color:#9a49ff !important
 }
 
 .submit-btn5 i {
@@ -2781,6 +2813,8 @@ border-right: none !important;
     background-position-x: 10px;
 /*    padding-left: 40px;*/
     max-width: 300px;
+    background: #1d242c;
+    color: white;
 }
 .slot-2 .form-field3 {
     max-width: 250px;
@@ -2856,22 +2890,28 @@ textarea.msg-write {
 .form-attach1 img {
     width: 20px;
 }
-
-
+.profile-tab li a.nav-link:hover, .customtab li a.nav-link:hover {
+    color: #fff;
+}
 button.send-now-btn {
     background: none;
     border: none;
     font-weight: 500;
     font-size: 18px;
     letter-spacing: 1px;
+    color: white !important;
+}
+.chat-about-details h5 {
+    color: white;
 }
 
 .chat-about-details {
     float: left;
     width: 100%;
     text-align: center;
-    background: white;
+    background: #1d242c;
     padding: 30px 10px;
+    color: white;
 }
 .chat-about-details table th {
     text-align: left;
@@ -2998,6 +3038,10 @@ ul.less-triggers.nav-tabs .nav-link {
 
 }
 
+.mini-sidebar .sidebar-nav #sidebarnav>li:hover>a {
+    width: 260px;
+    background: #994afe;
+}
 
 
 @media screen and (max-width:767px) and (min-width:520px) { 
@@ -3461,13 +3505,60 @@ html body .off-border {
     color: #9a49ff;
 }
 .user-profile .profile-text>a:hover {
-    color: #4caf50;
+    color: white;
+}
+.user-profile .profile-text>a i:hover {
+    color: #994afe;
 }
 .user-profile .profile-text>a {
     color: white;
  
 }
 
+.chat-main-box::-webkit-scrollbar
+{
+    width: 3px;
+   /* background-color: #F5F5F5;*/
+}
+
+.chat-main-box::-webkit-scrollbar-thumb
+{
+ /*   border-radius: 10px;*/
+    -webkit-box-shadow: inset 0 0 6px #994afe;
+  /*  background-color: #555;*/
+}
+.fc-button
+{
+    background: #994afe;
+    color: white;
+}
+.fc-button:hover
+{
+    background: #994afe;
+    color: white;
+}
+.fc th.fc-widget-header
+{
+     background: #994afe;
+    color: white;
+
+}
+
+.fc-today
+{
+     background: #994afe;
+    color: white;
+}
+
+.fc-widget-content
+{
+     background: #1d232b;
+    color: white;
+
+}
+/*.fc th, .fc td {
+    border-color: #994afe !important;
+}*/
 .packages-table table tbody tr td {
  
     color: white;
@@ -3492,9 +3583,9 @@ html body .off-border {
     background: #1d242c !important;
 }
 
-td.fc-axis.fc-widget-content {
+/*td.fc-axis.fc-widget-content {
     background: white;
-}
+}*/
 .sec-head1.ps h3 {
     padding-left: 20px;
 }
@@ -3645,3 +3736,25 @@ p.form-field1.text-right.mob-text-left.off-border {
 }
 }
 
+/*.fc-time-grid-container, .fc-time-grid
+{
+
+}*/
+.fc-time-grid-container::-webkit-scrollbar
+{
+    width: 4px;
+   /* background-color: #F5F5F5;*/
+}
+
+.fc-time-grid-container::-webkit-scrollbar-thumb
+{
+ /*   border-radius: 10px;*/
+    -webkit-box-shadow: inset 0 0 6px #fff;
+  /*  background-color: #555;*/
+}
+html body .bg-purple {
+    background-color: #994afe !important;
+}
+.bg-white {
+    background-color: transparent!important;
+}

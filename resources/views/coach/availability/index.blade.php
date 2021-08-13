@@ -43,7 +43,7 @@
                </div>
             </div>
             <div class="col-md-3 col-lg-3 col-12">
-               <p>   <button class="submit-btn1 equal-btn1" style="    margin-top: 25px;"> <i class="fa fa-plus"> </i> ADD </button>  </p>
+               <p>   <button class="submit-btn1 equal-btn1" > <i class="fa fa-plus"> </i> ADD </button>  </p>
             </div>
          </div>
       </form>
