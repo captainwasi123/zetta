@@ -7,8 +7,8 @@
                  <p> In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface. </p>
                  <ul>
                     <li> <a href=""> <i class="fa fa-phone"> </i> 2155655845 </a> </li>
-                    <li> <a href=""> <i class="fa fa-map-marker"> </i> 118 N Main St, Trumbauersville, United States </a> </li>
-                    <li> <a href=""> <i class="fa fa-envelope"> </i> hello@zettaa.ch </a> </li>
+                    <li> <a href=""> <i class="fa fa-map-marker"> </i> 3 rue du Port, 1204 Genève, Switzerland </a> </li>
+                    <li> <a href=""> <i class="fa fa-envelope"> </i> info@zettaa.ch </a> </li>
                  </ul>
               </div>
            </div>
@@ -16,12 +16,12 @@
               <div class="footer-list">
                  <h4 class="col-white"> QUICK MENU </h4>
                  <ul>
-                    <li> <a href=""> Home </a> </li>
-                    <li> <a href=""> Coaches </a> </li>
-                    <li> <a href=""> Sports Buddy </a> </li>
-                    <li> <a href=""> Lesson or Gig </a> </li>
-                    <li> <a href=""> Near Me </a> </li>
-                    <li> <a href=""> Map </a> </li>
+                    <li> <a href="{{URL::to('/')}}"> Home </a> </li>
+                    <li> <a href="{{route('web.all','Coaches')}}"> Coaches </a> </li>
+                    <li> <a href="{{route('web.all','Sports Buddies')}}"> Sports Buddy </a> </li>
+                    <li> <a href="{{route('web.all','Lessons')}}"> Lesson </a> </li>
+                    <li> <a href="{{route('web.all','Activities')}}"> Activity </a> </li>
+                    <li> <a href="{{URL::to('/')}}#mapa"> Near Me </a> </li>
                  </ul>
               </div>
            </div>
@@ -29,7 +29,7 @@
               <div class="footer-list">
                  <h4 class="col-white"> INFORMATION </h4>
                  <ul>
-                    <li> <a href=""> Search </a> </li>
+                    <li> <a href="{{URL::to('/')}}#search"> Search </a> </li>
                     <li> <a href=""> Find Us </a> </li>
                     <li> <a href=""> Lab Results </a> </li>
                     <li> <a href=""> Faq </a> </li>

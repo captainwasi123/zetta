@@ -219,3 +219,26 @@ color:white !important;
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+.image-checkbox{
+         cursor: pointer;
+     box-sizing: border-box;
+     -moz-box-sizing: border-box;
+     -webkit-box-sizing: border-box;
+     border: 4px solid transparent;
+     outline: 0;
+  }
+
+
+  .image-checkbox input[type="checkbox"]{
+     display: none;
+  }
+
+  .image-checkbox-checked{
+     filter: opacity(.5) drop-shadow(0 0 0 purple);
+  }
+
+.stickmanLoader {
+    text-align: center;
+    padding: 75px 25px;
+}

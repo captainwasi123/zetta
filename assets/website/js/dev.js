@@ -26,7 +26,43 @@ $(document).ready(function(){
         $('.register-modal').modal('show');
     });
 
+
+    $(document).on('click', '.stickman', function(){
+        $('#resultBlock').html('<div class="col-12 stickmanLoader"><img src="'+host+'/assets/website/images/loaderr.gif"/></div>');
+        $.post( host+'/stickman', $('form#stickmanForm').serialize(), function(data) {
+            $('#resultBlock').html(data);
+        });
+    });
+
  });
+
+
+jQuery(function ($) {
+   // init the state from the input
+   $(".image-checkbox").each(function () {
+       if ($(this).find('input[type="checkbox"]').first().attr("checked")) {
+           $(this).addClass('image-checkbox-checked');
+       }
+       else {
+           $(this).removeClass('image-checkbox-checked');
+       }
+   });
+
+   // sync the state to the input
+   $(".image-checkbox").on("click", function (e) {
+       if ($(this).hasClass('image-checkbox-checked')) {
+           $(this).removeClass('image-checkbox-checked');
+           $(this).find('input[type="checkbox"]').first().removeAttr("checked");
+       }
+       else {
+           $(this).addClass('image-checkbox-checked');
+           $(this).find('input[type="checkbox"]').first().attr("checked", "checked");
+       }
+
+       e.preventDefault();
+   });
+});
+
 
 //Ajax
 

@@ -3,7 +3,7 @@
 
 @section('content')
 
-<section class="banner-sec">
+<section class="banner-sec" id="search">
          <div class="container-fluid">
             <div class="banner-text text-center">
                <h2 class="gotham-bold col-white"> Find <br/> The Perfect Sport Buddy </h2>
@@ -41,15 +41,11 @@
             <div class="row">
                <div class="col-md-2 col-lg-2 col-sm-12 col-12 order-lg-2 order-md-2">
                   <div class="all-filters2">
-                     {{-- <button class="buddy-btn active"> Friends </button> --}}
                      <a class="buddy-btn" href="{{route('web.search.filter','friend')}}">Friends</a>
                      <a class="buddy-btn" href="{{route('web.search.filter','online_coach')}}">Online Coach</a>
                      <a class="buddy-btn" href="{{route('web.search.filter','group_coach')}}">Group Coach</a>
                      <a class="buddy-btn" href="{{route('web.search.filter','private_coach')}}">Private Coach</a>
                      <a class="buddy-btn" href="{{route('web.search.filter','girl')}}">Girl Coach</a>
-                     {{-- <button class="buddy-btn"> Online Coach </button> --}}
-                     {{-- <button class="buddy-btn"> Private Coach </button> --}}
-                     {{-- <button class="buddy-btn"> Girls Coach </button> --}}
                      <button class="buddy-btn"> Find My Teacher </button>
                   </div>
                </div>
@@ -274,8 +270,8 @@
       <section class="contact-map" id="mapa">
       </section>
 
-<input type="hidden" id="lat">
-<input type="hidden" id="lng">
+<input type="hidden" id="lat" value="1">
+<input type="hidden" id="lng" value="1">
 
 
 @endsection
@@ -335,10 +331,13 @@
       }
 
       function mapset(){
+         var nlat = $('#lat').val() == 1 ? 33.8662044 : $('#lat').val();
+         var nlng = $('#lng').val() == 1 ? 7.3174239 : $('#lng').val();
+         var nZoom = $('#lat').val() == 1 ? 3 : 10;
          setTimeout(function(){
             var map = new google.maps.Map(document.getElementById('mapa'), {
-               zoom: 10,
-               center: new google.maps.LatLng($('#lat').val() , $('#lng').val()),
+               zoom: nZoom,
+               center: new google.maps.LatLng(nlat , nlng),
                mapTypeId: google.maps.MapTypeId.ROADMAP
             });
 
