@@ -118,7 +118,7 @@
                 </div>
                 <div class="row m-t-20" id="order_completed" style="display: none;">
                    <div class="col-md-12 col-lg-12">
-                        <span class="alert alert-success"><strong>Congratulations!</strong> Order Completed.</span>
+                        <span class="alert alert-success"><strong>Alert!</strong> Order Completed.</span>
                    </div>
                 </div>
                 <div class="comments-wrapper m-t-40">
@@ -232,12 +232,40 @@
        </div>
     </div>
 </div>
+
+
+<div class="modal fade review-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+   <div class="modal-dialog modal-lg" role="document" style="max-width: 500px;">
+      <div class="modal-content" id="re_content">
+         <div class="join-pop-head">
+            <h3> Leave us a review <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button> </h3>
+            <p>You`ve recently hired <span id="seller_name"></span>, What do you think about it?
+            <hr>
+         </div>
+         <div class="join-form">
+            <form method="post" action="{{route('buddy.review.submit')}}">
+                {{csrf_field()}}
+                <input type="hidden" name="order_id" value="" id="order_id">
+                <input type="hidden" name="seller_id" value="" id="seller_id">
+                <div class="rating_block">
+                  <input type="number" name="rating" id="rating1" value="1" class="rating text-warning" required />
+                </div>
+                <textarea name="description" class="form-control" required rows="7" placeholder="Enter your review here..." required></textarea>
+                <button type="submit" class="btn btn-primary"> Submit </button>
+            </form>
+         </div>
+      </div>
+   </div>
+</div>
+
 @endsection
 @section('addScript')
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key={{env('GOOGLE_MAP_KEY')}}&libraries=places"></script>
+<script src="https://use.fontawesome.com/5ac93d4ca8.js"></script>
+<script src="{{URL::to('/')}}/assets/js/bootstrap4-rating-input.js"></script>
 <script>
     jQuery(document).ready(function() {
 
@@ -254,6 +282,7 @@
     });
  </script>
 <script type="text/javascript">
+   var u_id = '{{base64_encode($data->id)}}';
     (function () {
     const second = 1000,
      minute = second * 60,
@@ -293,6 +322,22 @@
 
         $('#order_completed').css({'display': 'block'});
 
+        $.get("{{URL::to('/')}}/buddy/orders/checkReview/"+u_id, function(data, status){
+            if(status == 'success'){
+               if(data != 'done'){
+                  $('#seller_name').html(data.name);
+                  $('#order_id').val(data.order_id);
+                  $('#seller_id').val(data.seller_id);
+
+                  setTimeout(function(){
+                    $('.review-modal').modal('show');
+                  }, 2000);
+                  clearInterval(x);
+               }
+            }else{
+               console.log('Something went wrong.');
+            }
+         });
      }
      //seconds
     }, 0)

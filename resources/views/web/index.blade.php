@@ -17,10 +17,8 @@
                   <div class="label-field3">
                      <i class="fa fa-filter"> </i>
                      <select name="type">
-                        <option>Lessons</option>
-                        <option>Activities</option>
-                        <option>Coaches</option>
-                        <option>Sports Buddies</option>
+                        <option>Keywords</option>
+                        <option>Places</option>
                      </select>
                   </div>
                   <div class="submit-field1">
@@ -297,12 +295,16 @@
    <script type="text/javascript">
       var alocations = [
             @foreach ($alocation as $val)
-               ['{{$val->activity->title}}', {{$val->lat}}, {{$val->lng}}, '{{$val->activity->user->fname}} {{$val->activity->user->lname}}', "{{route('activity.details', base64_encode($val->activity->id))}}"],
+               @if(!empty($val->activity))
+                  ['{{$val->activity->title}}', {{$val->lat}}, {{$val->lng}}, '{{$val->activity->user->fname}} {{$val->activity->user->lname}}', "{{route('activity.details', base64_encode($val->activity->id))}}"],
+               @endif
             @endforeach
       ];
       var llocations = [
             @foreach ($llocation as $val)
-               ['{{$val->lesson->title}}', {{$val->lat}}, {{$val->lng}}, '{{$val->lesson->user->fname}} {{$val->lesson->user->lname}}', "{{route('lesson.details', base64_encode($val->lesson->id))}}"],
+               @if(!empty($val->lesson))
+                  ['{{$val->lesson->title}}', {{$val->lat}}, {{$val->lng}}, '{{$val->lesson->user->fname}} {{$val->lesson->user->lname}}', "{{route('lesson.details', base64_encode($val->lesson->id))}}"],
+               @endif
             @endforeach
       ];
       var ulocations = [

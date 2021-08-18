@@ -306,6 +306,7 @@ use Illuminate\Support\Facades\Route;
                         Route::post('/group/msg','orderController@group_order_msg')->name('buddy.group.msg');
 
                         Route::get('checkReview/{id}', 'orderController@checkReview');
+                        Route::post('submitReview', 'orderController@submitReview')->name('buddy.review.submit');
 					});
 
 				Route::get('lesson/favourite', 'CoachController@lesson_favourite')->name('coach.lesson.favourite');

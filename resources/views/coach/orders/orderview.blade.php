@@ -116,6 +116,11 @@
                       </div>
                    </div>
                 </div>
+                <div class="row m-t-20" id="order_completed" style="display: none;">
+                   <div class="col-md-12 col-lg-12">
+                        <span class="alert alert-success"><strong>Alert!</strong> Order Completed.</span>
+                   </div>
+                </div>
                 <div class="comments-wrapper m-t-40">
                    <div class="comments-title-holder m-b-20">
                       <h3 class="col-white"> Forum </h3>
@@ -270,22 +275,25 @@
      let now = new Date().getTime(),
          distance = countDown - now;
 
-     document.getElementById("days").innerText = Math.floor(distance / (day)),
-       document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)),
-       document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)),
-       document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
+
 
      //do something later when date is reached
-     if (distance < 0) {
-       let headline = document.getElementById("headline"),
-           countdown = document.getElementById("countdown"),
-           content = document.getElementById("content");
-
-       headline.innerText = "It's my birthday!";
-       countdown.style.display = "none";
-       content.style.display = "block";
-
+     if (distance >= 0) {
+        document.getElementById("days").innerText = Math.floor(distance / (day)),
+        document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)),
+        document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)),
+        document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
+       
        clearInterval(x);
+     }else{
+
+        document.getElementById("days").innerText = '0',
+        document.getElementById("hours").innerText = '0',
+        document.getElementById("minutes").innerText = '0',
+        document.getElementById("seconds").innerText = '0';
+
+        $('#order_completed').css({'display': 'block'});
+
      }
      //seconds
     }, 0)

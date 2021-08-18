@@ -237,3 +237,17 @@ ul.less-triggers li a.nav-link.active, ul.less-triggers li a.nav-link.active {
 .friends-box img {
     height: 205px !important;
 }
+
+/* Review Modal */
+.review-modal .modal-content {
+    padding: 20px;
+}
+
+.review-modal .rating_block {
+    font-size: 25px;
+    margin-top: -12px;
+    margin-bottom: 5px;
+}
+#seller_name {
+    font-weight: 600;
+}

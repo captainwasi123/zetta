@@ -15,10 +15,8 @@
             <div class="label-field3">
                <i class="fa fa-filter"> </i>
                <select name="type">
-                  <option @if(isset($search_data['type'])) @if($search_data['type'] == 'Lessons') selected @endif @endif>Lessons</option>
-                  <option @if(isset($search_data['type'])) @if($search_data['type'] == 'Activities') selected @endif @endif>Activities</option>
-                  <option @if(isset($search_data['type'])) @if($search_data['type'] == 'Coaches') selected @endif @endif>Coaches</option>
-                  <option @if(isset($search_data['type'])) @if($search_data['type'] == 'Sports Buddies') selected @endif @endif>Sports Buddies</option>
+                  <option @if(isset($search_data['type'])) @if($search_data['type'] == 'Keywords') selected @endif @endif>Keywords</option>
+                  <option @if(isset($search_data['type'])) @if($search_data['type'] == 'Places') selected @endif @endif>Places</option>
                </select>
             </div>
             <div class="submit-field1">

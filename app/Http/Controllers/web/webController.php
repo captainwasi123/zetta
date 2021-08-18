@@ -40,40 +40,19 @@ class webController extends Controller
             return redirect('/filter/'.$data['val'].'/'.$data['type']);
         }
         function filter($val, $type){
-            $data = array('search_data' => array('val' => $val, 'type' => $type), 'sCategories' => sportsCategory::all());
 
-            if($type == 'Lessons'){
+            $data = array(  'search_data' => array(
+                                                    'val' => $val, 
+                                                    'type' => $type
+                                                ), 
+                            'sCategories' => Auth::check() ? userCategory::where('user_id', Auth::id())->get() : sportsCategory::all());
+
+            if($type == 'Keywords'){
                 $data['lessons'] = lessons::where('status', '1')->where('title', 'like', '%'.$val.'%')->latest()->paginate(18);
-
-                return view('web.filter.lessons')->with($data);
-
-            }
-
-
-            elseif($type == 'Activities'){
+                
                 $data['activities'] = activities::where('status', '1')->where('title', 'like', '%'.$val.'%')->latest()->paginate(18);
 
-                return view('web.filter.activity')->with($data);
-
-            }
-
-
-            elseif($type == 'Coaches'){
                 $data['coaches'] = User::where('status', '1')
-                                    ->where('type', '1')
-                                    ->when(1>0, function ($q) use ($val) {
-                                        return $q->where('fname', 'like', '%'.$val.'%')
-                                                    ->orWhere('lname', 'like', '%'.$val.'%');
-                                    })
-                                    ->latest()->paginate(18);
-
-                return view('web.filter.coaches')->with($data);
-
-            }
-
-
-            elseif($type == 'Sports Buddies'){
-                $data['buddies'] = User::where('status', '1')
                                     ->where('type', '2')
                                     ->when(1>0, function ($q) use ($val) {
                                         return $q->where('fname', 'like', '%'.$val.'%')
@@ -81,7 +60,49 @@ class webController extends Controller
                                     })
                                     ->latest()->paginate(18);
 
-                return view('web.filter.buddies')->with($data);
+                $data['buddies'] = User::where('status', '1')
+                                    ->where('type', '1')
+                                    ->when(1>0, function ($q) use ($val) {
+                                        return $q->where('fname', 'like', '%'.$val.'%')
+                                                    ->orWhere('lname', 'like', '%'.$val.'%');
+                                    })
+                                    ->latest()->paginate(18);
+
+                return view('web.filter.search')->with($data);
+            }
+
+            elseif($type == 'Places'){
+                $data['lessons'] = lessons::where('status', '1')
+                                    ->whereHas('user', function($q) use ($val){
+                                        return $q->whereHas('country', function($qq) use ($val){
+                                            return $qq->where('nicename', 'like', '%'.$val.'%');
+                                        });
+                                    })
+                                    ->latest()->paginate(18);
+                
+                $data['activities'] = activities::where('status', '1')
+                                    ->whereHas('user', function($q) use ($val){
+                                        return $q->whereHas('country', function($qq) use ($val){
+                                            return $qq->where('nicename', 'like', '%'.$val.'%');
+                                        });
+                                    })
+                                    ->latest()->paginate(18);
+
+                $data['coaches'] = User::where('status', '1')
+                                    ->where('type', '2')
+                                    ->whereHas('country', function($qq) use ($val){
+                                        return $qq->where('nicename', 'like', '%'.$val.'%');
+                                    })
+                                    ->latest()->paginate(18);
+
+                $data['buddies'] = User::where('status', '1')
+                                    ->where('type', '1')
+                                    ->whereHas('country', function($qq) use ($val){
+                                        return $qq->where('nicename', 'like', '%'.$val.'%');
+                                    })
+                                    ->latest()->paginate(18);
+
+                return view('web.filter.search')->with($data);
             }else{
                 return redirect('/');
             }
@@ -90,24 +111,24 @@ class webController extends Controller
         function search_filter($type){
             $lesson = lessons::with('user');
             if($type == 'online_coach'){
-                $data = array('search_data' => array('val' => 'Online Coach', 'type' => $type));
+                $data = array('search_data' => array('val' => 'Online Coach', 'type' => $type), 'sCategories' => Auth::check() ? userCategory::where('user_id', Auth::id())->get() : sportsCategory::all());
                 $data['coaches'] = $lesson ->where('availability',1)->groupBy('user_id')->paginate(18);
                 return view('web.filter.search_filter')->with($data);
             }elseif($type == 'group_coach'){
-                $data = array('search_data' => array('val' => 'Group Coach', 'type' => $type));
+                $data = array('search_data' => array('val' => 'Group Coach', 'type' => $type), 'sCategories' => Auth::check() ? userCategory::where('user_id', Auth::id())->get() : sportsCategory::all());
                 $data['coaches'] = $lesson ->where('participants','=',1)->groupBy('user_id')->paginate(18);
                 return view('web.filter.search_filter')->with($data);
             }elseif($type == 'private_coach'){
-                $data = array('search_data' => array('val' => 'Private Coach', 'type' => $type));
+                $data = array('search_data' => array('val' => 'Private Coach', 'type' => $type), 'sCategories' => Auth::check() ? userCategory::where('user_id', Auth::id())->get() : sportsCategory::all());
                 $data['coaches'] = $lesson ->where('participants','=',0)->groupBy('user_id')->paginate(18);
                 return view('web.filter.search_filter')->with($data);
             }elseif($type == 'girl'){
-                $data = array('search_data' => array('val' => 'Girl Coach', 'type' => $type));
+                $data = array('search_data' => array('val' => 'Girl Coach', 'type' => $type), 'sCategories' => Auth::check() ? userCategory::where('user_id', Auth::id())->get() : sportsCategory::all());
                 $data['coaches'] = User::where('gender','Female')
                 ->paginate(18);
                 return view('web.filter.search_filter')->with($data);
             }elseif($type == 'friend'){
-                $data = array('search_data' => array('val' => 'Friend', 'type' => $type));
+                $data = array('search_data' => array('val' => 'Friend', 'type' => $type), 'sCategories' => Auth::check() ? userCategory::where('user_id', Auth::id())->get() : sportsCategory::all());
                 $data['coaches'] = User::where('type','1')
                 ->paginate(18);
                 return view('web.filter.search_filter')->with($data);
@@ -116,7 +137,7 @@ class webController extends Controller
 
 
     function all($type){
-        $data = array('search_data' => array('type' => $type), 'sCategories' => sportsCategory::all());
+        $data = array('search_data' => array('type' => $type), 'sCategories' => Auth::check() ? userCategory::where('user_id', Auth::id())->get() : sportsCategory::all());
 
         if($type == 'Lessons'){
             $data['lessons'] = lessons::where('status', '1')->latest()->paginate(18);

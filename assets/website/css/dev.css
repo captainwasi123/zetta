@@ -249,3 +249,17 @@ color:white !important;
 .lesson-rating-block2 .col-white {
     float: left !important;
 }
+.at-expanding-share-button .at-expanding-share-button-toggle-btn {
+    overflow: hidden !important;
+}
+.tb-1 {
+    border-top: 1px solid #444444;
+}
+.sectionHeading h4 {
+    border-left: 2px solid #9a49ff;
+    padding: 0px 10px;
+    margin-bottom: 20px;
+}
+.all-actions .slick-track{
+    margin: auto !important;
+}
