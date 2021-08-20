@@ -14,10 +14,13 @@ use App\Models\userCertificate;
 use App\Models\userEquipment;
 use App\Models\userWallet;
 use App\Models\lesson\lessons;
+use App\Models\lesson\orders;
 use App\Models\activity\activities;
 use App\Models\FavouriteCoach;
 use App\Models\FavouriteBuddy;
 use App\Models\friends;
+use App\Models\userLevel;
+use App\Models\reviews;
 use Auth;
 
 class User extends Authenticatable
@@ -71,6 +74,18 @@ class User extends Authenticatable
     public function wallet(){
         return $this->belongsTo(userWallet::class, 'id', 'user_id');
     }
+    public function level(){
+        return $this->belongsTo(userLevel::class, 'level_status');
+    }
+
+    public function reviews(){
+        return $this->hasMany(reviews::class, 'seller_id', 'id');
+    }
+    public function avgRating()
+    {
+        return $this->reviews()
+          ->selectRaw('avg(rating) as aggregate');
+    }
 
     public function country(){
         return $this->belongsTo(country::class, 'country_id');
@@ -96,6 +111,10 @@ class User extends Authenticatable
     public function lessons(){
         return $this->hasMany(lessons::class, 'user_id', 'id');
     }
+    public function lessonOrders(){
+        return $this->hasMany(orders::class, 'seller_id', 'id');
+    }
+
     public function activities(){
         return $this->hasMany(activities::class, 'user_id', 'id');
     }

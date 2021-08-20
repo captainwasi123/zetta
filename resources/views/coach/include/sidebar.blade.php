@@ -57,6 +57,12 @@
                            <span class="hide-menu">  Orders  </span>
                         </a>
                      </li>
+                     <li> 
+                        <a href="{{route('coach.my_account_area')}}"> 
+                           <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/nav-icon7.png"> 
+                           <span class="hide-menu">   My Account Area </span>  
+                        </a> 
+                     </li>
                      <li>
                         <a href="{{route('coach.my_wallet')}}" >
                            <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/nav-icon8.png">

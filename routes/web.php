@@ -205,7 +205,12 @@ use Illuminate\Support\Facades\Route;
                         Route::post('/group/msg','orderController@group_order_msg')->name('coach.group.msg');
 					});
 
-                    Route::get('/my_account_area/','CoachController@my_account_area')->name('coach.my.account_area');
+				//My Account Area
+					Route::prefix('my_account_area')->group(function(){
+
+						Route::get('/', 'myaccountController@index')->name('coach.my_account_area');
+					});
+
                     Route::get('/wallet','CoachController@my_wallet')->name('coach.my_wallet');
 			});
 

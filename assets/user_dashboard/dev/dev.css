@@ -251,3 +251,16 @@ ul.less-triggers li a.nav-link.active, ul.less-triggers li a.nav-link.active {
 #seller_name {
     font-weight: 600;
 }
+
+
+/* My Account Area */
+.level-box2 .disabled, .level-box3 .disabled, .level-box4 .disabled {
+    background: #929292;
+}
+
+.level-box2 .active, .level-box3 .active, .level-box4 .active {
+    background: #994afe;
+}
+.line-1.active {
+    background: #994afe !important;
+}
