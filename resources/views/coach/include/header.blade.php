@@ -4,12 +4,34 @@
                   <a class="navbar-brand" href="{{URL::to('/')}}">
                   <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/zetta-logo.png">
                   </a>
+
                </div>
+
                <div class="navbar-collapse">
                   <ul class="navbar-nav mr-auto mt-md-0">
                      <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="mdi mdi-menu"></i></a> </li>
                      <li class="nav-item m-l-10"> <a class="nav-link sidebartoggler hidden-sm-down text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="ti-menu"></i></a> </li>
+      <div class="search-form desktop-v">
+         <form method="get" action="{{route('web.search')}}">
+            <div class="label-field3">
+               <i class="fa fa-search"> </i>
+               <input type="text" placeholder="Search" name="val" value="{{isset($search_data['val']) ? $search_data['val'] : ''}}" required>
+            </div>
+            <div class="label-field3">
+               <i class="fa fa-filter"> </i>
+               <select name="type">
+                  <option @if(isset($search_data['type'])) @if($search_data['type'] == 'Keywords') selected @endif @endif>Keywords</option>
+                  <option @if(isset($search_data['type'])) @if($search_data['type'] == 'Places') selected @endif @endif>Places</option>
+               </select>
+            </div>
+            <div class="submit-field1">
+               <button class="bg-purple col-white custom-btn1"> Search </button>
+            </div>
+         </form>
+      </div>
                   </ul>
+
+
                   <ul class="navbar-nav my-lg-0">
                     <!--  <a href="{{URL::to('/buddy')}}" class="custom-btn1"> SWITCH TO SPORTS BUDDY </a> -->
                      @if(Auth::check())
