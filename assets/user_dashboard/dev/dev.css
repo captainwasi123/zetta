@@ -264,3 +264,102 @@ ul.less-triggers li a.nav-link.active, ul.less-triggers li a.nav-link.active {
 .line-1.active {
     background: #994afe !important;
 }
+
+
+.label-field3:nth-child(1) {
+    border-right: 1px solid silver;
+}
+.label-field3 {
+    display: inline-block;
+    width: 215px;
+    position: relative;
+}
+.label-field3 i {
+    position: absolute;
+    left: 10px;
+    top: 32%;
+    color: grey;
+}
+.label-field3 input {
+    width: 100%;
+    border: none;
+    height: 42px;
+    letter-spacing: 0.3px;
+    color: black;
+    padding: 0px 10px 0px 30px;
+}
+.label-field3 {
+    display: inline-block;
+    width: 215px;
+    position: relative;
+}
+.label-field3 i {
+    position: absolute;
+    left: 10px;
+    top: 32%;
+    color: grey;
+}
+.label-field3 select {
+    width: 100%;
+    border: none;
+    height: 42px;
+    letter-spacing: 0.3px;
+    color: black;
+    padding: 0px 10px 0px 30px;
+}
+.submit-field1 {
+    display: inline-block;
+}
+.submit-field1 button {
+    padding: 7px 15px !important;
+    font-size: 15px !important;
+    letter-spacing: 0.6px;
+    border-radius: 5px;
+    font-weight: 400 !important;
+        border: none;
+}
+.submit-field1 button:hover {
+    padding: 7px 15px !important;
+    font-size: 15px !important;
+    background: #1d242c !important;
+        letter-spacing: 0.6px;
+    border-radius: 5px;
+    font-weight: 400 !important;
+        border: none;
+}
+.search-form {
+    float: left;
+    margin-left: 40px;
+    background: white;
+    width: auto;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    padding-right: 6px;
+    margin-top: 5px;
+    height: 45px;
+}
+.left-sidebar {
+    background: #1d242c !important;
+    border-right: 2px solid #9a49ff;
+}
+.custom-table1 table thead th {
+    background: #9a49ff;
+    color: white;
+
+}
+.custom-table1 table {
+    border: 1px solid #9a49ff;
+    border-radius: 10px;
+}
+.head-tag1 {
+
+    border-bottom: 1px solid black;
+}
+@media only screen and (max-width: 767px) {
+
+.desktop-v
+{
+    display: none;
+}
+}

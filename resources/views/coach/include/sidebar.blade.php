@@ -1,5 +1,7 @@
 <aside class="left-sidebar">
+
             <div class="scroll-sidebar">
+
                <div class="user-profile-header">
                   <h4> Hi, Coach  </h4>
                   <p> <a href=""> <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/coin-icon.png"> </a> <span> Z COINS <b> 250 </b> </span> <a href=""> <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/heart-icon.png"> </a>  </p>
