@@ -39,8 +39,8 @@
        <div class="row">
           <div class="col-12">
              <ul class="nav nav-tabs profile-tab" role="tablist">
-                <li class="nav-item"> <a class="nav-link custom-btn5 " data-toggle="tab" href="#home" role="tab">Challenges </a> </li>
-                <li class="nav-item"> <a class="nav-link custom-btn5 active" data-toggle="tab" href="#profile" role="tab">Badges </a> </li>
+                <li class="nav-item"> <a class="nav-link custom-btn5 active" data-toggle="tab" href="#home" role="tab">Challenges </a> </li>
+                <li class="nav-item"> <a class="nav-link custom-btn5 " data-toggle="tab" href="#profile" role="tab">Badges </a> </li>
                 <li class="nav-item"> <a class="nav-link custom-btn5" data-toggle="tab" href="#settings" role="tab">Rewards</a> </li>
              </ul>
           </div>
@@ -48,44 +48,40 @@
        <div class="row">
           <div class="col-12">
              <div class="tab-content">
-                <div class="tab-pane" id="home" role="tabpanel">
+                <div class="tab-pane active" id="home" role="tabpanel">
                    <div class="row m-t-30 m-b-20">
                       <div class="col-12">
                          <span class="inform-box1"> <i class="fa fa-info"> </i> Complete Challenge to collect More Challenges </span>
                       </div>
                    </div>
-                   <div class="row m-b-10">
-                      <div class="col-12">
-                         <span class="bonus-tag"> <img src="{{asset('public')}}/admin/assets/images/bonus-tag.jpg"> 100 </span>
-                      </div>
-                   </div>
                    <div class="row">
-                      <div class="col-md-3 col-lg-3 col-sm-3 col-6">
-                         <div class="badge-box">
-                            <img src="{{asset('public')}}/admin/assets/images/badge1.jpg">
+                     @foreach($challenges as $val)
+                         <div class="col-md-3 col-lg-3 col-sm-3 col-6">
+                            <div class="badge-box">
+                               <img src="{{asset('public')}}/admin/assets/images/badge1.jpg">
+                               <div class="details">
+                                 <p>{{$val->title}}</p>
+                                 <label class="reward">
+                                    <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/bonus-tag.png">
+                                    {{$val->reward}}
+                                 </label>
+                                 @php
+                                    $end = \Carbon\Carbon::parse($val->expiry_date);
+
+                                    $current = \Carbon\Carbon::now();
+                                    $length = $end->diffInDays($current);
+                                 @endphp
+                                 <label class="deadline">
+                                    <i class="fa fa-history"></i>
+                                    {{$length+1}} days left
+                                 </label>
+                               </div>
+                            </div>
                          </div>
-                      </div>
-                      <div class="col-md-3 col-lg-3 col-sm-3 col-6">
-                         <div class="badge-box">
-                            <img src="{{asset('public')}}/admin/assets/images/badge1.jpg">
-                            <span> x2 </span>
-                         </div>
-                      </div>
-                      <div class="col-md-3 col-lg-3 col-sm-3 col-6">
-                         <div class="badge-box">
-                            <img src="{{asset('public')}}/admin/assets/images/badge1.jpg">
-                            <span> x3 </span>
-                         </div>
-                      </div>
-                      <div class="col-md-3 col-lg-3 col-sm-3 col-6">
-                         <div class="badge-box">
-                            <img src="{{asset('public')}}/admin/assets/images/badge1.jpg">
-                            <span> x4 </span>
-                         </div>
-                      </div>
+                     @endforeach
                    </div>
                 </div>
-                <div class="tab-pane active" id="profile" role="tabpanel">
+                <div class="tab-pane " id="profile" role="tabpanel">
                    <div class="row m-t-30 m-b-20">
                       <div class="col-12">
                          <span class="inform-box1"> <i class="fa fa-info"> </i> Complete Challenge to collect More Badges  </span>

@@ -314,9 +314,13 @@ use Illuminate\Support\Facades\Route;
                         Route::post('submitReview', 'orderController@submitReview')->name('buddy.review.submit');
 					});
 
+				//Analytics and Redeem
+					Route::prefix('analytics-and-redeem')->group(function(){
+        		        Route::get('/', 'redeemController@index')->name('buddy.analytics_and_redeem');
+					});
+
 				Route::get('lesson/favourite', 'CoachController@lesson_favourite')->name('coach.lesson.favourite');
 				Route::get('my-wallet', 'buddyController@my_wallet')->name('buddy.my_wallet');
-                Route::get('analytics-and-redeem', 'buddyController@analytics_and_redeem')->name('buddy.analytics_and_redeem');
                 Route::get('my_account_area', 'buddyController@my_account_area')->name('buddy.my_account_area');
                 Route::post('/coach-request','buddyController@coach_requet')->name('buddy.coach.request');
 			});
@@ -382,6 +386,19 @@ use Illuminate\Support\Facades\Route;
 
 							Route::get('block/{id}', 'activityController@block');
 							Route::get('activate/{id}', 'activityController@activate');
+						});
+
+
+					//Analytics & Redeem
+						Route::prefix('redeem')->group(function(){
+
+							Route::prefix('challenges')->group(function(){
+								Route::get('/', 'redeemController@challenges')->name('admin.redeem.challenges');
+								Route::get('add', 'redeemController@challengesAdd')->name('admin.redeem.challenges.add');
+								Route::post('add', 'redeemController@challengesInsert');
+							});
+
+							Route::get('badges', 'redeemController@badges')->name('admin.redeem.badges');
 						});
 
 					//settings

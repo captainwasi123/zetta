@@ -264,3 +264,34 @@ ul.less-triggers li a.nav-link.active, ul.less-triggers li a.nav-link.active {
 .line-1.active {
     background: #994afe !important;
 }
+
+
+
+/* Redeem */
+.badge-box .details{
+    padding: 0px 10px;
+}
+.badge-box .details p {
+    margin: 0;
+    color: #994afe;
+    font-weight: 500;
+    border-bottom: 1px solid;
+    padding-bottom: 10px;
+    margin-top: -12px;
+}
+.badge-box .details .reward {
+    display: inline-flex;
+    font-size: 20px;
+    font-weight: 500;
+    color: #3c3c3c;
+}
+.badge-box .details .reward img {
+    width: 18px;
+    height: 18px;
+    margin-top: 7px;
+}
+.badge-box .details .deadline {
+    float: right;
+    padding: 3px 0px;
+    color: #3c3c6c;
+}

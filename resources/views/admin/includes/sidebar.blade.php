@@ -58,6 +58,16 @@
                         <li><a href="{{route('admin.activities.blocked')}}">Blocked</a></li>
                     </ul>
                 </li>
+                <li>
+                    <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                        <i class="mdi mdi-trending-up"></i>
+                        <span class="hide-menu">Analytics & Redeem</span>
+                    </a>
+                    <ul aria-expanded="false" class="collapse">
+                        <li><a href="{{route('admin.redeem.challenges')}}">Challenges</a></li>
+                        <li><a href="{{route('admin.redeem.badges')}}">Badges</a></li>
+                    </ul>
+                </li>
 
                 <li class="nav-small-cap">Settings</li>
                 <li>

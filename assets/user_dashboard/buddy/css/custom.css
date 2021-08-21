@@ -758,6 +758,7 @@ ul.nav.nav-tabs li {
     position: relative;
     overflow: hidden;
     box-shadow: 1px 1px 10px #dedede;
+    background-color: white;
 }
 
 

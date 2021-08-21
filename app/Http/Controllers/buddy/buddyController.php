@@ -27,10 +27,6 @@ class buddyController extends Controller
 
         return view('buddy.my_account.wallet')->with($data);
     }
-    public function analytics_and_redeem()
-    {
-        return view('buddy.analytics-and-redeem');
-    }
 
     public function my_account_area()
     {
