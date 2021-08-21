@@ -295,7 +295,7 @@ ul.less-triggers li a.nav-link.active, ul.less-triggers li a.nav-link.active {
     float: right;
     padding: 3px 0px;
     color: #3c3c6c;
-=======
+}
 .label-field3:nth-child(1) {
     border-right: 1px solid silver;
 }
@@ -392,5 +392,5 @@ ul.less-triggers li a.nav-link.active, ul.less-triggers li a.nav-link.active {
 {
     display: none;
 }
->>>>>>> 79ac57e90b3c91835b54d89ffb3b868e863819cd
+
 }
