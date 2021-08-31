@@ -8,7 +8,6 @@
 
 @section('content')
 
-
 <section class="action-bar">
    <div class="container">
       <form id="stickmanForm">

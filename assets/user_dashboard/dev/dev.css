@@ -366,7 +366,6 @@ ul.less-triggers li a.nav-link.active, ul.less-triggers li a.nav-link.active {
     overflow: hidden;
     position: relative;
     padding-right: 6px;
-    margin-top: 5px;
     height: 45px;
 }
 .left-sidebar {
@@ -386,11 +385,107 @@ ul.less-triggers li a.nav-link.active, ul.less-triggers li a.nav-link.active {
 
     border-bottom: 1px solid black;
 }
+.desktop
+{
+    display: block;
+}
+.mobile
+{
+    display: none;
+}
+.navbar-header a img {
+    width: 150px;
+}
 @media only screen and (max-width: 767px) {
 
 .desktop-v
 {
     display: none;
 }
-
+.desktop
+{
+    display: none;
 }
+.mobile
+{
+    display: block;
+}
+.user-profile-header {
+    text-align: center;
+    padding: 10px 10px 0px 10px;
+}
+.account-btn1 {
+    margin-top: 0px;
+    display: inline-block;
+}
+.user-profile .profile-text {
+
+    display: inline-block;
+}
+.custom-btn2 {
+ font-size: 12px;
+    padding: 6px 20px;
+    }
+    .user-profile .profile-text>a {
+ 
+    font-size: 14px;
+}
+.user-profile .profile-text>a i {
+    font-size: 24px;
+}
+.user-profile .profile-text {
+    margin-top: 0px;
+}
+.user-profile-header h4 {
+    font-size: 16px;
+    }
+    .user-profile-header p span {
+    font-size: 12px;
+}
+.user-profile-header p a img {
+    width: 20px;
+}
+
+.user-profile-header p span b {
+
+    font-size: 18px;
+}
+.user-profile-header {
+    display: inline-flex !important;
+    width: 100%;
+}
+.user-profile-header h4 {
+    width: 42%;
+    padding-top: 10px;
+}
+.user-profile-header p {
+    width: 58%;
+}
+.user-profile-header p span {
+   
+    width: 50px;
+    }
+    .user-profile {
+    margin: 0 auto;
+    text-align: center;
+}
+body.mini-sidebar .sidebar-nav {
+    margin-top: 10px;
+}
+.scroll-sidebar {
+     padding-bottom: 0px; 
+}
+  .mini-sidebar .top-navbar .navbar-header {
+    width: 360px !important;
+}  
+.user-profile-header {
+    padding-top: 20px;
+}
+}
+.mini-sidebar .top-navbar .navbar-header {
+    width: 240px;
+}
+body.mini-sidebar a.navbar-brand {
+    width: 180px !important;
+}
+

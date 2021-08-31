@@ -1,4 +1,4 @@
-<!-- Bootstrap Core CSS -->
+      <link rel="icon" href="{{URL::to('/')}}/assets/user_dashboard/coach/images/favicon.png" type="image/gif">
       <link href="{{URL::to('/')}}/assets/user_dashboard/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
       <!-- morris CSS -->
       <link href="{{URL::to('/')}}/assets/user_dashboard/plugins/morrisjs/morris.css" rel="stylesheet">

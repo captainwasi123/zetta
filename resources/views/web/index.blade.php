@@ -8,7 +8,7 @@
             <div class="banner-text text-center">
                <h2 class="gotham-bold col-white"> Find <br/> The Perfect Sport Buddy </h2>
             </div>
-            <div class="search-form">
+            <!-- <div class="search-form">
                <form method="get" action="{{route('web.search')}}">
                   <div class="label-field3">
                      <i class="fa fa-search"> </i>
@@ -20,6 +20,21 @@
                         <option>Keywords</option>
                         <option>Places</option>
                      </select>
+                  </div>
+                  <div class="submit-field1">
+                     <button class="bg-purple col-white custom-btn1"> Search </button>
+                  </div>
+               </form>
+            </div> -->
+            <div class="search-form">
+               <form method="get" action="{{route('web.search')}}">
+                  <div class="label-field3">
+                     <i class="fa fa-search"> </i>
+                     <input type="text" placeholder="Choose a Sport" name="search" required>
+                  </div>
+                  <div class="label-field3">
+                     <i class="fa fa-map-marker-alt"></i>
+                     <input type="text" placeholder="Address, City or neighborhood" name="city" required>
                   </div>
                   <div class="submit-field1">
                      <button class="bg-purple col-white custom-btn1"> Search </button>
@@ -124,6 +139,10 @@
                   <div>
                      <a href="{{route('activity.details', base64_encode($val->id))}}">
                         <div class="lesson-block">
+                           <div class="lesson-tag">
+                              <img src="{{URL::to('/assets/website')}}/images/activity.png">
+                           </div>
+                           
                            <div class="lesson-image-block">
                               <img src="{{URL::to('/public/storage/user/activity/main_image/'.$val->cover_img)}}">
                            </div>
@@ -136,6 +155,9 @@
                                  {{$val->description}}
                               </p>
                               <h6 class="col-white m-b-15"> <i class="fa fa-star col-yellow"> </i> 5.0 </h6>
+                              <h6 class="col-white m-b-15" style="float: right;">
+                                 <button class="bg-purple col-white custom-btn12"> Search </button>
+                              </h6>
                            </div>
                            <div class="lesson-rating-block">
                               <a href="javascript:void(0)" data-id="{{$val->id}}" class="col-purple fav_act" id="{{$val->id}}" >
@@ -190,6 +212,9 @@
                   <div>
                      <a href="{{route('lesson.details', base64_encode($val->id))}}">
                         <div class="lesson-block">
+                           <div class="lesson-tag">
+                              <img src="{{URL::to('/assets/website')}}/images/lesson.png">
+                           </div>
                            <div class="lesson-image-block">
                               <img src="{{URL::to('/public/storage/user/lessons/main_image/'.$val->cover_img)}}">
                            </div>
@@ -205,6 +230,9 @@
                                  {{$val->description}}
                               </p>
                               <h6 class="col-white m-b-15"> <i class="fa fa-star col-yellow"> </i> 5.0 </h6>
+                              <h6 class="col-white m-b-15" style="float: right;">
+                                 <button class="bg-purple col-white custom-btn12"> Search </button>
+                              </h6>
                            </div>
                            <div class="lesson-rating-block">
                             <a href="javascript:void(0)" class="col-purple fav_lesson " data-id="{{$val->id}}" id="{{$val->id}}" >

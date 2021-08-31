@@ -1,4 +1,4 @@
-<!-- Animate With CSS -->
+      <link rel="icon" href="{{URL::to('/assets/website')}}/images/favicon.png" type="image/gif">
       <link rel="stylesheet" type="text/css" href="{{URL::to('/assets/website')}}/css/animate.css">
       <!-- Slick Slider -->
       <link href="{{URL::to('/assets/website')}}/css/slick.css" rel="stylesheet">

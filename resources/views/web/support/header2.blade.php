@@ -7,7 +7,7 @@
          <img src="{{URL::to('/assets/website')}}/images/hamburger.png">
       </div>
       <div class="search-form">
-         <form method="get" action="{{route('web.search')}}">
+         <!-- <form method="get" action="{{route('web.search')}}">
             <div class="label-field3">
                <i class="fa fa-search"> </i>
                <input type="text" placeholder="Search" name="val" value="{{isset($search_data['val']) ? $search_data['val'] : ''}}" required>
@@ -22,7 +22,20 @@
             <div class="submit-field1">
                <button class="bg-purple col-white custom-btn1"> Search </button>
             </div>
-         </form>
+         </form> -->
+          <form method="get" action="{{route('web.search')}}">
+                  <div class="label-field3">
+                     <i class="fa fa-search"> </i>
+                     <input type="text" placeholder="Choose a Sport" name="search" required>
+                  </div>
+                  <div class="label-field3">
+                     <i class="fa fa-map-marker-alt"></i>
+                     <input type="text" placeholder="Address, City or neighborhood" name="city" required>
+                  </div>
+                  <div class="submit-field1">
+                     <button class="bg-purple col-white custom-btn1"> Search </button>
+                  </div>
+               </form>
       </div>
       @if(Auth::check())
          <div class="header-login">

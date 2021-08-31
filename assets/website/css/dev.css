@@ -263,3 +263,36 @@ color:white !important;
 .all-actions .slick-track{
     margin: auto !important;
 }
+.lesson-info-block h6 {
+    display: inline-block;
+}
+.custom-btn12 {
+    padding: 4px 15px;
+    letter-spacing: 1px;
+    font-size: 14px;
+    border: none !important;
+    font-weight: 400;
+    border-radius: 10px;
+    border: 0px;
+}
+.lesson-tag {
+    position: absolute;
+    top: 0px;
+    z-index: 1;
+    left: 5px;
+}
+.lesson-tag img{
+    width: 90px;
+}
+
+
+@media screen and (max-width: 767px) {
+
+}
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+ .lesson-tag {
+    position: unset;
+
+    margin-bottom: -92px;
+}
+}
