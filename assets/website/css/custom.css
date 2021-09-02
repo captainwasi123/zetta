@@ -1328,6 +1328,7 @@ ul.list-type1 li {
     cursor: pointer;
     transition: all 0.3s ease-in-out;
     -webkit-transition: all 0.3s ease-in-out;
+    position: relative;
 }
 .lesson-block:hover {
 border:1px solid #9a49ff !important;

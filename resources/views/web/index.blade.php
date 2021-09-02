@@ -156,7 +156,7 @@
                               </p>
                               <h6 class="col-white m-b-15"> <i class="fa fa-star col-yellow"> </i> 5.0 </h6>
                               <h6 class="col-white m-b-15" style="float: right;">
-                                 <button class="bg-purple col-white custom-btn12"> Search </button>
+                                 <span class="bg-purple col-white custom-btn12"> Search </span>
                               </h6>
                            </div>
                            <div class="lesson-rating-block">
