@@ -16,23 +16,13 @@
          <input type="hidden" name="sValue" value="{{empty($search_data['val']) ? 'all' : $search_data['val']}}">
          <div class="all-actions arrows1">
             @foreach($sCategories as $val)
-               @if(Auth::check())
                   <div>
                      <a href="javascript:void(0)" class="image-checkbox stickman"> 
                         <input type="checkbox" id="scales" name="stickman[]" value="{{$val->name}}"> 
-                        <img src="{{URL::to('/public/storage/settings/category/'.$val->cat->image)}}"> {{$val->name}} 
+                        <img src="{{URL::to('/public/storage/settings/category/')}}/{{empty($val->cat) ? $val->image : $val->cat->image}}"> {{$val->name}} 
                      </a>
                   </div>
-               @else
-                  <div>
-                     <a href="javascript:void(0)" class="image-checkbox stickman"> 
-                        <input type="checkbox" id="scales" name="stickman[]" value="{{$val->name}}"> 
-                        <img src="{{URL::to('/public/storage/settings/category/'.$val->image)}}"> {{$val->name}} 
-                     </a>
-                  </div>
-               @endif
-            @endforeach
-         </div>
+            @endforeach         </div>
       </form>
    </div>
 </section>
@@ -188,6 +178,9 @@
             <div class="col-md-4 col-lg-2 col-sm-4">
                <a href="{{route('activity.details', base64_encode($val->id))}}">
                   <div class="lesson-block">
+                     <div class="lesson-tag">
+                        <img src="{{URL::to('/assets/website')}}/images/activity.png">
+                     </div>
                      <div class="lesson-image-block">
                         <img src="{{URL::to('/public/storage/user/activity/main_image/'.$val->cover_img)}}">
                      </div>
@@ -200,12 +193,31 @@
                            {{$val->description}}
                         </p>
                         <h6 class="col-white m-b-15"> <i class="fa fa-star col-yellow"> </i> 5.0 </h6>
+                        <h6 class="col-white m-b-15" style="float: right;">
+                           <span class="bg-purple col-white custom-btn12"> {{$val->category->name}} </span>
+                        </h6>
                      </div>
                      <div class="lesson-rating-block">
                         @if(count($val->favActivity) == 0)
                            <a href="javascript:void(0)" data-id="{{$val->id}}" id="{{$val->id}}" class="col-purple fav_act"> <i class="fa fa-heart col-purple"></i> </a>
                         @endif
-                        <span class="col-grey"> STARTING AT <b class="col-white"> FREE </b> </span>
+                        <span class="col-grey"> STARTING AT <b class="col-white">
+                                @if (count($val->equipment)>0)
+                                    @php
+                                        $ids = [];
+                                        $price = 0;
+                                    @endphp
+                                    @foreach ($val->equipment as $k => $val)
+                                        @php
+                                          $price = $price+$val->user_equipment->price;
+                                            $ids[$k] = $val->equip_id;
+                                        @endphp
+                                    @endforeach
+                                     {{'$'.number_format($price)}}
+                                @else
+                                FREE
+                                @endif
+                                  </b> </span>
                      </div>
                   </div>
                </a>

@@ -208,8 +208,10 @@ color:white !important;
     color: white;
 }
 .zoom-tag {
-    right: -35px !important;
+    right: 0px !important;
     top: 5px !important;
+    text-align: right;
+    padding-right: 9px;
 }
 
 .descrip {

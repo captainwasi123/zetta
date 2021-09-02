@@ -10,6 +10,7 @@ use App\Models\lesson\Packages;
 use App\Models\lesson\orders;
 use App\Models\User;
 use App\Models\FavouriteLesson;
+use App\Models\sportsCategory;
 use Auth;
 
 class lessons extends Model
@@ -28,6 +29,7 @@ class lessons extends Model
         $l->group_members = empty($data['group_members']) ? null : $data['group_members'];
         $l->availability = $data['availability'];
         $l->availability_for = $data['availability_for'];
+        $l->category_id = $data['category'];
         $l->status = '1';
         $l->save();
         $id = $l->id;
@@ -69,6 +71,7 @@ class lessons extends Model
         $l->group_members = empty($data['group_members']) ? null : $data['group_members'];
         $l->availability = $data['availability'];
         $l->availability_for = $data['availability_for'];
+        $l->category_id = $data['category'];
         $l->save();
         $id = $l->id;
 
@@ -168,5 +171,9 @@ class lessons extends Model
     
     public function favLesson(){
         return $this->hasMany(FavouriteLesson::class, 'lesson_id', 'id')->where('user_id', Auth::id());
+    }
+
+    public function category(){
+        return $this->belongsTo(sportsCategory::class, 'category_id');
     }
 }

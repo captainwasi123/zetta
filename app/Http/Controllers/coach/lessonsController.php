@@ -9,6 +9,7 @@ use App\Models\lesson\lessons;
 use App\Models\lesson\Equipments;
 use App\Models\lesson\Locations;
 use App\Models\lesson\Packages;
+use App\Models\sportsCategory;
 use Auth;
 
 class lessonsController extends Controller
@@ -23,8 +24,9 @@ class lessonsController extends Controller
 
     function add(){
         $equip = userEquipment::where('user_id', Auth::id())->get();
+        $categories = sportsCategory::all();
 
-        return view('coach.lessons.add', ['equip' => $equip]);
+        return view('coach.lessons.add', ['equip' => $equip, 'categories' => $categories]);
     }
 
     function insert(Request $request){
@@ -46,10 +48,11 @@ class lessonsController extends Controller
     function edit($id){
         $id = base64_decode($id);
         $data = lessons::with('packages')->find($id);
+        $categories = sportsCategory::all();
         if(!empty($data->id)){
             $equip = userEquipment::where('user_id', Auth::id())->get();
 
-            return view('coach.lessons.edit', ['data' => $data, 'equip' => $equip]);
+            return view('coach.lessons.edit', ['data' => $data, 'equip' => $equip, 'categories' => $categories]);
         }else{
             return redirect()->back();
         }

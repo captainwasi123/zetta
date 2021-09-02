@@ -1431,10 +1431,12 @@ border:1px solid #9a49ff !important;
 }
 .zoom-tag img {
     width: 22px;
-    display: block;
+    height: 22px;
+    display: inline-block;
     margin: auto;
     position: static;
     margin-bottom: 2px;
+    border-radius: 0;
 }
 
 

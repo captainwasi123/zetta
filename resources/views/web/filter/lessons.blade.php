@@ -11,23 +11,13 @@
          <input type="hidden" name="sValue" value="{{empty($search_data['val']) ? 'all' : $search_data['val']}}">
          <div class="all-actions arrows1">
             @foreach($sCategories as $val)
-               @if(Auth::check())
                   <div>
                      <a href="javascript:void(0)" class="image-checkbox stickman"> 
                         <input type="checkbox" id="scales" name="stickman[]" value="{{$val->name}}"> 
-                        <img src="{{URL::to('/public/storage/settings/category/'.$val->cat->image)}}"> {{$val->name}} 
+                        <img src="{{URL::to('/public/storage/settings/category/')}}/{{empty($val->cat) ? $val->image : $val->cat->image}}"> {{$val->name}} 
                      </a>
                   </div>
-               @else
-                  <div>
-                     <a href="javascript:void(0)" class="image-checkbox stickman"> 
-                        <input type="checkbox" id="scales" name="stickman[]" value="{{$val->name}}"> 
-                        <img src="{{URL::to('/public/storage/settings/category/'.$val->image)}}"> {{$val->name}} 
-                     </a>
-                  </div>
-               @endif
-            @endforeach
-         </div>
+            @endforeach         </div>
       </form>
    </div>
 </section>
@@ -183,21 +173,38 @@
             <div class="col-md-4 col-lg-2 col-sm-4">
                <a href="{{route('lesson.details', base64_encode($val->id))}}">
                   <div class="lesson-block">
+                     <div class="lesson-tag">
+                        <img src="{{URL::to('/assets/website')}}/images/lesson.png">
+                     </div>
                      <div class="lesson-image-block">
                         <img src="{{URL::to('/public/storage/user/lessons/main_image/'.$val->cover_img)}}">
                      </div>
                      <div class="lesson-title-block">
                         <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{empty($val->user) ? '' : $val->user->profile_img}}" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';">
                         <h4> {{empty($val->user) ? 'Unknown' : $val->user->fname.' '.$val->user->lname}} <span> Coach </span>  </h4>
-                        @if($val->availability != '2')
-                           <div class="zoom-tag"> <img src="{{URL::to('/assets/website')}}/images/zoom-logo.png"></div>
-                        @endif
+                        <div class="zoom-tag">
+                           @if($val->availability != '2')
+                              <img src="{{URL::to('/assets/website')}}/images/zoom-logo.png" title="Online Zoom Classes">
+                           @endif
+                           @if($val->availability_for == '1')
+                              <img src="{{URL::to('/assets/')}}/teenager.png" title="For Teenager">
+                           @endif
+                           @if($val->availability_for == '2')
+                              <img src="{{URL::to('/assets/')}}/65+.png" title="For Senior Citizen">
+                           @endif
+                           @if($val->availability_for == '3')
+                              <img src="{{URL::to('/assets/')}}/handicapped.png" title="For Handicapped">
+                           @endif
+                        </div>
                      </div>
                      <div class="lesson-info-block">
                         <p class="descrip">
                            {{$val->description}}
                         </p>
                         <h6 class="col-white m-b-15"> <i class="fa fa-star col-yellow"> </i> 5.0 </h6>
+                        <h6 class="col-white m-b-15" style="float: right;">
+                           <span class="bg-purple col-white custom-btn12"> {{$val->category->name}} </span>
+                        </h6>
                      </div>
                      <div class="lesson-rating-block">
                         @if(count($val->favLesson) == 0)

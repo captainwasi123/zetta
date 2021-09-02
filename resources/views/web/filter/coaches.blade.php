@@ -11,23 +11,13 @@
          <input type="hidden" name="sValue" value="{{empty($search_data['val']) ? 'all' : $search_data['val']}}">
          <div class="all-actions arrows1">
             @foreach($sCategories as $val)
-               @if(Auth::check())
                   <div>
                      <a href="javascript:void(0)" class="image-checkbox stickman"> 
                         <input type="checkbox" id="scales" name="stickman[]" value="{{$val->name}}"> 
-                        <img src="{{URL::to('/public/storage/settings/category/'.$val->cat->image)}}"> {{$val->name}} 
+                        <img src="{{URL::to('/public/storage/settings/category/')}}/{{empty($val->cat) ? $val->image : $val->cat->image}}"> {{$val->name}} 
                      </a>
                   </div>
-               @else
-                  <div>
-                     <a href="javascript:void(0)" class="image-checkbox stickman"> 
-                        <input type="checkbox" id="scales" name="stickman[]" value="{{$val->name}}"> 
-                        <img src="{{URL::to('/public/storage/settings/category/'.$val->image)}}"> {{$val->name}} 
-                     </a>
-                  </div>
-               @endif
-            @endforeach
-         </div>
+            @endforeach         </div>
       </form>
    </div>
 </section>

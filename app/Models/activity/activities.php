@@ -8,6 +8,7 @@ use App\Models\activity\equipments;
 use App\Models\activity\locations;
 use Auth;
 use App\Models\FavouriteActivity;
+use App\Models\sportsCategory;
 use App\Models\User;
 
 class activities extends Model
@@ -23,6 +24,7 @@ class activities extends Model
         $l->location_covered = $data['locationType'];
         $l->group_members = empty($data['group_members']) ? null : $data['group_members'];
         $l->activity_type = $data['activityType'];
+        $l->category_id = $data['category'];
         $l->status = '1';
         $l->save();
         $id = $l->id;
@@ -40,6 +42,7 @@ class activities extends Model
         $l->location_covered = $data['locationType'];
         $l->group_members = empty($data['group_members']) ? null : $data['group_members'];
         $l->activity_type = $data['activityType'];
+        $l->category_id = $data['category'];
         $l->save();
         $id = $l->id;
 
@@ -121,5 +124,10 @@ class activities extends Model
     
     public function favActivity(){
         return $this->hasMany(FavouriteActivity::class, 'activity_id', 'id')->where('user_id', Auth::id());
+    }
+
+
+    public function category(){
+        return $this->belongsTo(sportsCategory::class, 'category_id');
     }
 }
