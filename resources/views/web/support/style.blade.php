@@ -10,4 +10,6 @@
       <link href="{{URL::to('/assets/website')}}/css/dev.css" rel="stylesheet">
       <!-- Font Awesome Icons -->
       <link href="{{URL::to('/assets/website')}}/web-fonts-with-css/css/fontawesome-all.min.css" rel="stylesheet">
+      <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
+
       <!-- Jquery Library -->

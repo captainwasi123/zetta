@@ -493,3 +493,7 @@ body.mini-sidebar a.navbar-brand {
 aside.left-sidebar.mobile {
     background: #1d242cd9 !important;
 }
+
+.pac-container.pac-logo {
+    z-index: 99999;
+}

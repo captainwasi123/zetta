@@ -6,3 +6,24 @@
 
   <script src="{{URL::to('/assets/website')}}/js/dev.js"> </script>
   <script src="{{URL::to('/assets/website')}}/js/functions.js"> </script>
+ <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key={{env('GOOGLE_MAP_KEY')}}&libraries=places"></script>
+  <script>
+   google.maps.event.addDomListener(window, 'load', initialize);
+   function initialize() {
+      var input = document.getElementById('add-input');
+      var autocomplete = new google.maps.places.Autocomplete(input);
+      autocomplete.addListener('place_changed', function () {
+      var place = autocomplete.getPlace();
+      
+      for (const component of place.address_components) {
+        const componentType = component.types[0];
+
+        switch (componentType) {
+          case "country":
+            $('#add-country').val(component.long_name);
+            break;
+        }
+      }
+    });
+  }
+  </script>

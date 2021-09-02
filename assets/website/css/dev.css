@@ -286,12 +286,12 @@ color:white !important;
 .lesson-tag img{
     width: 90px;
 }
-p#demo {
+.countDownP {
     font-size: 25px;
     color: white;
     text-align: center;
     padding-top: 8px;
-    font-family: gotham-rounded-bold !important;
+    font-family: 'Orbitron', sans-serif !important;
 }
 
 @media screen and (max-width: 767px) {

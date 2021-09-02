@@ -37,77 +37,58 @@ class webController extends Controller
         function search(Request $request){
             $data = $request->all();
 
-            return redirect('/filter/'.$data['val'].'/'.$data['type']);
+            return redirect('/filter/'.$data['val'].'/'.$data['country'].'/'.$data['add']);
         }
-        function filter($val, $type){
+        function filter($val, $type, $add){
 
             $data = array(  'search_data' => array(
                                                     'val' => $val, 
-                                                    'type' => $type
+                                                    'type' => $type,
+                                                    'add' => $add
                                                 ), 
                             'sCategories' => Auth::check() ? userCategory::where('user_id', Auth::id())->get() : sportsCategory::all());
 
             $data['sCategories'] = count($data['sCategories']) == 0 ? sportsCategory::all() : $data['sCategories'];
 
-            if($type == 'Keywords'){
-                $data['lessons'] = lessons::where('status', '1')->where('title', 'like', '%'.$val.'%')->latest()->paginate(18);
-                
-                $data['activities'] = activities::where('status', '1')->where('title', 'like', '%'.$val.'%')->latest()->paginate(18);
+        
+            $data['lessons'] = lessons::where('status', '1')
+                                ->whereHas('user', function($q) use ($type){
+                                    return $q->whereHas('country', function($qq) use ($type){
+                                        return $qq->where('nicename', 'like', '%'.$type.'%');
+                                    });
+                                })
+                                ->whereHas('category', function($q) use ($val){
+                                    return $q->where('name', 'like', '%'.$val.'%');
+                                })
+                                ->latest()->paginate(18);
+            
+            $data['activities'] = activities::where('status', '1')
+                                ->whereHas('user', function($q) use ($type){
+                                    return $q->whereHas('country', function($qq) use ($type){
+                                        return $qq->where('nicename', 'like', '%'.$type.'%');
+                                    });
+                                })
+                                ->whereHas('category', function($q) use ($val){
+                                    return $q->where('name', 'like', '%'.$val.'%');
+                                })
+                                ->latest()->paginate(18);
 
-                $data['coaches'] = User::where('status', '1')
-                                    ->where('type', '2')
-                                    ->when(1>0, function ($q) use ($val) {
-                                        return $q->where('fname', 'like', '%'.$val.'%')
-                                                    ->orWhere('lname', 'like', '%'.$val.'%');
-                                    })
-                                    ->latest()->paginate(18);
+            $data['coaches'] = User::where('status', '1')
+                                ->where('type', '2')
+                                ->whereHas('country', function($qq) use ($type){
+                                    return $qq->where('nicename', 'like', '%'.$type.'%');
+                                })
+                                ->latest()->paginate(18);
 
-                $data['buddies'] = User::where('status', '1')
-                                    ->where('type', '1')
-                                    ->when(1>0, function ($q) use ($val) {
-                                        return $q->where('fname', 'like', '%'.$val.'%')
-                                                    ->orWhere('lname', 'like', '%'.$val.'%');
-                                    })
-                                    ->latest()->paginate(18);
+            $data['buddies'] = User::where('status', '1')
+                                ->where('type', '1')
+                                ->whereHas('country', function($qq) use ($type){
+                                    return $qq->where('nicename', 'like', '%'.$type.'%');
+                                })
+                                ->latest()->paginate(18);
 
-                return view('web.filter.search')->with($data);
-            }
-
-            elseif($type == 'Places'){
-                $data['lessons'] = lessons::where('status', '1')
-                                    ->whereHas('user', function($q) use ($val){
-                                        return $q->whereHas('country', function($qq) use ($val){
-                                            return $qq->where('nicename', 'like', '%'.$val.'%');
-                                        });
-                                    })
-                                    ->latest()->paginate(18);
-                
-                $data['activities'] = activities::where('status', '1')
-                                    ->whereHas('user', function($q) use ($val){
-                                        return $q->whereHas('country', function($qq) use ($val){
-                                            return $qq->where('nicename', 'like', '%'.$val.'%');
-                                        });
-                                    })
-                                    ->latest()->paginate(18);
-
-                $data['coaches'] = User::where('status', '1')
-                                    ->where('type', '2')
-                                    ->whereHas('country', function($qq) use ($val){
-                                        return $qq->where('nicename', 'like', '%'.$val.'%');
-                                    })
-                                    ->latest()->paginate(18);
-
-                $data['buddies'] = User::where('status', '1')
-                                    ->where('type', '1')
-                                    ->whereHas('country', function($qq) use ($val){
-                                        return $qq->where('nicename', 'like', '%'.$val.'%');
-                                    })
-                                    ->latest()->paginate(18);
-
-                return view('web.filter.search')->with($data);
-            }else{
-                return redirect('/');
-            }
+            return view('web.filter.search')->with($data);
+            
         }
 
         function search_filter($type){

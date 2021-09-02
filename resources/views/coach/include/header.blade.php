@@ -22,35 +22,20 @@
                      <li class="nav-item m-l-10"> <a class="nav-link sidebartoggler hidden-sm-down text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="ti-menu"></i></a> </li>
                   </div>
                      <div class="search-form desktop-v">
-                        <!-- <form method="get" action="{{route('web.search')}}">
+                        <form method="get" action="{{route('web.search')}}">
                            <div class="label-field3">
                               <i class="fa fa-search"> </i>
-                              <input type="text" placeholder="Search" name="val" value="{{isset($search_data['val']) ? $search_data['val'] : ''}}" required>
+                              <input type="text" placeholder="Choose a Sport" name="val" value="{{isset($search_data['val']) ? $search_data['val'] : ''}}" required>
                            </div>
                            <div class="label-field3">
-                              <i class="fa fa-filter"> </i>
-                              <select name="type">
-                                 <option @if(isset($search_data['type'])) @if($search_data['type'] == 'Keywords') selected @endif @endif>Keywords</option>
-                                 <option @if(isset($search_data['type'])) @if($search_data['type'] == 'Places') selected @endif @endif>Places</option>
-                              </select>
+                              <i class="fa fa-map-marker-alt"></i>
+                              <input type="text" placeholder="Address, City or neighborhood" name="add" id="add-input" value="{{isset($search_data['add']) ? $search_data['add'] : ''}}" required>
+                              <input type="hidden" name="country" id="add-country" value="{{isset($search_data['type']) ? $search_data['type'] : ''}}">
                            </div>
                            <div class="submit-field1">
                               <button class="bg-purple col-white custom-btn1"> Search </button>
                            </div>
-                        </form> -->
-                        <form method="get" action="{{route('web.search')}}">
-                  <div class="label-field3">
-                     <i class="fa fa-search"> </i>
-                     <input type="text" placeholder="Choose a Sport" name="search" required>
-                  </div>
-                  <div class="label-field3">
-                     <i class="fa fa-map-marker"></i>
-                     <input type="text" placeholder="Address, City or neighborhood" name="city" required>
-                  </div>
-                  <div class="submit-field1">
-                     <button class="bg-purple col-white custom-btn1"> Search </button>
-                  </div>
-               </form>
+                        </form>
                      </div>
                   </ul>
 

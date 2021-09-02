@@ -2,39 +2,22 @@
 @section('title', 'Home')
 
 @section('content')
-
+@php $arr = array(); @endphp
 <section class="banner-sec" id="search">
          <div class="container-fluid">
             <div class="banner-text text-center">
                <h2 class="gotham-bold col-white"> Find <br/> The Perfect Sport Buddy </h2>
             </div>
-            <!-- <div class="search-form">
-               <form method="get" action="{{route('web.search')}}">
-                  <div class="label-field3">
-                     <i class="fa fa-search"> </i>
-                     <input type="text" placeholder="Search" name="val" required>
-                  </div>
-                  <div class="label-field3">
-                     <i class="fa fa-filter"> </i>
-                     <select name="type">
-                        <option>Keywords</option>
-                        <option>Places</option>
-                     </select>
-                  </div>
-                  <div class="submit-field1">
-                     <button class="bg-purple col-white custom-btn1"> Search </button>
-                  </div>
-               </form>
-            </div> -->
             <div class="search-form">
                <form method="get" action="{{route('web.search')}}">
                   <div class="label-field3">
                      <i class="fa fa-search"> </i>
-                     <input type="text" placeholder="Choose a Sport" name="search" required>
+                     <input type="text" placeholder="Choose a Sport" name="val" required>
                   </div>
                   <div class="label-field3">
                      <i class="fa fa-map-marker-alt"></i>
-                     <input type="text" placeholder="Address, City or neighborhood" name="city" required>
+                     <input type="text" placeholder="Address, City or neighborhood" id="add-input" name="add" required>
+                     <input type="hidden" name="country" id="add-country">
                   </div>
                   <div class="submit-field1">
                      <button class="bg-purple col-white custom-btn1"> Search </button>
@@ -76,39 +59,8 @@
                               </h6>
                            </div>
                            <div class="lesson-rating-block gig">
-                           <p id="demo"></p>
-                           <!--    <a href="javascript:void(0)" data-id="{{$val->id}}" class="col-purple fav_act" id="{{$val->id}}" >
-                                    {{-- @foreach (auth()->user()->fav_activity as $act)
-                                        @if ($val->id == $act->activity_id && $act->user_id == auth()->user()->id)
-                                            <i class="fa fa-heart col-purple"></i>
-                                        @else (empty(auth()->user()->fav_activity))
-                                            <i class="far fa-heart col-purple"></i>
-                                        @endif
-                                    @endforeach --}}
-                                    {{-- @if ($val->fav_act->user_id == auth()->user()->id)
-                                        <i class="fa fa-heart col-purple"></i>
-                                    @else
-                                        <i class="far fa-heart col-purple"></i>
-                                    @endif --}}
-                                    <i class="far fa-heart col-purple"></i>
-                            </a> -->
-                            <!--   <span class="col-grey"> STARTING AT <b class="col-white">
-                                @if (count($val->equipment)>0)
-                                    @php
-                                        $ids = [];
-                                        $price = 0;
-                                    @endphp
-                                    @foreach ($val->equipment as $k => $val)
-                                        @php
-                                          $price = $price+$val->user_equipment->price;
-                                            $ids[$k] = $val->equip_id;
-                                        @endphp
-                                    @endforeach
-                                     {{'$'.number_format($price)}}
-                                @else
-                                FREE
-                                @endif
-                                  </b> </span> -->
+                           <p id="count{{$val->id}}" class="countDownP"></p>
+                           @php array_push($arr, array('id' => $val->id, 'date' => date('M d, Y H:i:s', strtotime('+7 day', strtotime($val->created_at))))); @endphp
                            </div>
                         </div>
                      </a>
@@ -402,7 +354,13 @@
 
 @section('addScript')
 
-
+   @foreach($arr as $val)
+      <script type="text/javascript">
+         $(document).ready(function(){
+            timer({{$val['id']}}, "{{$val['date']}}");
+         });
+      </script>
+   @endforeach
    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key={{env('GOOGLE_MAP_KEY')}}&libraries=places"></script>
 
    <script type="text/javascript">
@@ -506,32 +464,34 @@
 
 
       // Set the date we're counting down to
-var countDownDate = new Date("Jan 5, 2022 15:37:25").getTime();
+function timer(id, time){
 
-// Update the count down every 1 second
-var x = setInterval(function() {
+   var countDownDate = new Date(time).getTime();
+   // Update the count down every 1 second
+   var x = setInterval(function() {
 
-  // Get today's date and time
-  var now = new Date().getTime();
-    
-  // Find the distance between now and the count down date
-  var distance = countDownDate - now;
-    
-  // Time calculations for days, hours, minutes and seconds
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    
-  // Output the result in an element with id="demo"
-  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-  + minutes + "m " + seconds + "s ";
-    
-  // If the count down is over, write some text 
-  if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("demo").innerHTML = "EXPIRED";
-  }
-}, 1000);
+     // Get today's date and time
+     var now = new Date().getTime();
+       
+     // Find the distance between now and the count down date
+     var distance = countDownDate - now;
+       
+     // Time calculations for days, hours, minutes and seconds
+     var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+     var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+       
+     // Output the result in an element with id="demo"
+     document.getElementById("count"+id).innerHTML = days + "d " + hours + "h "
+     + minutes + "m " + seconds + "s ";
+       
+     // If the count down is over, write some text 
+     if (distance < 0) {
+       clearInterval(x);
+       document.getElementById("count"+id).innerHTML = "Completed.";
+     }
+   }, 1000);
+}
   </script>
 @endsection

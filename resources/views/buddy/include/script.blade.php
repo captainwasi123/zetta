@@ -19,3 +19,24 @@
 <script src="{{URL::to('/')}}/assets/user_dashboard/plugins/sweetalert/sweetalert.min.js"></script>
 <script src="{{URL::to('/')}}/assets/user_dashboard/plugins/sweetalert/jquery.sweet-alert.custom.js"></script>
 
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key={{env('GOOGLE_MAP_KEY')}}&libraries=places"></script>
+<script>
+      google.maps.event.addDomListener(window, 'load', initialize);
+      function initialize() {
+            var input = document.getElementById('add-input');
+            var autocomplete = new google.maps.places.Autocomplete(input);
+            autocomplete.addListener('place_changed', function () {
+                  var place = autocomplete.getPlace();
+
+                  for (const component of place.address_components) {
+                        const componentType = component.types[0];
+
+                        switch (componentType) {
+                            case "country":
+                              $('#add-country').val(component.long_name);
+                              break;
+                        }
+                  }
+            });
+      }
+</script>

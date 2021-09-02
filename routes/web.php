@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 			Route::get('/', 'webController@index');
 			Route::get('/all/{type}', 'webController@all')->name('web.all');
 			Route::get('/search', 'webController@search')->name('web.search');
-			Route::get('/filter/{val}/{type}', 'webController@filter')->name('web.filter');
+			Route::get('/filter/{val}/{type}/{add}', 'webController@filter')->name('web.filter');
             ROute::get('/filter/{type}','webController@search_filter')->name('web.search.filter');
 
 			Route::get('cart/{type}/{id}/{package}', 'cartController@cart');
