@@ -2600,6 +2600,10 @@ div#mapa {
 .order-image1 img {
     width: 100%;
 }
+.label-field3 input {
+    height: 30px;
+}
+
 }
 
 
@@ -3154,4 +3158,12 @@ div#mapa {
 .order-image1 img {
     width: 70%;
 }
+.submit-field1 {
+    width: 100%;
+}
+.submit-field1 button {
+    width: 94% !important;
+    margin-right: 24px !important;
+}
+
 }

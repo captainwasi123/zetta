@@ -286,7 +286,13 @@ color:white !important;
 .lesson-tag img{
     width: 90px;
 }
-
+p#demo {
+    font-size: 25px;
+    color: white;
+    text-align: center;
+    padding-top: 8px;
+    font-family: gotham-rounded-bold !important;
+}
 
 @media screen and (max-width: 767px) {
 

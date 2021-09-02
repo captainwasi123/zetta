@@ -43,6 +43,80 @@
             </div>
          </div>
       </section>
+       <section class="pad-top-40 bg-dark2 pad-bot-20">
+         <div class="container-fluid">
+            <div class="sec-head1 m-b-40">
+               <h2 class="col-white gotham-bold text-center m-b-20"> Upcoming Gigs </h2>
+               <p class="col-grey m-b-0 text-center"> Each sports coach is carefully selected by the Zettaa team </p>
+            </div>
+            <div class="boxes-slider1 arrows1">
+               @foreach($activities as $val)
+
+                  <div>
+                     <a href="{{route('activity.details', base64_encode($val->id))}}">
+                        <div class="lesson-block">
+                           <div class="lesson-tag">
+                              <img src="{{URL::to('/assets/website')}}/images/activity.png">
+                           </div>
+                           
+                           <div class="lesson-image-block">
+                              <img src="{{URL::to('/public/storage/user/activity/main_image/'.$val->cover_img)}}">
+                           </div>
+                           <div class="lesson-title-block">
+                              <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{empty($val->user) ? '' : $val->user->profile_img}}" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';">
+                              <h4>  {{empty($val->user) ? 'Unknown' : $val->user->fname.' '.$val->user->lname}} <span>Sports Buddy </span>  </h4>
+                           </div>
+                           <div class="lesson-info-block">
+                              <p class="descrip">
+                                 {{$val->description}}
+                              </p>
+                              <h6 class="col-white m-b-15"> <i class="fa fa-star col-yellow"> </i> 5.0 </h6>
+                              <h6 class="col-white m-b-15" style="float: right;">
+                                 <span class="bg-purple col-white custom-btn12"> Search </span>
+                              </h6>
+                           </div>
+                           <div class="lesson-rating-block gig">
+                           <p id="demo"></p>
+                           <!--    <a href="javascript:void(0)" data-id="{{$val->id}}" class="col-purple fav_act" id="{{$val->id}}" >
+                                    {{-- @foreach (auth()->user()->fav_activity as $act)
+                                        @if ($val->id == $act->activity_id && $act->user_id == auth()->user()->id)
+                                            <i class="fa fa-heart col-purple"></i>
+                                        @else (empty(auth()->user()->fav_activity))
+                                            <i class="far fa-heart col-purple"></i>
+                                        @endif
+                                    @endforeach --}}
+                                    {{-- @if ($val->fav_act->user_id == auth()->user()->id)
+                                        <i class="fa fa-heart col-purple"></i>
+                                    @else
+                                        <i class="far fa-heart col-purple"></i>
+                                    @endif --}}
+                                    <i class="far fa-heart col-purple"></i>
+                            </a> -->
+                            <!--   <span class="col-grey"> STARTING AT <b class="col-white">
+                                @if (count($val->equipment)>0)
+                                    @php
+                                        $ids = [];
+                                        $price = 0;
+                                    @endphp
+                                    @foreach ($val->equipment as $k => $val)
+                                        @php
+                                          $price = $price+$val->user_equipment->price;
+                                            $ids[$k] = $val->equip_id;
+                                        @endphp
+                                    @endforeach
+                                     {{'$'.number_format($price)}}
+                                @else
+                                FREE
+                                @endif
+                                  </b> </span> -->
+                           </div>
+                        </div>
+                     </a>
+                  </div>
+               @endforeach
+            </div>
+         </div>
+      </section>
       <!-- Banner Section Ends Here -->
       <!-- Sports Buddy Section Starts Here -->
       <section class="bg-dark2 pad-top-20 pad-bot-40">
@@ -429,5 +503,35 @@
             }
          }, 100);
       }
+
+
+      // Set the date we're counting down to
+var countDownDate = new Date("Jan 5, 2022 15:37:25").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+    
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+    
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  // Output the result in an element with id="demo"
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+    
+  // If the count down is over, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
   </script>
 @endsection
