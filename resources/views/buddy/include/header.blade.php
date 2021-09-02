@@ -2,15 +2,25 @@
    <nav class="navbar top-navbar navbar-expand-md navbar-light">
       <div class="navbar-header">
          <a class="navbar-brand" href="{{URL::to('/')}}">
-         <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/zetta-logo.png">
+         <img src="{{URL::to('/')}}/assets/website/images/zetta-logo.png">
          </a>
+          <ul class="navbar-nav mr-auto mt-md-0" style="float: right; padding-top: 10px;">
+                        <div class="desktop">
+                     <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="mdi mdi-menu"></i></a> </li>
+                     <li class="nav-item m-l-10"> <a class="nav-link sidebartoggler hidden-sm-down text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="ti-menu"></i></a> </li>
+                    </div>
+               
+                  </ul>
+                
       </div>
       <div class="navbar-collapse">
          <ul class="navbar-nav mr-auto mt-md-0">
-            <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="mdi mdi-menu"></i></a> </li>
-            <li class="nav-item m-l-10"> <a class="nav-link sidebartoggler hidden-sm-down text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="ti-menu"></i></a> </li>
+            <div class="mobile">
+              <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="mdi mdi-menu"></i></a> </li>
+              <li class="nav-item m-l-10"> <a class="nav-link sidebartoggler hidden-sm-down text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="ti-menu"></i></a> </li>
+            </div>
              <div class="search-form desktop-v">
-                  <form method="get" action="{{route('web.search')}}">
+                <!--   <form method="get" action="{{route('web.search')}}">
                       <div class="label-field3">
                           <i class="fa fa-search"> </i>
                           <input type="text" placeholder="Search" name="val" value="{{isset($search_data['val']) ? $search_data['val'] : ''}}" required>
@@ -25,7 +35,20 @@
                       <div class="submit-field1">
                           <button class="bg-purple col-white custom-btn1"> Search </button>
                       </div>
-                  </form>
+                  </form> -->
+                  <form method="get" action="{{route('web.search')}}">
+                  <div class="label-field3">
+                     <i class="fa fa-search"> </i>
+                     <input type="text" placeholder="Choose a Sport" name="search" required>
+                  </div>
+                  <div class="label-field3">
+                     <i class="fa fa-map-marker"></i>
+                     <input type="text" placeholder="Address, City or neighborhood" name="city" required>
+                  </div>
+                  <div class="submit-field1">
+                     <button class="bg-purple col-white custom-btn1"> Search </button>
+                  </div>
+               </form>
               </div>
          </ul>
          <ul class="navbar-nav my-lg-0">

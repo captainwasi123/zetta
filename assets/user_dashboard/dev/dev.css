@@ -489,3 +489,7 @@ body.mini-sidebar a.navbar-brand {
     width: 180px !important;
 }
 
+
+aside.left-sidebar.mobile {
+    background: #1d242cd9 !important;
+}
