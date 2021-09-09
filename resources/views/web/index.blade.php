@@ -3,10 +3,19 @@
 
 @section('content')
 @php $arr = array(); @endphp
+
+<div class="video-background-holder">
+  <div class="video-background-overlay"></div>
+  <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+        <source src="https://assets.mixkit.co/videos/preview/mixkit-muscular-man-lifting-a-barbell-in-a-dark-gym-23635-large.mp4" type="video/mp4">
+    </video>
+  <div class="video-background-content container h-100">
+    <div class="d-flex h-100 text-center align-items-center">
+     
 <section class="banner-sec" id="search">
          <div class="container-fluid">
             <div class="banner-text text-center">
-               <h2 class="gotham-bold col-white"> Find <br/> The Perfect Sport Buddy </h2>
+               <h2 class="gotham-bold col-white"> Find The <br/> Perfect Sport Buddy </h2>
             </div>
             <div class="search-form">
                <form method="get" action="{{route('web.search')}}">
@@ -26,6 +35,10 @@
             </div>
          </div>
       </section>
+    </div>
+  </div>
+</div>
+
        <section class="pad-top-40 bg-dark2 pad-bot-20">
          <div class="container-fluid">
             <div class="sec-head1 m-b-40">
@@ -69,8 +82,37 @@
             </div>
          </div>
       </section>
-      <!-- Banner Section Ends Here -->
-      <!-- Sports Buddy Section Starts Here -->
+
+      <section class="pad-top-40 bg-dark2 pad-bot-20 work-bac">
+         <div class="container-fluid">
+            <div class="sec-head1 m-b-40">
+               <h2 class="col-white gotham-bold text-center m-b-20"> How its Work </h2>
+               <p class="col-grey m-b-0 text-center"> Each sports coach is carefully selected by the Zettaa team </p>
+            </div>
+            <div class="row">
+
+                  <div class="col-md-4">
+                     <div class="work">
+                     <img src="{{URL::to('/assets/website')}}/images/work1.png">
+                     <h2>Find your Perfect coach</h2>
+                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>   </div>                     
+                  </div> 
+                  <div class="col-md-4">
+                     <div class="work">
+                     <img src="{{URL::to('/assets/website')}}/images/work2.png">
+                     <h2>Organize your Lesson</h2>
+                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>   </div>                     
+                  </div> 
+                  <div class="col-md-4">
+                     <div class="work">
+                     <img src="{{URL::to('/assets/website')}}/images/work3.png">
+                     <h2>Discover new Experience</h2>
+                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>   </div>                     
+                  </div>                               
+            </div>   
+         </div>
+      </section>
+      
       <section class="bg-dark2 pad-top-20 pad-bot-40">
          <div class="container-fluid">
             <div class="sec-head1 m-b-40">
