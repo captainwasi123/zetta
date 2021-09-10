@@ -21,7 +21,9 @@
     float: left;
     width: 100%;
 }
-
+.pac-container.pac-logo {
+    z-index: 99999;
+}
 
 .join-pop-head button.close {
     opacity: 1;

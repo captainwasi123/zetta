@@ -26,4 +26,23 @@
       }
     });
   }
+
+  google.maps.event.addDomListener(window, 'load', initializee);
+   function initializee() {
+      var input = document.getElementById('madd-input');
+      var autocomplete = new google.maps.places.Autocomplete(input);
+      autocomplete.addListener('place_changed', function () {
+      var place = autocomplete.getPlace();
+      
+      for (const component of place.address_components) {
+        const componentType = component.types[0];
+
+        switch (componentType) {
+          case "country":
+            $('#madd-country').val(component.long_name);
+            break;
+        }
+      }
+    });
+  }
   </script>

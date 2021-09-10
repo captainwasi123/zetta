@@ -25,8 +25,8 @@
                   </div>
                   <div class="label-field3">
                      <i class="fa fa-map-marker-alt"></i>
-                     <input type="text" placeholder="Address, City or neighborhood" id="add-input" name="add" required>
-                     <input type="hidden" name="country" id="add-country">
+                     <input type="text" placeholder="Address, City or neighborhood" id="madd-input" name="add" required>
+                     <input type="hidden" name="country" id="madd-country">
                   </div>
                   <div class="submit-field1">
                      <button class="bg-purple col-white custom-btn1"> Search </button>
