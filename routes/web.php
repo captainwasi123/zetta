@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\Route;
 
 		// Main Pages
 			Route::get('/', 'webController@index');
+			Route::get('/about_us', 'webController@aboutUs');
 			Route::get('/all/{type}', 'webController@all')->name('web.all');
 			Route::get('/search', 'webController@search')->name('web.search');
 			Route::get('/filter/{val}/{type}/{add}', 'webController@filter')->name('web.filter');

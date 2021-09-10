@@ -312,4 +312,9 @@ class webController extends Controller
 
         return view('web.terms');
     }
+
+    function aboutUs(){
+
+        return view('web.about');
+    }
 }

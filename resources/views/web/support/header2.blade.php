@@ -76,7 +76,7 @@ nav.navbar.navbar-expand-lg.navbar-dark {
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">About Us</a>
+              <a class="nav-link" href="{{URL::to('about_us')}}">About Us</a>
             </li>
           </ul>
         </div>
@@ -132,7 +132,7 @@ nav.navbar.navbar-expand-lg.navbar-dark {
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">About Us</a>
+              <a class="nav-link" href="{{URL::to('about_us')}}">About Us</a>
             </li>
           </ul>
         </div>

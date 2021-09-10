@@ -70,7 +70,7 @@ header.header-2 .logo a img {
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">About Us</a>
+              <a class="nav-link" href="{{URL::to('about_us')}}">About Us</a>
             </li>
           </ul>
         </div>
@@ -161,7 +161,7 @@ header.header-2 .logo a img {
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">About Us</a>
+              <a class="nav-link" href="{{URL::to('about_us')}}">About Us</a>
             </li>
           </ul>
         </div>
@@ -222,7 +222,7 @@ header.header-2 .logo a img {
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">About Us</a>
+              <a class="nav-link" href="{{URL::to('about_us')}}">About Us</a>
             </li>
           </ul>
         </div>
