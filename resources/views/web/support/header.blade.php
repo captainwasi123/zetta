@@ -76,11 +76,11 @@ header.header-2 .logo a img {
         </div>
       </nav>
 
-      <div class="lang-option">
+      <!-- <div class="lang-option">
          <button class="flag-1"> <img src="{{URL::to('/assets/website')}}/images/flag-1.jpg"> </button>
          <button class="flag-1"> <img src="{{URL::to('/assets/website')}}/images/flag-2.jpg"> </button>
          <button class="flag-1"> <img src="{{URL::to('/assets/website')}}/images/flag-3.jpg"> </button>
-      </div>
+      </div> -->
       <nav class="navbar navbar-expand-lg navbar-dark "> 
         <button class="navbar-toggler desktop" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -166,11 +166,11 @@ header.header-2 .logo a img {
           </ul>
         </div>
       </nav>
-      <div class="lang-option">
+      <!-- <div class="lang-option">
          <button class="flag-1"> <img src="{{URL::to('/assets/website')}}/images/flag-1.jpg"> </button>
          <button class="flag-1"> <img src="{{URL::to('/assets/website')}}/images/flag-2.jpg"> </button>
          <button class="flag-1"> <img src="{{URL::to('/assets/website')}}/images/flag-3.jpg"> </button>
-      </div>
+      </div> -->
       @if(Auth::check())
          <div class="header-login">
             <div class="dropdown">
