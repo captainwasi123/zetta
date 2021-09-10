@@ -304,3 +304,11 @@ color:white !important;
     margin-bottom: -92px;
 }
 }
+
+
+.at-expanding-share-button-toggle label {
+    color: #fff;
+    margin-bottom: -2px;
+    text-align: center;
+    z-index: 9999;
+}

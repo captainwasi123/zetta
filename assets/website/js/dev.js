@@ -6,6 +6,10 @@ $(document).ready(function(){
 
     host = $("meta[name='host']").attr("content");
 
+    setTimeout(function(){
+        var data = $('.at-expanding-share-button-toggle').html();
+        $('.at-expanding-share-button-toggle').html('<label>Share</label>'+data);
+    },100);
     // for coach
     $(document).on('click', '.open-login', function(){
         $('.register-modal').modal('hide');
