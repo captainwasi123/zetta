@@ -27,8 +27,7 @@
             </form>
          </div>
          <div class="profile-pic-details">
-            <h4 class="col-white"> Hi, Coach </h4>
-            <p class="col-silver"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod </p>
+            <h4 class="col-white"> Hi, {{Auth::user()->fname.' '.Auth::user()->lname}} </h4>
             <a href="javascript:void(0)" class="default_link" data-toggle="modal" data-target="#editProfileModal">Edit Profile</a>
             <h5>
                <i class="fa fa-star col-yellow"> </i>

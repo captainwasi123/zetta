@@ -2,14 +2,13 @@
 <style type="text/css">
 
 #navWrap {
-    height:800px;
+    height:1000px;
 }
 
 .sticky {
     position: fixed;
     top:0;
 }
-
 @media only screen and (max-width: 767px) {
 .logo {
     left: 65px;
@@ -269,10 +268,12 @@ header.header-2 .logo a img {
 <script type="text/javascript">
    $(document).scroll(function() {
   var y = $(this).scrollTop();
-  if (y > 300) {
-    $('.bottomMenu').fadeIn();
+  if (y > 600) {
+    //$('.bottomMenu').fadeIn();
+    $('#bottomMenu').css({marginTop: '0px'});
   } else {
-    $('.bottomMenu').fadeOut();
+    //$('.bottomMenu').fadeOut();
+    $('#bottomMenu').css({marginTop: '-110px'});
   }
 });
 </script>

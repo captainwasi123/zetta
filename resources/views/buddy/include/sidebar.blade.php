@@ -1,8 +1,8 @@
 <aside class="left-sidebar desktop">
    <div class="scroll-sidebar">
       <div class="user-profile-header">
-         <h4> Hi, Sports Buddy </h4>
-         <h6> agalyam01@gmail.com </h6>
+         <h4> Hi, {{(Auth::user()->fname)}} </h4>
+         <h6> {{Auth::user()->email}} </h6>
          <p> <a href=""> <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/coin-icon.png"> </a> <span> Z COINS <b> 250 </b> </span> <a href=""> <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/heart-icon.png"> </a>  </p>
       </div>
       <div class="user-profile">

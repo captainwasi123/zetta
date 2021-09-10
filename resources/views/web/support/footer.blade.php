@@ -4,7 +4,7 @@
            <div class="col-md-3 col-lg-3 col-sm-12 col-12">
               <div class="footer-about">
                  <a href=""> <img src="{{URL::to('/assets/website')}}/images/zetta-logo.png"> </a>
-                 <p> In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface. </p>
+                 <p> Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface. </p>
                  <ul>
                     <li> <a href=""> <i class="fa fa-phone"> </i> 2155655845 </a> </li>
                     <li> <a href=""> <i class="fa fa-map-marker"> </i> 3 rue du Port, 1204 Genève, Switzerland </a> </li>

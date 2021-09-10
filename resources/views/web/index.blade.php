@@ -42,8 +42,7 @@
        <section class="pad-top-40 bg-dark2 pad-bot-20">
          <div class="container-fluid">
             <div class="sec-head1 m-b-40">
-               <h2 class="col-white gotham-bold text-center m-b-20"> Upcoming Gigs </h2>
-               <p class="col-grey m-b-0 text-center"> Each sports coach is carefully selected by the Zettaa team </p>
+               <h2 class="col-white gotham-bold text-center m-b-20"> Upcoming Events </h2>
             </div>
             <div class="boxes-slider1 arrows1">
                @foreach($activities as $val)
@@ -94,20 +93,20 @@
                   <div class="col-md-4">
                      <div class="work">
                      <img src="{{URL::to('/assets/website')}}/images/work1.png">
-                     <h2>Find your Perfect coach</h2>
-                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>   </div>                     
+                     <h2>Search your Sport</h2>
+                     <p>Find the right sport partner near you. Either you’re looking for a coach a buddy, our filters will guide you.</p>   </div>                     
                   </div> 
                   <div class="col-md-4">
                      <div class="work">
                      <img src="{{URL::to('/assets/website')}}/images/work2.png">
-                     <h2>Organize your Lesson</h2>
-                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>   </div>                     
+                     <h2>Book your Session</h2>
+                     <p>Reserve your activity or lesson. Follow your progression with your personal dashboard.</p>   </div>                     
                   </div> 
                   <div class="col-md-4">
                      <div class="work">
                      <img src="{{URL::to('/assets/website')}}/images/work3.png">
-                     <h2>Discover new Experience</h2>
-                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>   </div>                     
+                     <h2>Show your Passion</h2>
+                     <p>Discover new sport opportunities everywhere around you.</p>   </div>                     
                   </div>                               
             </div>   
          </div>
@@ -116,7 +115,7 @@
       <section class="bg-dark2 pad-top-20 pad-bot-40">
          <div class="container-fluid">
             <div class="sec-head1 m-b-40">
-               <h2 class="col-white gotham-bold m-b-10"> The Best Sport Buddies Rated </h2>
+               <h2 class="col-white gotham-bold m-b-10"> Top Coaches </h2>
                <p class="col-grey m-b-0"> Each sports coach is carefully selected by the Zettaa team </p>
             </div>
             <div class="row">
@@ -199,7 +198,7 @@
       <section class="pad-top-40 bg-dark2 pad-bot-20">
          <div class="container-fluid">
             <div class="sec-head1 m-b-40">
-               <h2 class="col-white gotham-bold text-center m-b-40"> Sport Buddy Sessions </h2>
+               <h2 class="col-white gotham-bold text-center m-b-40"> Sport Buddy Activities </h2>
             </div>
             <div class="boxes-slider1 arrows1">
                @foreach($activities as $val)
@@ -336,7 +335,7 @@
       <section class="pad-top-40 pad-bot-40 bg-dark2">
          <div class="container-fluid">
             <div class="sec-head1 m-b-40">
-               <h2 class="col-white gotham-bold text-center m-b-20 text-center"> Reviews from Customers </h2>
+               <h2 class="col-white gotham-bold text-center m-b-20 text-center"> Check out what our Customers think about our Customers </h2>
                <p class="col-white text-center" style="max-width: 600px;margin:auto">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
                   ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud
                   exercitation ullamco laboris.

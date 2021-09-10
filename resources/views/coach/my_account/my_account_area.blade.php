@@ -18,8 +18,7 @@
                 </div>
              </div>
              <div class="profile-pic-details">
-                <h4 class="col-white"> Hi, Coach </h4>
-                <p class="col-silver"> Lorem ipsum dolor sit amet, consectetur  </p>
+                <h4 class="col-white"> Hi, {{(Auth::user()->fname.' 'Auth::user()->lname)}} </h4>
                 <h5> <i class="fa fa-star col-yellow"> </i> <i class="fa fa-star col-yellow"> </i> <i class="fa fa-star col-yellow"> </i> <i class="fa fa-star col-yellow"> </i> <i class="fa fa-star col-yellow"> </i> <b class="col-white"> 5.0 </b> </h5>
              </div>
              <div class="row center-row">
