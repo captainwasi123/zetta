@@ -497,3 +497,39 @@ aside.left-sidebar.mobile {
 .pac-container.pac-logo {
     z-index: 99999;
 }
+
+ .navbar-dark .navbar-nav .nav-link {
+    color: white;
+    font-size: 16px !important;
+}
+li.nav-item.dropdown a i {
+   font-size: 12px;
+}
+
+a.nav-link {
+        padding: 3px 15px;
+}
+nav.navbar.navbar-expand-lg.navbar-dark.desktop {
+    padding: 0px !important;
+    padding-left: 20px !important;
+}
+.dropdown-menu.show {
+    background: #9a49ff;
+}
+.dropdown-menu.show a {
+    color: white;
+}
+
+.dropdown-menu.syed {
+     left: 0px !important;
+}
+
+
+@media only screen and (max-width: 767px) {
+
+.desktop
+{
+   display: none;
+}
+
+}

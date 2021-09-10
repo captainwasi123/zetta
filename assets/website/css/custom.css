@@ -2212,10 +2212,8 @@ p.range-value {
 }
 
 section.banner-sec {
-    background-image: url(../images/banner-bg.jpg);
-    background-size: cover;
-    background-position: top center;
-    padding: 230px 0px 170px 0px;
+    padding: 300px 0px 50px 0px;
+    height: 100vh;
  
 }
 
@@ -2230,7 +2228,7 @@ header.header-2 {
 
 
 .banner-text h2 {
-    font-size: 50px;
+    font-size: 40px;
     letter-spacing: 1px;
     line-height: 55px;
 }
@@ -2712,11 +2710,7 @@ header.header-2 .header-login .dropdown img {
 .banner-sec .submit-field1 {
     float: left;
 }
-section.banner-sec {
-    background-size: cover;
-    background-position: top center;
-    padding: 150px 0px 80px 0px;
-}
+
 .buddy-box1, .buddy-box2, .buddy-box3, .buddy-box4, .buddy-box5 {
     float: left;
     width: 50% !important;
@@ -3056,8 +3050,7 @@ header.header-2 .header-login .dropdown img {
     float: left;
 }
 section.banner-sec {
-    background-size: cover;
-    background-position: top center;
+
     padding: 100px 0px 80px 0px;
 }
 .buddy-box1 , .buddy-box2 , .buddy-box3 , .buddy-box4 , .buddy-box5 {
@@ -3166,4 +3159,164 @@ div#mapa {
     margin-right: 24px !important;
 }
 
+}
+
+.work-bac {
+    background: url(http://localhost/zetta/assets/website/images/Line.png) !important;
+    background-repeat: no-repeat !important;
+    background-color: #1d242c !important;
+    background-size: 55% 20% !important;
+    background-position: center !important;
+}
+.work {
+    text-align: center;
+    padding: 0px 35px;
+}
+.work h2 {
+    color: white;
+    font-size: 30px;
+    padding-top: 25px;
+    font-weight: 400;
+}
+
+
+.work p {
+    color: white;
+    font-size: 18px;
+    font-weight: 300;
+}
+.work-bac .sec-head1 {
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+.work-bac {
+    padding-bottom: 60px !important;
+}
+
+@media only screen and (max-width: 767px) {
+.work-bac {
+    background-image: none !important;
+}
+}
+
+.video-background-holder {
+  position: relative;
+  background-color: black;
+  width: 100%;
+  overflow: hidden;
+  height: 100vh;
+}
+
+.video-background-holder video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 0;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.video-background-content {
+  position: relative;
+  z-index: 2;
+}
+
+.video-background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #1d242c;
+    opacity: 0.7;
+  z-index: 1;
+}
+code {
+  padding: 0 0.15rem;
+  background: #f5f5f5;
+  border-radius: 0.2rem;
+}
+
+
+  .navbar-dark .navbar-nav .nav-link {
+    color: white;
+    font-size: 16px;
+}
+ .navbar-dark .navbar-nav .nav-link:hover {
+    color: #9a49ff;
+}
+nav.navbar.navbar-expand-lg.navbar-dark {
+    position: absolute;
+    left: 16%;
+}
+ul.navbar-nav.mr-auto li {
+    padding-right: 20px;
+}
+.dropdown-menu.show {
+    background: #9a49ff;
+    padding: 10px 10px;
+}
+.dropdown-menu.show a {
+    color: white;
+    padding: 10px 10px;
+}
+li.nav-item.dropdown a i {
+   font-size: 12px;
+}
+nav.navbar.navbar-expand-lg.navbar-dark button {
+    left: 73%;
+    position: absolute;
+    top: 10px;
+    font-size: 14px;
+    background: #9a49ff;
+    color: white;
+}
+.mobile
+{
+   display: none;
+
+}
+@media only screen and (max-width: 767px) {
+  
+nav.navbar.navbar-expand-lg.navbar-dark {
+    position: relative;
+}
+nav.navbar.navbar-expand-lg.navbar-dark button {
+    left: 35px;
+ }
+
+    nav.navbar.navbar-expand-lg.navbar-dark {
+    position: absolute;
+    left: 0%;
+    width: 100%;
+}
+div#navbarSupportedContent {
+    margin-top: 35px !important;
+    background: black;
+    padding: 10px 0px 10px 10px;
+    position: relative;
+}
+.desktop
+{
+   display: none;
+}
+.mobile
+{
+   display: block;
+
+}
+.logo {
+    position: relative;
+    left: 80px;
+}
+
+}
+.stickey-custom {
+    left: 48% !important;
 }
