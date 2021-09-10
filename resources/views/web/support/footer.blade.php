@@ -10,8 +10,33 @@
                     <li> <a href=""> <i class="fa fa-map-marker"> </i> 3 rue du Port, 1204 Genève, Switzerland </a> </li>
                     <li> <a href=""> <i class="fa fa-envelope"> </i> info@zettaa.ch </a> </li>
                  </ul>
+                 <a href="javascript::void(0)"  style="color: #a5a5a5 !important;" data-toggle="modal" data-target="#languages">
+                  <span class="fa fa-globe"></span> &nbsp; English 
+               </a>
+
+                <div class="modal fade" id="languages" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h3 class="modal-title" id="exampleModalLabel">Choose a language</h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <ul class="languages_list">
+                          <li><a href="#"><img src="{{URL::to('/assets/website')}}/images/flag-1.jpg"> &nbsp; Chinese  &nbsp;<span class="fa fa-check"></span></a></li>
+                          <li><a href="#"><img src="{{URL::to('/assets/website')}}/images/flag-2.jpg">  &nbsp; Spanish  &nbsp;</a></li>
+                          <li><a href="#"><img src="{{URL::to('/assets/website')}}/images/flag-3.jpg">  &nbsp; Spanish  &nbsp;</a></li>
+                       </ul>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
               </div>
            </div>
+           
            <div class="col-md-3 col-lg-3 col-sm-12 col-12">
               <div class="footer-list">
                  <h4 class="col-white"> QUICK MENU </h4>

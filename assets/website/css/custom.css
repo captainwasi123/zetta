@@ -3323,3 +3323,13 @@ div#navbarSupportedContent {
 .stickey-custom {
     left: 48% !important;
 }
+               ul.languages_list li a img {
+    width: 50px;
+    margin:0px;
+}
+        ul.languages_list li a {
+    padding-bottom: 20px;
+    font-size: 16px;
+    color: black;
+}
+    

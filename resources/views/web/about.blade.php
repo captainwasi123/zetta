@@ -37,9 +37,6 @@
     font-weight: 300;
     color: white;
 }
-.skiptranslate {
-    display: none;
-}
 </style>
 
 
@@ -73,6 +70,5 @@
       </div>
    </div>
 </section>
-
 
 @endsection
