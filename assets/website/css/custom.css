@@ -1653,9 +1653,9 @@ border:1px solid #9a49ff !important;
 .lesson-holder-about {
     float: left;
     width: 100%;
-    border-top: 1px solid grey;
+    border: 1px solid grey;
     margin-top: 20px;
-    padding-top: 25px;
+    padding: 20px;
 }
 
 
@@ -2242,16 +2242,16 @@ header.header-2 {
 
 .banner-sec .search-form {
     float: none !important;
-    max-width: 700px;
+    max-width: 600px;
     margin: auto;
     padding: 8px 0px;
 }
 .banner-sec .label-field3:nth-child(1) {
-    width: 300px;
+    width: 250px;
 }
 
 .banner-sec .label-field3:nth-child(2) {
-    width: 300px;
+    width: 250px;
 }
 
 .banner-sec .label-field3 input {
@@ -2358,7 +2358,12 @@ header.header-2 {
     border-radius: 100%;
     border: 1px solid #441382;
     padding: 18px;
+    transition: width 1s;
 }
+.buddy-box img:hover {
+    width: 220px;
+}
+
 .buddy-box h4 {
     font-size: 26px;
     font-weight: 300;
@@ -2380,19 +2385,23 @@ header.header-2 {
     width: 100%;
     background-image: url(../images/lines-bg.jpg);
     background-size: 100% 100%;
-    max-width: 1050px;
+    /*max-width: 1050px;*/
+    max-width:100%;
 }
 .buddy-box1 {
     float: left;
     width: 50%;
-    margin-top: 90px;
-    padding-left: 30px;
+    /*margin-top: 90px;
+    padding-left: 30px;*/
+    margin-top: 100px;
+    padding-left: 70px;
 }
 
 
 .buddy-box2 {
     float:right;
-    padding-right: 130px;
+    /*padding-right: 130px;*/
+    padding-right: 200px;
  
 }
 
@@ -2407,22 +2416,30 @@ header.header-2 {
     float: left;
     width: 50%;
     margin-top: -60px;
-    padding-left: 130px;
+    /*padding-left: 130px;*/
+    padding-left: 250px;
 }
 
 .buddy-box5 {
     float:right;
     margin-top: -150px;
-    padding-right: 50px;
+/*    padding-right: 50px;*/
+    padding-right: 80px;
  
 }
 
 .buddy-box3 .buddy-box img {
     width: 260px;
+    transition: width 1s;
 }
 
+.buddy-box3 .buddy-box img:hover
+{
+    width: 270px;
+}
 .buddy-box3 .buddy-box {
-    margin-left: -70px;
+    /*margin-left: -70px;*/
+    margin-left: -140px;
 }
 
 body {
@@ -2440,7 +2457,8 @@ body {
 .buddies-wrapper {
     float: left;
     width: 100%;
-    max-width: 1050px;
+    /*max-width: 1050px;*/
+    max-width: 100%;
 }
 .container-fluid {
     width: 96%;
@@ -3122,7 +3140,7 @@ body .container {
 }
 }
 .lesson-image-block img {
-    height: 230px;
+    height: 190px;
     width: 100%;
 }
 
@@ -3179,9 +3197,13 @@ div#mapa {
     color: white;
     font-size: 30px;
     padding-top: 25px;
+    padding-bottom: 15px;
     font-weight: 400;
 }
 
+.sec-head1.m-b-40 {
+    text-align: center;
+}
 
 .work p {
     color: white;
@@ -3285,6 +3307,13 @@ nav.navbar.navbar-expand-lg.navbar-dark button {
    display: none;
 
 }
+
+
+p.lesson-title {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 400;
+    }
 @media only screen and (max-width: 767px) {
   
 nav.navbar.navbar-expand-lg.navbar-dark {
@@ -3332,4 +3361,3 @@ div#navbarSupportedContent {
     font-size: 16px;
     color: black;
 }
-    

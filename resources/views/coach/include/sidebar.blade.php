@@ -18,9 +18,9 @@
                      <a href="{{URL::to('/buddy')}}" class="custom-btn1"> SWITCH TO SPORTS BUDDY </a>
                   </div>
 
-                  <div class="profile-text">
+                  <!-- <div class="profile-text">
                      <a href="{{route('coach.messages')}}" class="" > INBOX <i class="mdi mdi-email"> <b class="notif-icon1"> 5  </b> </i>  </a>
-                  </div>
+                  </div> -->
                </div>
               <nav class="sidebar-nav">
                   <ul id="sidebarnav">
@@ -92,9 +92,9 @@
                   <div class="account-btn1 text-center">
                      <a href="{{route('coach.my_account')}}" class="custom-btn2"> My Account </a>
                   </div>
-                  <div class="profile-text">
+                  <!-- <div class="profile-text">
                      <a href="{{route('coach.messages')}}" class="" > INBOX <i class="mdi mdi-email"> <b class="notif-icon1"> 5  </b> </i>  </a>
-                  </div>
+                  </div> -->
                   <div class="account-btn1 text-center">
                      <a href="{{URL::to('/buddy')}}" class="custom-btn1"> SWITCH TO SPORTS BUDDY </a>
                   </div>

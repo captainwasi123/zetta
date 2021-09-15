@@ -5,7 +5,7 @@
 
  <!-- Action Bar Ends Here -->
  <!-- Page Content Starts Here -->
- <section class="pad-top-40 pad-bot-40 bg-dark2">
+ <section class="activity-section pad-bot-40 bg-dark2">
     <div class="container">
        <div class="row">
           <div class="col-md-4 col-lg-4 col-sm-12 col-12">

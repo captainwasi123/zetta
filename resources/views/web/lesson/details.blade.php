@@ -18,7 +18,7 @@
 
 <!-- Action Bar Ends Here -->
 <!-- Page Content Section Starts Here -->
-<section class="pad-top-40 pad-bot-40 bg-dark2">
+<section class="pad-bot-40 bg-dark2 activity-section">
    <div class="container">
       <div class="row">
          <div class="col-12">
@@ -81,18 +81,7 @@
                   {{$data->description}}
                </p>
             </div>
-            <div class="lesson-holder-about m-t-0 no-border m-b-20">
-               <h3 class="col-white m-b-15"> About The Coach </h3>
-            </div>
-            <div class="lesson-holder-profile">
-               <div>
-                  <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{empty($data->user) ? '' : $data->user->profile_img}}" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';">
-               </div>
-               <h4 class="col-white no-margin m-t-0 m-b-0"> {{empty($data->user) ? 'Unknown' : $data->user->fname.' '.$data->user->lname}} </h4>
-               <h6 class="col-grey"> Coach </h6>
-               <h5 class="col-purple m-b-15"> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> 5.0  </h5>
-               <a href="" class="bor-purple col-white rounded custom-btn1 font-thin"> Contact Me </a>
-            </div>
+                        
             <div class="lesson-holder-details m-t-40">
                <div class="profile-details1">
                   <div class="row center-row m-b-20">
@@ -123,6 +112,18 @@
                      {{empty($data->user) ? '' : $data->user->description}}
                   </p>
                </div>
+            </div>
+            <div class="lesson-holder-about m-t-0 no-border">
+               <h3 class="col-white m-b-15"> About The Coach </h3>
+            </div>
+            <div class="lesson-holder-profile">
+               <div>
+                  <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{empty($data->user) ? '' : $data->user->profile_img}}" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';">
+               </div>
+               <h4 class="col-white no-margin m-t-0 m-b-0"> {{empty($data->user) ? 'Unknown' : $data->user->fname.' '.$data->user->lname}} </h4>
+               <h6 class="col-grey"> Coach </h6>
+               <h5 class="col-purple m-b-15"> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> 5.0  </h5>
+               <a href="" class="bor-purple col-white rounded custom-btn1 font-thin"> Contact Me </a>
             </div>
             <div class="all-ratings m-t-40">
                <div class="row">

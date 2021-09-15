@@ -40,27 +40,36 @@
            <div class="col-md-3 col-lg-3 col-sm-12 col-12">
               <div class="footer-list">
                  <h4 class="col-white"> QUICK MENU </h4>
-                 <ul>
+                 <!-- <ul>
                     <li> <a href="{{URL::to('/')}}"> Home </a> </li>
+                    <li> <a href="{{URL::to('about_us')}}">About Us </a> </li>
                     <li> <a href="{{route('web.all','Coaches')}}"> Coaches </a> </li>
                     <li> <a href="{{route('web.all','Sports Buddies')}}"> Sports Buddy </a> </li>
                     <li> <a href="{{route('web.all','Lessons')}}"> Lesson </a> </li>
                     <li> <a href="{{route('web.all','Activities')}}"> Activity </a> </li>
                     <li> <a href="{{URL::to('/')}}#mapa"> Near Me </a> </li>
-                 </ul>
+
+                 </ul> -->
               </div>
            </div>
+           <style type="text/css">
+             .secure img {
+    padding-bottom: 15px;
+}
+.secure {
+    padding-top: 20px;
+}
+           </style>
            <div class="col-md-3 col-lg-3 col-sm-12 col-12">
               <div class="footer-list">
-                 <h4 class="col-white"> INFORMATION </h4>
+                 <h4 class="col-white"> ABOUT </h4>
                  <ul>
-                    <li> <a href="{{URL::to('/')}}#search"> Search </a> </li>
-                    <li> <a href=""> Find Us </a> </li>
-                    <li> <a href=""> Lab Results </a> </li>
+                    <li> <a href="#"> Partnership  </a> </li>
+                    <li> <a href=""> Press  </a> </li>
+                    <li> <a href=""> Contact  </a> </li>
                     <li> <a href=""> Faq </a> </li>
-                    <li> <a href=""> Privacy Policy </a> </li>
                     <li> <a href="{{route('web.terms')}}"> Terms  </a> </li>
-                    <li> <a href=""> Wholesale  </a> </li>
+                    <li> <a href=""> Privacy Policy </a> </li>                    
                  </ul>
               </div>
            </div>
@@ -68,10 +77,12 @@
               <div class="footer-list">
                  <h4 class="col-white"> SOCIAL MEDIA </h4>
                  <ul>
-                    <li> <a href=""> <img src="{{URL::to('/assets/website')}}/images/fb-icon.jpg"> Facebook </a> </li>
-                    <li> <a href=""> <img src="{{URL::to('/assets/website')}}/images/twitter-icon.jpg"> Twitter </a> </li>
-                    <li> <a href=""> <img src="{{URL::to('/assets/website')}}/images/linkedin-icon.jpg"> Linkedin </a> </li>
-                    <li> <a href=""> <img src="{{URL::to('/assets/website')}}/images/insta-icon.jpg"> Instagram </a> </li>
+                    <li> <a href=""> <img src="{{URL::to('/assets/website')}}/images/fb-icon.jpg"> </a> <a href=""> <img src="{{URL::to('/assets/website')}}/images/twitter-icon.jpg"> </a> <a href=""> <img src="{{URL::to('/assets/website')}}/images/linkedin-icon.jpg"> </a><a href=""> <img src="{{URL::to('/assets/website')}}/images/insta-icon.jpg"> </a></li>
+                    <div class="secure">
+                      <img src="{{URL::to('/assets/website')}}/images/verifiedsecure.png" width="100%">
+                      <img src="{{URL::to('/assets/website')}}/images/payment.png" width="100%">                      
+                    </div>
+                    
                  </ul>
               </div>
            </div>
@@ -79,8 +90,6 @@
      </div>
   </footer>
 
-
-
 <section class="copyright-sec bg-purple text-center">
- 	<span class="col-white"> Copyright ©2021 zetta. All Rights Reserved </span>
+ 	<span class="col-white"> © 2021 zetta. All Rights Reserved </span>
 </section>

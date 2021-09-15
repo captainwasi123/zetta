@@ -396,6 +396,9 @@ ul.less-triggers li a.nav-link.active, ul.less-triggers li a.nav-link.active {
 .navbar-header a img {
     width: 150px;
 }
+.profile-text a i:hover::before {
+    color: white !important;
+}
 @media only screen and (max-width: 767px) {
 
 .desktop-v
@@ -417,6 +420,7 @@ ul.less-triggers li a.nav-link.active, ul.less-triggers li a.nav-link.active {
 .account-btn1 {
     margin-top: 0px;
     display: inline-block;
+    margin-bottom: 10px;
 }
 .user-profile .profile-text {
 
@@ -525,6 +529,18 @@ nav.navbar.navbar-expand-lg.navbar-dark.desktop {
 }
 
 
+.dropdown-menu a:hover {
+    background: #1d242c;
+}
+.header-login .dropdown .dropdown-menu {
+    left: -100px !important;
+}
+.card {
+    margin-bottom: 0px;
+}
+html body .b-l {
+    border:0px;
+}
 @media only screen and (max-width: 767px) {
 
 .desktop
@@ -533,3 +549,5 @@ nav.navbar.navbar-expand-lg.navbar-dark.desktop {
 }
 
 }
+
+

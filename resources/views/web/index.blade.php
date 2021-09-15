@@ -3,7 +3,11 @@
 
 @section('content')
 @php $arr = array(); @endphp
-
+<style type="text/css">
+      .slick-track {
+    margin: 0 auto;
+}
+</style>
 <div class="video-background-holder">
   <div class="video-background-overlay"></div>
   <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
@@ -62,12 +66,13 @@
                               <h4>  {{empty($val->user) ? 'Unknown' : $val->user->fname.' '.$val->user->lname}} <span>Sports Buddy </span>  </h4>
                            </div>
                            <div class="lesson-info-block">
+                              <p class="lesson-title">{{$val->title}}</p>
                               <p class="descrip">
                                  {{$val->description}}
                               </p>
                               <h6 class="col-white m-b-15"> <i class="fa fa-star col-yellow"> </i> 5.0 </h6>
-                              <h6 class="col-white m-b-15" style="float: right;">
-                                 <span class="bg-purple col-white custom-btn12"> Search </span>
+                              <h6 class="col-white m-b-15 lesson-catagory-text" style="float: right;">
+                                 <span class="bg-purple col-white custom-btn12"> {{$val->category->name}} </span>
                               </h6>
                            </div>
                            <div class="lesson-rating-block gig">
@@ -84,28 +89,27 @@
 
       <section class="pad-top-40 bg-dark2 pad-bot-20 work-bac">
          <div class="container-fluid">
-            <div class="sec-head1 m-b-40">
-               <h2 class="col-white gotham-bold text-center m-b-20"> How its Work </h2>
-               <p class="col-grey m-b-0 text-center"> Each sports coach is carefully selected by the Zettaa team </p>
+            <div class="sec-head1 m-b-20">
+               <h2 class="col-white gotham-bold text-center m-b-20"> How it Works </h2>
             </div>
             <div class="row">
 
                   <div class="col-md-4">
                      <div class="work">
                      <img src="{{URL::to('/assets/website')}}/images/work1.png">
-                     <h2>Search your Sport</h2>
+                     <h2>Search your sport</h2>
                      <p>Find the right sport partner near you. Either you’re looking for a coach a buddy, our filters will guide you.</p>   </div>                     
                   </div> 
                   <div class="col-md-4">
                      <div class="work">
                      <img src="{{URL::to('/assets/website')}}/images/work2.png">
-                     <h2>Book your Session</h2>
+                     <h2>Book your session</h2>
                      <p>Reserve your activity or lesson. Follow your progression with your personal dashboard.</p>   </div>                     
                   </div> 
                   <div class="col-md-4">
                      <div class="work">
                      <img src="{{URL::to('/assets/website')}}/images/work3.png">
-                     <h2>Show your Passion</h2>
+                     <h2>Show your passion</h2>
                      <p>Discover new sport opportunities everywhere around you.</p>   </div>                     
                   </div>                               
             </div>   
@@ -119,7 +123,7 @@
                <p class="col-grey m-b-0"> Each sports coach is carefully selected by the Zettaa team </p>
             </div>
             <div class="row">
-               <div class="col-md-2 col-lg-2 col-sm-12 col-12 order-lg-2 order-md-2">
+               <!-- <div class="col-md-2 col-lg-2 col-sm-12 col-12 order-lg-2 order-md-2">
                   <div class="all-filters2">
                      <a class="buddy-btn" href="{{route('web.search.filter','friend')}}">Friends</a>
                      <a class="buddy-btn" href="{{route('web.search.filter','online_coach')}}">Online Coach</a>
@@ -128,8 +132,8 @@
                      <a class="buddy-btn" href="{{route('web.search.filter','girl')}}">Girl Coach</a>
                      <button class="buddy-btn"> Find My Teacher </button>
                   </div>
-               </div>
-               <div class="col-md-10 col-lg-10 col-sm-12 col-12 order-lg-1 order-md-1">
+               </div> -->
+               <div class="col-md-12 col-lg-12 col-sm-12 col-12 order-lg-1 order-md-1">
                   <div class="buddies-wrapper">
                      <div class="all-buddies">
                         <div class="buddy-box1">
@@ -222,7 +226,7 @@
                                  {{$val->description}}
                               </p>
                               <h6 class="col-white m-b-15"> <i class="fa fa-star col-yellow"> </i> 5.0 </h6>
-                              <h6 class="col-white m-b-15" style="float: right;">
+                              <h6 class="col-white m-b-15 lesson-catagory-text" style="float: right;">
                                  <span class="bg-purple col-white custom-btn12"> {{$val->category->name}} </span>
                               </h6>
                            </div>
@@ -308,7 +312,7 @@
                                  {{$val->description}}
                               </p>
                               <h6 class="col-white m-b-15"> <i class="fa fa-star col-yellow"> </i> 5.0 </h6>
-                              <h6 class="col-white m-b-15" style="float: right;">
+                              <h6 class="col-white m-b-15 lesson-catagory-text" style="float: right;">
                                  <span class="bg-purple col-white custom-btn12"> {{$val->category->name}} </span>
                               </h6>
                            </div>

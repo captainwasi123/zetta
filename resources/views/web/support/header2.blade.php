@@ -61,6 +61,7 @@ nav.navbar.navbar-expand-lg.navbar-dark {
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Coach <i class="fas fa-chevron-down"></i></a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Become a Coach</a>
                 <a class="dropdown-item" href="#">Online Lessons</a>
                 <a class="dropdown-item" href="#">Group Lessons</a>
                 <a class="dropdown-item" href="#">Private Lessons</a>
@@ -75,9 +76,9 @@ nav.navbar.navbar-expand-lg.navbar-dark {
                 <a class="dropdown-item" href="#">Girl Activities</a>
               </div>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link" href="{{URL::to('about_us')}}">About Us</a>
-            </li>
+            </li> -->
           </ul>
         </div>
       </nav>
@@ -96,7 +97,7 @@ nav.navbar.navbar-expand-lg.navbar-dark {
       @else
          <div class="header-buttons">
             <a href="javascript:void(0)" class="open-join header-btn1"> Register </a>
-            <a href="javascript:void(0)" class="open-join-coach header-btn2"> Become a Coach </a>
+            <!-- <a href="javascript:void(0)" class="open-join-coach header-btn2"> Become a Coach </a> -->
             <a href="javascript:void(0)" class="open-login header-btn3"> Login </a>
          </div>
       @endif
@@ -117,6 +118,7 @@ nav.navbar.navbar-expand-lg.navbar-dark {
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Coach <i class="fas fa-chevron-down"></i></a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Become a Coach</a>
                 <a class="dropdown-item" href="#">Online Lessons</a>
                 <a class="dropdown-item" href="#">Group Lessons</a>
                 <a class="dropdown-item" href="#">Private Lessons</a>
@@ -131,9 +133,9 @@ nav.navbar.navbar-expand-lg.navbar-dark {
                 <a class="dropdown-item" href="#">Girl Activities</a>
               </div>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link" href="{{URL::to('about_us')}}">About Us</a>
-            </li>
+            </li> -->
           </ul>
         </div>
       </nav>
@@ -174,7 +176,7 @@ nav.navbar.navbar-expand-lg.navbar-dark {
       @else
          <div class="header-buttons">
             <a href="javascript:void(0)" class="open-join header-btn1"> Register </a>
-            <a href="javascript:void(0)" class="open-join-coach header-btn2"> Become a Coach </a>
+            <!-- <a href="javascript:void(0)" class="open-join-coach header-btn2"> Become a Coach </a> -->
             <a href="javascript:void(0)" class="open-login header-btn3"> Login </a>
          </div>
       @endif

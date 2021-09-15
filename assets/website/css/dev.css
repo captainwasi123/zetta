@@ -289,13 +289,36 @@ color:white !important;
     width: 90px;
 }
 .countDownP {
-    font-size: 25px;
-    color: white;
+    font-size: 22px;
+    color: #9a49ff;
     text-align: center;
     padding-top: 8px;
-    font-family: 'Orbitron', sans-serif !important;
+    font-family: 'gotham-rounded-bold';
 }
 
+.dropdown-menu a:hover {
+    background: #1d242c;
+}
+
+.lesson-catagory-text
+{
+        width: 130px;
+}
+.lesson-catagory-text span
+{
+      overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    line-height: 22px;
+    text-align: center;
+}
+.activity-section {
+    padding-top: 130px;
+}
+
+    
 @media screen and (max-width: 767px) {
 
 }

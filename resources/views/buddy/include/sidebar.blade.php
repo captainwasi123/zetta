@@ -22,9 +22,9 @@
          </div>
 
 
-         <div class="profile-text">
+        <!--  <div class="profile-text">
             <a href="{{route('buddy.messages')}}" class="" > INBOX <i class="mdi mdi-email"> <b class="notif-icon1"> 5  </b> </i>  </a>
-         </div>
+         </div> -->
       </div>
       <nav class="sidebar-nav">
          <ul id="sidebarnav">

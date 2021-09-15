@@ -47,6 +47,7 @@
                               <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Coach <i class="fa fa-chevron-down"></i></a>
                                 <div class="dropdown-menu syed" aria-labelledby="navbarDropdown">
+                                  <a class="dropdown-item" href="#">Become a Coach</a>
                                   <a class="dropdown-item" href="#">Online Lessons</a>
                                   <a class="dropdown-item" href="#">Group Lessons</a>
                                   <a class="dropdown-item" href="#">Private Lessons</a>
@@ -61,14 +62,18 @@
                                   <a class="dropdown-item" href="#">Girl Activities</a>
                                 </div>
                               </li>
-                              <li class="nav-item">
+                              <!-- <li class="nav-item">
                                 <a class="nav-link" href="{{URL::to('about_us')}}">About Us</a>
-                              </li>
+                              </li> -->
                             </ul>
                           </div>
                      </nav>
          </ul>
          <ul class="navbar-nav my-lg-0">
+          <div class="profile-text">
+                     <a href="{{route('coach.messages')}}" class="" > <i class="mdi mdi-email"> <b class="notif-icon1"> 5  </b> </i>  </a>
+                    </div>
+
            @if(Auth::check())
          <div class="header-login">
             <div class="dropdown">
@@ -84,7 +89,7 @@
       @else
          <div class="header-buttons">
             <a href="javascript:void(0)" class="open-join-buddy header-btn1" data-id="buddy"> Register </a>
-            <a href="javascript:void(0)" class="open-join header-btn2"> Become a Coach </a>
+            <!-- <a href="javascript:void(0)" class="open-join header-btn2"> Become a Coach </a> -->
             <a href="javascript:void(0)" class="open-login header-btn3"> Login </a>
          </div>
       @endif
@@ -142,4 +147,12 @@
        <!-- /.modal-content -->
     </div>
     <!-- /.modal-dialog -->
- </div>
+ </div>         
+ <style type="text/css">
+  .profile-text a i::before {
+    font-size: 28px;
+    padding-top: 15px;
+    color: white;
+    padding-right: 10px;
+}
+</style>

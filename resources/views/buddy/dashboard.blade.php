@@ -64,11 +64,9 @@
                         </div>
                      </div>
                      <div class="col-md-9">
-                        <div class="  m-t-20 m-b-20" >
                            <div class="sec-head1 ps">
                               <h3> Timeline   </h3>
                            </div>
-                        </div>
                         <div class="card-body b-l calender-sidebar bg-white">
                            <div id="calendar"></div>
                         </div>
