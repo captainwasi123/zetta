@@ -1,4 +1,17 @@
-
+.activity_category {
+    text-align: right;
+    float: right;
+    margin-top: 12px;
+    margin-right: -5px;
+}
+.activity_category label {
+    color: #fff;
+    font-weight: 600;
+}
+.activity_category img {
+    margin-bottom: 4px;
+    margin-top: 5px;
+}
 .join-pop-head {
     text-align: center;
     margin-bottom: 10px;

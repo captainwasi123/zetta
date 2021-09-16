@@ -1,5 +1,5 @@
 @extends('admin.includes.master')
-@section('title', 'Sports Categories | Settings')
+@section('title', 'Sports | Settings')
 @section('content')
 
 <div class="row">
@@ -14,13 +14,14 @@
     <div class="col-12">
         <div class="card">
             <div class="card-body">
-                <a href="{{route('admin.setting.category.add')}}" class="btn btn-primary pull-right">Add Category</a>
+                <a href="{{route('admin.setting.sports.add')}}" class="btn btn-primary pull-right">Add Sports</a>
                 <div class="table-responsive">
                     <table id="myTable" class="table table-bordered table-striped">
                         <thead>
                             <tr>
                                 <th width="10%">S#</th>
-                                <th width="75%">Categories</th>
+                                <th width="55%">Sports</th>
+                                <th width="20%">Category</th>
                                 <th width="15%"></th>
                             </tr>
                         </thead>
@@ -30,15 +31,19 @@
                                 <tr>
                                     <td>{{$s}}</td>
                                     <td>
-                                        <img src="{{URL::to('/public/storage/settings/category/'.$val->image)}}" width="30px">
+                                        <img src="{{URL::to('/public/storage/settings/sports/'.$val->image)}}" width="30px">
                                         {{$val->name}}
                                     </td>
                                     <td>
-                                        <a href="{{route('admin.setting.category.edit', base64_encode($val->id))}}" data-toggle="tooltip" data-original-title="Edit" class="btn btn-info btn-sm">
+                                        <img src="{{URL::to('/public/storage/settings/category/'.@$val->category->image)}}" width="30px">
+                                        {{@$val->category->name}}
+                                    </td>
+                                    <td>
+                                        <a href="{{route('admin.setting.sports.edit', base64_encode($val->id))}}" data-toggle="tooltip" data-original-title="Edit" class="btn btn-info btn-sm">
                                             <i class="fa fa-edit"></i>
                                         </a>
 
-                                        <a href="javascript:void(0)" data-toggle="tooltip" data-original-title="Delete" class="btn btn-danger btn-sm deleteCat" data-id="{{base64_encode($val->id)}}">
+                                        <a href="javascript:void(0)" data-toggle="tooltip" data-original-title="Delete" class="btn btn-danger btn-sm deleteSports" data-id="{{base64_encode($val->id)}}">
                                             <i class="fa fa-trash"></i>
                                         </a>
                                     </td>

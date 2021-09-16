@@ -80,9 +80,23 @@
                         </h6>
                      </div>
                      <div class="lesson-rating-block">
-                        @if(count($val->favLesson) == 0)
-                           <a href="javascript:void(0)" data-id="{{$val->id}}" id="{{$val->id}}" class="col-purple fav_lesson"> <i class="fa fa-heart col-purple"></i> </a>
-                        @endif
+                        <a href="javascript:void(0)" class="col-purple fav_lesson " data-id="{{$val->id}}" id="fl{{$val->id}}" >
+                             @if(Auth::check())
+                                 @php $fv = 0; @endphp
+                                 @foreach (auth()->user()->fav_lesson as $lsn)
+                                     @if ($val->id == $lsn->lesson_id && $lsn->user_id == auth()->user()->id)
+                                         @php $fv = 1; @endphp
+                                     @endif
+                                 @endforeach
+                                 @if ($fv == 1)
+                                     <i class="fa fa-heart col-purple"></i>
+                                 @else
+                                     <i class="far fa-heart col-purple"></i>
+                                 @endif
+                              @else
+                                 <i class="far fa-heart col-purple"></i>
+                              @endif
+                         </a>
                         <span class="col-grey"> STARTING AT <b class="col-white"> {{'$'.number_format($val->packages[0]->price)}} </b> </span>
                      </div>
                   </div>
@@ -118,6 +132,20 @@
                      <div class="lesson-title-block">
                         <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{empty($val->user) ? '' : $val->user->profile_img}}" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';">
                         <h4>  {{empty($val->user) ? 'Unknown' : $val->user->fname.' '.$val->user->lname}} <span>Sports Buddy </span>  </h4>
+                        <div class="zoom-tag">
+                           @if($val->availability != '2')
+                              <img src="{{URL::to('/assets/website')}}/images/zoom-logo.png" title="Online Zoom Classes">
+                           @endif
+                           @if($val->availability_for == '1')
+                              <img src="{{URL::to('/assets/')}}/teenager.png" title="For Teenager">
+                           @endif
+                           @if($val->availability_for == '2')
+                              <img src="{{URL::to('/assets/')}}/65+.png" title="For Senior Citizen">
+                           @endif
+                           @if($val->availability_for == '3')
+                              <img src="{{URL::to('/assets/')}}/handicapped.png" title="For Handicapped">
+                           @endif
+                        </div>
                      </div>
                      <div class="lesson-info-block">
                         <p class="descrip">
@@ -129,9 +157,23 @@
                         </h6>
                      </div>
                      <div class="lesson-rating-block">
-                        @if(count($val->favActivity) == 0)
-                           <a href="javascript:void(0)" data-id="{{$val->id}}" id="{{$val->id}}" class="col-purple fav_act"> <i class="fa fa-heart col-purple"></i> </a>
-                        @endif
+                        <a href="javascript:void(0)" data-id="{{$val->id}}" class="col-purple fav_act" id="{{$val->id}}" >
+                           @if(Auth::check())
+                              @php $fv = 0; @endphp
+                              @foreach (auth()->user()->fav_activity as $act)
+                                  @if ($val->id == $act->activity_id && $act->user_id == auth()->user()->id)
+                                      @php $fv = 1; @endphp
+                                  @endif
+                              @endforeach
+                              @if ($fv == 1)
+                                  <i class="fa fa-heart col-purple"></i>
+                              @else
+                                  <i class="far fa-heart col-purple"></i>
+                              @endif
+                           @else
+                              <i class="far fa-heart col-purple"></i>
+                           @endif
+                        </a>
                         <span class="col-grey"> STARTING AT <b class="col-white"> FREE </b> </span>
                      </div>
                   </div>
@@ -235,5 +277,134 @@
    </div>
 </section>
 
+<section class="contact-map" id="mapa">
+</section>
+
+@endsection
+@section('addStyle')
+<style>
+    #mapa {
+        height: 400px;
+    }
+   .gm_label_heading {
+      margin-top: 0px;
+   }
+   .gm_reference {
+      margin-top: -8px;
+   }
+</style>
+@endsection
+
+
+@section('addScript')
+
+   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key={{env('GOOGLE_MAP_KEY')}}&libraries=places"></script>
+
+   <script type="text/javascript">
+      var alocations = [
+         @foreach($activities as $vall)
+            @foreach ($vall->locations as $val)
+                  ['{{$vall->title}}', {{$val->lat}}, {{$val->lng}}, '{{$vall->user->fname}} {{$vall->user->lname}}', "{{route('activity.details', base64_encode($vall->id))}}"],
+            @endforeach
+         @endforeach
+      ];
+      var llocations = [
+         @foreach($lessons as $vall)
+            @foreach ($vall->locations as $val)
+                  ['{{$vall->title}}', {{$val->lat}}, {{$val->lng}}, '{{$vall->user->fname}} {{$vall->user->lname}}', "{{route('lesson.details', base64_encode($vall->id))}}"],
+            @endforeach
+         @endforeach
+      ];
+      var ulocations = [
+            @foreach ($coaches as $val)
+               ['{{$val->fname.' '.$val->lname}}', {{$val->lat}}, {{$val->lng}}, '{{empty($val->coach_request_status) ? "Sports Buddy" : "Coach, Sports Buddy"}}', "{{route('web.buddy.details', base64_encode($val->id))}}"],
+            @endforeach
+            @foreach ($buddies as $val)
+               ['{{$val->fname.' '.$val->lname}}', {{$val->lat}}, {{$val->lng}}, '{{empty($val->coach_request_status) ? "Sports Buddy" : "Coach, Sports Buddy"}}', "{{route('web.buddy.details', base64_encode($val->id))}}"],
+            @endforeach
+      ];
+
+      $(document).ready(function(){  
+         mapset();
+
+      });
+
+      function mapset(){
+         var nlat = alocations[0][1];
+         var nlng = alocations[0][2];
+         var nZoom = 11;
+         setTimeout(function(){
+            var map = new google.maps.Map(document.getElementById('mapa'), {
+               zoom: nZoom,
+               center: new google.maps.LatLng(nlat , nlng),
+               mapTypeId: google.maps.MapTypeId.ROADMAP
+            });
+
+            var infowindow = new google.maps.InfoWindow();
+
+            var marker, i;
+
+            for (i = 0; i < alocations.length; i++) {  
+               marker = new google.maps.Marker({
+                 position: new google.maps.LatLng(alocations[i][1], alocations[i][2]),
+                 icon: {
+                     url: "{{URL::to('/assets/website/images/map/activity.png')}}",
+                     size: new google.maps.Size(36, 50),
+                     scaledSize: new google.maps.Size(36, 40),
+                     anchor: new google.maps.Point(0, 40)
+                  },
+                 map: map
+               });
+
+               google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                 return function() {
+                   infowindow.setContent("<h4 class='gm_label_heading'>"+alocations[i][0]+"</h4><p class='gm_reference'>Activity By: <strong>"+alocations[i][3]+"</strong></p><a href='"+alocations[i][4]+"' target='_blank'>View Details</a>");
+                   infowindow.open(map, marker);
+                 }
+               })(marker, i));
+            }
+
+            for (i = 0; i < llocations.length; i++) {  
+               marker = new google.maps.Marker({
+                 position: new google.maps.LatLng(llocations[i][1], llocations[i][2]),
+                 icon: {
+                     url: "{{URL::to('/assets/website/images/map/lesson.png')}}",
+                     size: new google.maps.Size(36, 50),
+                     scaledSize: new google.maps.Size(36, 40),
+                     anchor: new google.maps.Point(0, 40)
+                  },
+                 map: map
+               });
+
+               google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                 return function() {
+                   infowindow.setContent("<h4 class='gm_label_heading'>"+llocations[i][0]+"</h4><p class='gm_reference'>Lesson By: <strong>"+llocations[i][3]+"</strong></p><a href='"+llocations[i][4]+"' target='_blank'>View Details</a>");
+                   infowindow.open(map, marker);
+                 }
+               })(marker, i));
+            }
+
+            for (i = 0; i < ulocations.length; i++) {  
+               marker = new google.maps.Marker({
+                 position: new google.maps.LatLng(ulocations[i][1], ulocations[i][2]),
+                 icon: {
+                     url: "{{URL::to('/assets/website/images/map/profile.png')}}",
+                     size: new google.maps.Size(36, 50),
+                     scaledSize: new google.maps.Size(36, 40),
+                     anchor: new google.maps.Point(0, 40)
+                  },
+                 map: map
+               });
+
+               google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                 return function() {
+                   infowindow.setContent("<h4 class='gm_label_heading'>"+ulocations[i][0]+"</h4><p class='gm_reference'>Type: <strong>"+ulocations[i][3]+"</strong></p><a href='"+ulocations[i][4]+"' target='_blank'>View Profile</a>");
+                   infowindow.open(map, marker);
+                 }
+               })(marker, i));
+            }
+         }, 100);
+      }
+  </script>
 @endsection
 

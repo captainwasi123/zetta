@@ -123,7 +123,7 @@
                <h4 class="col-white no-margin m-t-0 m-b-0"> {{empty($data->user) ? 'Unknown' : $data->user->fname.' '.$data->user->lname}} </h4>
                <h6 class="col-grey"> Coach </h6>
                <h5 class="col-purple m-b-15"> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> 5.0  </h5>
-               <a href="" class="bor-purple col-white rounded custom-btn1 font-thin"> Contact Me </a>
+               <a href="{{URL::to('/buddy/inbox/chat/'.base64_encode($data->user_id))}}/{{empty($data->user->fname) ? 'Newuser' : $data->user->fname.' '.$data->user->lname}}" class="bor-purple col-white rounded custom-btn1 font-thin"> Contact Me </a>
             </div>
             <div class="all-ratings m-t-40">
                <div class="row">
@@ -297,7 +297,7 @@
                   </div>
                </div>
                <div class="block-element3 m-t-30">
-                  <p class="m-b-0" style="padding:0px 30px">   <a href="" class="block-element2 bg-white col-purple rounded custom-btn1 text-center"> Contact Coach  </a> </p>
+                  <p class="m-b-0" style="padding:0px 30px">   <a href="{{URL::to('/buddy/inbox/chat/'.base64_encode($data->user_id))}}/{{empty($data->user->fname) ? 'Newuser' : $data->user->fname.' '.$data->user->lname}}" class="block-element2 bg-white col-purple rounded custom-btn1 text-center"> Contact Coach  </a> </p>
                </div>
             </div>
 

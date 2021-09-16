@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\sportsCategory;
 use App\Models\userCategory;
+use App\Models\sports;
 
 class settingController extends Controller
 {
@@ -74,6 +75,60 @@ class settingController extends Controller
             $data = userCategory::destroy($id);
 
             return redirect()->back()->with('success', 'Request Deleted.');
+        }
+
+    //Sports
+        function sports(){
+            $data = sports::orderBy('name')->get();
+
+            return view('admin.setting.sports.index', ['data' => $data]);
+        }
+        function sportsAdd(){
+            $categories = sportsCategory::orderBy('name')->get();
+
+            return view('admin.setting.sports.add', ['categories' => $categories]);
+        }
+        function sportsInsert(Request $request){
+            $data = $request->all();
+
+            $id = sports::addSports($data);
+            if ($request->hasFile('main_image')) {
+                $file = $request->file('main_image');
+                $filename = date('dmyHis').'.'.$file->getClientOriginalExtension();
+                $filename = $id.'-'.$filename;
+                $file->move(base_path('/public/storage/settings/sports/'), $filename);
+                sports::addFeatureImage($id, $filename);
+            }
+
+            return redirect()->back()->with('success', 'New Category Added.');
+        }
+        function sportsEdit($id){
+            $id = base64_decode($id);
+            $data = sports::find($id);
+            $categories = sportsCategory::orderBy('name')->get();
+
+            return view('admin.setting.sports.edit', ['data' => $data, 'categories' => $categories]);
+        }
+        function sportsUpdate(Request $request){
+            $data = $request->all();
+            $id = base64_decode($data['sid']);
+            sports::updateSports($data);
+            if ($request->hasFile('main_image')) {
+                $file = $request->file('main_image');
+                $filename = date('dmyHis').'.'.$file->getClientOriginalExtension();
+                $filename = $id.'-'.$filename;
+                $file->move(base_path('/public/storage/settings/sports/'), $filename);
+                sports::addFeatureImage($id, $filename);
+            }
+
+            return redirect()->back()->with('success', 'Sports Updated.');
+        }
+
+        function sportsDelete($id){
+            $id = base64_decode($id);
+            $data = sports::destroy($id);
+
+            return redirect()->back()->with('success', 'Sports Deleted.');
         }
 
 }

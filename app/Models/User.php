@@ -18,6 +18,8 @@ use App\Models\lesson\orders;
 use App\Models\activity\activities;
 use App\Models\FavouriteCoach;
 use App\Models\FavouriteBuddy;
+use App\Models\FavouriteActivity;
+use App\Models\FavouriteLesson;
 use App\Models\friends;
 use App\Models\userLevel;
 use App\Models\reviews;
@@ -127,6 +129,10 @@ class User extends Authenticatable
     public function fav_activity()
     {
         return $this->hasMany(FavouriteActivity::class,'user_id','id');
+    }
+    public function fav_lesson()
+    {
+        return $this->hasMany(FavouriteLesson::class,'user_id','id');
     }
 
     public function coach_request()

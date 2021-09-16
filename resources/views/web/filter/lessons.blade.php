@@ -207,9 +207,23 @@
                         </h6>
                      </div>
                      <div class="lesson-rating-block">
-                        @if(count($val->favLesson) == 0)
-                           <a href="javascript:void(0)" data-id="{{$val->id}}" id="{{$val->id}}" class="col-purple fav_lesson"> <i class="fa fa-heart col-purple"></i> </a>
-                        @endif
+                        <a href="javascript:void(0)" class="col-purple fav_lesson " data-id="{{$val->id}}" id="fl{{$val->id}}" >
+                             @if(Auth::check())
+                                 @php $fv = 0; @endphp
+                                 @foreach (auth()->user()->fav_lesson as $lsn)
+                                     @if ($val->id == $lsn->lesson_id && $lsn->user_id == auth()->user()->id)
+                                         @php $fv = 1; @endphp
+                                     @endif
+                                 @endforeach
+                                 @if ($fv == 1)
+                                     <i class="fa fa-heart col-purple"></i>
+                                 @else
+                                     <i class="far fa-heart col-purple"></i>
+                                 @endif
+                              @else
+                                 <i class="far fa-heart col-purple"></i>
+                              @endif
+                         </a>
                         <span class="col-grey"> STARTING AT <b class="col-white"> {{'$'.number_format($val->packages[0]->price)}} </b> </span>
                      </div>
                   </div>

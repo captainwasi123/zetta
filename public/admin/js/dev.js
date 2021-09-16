@@ -119,4 +119,13 @@ $(document).ready(function(){
 					window.location.href = host+"/settings/category/request/delete/"+id;
 				}
 			});
+
+		//Sports
+			$(document).on('click', '.deleteSports', function(){
+				var id = $(this).data('id');
+
+				if(confirm('Are you sure want to delete this.?')){
+					window.location.href = host+"/settings/sports/delete/"+id;
+				}
+			});
 });

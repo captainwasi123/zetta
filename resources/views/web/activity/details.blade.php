@@ -39,22 +39,32 @@
 <section class="pad-bot-40 bg-dark2 activity-section">
    <div class="container">
       <div class="row">
-         <div class="col-12">
-            <div class="lesson-holder-head m-b-15">
-               <h3> {{$data->title}} </h3>
-            </div>
-            <div class="lesson-holder-title">
-               <div class="lesson-title-block">
-                  <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{empty($data->user) ? '' : $data->user->profile_img}}" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';">
-                  <h4>  {{empty($data->user) ? 'Unknown' : $data->user->fname.' '.$data->user->lname}} <span> Sports Buddy </span>  </h4>
+         <div class="col-7">
+            <div class="row">
+               <div class="col-10">
+                  <div class="lesson-holder-head m-b-15">
+                     <h3> {{$data->title}} </h3>
+                  </div>
+                  <div class="lesson-holder-title">
+                     <div class="lesson-title-block">
+                        <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{empty($data->user) ? '' : $data->user->profile_img}}" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';">
+                        <h4>  {{empty($data->user) ? 'Unknown' : $data->user->fname.' '.$data->user->lname}} <span> Sports Buddy </span>  </h4>
+                     </div>
+                     <div class="lesson-holder-review">
+                        <i class="fa fa-star col-purple"> </i>
+                        <i class="fa fa-star col-purple"> </i>
+                        <i class="fa fa-star col-purple"> </i>
+                        <i class="fa fa-star col-purple"> </i>
+                        <i class="fa fa-star col-purple"> </i>
+                        <b class="col-purple"> 5.0 </b>
+                     </div>
+                  </div>
                </div>
-               <div class="lesson-holder-review">
-                  <i class="fa fa-star col-purple"> </i>
-                  <i class="fa fa-star col-purple"> </i>
-                  <i class="fa fa-star col-purple"> </i>
-                  <i class="fa fa-star col-purple"> </i>
-                  <i class="fa fa-star col-purple"> </i>
-                  <b class="col-purple"> 5.0 </b>
+               <div class="col-2">
+                  <div class="activity_category"> 
+                     <img src="{{URL::to('/public/storage/settings/category/'.$data->category->image)}}">
+                     <label>{{$data->category->name}}</label> 
+                  </div>
                </div>
             </div>
          </div>
@@ -141,7 +151,7 @@
                <h4 class="col-white no-margin m-t-0 m-b-0"> {{empty($data->user) ? 'Unknown' : $data->user->fname.' '.$data->user->lname}} </h4>
                <h6 class="col-grey"> Sports Buddy </h6>
                <h5 class="col-purple m-b-15"> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> 5.0  </h5>
-               <a href="" class="bor-purple col-white rounded custom-btn1 font-thin"> Contact Me </a>
+               <a href="{{URL::to('/buddy/inbox/chat/'.base64_encode($data->user_id))}}/{{empty($data->user->fname) ? 'Newuser' : $data->user->fname.' '.$data->user->lname}}" class="bor-purple col-white rounded custom-btn1 font-thin"> Contact Me </a>
             </div>
             <div class="all-ratings m-t-40">
                <div class="row">
@@ -273,7 +283,7 @@
                   </div>
                </div>
                <div class="block-element3 m-t-30">
-                  <p class="m-b-0" style="padding:0px 30px">   <a href="" class="block-element2 bg-white col-purple rounded custom-btn1 text-center"> Contact Buddy  </a> </p>
+                  <p class="m-b-0" style="padding:0px 30px">   <a href="{{URL::to('/buddy/inbox/chat/'.base64_encode($data->user_id))}}/{{empty($data->user->fname) ? 'Newuser' : $data->user->fname.' '.$data->user->lname}}" class="block-element2 bg-white col-purple rounded custom-btn1 text-center"> Contact Buddy  </a> </p>
                </div>
             </div>
             <div class="packages-map block-element3 m-t-30" id="mapa">

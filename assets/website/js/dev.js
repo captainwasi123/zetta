@@ -212,9 +212,9 @@ $(".fav_act").click(function (e) {
         data: {},
         success: function (res) {
             if(res.status == 200){
-                $('#'+id).html('');
+                $('#'+id).html('<i class="fa fa-heart col-purple"></i>');
             }else if(res.status == 300){
-                $('#'+id).html('');
+                $('#'+id).html('<i class="far fa-heart col-purple"></i>');
             }
         }
     });
@@ -233,9 +233,9 @@ $(".fav_lesson").click(function (e) {
         data: {},
         success: function (res) {
             if(res.status == 200){
-                $('#'+id).html('');
+                $('#fl'+id).html('<i class="fa fa-heart col-purple"></i>');
             }else if(res.status == 300){
-                $(this).html('');
+                $('#fl'+id).html('<i class="far fa-heart col-purple"></i>');
             }
         }
     });

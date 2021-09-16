@@ -25,11 +25,15 @@ class activities extends Model
         $l->group_members = empty($data['group_members']) ? null : $data['group_members'];
         $l->activity_type = $data['activityType'];
         $l->category_id = $data['category'];
+        $l->availability = $data['availability'];
+        $l->availability_for = $data['availability_for'];
         $l->status = '1';
         $l->save();
         $id = $l->id;
 
-        activities::addEquipment($id, $data['equipments']);
+        if(isset($data['equipments'])){
+            activities::addEquipment($id, $data['equipments']);
+        }
         activities::addLocation($id, $data);
         activities::addFriend($id,$data);
         return $id;
@@ -43,6 +47,8 @@ class activities extends Model
         $l->group_members = empty($data['group_members']) ? null : $data['group_members'];
         $l->activity_type = $data['activityType'];
         $l->category_id = $data['category'];
+        $l->availability = $data['availability'];
+        $l->availability_for = $data['availability_for'];
         $l->save();
         $id = $l->id;
 

@@ -73,12 +73,11 @@
                 <li>
                     <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
                         <i class="mdi mdi-soccer"></i>
-                        <span class="hide-menu">Sports Category</span>
+                        <span class="hide-menu">Sports</span>
                     </a>
                     <ul aria-expanded="false" class="collapse">
-                        <li><a href="{{route('admin.setting.category.add')}}">Add Category</a></li>
                         <li><a href="{{route('admin.setting.category')}}">Categories</a></li>
-                        <li><a href="{{route('admin.setting.category.requests')}}">New Requests</a></li>
+                        <li><a href="{{route('admin.setting.sports')}}">Sports</a></li>
                     </ul>
                 </li>
                 <li>

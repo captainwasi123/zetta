@@ -187,6 +187,20 @@
                      <div class="lesson-title-block">
                         <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{empty($val->user) ? '' : $val->user->profile_img}}" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';">
                         <h4>  {{empty($val->user) ? 'Unknown' : $val->user->fname.' '.$val->user->lname}} <span>Sports Buddy </span>  </h4>
+                        <div class="zoom-tag">
+                           @if($val->availability != '2')
+                              <img src="{{URL::to('/assets/website')}}/images/zoom-logo.png" title="Online Zoom Classes">
+                           @endif
+                           @if($val->availability_for == '1')
+                              <img src="{{URL::to('/assets/')}}/teenager.png" title="For Teenager">
+                           @endif
+                           @if($val->availability_for == '2')
+                              <img src="{{URL::to('/assets/')}}/65+.png" title="For Senior Citizen">
+                           @endif
+                           @if($val->availability_for == '3')
+                              <img src="{{URL::to('/assets/')}}/handicapped.png" title="For Handicapped">
+                           @endif
+                        </div>
                      </div>
                      <div class="lesson-info-block">
                         <p class="descrip">
@@ -198,9 +212,23 @@
                         </h6>
                      </div>
                      <div class="lesson-rating-block">
-                        @if(count($val->favActivity) == 0)
-                           <a href="javascript:void(0)" data-id="{{$val->id}}" id="{{$val->id}}" class="col-purple fav_act"> <i class="fa fa-heart col-purple"></i> </a>
-                        @endif
+                        <a href="javascript:void(0)" data-id="{{$val->id}}" class="col-purple fav_act" id="{{$val->id}}" >
+                              @if(Auth::check())
+                                 @php $fv = 0; @endphp
+                                 @foreach (auth()->user()->fav_activity as $act)
+                                     @if ($val->id == $act->activity_id && $act->user_id == auth()->user()->id)
+                                         @php $fv = 1; @endphp
+                                     @endif
+                                 @endforeach
+                                 @if ($fv == 1)
+                                     <i class="fa fa-heart col-purple"></i>
+                                 @else
+                                     <i class="far fa-heart col-purple"></i>
+                                 @endif
+                              @else
+                                 <i class="far fa-heart col-purple"></i>
+                              @endif
+                         </a>
                         <span class="col-grey"> STARTING AT <b class="col-white">
                                 @if (count($val->equipment)>0)
                                     @php

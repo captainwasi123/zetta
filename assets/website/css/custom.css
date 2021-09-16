@@ -3313,7 +3313,8 @@ p.lesson-title {
     color: #ffffff;
     font-size: 14px;
     font-weight: 400;
-    }
+    margin-bottom: 0;
+}
 @media only screen and (max-width: 767px) {
   
 nav.navbar.navbar-expand-lg.navbar-dark {

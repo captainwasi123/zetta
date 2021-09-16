@@ -252,7 +252,7 @@ class webController extends Controller
 
 
             if(!empty($data->id)){
-                $tactivities = activities::where('status', '1')->where('user_id', $data->user_id)->latest()->limit(10)->get();
+                $tactivities = activities::where('status', '1')->where('user_id', $data->user_id)->where('id', '!=', $id)->latest()->limit(10)->get();
                 $oactivities = activities::where('status', '1')->where('user_id', '!=', $data->user_id)->latest()->limit(10)->get();
                 return view('web.activity.details', ['data' => $data, 'tactivities' => $tactivities, 'oactivities' => $oactivities,'location' => $location]);
             }else{
@@ -270,7 +270,7 @@ class webController extends Controller
             $less_location = Locations::where('lesson_id',$id)->get();
 
             if(!empty($data->id)){
-                $tlessons = lessons::where('status', '1')->where('user_id', $data->user_id)->latest()->limit(10)->get();
+                $tlessons = lessons::where('status', '1')->where('user_id', $data->user_id)->where('id', '!=', $id)->latest()->limit(10)->get();
                 $olessons = lessons::where('status', '1')->where('user_id', '!=', $data->user_id)->latest()->limit(10)->get();
                 return view('web.lesson.details', ['data' => $data, 'tlessons' => $tlessons, 'olessons' => $olessons,'location' => $less_location]);
             }else{

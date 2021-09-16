@@ -425,6 +425,21 @@ use Illuminate\Support\Facades\Route;
 								Route::get('request/delete/{id}', 'settingController@categoryRequestDelete');
 							});
 
+							//Sports
+							Route::prefix('sports')->group(function(){
+
+								Route::get('/', 'settingController@sports')->name('admin.setting.sports');
+								Route::get('add', 'settingController@sportsAdd')->name('admin.setting.sports.add');
+
+								Route::get('edit/{id}', 'settingController@sportsEdit')->name('admin.setting.sports.edit');
+
+								Route::get('delete/{id}', 'settingController@sportsDelete');
+
+
+								Route::post('add', 'settingController@sportsInsert');
+								Route::post('update', 'settingController@sportsUpdate')->name('admin.setting.sports.update');
+							});
+
                             Route::prefix('language')->group(function(){
                                 Route::get('/','LanguageController@index')->name('admin.setting.language');
                                 Route::get('add','LanguageController@language_add')->name('admin.setting.language.add');

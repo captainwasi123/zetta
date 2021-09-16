@@ -102,14 +102,14 @@
             <div class="col-md-3 col-lg-3 col-12">
                <div class="field-name">
                   <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/field-icon9.png">
-                  <h5> Category </h5>
+                  <h5> Sports </h5>
                </div>
             </div>
             <div class="col-md-6 col-lg-6 col-12">
                {{-- <input type="text" placeholder="" class="form-field1" name=""> --}}
                <select name="category" class="form-field1" required>
                    <option value="">Select</option>
-                    @foreach ($categories as $val)
+                    @foreach ($sports as $val)
                         <option value="{{$val->id}}"
                             @if ($data->category_id == $val->id)
                                 selected
@@ -124,7 +124,7 @@
             <div class="col-md-3 col-lg-3 col-12">
                 <div class="field-name">
                    <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/field-icon10.png">
-                   <h5> Friend Name </h5>
+                   <h5> Friend Participant </h5>
                 </div>
              </div>
             <div class="col-md-6 col-lg-6 col-12">
@@ -214,10 +214,64 @@
                </div>
             </div>
          </div>
+         <div class="block-element m-t-30">
+            <div class="row ">
+               <div class="col-md-3 col-lg-3 col-12">
+                  <div class="field-name">
+                     <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/field-icon19.png">
+                     <h5> Availability </h5>
+                  </div>
+               </div>
+               <div class="col-md-6 col-lg-6 col-12">
+                  <div class="inline-1">
+                     <label class="custom-control custom-radio">
+                     <input id="radio1" name="availability" type="radio" value="1" class="custom-control-input" {{$data->availability == '1' ? 'checked' : ''}}>
+                     <span class="custom-control-label"> Only Zoom Classes </span>
+                     </label>
+                     <label class="custom-control custom-radio">
+                     <input id="radio2" name="availability" type="radio" value="2" class="custom-control-input" {{$data->availability == '2' ? 'checked' : ''}}>
+                     <span class="custom-control-label"> Only Normal Classes </span>
+                     </label>
+                     <label class="custom-control custom-radio">
+                     <input id="radio2" name="availability" type="radio" value="3" class="custom-control-input" {{$data->availability == '3' ? 'checked' : ''}}>
+                     <span class="custom-control-label"> Both </span>
+                     </label>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="block-element m-t-30">
+             <div class="row ">
+                <div class="col-md-3 col-lg-3 col-12">
+                   <div class="field-name">
+                      <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/field-icon19.png">
+                      <h5> Availability For </h5>
+                   </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-12">
+                   <div class="inline-1">
+                      <label class="custom-control custom-radio">
+                      <input id="radio2" name="availability_for" type="radio" value="2" class="custom-control-input" {{$data->availability_for == '2' ? 'checked' : ''}}>
+                      <span class="custom-control-label"> Senior Citizens </span>
+                      </label>
+                      <br>
+                      <label class="custom-control custom-radio">
+                      <input id="radio1" name="availability_for" type="radio" value="1" class="custom-control-input" {{$data->availability_for == '1' ? 'checked' : ''}}>
+                      <span class="custom-control-label"> Teenagers </span>
+                      </label>
+                      <br>
+                      <label class="custom-control custom-radio">
+                      <input id="radio2" name="availability_for" type="radio" value="3" class="custom-control-input" {{$data->availability_for == '3' ? 'checked' : ''}}>
+                      <span class="custom-control-label"> handicapped </span>
+                      </label>
+                   </div>
+                </div>
+             </div>
+          </div>
          <div class="row center-row">
             <div class="col-md-3 col-lg-3 col-12">
             </div>
-            <div class="col-md-6 col-lg-6 col-12">
+            <div class="col-md-6 col-lg-6 col-12 m-t-40">
                <button class="submit-btn1"> <i class="fa fa-plus"> </i> UPDATE </button>
             </div>
          </div>
