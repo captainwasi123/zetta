@@ -134,6 +134,39 @@ header.header-2 .logo a img {
                <button class="bg-purple col-white custom-btn1"> Search </button>
             </div>
          </form>
+          <nav class="navbar navbar-expand-lg navbar-dark stickey-custom "> 
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+           
+            
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Coach <i class="fas fa-chevron-down"></i></a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+               <a class="dropdown-item" href="javascript:void(0)">Become a Coach </a>
+                <a class="dropdown-item" href="#">Online Lessons</a>
+                <a class="dropdown-item" href="#">Group Lessons</a>
+                <a class="dropdown-item" href="#">Private Lessons</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Sports Buddy <i class="fas fa-chevron-down"></i></a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Online Activities</a>
+                <a class="dropdown-item" href="#">Group Activities</a>
+                <a class="dropdown-item" href="#">Private Activities</a>
+                <a class="dropdown-item" href="#">Girl Activities</a>
+              </div>
+            </li>
+          <!--   <li class="nav-item">
+              <a class="nav-link" href="{{URL::to('about_us')}}">About Us</a>
+            </li> -->
+          </ul>
+        </div>
+      </nav>
       </div>
       <nav class="navbar navbar-expand-lg navbar-dark stickey-custom "> 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

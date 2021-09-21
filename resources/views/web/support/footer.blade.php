@@ -40,7 +40,7 @@
            <div class="col-md-3 col-lg-3 col-sm-12 col-12">
               <div class="footer-list">
                  <h4 class="col-white"> QUICK MENU </h4>
-                 <!-- <ul>
+                 <ul>
                     <li> <a href="{{URL::to('/')}}"> Home </a> </li>
                     <li> <a href="{{URL::to('about_us')}}">About Us </a> </li>
                     <li> <a href="{{route('web.all','Coaches')}}"> Coaches </a> </li>
@@ -49,7 +49,7 @@
                     <li> <a href="{{route('web.all','Activities')}}"> Activity </a> </li>
                     <li> <a href="{{URL::to('/')}}#mapa"> Near Me </a> </li>
 
-                 </ul> -->
+                 </ul>
               </div>
            </div>
            <style type="text/css">

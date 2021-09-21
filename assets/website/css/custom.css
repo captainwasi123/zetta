@@ -639,7 +639,12 @@ a.header-btn3 {
     padding-right: 6px;
     margin-top: 6px;
 }
-
+header#bottomMenu .search-form {
+    height: 43px !important;
+}
+header#bottomMenu {
+    padding: 10px 0px !important;
+}
 .submit-field1 button {
     /*padding: 15px 30px;
     font-size: 16px;
@@ -739,7 +744,12 @@ section.action-bar {
 .all-actions.slick-slider {
     margin-bottom: 0px !important
 }
-
+.slick-slider {
+    margin-bottom: 0px;
+}
+.sec-head1 {
+    padding-top: 60px;
+}
 
 .arrows1 .slick-next:before {
     content: '>';
@@ -3277,8 +3287,9 @@ code {
     color: #9a49ff;
 }
 nav.navbar.navbar-expand-lg.navbar-dark {
-    position: absolute;
-    left: 16%;
+    /*position: absolute;
+    left: 16%;*/
+    display: inline-block;
 }
 ul.navbar-nav.mr-auto li {
     padding-right: 20px;
@@ -3350,9 +3361,9 @@ div#navbarSupportedContent {
 }
 
 }
-.stickey-custom {
+/*.stickey-custom {
     left: 48% !important;
-}
+}*/
                ul.languages_list li a img {
     width: 50px;
     margin:0px;
@@ -3361,4 +3372,67 @@ div#navbarSupportedContent {
     padding-bottom: 20px;
     font-size: 16px;
     color: black;
+}
+
+.contact-profile-section
+{
+    text-align: center;
+}
+.contact-profile-section img
+{
+    width: 90px;
+}
+.contact-profile-section1 ul li {
+    font-size: 12px;
+}
+.contact-profile-section h3 {
+    font-size: 16px;
+    color: black;
+    margin: 0px;
+}
+.contact-profile-section h4 {
+    font-size: 12px;
+    color: black;
+    margin: 4px 0px;
+}
+.contact-profile-section1
+{
+    padding-left: 25px;
+}
+.contact-profile-section1 h3 {
+    font-size: 16px;
+}
+.contact-profile-section1 ul {
+    padding-left: 15px !important;
+}
+.contact-profile-section3 form
+{
+    padding-top: 5px; 
+}
+.contact-profile-section3 form textarea {
+    width: 100%;
+}
+/*.contact-profile-section3 form input {
+    width: 100%;
+}*/
+.contact-profile-section3 form input {
+    float: right;
+    font-size: 14px;
+    background: #9a49ff;
+    color: white;
+    padding: 7px 20px;
+    border: 0px;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+.contact-profile
+{
+  
+    padding: 10px 18px;
+    color: #000;
+}
+.contact-profile h4
+{
+    margin:0px;
+ 
 }

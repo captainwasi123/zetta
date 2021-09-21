@@ -76,32 +76,19 @@
                   <img src="{{URL::to('/public/storage/user/activity/main_image/'.$data->cover_img)}}">
                </div>
             </div>
-            <div class="sec-head1 m-t-40 m-b-15">
-               <h3 class="col-white"> Reviews as Sport Buddy </h3>
+            <div class="lesson-holder-about m-t-0 no-border">
+               <h3 class="col-white m-b-15"> About The Sports Buddy </h3>
             </div>
-            <div class="review-slider arrows3">
-               <div class="review-box">
-                  <img src="{{URL::to('/assets/website')}}/images/profile-image1.jpg">
-                  <h5 class="col-white"> <b class="col-purple"> Lennon <i class="fa fa-star"> </i> </b> 5.0 </h5>
-                  <p class="col-white"> That would be good please share any reference or similar website interms of features
-                     and functionality you need.
-                  </p>
+            <div class="lesson-holder-profile">
+               <div>
+                  <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{empty($data->user) ? '' : $data->user->profile_img}}" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';">
                </div>
-               <div class="review-box">
-                  <img src="{{URL::to('/assets/website')}}/images/profile-image1.jpg">
-                  <h5 class="col-white"> <b class="col-purple"> Lennon <i class="fa fa-star"> </i> </b> 5.0 </h5>
-                  <p class="col-white"> That would be good please share any reference or similar website interms of features
-                     and functionality you need.
-                  </p>
-               </div>
-               <div class="review-box">
-                  <img src="{{URL::to('/assets/website')}}/images/profile-image1.jpg">
-                  <h5 class="col-white"> <b class="col-purple"> Lennon <i class="fa fa-star"> </i> </b> 5.0 </h5>
-                  <p class="col-white"> That would be good please share any reference or similar website interms of features
-                     and functionality you need.
-                  </p>
-               </div>
+               <h4 class="col-white no-margin m-t-0 m-b-0"> {{empty($data->user) ? 'Unknown' : $data->user->fname.' '.$data->user->lname}} </h4>
+               <h6 class="col-grey"> Sports Buddy </h6>
+               <h5 class="col-purple m-b-15"> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> 5.0  </h5>
+               <a href="{{URL::to('/buddy/inbox/chat/'.base64_encode($data->user_id))}}/{{empty($data->user->fname) ? 'Newuser' : $data->user->fname.' '.$data->user->lname}}" class="bor-purple col-white rounded custom-btn1 font-thin"> Contact Me </a>
             </div>
+            
 
             <div class="lesson-holder-about">
                <h3 class="col-white m-b-15"> About The Activity </h3>
@@ -141,18 +128,59 @@
                   </p>
                </div>
             </div>
-            <div class="lesson-holder-about m-t-0 no-border">
-               <h3 class="col-white m-b-15"> About The Sports Buddy </h3>
+            <div class="sec-head1 m-t-40 m-b-15" style="visibility: hidden;">
+               <h3 class="col-white"> Reviews as Sport Buddy </h3>
             </div>
-            <div class="lesson-holder-profile">
-               <div>
-                  <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{empty($data->user) ? '' : $data->user->profile_img}}" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';">
+            <div class="review-slider arrows3" style="visibility: hidden;">
+               <div class="review-box">
+                  <img src="{{URL::to('/assets/website')}}/images/profile-image1.jpg">
+                  <h5 class="col-white"> <b class="col-purple"> Lennon <i class="fa fa-star"> </i> </b> 5.0 </h5>
+                  <p class="col-white"> That would be good please share any reference or similar website interms of features
+                     and functionality you need.
+                  </p>
                </div>
-               <h4 class="col-white no-margin m-t-0 m-b-0"> {{empty($data->user) ? 'Unknown' : $data->user->fname.' '.$data->user->lname}} </h4>
-               <h6 class="col-grey"> Sports Buddy </h6>
-               <h5 class="col-purple m-b-15"> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> 5.0  </h5>
-               <a href="{{URL::to('/buddy/inbox/chat/'.base64_encode($data->user_id))}}/{{empty($data->user->fname) ? 'Newuser' : $data->user->fname.' '.$data->user->lname}}" class="bor-purple col-white rounded custom-btn1 font-thin"> Contact Me </a>
+               <div class="review-box">
+                  <img src="{{URL::to('/assets/website')}}/images/profile-image1.jpg">
+                  <h5 class="col-white"> <b class="col-purple"> Lennon <i class="fa fa-star"> </i> </b> 5.0 </h5>
+                  <p class="col-white"> That would be good please share any reference or similar website interms of features
+                     and functionality you need.
+                  </p>
+               </div>
+               <div class="review-box">
+                  <img src="{{URL::to('/assets/website')}}/images/profile-image1.jpg">
+                  <h5 class="col-white"> <b class="col-purple"> Lennon <i class="fa fa-star"> </i> </b> 5.0 </h5>
+                  <p class="col-white"> That would be good please share any reference or similar website interms of features
+                     and functionality you need.
+                  </p>
+               </div>
             </div>
+            <div class="sec-head1 m-t-60 m-b-15">
+               <h3 class="col-white"> Reviews as Sport Buddy </h3>
+            </div>
+            <div class="review-slider arrows3">
+               <div class="review-box">
+                  <img src="{{URL::to('/assets/website')}}/images/profile-image1.jpg">
+                  <h5 class="col-white"> <b class="col-purple"> Lennon <i class="fa fa-star"> </i> </b> 5.0 </h5>
+                  <p class="col-white"> That would be good please share any reference or similar website interms of features
+                     and functionality you need.
+                  </p>
+               </div>
+               <div class="review-box">
+                  <img src="{{URL::to('/assets/website')}}/images/profile-image1.jpg">
+                  <h5 class="col-white"> <b class="col-purple"> Lennon <i class="fa fa-star"> </i> </b> 5.0 </h5>
+                  <p class="col-white"> That would be good please share any reference or similar website interms of features
+                     and functionality you need.
+                  </p>
+               </div>
+               <div class="review-box">
+                  <img src="{{URL::to('/assets/website')}}/images/profile-image1.jpg">
+                  <h5 class="col-white"> <b class="col-purple"> Lennon <i class="fa fa-star"> </i> </b> 5.0 </h5>
+                  <p class="col-white"> That would be good please share any reference or similar website interms of features
+                     and functionality you need.
+                  </p>
+               </div>
+            </div>
+            
             <div class="all-ratings m-t-40">
                <div class="row">
                   <div class="col-md-7 col-lg-7 col-sm-12 col-12">
@@ -283,7 +311,8 @@
                   </div>
                </div>
                <div class="block-element3 m-t-30">
-                  <p class="m-b-0" style="padding:0px 30px">   <a href="{{URL::to('/buddy/inbox/chat/'.base64_encode($data->user_id))}}/{{empty($data->user->fname) ? 'Newuser' : $data->user->fname.' '.$data->user->lname}}" class="block-element2 bg-white col-purple rounded custom-btn1 text-center"> Contact Buddy  </a> </p>
+                  <!-- <p class="m-b-0" style="padding:0px 30px">   <a href="{{URL::to('/buddy/inbox/chat/'.base64_encode($data->user_id))}}/{{empty($data->user->fname) ? 'Newuser' : $data->user->fname.' '.$data->user->lname}}" class="block-element2 bg-white col-purple rounded custom-btn1 text-center" data-toggle="modal" data-target="#myModal"> Contact Buddy  </a> </p> -->
+                  <p class="m-b-0" style="padding:0px 30px">   <a href="#" class="block-element2 bg-white col-purple rounded custom-btn1 text-center" data-toggle="modal" data-target="#myModal"> Contact Buddy  </a> </p>
                </div>
             </div>
             <div class="packages-map block-element3 m-t-30" id="mapa">
@@ -365,6 +394,52 @@
       </div>
    </div>
 </section>
+
+
+<!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header contact-profile">
+          <h4 class="modal-title ">Send a Message</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>          
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="contact-profile-section">
+              <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{empty($data->user) ? '' : $data->user->profile_img}}" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';">
+              <h3>gmxsolution</h3>
+              <h4>away</h4>
+              </div>
+              <hr>
+              <div class="contact-profile-section1">
+                <h3>Please include:</h3>
+                <ul>
+                  <li>Project Description</li>
+                  <li>Project Description</li>
+                  <li>Project Description</li>                
+                </ul>
+              </div>
+              
+            </div>
+            <div class="col-md-8">
+              <div class="contact-profile-section3">
+                <form>
+                  <textarea rows="11" cols="5"></textarea>
+                  <input type="submit" name="">
+                </form>                
+              </div>
+            </div>            
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
 
 <input type="hidden" id="lat">
 <input type="hidden" id="lng">

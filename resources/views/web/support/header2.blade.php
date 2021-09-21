@@ -1,29 +1,23 @@
-<style type="text/css">
-   nav.navbar.navbar-expand-lg.navbar-dark {
-    position: absolute;
-    left: 48% !important;
-    padding-top: 10px !important;
-}
-@media only screen and (max-width: 767px) {
-
-
-nav.navbar.navbar-expand-lg.navbar-dark {
-    position: absolute;
-    left: 0% !important;
-
-    }
-    div#navbarSupportedContent {
-    background: #1d242c;
-    position: relative;
-    z-index: 999;
-        margin-top: 45px !important;
-}
- }
-
- section.action-bar {
-
+<style type="text/css"> 
+  section.action-bar {
     margin-top: 108px;
 }
+header.header-1.desktop.fixed-top {
+    padding: 10px 0px !important;
+}
+
+@media only screen and (max-width: 767px) {
+nav.navbar.navbar-expand-lg.navbar-dark {
+      position: absolute;
+      left: 0% !important;
+    }
+    div#navbarSupportedContent {
+      background: #1d242c;
+      position: relative;
+      z-index: 999;
+      margin-top: 45px !important;
+    }
+ }
 </style>
 <header class="header-1 desktop fixed-top">
    <div class="container ">
