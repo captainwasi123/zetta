@@ -89,20 +89,22 @@
 <aside class="left-sidebar mobile">
    <div class="scroll-sidebar">
       <div class="user-profile-header">
-         <h4> Hi, Sports Buddy </h4>
+         <div class="profile-img"> <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{Auth::user()->profile_img}}" alt="user" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';"/>
+         </div>
+         <h4> Hi, Sports Buddy Syed Anas Qamar </h4>
+
          <!-- <h6> agalyam01@gmail.com </h6> -->
          <p> <a href=""> <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/coin-icon.png"> </a> <span> Z COINS <b> 250 </b> </span> <a href=""> <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/heart-icon.png"> </a>  </p>
       </div>
       <div class="user-profile">
-         <!-- <div class="profile-img"> <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{Auth::user()->profile_img}}" alt="user" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';"/>
-         </div> -->
+         
          <div class="account-btn1 text-center">
             <a href="{{route('buddy.my_account')}}" class="custom-btn2"> My Account </a>
 
          </div>
-          <div class="profile-text">
+          <!-- <div class="profile-text">
             <a href="{{route('buddy.messages')}}" class="" > INBOX <i class="mdi mdi-email"> <b class="notif-icon1"> 5  </b> </i>  </a>
-         </div>
+         </div> -->
          <div class="account-btn1 text-center">
               @if (auth()->user()->type == 2)
                 <a href="{{URL::to('/coach')}}" class="custom-btn1"> SWITCH TO Coach </a>
