@@ -304,13 +304,22 @@ class webController extends Controller
         }
     }
 
-
-
-
     //Footer Pages
     function terms(){
 
         return view('web.terms');
+    }
+    function faq(){
+
+        return view('web.faq');
+    }
+    function refund_cancel_policy(){
+
+        return view('web.refund_cancel_policy');
+    }
+    function cookie_policy(){
+
+        return view('web.cookie_policy');
     }
 
     function aboutUs(){

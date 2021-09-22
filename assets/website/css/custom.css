@@ -706,7 +706,10 @@ a.header-btn3:hover {
 a.header-btn1:hover {
     color:#9a49ff;
 }
-
+.extra
+{
+    visibility: hidden;
+}
 
 section.action-bar {
     background: #1d242c;
@@ -2368,7 +2371,7 @@ header.header-2 {
     border-radius: 100%;
     border: 1px solid #441382;
     padding: 18px;
-    transition: width 1s;
+    transition: width .5s;
 }
 .buddy-box img:hover {
     width: 220px;
@@ -2440,7 +2443,7 @@ header.header-2 {
 
 .buddy-box3 .buddy-box img {
     width: 260px;
-    transition: width 1s;
+    transition: width 0.5s;
 }
 
 .buddy-box3 .buddy-box img:hover
@@ -3160,6 +3163,10 @@ div#mapa {
 }
 
 @media only screen and (max-width: 767px) {
+    .extra
+{
+    display: none;
+}
   .all-buddies {
     text-align: center;
 }
@@ -3196,9 +3203,17 @@ div#mapa {
     background: url(http://localhost/zetta/assets/website/images/Line.png) !important;
     background-repeat: no-repeat !important;
     background-color: #1d242c !important;
-    background-size: 55% 20% !important;
-    background-position: center !important;
+    background-size: 55% 15% !important;
+    background-position: center 40% !important;
 }
+/*img.line-custom-image {
+    position: absolute;
+    margin: 0 auto;
+    display: block !important;
+    text-align: center !important;
+    left: 22%;
+    width: 56%;
+}*/
 .work {
     text-align: center;
     padding: 0px 35px;
@@ -3206,9 +3221,9 @@ div#mapa {
 .work h2 {
     color: white;
     font-size: 30px;
-    padding-top: 25px;
-    padding-bottom: 15px;
-    font-weight: 400;
+    padding-top: 28px;
+    padding-bottom: 5px;
+    font-weight: 500;
 }
 
 .sec-head1.m-b-40 {
@@ -3217,7 +3232,7 @@ div#mapa {
 
 .work p {
     color: white;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 300;
 }
 .work-bac .sec-head1 {

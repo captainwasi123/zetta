@@ -128,10 +128,10 @@
                   </p>
                </div>
             </div>
-            <div class="sec-head1 m-t-40 m-b-15" style="visibility: hidden;">
+            <div class="sec-head1 m-t-40 m-b-15 extra">
                <h3 class="col-white"> Reviews as Sport Buddy </h3>
             </div>
-            <div class="review-slider arrows3" style="visibility: hidden;">
+            <div class="review-slider arrows3 extra">
                <div class="review-box">
                   <img src="{{URL::to('/assets/website')}}/images/profile-image1.jpg">
                   <h5 class="col-white"> <b class="col-purple"> Lennon <i class="fa fa-star"> </i> </b> 5.0 </h5>
