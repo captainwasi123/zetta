@@ -41,6 +41,9 @@ use Illuminate\Support\Facades\Route;
 			//Footer Pages
 
 			Route::get('terms', 'webController@terms')->name('web.terms');
+			Route::get('faq', 'webController@faq')->name('web.faq');
+			Route::get('refund_cancel_policy', 'webController@refund_cancel_policy')->name('web.refund_cancel_policy');
+			Route::get('cookie_policy', 'webController@cookie_policy')->name('web.cookie_policy');
 
 		// User Authentication
 			Route::post('/register', 'authController@register');

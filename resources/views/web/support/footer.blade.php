@@ -40,16 +40,16 @@
            <div class="col-md-3 col-lg-3 col-sm-12 col-12">
               <div class="footer-list">
                  <h4 class="col-white"> QUICK MENU </h4>
-                 <!-- <ul>
+                 <ul>
                     <li> <a href="{{URL::to('/')}}"> Home </a> </li>
-                    <li> <a href="{{URL::to('about_us')}}">About Us </a> </li>
+                    
                     <li> <a href="{{route('web.all','Coaches')}}"> Coaches </a> </li>
                     <li> <a href="{{route('web.all','Sports Buddies')}}"> Sports Buddy </a> </li>
                     <li> <a href="{{route('web.all','Lessons')}}"> Lesson </a> </li>
                     <li> <a href="{{route('web.all','Activities')}}"> Activity </a> </li>
                     <li> <a href="{{URL::to('/')}}#mapa"> Near Me </a> </li>
 
-                 </ul> -->
+                 </ul>
               </div>
            </div>
            <style type="text/css">
@@ -64,12 +64,15 @@
               <div class="footer-list">
                  <h4 class="col-white"> ABOUT </h4>
                  <ul>
+                    <li> <a href="{{URL::to('about_us')}}">About Us </a> </li>
                     <li> <a href="#"> Partnership  </a> </li>
-                    <li> <a href=""> Press  </a> </li>
-                    <li> <a href=""> Contact  </a> </li>
-                    <li> <a href=""> Faq </a> </li>
-                    <li> <a href="{{route('web.terms')}}"> Terms  </a> </li>
-                    <li> <a href=""> Privacy Policy </a> </li>                    
+                    <li> <a href="#"> Press  </a> </li>
+                    <li> <a href="#"> Contact  </a> </li>
+                    <li> <a href="{{route('web.faq')}}"> Faq </a> </li>
+                    <li> <a href="{{route('web.terms')}}"> Terms & Condition  </a> </li>
+                    <li> <a href="#"> Privacy Policy </a> </li>
+                    <!-- <li> <a href="{{route('web.refund_cancel_policy')}}"> Refund Policy </a> </li>      
+                    <li> <a href="{{route('web.cookie_policy')}}"> Cookie Policy </a> </li>      -->               
                  </ul>
               </div>
            </div>

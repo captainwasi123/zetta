@@ -3050,7 +3050,7 @@ ul.less-triggers.nav-tabs .nav-link {
 @media screen and (max-width:767px) and (min-width:520px) { 
 
 .mini-sidebar .sidebar-nav #sidebarnav>li>a {
-    padding: 9px 10px;
+    padding: 5px 10px;
     width: 100%;
 }
 body.mini-sidebar .user-profile, body.mini-sidebar .user-profile-header {
@@ -3741,6 +3741,10 @@ p.form-field1.text-right.mob-text-left.off-border {
 }
 .slot-2 .form-field3 {
     max-width: 100%;
+}
+.custom-btn1 {
+    padding: 5px 7px;
+    font-size: 10px;
 }
 
 }

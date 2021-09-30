@@ -37,6 +37,10 @@
     font-weight: 300;
     color: white;
 }
+
+section.action-bar {
+    margin-top: 78px;
+}
 </style>
 
 

@@ -48,32 +48,19 @@
                   <img src="{{URL::to('/public/storage/user/lessons/main_image/'.$data->cover_img)}}">
                </div>
             </div>
-            <div class="sec-head1 m-t-40 m-b-15">
-               <h3 class="col-white"> Reviews as Coach </h3>
+            <div class="lesson-holder-about m-t-0 no-border">
+               <h3 class="col-white m-b-15"> About The Coach </h3>
             </div>
-            <div class="review-slider arrows3">
-               <div class="review-box">
-                  <img src="{{URL::to('/assets/website')}}/images/profile-image1.jpg">
-                  <h5 class="col-white"> <b class="col-purple"> Lennon <i class="fa fa-star"> </i> </b> 5.0 </h5>
-                  <p class="col-white"> That would be good please share any reference or similar website interms of features
-                     and functionality you need.
-                  </p>
+            <div class="lesson-holder-profile">
+               <div>
+                  <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{empty($data->user) ? '' : $data->user->profile_img}}" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';">
                </div>
-               <div class="review-box">
-                  <img src="{{URL::to('/assets/website')}}/images/profile-image1.jpg">
-                  <h5 class="col-white"> <b class="col-purple"> Lennon <i class="fa fa-star"> </i> </b> 5.0 </h5>
-                  <p class="col-white"> That would be good please share any reference or similar website interms of features
-                     and functionality you need.
-                  </p>
-               </div>
-               <div class="review-box">
-                  <img src="{{URL::to('/assets/website')}}/images/profile-image1.jpg">
-                  <h5 class="col-white"> <b class="col-purple"> Lennon <i class="fa fa-star"> </i> </b> 5.0 </h5>
-                  <p class="col-white"> That would be good please share any reference or similar website interms of features
-                     and functionality you need.
-                  </p>
-               </div>
+               <h4 class="col-white no-margin m-t-0 m-b-0"> {{empty($data->user) ? 'Unknown' : $data->user->fname.' '.$data->user->lname}} </h4>
+               <h6 class="col-grey"> Coach </h6>
+               <h5 class="col-purple m-b-15"> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> 5.0  </h5>
+               <a href="{{URL::to('/buddy/inbox/chat/'.base64_encode($data->user_id))}}/{{empty($data->user->fname) ? 'Newuser' : $data->user->fname.' '.$data->user->lname}}" class="bor-purple col-white rounded custom-btn1 font-thin"> Contact Me </a>
             </div>
+            
             <div class="lesson-holder-about">
                <h3 class="col-white m-b-15"> About The Lesson </h3>
                <h5 class="col-white m-b-30" >  {{$data->title}} </h5>
@@ -113,18 +100,58 @@
                   </p>
                </div>
             </div>
-            <div class="lesson-holder-about m-t-0 no-border">
-               <h3 class="col-white m-b-15"> About The Coach </h3>
+            <div class="sec-head1 m-t-40 m-b-15 extra">
+               <h3 class="col-white"> Reviews as Coach </h3>
             </div>
-            <div class="lesson-holder-profile">
-               <div>
-                  <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{empty($data->user) ? '' : $data->user->profile_img}}" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';">
+            <div class="review-slider arrows3 extra">
+               <div class="review-box">
+                  <img src="{{URL::to('/assets/website')}}/images/profile-image1.jpg">
+                  <h5 class="col-white"> <b class="col-purple"> Lennon <i class="fa fa-star"> </i> </b> 5.0 </h5>
+                  <p class="col-white"> That would be good please share any reference or similar website interms of features
+                     and functionality you need.
+                  </p>
                </div>
-               <h4 class="col-white no-margin m-t-0 m-b-0"> {{empty($data->user) ? 'Unknown' : $data->user->fname.' '.$data->user->lname}} </h4>
-               <h6 class="col-grey"> Coach </h6>
-               <h5 class="col-purple m-b-15"> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> 5.0  </h5>
-               <a href="{{URL::to('/buddy/inbox/chat/'.base64_encode($data->user_id))}}/{{empty($data->user->fname) ? 'Newuser' : $data->user->fname.' '.$data->user->lname}}" class="bor-purple col-white rounded custom-btn1 font-thin"> Contact Me </a>
+               <div class="review-box">
+                  <img src="{{URL::to('/assets/website')}}/images/profile-image1.jpg">
+                  <h5 class="col-white"> <b class="col-purple"> Lennon <i class="fa fa-star"> </i> </b> 5.0 </h5>
+                  <p class="col-white"> That would be good please share any reference or similar website interms of features
+                     and functionality you need.
+                  </p>
+               </div>
+               <div class="review-box">
+                  <img src="{{URL::to('/assets/website')}}/images/profile-image1.jpg">
+                  <h5 class="col-white"> <b class="col-purple"> Lennon <i class="fa fa-star"> </i> </b> 5.0 </h5>
+                  <p class="col-white"> That would be good please share any reference or similar website interms of features
+                     and functionality you need.
+                  </p>
+               </div>
+            </div><div class="sec-head1 m-t-40 m-b-15">
+               <h3 class="col-white"> Reviews as Coach </h3>
             </div>
+            <div class="review-slider arrows3">
+               <div class="review-box">
+                  <img src="{{URL::to('/assets/website')}}/images/profile-image1.jpg">
+                  <h5 class="col-white"> <b class="col-purple"> Lennon <i class="fa fa-star"> </i> </b> 5.0 </h5>
+                  <p class="col-white"> That would be good please share any reference or similar website interms of features
+                     and functionality you need.
+                  </p>
+               </div>
+               <div class="review-box">
+                  <img src="{{URL::to('/assets/website')}}/images/profile-image1.jpg">
+                  <h5 class="col-white"> <b class="col-purple"> Lennon <i class="fa fa-star"> </i> </b> 5.0 </h5>
+                  <p class="col-white"> That would be good please share any reference or similar website interms of features
+                     and functionality you need.
+                  </p>
+               </div>
+               <div class="review-box">
+                  <img src="{{URL::to('/assets/website')}}/images/profile-image1.jpg">
+                  <h5 class="col-white"> <b class="col-purple"> Lennon <i class="fa fa-star"> </i> </b> 5.0 </h5>
+                  <p class="col-white"> That would be good please share any reference or similar website interms of features
+                     and functionality you need.
+                  </p>
+               </div>
+            </div>
+            
             <div class="all-ratings m-t-40">
                <div class="row">
                   <div class="col-md-7 col-lg-7 col-sm-12 col-12">

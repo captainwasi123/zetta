@@ -106,27 +106,28 @@
             <div class="sec-head1 m-b-20">
                <h2 class="col-white gotham-bold text-center m-b-20"> How it Works </h2>
             </div>
-            <div class="row">
 
+            <div class="row">
                   <div class="col-md-4">
                      <div class="work">
                      <img src="{{URL::to('/assets/website')}}/images/work1.png">
-                     <h2>Search your sport</h2>
-                     <p>Find the right sport partner near you. Either you’re looking for a coach a buddy, our filters will guide you.</p>   </div>                     
+                     <h2>Search your Sports</h2>
+                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>   </div>                     
                   </div> 
                   <div class="col-md-4">
                      <div class="work">
                      <img src="{{URL::to('/assets/website')}}/images/work2.png">
-                     <h2>Book your session</h2>
-                     <p>Reserve your activity or lesson. Follow your progression with your personal dashboard.</p>   </div>                     
+                     <h2>Book Your Session</h2>
+                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>   </div>                     
                   </div> 
                   <div class="col-md-4">
                      <div class="work">
                      <img src="{{URL::to('/assets/website')}}/images/work3.png">
-                     <h2>Show your passion</h2>
-                     <p>Discover new sport opportunities everywhere around you.</p>   </div>                     
+                     <h2>Show your Passion</h2>
+                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>   </div>                     
                   </div>                               
-            </div>   
+            </div> 
+
          </div>
       </section>
       

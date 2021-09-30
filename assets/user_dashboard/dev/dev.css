@@ -420,16 +420,15 @@ ul.less-triggers li a.nav-link.active, ul.less-triggers li a.nav-link.active {
 .account-btn1 {
     margin-top: 0px;
     display: inline-block;
-    margin-bottom: 10px;
 }
 .user-profile .profile-text {
 
     display: inline-block;
 }
 .custom-btn2 {
- font-size: 12px;
-    padding: 6px 20px;
-    }
+    font-size: 9px;
+    padding: 6px 8px;
+}
     .user-profile .profile-text>a {
  
     font-size: 14px;
@@ -440,9 +439,15 @@ ul.less-triggers li a.nav-link.active, ul.less-triggers li a.nav-link.active {
 .user-profile .profile-text {
     margin-top: 0px;
 }
+
 .user-profile-header h4 {
-    font-size: 16px;
-    }
+    font-size: 12px;
+    width: 46%;  
+    font-weight: 400;
+    line-height: 1;
+    text-align: left;
+    padding-left: 5px;
+}
     .user-profile-header p span {
     font-size: 12px;
 }
@@ -458,10 +463,7 @@ ul.less-triggers li a.nav-link.active, ul.less-triggers li a.nav-link.active {
     display: inline-flex !important;
     width: 100%;
 }
-.user-profile-header h4 {
-    width: 42%;
-    padding-top: 10px;
-}
+
 .user-profile-header p {
     width: 58%;
 }
@@ -484,6 +486,26 @@ body.mini-sidebar .sidebar-nav {
 }  
 .user-profile-header {
     padding-top: 20px;
+}
+.mini-sidebar .sidebar-nav #sidebarnav>li>a {
+    padding: 5px 10px;
+    font-size: 13px !important;
+}
+.user-profile-header p {
+    margin-bottom: 5px;
+}
+  .profile-img img {
+    width: 100%;
+    border-radius: 50%;
+    height: 27px;
+}
+.profile-img {
+    height: 30px;
+}
+.profile-name
+{
+font-size: 12px;
+    width: 46%;
 }
 }
 .mini-sidebar .top-navbar .navbar-header {
@@ -546,6 +568,9 @@ html body .b-l {
 .desktop
 {
    display: none;
+}
+.sidebar-nav ul {
+    margin-top: 10px;
 }
 
 }
