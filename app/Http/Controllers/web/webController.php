@@ -15,6 +15,7 @@ use App\Models\userCategory;
 use App\Models\userEquipment;
 use Symfony\Component\HttpFoundation\AcceptHeader;
 use App\Models\sportsCategory;
+use App\Models\sports;
 
 class webController extends Controller
 {
@@ -26,7 +27,8 @@ class webController extends Controller
 
             'alocation' => Activity_location::where('lat', '!=', null)->where('lng', '!=', null)->groupBy('lat', 'lng')->get(),
             'llocation' => Locations::where('lat', '!=', null)->where('lng', '!=', null)->groupBy('lat', 'lng')->get(),
-            'ulocation' => User::where('status', '1')->where('lat', '!=', null)->where('lng', '!=', null)->get()
+            'ulocation' => User::where('status', '1')->where('lat', '!=', null)->where('lng', '!=', null)->get(),
+            'sports' => sports::all()
         );
 		return view('web.index')->with($data);
     }

@@ -22,6 +22,7 @@ header.header-2 .logo a img {
 }
 }
 </style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script type="text/javascript">
    $(document).scroll(function () {
     //stick nav to top of page
@@ -34,7 +35,6 @@ header.header-2 .logo a img {
     }
 });
 </script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
 
 <header class="header-1 header-2 desktop">

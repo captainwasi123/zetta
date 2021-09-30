@@ -23,9 +23,9 @@
             </div>
             <div class="search-form">
                <form method="get" action="{{route('web.search')}}">
-                  <div class="label-field3">
+                  <div class="label-field3 autocomplete">
                      <i class="fa fa-search"> </i>
-                     <input type="text" placeholder="Choose a Sport" name="val" required>
+                     <input type="text" placeholder="Choose a Sport" name="val" id="keywords_val" required>
                   </div>
                   <div class="label-field3">
                      <i class="fa fa-map-marker-alt"></i>
@@ -445,6 +445,7 @@
 
    @foreach($arr as $val)
       <script type="text/javascript">
+         
          $(document).ready(function(){
             timer({{$val['id']}}, "{{$val['date']}}");
          });
@@ -453,6 +454,7 @@
    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key={{env('GOOGLE_MAP_KEY')}}&libraries=places"></script>
 
    <script type="text/javascript">
+
       var alocations = [
             @foreach ($alocation as $val)
                @if(!empty($val->activity))
