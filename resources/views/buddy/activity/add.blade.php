@@ -60,11 +60,11 @@
                <div class="inline-1">
                   <label class="custom-control custom-radio">
                   <input id="radio1" name="participants" type="radio" value="0" class="custom-control-input" checked>
-                  <span class="custom-control-label"> Single Lesson </span>
+                  <span class="custom-control-label"> Single Activity </span>
                   </label>
                   <label class="custom-control custom-radio">
                   <input id="radio2" name="participants" type="radio" value="1" class="custom-control-input">
-                  <span class="custom-control-label"> Group Lesson </span>
+                  <span class="custom-control-label"> Group Activity </span>
                   </label>
                </div>
                <div class="inc-dec inline-1 increment-holder1" id="participants_block">
@@ -96,16 +96,28 @@
             <div class="col-md-3 col-lg-3 col-12">
                <div class="field-name">
                   <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/field-icon9.png">
+                  <h5> Category </h5>
+               </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-12">
+               <select name="category" class="form-field1" id="category_field" required>
+                   <option value="">Select</option>
+                    @foreach ($categories as $val)
+                        <option value="{{$val->id}}">{{$val->name}}</option>
+                    @endforeach
+               </select>
+            </div>
+         </div>
+         <div class="row center-row">
+            <div class="col-md-3 col-lg-3 col-12">
+               <div class="field-name">
+                  <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/field-icon9.png">
                   <h5> Sports </h5>
                </div>
             </div>
             <div class="col-md-6 col-lg-6 col-12">
-               {{-- <input type="text" placeholder="" class="form-field1" name=""> --}}
-               <select name="category" class="form-field1" required>
+               <select name="sports" class="form-field1" id="sports_id" required>
                    <option value="">Select</option>
-                    @foreach ($sports as $val)
-                        <option value="{{$val->id}}">{{$val->name}}</option>
-                    @endforeach
                </select>
             </div>
          </div>
@@ -117,11 +129,10 @@
                </div>
             </div>
             <div class="col-md-6 col-lg-6 col-12">
-               {{-- <input type="text" placeholder="" class="form-field1" name=""> --}}
                <select name="friend" id="friend" class="form-field1">
                    <option value="">Select</option>
                     @foreach ($users as $val)
-                        <option value="{{$val->id}}">{{$val->fname .' '. $val->lname}}</option>
+                        <option value="{{$val->friend->id}}">{{$val->friend->fname .' '. $val->friend->lname}}</option>
                     @endforeach
                </select>
             </div>
@@ -192,6 +203,24 @@
             <div class="col-md-6 col-lg-6 col-12">
                <div class="pic-uploader1">
                   <input type="file" id="input-file-max-fs" class="dropify" data-max-file-size="2M" data-height="100"/>
+               </div>
+            </div>
+         </div>
+         <div class="row center-row">
+            <div class="col-md-3 col-lg-3 col-12">
+               <div class="field-name">
+                  <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/field-icon19.png">
+                  <h5> Activity DateTime </h5>
+               </div>
+            </div>
+            <div class="col-md-3 col-lg-3 col-12">
+               <div class="pic-uploader1">
+                  <input type="date" placeholder="" class="form-field1" name="held_date" required>
+               </div>
+            </div>
+            <div class="col-md-3 col-lg-3 col-12">
+               <div class="pic-uploader1">
+                  <input type="time" placeholder="" class="form-field1" name="held_time" required>
                </div>
             </div>
          </div>

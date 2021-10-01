@@ -12,6 +12,7 @@ use App\Models\activity\locations;
 use App\Models\User;
 use App\Models\sportsCategory;
 use App\Models\sports;
+use App\Models\friends as friendsList;
 use Auth;
 
 class activityController extends Controller
@@ -27,10 +28,10 @@ class activityController extends Controller
 
     function add(){
         $equip = userEquipment::where('user_id', Auth::id())->get();
-        $users = User::where('id','!=',Auth::id())->get();
-        $sports = sports::all();
+        $users = friendsList::where('user_id',Auth::id())->get();
+        $categories = sportsCategory::all();
 
-        return view('buddy.activity.add', ['equip' => $equip,'users'=>$users, 'sports' => $sports]);
+        return view('buddy.activity.add', ['equip' => $equip,'users'=>$users, 'categories' => $categories]);
     }
 
     function insert(Request $request){
@@ -54,11 +55,11 @@ class activityController extends Controller
         $data = activities::find($id);
         if(!empty($data->id)){
             $equip = userEquipment::where('user_id', Auth::id())->get();
-            $users = User::where('id','!=',Auth::id())->get();
+            $users = friendsList::where('user_id',Auth::id())->get();
             $friend = friends::where('activity_id',$id)->first();
-            $sports = sports::all();
+            $categories = sportsCategory::all();
 
-            return view('buddy.activity.edit', ['equip' => $equip, 'data' => $data,'users'=>$users,'friend'=>$friend, 'sports' => $sports]);
+            return view('buddy.activity.edit', ['equip' => $equip, 'data' => $data,'users'=>$users,'friend'=>$friend, 'categories' => $categories]);
         }else{
             return redirect()->back();
         }
@@ -90,5 +91,11 @@ class activityController extends Controller
 
 
         return redirect()->back()->with('success', 'Lesson Deleted.');
+    }
+
+    function getSports($id){
+        $data = sports::where('category_id', $id)->get();
+
+        return view('coach.lessons.response.sports_name', ['sports' => $data]);
     }
 }

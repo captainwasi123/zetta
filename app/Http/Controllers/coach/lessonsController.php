@@ -10,6 +10,7 @@ use App\Models\lesson\Equipments;
 use App\Models\lesson\Locations;
 use App\Models\lesson\Packages;
 use App\Models\sportsCategory;
+use App\Models\sports;
 use Auth;
 
 class lessonsController extends Controller
@@ -85,5 +86,11 @@ class lessonsController extends Controller
 
 
         return redirect()->back()->with('success', 'Lesson Deleted.');
+    }
+
+    function getSports($id){
+        $data = sports::where('category_id', $id)->get();
+
+        return view('coach.lessons.response.sports_name', ['sports' => $data]);
     }
 }

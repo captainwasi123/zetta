@@ -9,6 +9,7 @@ use App\Models\activity\locations;
 use Auth;
 use App\Models\FavouriteActivity;
 use App\Models\sportsCategory;
+use App\Models\sports;
 use App\Models\User;
 
 class activities extends Model
@@ -25,6 +26,8 @@ class activities extends Model
         $l->group_members = empty($data['group_members']) ? null : $data['group_members'];
         $l->activity_type = $data['activityType'];
         $l->category_id = $data['category'];
+        $l->sports_id = $data['sports'];
+        $l->held_date = $data['held_date'].' '.$data['held_time'];
         $l->availability = $data['availability'];
         $l->availability_for = $data['availability_for'];
         $l->status = '1';
@@ -35,7 +38,9 @@ class activities extends Model
             activities::addEquipment($id, $data['equipments']);
         }
         activities::addLocation($id, $data);
-        activities::addFriend($id,$data);
+        if(isset($data['friend'])){
+            activities::addFriend($id,$data);
+        }
         return $id;
     }
 
@@ -47,6 +52,8 @@ class activities extends Model
         $l->group_members = empty($data['group_members']) ? null : $data['group_members'];
         $l->activity_type = $data['activityType'];
         $l->category_id = $data['category'];
+        $l->sports_id = $data['sports'];
+        $l->held_date = $data['held_date'].' '.$data['held_time'];
         $l->availability = $data['availability'];
         $l->availability_for = $data['availability_for'];
         $l->save();
@@ -56,9 +63,16 @@ class activities extends Model
         equipments::where('activity_id', $id)->delete();
         locations::where('activity_id', $id)->delete();
         friends::where('activity_id', $id)->delete();
-        activities::addEquipment($id, $data['equipments']);
-        activities::addLocation($id, $data);
-        activities::addFriend($id,$data);
+        if(isset($data['equipments'])){
+            activities::addEquipment($id, $data['equipments']);
+        }
+        if(isset($data['location'])){
+            activities::addLocation($id, $data);
+        }
+        if(isset($data['friend'])){
+            activities::addFriend($id,$data);
+        }
+
         return $id;
     }
 
@@ -135,5 +149,8 @@ class activities extends Model
 
     public function category(){
         return $this->belongsTo(sportsCategory::class, 'category_id');
+    }
+    public function sports(){
+        return $this->belongsTo(sports::class, 'sports_id');
     }
 }

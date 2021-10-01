@@ -125,11 +125,11 @@
 
  $('.boxes-slider1').slick({
   dots: true,
-  infinite: true,
+  infinite: false,
   speed: 300,
   slidesToShow: 5,
   slidesToScroll: 1,
-  autoplay: true,
+  autoplay: false,
   focusOnSelect: true,
   autoplaySpeed: 2000,
   responsive: [

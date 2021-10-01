@@ -123,7 +123,7 @@ header.header-2 .logo a img {
          <form method="get" action="{{route('web.search')}}">
             <div class="label-field3">
                <i class="fa fa-search"> </i>
-               <input type="text" placeholder="Choose a Sport" name="val" value="{{isset($search_data['val']) ? $search_data['val'] : ''}}" required>
+               <input type="text" placeholder="Choose a Sport" name="val" id="header_sports_val" value="{{isset($search_data['val']) ? $search_data['val'] : ''}}" required>
             </div>
             <div class="label-field3">
                <i class="fa fa-map-marker-alt"></i>

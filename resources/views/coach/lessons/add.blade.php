@@ -118,11 +118,24 @@
                      </div>
                   </div>
                   <div class="col-md-8 col-lg-8 col-12">
-                     <select class="form-field1" name="category" required>
+                     <select class="form-field1" name="category" id="category_field" required>
                         <option value="">Select</option>
                         @foreach ($categories as $val)
                            <option value="{{$val->id}}">{{$val->name}}</option>
                         @endforeach
+                     </select>
+                  </div>
+               </div>
+               <div class="row center-row">
+                  <div class="col-md-4 col-lg-4 col-12">
+                     <div class="field-name">
+                        <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/field-icon9.png">
+                        <h5> Sports </h5>
+                     </div>
+                  </div>
+                  <div class="col-md-8 col-lg-8 col-12">
+                     <select class="form-field1" name="sports" id="sports_id" required>
+                        <option value="">Select</option>
                      </select>
                   </div>
                </div>
@@ -245,6 +258,26 @@
                   <div class="col-md-4 col-lg-4 col-12">
                      <div class="field-name">
                         <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/field-icon19.png">
+                        <h5> DateTime </h5>
+                     </div>
+                  </div>
+                  <div class="col-md-5 col-lg-5 col-12">
+                     <div class="inline-1">
+                        <input type="date" placeholder="" class="form-field1" name="held_date" required>
+                     </div>
+                  </div>
+                  <div class="col-md-3 col-lg-3 col-12">
+                     <div class="inline-1">
+                        <input type="time" placeholder="" class="form-field1" name="held_time" required>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <br>
+            <div class="row m-t-30">
+                  <div class="col-md-4 col-lg-4 col-12">
+                     <div class="field-name">
+                        <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/field-icon19.png">
                         <h5> Availability </h5>
                      </div>
                   </div>
@@ -265,8 +298,7 @@
                      </div>
                   </div>
                </div>
-            </div>
-            <div class="block-element m-t-30">
+               <br>
                 <div class="row">
                    <div class="col-md-4 col-lg-4 col-12">
                       <div class="field-name">

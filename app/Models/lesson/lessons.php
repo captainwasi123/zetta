@@ -11,6 +11,7 @@ use App\Models\lesson\orders;
 use App\Models\User;
 use App\Models\FavouriteLesson;
 use App\Models\sportsCategory;
+use App\Models\sports;
 use Auth;
 
 class lessons extends Model
@@ -27,9 +28,11 @@ class lessons extends Model
         $l->skills_level = $data['skill_level'];
         $l->participants = $data['participants'];
         $l->group_members = empty($data['group_members']) ? null : $data['group_members'];
+        $l->held_date = $data['held_date'].' '.$data['held_time'];
         $l->availability = $data['availability'];
         $l->availability_for = $data['availability_for'];
         $l->category_id = $data['category'];
+        $l->sports_id = $data['sports'];
         $l->status = '1';
         $l->save();
         $id = $l->id;
@@ -69,9 +72,11 @@ class lessons extends Model
         $l->skills_level = $data['skill_level'];
         $l->participants = $data['participants'];
         $l->group_members = empty($data['group_members']) ? null : $data['group_members'];
+        $l->held_date = $data['held_date'].' '.$data['held_time'];
         $l->availability = $data['availability'];
         $l->availability_for = $data['availability_for'];
         $l->category_id = $data['category'];
+        $l->sports_id = $data['sports'];
         $l->save();
         $id = $l->id;
 
@@ -175,5 +180,8 @@ class lessons extends Model
 
     public function category(){
         return $this->belongsTo(sportsCategory::class, 'category_id');
+    }
+    public function sports(){
+        return $this->belongsTo(sports::class, 'sports_id');
     }
 }

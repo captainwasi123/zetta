@@ -1,6 +1,6 @@
 <style type="text/css"> 
   section.action-bar {
-    margin-top: 108px;
+    margin-top: 78px;
 }
 header.header-1.desktop.fixed-top {
     padding: 10px 0px !important;
@@ -31,7 +31,7 @@ nav.navbar.navbar-expand-lg.navbar-dark {
          <form method="get" action="{{route('web.search')}}">
             <div class="label-field3">
                <i class="fa fa-search"> </i>
-               <input type="text" placeholder="Choose a Sport" name="val" value="{{isset($search_data['val']) ? $search_data['val'] : ''}}" required>
+               <input type="text" placeholder="Choose a Sport" name="val" id="header_sports_val" value="{{isset($search_data['val']) ? $search_data['val'] : ''}}" required>
             </div>
             <div class="label-field3">
                <i class="fa fa-map-marker-alt"></i>

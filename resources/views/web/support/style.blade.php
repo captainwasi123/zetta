@@ -11,5 +11,6 @@
       <!-- Font Awesome Icons -->
       <link href="{{URL::to('/assets/website')}}/web-fonts-with-css/css/fontawesome-all.min.css" rel="stylesheet">
       <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
+      <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
       <!-- Jquery Library -->

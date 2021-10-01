@@ -187,6 +187,9 @@ use Illuminate\Support\Facades\Route;
 						Route::post('/update', 'lessonsController@update')->name('coach.lesson.update');
 
 						Route::get('/delete/{id}', 'lessonsController@delete')->name('coach.lesson.delete');
+
+
+						Route::get('/sports/{id}', 'lessonsController@getSports');
 					});
 
 				//Availability
@@ -297,6 +300,8 @@ use Illuminate\Support\Facades\Route;
 						Route::post('/update', 'activityController@update')->name('buddy.activity.update');
 
 						Route::get('/delete/{id}', 'activityController@delete')->name('buddy.activity.delete');
+
+						Route::get('/sports/{id}', 'activityController@getSports');
 					});
 
 				//Friends

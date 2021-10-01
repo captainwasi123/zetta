@@ -63,7 +63,7 @@
                            </div>
                            <div class="lesson-title-block">
                               <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{empty($val->user) ? '' : $val->user->profile_img}}" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';">
-                              <h4>  {{empty($val->user) ? 'Unknown' : $val->user->fname.' '.$val->user->lname}} <span>Sports Buddy </span>  </h4>
+                              <h4>  {{empty($val->user->fname) ? 'Anonymous' : $val->user->fname.' '.$val->user->lname}} <span>Sports Buddy </span>  </h4>
                               <div class="zoom-tag">
                                  @if($val->availability != '2')
                                     <img src="{{URL::to('/assets/website')}}/images/zoom-logo.png" title="Online Zoom Classes">
@@ -86,18 +86,24 @@
                               </p>
                               <h6 class="col-white m-b-15"> <i class="fa fa-star col-yellow"> </i> 5.0 </h6>
                               <h6 class="col-white m-b-15 lesson-catagory-text" style="float: right;">
-                                 <span class="bg-purple col-white custom-btn12"> {{$val->category->name}} </span>
+                                 <span class="bg-purple col-white custom-btn12"> {{@$val->category->name}} </span>
                               </h6>
                            </div>
                            <div class="lesson-rating-block gig">
                            <p id="count{{$val->id}}" class="countDownP"></p>
-                           @php array_push($arr, array('id' => $val->id, 'date' => date('M d, Y H:i:s', strtotime('+7 day', strtotime($val->created_at))))); @endphp
+                           @php array_push($arr, array('id' => $val->id, 'date' => date('M d, Y H:i:s', strtotime($val->held_date)))); @endphp
                            </div>
                         </div>
                      </a>
                   </div>
                @endforeach
             </div>
+            @if(count($activities) == 0)
+               <div class="sec-head1 m-b-40 m-t-40">
+                  <br><br>
+                  <h5 class="col-white gotham-bold text-center m-b-20"> No Gigs Found. </h5>
+               </div>
+            @endif
          </div>
       </section>
 
@@ -234,7 +240,7 @@
                            </div>
                            <div class="lesson-title-block">
                               <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{empty($val->user) ? '' : $val->user->profile_img}}" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';">
-                              <h4>  {{empty($val->user) ? 'Unknown' : $val->user->fname.' '.$val->user->lname}} <span>Sports Buddy </span>  </h4>
+                              <h4>  {{empty($val->user->fname) ? 'Anonymous' : $val->user->fname.' '.$val->user->lname}} <span>Sports Buddy </span>  </h4>
                               <div class="zoom-tag">
                                  @if($val->availability != '2')
                                     <img src="{{URL::to('/assets/website')}}/images/zoom-logo.png" title="Online Zoom Classes">
@@ -251,12 +257,13 @@
                               </div>
                            </div>
                            <div class="lesson-info-block">
+                              <p class="lesson-title">{{$val->title}}</p>
                               <p class="descrip">
                                  {{$val->description}}
                               </p>
                               <h6 class="col-white m-b-15"> <i class="fa fa-star col-yellow"> </i> 5.0 </h6>
                               <h6 class="col-white m-b-15 lesson-catagory-text" style="float: right;">
-                                 <span class="bg-purple col-white custom-btn12"> {{$val->category->name}} </span>
+                                 <span class="bg-purple col-white custom-btn12"> {{@$val->category->name}} </span>
                               </h6>
                            </div>
                            <div class="lesson-rating-block">
@@ -322,7 +329,7 @@
                            </div>
                            <div class="lesson-title-block">
                               <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{empty($val->user) ? '' : $val->user->profile_img}}" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';">
-                              <h4> {{empty($val->user) ? 'Unknown' : $val->user->fname.' '.$val->user->lname}} <span> Coach </span>  </h4>
+                              <h4> {{empty($val->user->fname) ? 'Anonymous' : $val->user->fname.' '.$val->user->lname}} <span> Coach </span>  </h4>
                               <div class="zoom-tag">
                                  @if($val->availability != '2')
                                     <img src="{{URL::to('/assets/website')}}/images/zoom-logo.png" title="Online Zoom Classes">
@@ -339,12 +346,13 @@
                               </div>
                            </div>
                            <div class="lesson-info-block">
+                              <p class="lesson-title">{{$val->title}}</p>
                               <p class="descrip">
                                  {{$val->description}}
                               </p>
                               <h6 class="col-white m-b-15"> <i class="fa fa-star col-yellow"> </i> 5.0 </h6>
                               <h6 class="col-white m-b-15 lesson-catagory-text" style="float: right;">
-                                 <span class="bg-purple col-white custom-btn12"> {{$val->category->name}} </span>
+                                 <span class="bg-purple col-white custom-btn12"> {{@$val->category->name}} </span>
                               </h6>
                            </div>
                            <div class="lesson-rating-block">
@@ -600,7 +608,7 @@ function timer(id, time){
      // If the count down is over, write some text 
      if (distance < 0) {
        clearInterval(x);
-       document.getElementById("count"+id).innerHTML = "Completed.";
+       document.getElementById("count"+id).parentNode.parentNode.parentNode.remove();
      }
    }, 1000);
 }

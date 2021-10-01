@@ -39,6 +39,14 @@ $(document).ready(function(){
         });
     });
 
+    $( "#keywords_val" ).autocomplete({
+      source: kerywordss
+    });
+
+    $( "#header_sports_val" ).autocomplete({
+        source: kerywordss
+    })
+
  });
 
 
@@ -69,7 +77,7 @@ jQuery(function ($) {
 });
 
 
-var kerywords = [
+var kerywordss = [
                      'Ski',
                      'Snowboard',
                      'Dog Sledding',
@@ -97,13 +105,13 @@ var kerywords = [
                      'Skeleton',
                      'Curling',
                      'Bobsled',
-                     'Nordic  Combined',
-                     'Ski  Jumping',
-                     'Ice  Hockey',
-                     'Figure  Skating',
-                     'Alpine  Skiing',
-                     'Alpine  Snowboarding',
-                     'Freestyle  skiing  &amp;  snowboarding',
+                     'Nordic Combined',
+                     'Ski Jumping',
+                     'Ice Hockey',
+                     'Figure Skating',
+                     'Alpine Skiing',
+                     'Alpine Snowboarding',
+                     'Freestyle skiing & snowboarding',
                      'Cross-country skiing',
                      'Swimming',
                      'Surfing',
@@ -114,20 +122,20 @@ var kerywords = [
                      'Snorkeling',
                      'Aquajogging',
                      'Artistic or synchronised swimming',
-                     'Rescue  swimming',
-                     'Water  basketball',
+                     'Rescue swimming',
+                     'Water basketball',
                      'Waterpolo',
-                     'Water  volleyball',
+                     'Water volleyball',
                      'Paddle / Stand-up Paddle',
-                     'Kit  surf',
-                     'Wind  surf',
+                     'Kit surf',
+                     'Wind surf',
                      'Wakeboard',
                      'Rowing',
-                     'Boat  racing',
+                     'Boat racing',
                      'Boating',
-                     'Cable  skiing',
-                     'Canoe  polo',
-                     'American  Football',
+                     'Cable skiing',
+                     'Canoe polo',
+                     'American Football',
                      'Baseball',
                      'Basketball',
                      'Dodgeball',
@@ -135,27 +143,27 @@ var kerywords = [
                      'Cricket',
                      'Futsal',
                      'Handball',
-                     'Field  Hockey',
+                     'Field Hockey',
                      'Lacrosse',
                      'Rowing',
                      'Rugby',
-                     'Soccer  /  Football',
+                     'Soccer / Football',
                      'Softball',
                      'Kickball',
                      'Tennis (double)',
-                     'Track  and  field',
+                     'Track and field',
                      'Volleyball',
-                     'Air  soft',
+                     'Air soft',
                      'Tchoukball',
-                     'Ultimate  Frisbee',
-                     'Street  hockey',
+                     'Ultimate Frisbee',
+                     'Street hockey',
                      'Cricket',
-                     'Beach  football',
-                     'Beach  Volleyball',
+                     'Beach football',
+                     'Beach Volleyball',
                      'Polo',
-                     'Under  water  hockey',
-                     'Cycle  polo',
-                     'Segway  polo',
+                     'Under water hockey',
+                     'Cycle polo',
+                     'Segway polo',
                      'Kayaking',
                      'Athletics',
                      'Snorkeling',
@@ -164,11 +172,11 @@ var kerywords = [
                      'Archery',
                      'Gymnastics',
                      'Cycling',
-                     'Discus  Throw',
+                     'Discus Throw',
                      'Equestrianism',
                      'Fencing',
-                     'Long  Jump',
-                     'Pole  Vault',
+                     'Long Jump',
+                     'Pole Vault',
                      'Powerlifting',
                      'Tennis',
                      'Badminton',
@@ -185,76 +193,76 @@ var kerywords = [
                      'Bicycling',
                      'Trampoline',
                      'Petanque',
-                     'Local  Race',
+                     'Local Race',
                      'Zorbing',
-                     'Scuba  Diving',
+                     'Scuba Diving',
                      'Powerbocking',
                      'Marathon',
                      'Zorbing',
-                     'Scuba  Diving',
+                     'Scuba Diving',
                      'Powerbocking',
                      'Blobbing',
-                     'Mountain  Boarding',
+                     'Mountain Boarding',
                      'Barefooting',
                      'Pogo',
                      'Rappelling',
-                     'Hang  Gliding',
+                     'Hang Gliding',
                      'Paragliding',
                      'Half-Pipe',
                      'Ironman',
-                     'Ice  cross  Downhill',
-                     'Street  Luge',
-                     'Downhill  Skateboarding',
-                     'Downhill  Mountain  Biking',
-                     'Waterfall  Kayaking',
+                     'Ice cross Downhill',
+                     'Street Luge',
+                     'Downhill Skateboarding',
+                     'Downhill Mountain Biking',
+                     'Waterfall Kayaking',
                      'Highlining',
-                     'Cliff  Diving',
-                     'Free  Climbing',
-                     'Sky  diving',
-                     'Canyon  Swinging',
-                     'Base  Jumping',
-                     'Wingsuit  flying',
+                     'Cliff Diving',
+                     'Free Climbing',
+                     'Sky diving',
+                     'Canyon Swinging',
+                     'Base Jumping',
+                     'Wingsuit flying',
                      'Dance',
                      'Tours',
                      'E - Sports',
                      'Yoga',
                      'Pilates',
                      'Stretching',
-                     'Sport  Food',
+                     'Sport Food',
                      'SPA',
-                     'Via  Ferrata',
-                     'Spartiates  Race',
+                     'Via Ferrata',
+                     'Spartiates Race',
                      'Running of the bulls',
-                     'Camping  &amp;  Bivouac',
+                     'Camping & Bivouac',
                      'Trail',
-                     'Nordic’s  walk',
+                     'Nordic’s walk',
                      'Hiking',
                      'Fishing',
-                     'Helicopter  flights',
-                     'Off - road  Racing',
-                     'Rally  Car',
-                     'Air  racing',
-                     'Auto  racing  ( car  racing )',
-                     'Motor  rallying',
+                     'Helicopter flights',
+                     'Off - road Racing',
+                     'Rally Car',
+                     'Air racing',
+                     'Auto racing  ( car  racing )',
+                     'Motor rallying',
                      'Rallycross',
-                     'Motorcycle  racing',
-                     'Kart  racing',
-                     'Banger  racing',
-                     'Motorboat  racing',
-                     'Drone  racing',
-                     'Hovercraft  racing',
-                     'Lawn  mower  racing',
+                     'Motorcycle racing',
+                     'Kart racing',
+                     'Banger racing',
+                     'Motorboat racing',
+                     'Drone racing',
+                     'Hovercraft racing',
+                     'Lawn mower racing',
                      'Radio-controlled model racing',
-                     'Snowmobile  racing',
-                     'Truck  racing',
+                     'Snowmobile racing',
+                     'Truck racing',
                      'Drifting',
-                     'Demolition  derby',
-                     'Motorcycle  trials',
-                     'Freestyle  Motocross',
-                     'Tractor  pulling',
+                     'Demolition derby',
+                     'Motorcycle trials',
+                     'Freestyle Motocross',
+                     'Tractor pulling',
                      'Motorcycling',
-                     'Car  Racing',
-                     'Mix  Martial  Arts',
+                     'Car Racing',
+                     'Mix Martial Arts',
                      'Judo, Aikido',
                      'Karate',
                      'Jiu - jitsu',
@@ -264,31 +272,29 @@ var kerywords = [
                      'Capoeira',
                      'Fencing',
                      'Kickboxing',
-                     'Krav  Maga',
+                     'Krav Maga',
                      'Kung - Fu',
                      'Muay  Thai',
                      'Paintball',
                      'Sambo',
-                     'Thai  Boxing',
+                     'Thai Boxing',
                      'Diving',
-                     'Rink  Hockey',
+                     'Rink Hockey',
                      'Running',
                      'Paddle (tennis)',
                      'Building Jumping',
                      'Rollerblading',
-                     'Urban  Exploration',
+                     'Urban Exploration',
                      'Longboarding',
                      'BMX',
                      'Farming',
-                     'Urban  Parachuting',
-                     'Street  Workout',
-                     'Running  /  Jogging',
-                     'Roller  Freestyle',
+                     'Urban Parachuting',
+                     'Street Workout',
+                     'Running / Jogging',
+                     'Roller Freestyle',
                      'Scooter (trotinette)',
                      'Triathlon',
                ];
-
-autocomplete('keywords_val', kerywords);
 
 
 
@@ -544,102 +550,3 @@ $(window).on("load resize", function() {
     $('#bottomMenu').css({marginTop: '-110px'});
   }
 });
-
-
-function autocomplete(input, arr) {
-  var inp = document.getElementById(input);
-  /*the autocomplete function takes two arguments,
-  the text field element and an array of possible autocompleted values:*/
-  var currentFocus;
-  /*execute a function when someone writes in the text field:*/
-  inp.addEventListener("input", function(e) {
-      var a, b, i, val = this.value;
-      /*close any already open lists of autocompleted values*/
-      closeAllLists();
-      if (!val) { return false;}
-      currentFocus = -1;
-      /*create a DIV element that will contain the items (values):*/
-      a = document.createElement("DIV");
-      a.setAttribute("id", this.id + "autocomplete-list");
-      a.setAttribute("class", "autocomplete-items");
-      /*append the DIV element as a child of the autocomplete container:*/
-      this.parentNode.appendChild(a);
-      /*for each item in the array...*/
-      for (i = 0; i < arr.length; i++) {
-        /*check if the item starts with the same letters as the text field value:*/
-        if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
-          /*create a DIV element for each matching element:*/
-          b = document.createElement("DIV");
-          /*make the matching letters bold:*/
-          b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
-          b.innerHTML += arr[i].substr(val.length);
-          /*insert a input field that will hold the current array item's value:*/
-          b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
-          /*execute a function when someone clicks on the item value (DIV element):*/
-          b.addEventListener("click", function(e) {
-              /*insert the value for the autocomplete text field:*/
-              inp.value = this.getElementsByTagName("input")[0].value;
-              /*close the list of autocompleted values,
-              (or any other open lists of autocompleted values:*/
-              closeAllLists();
-          });
-          a.appendChild(b);
-        }
-      }
-  });
-  /*execute a function presses a key on the keyboard:*/
-  inp.addEventListener("keydown", function(e) {
-      var x = document.getElementById(this.id + "autocomplete-list");
-      if (x) x = x.getElementsByTagName("div");
-      if (e.keyCode == 40) {
-        /*If the arrow DOWN key is pressed,
-        increase the currentFocus variable:*/
-        currentFocus++;
-        /*and and make the current item more visible:*/
-        addActive(x);
-      } else if (e.keyCode == 38) { //up
-        /*If the arrow UP key is pressed,
-        decrease the currentFocus variable:*/
-        currentFocus--;
-        /*and and make the current item more visible:*/
-        addActive(x);
-      } else if (e.keyCode == 13) {
-        /*If the ENTER key is pressed, prevent the form from being submitted,*/
-        e.preventDefault();
-        if (currentFocus > -1) {
-          /*and simulate a click on the "active" item:*/
-          if (x) x[currentFocus].click();
-        }
-      }
-  });
-  function addActive(x) {
-    /*a function to classify an item as "active":*/
-    if (!x) return false;
-    /*start by removing the "active" class on all items:*/
-    removeActive(x);
-    if (currentFocus >= x.length) currentFocus = 0;
-    if (currentFocus < 0) currentFocus = (x.length - 1);
-    /*add class "autocomplete-active":*/
-    x[currentFocus].classList.add("autocomplete-active");
-  }
-  function removeActive(x) {
-    /*a function to remove the "active" class from all autocomplete items:*/
-    for (var i = 0; i < x.length; i++) {
-      x[i].classList.remove("autocomplete-active");
-    }
-  }
-  function closeAllLists(elmnt) {
-    /*close all autocomplete lists in the document,
-    except the one passed as an argument:*/
-    var x = document.getElementsByClassName("autocomplete-items");
-    for (var i = 0; i < x.length; i++) {
-      if (elmnt != x[i] && elmnt != inp) {
-        x[i].parentNode.removeChild(x[i]);
-      }
-    }
-  }
-  /*execute a function when someone clicks in the document:*/
-  document.addEventListener("click", function (e) {
-      closeAllLists(e.target);
-  });
-}
