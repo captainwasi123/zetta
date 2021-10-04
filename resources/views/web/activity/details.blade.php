@@ -46,18 +46,23 @@
                      <h3> {{$data->title}} </h3>
                   </div>
                   <div class="lesson-holder-title">
-                     <div class="lesson-title-block">
-                        <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{empty($data->user) ? '' : $data->user->profile_img}}" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';">
-                        <h4>  {{empty($data->user) ? 'Unknown' : $data->user->fname.' '.$data->user->lname}} <span> Sports Buddy </span>  </h4>
-                     </div>
-                     <div class="lesson-holder-review">
-                        <i class="fa fa-star col-purple"> </i>
-                        <i class="fa fa-star col-purple"> </i>
-                        <i class="fa fa-star col-purple"> </i>
-                        <i class="fa fa-star col-purple"> </i>
-                        <i class="fa fa-star col-purple"> </i>
-                        <b class="col-purple"> 5.0 </b>
-                     </div>
+                     <a href="javascript:void(0)" id="{{$data->id}}" data-id="{{$data->id}}" class="bor-purple col-white rounded custom-btn1 font-thin fav_act">
+                        @if(Auth::check())
+                           @php $fv = 0; @endphp
+                           @foreach (auth()->user()->fav_activity as $act)
+                               @if ($data->id == $act->activity_id && $act->user_id == auth()->user()->id)
+                                   @php $fv = 1; @endphp
+                               @endif
+                           @endforeach
+                           @if ($fv == 1)
+                               <i class="fa fa-heart col-purple"></i>
+                           @else
+                               <i class="far fa-heart col-purple"></i>
+                           @endif
+                        @else
+                           <i class="far fa-heart col-purple"></i>
+                        @endif
+                     </a>
                   </div>
                </div>
                <div class="col-2">
@@ -83,10 +88,12 @@
                <div>
                   <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{empty($data->user) ? '' : $data->user->profile_img}}" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';">
                </div>
-               <h4 class="col-white no-margin m-t-0 m-b-0"> {{empty($data->user) ? 'Unknown' : $data->user->fname.' '.$data->user->lname}} </h4>
+               <a href="{{route('web.buddy.details', base64_encode($data->user->id))}}">
+                  <h4 class="col-white no-margin m-t-0 m-b-0"> {{empty($data->user->fname) ? 'Anonymous' : $data->user->fname.' '.$data->user->lname}} </h4>
+               </a>
                <h6 class="col-grey"> Sports Buddy </h6>
                <h5 class="col-purple m-b-15"> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> 5.0  </h5>
-               <a href="{{URL::to('/buddy/inbox/chat/'.base64_encode($data->user_id))}}/{{empty($data->user->fname) ? 'Newuser' : $data->user->fname.' '.$data->user->lname}}" class="bor-purple col-white rounded custom-btn1 font-thin"> Contact Me </a>
+               <br><br>
             </div>
             
 
@@ -154,7 +161,8 @@
                   </p>
                </div>
             </div>
-            <div class="sec-head1 m-t-60 m-b-15">
+            <div class="sec-head1 m-t-60 m-b-15 m-t-40">
+               <br>
                <h3 class="col-white"> Reviews as Sport Buddy </h3>
             </div>
             <div class="review-slider arrows3">
@@ -278,14 +286,43 @@
                               <p class="col-white m-b-20"> {{$data->description}}  </p>
                               {{-- <h5 class="col-white m-b-20"> <img src="{{URL::to('/assets/website')}}/images/clock-icon.jpg"> 9 am - 12 am </h5> --}}
                            </div>
-                           {{-- <ul class="list-type1 no-border">
-                              <li class="block-element2"> <i class="fa fa-check col-purple"> </i> Lorem Ipsum </li>
-                              <li class="block-element2"> <i class="fa fa-check col-purple"> </i> Lorem Ipsum </li>
-                              <li class="block-element2"> <i class="fa fa-check col-purple"> </i> Lorem Ipsum </li>
-                              <li class="block-element2"> <i class="fa fa-check col-purple"> </i> Lorem Ipsum </li>
-                              <li class="block-element2"> <i class="fa fa-check col-purple"> </i> Lorem Ipsum </li>
-                              <li class="block-element2"> <i class="fa fa-check col-purple"> </i> Lorem Ipsum </li>
-                           </ul> --}}
+                           <ul class="list-type1 no-border">
+                              <li class="block-element2"> <i class="fa fa-check col-purple"> </i> {{$data->participant == '0' ? 'Single Activity' : 'Group Activity'}} </li>
+                              <li class="block-element2"> <i class="fa fa-check col-purple"> </i> {{$data->location_covered == '0' ? 'Open Location' : 'Covered Location'}} </li>
+                              <li class="block-element2"> <i class="fa fa-check col-purple"> </i> 
+                                 @switch($data->availability)
+                                    @case('1')
+                                       Only Zoom Classes
+                                       @break
+
+                                    @case('2')
+                                       Only Normal Classes
+                                       @break
+
+                                    @case('3')
+                                       Normal Classes, Zoom Classess
+                                       @break
+                                 @endswitch
+                              </li>
+                              <li class="block-element2"> <i class="fa fa-check col-purple"> </i> 
+                                 Available For: 
+                                 <strong>
+                                    @switch($data->availability_for)
+                                       @case('1')
+                                          Teenagers
+                                          @break
+
+                                       @case('2')
+                                          Senior Citizens
+                                          @break
+
+                                       @case('3')
+                                          Handicapped
+                                          @break
+                                    @endswitch
+                                 </strong>
+                              </li>
+                           </ul>
                            <div class="block-element2 m-t-30">
                               <p class="m-b-10" >  <a href="{{URL::to('/cart/activity/'.base64_encode($data->id).'/basic')}}" class="block-element2 bg-purple col-white rounded custom-btn1 text-center"> Continue
                                 @if (count($data->equipment)>0)
@@ -312,7 +349,13 @@
                </div>
                <div class="block-element3 m-t-30">
                   <!-- <p class="m-b-0" style="padding:0px 30px">   <a href="{{URL::to('/buddy/inbox/chat/'.base64_encode($data->user_id))}}/{{empty($data->user->fname) ? 'Newuser' : $data->user->fname.' '.$data->user->lname}}" class="block-element2 bg-white col-purple rounded custom-btn1 text-center" data-toggle="modal" data-target="#myModal"> Contact Buddy  </a> </p> -->
-                  <p class="m-b-0" style="padding:0px 30px">   <a href="#" class="block-element2 bg-white col-purple rounded custom-btn1 text-center" data-toggle="modal" data-target="#myModal"> Contact Buddy  </a> </p>
+                  <p class="m-b-0" style="padding:0px 30px">   <a href="javascript:void(0)" class="block-element2 bg-white col-purple rounded custom-btn1 text-center getUserMessage" data-id="{{base64_encode(@$data->user->id)}}"> Contact Buddy  </a> </p>
+                  <br>
+                  @if(session()->has('success'))
+                      <div class="alert alert-success">
+                          {{ session()->get('success') }}
+                      </div>
+                  @endif
                </div>
             </div>
             <div class="packages-map block-element3 m-t-30" id="mapa">
@@ -397,7 +440,7 @@
 
 
 <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
+  <div class="modal fade" id="getUserMessageModal" role="dialog">
     <div class="modal-dialog">
     
       <!-- Modal content-->
@@ -406,34 +449,8 @@
           <h4 class="modal-title ">Send a Message</h4>
           <button type="button" class="close" data-dismiss="modal">&times;</button>          
         </div>
-        <div class="modal-body">
-          <div class="row">
-            <div class="col-md-4">
-              <div class="contact-profile-section">
-              <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{empty($data->user) ? '' : $data->user->profile_img}}" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';">
-              <h3>gmxsolution</h3>
-              <h4>away</h4>
-              </div>
-              <hr>
-              <div class="contact-profile-section1">
-                <h3>Please include:</h3>
-                <ul>
-                  <li>Project Description</li>
-                  <li>Project Description</li>
-                  <li>Project Description</li>                
-                </ul>
-              </div>
-              
-            </div>
-            <div class="col-md-8">
-              <div class="contact-profile-section3">
-                <form>
-                  <textarea rows="11" cols="5"></textarea>
-                  <input type="submit" name="">
-                </form>                
-              </div>
-            </div>            
-          </div>
+        <div class="modal-body" id="getUserMessageModalContent">
+          
         </div>
       </div>
 

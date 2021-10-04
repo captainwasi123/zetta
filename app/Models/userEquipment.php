@@ -5,6 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Auth;
+use App\Models\sportsCategory;
+use App\Models\sports;
 
 class userEquipment extends Model
 {
@@ -15,6 +17,8 @@ class userEquipment extends Model
         $l = new userEquipment;
         $l->user_id = Auth::id();
         $l->name = $data['name'];
+        $l->category_id = $data['category'];
+        $l->sports_id = $data['sports'];
         $l->qty = $data['qty'];
         $l->package = $data['package'];
         $l->price = empty($data['price']) ? null : $data['price'];
@@ -26,6 +30,8 @@ class userEquipment extends Model
     public static function updateEquipment(array $data){
         $l = userEquipment::find(base64_decode($data['eid']));
         $l->name = $data['name'];
+        $l->category_id = $data['category'];
+        $l->sports_id = $data['sports'];
         $l->qty = $data['qty'];
         $l->package = $data['package'];
         $l->price = empty($data['price']) ? null : $data['price'];
@@ -36,5 +42,13 @@ class userEquipment extends Model
         $i = userEquipment::find($id);
         $i->image = $filename;
         $i->save();
+    }
+
+    public function category(){
+        return $this->belongsTo(sportsCategory::class, 'category_id');
+    }
+
+    public function sports(){
+        return $this->belongsTo(sports::class, 'sports_id');
     }
 }

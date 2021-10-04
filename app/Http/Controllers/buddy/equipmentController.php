@@ -5,6 +5,7 @@ namespace App\Http\Controllers\buddy;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\userEquipment;
+use App\Models\sportsCategory;
 
 class equipmentController extends Controller
 {
@@ -17,8 +18,9 @@ class equipmentController extends Controller
     }
 
     function add(){
+        $data['categories'] = sportsCategory::all();
 
-        return view('buddy.equipment.add');
+        return view('buddy.equipment.add')->with($data);
     }
 
     function insert(Request $request){
@@ -40,8 +42,9 @@ class equipmentController extends Controller
     function edit($id){
         $id = base64_decode($id);
         $data = userEquipment::find($id);
+        $categories = sportsCategory::all();
         if(!empty($data->id)){
-            return view('buddy.equipment.edit', ['data' => $data]);
+            return view('buddy.equipment.edit', ['data' => $data, 'categories' => $categories]);
         }else{
             return redirect()->back();
         }

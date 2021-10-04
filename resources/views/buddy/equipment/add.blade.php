@@ -26,6 +26,39 @@
          <div class="row center-row">
             <div class="col-md-3 col-lg-3 col-12">
                <div class="field-name">
+                  <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/field-icon9.png">
+                  <h5> Category </h5>
+               </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-12 ">
+               <div class="inc-dec">
+                  <select name="category" class="form-field1" id="category_field" required>
+                      <option value="">Select</option>
+                       @foreach ($categories as $val)
+                           <option value="{{$val->id}}">{{$val->name}}</option>
+                       @endforeach
+                  </select> 
+               </div>
+            </div>
+         </div>
+         <div class="row center-row">
+            <div class="col-md-3 col-lg-3 col-12">
+               <div class="field-name">
+                  <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/field-icon9.png">
+                  <h5> Sports </h5>
+               </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-12 ">
+               <div class="inc-dec">
+                  <select name="sports" class="form-field1" id="sports_id" required>
+                      <option value="">Select</option>
+                  </select> 
+               </div>
+            </div>
+         </div>
+         <div class="row center-row">
+            <div class="col-md-3 col-lg-3 col-12">
+               <div class="field-name">
                   <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/field-icon2.png">
                   <h5> No of Equipment </h5>
                </div>

@@ -63,6 +63,9 @@ use Illuminate\Support\Facades\Route;
 				Route::get('auth/facebook/callback', 'facebookController@handleFacebookCallback');
 
 
+			Route::get('getUserMessage/{id}', 'webController@getUserMessage');
+			Route::post('sendMessage', 'webController@sendMessage');
+
 		//Activities
 			Route::prefix('activity')->group(function(){
 

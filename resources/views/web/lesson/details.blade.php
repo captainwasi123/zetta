@@ -21,22 +21,37 @@
 <section class="pad-bot-40 bg-dark2 activity-section">
    <div class="container">
       <div class="row">
-         <div class="col-12">
-            <div class="lesson-holder-head m-b-15">
-               <h3>{{$data->title}}</h3>
-            </div>
-            <div class="lesson-holder-title">
-               <div class="lesson-title-block">
-                  <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{empty($data->user) ? '' : $data->user->profile_img}}" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';">
-                  <h4>  {{empty($data->user) ? 'Unknown' : $data->user->fname.' '.$data->user->lname}} <span> Coach </span>  </h4>
+         <div class="col-7">
+            <div class="row">
+               <div class="col-10">
+                  <div class="lesson-holder-head m-b-15">
+                     <h3>{{$data->title}}</h3>
+                  </div>
+                  <div class="lesson-holder-title">
+                     <a href="javascript:void(0)" id="fl{{$data->id}}" data-id="{{$data->id}}" class="bor-purple col-white rounded custom-btn1 font-thin fav_lesson">
+                        @if(Auth::check())
+                           @php $fv = 0; @endphp
+                           @foreach (auth()->user()->fav_lesson as $lsn)
+                               @if ($data->id == $lsn->lesson_id && $lsn->user_id == auth()->user()->id)
+                                   @php $fv = 1; @endphp
+                               @endif
+                           @endforeach
+                           @if ($fv == 1)
+                               <i class="fa fa-heart col-purple"></i>
+                           @else
+                               <i class="far fa-heart col-purple"></i>
+                           @endif
+                        @else
+                           <i class="far fa-heart col-purple"></i>
+                        @endif
+                     </a>
+                  </div>
                </div>
-               <div class="lesson-holder-review">
-                  <i class="fa fa-star col-purple"> </i>
-                  <i class="fa fa-star col-purple"> </i>
-                  <i class="fa fa-star col-purple"> </i>
-                  <i class="fa fa-star col-purple"> </i>
-                  <i class="fa fa-star col-purple"> </i>
-                  <b class="col-purple"> 5.0 </b>
+               <div class="col-2">
+                  <div class="activity_category"> 
+                     <img src="{{URL::to('/public/storage/settings/category/'.$data->category->image)}}">
+                     <label>{{$data->category->name}}</label> 
+                  </div>
                </div>
             </div>
          </div>
@@ -55,10 +70,11 @@
                <div>
                   <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{empty($data->user) ? '' : $data->user->profile_img}}" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';">
                </div>
-               <h4 class="col-white no-margin m-t-0 m-b-0"> {{empty($data->user) ? 'Unknown' : $data->user->fname.' '.$data->user->lname}} </h4>
+               <a href="{{route('web.coach.details', base64_encode($data->user->id))}}">
+                  <h4 class="col-white no-margin m-t-0 m-b-0"> {{empty($data->user->fname) ? 'Anonymous' : $data->user->fname.' '.$data->user->lname}} </h4>
+               </a>
                <h6 class="col-grey"> Coach </h6>
                <h5 class="col-purple m-b-15"> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> 5.0  </h5>
-               <a href="{{URL::to('/buddy/inbox/chat/'.base64_encode($data->user_id))}}/{{empty($data->user->fname) ? 'Newuser' : $data->user->fname.' '.$data->user->lname}}" class="bor-purple col-white rounded custom-btn1 font-thin"> Contact Me </a>
             </div>
             
             <div class="lesson-holder-about">
@@ -324,7 +340,8 @@
                   </div>
                </div>
                <div class="block-element3 m-t-30">
-                  <p class="m-b-0" style="padding:0px 30px">   <a href="{{URL::to('/buddy/inbox/chat/'.base64_encode($data->user_id))}}/{{empty($data->user->fname) ? 'Newuser' : $data->user->fname.' '.$data->user->lname}}" class="block-element2 bg-white col-purple rounded custom-btn1 text-center"> Contact Coach  </a> </p>
+                  <p class="m-b-0" style="padding:0px 30px">   
+                     <a href="javascript:void(0)" class="block-element2 bg-white col-purple rounded custom-btn1 text-center getUserMessage" data-id="{{base64_encode(@$data->user->id)}}"> Contact Coach  </a> </p>
                </div>
             </div>
 
@@ -415,6 +432,27 @@
       </div>
    </div>
 </section>
+
+
+<!-- Modal -->
+  <div class="modal fade" id="getUserMessageModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header contact-profile">
+          <h4 class="modal-title ">Send a Message</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>          
+        </div>
+        <div class="modal-body" id="getUserMessageModalContent">
+          
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
 <input type="hidden" id="lat">
 <input type="hidden" id="lng">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

@@ -17,6 +17,10 @@ use Symfony\Component\HttpFoundation\AcceptHeader;
 use App\Models\sportsCategory;
 use App\Models\sports;
 use Carbon\Carbon;
+use App\Models\inbox\chat;
+use App\Events\sendChat;
+use Pusher\Pusher;
+use URL;
 
 class webController extends Controller
 {
@@ -302,6 +306,50 @@ class webController extends Controller
         $data = User::with(['country','langs','category','education','certificate','equipment','activities','media'])->find($id);
         if(!empty($data->id)){
             return view('web.profiles.buddy_profile', ['data' => $data]);
+        }else{
+            return redirect()->back();
+        }
+    }
+
+    function getUserMessage($id){
+        $id = base64_decode($id);
+        $data = User::find($id);
+
+        return view('web.response.message_box', ['data' => $data]);
+    }
+
+    function sendMessage(Request $request){
+        if(Auth::check()){
+            $data = $request->all();
+            $filename = null;
+            $file_fullname = null;
+            $attach_block = null;
+            $timestamp = chat::addChat($data, $filename, $file_fullname);
+            $name = empty(Auth::user()->fname) ? 'Newuser' : Auth::user()->fname.' '.Auth::user()->lname;
+
+
+
+            $pusher = new Pusher(
+                        env('PUSHER_APP_KEY'), 
+                        env('PUSHER_APP_SECRET'), 
+                        env('PUSHER_APP_ID'), 
+                        array(
+                            'cluster' => env('PUSHER_APP_CLUSTER')
+                        )
+                    );
+            $img = empty(Auth::user()->profile_img) ? 'none' : Auth::user()->profile_img;
+            $pusher->trigger('send-chatChannel.'.base64_decode($data['msg_id']).'.'.Auth::id(), 'sendChat', 
+                        array(
+                            'message'   => $data['message'], 
+                            'image'     => $img,
+                            'name'      => $name,
+                            'timestamp' => $timestamp->diffForHumans()
+                        )
+                    );
+            $pusher->trigger('noti-chatChannel.'.base64_decode($data['msg_id']), 'notiChat', 'received');
+
+            return redirect()->back()->with('success', 'Message Sent.');
+
         }else{
             return redirect()->back();
         }

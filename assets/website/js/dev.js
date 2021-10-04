@@ -45,7 +45,16 @@ $(document).ready(function(){
 
     $( "#header_sports_val" ).autocomplete({
         source: kerywordss
-    })
+    });
+
+    $(document).on('click', '.getUserMessage', function(){
+        var id = $(this).data('id');
+        $('#getUserMessageModal').modal('show');
+        $('#getUserMessageModalContent').html('<div class="col-12 stickmanLoader"><img src="'+host+'/assets/website/images/loaderr.gif"/></div>');
+        $.get( host+'/getUserMessage/'+id, function(data) {
+            $('#getUserMessageModalContent').html(data);
+        });
+    });
 
  });
 
