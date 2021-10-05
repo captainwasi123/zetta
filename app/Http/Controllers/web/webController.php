@@ -28,8 +28,8 @@ class webController extends Controller
     function index(){
         $data = array(
         	'lessons' => lessons::with('packages')->where('status', '1')->latest()->limit(10)->get(),
-            'activities' => activities::with(['user','equipment','equipment.user_equipment'])->where('status', '1')->where('activity_type', '1')->whereDate('held_date', '>', Carbon::now())->latest()->limit(10)->get(),
-
+            'uactivities' => activities::with(['user','equipment','equipment.user_equipment'])->where('status', '1')->where('activity_type', '1')->whereDate('held_date', '>', Carbon::now())->latest()->limit(10)->get(),
+            'activities' => activities::with(['user','equipment','equipment.user_equipment'])->where('status', '1')->where('activity_type', '1')->latest()->limit(10)->get(),
             'alocation' => Activity_location::where('lat', '!=', null)->where('lng', '!=', null)->groupBy('lat', 'lng')->get(),
             'llocation' => Locations::where('lat', '!=', null)->where('lng', '!=', null)->groupBy('lat', 'lng')->get(),
             'ulocation' => User::where('status', '1')->where('lat', '!=', null)->where('lng', '!=', null)->get(),
@@ -191,62 +191,51 @@ class webController extends Controller
     function stickmanSearch(Request $request){
         $rdata = $request->all();
 
-        if($rdata['type'] == 'Lessons'){
-            $data['lessons'] = lessons::where('status', '1')
+        if(isset($rdata['stickman'])){
+        $data['lessons'] = lessons::where('status', '1')
+                            ->when(!empty($rdata['stickman']), function ($qq) use ($rdata){
+                                return $qq->whereHas('category', function ($q) use ($rdata) {
+                                    $q->whereIn('name', $rdata['stickman']);
+                                });
+                            })
+                            ->latest()->paginate(18);
+
+
+        $data['activities'] = activities::where('status', '1')
                                 ->when(!empty($rdata['stickman']), function ($qq) use ($rdata){
-                                    $qq->whereHas('user', function ($query) use ($rdata) {
-                                        $query->whereHas('category', function ($q) use ($rdata) {
-                                            $q->whereIn('name', $rdata['stickman']);
-                                        });
+                                    return $qq->whereHas('category', function ($q) use ($rdata) {
+                                        $q->whereIn('name', $rdata['stickman']);
                                     });
                                 })
                                 ->latest()->paginate(18);
 
-            return view('web.filter.response.lessons')->with($data);
+        $data['coaches'] = User::where('status', '1')
+                            ->where('type', '2')
+                            ->whereHas('category', function ($q) use ($rdata) {
+                                $q->whereIn('name', $rdata['stickman']);
+                            })
+                            ->latest()->paginate(18);
 
-        }
+        $data['buddies'] = User::where('status', '1')
+                            ->where('type', '1')
+                            ->whereHas('category', function ($q) use ($rdata) {
+                                $q->whereIn('name', $rdata['stickman']);
+                            })
+                            ->latest()->paginate(18);
 
+        $data['searchCategory'] = sportsCategory::whereIn('name', $rdata['stickman'])->get();
+        $data['search_add'] = $rdata['type'];
 
-        elseif($rdata['type'] == 'Activities'){
-            $data['activities'] = activities::where('status', '1')
-                                    ->when(!empty($rdata['stickman']), function ($qq) use ($rdata){
-                                        $qq->whereHas('user', function ($query) use ($rdata) {
-                                            $query->whereHas('category', function ($q) use ($rdata) {
-                                                $q->whereIn('name', $rdata['stickman']);
-                                            });
-                                        });
-                                    })
-                                    ->latest()->paginate(18);
-
-            return view('web.filter.response.activity')->with($data);
-
-        }
-
-
-        elseif($rdata['type'] == 'Coaches'){
-            $data['coaches'] = User::where('status', '1')
-                                ->where('type', '2')
-                                ->whereHas('category', function ($q) use ($rdata) {
-                                    $q->whereIn('name', $rdata['stickman']);
-                                })
-                                ->latest()->paginate(18);
-
-            return view('web.filter.response.coaches')->with($data);
-
-        }
-
-
-        elseif($rdata['type'] == 'Sports Buddies'){
-            $data['buddies'] = User::where('status', '1')
-                                ->where('type', '1')
-                                ->whereHas('category', function ($q) use ($rdata) {
-                                    $q->whereIn('name', $rdata['stickman']);
-                                })
-                                ->latest()->paginate(18);
-
-            return view('web.filter.response.buddies')->with($data);
+        return view('web.filter.response.allResult')->with($data);
         }else{
-            return redirect('/');
+            $data['lessons'] = array();
+            $data['activities'] = array();
+            $data['coaches'] = array();
+            $data['buddies'] = array();
+            $data['searchCategory'] = array();
+            $data['search_add'] = $rdata['type'];
+            $data['search_value'] = $rdata['sValue'];
+            return view('web.filter.response.allResult')->with($data);
         }
     }
 

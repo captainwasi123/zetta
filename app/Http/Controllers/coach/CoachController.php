@@ -8,12 +8,20 @@ use Hash;
 use App\Models\User;
 use App\Models\lesson\orders;
 use App\Http\Controllers\Controller;
+use App\Models\inbox\chat;
 
 
 class CoachController extends Controller
 {
 
     public function index(){
+        $sender = Auth::id();
+        $data['chat_list'] = chat::where("sender_id",$sender)
+                        ->orWhere("receiver_id",$sender)
+                        ->distinct("sender_id", "receiver_id")
+                        ->orderBy('created_at', 'desc')
+                        ->get();
+
         $data['orders'] = orders::with(['buyer','lesson'])->where('seller_id', Auth::id())->where('status',1)->latest()->get();
         return view('coach.dashboard')->with($data);
     }

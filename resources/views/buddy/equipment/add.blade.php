@@ -101,7 +101,7 @@
             </div>
             <div class="col-md-6 col-lg-6 col-12">
                <div class="pic-uploader1">
-                  <input type="file" id="input-file-max-fs" name="main_image" class="dropify" data-max-file-size="5M" data-height="80" required />
+                  <input type="file" id="input-file-max-fs" name="main_image" class="dropify" data-max-file-size="5M" data-height="80" />
                </div>
             </div>
          </div>

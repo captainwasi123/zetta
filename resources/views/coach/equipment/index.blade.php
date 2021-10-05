@@ -23,6 +23,8 @@
                                  <thead>
                                     <tr>
                                        <th> Title </th>
+                                       <th> Category </th>
+                                       <th> Sports </th>
                                        <th> Quantity </th>
                                        <th> Settings </th>
                                        <th> Amount </th>
@@ -33,10 +35,12 @@
                                        <tr>
                                           <td>
                                              <a href="javascript:void(0)">
-                                                <img src="{{URL::to('/public/storage/user/equipment/'.$val->image)}}" alt="user" width="40" class="img-circle" />&nbsp;&nbsp;&nbsp;
+                                                <img src="{{URL::to('/public/user/equipment/'.$val->image)}}" alt="user" width="50" height="40" class="img-circle" onerror="this.src='{{URL::to('/assets/website/images/placeholder.png')}}';" />&nbsp;&nbsp;&nbsp;
                                                 {{$val->name}}
                                              </a>
                                           </td>
+                                          <td>{{@$val->category->name}}</td>
+                                          <td>{{@$val->sports->name}}</td>
                                           <td> {{$val->qty}} </td>
                                           <td>
                                              <a href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"> <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/wheel-icon.png"> </a>

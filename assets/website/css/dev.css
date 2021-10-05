@@ -286,7 +286,7 @@ color:white !important;
 .custom-btn12 {
     padding: 4px 15px;
     letter-spacing: 1px;
-    font-size: 14px;
+    font-size: 11px;
     border: none !important;
     font-weight: 400;
     border-radius: 10px;
@@ -395,17 +395,33 @@ color:white !important;
   background-color: DodgerBlue !important; 
   color: #ffffff; 
 }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> d78617d2f14724126abdb3802ca0e7d322b3d487
 
 #ui-id-1 {
     margin-top: 60px !important;
 }
 
 
+>>>>>>> 5162533e3bea6e54ba2294750a4fda6237ba0393
 .subCategoryTray {
     border-top: 1px solid #585858;
     padding-top: 12px;
     margin-top: 12px;
+<<<<<<< HEAD
 }
+=======
+<<<<<<< HEAD
+}
+=======
+=======
+>>>>>>> 68ebea7efc5cab01ab1cafff9dc3ccb1fc2cf790
+>>>>>>> 5162533e3bea6e54ba2294750a4fda6237ba0393
+>>>>>>> d78617d2f14724126abdb3802ca0e7d322b3d487
 ul#ui-id-1 {
 
     border-radius: 10px !important;
@@ -431,3 +447,22 @@ ul#ui-id-1 li {
      transition: 5s;
      font-size: 14px;
 }
+<<<<<<< HEAD
+=======
+
+ul#ui-id-1 li div {
+/*    color: black !important;
+    padding: 8px !important;
+    border: 0px !important;*/
+}
+ul#ui-id-1 li div:hover {
+  /*  color: #fff !important;
+    background:#9949FE !important;
+    border-radius: 10px !important;
+    border: 0px !important;
+    padding: 8px !important;*/
+}
+#resultBlock {
+    background-color: #1d242c;
+}
+>>>>>>> d78617d2f14724126abdb3802ca0e7d322b3d487

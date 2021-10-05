@@ -49,7 +49,7 @@
                <h2 class="col-white gotham-bold text-center m-b-20"> Upcoming Events </h2>
             </div>
             <div class="boxes-slider1 arrows1">
-               @foreach($activities as $val)
+               @foreach($uactivities as $val)
 
                   <div>
                      <a href="{{route('activity.details', base64_encode($val->id))}}">
@@ -86,7 +86,7 @@
                               </p>
                               <h6 class="col-white m-b-15"> <i class="fa fa-star col-yellow"> </i> 5.0 </h6>
                               <h6 class="col-white m-b-15 lesson-catagory-text" style="float: right;">
-                                 <span class="bg-purple col-white custom-btn12"> {{@$val->category->name}} </span>
+                                 <span class="bg-purple col-white custom-btn12"> {{@$val->sports->name}} </span>
                               </h6>
                            </div>
                            <div class="lesson-rating-block gig">
@@ -263,7 +263,7 @@
                               </p>
                               <h6 class="col-white m-b-15"> <i class="fa fa-star col-yellow"> </i> 5.0 </h6>
                               <h6 class="col-white m-b-15 lesson-catagory-text" style="float: right;">
-                                 <span class="bg-purple col-white custom-btn12"> {{@$val->category->name}} </span>
+                                 <span class="bg-purple col-white custom-btn12"> {{@$val->sports->name}} </span>
                               </h6>
                            </div>
                            <div class="lesson-rating-block">
@@ -352,7 +352,7 @@
                               </p>
                               <h6 class="col-white m-b-15"> <i class="fa fa-star col-yellow"> </i> 5.0 </h6>
                               <h6 class="col-white m-b-15 lesson-catagory-text" style="float: right;">
-                                 <span class="bg-purple col-white custom-btn12"> {{@$val->category->name}} </span>
+                                 <span class="bg-purple col-white custom-btn12"> {{@$val->sports->name}} </span>
                               </h6>
                            </div>
                            <div class="lesson-rating-block">
