@@ -310,7 +310,22 @@ color:white !important;
 }
 
 .dropdown-menu a:hover {
-    background: #1d242c;
+    background: transparent;
+    color: #9949FE !important;
+    font-weight: 400;
+}
+.dropdown-menu.show {
+    background: #fff;
+    padding: 10px 10px;
+}
+.dropdown-menu.show a {
+    color: black;
+    padding: 5px 5px;
+    font-size: 14px;
+    font-weight: 400;
+}
+.dropdown-menu {
+    min-width: 155px;
 }
 
 .lesson-catagory-text
@@ -380,9 +395,48 @@ color:white !important;
   background-color: DodgerBlue !important; 
   color: #ffffff; 
 }
+<<<<<<< HEAD
 
 .subCategoryTray {
     border-top: 1px solid #585858;
     padding-top: 12px;
     margin-top: 12px;
+=======
+ul#ui-id-1 {
+    top: 522px !important;
+    border-radius: 10px !important;
+    padding: 8px !important;
+}
+.ui-state-active
+{
+color: #fff !important;
+    background:#9a49ffd4 !important;
+    border-radius: 10px !important;
+    border: 0px !important;
+    padding: 4px 7px !important;
+    font-size: 14px;
+
+}
+ul#ui-id-1 li {
+    color: black !important;
+    
+    border: 0px !important;
+    border-radius: 10px !important;
+     padding: 3px 0px;
+     transition: 5s;
+     font-size: 14px;
+}
+
+ul#ui-id-1 li div {
+/*    color: black !important;
+    padding: 8px !important;
+    border: 0px !important;*/
+}
+ul#ui-id-1 li div:hover {
+  /*  color: #fff !important;
+    background:#9949FE !important;
+    border-radius: 10px !important;
+    border: 0px !important;
+    padding: 8px !important;*/
+>>>>>>> 67e2005e16c8fa67311de11ba97282cff0da99f1
 }

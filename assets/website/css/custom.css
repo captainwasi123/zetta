@@ -3310,14 +3310,7 @@ nav.navbar.navbar-expand-lg.navbar-dark {
 ul.navbar-nav.mr-auto li {
     padding-right: 20px;
 }
-.dropdown-menu.show {
-    background: #9a49ff;
-    padding: 10px 10px;
-}
-.dropdown-menu.show a {
-    color: white;
-    padding: 10px 10px;
-}
+
 li.nav-item.dropdown a i {
    font-size: 12px;
 }
