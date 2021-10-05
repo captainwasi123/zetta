@@ -395,10 +395,15 @@ color:white !important;
   background-color: DodgerBlue !important; 
   color: #ffffff; 
 }
+
+#ui-id-1 {
+    margin-top: 60px !important;
+}
 ul#ui-id-1 {
-    top: 522px !important;
+
     border-radius: 10px !important;
     padding: 8px !important;
+    z-index: 9999;
 }
 .ui-state-active
 {
