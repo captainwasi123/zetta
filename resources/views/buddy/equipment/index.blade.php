@@ -35,7 +35,7 @@
                                        <tr>
                                           <td>
                                              <a href="javascript:void(0)">
-                                                <img src="{{URL::to('/public/user/equipment/'.$val->image)}}" alt="user" width="40" class="img-circle" />&nbsp;&nbsp;&nbsp;
+                                                <img src="{{URL::to('/public/user/equipment/'.$val->image)}}" alt="user" width="50" height="40" class="img-circle" onerror="this.src='{{URL::to('/assets/website/images/placeholder.png')}}';" />&nbsp;&nbsp;&nbsp;
                                                 {{$val->name}}
                                              </a>
                                           </td>

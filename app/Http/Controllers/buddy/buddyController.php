@@ -8,14 +8,21 @@ use App\Models\ActivityOrders;
 use App\Models\User;
 use App\Models\earningHistory;
 use Illuminate\Http\Request;
+use App\Models\inbox\chat;
 use Auth;
 
 class buddyController extends Controller
 {
     //
     public function index(){
-
-      return view('buddy.dashboard');
+        $sender = Auth::id();
+        $data_list = chat::where("sender_id",$sender)
+                        ->orWhere("receiver_id",$sender)
+                        ->distinct("sender_id", "receiver_id")
+                        ->orderBy('created_at', 'desc')
+                        ->get();
+                        
+      return view('buddy.dashboard', ['chat_list' => $data_list]);
     }
 
     public function my_wallet()

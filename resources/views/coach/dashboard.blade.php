@@ -2,6 +2,7 @@
 @section('title', 'Dashboard')
 
 @section('content')
+@php $list_item = array(); @endphp
 <div class="box-wrapper1">
                   <div class="block-element">
                      <div class="row">
@@ -18,45 +19,36 @@
                                                    <h5 class="col-white"> Inbox <a href="" class="custom-btn6"> VIEW ALL  </a>  </h5>
                                                 </div>
                                                 <ul class="chatonline style-none ">
-                                                   <li>
-                                                      <a href="javascript:void(0)"><img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/users/1.jpg" alt="user-img" class="img-circle"> <span class="col-white"> Minhaj <small class="bg-green">online</small></span> <b class="col-silver"> Hello , How are you sir? </b> </a>
-                                                   </li>
-                                                   <li>
-                                                      <a href="javascript:void(0)" ><img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/users/2.jpg" alt="user-img" class="img-circle"> <span class="col-white"> Maxella <small class="bg-green">Away</small></span> <b class="col-silver"> Hello , How are you sir? </b> </a>
-                                                   </li>
-                                                   <li>
-                                                      <a href="javascript:void(0)"><img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/users/3.jpg" alt="user-img" class="img-circle"> <span class="col-white"> Peter <small class="bg-danger">Busy</small></span> <b class="col-silver"> Hello , How are you sir? </b> </a>
-                                                   </li>
-                                                   <li>
-                                                      <a href="javascript:void(0)"><img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/users/4.jpg" alt="user-img" class="img-circle"> <span class="col-white">Jane Doe <small class="bg-danger">Offline</small></span> <b class="col-silver"> Hello , How are you sir? </b> </a>
-                                                   </li>
-                                                   <li>
-                                                      <a href="javascript:void(0)"><img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/users/5.jpg" alt="user-img" class="img-circle"> <span class="col-white"> Jonathon <small class="bg-green">online</small></span> <b class="col-silver"> Hello , How are you sir? </b> </a>
-                                                   </li>
-                                                   <li>
-                                                      <a href="javascript:void(0)"><img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/users/6.jpg" alt="user-img" class="img-circle"> <span class="col-white"> Tahar Roman <small class="bg-green">online</small></span> <b class="col-silver"> Hello , How are you sir? </b> </a>
-                                                   </li>
-                                                   <li>
-                                                      <a href="javascript:void(0)"><img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/users/7.jpg" alt="user-img" class="img-circle"> <span class="col-white"> Ben Cobert <small class="bg-danger">online</small></span> <b class="col-silver"> Hello , How are you sir? </b> </a>
-                                                   </li>
-                                                   <li>
-                                                      <a href="javascript:void(0)"><img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/users/8.jpg" alt="user-img" class="img-circle"> <span class="col-white">Pwandeep rajan <small class="bg-green">online</small></span> <b class="col-silver"> Hello , How are you sir? </b></a>
-                                                   </li>
-                                                   <li>
-                                                      <a href="javascript:void(0)"><img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/users/8.jpg" alt="user-img" class="img-circle"> <span class="col-white">Pwandeep rajan <small class="bg-green">online</small></span> <b class="col-silver"> Hello , How are you sir? </b></a>
-                                                   </li>
-                                                   <li>
-                                                      <a href="javascript:void(0)"><img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/users/8.jpg" alt="user-img" class="img-circle"> <span class="col-white">Pwandeep rajan <small class="bg-green">online</small></span> <b class="col-silver"> Hello , How are you sir? </b></a>
-                                                   </li>
-                                                   <li>
-                                                      <a href="javascript:void(0)"><img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/users/8.jpg" alt="user-img" class="img-circle"> <span class="col-white">Pwandeep rajan <small class="bg-green">online</small></span> <b class="col-silver"> Hello , How are you sir? </b></a>
-                                                   </li>
-                                                   <li>
-                                                      <a href="javascript:void(0)"><img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/users/8.jpg" alt="user-img" class="img-circle"> <span class="col-white">Pwandeep rajan <small class="bg-green">online</small></span> <b class="col-silver"> Hello , How are you sir? </b></a>
-                                                   </li>
-                                                   <li>
-                                                      <a href="javascript:void(0)"><img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/users/8.jpg" alt="user-img" class="img-circle"> <span class="col-white">Pwandeep rajan <small class="bg-green">online</small></span> <b class="col-silver"> Hello , How are you sir? </b></a>
-                                                   </li>
+                                                   @foreach($chat_list as $val)
+                                                      @if($val->sender_id != Auth::id())
+                                                         @if(!in_array($val->sender_id, $list_item))
+                                                            <li>
+                                                               <a href="{{URL::to('/coach/inbox/chat/'.base64_encode($val->sender->id))}}/{{empty($val->sender->fname) ? 'Newuser' : $val->sender->fname.' '.$val->sender->lname}}">
+                                                                  <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{$val->sender->profile_img}}" alt="user" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';" class="img-circle"> 
+                                                                  <span> {{empty($val->sender->fname) ? 'Newuser' : $val->sender->fname.' '.$val->sender->lname}} <sub class="time-msg"> {{$val->created_at->diffForHumans()}} </sub> </span> 
+                                                                  <b> {{$val->message}} </b> 
+                                                               </a>
+                                                            </li>
+                                                            @php array_push($list_item, $val->sender_id); @endphp
+                                                         @endif
+                                                      @else
+                                                         @if(!in_array($val->receiver_id, $list_item))
+                                                            <li>
+                                                               <a href="{{URL::to('/coach/inbox/chat/'.base64_encode($val->receiver->id))}}/{{empty($val->receiver->fname) ? 'Newuser' : $val->receiver->fname.' '.$val->receiver->lname}}">
+                                                                  <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{$val->receiver->profile_img}}" alt="user" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';" class="img-circle"> 
+                                                                  <span> {{empty($val->receiver->fname) ? 'Newuser' : $val->receiver->fname.' '.$val->receiver->lname}} <sub class="time-msg"> {{$val->created_at->diffForHumans()}} </sub> </span> 
+                                                                  <b> {{$val->message}} </b> 
+                                                               </a>
+                                                            </li>
+                                                            @php array_push($list_item, $val->receiver_id); @endphp
+                                                         @endif
+                                                      @endif
+                                                   @endforeach 
+                                                   @if(count($chat_list) == '0')
+                                                      <li class="nochatfound">
+                                                         No Chats Found.
+                                                      </li>
+                                                   @endif     
                                                    <li class="p-20"></li>
                                                 </ul>
                                              </div>

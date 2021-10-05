@@ -45,8 +45,9 @@ $(document).ready(function(){
 
     $(document).on('click', '.stickman', function(){
         var id = $(this).data('id');
-        $('#resultBlock').html('<div class="col-12 stickmanLoader"><img src="'+host+'/assets/website/images/loaderr.gif"/></div>');
+        $('#resultBlock').html('<div class="row"><div class="col-12 stickmanLoader"><br><br><br><br><br><img src="'+host+'/assets/website/images/loaderr.gif"/><br><br><br><br><br><br><br><br><br><br></div></div>');
         $.post( host+'/stickman', $('form#stickmanForm').serialize(), function(data) {
+            console.log(data);
             $('#resultBlock').html(data);
             $('#subCategoryBlock').html('<div class="col-12"><img src="'+host+'/assets/website/images/loaderr.gif"/></div>');
             $.get( host+'/stickman/subCategory/'+id, function(data) {

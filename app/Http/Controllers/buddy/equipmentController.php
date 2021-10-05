@@ -19,7 +19,7 @@ class equipmentController extends Controller
 
     function add(){
         $data['categories'] = sportsCategory::all();
-
+ 
         return view('buddy.equipment.add')->with($data);
     }
 
