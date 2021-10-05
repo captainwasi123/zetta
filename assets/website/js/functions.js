@@ -51,17 +51,72 @@
 
 
 
+function stickmanSub(id){
+  $('.sub'+id).slick({
+      dots: true,
+      infinite: false,
+      speed: 300,
+      slidesToShow: 8,
+      slidesToScroll: 1,
+      autoplay: false,
+      focusOnSelect: false,
+      autoplaySpeed: 2000,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 7,
+            slidesToScroll: 1
+          }
+        },
+
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 6,
+            slidesToScroll: 1
+          }
+        },
+
+        {
+          breakpoint: 700,
+          settings: {
+            slidesToShow: 5,
+            slidesToScroll: 1
+          }
+        },
+
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 4,
+            slidesToScroll: 1
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 1
+          }
+        }
+        // You can unslick at a given breakpoint now by adding:
+        // settings: "unslick"
+        // instead of a settings object
+      ]
+    });
+}
 
 
 
 
  $('.all-actions').slick({
   dots: true,
-  infinite: true,
+  infinite: false,
   speed: 300,
   slidesToShow: 8,
   slidesToScroll: 1,
-  autoplay: true,
+  autoplay: false,
   focusOnSelect: false,
   autoplaySpeed: 2000,
   responsive: [
@@ -69,9 +124,7 @@
       breakpoint: 1024,
       settings: {
         slidesToShow: 7,
-        slidesToScroll: 1,
-        infinite: true,
-        dots: true
+        slidesToScroll: 1
       }
     },
 
@@ -79,9 +132,7 @@
       breakpoint: 768,
       settings: {
         slidesToShow: 6,
-        slidesToScroll: 1,
-        infinite: true,
-        dots: true
+        slidesToScroll: 1
       }
     },
 
@@ -89,9 +140,7 @@
       breakpoint: 700,
       settings: {
         slidesToShow: 5,
-        slidesToScroll: 1,
-        infinite: true,
-        dots: true
+        slidesToScroll: 1
       }
     },
 
@@ -223,11 +272,11 @@ $("#imageUpload").change(function() {
 
   $('.lesson-banner-image').slick({
   dots: true,
-  infinite: true,
+  infinite: false,
   speed: 300,
   slidesToShow: 1,
   slidesToScroll: 1,
-  autoplay: true,
+  autoplay: false,
   focusOnSelect: true,
   autoplaySpeed: 2000,
   responsive: [
@@ -235,9 +284,7 @@ $("#imageUpload").change(function() {
       breakpoint: 1024,
       settings: {
         slidesToShow: 1,
-        slidesToScroll: 1,
-        infinite: true,
-        dots: true
+        slidesToScroll: 1
       }
     },
 
@@ -245,9 +292,7 @@ $("#imageUpload").change(function() {
       breakpoint: 768,
       settings: {
         slidesToShow: 1,
-        slidesToScroll: 1,
-        infinite: true,
-        dots: true
+        slidesToScroll: 1
       }
     },
 
@@ -255,9 +300,7 @@ $("#imageUpload").change(function() {
       breakpoint: 700,
       settings: {
         slidesToShow: 1,
-        slidesToScroll: 1,
-        infinite: true,
-        dots: true
+        slidesToScroll: 1
       }
     },
 
@@ -287,11 +330,11 @@ $("#imageUpload").change(function() {
 
   $('.review-slider').slick({
   dots: true,
-  infinite: true,
+  infinite: false,
   speed: 300,
   slidesToShow: 1,
   slidesToScroll: 1,
-  autoplay: true,
+  autoplay: false,
   focusOnSelect: true,
   autoplaySpeed: 2000,
   responsive: [
@@ -299,9 +342,7 @@ $("#imageUpload").change(function() {
       breakpoint: 1024,
       settings: {
         slidesToShow: 1,
-        slidesToScroll: 1,
-        infinite: true,
-        dots: true
+        slidesToScroll: 1
       }
     },
 
@@ -309,9 +350,7 @@ $("#imageUpload").change(function() {
       breakpoint: 768,
       settings: {
         slidesToShow: 1,
-        slidesToScroll: 1,
-        infinite: true,
-        dots: true
+        slidesToScroll: 1
       }
     },
 
@@ -319,9 +358,7 @@ $("#imageUpload").change(function() {
       breakpoint: 700,
       settings: {
         slidesToShow: 1,
-        slidesToScroll: 1,
-        infinite: true,
-        dots: true
+        slidesToScroll: 1
       }
     },
 
@@ -354,11 +391,11 @@ $("#imageUpload").change(function() {
 
   $('.boxes-slider2').slick({
   dots: true,
-  infinite: true,
+  infinite: false,
   speed: 300,
   slidesToShow: 2,
   slidesToScroll: 1,
-  autoplay: true,
+  autoplay: false,
   focusOnSelect: true,
   autoplaySpeed: 2000,
   responsive: [
@@ -366,9 +403,7 @@ $("#imageUpload").change(function() {
       breakpoint: 1024,
       settings: {
         slidesToShow: 1,
-        slidesToScroll: 1,
-        infinite: true,
-        dots: true
+        slidesToScroll: 1
       }
     },
 
@@ -376,9 +411,7 @@ $("#imageUpload").change(function() {
       breakpoint: 768,
       settings: {
         slidesToShow: 1,
-        slidesToScroll: 1,
-        infinite: true,
-        dots: true
+        slidesToScroll: 1
       }
     },
 
@@ -386,9 +419,7 @@ $("#imageUpload").change(function() {
       breakpoint: 700,
       settings: {
         slidesToShow: 1,
-        slidesToScroll: 1,
-        infinite: true,
-        dots: true
+        slidesToScroll: 1
       }
     },
 

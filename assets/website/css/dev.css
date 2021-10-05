@@ -380,3 +380,9 @@ color:white !important;
   background-color: DodgerBlue !important; 
   color: #ffffff; 
 }
+
+.subCategoryTray {
+    border-top: 1px solid #585858;
+    padding-top: 12px;
+    margin-top: 12px;
+}

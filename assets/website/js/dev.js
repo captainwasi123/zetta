@@ -32,10 +32,27 @@ $(document).ready(function(){
     });
 
 
+   /* $(document).on('mouseover', '.subCategory', function(){
+        var id = $(this).data('id');
+        $('#subCategoryBlock').html('<div class="col-12"><img src="'+host+'/assets/website/images/loaderr.gif"/></div>');
+        $.get( host+'/stickman/subCategory/'+id, function(data) {
+            $('#subCategoryBlock').html(data);
+            $('.all-actions_sub').slick('unslick');
+            stickmanSub();
+        });
+    });*/
+
+
     $(document).on('click', '.stickman', function(){
+        var id = $(this).data('id');
         $('#resultBlock').html('<div class="col-12 stickmanLoader"><img src="'+host+'/assets/website/images/loaderr.gif"/></div>');
         $.post( host+'/stickman', $('form#stickmanForm').serialize(), function(data) {
             $('#resultBlock').html(data);
+            $('#subCategoryBlock').html('<div class="col-12"><img src="'+host+'/assets/website/images/loaderr.gif"/></div>');
+            $.get( host+'/stickman/subCategory/'+id, function(data) {
+                $('#subCategoryBlock').html(data);
+                stickmanSub(id);
+            });
         });
     });
 
