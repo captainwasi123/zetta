@@ -395,15 +395,32 @@ color:white !important;
   background-color: DodgerBlue !important; 
   color: #ffffff; 
 }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+#ui-id-1 {
+    margin-top: 60px !important;
+}
+=======
+<<<<<<< HEAD
+
+>>>>>>> 5162533e3bea6e54ba2294750a4fda6237ba0393
 .subCategoryTray {
     border-top: 1px solid #585858;
     padding-top: 12px;
     margin-top: 12px;
+<<<<<<< HEAD
 }
+=======
+=======
+>>>>>>> 68ebea7efc5cab01ab1cafff9dc3ccb1fc2cf790
+>>>>>>> 5162533e3bea6e54ba2294750a4fda6237ba0393
 ul#ui-id-1 {
-    top: 522px !important;
+
     border-radius: 10px !important;
     padding: 8px !important;
+    z-index: 9999;
 }
 .ui-state-active
 {
