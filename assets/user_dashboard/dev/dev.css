@@ -539,13 +539,30 @@ nav.navbar.navbar-expand-lg.navbar-dark.desktop {
     padding: 0px !important;
     padding-left: 20px !important;
 }
-.dropdown-menu.show {
+/*.dropdown-menu.show {
     background: #9a49ff;
 }
 .dropdown-menu.show a {
     color: white;
+}*/
+.dropdown-menu.show {
+    background: #fff;
+    padding: 10px 10px;
 }
-
+.dropdown-menu.show a {
+    color: black;
+    padding: 5px 5px !important;
+    font-size: 14px;
+    font-weight: 400;
+}
+.dropdown-menu a:hover {
+    background: transparent !important;
+    color: #9949FE !important;
+    font-weight: 400;
+}
+.dropdown-menu {
+    min-width: 155px;
+}
 .dropdown-menu.syed {
      left: 0px !important;
 }
@@ -577,4 +594,35 @@ html body .b-l {
 
 .ui-widget {
     z-index: 9999 !important;
+}
+
+
+#ui-id-1 {
+    margin-top: 60px !important;
+}
+
+ul#ui-id-1 {
+
+    border-radius: 10px !important;
+    padding: 8px !important;
+    z-index: 9999;
+}
+.ui-state-active
+{
+color: #fff !important;
+    background:#9a49ffd4 !important;
+    border-radius: 10px !important;
+    border: 0px !important;
+    padding: 4px 7px !important;
+    font-size: 14px;
+
+}
+ul#ui-id-1 li {
+    color: black !important;
+    
+    border: 0px !important;
+    border-radius: 10px !important;
+     padding: 3px 0px;
+     transition: 5s;
+     font-size: 14px;
 }
