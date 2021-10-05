@@ -42,26 +42,21 @@
 
                           <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav mr-auto">
-                             
-                              
-                              <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Coach <i class="fa fa-chevron-down"></i></a>
-                                <div class="dropdown-menu syed" aria-labelledby="navbarDropdown">
-                                  <a class="dropdown-item" href="#">Become a Coach</a>
-                                  <a class="dropdown-item" href="#">Online Lessons</a>
-                                  <a class="dropdown-item" href="#">Group Lessons</a>
-                                  <a class="dropdown-item" href="#">Private Lessons</a>
-                                </div>
-                              </li>
-                              <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Sports Buddy <i class="fa fa-chevron-down"></i></a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                  <a class="dropdown-item" href="#">Online Activities</a>
-                                  <a class="dropdown-item" href="#">Group Activities</a>
-                                  <a class="dropdown-item" href="#">Private Activities</a>
-                                  <a class="dropdown-item" href="#">Girl Activities</a>
-                                </div>
-                              </li>
+                                 <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Coach <i class="fa fa-chevron-down"></i></a>
+                                    <div class="dropdown-menu syed" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="javascript:void(0)">Become a Coach </a>
+                                         <a class="dropdown-item" href="#">Create a Lesson</a>
+                                         <a class="dropdown-item" href="#">Lessons</a>
+                                    </div>
+                                  </li>
+                                  <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Sports Buddy <i class="fa fa-chevron-down"></i></a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                         <a class="dropdown-item" href="#">Create a Activity</a>
+                                         <a class="dropdown-item" href="#">Activities</a>
+                                    </div>
+                                  </li>
                               <!-- <li class="nav-item">
                                 <a class="nav-link" href="{{URL::to('about_us')}}">About Us</a>
                               </li> -->
