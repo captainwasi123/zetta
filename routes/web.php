@@ -32,6 +32,7 @@ use Illuminate\Support\Facades\Route;
 
 
 			Route::post('/stickman', 'webController@stickmanSearch');
+			Route::get('/stickman/subCategory/{id}', 'webController@stickmanSubCategory');
 
 			Route::middleware('userAuth')->group(function(){
 

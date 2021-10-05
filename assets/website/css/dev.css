@@ -395,10 +395,20 @@ color:white !important;
   background-color: DodgerBlue !important; 
   color: #ffffff; 
 }
+<<<<<<< HEAD
 
 #ui-id-1 {
     margin-top: 60px !important;
 }
+=======
+<<<<<<< HEAD
+
+.subCategoryTray {
+    border-top: 1px solid #585858;
+    padding-top: 12px;
+    margin-top: 12px;
+=======
+>>>>>>> 68ebea7efc5cab01ab1cafff9dc3ccb1fc2cf790
 ul#ui-id-1 {
 
     border-radius: 10px !important;
@@ -436,4 +446,5 @@ ul#ui-id-1 li div:hover {
     border-radius: 10px !important;
     border: 0px !important;
     padding: 8px !important;*/
+>>>>>>> 67e2005e16c8fa67311de11ba97282cff0da99f1
 }

@@ -355,6 +355,12 @@ class webController extends Controller
         }
     }
 
+    function stickmanSubCategory($id){
+        $data = sports::where('category_id', $id)->get();
+
+        return view('web.filter.response.subCategory', ['data' => $data, 'id' => $id]);
+    }
+
     //Footer Pages
     function terms(){
 
