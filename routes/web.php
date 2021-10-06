@@ -231,6 +231,7 @@ use Illuminate\Support\Facades\Route;
 			Route::prefix('buddy')->namespace('buddy')->group(function(){
 
 				Route::get('/', 'buddyController@index')->name('buddy.dashboard');
+				Route::get('/become_a_coach', 'buddyController@become_a_coach')->name('buddy.become_a_coach');
 
 				//Messenger
 					Route::prefix('inbox')->group(function(){

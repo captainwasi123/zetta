@@ -25,6 +25,12 @@ class buddyController extends Controller
       return view('buddy.dashboard', ['chat_list' => $data_list]);
     }
 
+    public function become_a_coach(){
+
+        return view('buddy.include.become_a_coach');
+    }
+
+
     public function my_wallet()
     {
         $data = array(

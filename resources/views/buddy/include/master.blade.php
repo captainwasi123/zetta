@@ -40,7 +40,7 @@
             <!-- Page Title Starts Here -->
             <div class="row page-titles">
                <div class="col-md-12 align-self-center">
-                  <h3 class="text-themecolor">Dashboard <i class="fa fa-home"> </i> </h3>
+                  <h3 class="text-themecolor">@yield('title') <i class="fa fa-home"> </i> </h3>
                   <ol class="breadcrumb">
                      <li class="breadcrumb-item"><a href="javascript:void(0)">Sports Buddy </a></li>
 

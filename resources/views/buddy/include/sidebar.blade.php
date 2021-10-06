@@ -16,7 +16,7 @@
               @if (auth()->user()->type == 2)
                 <a href="{{URL::to('/coach')}}" class="custom-btn1"> SWITCH TO Coach </a>
             @else
-                <a href="javascript:void(0)" class="custom-btn1 coach-request"> Apply for Coach </a>
+                <a href="{{route('buddy.become_a_coach')}}" class="custom-btn1"> Apply for Coach </a>
             @endif
 
          </div>

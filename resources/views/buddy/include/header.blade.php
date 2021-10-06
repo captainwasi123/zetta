@@ -101,35 +101,99 @@
             @csrf
             <input type="hidden" name="user_id" value="{{auth()->user()->id}}">
             <div class="modal-header">
-                <h4 class="modal-title" id="myModalLabel">Request For Coach</h4>
+                <h4 class="modal-title" id="myModalLabel">Want to become a Coach and a member of the Zettaa Team?</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
             </div>
             <div class="modal-body">
                 <div class="row">
-                   <div class="col-md-12">
-                      <label>Full Name</label>
-                      <input type="text" name="fname" value="{{auth()->user()->fname . ' ' . auth()->user()->lname}}" class="form-control" readonly required>
-                   </div>
-                </div>
-                <br>
-                <div class="row">
                     <div class="col-md-12">
-                       <label>Username</label>
-                       <input type="text" name="username" class="form-control" value="{{auth()->user()->username}}" readonly required>
-                    </div>
-                 </div>
-                 <br>
-                <div class="row">
-                    <div class="col-md-12">
-                       <label>Email</label>
-                       <input type="text" name="email" value="{{auth()->user()->email}}" class="form-control" readonly required>
+                       <label>1. Have you ever coached?</label>
+                       <br>
+                       <input class="form-check-input" type="radio" name="answer1" id="flexRadioDefault1" value="Yes">
+                       <label class="form-check-label" for="flexRadioDefault1">
+                           Yes
+                       </label>
+                       &nbsp;&nbsp;&nbsp;
+                       <input class="form-check-input" type="radio" name="answer1" id="flexRadioDefault2" value="No" checked>
+                       <label class="form-check-label" for="flexRadioDefault2">
+                           No
+                       </label>
+                       <br><br>
+                       <textarea name="answer1Detail" class="form-control" placeholder="If Yes or not please explain." cols="5" required></textarea>
                     </div>
                 </div>
                 <br>
                 <div class="row">
                     <div class="col-md-12">
-                       <label>Question</label>
-                       <textarea name="answer" class="form-control" placeholder="Why you want to become a coach ?" cols="5" required></textarea>
+                       <label>2. What motivated you to become a coach? Is this your main activity? </label>
+                       <br>
+                       <input class="form-check-input" type="radio" name="answer2" id="flexRadioDefault3" value="Yes">
+                       <label class="form-check-label" for="flexRadioDefault3">
+                           Yes
+                       </label>
+                       &nbsp;&nbsp;&nbsp;
+                       <input class="form-check-input" type="radio" name="answer2" id="flexRadioDefault4" value="No" checked>
+                       <label class="form-check-label" for="flexRadioDefault4">
+                           No
+                       </label>
+                       <br><br>
+                       <textarea name="answer2Detail" class="form-control" placeholder="If not, what is your main occupation?" cols="5" required></textarea>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-12">
+                       <label>3. Do you have a qualification or diploma in a sport-related discipline? (Ex. Nutrition; physiotherapy; sports coaching etc.) </label>
+                       <br>
+                       <textarea name="answer3Detail" class="form-control" placeholder="" cols="5" required></textarea>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-12">
+                       <label>4. Have you practiced a sport for many years or even at high level?  </label>
+                       <br>
+                       <input class="form-check-input" type="radio" name="answer4" id="flexRadioDefault5" value="Yes">
+                       <label class="form-check-label" for="flexRadioDefault3">
+                           Yes
+                       </label>
+                       &nbsp;&nbsp;&nbsp;
+                       <input class="form-check-input" type="radio" name="answer4" id="flexRadioDefault6" value="No" checked>
+                       <label class="form-check-label" for="flexRadioDefault4">
+                           No
+                       </label>
+                       <br><br>
+                       <textarea name="answer4Detail" class="form-control" placeholder="If so, how many years? At what level? Which sport?" cols="5" required></textarea>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-12">
+                       <label>5. As a coach, what are the qualities that make you an exceptional instructor? </label>
+                       <br>
+                       <textarea name="answer5Detail" class="form-control" placeholder="" cols="5" required></textarea>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-12">
+                       <label>6. As an athlete, what do you think are the fundamental values for progress?</label>
+                       <br>
+                       <textarea name="answer6Detail" class="form-control" placeholder="" cols="5" required></textarea>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-12">
+                       <label>7. Bonus : Share with us your worst/best memory during a training or a competition.</label>
+                       <br>
+                       <textarea name="answer7Detail" class="form-control" placeholder="" cols="5" required></textarea>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-12">
+                       <label>By checking this box, you declare that you have read and understood the Coach Label Zettaa document and agree to refer to it when you are in contact with your Zettaa customers.</label>
                     </div>
                 </div>
             </div>
