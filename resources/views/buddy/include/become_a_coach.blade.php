@@ -7,12 +7,14 @@
       <div class="row">
          <div class="col-md-12">
             <div class="card">
-               <div class="col-white">
+               <div class="col-white become_coach">
                   <div class="row">
                        <div class="col-md-12">
                           <label>1. Have you ever coached?</label>
-                          <br>
-                          <input class="form-check-input" type="radio" name="answer1" id="flexRadioDefault1" value="Yes">
+                          <br> 
+                          <input type="radio" id="yes" name="one" value="HTML"><label for="yes">Yes</label>
+                          <input type="radio" id="no" name="one" value="CSS"><label for="no">No</label>
+                          <!-- <input class="form-check-input" type="radio" name="answer1" id="flexRadioDefault1" value="Yes">
                           <label class="form-check-label" for="flexRadioDefault1">
                               Yes
                           </label>
@@ -20,7 +22,8 @@
                           <input class="form-check-input" type="radio" name="answer1" id="flexRadioDefault2" value="No" checked>
                           <label class="form-check-label" for="flexRadioDefault2">
                               No
-                          </label>
+                          </label> -->
+                          
                           <br><br>
                           <textarea name="answer1Detail" class="form-control" placeholder="If Yes or not please explain." cols="5" required></textarea>
                        </div>
@@ -30,15 +33,8 @@
                        <div class="col-md-12">
                           <label>2. What motivated you to become a coach? Is this your main activity? </label>
                           <br>
-                          <input class="form-check-input" type="radio" name="answer2" id="flexRadioDefault3" value="Yes">
-                          <label class="form-check-label" for="flexRadioDefault3">
-                              Yes
-                          </label>
-                          &nbsp;&nbsp;&nbsp;
-                          <input class="form-check-input" type="radio" name="answer2" id="flexRadioDefault4" value="No" checked>
-                          <label class="form-check-label" for="flexRadioDefault4">
-                              No
-                          </label>
+                          <input type="radio" id="yes1" name="second" value="HTML"><label for="yes1">Yes</label>
+                          <input type="radio" id="no1" name="second" value="CSS"><label for="no1">No</label>
                           <br><br>
                           <textarea name="answer2Detail" class="form-control" placeholder="If not, what is your main occupation?" cols="5" required></textarea>
                        </div>
@@ -56,15 +52,8 @@
                        <div class="col-md-12">
                           <label>4. Have you practiced a sport for many years or even at high level?  </label>
                           <br>
-                          <input class="form-check-input" type="radio" name="answer4" id="flexRadioDefault5" value="Yes">
-                          <label class="form-check-label" for="flexRadioDefault3">
-                              Yes
-                          </label>
-                          &nbsp;&nbsp;&nbsp;
-                          <input class="form-check-input" type="radio" name="answer4" id="flexRadioDefault6" value="No" checked>
-                          <label class="form-check-label" for="flexRadioDefault4">
-                              No
-                          </label>
+                          <input type="radio" id="yes2" name="four" value="HTML"><label for="yes2">Yes</label>
+                          <input type="radio" id="no2" name="four" value="CSS"><label for="no2">No</label>
                           <br><br>
                           <textarea name="answer4Detail" class="form-control" placeholder="If so, how many years? At what level? Which sport?" cols="5" required></textarea>
                        </div>
@@ -97,6 +86,11 @@
                    <div class="row">
                        <div class="col-md-12">
                           <label>By checking this box, you declare that you have read and understood the Coach Label Zettaa document and agree to refer to it when you are in contact with your Zettaa customers.</label>
+                       </div>
+                   </div>
+                   <div class="row">
+                       <div class="col-md-12">
+                          <button type="button">Become a Coach</button>
                        </div>
                    </div>
                </div>

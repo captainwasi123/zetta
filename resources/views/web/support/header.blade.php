@@ -63,7 +63,7 @@ header.header-2 .logo a img {
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Sports Buddy <i class="fas fa-chevron-down"></i></a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Create a Activity</a>
+                <a class="dropdown-item" href="#" data-toggle="modal" data-target=".register-modalll">Create a Activity</a>
                 <a class="dropdown-item" href="#">Activities</a>
               </div>
             </li>

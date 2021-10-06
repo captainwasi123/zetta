@@ -395,33 +395,17 @@ color:white !important;
   background-color: DodgerBlue !important; 
   color: #ffffff; 
 }
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> d78617d2f14724126abdb3802ca0e7d322b3d487
+
 
 #ui-id-1 {
     margin-top: 60px !important;
 }
 
-
->>>>>>> 5162533e3bea6e54ba2294750a4fda6237ba0393
 .subCategoryTray {
     border-top: 1px solid #585858;
     padding-top: 12px;
     margin-top: 12px;
-<<<<<<< HEAD
 }
-=======
-<<<<<<< HEAD
-}
-=======
-=======
->>>>>>> 68ebea7efc5cab01ab1cafff9dc3ccb1fc2cf790
->>>>>>> 5162533e3bea6e54ba2294750a4fda6237ba0393
->>>>>>> d78617d2f14724126abdb3802ca0e7d322b3d487
 ul#ui-id-1 {
 
     border-radius: 10px !important;
@@ -465,4 +449,32 @@ ul#ui-id-1 li div:hover {
 #resultBlock {
     background-color: #1d242c;
 }
->>>>>>> d78617d2f14724126abdb3802ca0e7d322b3d487
+
+  .become_coach {
+    padding: 40px;
+}
+ .become_coach label{
+    color: black !important;
+    display: inline-block !important; 
+    font-size: 16px;
+}
+ .become_coach button{
+
+padding: 9px 30px !important;
+    font-size: 16px !important;
+    letter-spacing: 0.6px;
+    border-radius: 5px;
+    font-weight: 400 !important;
+    background: #9949fe;
+    color: white;
+    border: 0px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+   .become_coach button:hover{
+
+    background: black !important;
+    color: white;
+
+  }
