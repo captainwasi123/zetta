@@ -95,6 +95,16 @@ class userController extends Controller
         return view('admin.users.coachRequests')->with($data);
     }
 
+    public function coach_requets_answers($id)
+    {
+        $id = base64_decode($id);
+         
+        $data = CoachRequest::find($id);
+
+        return view('admin.users.response.questionaire', ['data' => $data]);
+    }
+
+
     public function coach_requet_approve($id)
     {
         $id = base64_decode($id);

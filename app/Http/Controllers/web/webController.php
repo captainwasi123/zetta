@@ -28,7 +28,7 @@ class webController extends Controller
     function index(){
         $data = array(
         	'lessons' => lessons::with('packages')->where('status', '1')->latest()->limit(10)->get(),
-            'uactivities' => activities::with(['user','equipment','equipment.user_equipment'])->where('status', '1')->where('activity_type', '1')->whereDate('held_date', '>', Carbon::now())->latest()->limit(10)->get(),
+            'uactivities' => activities::with(['user','equipment','equipment.user_equipment'])->where('status', '1')->where('activity_type', '1')->whereDate('held_date', '>', Carbon::now())->orderBy('held_date', 'desc')->limit(10)->get(),
             'activities' => activities::with(['user','equipment','equipment.user_equipment'])->where('status', '1')->where('activity_type', '1')->latest()->limit(10)->get(),
             'alocation' => Activity_location::where('lat', '!=', null)->where('lng', '!=', null)->groupBy('lat', 'lng')->get(),
             'llocation' => Locations::where('lat', '!=', null)->where('lng', '!=', null)->groupBy('lat', 'lng')->get(),

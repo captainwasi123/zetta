@@ -52,6 +52,15 @@ $(document).ready(function(){
 			}
 		});
 
+        $(document).on('click', '.coachAnswers', function(){
+			var id = $(this).data('id');
+			$('.questionareModal').modal('show');
+			$('.questionareModal .modal-body').html('<div class="col-12"><img src="'+host+'/../assets/website/images/loaderr.gif"/></div>');
+			$.get( host+'/users/all-coach-requets/answers/'+id, function(data) {
+                $('.questionareModal .modal-body').html(data);
+            });
+		});
+
         $(document).on('click','.deletelang',function(){
             var id = $(this).data('id');
 

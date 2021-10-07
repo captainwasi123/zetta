@@ -377,6 +377,8 @@ use Illuminate\Support\Facades\Route;
 							Route::get('addProof/approve/{id}', 'userController@addProofApprove');
 							Route::get('addProof/reject/{id}', 'userController@addProofReject');
                             Route::get('all-coach-requets/', 'userController@coach_requets')->name('admin.user.coach_request');
+
+                            Route::get('all-coach-requets/answers/{id}', 'userController@coach_requets_answers');
                             Route::get('coach/request/approve/{id}', 'userController@coach_requet_approve')->name('admin.user.coach.approve');
 						});
 

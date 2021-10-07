@@ -64,7 +64,16 @@ class buddyController extends Controller
 
             $req = new CoachRequest();
             $req->user_id = auth()->user()->id;
-            $req->answer = $request->answer;
+            $req->answer1 = $request->answer1;
+            $req->answer1Detail = $request->answer1Detail;
+            $req->answer2 = $request->answer2;
+            $req->answer2Detail = $request->answer2Detail;
+            $req->answer3Detail = $request->answer3Detail;
+            $req->answer4 = $request->answer4;
+            $req->answer4Detail = $request->answer4Detail;
+            $req->answer5Detail = $request->answer5Detail;
+            $req->answer6Detail = $request->answer6Detail;
+            $req->answer7Detail = $request->answer7Detail;
             $req->save();
             return back()->with('success','Your Request For Coach Is Submitted .');
         }else{

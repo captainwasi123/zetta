@@ -2,7 +2,7 @@
    <div class="modal-dialog modal-lg" role="document" style="max-width: 500px;">
       <div class="modal-content" id="r_content">
          <div class="join-pop-head">
-            <h3> Join Zetta <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button> </h3>
+            <h3> Join Zettaa <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button> </h3>
          </div>
          <div id="r_social">
             <div class="join-social">
@@ -39,7 +39,7 @@
     <div class="modal-dialog modal-lg" role="document" style="max-width: 500px;">
        <div class="modal-content" id="r_content_buddy">
           <div class="join-pop-head">
-             <h3> Join Zetta <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button> </h3>
+             <h3> Join Zettaa <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button> </h3>
           </div>
           <div id="r_social_buddy">
              <div class="join-social">
@@ -75,7 +75,7 @@
    <div class="modal-dialog modal-lg" role="document" style="max-width: 500px;">
       <div class="modal-content" id="l_content">
          <div class="join-pop-head">
-            <h3> Sign In Zetta <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button> </h3>
+            <h3> Sign In Zettaa <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button> </h3>
          </div>
          <div class="join-social">
             <a href="{{ url('auth/facebook') }}"> <i class="fab fa-facebook-f"> </i> Continue with Facebook </a>
