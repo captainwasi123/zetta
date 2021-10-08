@@ -69,6 +69,7 @@
                                     <img src="{{URL::to('/assets/website')}}/images/zoom-logo.png" title="Online Zoom Classes">
                                  @endif
                                  @php $availability_for = json_decode($val->availability_for); @endphp
+                                @if(!empty($availability_for))
                                  @foreach($availability_for as $value)
                                     
                                     @if($value == '1')
@@ -82,6 +83,7 @@
                                     @endif
                                  
                                  @endforeach
+                                 @endif
                               </div>
                            </div>
                            <div class="lesson-info-block">
@@ -251,6 +253,8 @@
                                     <img src="{{URL::to('/assets/website')}}/images/zoom-logo.png" title="Online Zoom Classes">
                                  @endif
                                  @php $availability_for = json_decode($val->availability_for); @endphp
+                                 
+                                   @if(!empty($availability_for))
                                  @foreach($availability_for as $value)
                                     
                                     @if($value == '1')
@@ -264,6 +268,7 @@
                                     @endif
                                  
                                  @endforeach
+                                 @endif
                               </div>
                            </div>
                            <div class="lesson-info-block">
@@ -346,7 +351,10 @@
                                  @if($val->availability != '2')
                                     <img src="{{URL::to('/assets/website')}}/images/zoom-logo.png" title="Online Zoom Classes">
                                  @endif
+                                 
                                  @php $availability_for = json_decode($val->availability_for); @endphp
+                                 
+                                @if(!empty($availability_for))
                                  @foreach($availability_for as $value)
                                     
                                     @if($value == '1')
@@ -360,6 +368,7 @@
                                     @endif
                                  
                                  @endforeach
+                                 @endif
                               </div>
                            </div>
                             
