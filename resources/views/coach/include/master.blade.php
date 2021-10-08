@@ -8,7 +8,7 @@
       <meta name="host" content="{{URL::to('/coach')}}">
       <!-- Favicon icon -->
       <link rel="icon" type="image/png" sizes="16x16" href="{{URL::to('/')}}/assets/user_dashboard/coach/images/favicon.png">
-      <title> @yield('title') - Coach | ZETTA </title>
+      <title> @yield('title') - Coach | ZETTAA </title>
 
     @include('coach.include.style')
     @yield('addStyle')

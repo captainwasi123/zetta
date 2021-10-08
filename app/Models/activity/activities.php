@@ -23,13 +23,14 @@ class activities extends Model
         $l->title = $data['title'];
         $l->description = $data['description'];
         $l->location_covered = $data['locationType'];
+        $l->participants = $data['participants'];
         $l->group_members = empty($data['group_members']) ? null : $data['group_members'];
         $l->activity_type = $data['activityType'];
         $l->category_id = $data['category'];
         $l->sports_id = $data['sports'];
         $l->held_date = $data['held_date'].' '.$data['held_time'];
         $l->availability = $data['availability'];
-        $l->availability_for = $data['availability_for'];
+        $l->availability_for = json_encode($data['availability_for']);
         $l->status = '1';
         $l->save();
         $id = $l->id;
@@ -49,13 +50,14 @@ class activities extends Model
         $l->title = $data['title'];
         $l->description = $data['description'];
         $l->location_covered = $data['locationType'];
+        $l->participants = $data['participants'];
         $l->group_members = empty($data['group_members']) ? null : $data['group_members'];
         $l->activity_type = $data['activityType'];
         $l->category_id = $data['category'];
         $l->sports_id = $data['sports'];
         $l->held_date = $data['held_date'].' '.$data['held_time'];
         $l->availability = $data['availability'];
-        $l->availability_for = $data['availability_for'];
+        $l->availability_for = json_encode($data['availability_for']);
         $l->save();
         $id = $l->id;
 
@@ -63,7 +65,7 @@ class activities extends Model
         equipments::where('activity_id', $id)->delete();
         locations::where('activity_id', $id)->delete();
         friends::where('activity_id', $id)->delete();
-        if(isset($data['equipments'])){
+        if(isset($data['equipments'])){ 
             activities::addEquipment($id, $data['equipments']);
         }
         if(isset($data['location'])){
@@ -153,4 +155,5 @@ class activities extends Model
     public function sports(){
         return $this->belongsTo(sports::class, 'sports_id');
     }
+
 }

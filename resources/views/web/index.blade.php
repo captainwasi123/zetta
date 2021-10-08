@@ -68,15 +68,20 @@
                                  @if($val->availability != '2')
                                     <img src="{{URL::to('/assets/website')}}/images/zoom-logo.png" title="Online Zoom Classes">
                                  @endif
-                                 @if($val->availability_for == '1')
-                                    <img src="{{URL::to('/assets/')}}/teenager.png" title="For Teenager">
-                                 @endif
-                                 @if($val->availability_for == '2')
-                                    <img src="{{URL::to('/assets/')}}/65+.png" title="For Senior Citizen">
-                                 @endif
-                                 @if($val->availability_for == '3')
-                                    <img src="{{URL::to('/assets/')}}/handicapped.png" title="For Handicapped">
-                                 @endif
+                                 @php $availability_for = json_decode($val->availability_for); @endphp
+                                 @foreach($availability_for as $value)
+                                    
+                                    @if($value == '1')
+                                       <img src="{{URL::to('/assets/')}}/65+.png" title="For Senior Citizen">
+                                    @endif
+                                    @if($value == '2')
+                                       <img src="{{URL::to('/assets/')}}/teenager.png" title="For Teenager">
+                                    @endif
+                                    @if($value == '3')
+                                       <img src="{{URL::to('/assets/')}}/handicapped.png" title="For Handicapped">
+                                    @endif
+                                 
+                                 @endforeach
                               </div>
                            </div>
                            <div class="lesson-info-block">
@@ -245,15 +250,20 @@
                                  @if($val->availability != '2')
                                     <img src="{{URL::to('/assets/website')}}/images/zoom-logo.png" title="Online Zoom Classes">
                                  @endif
-                                 @if($val->availability_for == '1')
-                                    <img src="{{URL::to('/assets/')}}/teenager.png" title="For Teenager">
-                                 @endif
-                                 @if($val->availability_for == '2')
-                                    <img src="{{URL::to('/assets/')}}/65+.png" title="For Senior Citizen">
-                                 @endif
-                                 @if($val->availability_for == '3')
-                                    <img src="{{URL::to('/assets/')}}/handicapped.png" title="For Handicapped">
-                                 @endif
+                                 @php $availability_for = json_decode($val->availability_for); @endphp
+                                 @foreach($availability_for as $value)
+                                    
+                                    @if($value == '1')
+                                       <img src="{{URL::to('/assets/')}}/65+.png" title="For Senior Citizen">
+                                    @endif
+                                    @if($value == '2')
+                                       <img src="{{URL::to('/assets/')}}/teenager.png" title="For Teenager">
+                                    @endif
+                                    @if($value == '3')
+                                       <img src="{{URL::to('/assets/')}}/handicapped.png" title="For Handicapped">
+                                    @endif
+                                 
+                                 @endforeach
                               </div>
                            </div>
                            <div class="lesson-info-block">
@@ -284,7 +294,7 @@
                                     <i class="far fa-heart col-purple"></i>
                                  @endif
                             </a>
-                              <span class="col-grey"> STARTING AT <b class="col-white">
+                              <span class="col-grey">  <b class="col-white">
                                 @if (count($val->equipment)>0)
                                     @php
                                         $ids = [];
@@ -296,9 +306,11 @@
                                             $ids[$k] = $val->equip_id;
                                         @endphp
                                     @endforeach
-                                     {{'$'.number_format($price)}}
+                                     {{--  {{'$'.number_format($price)}}  --}}
+                                 {{$price="PARTICIPATE"}}
+                                      
                                 @else
-                                FREE
+                                PARTICIPATE
                                 @endif
                                   </b> </span>
                            </div>
@@ -334,17 +346,24 @@
                                  @if($val->availability != '2')
                                     <img src="{{URL::to('/assets/website')}}/images/zoom-logo.png" title="Online Zoom Classes">
                                  @endif
-                                 @if($val->availability_for == '1')
-                                    <img src="{{URL::to('/assets/')}}/teenager.png" title="For Teenager">
-                                 @endif
-                                 @if($val->availability_for == '2')
-                                    <img src="{{URL::to('/assets/')}}/65+.png" title="For Senior Citizen">
-                                 @endif
-                                 @if($val->availability_for == '3')
-                                    <img src="{{URL::to('/assets/')}}/handicapped.png" title="For Handicapped">
-                                 @endif
+                                 @php $availability_for = json_decode($val->availability_for); @endphp
+                                 @foreach($availability_for as $value)
+                                    
+                                    @if($value == '1')
+                                       <img src="{{URL::to('/assets/')}}/65+.png" title="For Senior Citizen">
+                                    @endif
+                                    @if($value == '2')
+                                       <img src="{{URL::to('/assets/')}}/teenager.png" title="For Teenager">
+                                    @endif
+                                    @if($value == '3')
+                                       <img src="{{URL::to('/assets/')}}/handicapped.png" title="For Handicapped">
+                                    @endif
+                                 
+                                 @endforeach
                               </div>
                            </div>
+                            
+                          
                            <div class="lesson-info-block">
                               <p class="lesson-title">{{$val->title}}</p>
                               <p class="descrip">
@@ -601,10 +620,40 @@ function timer(id, time){
      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
        
+
      // Output the result in an element with id="demo"
-     document.getElementById("count"+id).innerHTML = days + "d " + hours + "h "
-     + minutes + "m " + seconds + "s ";
+
+      if(days==0){
+            document.getElementById("count"+id).innerHTML =  hours + "h " + minutes + "m " + seconds + "s ";
+       }
+
+      else if(hours==0) { 
+      
+      document.getElementById("count"+id).innerHTML =  minutes + "m " + seconds + "s ";
        
+       }
+
+       else if (minutes==0){
+
+      document.getElementById("count"+id).innerHTML =   seconds + "s ";
+
+       }
+
+       
+       else if (seconds==0){
+
+      document.getElementById("count"+id).innerHTML = " ";
+
+
+       }
+
+       else{
+          
+       document.getElementById("count"+id).innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+       }
+
+
      // If the count down is over, write some text 
      if (distance < 0) {
        clearInterval(x);

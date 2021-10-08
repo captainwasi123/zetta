@@ -94,5 +94,5 @@
   </footer>
 
 <section class="copyright-sec bg-purple text-center">
- 	<span class="col-white"> © 2021 zetta. All Rights Reserved </span>
+ 	<span class="col-white"> © 2021 zettaa. All Rights Reserved </span>
 </section>

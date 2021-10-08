@@ -28,7 +28,7 @@ class webController extends Controller
     function index(){
         $data = array(
         	'lessons' => lessons::with('packages')->where('status', '1')->latest()->limit(10)->get(),
-            'uactivities' => activities::with(['user','equipment','equipment.user_equipment'])->where('status', '1')->where('activity_type', '1')->whereDate('held_date', '>', Carbon::now())->orderBy('held_date', 'desc')->limit(10)->get(),
+            'uactivities' => activities::with(['user','equipment','equipment.user_equipment'])->where('status', '1')->where('activity_type', '1')->whereDate('held_date', '>', Carbon::now())->orderBy('held_date', 'asc')->limit(10)->get(),
             'activities' => activities::with(['user','equipment','equipment.user_equipment'])->where('status', '1')->where('activity_type', '1')->latest()->limit(10)->get(),
             'alocation' => Activity_location::where('lat', '!=', null)->where('lng', '!=', null)->groupBy('lat', 'lng')->get(),
             'llocation' => Locations::where('lat', '!=', null)->where('lng', '!=', null)->groupBy('lat', 'lng')->get(),
@@ -49,15 +49,15 @@ class webController extends Controller
         function filter($val, $type, $add){
 
             $data = array(  'search_data' => array(
-                                                    'val' => $val, 
+                                                    'val' => $val,
                                                     'type' => $type,
                                                     'add' => $add
-                                                ), 
+                                                ),
                             'sCategories' => Auth::check() ? userCategory::where('user_id', Auth::id())->get() : sportsCategory::all());
 
             $data['sCategories'] = count($data['sCategories']) == 0 ? sportsCategory::all() : $data['sCategories'];
 
-        
+
             $data['lessons'] = lessons::where('status', '1')
                                 ->whereHas('user', function($q) use ($type){
                                     return $q->whereHas('country', function($qq) use ($type){
@@ -68,7 +68,7 @@ class webController extends Controller
                                     return $q->where('name', 'like', '%'.$val.'%');
                                 })
                                 ->latest()->paginate(18);
-            
+
             $data['activities'] = activities::where('status', '1')
                                 ->whereHas('user', function($q) use ($type){
                                     return $q->whereHas('country', function($qq) use ($type){
@@ -95,7 +95,7 @@ class webController extends Controller
                                 ->latest()->paginate(18);
 
             return view('web.filter.search')->with($data);
-            
+
         }
 
         function search_filter($type){
@@ -150,7 +150,7 @@ class webController extends Controller
         $data = array('search_data' => array('type' => $type), 'sCategories' => Auth::check() ? userCategory::where('user_id', Auth::id())->get() : sportsCategory::all());
 
         $data['sCategories'] = count($data['sCategories']) == 0 ? sportsCategory::all() : $data['sCategories'];
-        
+
         if($type == 'Lessons'){
             $data['lessons'] = lessons::where('status', '1')->latest()->paginate(18);
 
@@ -319,17 +319,17 @@ class webController extends Controller
 
 
             $pusher = new Pusher(
-                        env('PUSHER_APP_KEY'), 
-                        env('PUSHER_APP_SECRET'), 
-                        env('PUSHER_APP_ID'), 
+                        env('PUSHER_APP_KEY'),
+                        env('PUSHER_APP_SECRET'),
+                        env('PUSHER_APP_ID'),
                         array(
                             'cluster' => env('PUSHER_APP_CLUSTER')
                         )
                     );
             $img = empty(Auth::user()->profile_img) ? 'none' : Auth::user()->profile_img;
-            $pusher->trigger('send-chatChannel.'.base64_decode($data['msg_id']).'.'.Auth::id(), 'sendChat', 
+            $pusher->trigger('send-chatChannel.'.base64_decode($data['msg_id']).'.'.Auth::id(), 'sendChat',
                         array(
-                            'message'   => $data['message'], 
+                            'message'   => $data['message'],
                             'image'     => $img,
                             'name'      => $name,
                             'timestamp' => $timestamp->diffForHumans()

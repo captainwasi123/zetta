@@ -257,22 +257,22 @@
                       <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/field-icon19.png">
                       <h5> Availability For </h5>
                    </div>
-                </div>
+                </div> 
                 <div class="col-md-6 col-lg-6 col-12">
                    <div class="inline-1">
-                      <label class="custom-control custom-radio">
-                      <input id="radio1" name="availability_for" type="radio" value="2" class="custom-control-input">
+                    <label class="custom-control custom-checkbox">
+                      <input id="radio2" name="availability_for[]" type="checkbox" value=2 class="custom-control-input" >
                       <span class="custom-control-label"> Senior Citizens </span>
                       </label>
                       <br>
-                      <label class="custom-control custom-radio">
-                      <input id="radio2" name="availability_for" type="radio" value="1" class="custom-control-input">
+                      <label class="custom-control custom-checkbox">
+                      <input id="radio1" name="availability_for[]" type="checkbox" value=1 class="custom-control-input" >
                       <span class="custom-control-label"> Teenagers </span>
                       </label>
                       <br>
-                      <label class="custom-control custom-radio">
-                      <input id="radio2" name="availability_for" type="radio" value="3" class="custom-control-input" checked>
-                      <span class="custom-control-label"> Handicapped </span>
+                      <label class="custom-control custom-checkbox">
+                      <input id="radio2" name="availability_for[]" type="checkbox" value=3 class="custom-control-input" >
+                      <span class="custom-control-label"> handicapped </span>
                       </label>
                    </div>
                 </div>

@@ -257,7 +257,7 @@
          <div class="col-md-5 col-lg-5 col-sm-12 col-12">
             <div class="packages-wrapper">
                <div class="packages-main">
-                  <ul class="nav nav-tabs" role="tablist">
+                  <ul class="nav nav-tabs" role="tablist" > 
                      {{-- <li class="nav-item">
                         <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">Basic</a>
                      </li> --}}
@@ -287,7 +287,19 @@
                               {{-- <h5 class="col-white m-b-20"> <img src="{{URL::to('/assets/website')}}/images/clock-icon.jpg"> 9 am - 12 am </h5> --}}
                            </div>
                            <ul class="list-type1 no-border">
-                              <li class="block-element2"> <i class="fa fa-check col-purple"> </i> {{$data->participant == '0' ? 'Single Activity' : 'Group Activity'}} </li>
+                              <li class="block-element2"> <i class="fa fa-check col-purple"> </i> {{$data->participants == '0' ? 'Single Activity' : 'Group Activity'}} </li>
+
+                                 @if($data->participants > 0)
+                              <li class="block-element2"> <i class="fa fa-check col-purple"> 
+                              </i> {{ $data->group_members == 1 ?    'Participant :'.$data->group_members.' Member' :  'Participant :'.$data->group_members.' Members'}} </li>
+
+                                        
+                                        
+
+                                 @endif
+                                
+                             
+
                               <li class="block-element2"> <i class="fa fa-check col-purple"> </i> {{$data->location_covered == '0' ? 'Open Location' : 'Covered Location'}} </li>
                               <li class="block-element2"> <i class="fa fa-check col-purple"> </i> 
                                  @switch($data->availability)
@@ -322,6 +334,30 @@
                                     @endswitch
                                  </strong>
                               </li>
+
+                              <li class="block-element2"> <i class="fa fa-check col-purple"> </i> 
+                                Equipment :
+                                 @if($data->equipment->count() > 0)
+                                  <strong> Available</strong>
+                                 <table class="table table-striped col-white ">
+                                     <tbody>
+                                   
+                                      @foreach($data->equipment as $key => $equ)
+                                       <tr>
+                                         <td class="equ-table">{{ @$equ->user_equipment->name}}</td> 
+                                         <td class="equ-table">{{'$ '.number_format(@$equ->user_equipment->price)}}</td> 
+                                      </tr>  
+                                      @endforeach 
+                                                               
+                                 </tbody>
+                                    </table>
+                                 
+                                 @else
+                                   Not Available: 
+                                 @endif
+                                
+                              </li>
+
                            </ul>
                            <div class="block-element2 m-t-30">
                               <p class="m-b-10" >  <a href="{{URL::to('/cart/activity/'.base64_encode($data->id).'/basic')}}" class="block-element2 bg-purple col-white rounded custom-btn1 text-center"> Continue

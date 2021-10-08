@@ -191,15 +191,20 @@
                            @if($val->availability != '2')
                               <img src="{{URL::to('/assets/website')}}/images/zoom-logo.png" title="Online Zoom Classes">
                            @endif
-                           @if($val->availability_for == '1')
-                              <img src="{{URL::to('/assets/')}}/teenager.png" title="For Teenager">
-                           @endif
-                           @if($val->availability_for == '2')
-                              <img src="{{URL::to('/assets/')}}/65+.png" title="For Senior Citizen">
-                           @endif
-                           @if($val->availability_for == '3')
-                              <img src="{{URL::to('/assets/')}}/handicapped.png" title="For Handicapped">
-                           @endif
+                           @php $availability_for = json_decode($val->availability_for); @endphp
+                           @foreach($availability_for as $value)
+                              
+                              @if($value == '1')
+                                 <img src="{{URL::to('/assets/')}}/65+.png" title="For Senior Citizen">
+                              @endif
+                              @if($value == '2')
+                                 <img src="{{URL::to('/assets/')}}/teenager.png" title="For Teenager">
+                              @endif
+                              @if($value == '3')
+                                 <img src="{{URL::to('/assets/')}}/handicapped.png" title="For Handicapped">
+                              @endif
+                           
+                           @endforeach
                         </div>
                      </div>
                      <div class="lesson-info-block">

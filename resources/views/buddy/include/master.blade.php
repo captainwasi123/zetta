@@ -8,7 +8,7 @@
       <meta name="host" content="{{URL::to('/buddy')}}">
       <!-- Favicon icon -->
       <link rel="icon" type="image/png" sizes="16x16" href="{{URL::to('/')}}/assets/user_dashboard/buddy/images/favicon.png">
-      <title> @yield('title') - Sports Buddy | ZETTA </title>
+      <title> @yield('title') - Sports Buddy | ZETTAA </title>
 
     @include('buddy.include.style')
     @yield('addStyle')

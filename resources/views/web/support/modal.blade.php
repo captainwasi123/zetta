@@ -7,8 +7,11 @@
          <div id="r_social">
             <div class="join-social">
                <a href="{{ url('auth/facebook') }}"> <i class="fab fa-facebook-f"> </i> Continue with Facebook </a>
-               <a href="{{ url('auth/google') }}"> <i class="fab fa-google-plus-g"> </i> Continue with Google </a>
+               
             </div>
+            <div class="join-socialg">
+                <a href="{{ url('auth/google') }}"> <i><img class="img-goolge" src="{{URL::to('/public/google.png')}}"  height="16" width="16"> </i> Continue with Google </a>
+             </div>
             <div class="join-or">
                <p> <b> OR </b> </p>
             </div>
@@ -22,7 +25,7 @@
 
                </div>
                <button type="submit"> Continue  </button>
-               <p> By joining I agree to receive emails from Zetta </p>
+               <p> By joining I agree to receive emails from Zettaa </p>
             </form>
          </div>
          <div class="join-already">
@@ -44,7 +47,10 @@
           <div id="r_social_buddy">
              <div class="join-social">
                 <a href="{{ url('auth/facebook') }}"> <i class="fab fa-facebook-f"> </i> Continue with Facebook </a>
-                <a href="{{ url('auth/google') }}"> <i class="fab fa-google-plus-g"> </i> Continue with Google </a>
+                
+             </div>
+              <div class="join-socialg">
+                <a href="{{ url('auth/google') }}"> <i><img class="img-goolge" src="{{URL::to('/public/google.png')}}"  height="16" width="16"> </i> Continue with Google </a>
              </div>
              <div class="join-or">
                 <p> <b> OR </b> </p>
@@ -59,7 +65,7 @@
 
                 </div>
                 <button type="submit"> Continue  </button>
-                <p> By joining I agree to receive emails from Zetta </p>
+                <p> By joining I agree to receive emails from Zettaa </p>
              </form>
           </div>
           <div class="join-already">
@@ -79,15 +85,17 @@
          </div>
          <div class="join-social">
             <a href="{{ url('auth/facebook') }}"> <i class="fab fa-facebook-f"> </i> Continue with Facebook </a>
-            <a href="{{ url('auth/google') }}"> <i class="fab fa-google-plus-g"> </i> Continue with Google </a>
          </div>
+         <div class="join-socialg">
+                <a href="{{ url('auth/google') }}"> <i><img class="img-goolge" src="{{URL::to('/public/google.png')}}"  height="16" width="16"> </i> Continue with Google </a>
+             </div>
          <div class="join-or">
             <p> <b> OR </b> </p>
          </div>
          <div class="join-form">
             <form id="login-form" action="{{URL::to('/login')}}">
                {{csrf_field()}}
-               <input type="email" placeholder="Enter your email" name="email" required>
+               <input type="text" placeholder="Enter your email Or username" name="email" required>
                <input type="password" placeholder="Enter your password" name="password" required>
                <span id="l_error" class="error_span"></span>
                <button type="submit"> Sign In  </button>

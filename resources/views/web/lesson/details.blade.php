@@ -338,7 +338,105 @@
 
 
                   </div>
+                    {{--  sa start  --}}
+         
+            <div class="packages-wrapper">
+               <div class="packages-main">
+                  <ul class="nav nav-tabs" role="tablist" > 
+                     {{-- <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">Basic</a>
+                     </li> --}}
+                  </ul>
+                  <!-- Tab panes -->
+                  <div class="tab-content">
+                     <div class="tab-pane active" id="tabs-1" role="tabpanel">
+                        <div class="package-content">
+                           <div class="package-content-head">
+                              
+                             
+                             
+                              {{-- <h5 class="col-white m-b-20"> <img src="{{URL::to('/assets/website')}}/images/clock-icon.jpg"> 9 am - 12 am </h5> --}}
+                           </div>
+                           <ul class="list-type1 no-border">
+                              <li class="block-element2"> <i class="fa fa-check col-purple"> </i> {{$data->participants == '0' ? 'Single Activity' : 'Group Activity'}} </li>
+
+                                 @if($data->participants > 0)
+                              <li class="block-element2"> <i class="fa fa-check col-purple"> 
+                              </i> {{ $data->group_members == 1 ?    'Participant :'.$data->group_members.' Member' :  'Participant :'.$data->group_members.' Members'}} </li>
+                                 @endif
+                              <li class="block-element2"> <i class="fa fa-check col-purple"> </i> {{$data->location_covered == '0' ? 'Open Location' : 'Covered Location'}} </li>
+                              <li class="block-element2"> <i class="fa fa-check col-purple"> </i> 
+                                 @switch($data->availability)
+                                    @case('1')
+                                       Only Zoom Classes
+                                       @break
+
+                                    @case('2')
+                                       Only Normal Classes
+                                       @break
+
+                                    @case('3')
+                                       Normal Classes, Zoom Classess
+                                       @break
+                                 @endswitch
+                              </li>
+                              <li class="block-element2"> <i class="fa fa-check col-purple"> </i> 
+                                 Available For: 
+                                 <strong>
+                                    @switch($data->availability_for)
+                                       @case('1')
+                                          Teenagers
+                                          @break
+
+                                       @case('2')
+                                          Senior Citizens
+                                          @break
+
+                                       @case('3')
+                                          Handicapped
+                                          @break
+                                    @endswitch
+                                 </strong>
+                              </li>
+
+                              <li class="block-element2"> <i class="fa fa-check col-purple"> </i> 
+                                Equipment :
+                                 @if($data->equipment->count() > 0)
+                                  <strong> Available</strong>
+                                 <table class="table table-striped col-white ">
+                                     <tbody>
+                                   
+                                      
+
+                                      @foreach($data->equipment as $key => $equ)
+                                       <tr>
+                                         <td class="equ-table">{{ @$equ->user_equipment->name}}</td> 
+                                         <td class="equ-table">{{'$ '.number_format(@$equ->user_equipment->price)}}</td> 
+                                      </tr>  
+                                      @endforeach 
+                                                               
+                                 </tbody>
+                                    </table>
+                                 
+                                 @else
+                                   Not Available: 
+                                 @endif
+                                
+                              </li>
+
+                           </ul>
+                           
+                        </div>
+                     </div>
+                  </div>
                </div>
+              
+            </div>
+            
+       
+         {{--  sa end  --}}
+               </div>
+               
                <div class="block-element3 m-t-30">
                   <p class="m-b-0" style="padding:0px 30px">   
                      <a href="javascript:void(0)" class="block-element2 bg-white col-purple rounded custom-btn1 text-center getUserMessage" data-id="{{base64_encode(@$data->user->id)}}"> Contact Coach  </a> </p>

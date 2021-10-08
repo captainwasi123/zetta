@@ -31,13 +31,21 @@ class authController extends Controller
     }
 
     function login(Request $request){
+        $att = array();
     	$data = $request->all();
         $check = user::where('email',$data['email'])->first();
-        if($check->status == 2){
-            return 'error';
-            exit();
+        if(!empty($check->id)){
+            $att = ['email' => $data['email'], 'password' => $data['password'], 'status' => '1'];
+        }else{
+            $check = user::where('username',$data['email'])->first();
+            if(!empty($check->id)){
+                $att = ['username' => $data['email'], 'password' => $data['password'], 'status' => '1'];
+            }else{
+                return 'incorrect';
+            }
         }
-    	if(Auth::attempt(['email' => $data['email'], 'password' => $data['password'], 'status' => '1'])){
+        
+    	if(Auth::attempt($att)){
             if($check->type == '1'){
                 return '/buddy';
             }else{

@@ -4,7 +4,7 @@
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="host" content="{{URL::to('/')}}">
-      <title> @yield('title') | Zetta</title>
+      <title> @yield('title') | Zettaa</title>
 
       @include('web.support.style')
       @yield('addStyle')

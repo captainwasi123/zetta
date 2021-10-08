@@ -4,7 +4,7 @@
 <div class="box-wrapper1">
     <div class="block-element  ">
        <div class="sec-head1">
-          <h3> Your Zetta Lead  </h3>
+          <h3> Your Zettaa Lead  </h3>
        </div>
     </div>
     <div class="block-element m-b-10">
