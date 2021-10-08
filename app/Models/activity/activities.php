@@ -30,7 +30,9 @@ class activities extends Model
         $l->sports_id = $data['sports'];
         $l->held_date = $data['held_date'].' '.$data['held_time'];
         $l->availability = $data['availability'];
-        $l->availability_for = json_encode($data['availability_for']);
+
+        $l->availability_for = empty($data['availability_for']) ? null :  json_encode($data['availability_for']);
+        // $l->availability_for = json_encode($data['availability_for']);
         $l->status = '1';
         $l->save();
         $id = $l->id;
@@ -57,7 +59,8 @@ class activities extends Model
         $l->sports_id = $data['sports'];
         $l->held_date = $data['held_date'].' '.$data['held_time'];
         $l->availability = $data['availability'];
-        $l->availability_for = json_encode($data['availability_for']);
+        $l->availability_for = empty($data['availability_for']) ? null :  json_encode($data['availability_for']);
+
         $l->save();
         $id = $l->id;
 
@@ -156,4 +159,14 @@ class activities extends Model
         return $this->belongsTo(sports::class, 'sports_id');
     }
 
+
+    // public function getAvailabilityForAttribute($value)
+    // {
+    //     $this->attributes['availability_for'] = json_encode($value);
+    // }
+
+    // public function setAvailabilityForAttribute($value)
+    // {
+    //     return $this->attributes['availability_for'] = json_decode($value);
+    // }
 }
