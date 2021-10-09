@@ -63,8 +63,8 @@
                 <span id="r_error_buddy" class="error_span"></span>
                 <div id="r_fields_buddy">
 
+                <button type="button" class="signUpStep1"> Continue  </button>
                 </div>
-                <button type="submit"> Continue  </button>
                 <p> By joining I agree to receive emails from Zettaa </p>
              </form>
           </div>

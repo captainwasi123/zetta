@@ -282,7 +282,16 @@
                    <div class="inline-1">
                                             
                       <label class="custom-control custom-checkbox">
-                      <input id="radio2" name="availability_for[]" type="checkbox" value="1" class="custom-control-input"  >
+                      <input id="radio2" name="availability_for[]" type="checkbox" value="1" class="custom-control-input"
+                        @php $availability_for = json_decode($data->availability_for); @endphp
+                        @if(!empty($availability_for))
+                           @foreach($availability_for as $value)
+                              @if($value == '1')
+                                 checked
+                              @endif
+                           @endforeach
+                        @endif
+                      >
                       <span class="custom-control-label"> Senior Citizens </span>
                       </label>
                       <br>
@@ -290,14 +299,32 @@
                 
                     
                       <label class="custom-control custom-checkbox">
-                      <input id="radio1" name="availability_for[]" type="checkbox" value="2" class="custom-control-input"   >
+                      <input id="radio1" name="availability_for[]" type="checkbox" value="2" class="custom-control-input"
+                        @php $availability_for = json_decode($data->availability_for); @endphp
+                        @if(!empty($availability_for))
+                           @foreach($availability_for as $value)
+                              @if($value == '2')
+                                 checked
+                              @endif
+                           @endforeach
+                        @endif
+                      >
                       <span class="custom-control-label"> Teenagers </span>
                       </label>
                       <br>
                    
                       
                       <label class="custom-control custom-checkbox">
-                      <input id="radio2" name="availability_for[]" type="checkbox" value="3" class="custom-control-input"   >
+                      <input id="radio2" name="availability_for[]" type="checkbox" value="3" class="custom-control-input"
+                        @php $availability_for = json_decode($data->availability_for); @endphp
+                        @if(!empty($availability_for))
+                           @foreach($availability_for as $value)
+                              @if($value == '3')
+                                 checked
+                              @endif
+                           @endforeach
+                        @endif
+                      >
                       <span class="custom-control-label"> handicapped </span>
                       </label>
                       
