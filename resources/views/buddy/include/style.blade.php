@@ -13,8 +13,7 @@
 
       <link href="{{URL::to('/')}}/assets/user_dashboard/dev/dev.css" id="theme" rel="stylesheet">
 
- <link href="{{URL::to('/assets/website')}}/css/custom.css" rel="stylesheet">
-      <link href="{{URL::to('/assets/website')}}/css/dev.css" rel="stylesheet">
+    
 
       <link href="{{URL::to('/')}}/assets/user_dashboard/plugins/sweetalert/sweetalert.css" rel="stylesheet" type="text/css">
 

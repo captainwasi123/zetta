@@ -50,10 +50,10 @@
                               </p>
 
                                      <h6 class="col-white m-b-15"> <i class="fa fa-star col-yellow"> </i> 5.0 </h6>
-                              <h6 class="col-white m-b-15 lesson-catagory-text" style="float: right;">
+                              {{--  <h6 class="col-white m-b-15 lesson-catagory-text" style="float: right;">
                                  <span class="bg-purple col-white custom-btn12"> {{@$val->lesson->sports->name}} </span>
-                              </h6>
-
+                              </h6>  --}}
+{{--  
                                  <div class="zoom-tag">
                                  @if(!empty($val->lesson->availability))
                                  @if($val->lesson->availability != '2')
@@ -81,7 +81,7 @@
                                  @endforeach
                                  @endif
                                  @endif
-                              </div>
+                              </div>  --}}
                                
                               </div>
 
