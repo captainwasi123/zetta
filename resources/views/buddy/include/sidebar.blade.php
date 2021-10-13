@@ -14,9 +14,13 @@
          </div>
          <div class="account-btn1 text-center">
             @if (auth()->user()->type == 2)
-                <a href="{{URL::to('/coach')}}" class="custom-btn1"> SWITCH TO Coach </a>
+               @if(auth()->user()->coach_request_status == 0)
+                  <a href="javascript:void(0)" class="custom-btn1"> Coach in Review </a>
+               @else
+                  <a href="{{URL::to('/coach')}}" class="custom-btn1"> SWITCH TO Coach </a>
+               @endif
             @else
-               @if(auth()->user()->coach_request_status == 1)
+               @if(auth()->user()->coach_request_status == 0)
                   <a href="javascript:void(0)" class="custom-btn1"> Coach in Review </a>
                @else
                   <a href="{{route('buddy.become_a_coach')}}" class="custom-btn1"> Apply for Coach </a>

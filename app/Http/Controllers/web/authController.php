@@ -24,7 +24,8 @@ class authController extends Controller
 	    	if($data['password'] != $data['confirmation_password']){
 	    		return 'nomatch';
 	    	}else{
-	    		User::addUser($data);
+	    		$id = User::addUser($data);
+                Auth::loginUsingId($id);
 	    		return 'success';
 	    	}
 	    }

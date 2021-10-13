@@ -70,6 +70,8 @@ class User extends Authenticatable
         $u->status = '1';
         $u->type   = $data['user_type'];
         $u->save();
+
+        return $u->id;
     }
 
 

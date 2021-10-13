@@ -475,7 +475,8 @@ $(document).ready(function(){
                   $('#r_error_buddy').html('Email already exists.');
                   $('#r_error_buddy').css({display: 'block'});
               }else if(data == 'success'){
-                  $('#r_content_buddy').html('<div class="r_success_block"><img src="'+host+'/assets/images/success-gif.gif" class="success_gif" /><br><p> Account created. Please <a href="javascript:void(0)" class="open-login" data-dismiss="modal"> Sign In </a> here.</p></div>');
+                //$('.modal').modal('hide');
+                $('.coachBecomeModal').modal('show');    
               }else if(data == 'nomatch'){
                   $('#r_error_buddy').html('Password does not match.');
                   $('#r_error_buddy').css({display: 'block'});

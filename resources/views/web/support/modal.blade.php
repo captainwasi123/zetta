@@ -145,25 +145,25 @@
    </div>
 @endif
 
-<style type="text/css">
 
-</style>
-<div class="modal fade register-modalll" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+<div class="modal fade coachBecomeModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
    <div class="modal-dialog modal-lg2" role="document" style="max-width: 800px;">
       <div class="modal-content" id="r_content">
          <div class="join-pop-head">
-            <h3> Become a Coach <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button> </h3>
+            <h3> Become a Coach <h3>
          </div>
          <div class="card become_coach">
+            <form method="post" action="{{route('buddy.coach.request')}}">
+               {{csrf_field()}}
                <div class="col-white">
                   <div class="row">
                        <div class="col-md-12">
-
                           <label>1. Have you ever coached?</label>
-                          <br>
-                          <input type="radio" id="yes" name="first" value="HTML"><label for="yes"> &nbsp;Yes</label>
-                          <input type="radio" id="no" name="first" value="CSS"><label for="no"> &nbsp;No</label>
-                          <br>
+                          <br> 
+                          <input type="radio" id="yes" name="answer1" value="Yes"><label for="yes">Yes</label>
+                          <input type="radio" id="no" name="answer1" value="No" checked><label for="no">No</label>
+                          
+                          <br><br>
                           <textarea name="answer1Detail" class="form-control" placeholder="If Yes or not please explain." cols="5" required></textarea>
                        </div>
                    </div>
@@ -172,8 +172,8 @@
                        <div class="col-md-12">
                           <label>2. What motivated you to become a coach? Is this your main activity? </label>
                           <br>
-                          <input type="radio" id="yes1" name="second" value="HTML"><label for="yes1">&nbsp;Yes</label>
-                          <input type="radio" id="no1" name="second" value="CSS"><label for="no1">&nbsp;No</label>
+                          <input type="radio" id="yes1" name="answer2" value="Yes"><label for="yes1">Yes</label>
+                          <input type="radio" id="no1" name="answer2" value="No" checked><label for="no1">No</label>
                           <br><br>
                           <textarea name="answer2Detail" class="form-control" placeholder="If not, what is your main occupation?" cols="5" required></textarea>
                        </div>
@@ -191,8 +191,8 @@
                        <div class="col-md-12">
                           <label>4. Have you practiced a sport for many years or even at high level?  </label>
                           <br>
-                          <input type="radio" id="yes2" name="four" value="HTML"><label for="yes2">&nbsp;Yes</label>
-                          <input type="radio" id="no2" name="four" value="CSS"><label for="no2">&nbsp;No</label>
+                          <input type="radio" id="yes2" name="answer4" value="Yes"><label for="yes2">Yes</label>
+                          <input type="radio" id="no2" name="answer4" value="No" checked><label for="no2">No</label>
                           <br><br>
                           <textarea name="answer4Detail" class="form-control" placeholder="If so, how many years? At what level? Which sport?" cols="5" required></textarea>
                        </div>
@@ -224,19 +224,18 @@
                    <br>
                    <div class="row">
                        <div class="col-md-12">
-                          <label><input type="checkbox"> &nbsp;By checking this box, you declare that you have read and understood the Coach Label Zettaa document and agree to refer to it when you are in contact with your Zettaa customers.</label>
+                           <input type="checkbox" id="agree" name="agree" value="1" required>
+                           <label for="agree">By checking this box, you declare that you have read and understood the Coach Label Zettaa document and agree to refer to it when you are in contact with your Zettaa customers.</label>
                        </div>
                    </div>
                    <div class="row">
                        <div class="col-md-12">
-                          <button type="button">Become a Coach</button>
+                          <button type="submit">Become a Coach</button>
                        </div>
                    </div>
-
-
- 
                </div>
-            </div>
+            </form>
+         </div>
       </div>
    </div>
 </div>
