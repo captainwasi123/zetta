@@ -385,6 +385,46 @@ var kerywordss = [
         });
       });
 
+      $(document).on('click', '.approveFriendRequest', function(){
+        var id = $(this).data('id');
+        swal({
+            title: "Are you sure?",
+            text: "You want to accept this request.",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#994afe",
+            confirmButtonText: "Accept Request!",
+            cancelButtonText: "No, Cancel!",
+            closeOnConfirm: false,
+            closeOnCancel: false
+        }, function(isConfirm){
+            if (isConfirm) {
+                window.location.href = host+"/friends/acceptRequest/"+id;
+            } else {
+            }
+        });
+      });
+
+      $(document).on('click', '.rejectFriendRequest', function(){
+        var id = $(this).data('id');
+        swal({
+            title: "Are you sure?",
+            text: "You want to reject this request.",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#994afe",
+            confirmButtonText: "Reject Request!",
+            cancelButtonText: "No, Cancel!",
+            closeOnConfirm: false,
+            closeOnCancel: false
+        }, function(isConfirm){
+            if (isConfirm) {
+                window.location.href = host+"/friends/rejectRequest/"+id;
+            } else {
+            }
+        });
+      });
+
       $(document).on('click', '.removeFriend', function(){
         var id = $(this).data('id');
         swal({
