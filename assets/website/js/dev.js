@@ -378,7 +378,11 @@ $( "#register-form" ).submit(function( event ) {
 $(document).ready(function(){
     'use strict'
 
-    $(document).on('click', '.signUpStep1', function(){
+    
+$( "#register-form-buddy" ).submit(function( event ) {
+
+  // Stop form from submitting normally
+  event.preventDefault();
 
         var $form = $('#register-form-buddy'),
           em = $form.find( "input[name='email']" ).val(),
