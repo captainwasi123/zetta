@@ -7,6 +7,7 @@ use App\Models\CoachRequest;
 use App\Models\ActivityOrders;
 use App\Models\User;
 use App\Models\earningHistory;
+use App\Models\FavouriteBuddy as FB;
 use Illuminate\Http\Request;
 use App\Models\inbox\chat;
 use Auth;
@@ -81,4 +82,18 @@ class buddyController extends Controller
         }
 
     }
+
+
+
+    function favouriteBuddy(){
+        
+   
+        $data=FB::where('user_id', Auth::id())->get();
+  
+       
+        return view('buddy.favouriteBuddy',['data' => $data]);
+    }
+
+
+   
 }

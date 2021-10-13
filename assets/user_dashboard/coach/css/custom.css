@@ -3771,3 +3771,10 @@ html body .bg-purple {
 .bg-white {
     background-color: transparent!important;
 }
+
+.zoom-tag {
+    right: 0px !important;
+    top: 196px !important;
+    text-align: right;
+    padding-right: 9px;
+}

@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\lesson\lessons;
+
 
 class FavouriteLesson extends Model
 {
@@ -13,10 +15,10 @@ class FavouriteLesson extends Model
 
     public function lesson()
     {
-        return $this->belongsTo(activities::class,'lesson_id');
+        return $this->belongsTo(lessons::class,'lesson_id');
     }
 
-    public function user()
+    public function user() 
     {
         return $this->belongsTo(User::class,'user_id');
     }

@@ -11,6 +11,23 @@ $(document).ready(function(){
     $('#imageUpload').change(function() {
       $('#profile_form').submit();
     });
+// 
+
+
+    $(document).on('click', '.fav_act', function() {
+         var id = $(this).data('id');
+        var element = $(this);
+        $.get(host + "/activity/add/" + id, function(data) {
+            if (data == '1') {
+              $(element).html('<i class="fa fa-heart col-purple"></i>');
+            } else  {
+
+                $(element).html('<i class="far fa-heart col-purple"></i>');;
+
+            }
+        });
+
+    });
 
 
     $('input[name="participants"]').change(function() {

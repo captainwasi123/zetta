@@ -355,7 +355,10 @@
                               
                              
                              
-                              {{-- <h5 class="col-white m-b-20"> <img src="{{URL::to('/assets/website')}}/images/clock-icon.jpg"> 9 am - 12 am </h5> --}}
+                           <h5 class="col-white m-b-20"> 
+                              <img src="{{URL::to('/assets/website')}}/images/clock-icon.jpg">  
+                              {{date('d-M-Y h:i A', strtotime($data->held_date))}}
+                           </h5>
                            </div>
                            <ul class="list-type1 no-border">
                               <li class="block-element2"> <i class="fa fa-check col-purple"> </i> {{$data->participants == '0' ? 'Single Activity' : 'Group Activity'}} </li>
@@ -383,19 +386,24 @@
                               <li class="block-element2"> <i class="fa fa-check col-purple"> </i> 
                                  Available For: 
                                  <strong>
-                                    @switch($data->availability_for)
-                                       @case('1')
-                                          Teenagers
-                                          @break
+                                    @php $availability_for = json_decode($data->availability_for); @endphp
+                                    @if(!empty($availability_for))
+                                       @foreach($availability_for as $value)
+                                          @switch($value)
+                                             @case('1')
+                                                <img src="{{URL::to('/assets/')}}/65+.png" title="For Senior Citizen">
+                                                @break
 
-                                       @case('2')
-                                          Senior Citizens
-                                          @break
+                                             @case('2')
+                                                <img src="{{URL::to('/assets/')}}/teenager.png" title="For Teenager"> 
+                                                @break
 
-                                       @case('3')
-                                          Handicapped
-                                          @break
-                                    @endswitch
+                                             @case('3')
+                                                <img src="{{URL::to('/assets/')}}/handicapped.png" title="For Handicapped">
+                                                @break
+                                          @endswitch
+                                       @endforeach
+                                    @endif
                                  </strong>
                               </li>
 

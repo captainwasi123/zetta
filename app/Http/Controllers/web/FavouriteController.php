@@ -8,6 +8,8 @@ use App\Models\FavouriteBuddy;
 use App\Models\FavouriteCoach;
 use App\Models\FavouriteLesson;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
+use Auth;
 
 class FavouriteController extends Controller
 {
@@ -34,29 +36,53 @@ class FavouriteController extends Controller
     }
 
 
+    public function delfavlesson($id)
+    {
+        $id=FavouriteLesson::where('user_id', auth()->user()->id)->where('id',$id)->first();
+        $id->delete();
+
+        return back();
+    }
+
 
     public function fav_activity($id)
     {
-        $data = [];
-        if(auth()->check()){
-            $favAact = new FavouriteActivity();
-            $check = $favAact->where('user_id',auth()->user()->id)->where('activity_id',$id)->count();
+
+            $data = [];
+            if(auth()->check()){
+                $favAact = new FavouriteActivity();
+                $check = $favAact->where('user_id',auth()->user()->id)->where('activity_id',$id)->count();
+
+
+
             if($check > 0){
                 $data['status'] = 300;
                 $favAact->where('user_id',auth()->user()->id)->where('activity_id',$id)->delete();
                 return response($data);
             }
-            $data['status'] = 200;
-            $favAact->activity_id = $id;
-            $favAact->user_id = auth()->user()->id;
-            $favAact->save();
-            return response()->json($data);
-        }else{
-            return back();
-        }
+
+                $data['status'] = 200;
+                $favAact->activity_id = $id;
+                $favAact->user_id = auth()->user()->id;
+                $favAact->save();
+                return response()->json($data);
+            }else{
+                return back();
+            }
+
 
     }
 
+    public function delfavactivity($id)
+    {
+        $id=FavouriteActivity::where('user_id', auth()->user()->id)->where('id',$id)->first();
+        $id->delete();
+
+        return back();
+    }
+
+
+   
 
     public function fav_coach($id)
     {
@@ -80,6 +106,14 @@ class FavouriteController extends Controller
 
     }
 
+    public function delfavcoach($id)
+    {
+        $id=FavouriteCoach::where('user_id', auth()->user()->id)->where('id',$id)->first();
+        $id->delete();
+
+        return back();
+    }
+
 
     public function fav_buddy($id)
     {
@@ -101,5 +135,14 @@ class FavouriteController extends Controller
             return back();
         }
 
+    }
+
+
+    public function delfavbuddy($id)
+    {
+        $id=FavouriteBuddy::where('user_id', auth()->user()->id)->where('id',$id)->first();
+        $id->delete();
+
+        return back();
     }
 }

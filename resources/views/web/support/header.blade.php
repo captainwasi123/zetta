@@ -18,7 +18,7 @@ header.header-2 .flag-1 img {
 }
 header.header-2 .logo a img {
     width: 110px;
-    padding-top: 5px;
+    padding-top: 5px; 
 }
 }
 </style>

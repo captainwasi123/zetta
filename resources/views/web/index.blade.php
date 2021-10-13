@@ -69,7 +69,7 @@
                                     <img src="{{URL::to('/assets/website')}}/images/zoom-logo.png" title="Online Zoom Classes">
                                  @endif
                                  @php $availability_for = json_decode($val->availability_for); @endphp
-                                @if(!empty($availability_for))
+                                 @if(!empty($availability_for))
                                  @foreach($availability_for as $value)
                                     
                                     @if($value == '1')
@@ -105,10 +105,9 @@
                   </div>
                @endforeach
             </div>
-            @if(count($activities) == 0)
-               <div class="sec-head1 m-b-40 m-t-40">
-                  <br><br>
-                  <h5 class="col-white gotham-bold text-center m-b-20"> No Gigs Found. </h5>
+            @if(count($uactivities) == 0)
+               <div class="sec-head1 m-t-20">
+                  <h5 class="col-gray gotham-bold text-center m-b-20"> No Gigs Found. </h5>
                </div>
             @endif
          </div>

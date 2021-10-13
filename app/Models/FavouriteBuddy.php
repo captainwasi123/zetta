@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\User;
 
 class FavouriteBuddy extends Model
 {
@@ -14,7 +15,7 @@ class FavouriteBuddy extends Model
 
     public function buddy()
     {
-        return $this->belongsTo(activities::class,'buddy_id');
+        return $this->belongsTo(user::class,'buddy_id');
     }
 
     public function user()

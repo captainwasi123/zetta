@@ -2744,3 +2744,18 @@ html body .off-border {
     color: #cecece !important;
 }
 
+.descrip {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.zoom-tag {
+    right: 0px !important;
+    top: 196px !important;
+    text-align: right;
+    padding-right: 9px;
+}
+

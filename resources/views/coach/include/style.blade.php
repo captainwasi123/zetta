@@ -10,6 +10,10 @@
       <link href="{{URL::to('/')}}/assets/user_dashboard/plugins/calendar/dist/fullcalendar.css" rel="stylesheet" />
       <link href="{{URL::to('/')}}/assets/user_dashboard/coach/css/custom.css" id="theme" rel="stylesheet">
       <link href="{{URL::to('/')}}/assets/user_dashboard/dev/dev.css" id="theme" rel="stylesheet">
+
+
+      <link href="{{URL::to('/assets/website')}}/css/custom.css" rel="stylesheet">
+      <link href="{{URL::to('/assets/website')}}/css/dev.css" rel="stylesheet">
       {{-- <link href="{{URL::to('/')}}/assets/user_dashboard/plugins/summernote/dist/summernote.css"> --}}
       <link href="{{URL::to('/')}}/assets/user_dashboard/plugins/sweetalert/sweetalert.css" rel="stylesheet" type="text/css">
       <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">

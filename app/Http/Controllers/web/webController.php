@@ -351,25 +351,41 @@ class webController extends Controller
     }
 
     //Footer Pages
-    function terms(){
+        function terms(){
 
-        return view('web.terms');
-    }
-    function faq(){
+            return view('web.terms');
+        }
+        function faq(){
 
-        return view('web.faq');
-    }
-    function refund_cancel_policy(){
+            return view('web.faq');
+        }
+        function refund_cancel_policy(){
 
-        return view('web.refund_cancel_policy');
-    }
-    function cookie_policy(){
+            return view('web.refund_cancel_policy');
+        }
+        // function cookiePolicy(){
 
-        return view('web.cookie_policy');
-    }
+        //     return view('web.cookiePolicy');
+        // }
 
-    function aboutUs(){
+        function aboutUs(){
 
-        return view('web.about');
-    }
+            return view('web.about');
+        }
+
+        function cookiePolicy(){
+
+            return view('web.cookiePolicy');
+        }
+
+        function disclaimerPolicy(){
+
+            return view('web.disclaimerPolicy');
+        }
+
+
+
+
 }
+
+

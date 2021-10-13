@@ -11,6 +11,8 @@ use App\Models\lesson\Locations;
 use App\Models\lesson\Packages;
 use App\Models\sportsCategory;
 use App\Models\sports;
+use App\Models\favouriteLesson as FL;
+
 use Auth;
 
 class lessonsController extends Controller
@@ -92,5 +94,15 @@ class lessonsController extends Controller
         $data = sports::where('category_id', $id)->get();
 
         return view('coach.lessons.response.sports_name', ['sports' => $data]);
+    }
+
+
+    function favouriteLesson(){
+        
+   
+        $data=FL::where('user_id', Auth::id())->get();
+        // dd($data);
+
+        return view('coach.favouriteLesson',['data' => $data]);
     }
 }

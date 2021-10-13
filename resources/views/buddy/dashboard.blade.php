@@ -2,8 +2,10 @@
 @section('title', 'Dashboard')
 
 @section('content')
+
 @php $list_item = array(); @endphp
 <div class="box-wrapper1">
+
    <div class="block-element">
       <div class="row">
          <div class="col-md-12">
@@ -59,7 +61,7 @@
                            <div class="sec-head1 ps">
                               <h3> Timeline   </h3>
                            </div>
-                        <div class="card-body b-l calender-sidebar bg-white">
+                        <div class="card-body b-l calender-sidebar">
                            <div id="calendar"></div>
                         </div>
                      </div>

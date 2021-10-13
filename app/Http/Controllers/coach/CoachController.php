@@ -8,7 +8,10 @@ use Hash;
 use App\Models\User;
 use App\Models\lesson\orders;
 use App\Http\Controllers\Controller;
+use App\Models\FavouriteCoach as FC;
 use App\Models\inbox\chat;
+
+
 
 
 class CoachController extends Controller
@@ -70,4 +73,14 @@ class CoachController extends Controller
         return view('coach.messages.index');
     }
 
+
+        
+    function favouriteCoach(){
+        
+   
+        $data=FC::where('user_id', Auth::id())->get();
+        // dd($data);
+
+        return view('coach.favouriteCoach',['data' => $data]);
+    }
 }

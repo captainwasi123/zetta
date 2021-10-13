@@ -13,6 +13,7 @@ use App\Models\User;
 use App\Models\sportsCategory;
 use App\Models\sports;
 use App\Models\friends as friendsList;
+use App\Models\FavouriteActivity as FA;
 use Auth;
 
 class activityController extends Controller
@@ -97,5 +98,17 @@ class activityController extends Controller
         $data = sports::where('category_id', $id)->get();
 
         return view('coach.lessons.response.sports_name', ['sports' => $data]);
+    }
+
+
+
+    
+    function favouriteActivity(){
+        
+   
+        $data=FA::where('user_id', Auth::id())->get();
+  
+
+        return view('buddy.favouriteActivity',['data' => $data]);
     }
 }

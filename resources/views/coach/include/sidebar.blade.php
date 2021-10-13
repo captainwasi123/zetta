@@ -5,7 +5,7 @@
                <div class="user-profile-header">
                   <h4> Hi, {{(Auth::user()->fname)}} </h4>
                   <h6> {{Auth::user()->email}} </h6>
-                  <p> <a href=""> <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/coin-icon.png"> </a> <span> Z COINS <b> 250 </b> </span> <a href=""> <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/heart-icon.png"> </a>  </p>
+                  <p> <a href=""> <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/coin-icon.png"> </a> <span> Z COINS <b> 250 </b> </span> <a href="{{route('coach.favouriteCoach')}}"> <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/heart-icon.png"> </a>  </p>
                </div>
                <div class="user-profile">
                   <div class="profile-img">
@@ -90,7 +90,7 @@
                   </div>
                   <h4> Hi, Coach Syed Anas </h4>
 
-                  <p> <a href=""> <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/coin-icon.png"> </a> <span> Z COINS <b> 250 </b> </span> <a href=""> <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/heart-icon.png"> </a>  </p>
+                  <p> <a href=""> <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/coin-icon.png"> </a> <span> Z COINS <b> 250 </b> </span> <a  href="{{route('coach.favouriteCoach')}}"> <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/heart-icon.png"> </a>  </p>
 
                </div>
            <!--     <h4 class="profile-name"> Hi, Coach  </h4> -->

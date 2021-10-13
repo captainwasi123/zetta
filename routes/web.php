@@ -45,6 +45,10 @@ use Illuminate\Support\Facades\Route;
 			Route::get('faq', 'webController@faq')->name('web.faq');
 			Route::get('refund_cancel_policy', 'webController@refund_cancel_policy')->name('web.refund_cancel_policy');
 			Route::get('cookie_policy', 'webController@cookie_policy')->name('web.cookie_policy');
+			Route::get('cookiePolicy', 'webController@cookiePolicy')->name('web.cookiePolicy');
+			Route::get('disclaimerPolicy', 'webController@disclaimerPolicy')->name('web.disclaimerPolicy');
+
+
 
 		// User Authentication
 			Route::post('/register', 'authController@register');
@@ -79,7 +83,7 @@ use Illuminate\Support\Facades\Route;
 
 				Route::get('details/{id}', 'webController@lessonDetails')->name('lesson.details');
 			});
-        	
+
         //Coach Profile Details
             Route::get('Coach/details/{id}','webController@coachDetails')->name('web.coach.details');
 
@@ -91,15 +95,25 @@ use Illuminate\Support\Facades\Route;
 
                 /// add favourite activity
                 Route::get('/activity/add/{id}','FavouriteController@fav_activity')->name('favourite.activity.add');
+                Route::get('/activity/delete//{id}','FavouriteController@delfavactivity')->name('favourite.activity.del');
+
+				
 
                 // add favourite Lesson
                 Route::get('/lesson/add/{id}','FavouriteController@fav_lesson')->name('favourite.lesson.add');
+                Route::get('/lesson/delete/{id}','FavouriteController@delfavlesson')->name('favourite.lesson.del');
+                
 
                 // add favourite Coach
                 Route::get('/coach/add/{id}','FavouriteController@fav_coach')->name('favourite.coach.add');
+                Route::get('/coach/delete/{id}','FavouriteController@delfavcoach')->name('favourite.coach.del');
+
 
                 // add favourite Buddy
                 Route::get('/buddy/add/{id}','FavouriteController@fav_buddy')->name('favourite.buddy.add');
+                Route::get('/buddy/delete/{id}','FavouriteController@delfavbuddy')->name('favourite.buddy.del');
+
+                
 
             });
 
@@ -117,6 +131,10 @@ use Illuminate\Support\Facades\Route;
 				Route::get('/', 'CoachController@index')->name('coach.dashboard');
                 Route::get('/friends','CoachController@friend')->name('coach.friends');
                 Route::get('/friends/search','CoachController@search_friends')->name('coach.friends.search');
+				Route::get('/favouriteCoach', 'CoachController@favouriteCoach')->name('coach.favouriteCoach');
+				Route::get('/favouriteLesson', 'lessonsController@favouriteLesson')->name('coach.favouriteLesson');
+
+
 
 
 
@@ -227,11 +245,18 @@ use Illuminate\Support\Facades\Route;
 
 
 
+
+
 		//Sports Buddy
 			Route::prefix('buddy')->namespace('buddy')->group(function(){
 
 				Route::get('/', 'buddyController@index')->name('buddy.dashboard');
 				Route::get('/become_a_coach', 'buddyController@become_a_coach')->name('buddy.become_a_coach');
+				Route::get('/favouriteActivity', 'activityController@favouriteActivity')->name('buddy.favouriteActivity');
+				Route::get('/favouriteBuddy', 'buddyController@favouriteBuddy')->name('buddy.favouriteBuddy');
+
+
+				
 
 				//Messenger
 					Route::prefix('inbox')->group(function(){
@@ -240,6 +265,7 @@ use Illuminate\Support\Facades\Route;
 
 						Route::post('messageSend', 'chatController@sendMessage');
 					});
+
 
 
 				//My Account
@@ -310,11 +336,17 @@ use Illuminate\Support\Facades\Route;
 					});
 
 				//Friends
-					Route::prefix('friends')->group(function(){	
+					Route::prefix('friends')->group(function(){
                 		Route::get('/', 'friendController@my_friends')->name('buddy.friends');
                 		Route::get('search/{val}', 'friendController@search');
                 		Route::get('add/{id}', 'friendController@addFriend');
                 		Route::get('remove/{id}', 'friendController@removeFriend');
+					});
+
+					//Friends
+					Route::prefix('friends')->group(function(){
+                		Route::get('/', 'friendController@my_friends')->name('buddy.friends');
+
 					});
 
 				//Orders

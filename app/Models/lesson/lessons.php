@@ -148,7 +148,7 @@ class lessons extends Model
         $i->cover_img = $filename;
         $i->save();
     }
-
+ 
 
 
 
