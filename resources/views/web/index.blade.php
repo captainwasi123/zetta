@@ -19,7 +19,7 @@
 <section class="banner-sec" id="search">
          <div class="container-fluid">
             <div class="banner-text text-center">
-               <h2 class="gotham-bold col-white"> Find The <br/> Perfect Sport Buddy </h2>
+               <h2 class="gotham-bold col-white"> {{ __('content.Find The') }} <br/> {{ __('content.Perfect Sport Buddy') }}</h2>
             </div>
             <div class="search-form">
                <form method="get" action="{{route('web.search')}}">
@@ -29,11 +29,11 @@
                   </div>
                   <div class="label-field3">
                      <i class="fa fa-map-marker-alt"></i>
-                     <input type="text" placeholder="Address, City or neighborhood" id="madd-input" name="add" required>
+                     <input type="text" placeholder=" {{ __('content.Address, City or neighborhood') }}" id="madd-input" name="add" required>
                      <input type="hidden" name="country" id="madd-country">
                   </div>
                   <div class="submit-field1">
-                     <button class="bg-purple col-white custom-btn1"> Search </button>
+                     <button class="bg-purple col-white custom-btn1">  {{ __('content.Search') }} </button>
                   </div>
                </form>
             </div>
@@ -46,7 +46,7 @@
        <section class="pad-top-40 bg-dark2 pad-bot-20">
          <div class="container-fluid">
             <div class="sec-head1 m-b-40">
-               <h2 class="col-white gotham-bold text-center m-b-20"> Upcoming Events </h2>
+               <h2 class="col-white gotham-bold text-center m-b-20"> {{ __('content.Upcoming Events') }}  </h2>
             </div>
             <div class="boxes-slider1 arrows1">
                @foreach($uactivities as $val)
@@ -63,7 +63,7 @@
                            </div>
                            <div class="lesson-title-block">
                               <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{empty($val->user) ? '' : $val->user->profile_img}}" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';">
-                              <h4>  {{empty($val->user->fname) ? 'Anonymous' : $val->user->fname.' '.$val->user->lname}} <span>Sports Buddy </span>  </h4>
+                              <h4>  {{empty($val->user->fname) ? 'Anonymous' : $val->user->fname.' '.$val->user->lname}} <span> {{ __('content.Sports Buddy') }} </span>  </h4>
                               <div class="zoom-tag">
                                  @if($val->availability != '2')
                                     <img src="{{URL::to('/assets/website')}}/images/zoom-logo.png" title="Online Zoom Classes">
@@ -107,7 +107,7 @@
             </div>
             @if(count($uactivities) == 0)
                <div class="sec-head1 m-t-20">
-                  <h5 class="col-gray gotham-bold text-center m-b-20"> No Gigs Found. </h5>
+                  <h5 class="col-gray gotham-bold text-center m-b-20">  {{ __('content.No Gigs Found.') }} </h5>
                </div>
             @endif
          </div>
@@ -116,27 +116,27 @@
       <section class="pad-top-40 bg-dark2 pad-bot-20 work-bac">
          <div class="container-fluid">
             <div class="sec-head1 m-b-20">
-               <h2 class="col-white gotham-bold text-center m-b-20"> How it Works </h2>
+               <h2 class="col-white gotham-bold text-center m-b-20">  {{ __('content.How it Works') }} </h2>
             </div>
 
             <div class="row">
                   <div class="col-md-4">
                      <div class="work">
                      <img src="{{URL::to('/assets/website')}}/images/work1.png">
-                     <h2>Search your Sports</h2>
-                     <p>Find the right sport partner near you. Either you’re looking for a coach a buddy, our filters will guide you.</p>   </div>                     
+                     <h2> {{ __('content.Search your Sports') }}</h2>
+                     <p> {{ __('content.Find the right sport partner near you. Either you’re looking for a coach a buddy, our filters will guide you.') }}Find the right sport partner near you. Either you’re looking for a coach a buddy, our filters will guide you.</p>   </div>                     
                   </div> 
                   <div class="col-md-4">
                      <div class="work">
                      <img src="{{URL::to('/assets/website')}}/images/work2.png">
-                     <h2>Book Your Session</h2>
-                     <p>Reserve your activity or lesson. Follow your progression with your personal dashboard.</p>   </div>                     
+                     <h2> {{ __('content.Book Your Session') }}</h2>
+                     <p>Reserve your activity or lesson. Follow your progression with your personal dashboard.') }</p>   </div>                     
                   </div> 
                   <div class="col-md-4">
                      <div class="work">
                      <img src="{{URL::to('/assets/website')}}/images/work3.png">
-                     <h2>Share your Passion</h2>
-                     <p>Discover new sport opportunities everywhere around you.</p>   </div>                     
+                     <h2> {{ __('content.Share your Passion') }}</h2>
+                     <p> {{ __('content.Discover new sport opportunities everywhere around you.') }}</p>   </div>                     
                   </div>                               
             </div> 
 
@@ -146,18 +146,18 @@
       <section class="bg-dark2 pad-top-20 pad-bot-40">
          <div class="container-fluid">
             <div class="sec-head1 m-b-40">
-               <h2 class="col-white gotham-bold m-b-10"> Top Coaches </h2>
-               <p class="col-grey m-b-0"> Each sports coach is carefully selected by the Zettaa team </p>
+               <h2 class="col-white gotham-bold m-b-10">  {{ __('content.Top Coaches') }} </h2>
+               <p class="col-grey m-b-0">  {{ __('content.Each sports coach is carefully selected by the Zettaa team') }} </p>
             </div>
             <div class="row">
                <!-- <div class="col-md-2 col-lg-2 col-sm-12 col-12 order-lg-2 order-md-2">
                   <div class="all-filters2">
-                     <a class="buddy-btn" href="{{route('web.search.filter','friend')}}">Friends</a>
-                     <a class="buddy-btn" href="{{route('web.search.filter','online_coach')}}">Online Coach</a>
-                     <a class="buddy-btn" href="{{route('web.search.filter','group_coach')}}">Group Coach</a>
-                     <a class="buddy-btn" href="{{route('web.search.filter','private_coach')}}">Private Coach</a>
-                     <a class="buddy-btn" href="{{route('web.search.filter','girl')}}">Girl Coach</a>
-                     <button class="buddy-btn"> Find My Teacher </button>
+                     <a class="buddy-btn" href="{{route('web.search.filter','friend')}}"> {{ __('content.Friends') }}</a>
+                     <a class="buddy-btn" href="{{route('web.search.filter','online_coach')}}"> {{ __('content.Online Coach') }}</a>
+                     <a class="buddy-btn" href="{{route('web.search.filter','group_coach')}}"> {{ __('content.Group Coach') }}</a>
+                     <a class="buddy-btn" href="{{route('web.search.filter','private_coach')}}"> {{ __('content.Private Coach') }}</a>
+                     <a class="buddy-btn" href="{{route('web.search.filter','girl')}}"> {{ __('content.Girl Coach') }}</a>
+                     <button class="buddy-btn">  {{ __('content.Find My Teacher') }}</button>
                   </div>
                </div> -->
                <div class="col-md-12 col-lg-12 col-sm-12 col-12 order-lg-1 order-md-1">
@@ -168,9 +168,9 @@
                               <div>
                                  <img src="{{URL::to('/assets/website')}}/images/buddy-image1.jpg">
                               </div>
-                              <h4 class="col-white gotham-regular"> Aubrey </h4>
-                              <h5> <span class="col-white"> 5.0 </span> <i class="fa fa-star col-purple"> </i>
-                                 <span class="col-white"> 1 Review </span> <img src="{{URL::to('/assets/website')}}/images/buddy-icon1.jpg">
+                              <h4 class="col-white gotham-regular">    {{ __('content.Aubrey') }} </h4>
+                              <h5> <span class="col-white">  {{ __('content.5.0') }} </span> <i class="fa fa-star col-purple"> </i>
+                                 <span class="col-white">   {{ __('content.1 Review') }} </span> <img src="{{URL::to('/assets/website')}}/images/buddy-icon1.jpg">
                               </h5>
                            </div>
                         </div>
@@ -179,9 +179,9 @@
                               <div>
                                  <img src="{{URL::to('/assets/website')}}/images/buddy-image2.jpg">
                               </div>
-                              <h4 class="col-white gotham-regular"> Aubrey </h4>
-                              <h5> <span class="col-white"> 5.0 </span> <i class="fa fa-star col-purple"> </i>
-                                 <span class="col-white"> 1 Review </span> <img src="{{URL::to('/assets/website')}}/images/buddy-icon1.jpg">
+                              <h4 class="col-white gotham-regular">   {{ __('content.Aubrey') }} </h4>
+                              <h5> <span class="col-white">  {{ __('content.5.0') }}  </span> <i class="fa fa-star col-purple"> </i>
+                                 <span class="col-white"> {{ __('content.1 Review') }} </span> <img src="{{URL::to('/assets/website')}}/images/buddy-icon1.jpg">
                               </h5>
                            </div>
                         </div>
@@ -190,9 +190,9 @@
                               <div>
                                  <img src="{{URL::to('/assets/website')}}/images/buddy-image3.jpg">
                               </div>
-                              <h4 class="col-white gotham-regular"> Aubrey </h4>
-                              <h5> <span class="col-white"> 5.0 </span> <i class="fa fa-star col-purple"> </i>
-                                 <span class="col-white"> 1 Review </span> <img src="{{URL::to('/assets/website')}}/images/buddy-icon1.jpg">
+                              <h4 class="col-white gotham-regular">  {{ __('content.Aubrey') }} </h4>
+                              <h5> <span class="col-white">  {{ __('content.5.0') }} </span> <i class="fa fa-star col-purple"> </i>
+                                 <span class="col-white">  {{ __('content.1 Review') }} </span> <img src="{{URL::to('/assets/website')}}/images/buddy-icon1.jpg">
                               </h5>
                            </div>
                         </div>
@@ -201,9 +201,9 @@
                               <div>
                                  <img src="{{URL::to('/assets/website')}}/images/buddy-image4.jpg">
                               </div>
-                              <h4 class="col-white gotham-regular"> Aubrey </h4>
-                              <h5> <span class="col-white"> 5.0 </span> <i class="fa fa-star col-purple"> </i>
-                                 <span class="col-white"> 1 Review </span> <img src="{{URL::to('/assets/website')}}/images/buddy-icon1.jpg">
+                              <h4 class="col-white gotham-regular">   {{ __('content.Aubrey') }} </h4>
+                              <h5> <span class="col-white"> {{ __('content.5.0') }} </span> <i class="fa fa-star col-purple"> </i>
+                                 <span class="col-white">   {{ __('content.1 Review') }} </span> <img src="{{URL::to('/assets/website')}}/images/buddy-icon1.jpg">
                               </h5>
                            </div>
                         </div>
@@ -212,9 +212,9 @@
                               <div>
                                  <img src="{{URL::to('/assets/website')}}/images/buddy-image5.jpg">
                               </div>
-                              <h4 class="col-white gotham-regular"> Aubrey </h4>
-                              <h5> <span class="col-white"> 5.0 </span> <i class="fa fa-star col-purple"> </i>
-                                 <span class="col-white"> 1 Review </span> <img src="{{URL::to('/assets/website')}}/images/buddy-icon1.jpg">
+                              <h4 class="col-white gotham-regular">   {{ __('content.Aubrey') }}</h4>
+                              <h5> <span class="col-white">  {{ __('content.5.0') }} </span> <i class="fa fa-star col-purple"> </i>
+                                 <span class="col-white"> {{ __('content.1 Review') }} </span> <img src="{{URL::to('/assets/website')}}/images/buddy-icon1.jpg">
                               </h5>
                            </div>
                         </div>
@@ -229,7 +229,7 @@
       <section class="pad-top-40 bg-dark2 pad-bot-20">
          <div class="container-fluid">
             <div class="sec-head1 m-b-40">
-               <h2 class="col-white gotham-bold text-center m-b-40"> Sport Buddy Activities </h2>
+               <h2 class="col-white gotham-bold text-center m-b-40">  {{ __('content.Sport Buddy Activities') }} </h2>
             </div>
             <div class="boxes-slider1 arrows1">
                @foreach($activities as $val)
@@ -314,7 +314,7 @@
                                  {{$price="PARTICIPATE"}}
                                       
                                 @else
-                                PARTICIPATE
+                                 {{ __('content.PARTICIPATE') }}
                                 @endif
                                   </b> </span>
                            </div>
@@ -330,7 +330,7 @@
       <section class="pad-top-40 pad-bot-40 bg-dark2">
          <div class="container-fluid">
             <div class="sec-head1 m-b-40">
-               <h2 class="col-white gotham-bold text-center m-b-40"> Coach Lessons </h2>
+               <h2 class="col-white gotham-bold text-center m-b-40">  {{ __('content.Coach Lessons') }} </h2>
             </div>
             <div class="boxes-slider1 arrows1">
                @foreach($lessons as $val)
@@ -400,7 +400,7 @@
                                     <i class="far fa-heart col-purple"></i>
                                  @endif
                             </a>
-                              <span class="col-grey"> STARTING AT <b class="col-white">
+                              <span class="col-grey">  {{ __('content.STARTING AT') }} <b class="col-white">
                                 @if (count($val->packages)>0)
                                 {{'$'.number_format($val->packages[0]->price)}} </b>
                                 @endif
@@ -419,8 +419,8 @@
       <section class="pad-top-40 pad-bot-40 bg-dark2">
          <div class="container-fluid">
             <div class="sec-head1 m-b-40">
-               <h2 class="col-white gotham-bold text-center m-b-20 text-center"> Check Out What Our SportsBuddy Think after their Sessions  </h2>
-               <p class="col-white text-center" style="max-width: 600px;margin:auto">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+               <h2 class="col-white gotham-bold text-center m-b-20 text-center">  {{ __('content.Check Out What Our SportsBuddy Think after their Sessions') }}  </h2>
+               <p class="col-white text-center" style="max-width: 600px;margin:auto"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
                   ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud
                   exercitation ullamco laboris.
                </p>
@@ -428,24 +428,24 @@
             <div class="boxes-slider2 arrows1">
                <div class="review-wrapper">
                   <div class="review-text review-bg1">
-                     <p class="  m-b-15"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.  </p>
-                     <h5 class="col-white"> Hennyfercity L </h5>
+                     <p class="  m-b-15">  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.  </p>
+                     <h5 class="col-white">  Hennyfercity L </h5>
                      <h6> Reviews </h6>
                      <p class="m-b-0"> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> </p>
                   </div>
                </div>
                <div class="review-wrapper">
                   <div class="review-text review-bg2">
-                     <p class="  m-b-15"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.  </p>
-                     <h5 class="col-white"> Hennyfercity L </h5>
+                     <p class="  m-b-15">  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.  </p>
+                     <h5 class="col-white">  Hennyfercity L </h5>
                      <h6> Reviews </h6>
                      <p class="m-b-0"> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> </p>
                   </div>
                </div>
                <div class="review-wrapper">
                   <div class="review-text review-bg1">
-                     <p class="  m-b-15"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.  </p>
-                     <h5 class="col-white"> Hennyfercity L </h5>
+                     <p class="  m-b-15">  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.  </p>
+                     <h5 class="col-white">  Hennyfercity L </h5>
                      <h6> Reviews </h6>
                      <p class="m-b-0"> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> </p>
                   </div>

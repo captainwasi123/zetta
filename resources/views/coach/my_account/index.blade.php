@@ -353,10 +353,15 @@
                      </div>
                   </div>
                   <br>
-                  <div class="row">
-                     <div class="col-md-12">
+                   <div class="row">
+                     <div class="col-md-8">
                         <label>Email</label>
                         <input type="text" name="email" value="{{Auth::user()->email}}" class="form-control" disabled>
+                     </div>
+
+                     <div class="col-md-4">
+                        <label>User Name</label>
+                        <input type="text" name="username" value="{{Auth::user()->username}}" class="form-control" disabled>
                      </div>
                   </div>
                   <br>

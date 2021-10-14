@@ -39,6 +39,9 @@ use Illuminate\Support\Facades\Route;
 				Route::post('checkout', 'cartController@checkout')->name('web.checkout');
 			});
 
+			// languages
+			Route::get('/lang/{lang}', 'webController@changeLang' );
+			
 			//Footer Pages
 
 			Route::get('terms', 'webController@terms')->name('web.terms');

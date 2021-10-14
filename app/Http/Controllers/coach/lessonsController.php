@@ -11,7 +11,7 @@ use App\Models\lesson\Locations;
 use App\Models\lesson\Packages;
 use App\Models\sportsCategory;
 use App\Models\sports;
-use App\Models\favouriteLesson as FL;
+use App\Models\FavouriteLesson as FL;
 
 use Auth;
 

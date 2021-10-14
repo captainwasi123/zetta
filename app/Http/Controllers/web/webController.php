@@ -21,7 +21,7 @@ use App\Models\inbox\chat;
 use App\Events\sendChat;
 use Pusher\Pusher;
 use URL;
-
+use App;
 class webController extends Controller
 {
 
@@ -384,7 +384,13 @@ class webController extends Controller
         }
 
 
+        public function changeLang($lang)
+        {
+            App::setlocale($lang);
+            session()->put('locale', $lang);
 
+            return redirect()->back();
+        }
 
 }
 
