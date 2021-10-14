@@ -344,6 +344,9 @@ use Illuminate\Support\Facades\Route;
                 		Route::get('search/{val}', 'friendController@search');
                 		Route::get('add/{id}', 'friendController@addFriend');
                 		Route::get('remove/{id}', 'friendController@removeFriend');
+
+                		Route::get('acceptRequest/{id}', 'friendController@acceptRequestFriend');
+                		Route::get('rejectRequest/{id}', 'friendController@rejectRequestFriend');
 					});
 
 					//Friends

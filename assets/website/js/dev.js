@@ -378,7 +378,11 @@ $( "#register-form" ).submit(function( event ) {
 $(document).ready(function(){
     'use strict'
 
-    $(document).on('click', '.signUpStep1', function(){
+    
+$( "#register-form-buddy" ).submit(function( event ) {
+
+  // Stop form from submitting normally
+  event.preventDefault();
 
         var $form = $('#register-form-buddy'),
           em = $form.find( "input[name='email']" ).val(),
@@ -475,7 +479,8 @@ $(document).ready(function(){
                   $('#r_error_buddy').html('Email already exists.');
                   $('#r_error_buddy').css({display: 'block'});
               }else if(data == 'success'){
-                  $('#r_content_buddy').html('<div class="r_success_block"><img src="'+host+'/assets/images/success-gif.gif" class="success_gif" /><br><p> Account created. Please <a href="javascript:void(0)" class="open-login" data-dismiss="modal"> Sign In </a> here.</p></div>');
+                //$('.modal').modal('hide');
+                $('.coachBecomeModal').modal('show');    
               }else if(data == 'nomatch'){
                   $('#r_error_buddy').html('Password does not match.');
                   $('#r_error_buddy').css({display: 'block'});

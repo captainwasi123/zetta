@@ -65,6 +65,50 @@
                       <div class="box-type4">
                          <div class="box-type2" style="box-shadow: none !important">
                             <div class="sec-head1">
+                               <h3 class="m-b-0">  Friends Requests  </h3>
+                            </div>
+                         </div>
+                         <div>
+                            <div class="block-element">
+                               <div class="table-responsive custom-table1">
+                                  <table class="table table-hover contact-list friends-table" data-page-size="10">
+                                     <tbody>
+                                       @foreach($requests as $val)
+                                           <tr>
+                                              <td class="table-image">
+                                                 <a href="javascript:void(0)"><img src="{{URL::to('/')}}/public/storage/user/profile_img/{{$val->user->profile_img}}" alt="user" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';" alt="user" width="40" class="img-circle"> {{$val->user->fname.' '.$val->user->lname}} <br> {{'@'.$val->user->username}} </a>
+                                              </td>
+                                              <td> <i class="fa fa-star col-yellow"> </i> 4.8 </td>
+                                              <td> Country: {{@$val->user->country->nicename}} </td>
+                                              <td> Since: {{date('Y', strtotime($val->user->created_at))}} </td>
+                                              <td class="">
+                                                 <a href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-ellipsis-v"> </i> </a>
+                                                 <div class="dropdown-menu animated flipInY" style="">
+                                                    <a href="javascript:void(0)" data-id="{{base64_encode($val->id)}}" class="dropdown-item approveFriendRequest"> Accept Request </a>
+                                                    <div class="dropdown-divider"></div>
+                                                    <a href="javascript:void(0)" data-id="{{base64_encode($val->id)}}" class="dropdown-item rejectFriendRequest" style="color:red !important;"> Reject Request </a>
+                                                 </div>
+                                              </td>
+                                           </tr>
+                                       @endforeach
+                                       @if(count($requests) == '0')
+                                          <tr>
+                                             <td>No Requests Available.</td>
+                                          </tr>
+                                       @endif
+                                     </tbody>
+                                  </table>
+                               </div>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+                <div class="row m-t-20">
+                   <div class="col-md-12 col-lg-12 col-lg-12">
+                      <div class="box-type4">
+                         <div class="box-type2" style="box-shadow: none !important">
+                            <div class="sec-head1">
                                <h3 class="m-b-0">  Friends List  </h3>
                                <p class="col-white"> Connect With Them</p>
                             </div>

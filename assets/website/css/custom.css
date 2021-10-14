@@ -1409,15 +1409,15 @@ border:1px solid #9a49ff !important;
     float: left;
     width: 100%;
     padding: 0px 15px 0px 15px;
-    padding-left: 65px;
+    padding-left: 34px;
     position: relative;
     margin-top: 6px;
     margin-bottom: 4px;
 }
 .lesson-title-block img {
     position: absolute;
-    width: 38px;
-    left: 15px;
+    width: 24px;
+    left: 7px;
     border-radius: 100%;
     top: 10px;
 }

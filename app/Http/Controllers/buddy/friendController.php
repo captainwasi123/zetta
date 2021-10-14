@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\friends;
+use App\Models\friendRequest;
 use Auth;
 
 class friendController extends Controller
@@ -17,7 +18,9 @@ class friendController extends Controller
         $friends = friends::where('user_id', Auth::id())->orWhere('friend_id', Auth::id())->latest()->get();
         $recent = friends::where('user_id', Auth::id())->orWhere('friend_id', Auth::id())->latest()->limit(4)->get();
 
-        return view('buddy.friends.index', ['friends' => $friends, 'recent' => $recent]);
+        $requests = friendRequest::where('friend_id', Auth::id())->latest()->get();
+
+        return view('buddy.friends.index', ['friends' => $friends, 'recent' => $recent, 'requests' => $requests]);
     }
 
     public function search($val){
@@ -38,12 +41,35 @@ class friendController extends Controller
     function addFriend($id){
         $id = base64_decode($id);
        
-        $f = new friends;
+        $f = new friendRequest;
         $f->user_id = Auth::id();
         $f->friend_id = $id;
         $f->save();
 
+        return redirect()->back()->with('success', 'Friend Request Sent.');
+    }
+
+    function acceptRequestFriend($id){
+        $id = base64_decode($id);
+       
+        $rf = friendRequest::find($id);
+
+        $f = new friends;
+        $f->user_id = $rf->user_id;
+        $f->friend_id = $rf->friend_id;
+        $f->save();
+        
+        friendRequest::destroy($id);
+
         return redirect()->back()->with('success', 'Friend Added.');
+    }
+
+    function rejectRequestFriend($id){
+        $id = base64_decode($id);
+       
+        friendRequest::destroy($id);
+
+        return redirect()->back()->with('success', 'Request Rejected.');
     }
 
     function removeFriend($id){

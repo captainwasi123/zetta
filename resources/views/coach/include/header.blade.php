@@ -45,18 +45,17 @@
                           <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav mr-auto">
                               <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Coach <i class="fa fa-chevron-down"></i></a>
-                                <div class="dropdown-menu syed" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="javascript:void(0)">Become a Coach </a>
-                                     <a class="dropdown-item" href="#">Create a Lesson</a>
-                                     <a class="dropdown-item" href="#">Lessons</a>
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Coach <i class="fas fa-chevron-down"></i></a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                  <a class="dropdown-item" href="{{route('buddy.become_a_coach')}}">Create a Lesson</a>
+                                  <a class="dropdown-item" href="{{route('web.all','Lessons')}}">Lessons</a>
                                 </div>
                               </li>
                               <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Sports Buddy <i class="fa fa-chevron-down"></i></a>
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Sports Buddy <i class="fas fa-chevron-down"></i></a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                     <a class="dropdown-item" href="#">Create a Activity</a>
-                                     <a class="dropdown-item" href="#">Activities</a>
+                                    <a class="dropdown-item" href="{{route('buddy.activity.add')}}">Create a Activity</a>
+                                    <a class="dropdown-item" href="{{route('web.all','Activities')}}">Activities</a>
                                 </div>
                               </li>
                               <!-- <li class="nav-item">

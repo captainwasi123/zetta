@@ -43,20 +43,26 @@
                           <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav mr-auto">
                                  <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Coach <i class="fa fa-chevron-down"></i></a>
-                                    <div class="dropdown-menu syed" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="javascript:void(0)">Become a Coach </a>
-                                         <a class="dropdown-item" href="#">Create a Lesson</a>
-                                         <a class="dropdown-item" href="#">Lessons</a>
-                                    </div>
-                                  </li>
-                                  <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Sports Buddy <i class="fa fa-chevron-down"></i></a>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                         <a class="dropdown-item" href="#">Create a Activity</a>
-                                         <a class="dropdown-item" href="#">Activities</a>
-                                    </div>
-                                  </li>
+                                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Coach <i class="fas fa-chevron-down"></i></a>
+                                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                       
+                                        @if(Auth::user()->type == '2')
+                                            <a class="dropdown-item" href="{{route('coach.lesson.add')}}">Create a Lesson</a>
+                                        @else
+                                            <a class="dropdown-item" href="{{route('buddy.become_a_coach')}}">Become a Coach </a>
+                                            <a class="dropdown-item" href="{{route('buddy.become_a_coach')}}">Create a Lesson</a>
+                                        @endif
+
+                                        <a class="dropdown-item" href="{{route('web.all','Lessons')}}">Lessons</a>
+                                      </div>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Sports Buddy <i class="fas fa-chevron-down"></i></a>
+                                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="{{route('buddy.activity.add')}}">Create a Activity</a>
+                                        <a class="dropdown-item" href="{{route('web.all','Activities')}}">Activities</a>
+                                      </div>
+                                    </li>
                               <!-- <li class="nav-item">
                                 <a class="nav-link" href="{{URL::to('about_us')}}">About Us</a>
                               </li> -->
@@ -93,125 +99,3 @@
    </nav>
 </header>
 
-
-<div id="coach-request-model" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-       <div class="modal-content">
-          <form method="post" action="{{route('buddy.coach.request')}}">
-            @csrf
-            <input type="hidden" name="user_id" value="{{auth()->user()->id}}">
-            <div class="modal-header">
-                <h4 class="modal-title" id="myModalLabel">Want to become a Coach and a member of the Zettaa Team?</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-md-12">
-                       <label>1. Have you ever coached?</label>
-                       <br>
-                       <input class="form-check-input" type="radio" name="answer1" id="flexRadioDefault1" value="Yes">
-                       <label class="form-check-label" for="flexRadioDefault1">
-                           Yes
-                       </label>
-                       &nbsp;&nbsp;&nbsp;
-                       <input class="form-check-input" type="radio" name="answer1" id="flexRadioDefault2" value="No" checked>
-                       <label class="form-check-label" for="flexRadioDefault2">
-                           No
-                       </label>
-                       <br><br>
-                       <textarea name="answer1Detail" class="form-control" placeholder="If Yes or not please explain." cols="5" required></textarea>
-                    </div>
-                </div>
-                <br>
-                <div class="row">
-                    <div class="col-md-12">
-                       <label>2. What motivated you to become a coach? Is this your main activity? </label>
-                       <br>
-                       <input class="form-check-input" type="radio" name="answer2" id="flexRadioDefault3" value="Yes">
-                       <label class="form-check-label" for="flexRadioDefault3">
-                           Yes
-                       </label>
-                       &nbsp;&nbsp;&nbsp;
-                       <input class="form-check-input" type="radio" name="answer2" id="flexRadioDefault4" value="No" checked>
-                       <label class="form-check-label" for="flexRadioDefault4">
-                           No
-                       </label>
-                       <br><br>
-                       <textarea name="answer2Detail" class="form-control" placeholder="If not, what is your main occupation?" cols="5" required></textarea>
-                    </div>
-                </div>
-                <br>
-                <div class="row">
-                    <div class="col-md-12">
-                       <label>3. Do you have a qualification or diploma in a sport-related discipline? (Ex. Nutrition; physiotherapy; sports coaching etc.) </label>
-                       <br>
-                       <textarea name="answer3Detail" class="form-control" placeholder="" cols="5" required></textarea>
-                    </div>
-                </div>
-                <br>
-                <div class="row">
-                    <div class="col-md-12">
-                       <label>4. Have you practiced a sport for many years or even at high level?  </label>
-                       <br>
-                       <input class="form-check-input" type="radio" name="answer4" id="flexRadioDefault5" value="Yes">
-                       <label class="form-check-label" for="flexRadioDefault3">
-                           Yes
-                       </label>
-                       &nbsp;&nbsp;&nbsp;
-                       <input class="form-check-input" type="radio" name="answer4" id="flexRadioDefault6" value="No" checked>
-                       <label class="form-check-label" for="flexRadioDefault4">
-                           No
-                       </label>
-                       <br><br>
-                       <textarea name="answer4Detail" class="form-control" placeholder="If so, how many years? At what level? Which sport?" cols="5" required></textarea>
-                    </div>
-                </div>
-                <br>
-                <div class="row">
-                    <div class="col-md-12">
-                       <label>5. As a coach, what are the qualities that make you an exceptional instructor? </label>
-                       <br>
-                       <textarea name="answer5Detail" class="form-control" placeholder="" cols="5" required></textarea>
-                    </div>
-                </div>
-                <br>
-                <div class="row">
-                    <div class="col-md-12">
-                       <label>6. As an athlete, what do you think are the fundamental values for progress?</label>
-                       <br>
-                       <textarea name="answer6Detail" class="form-control" placeholder="" cols="5" required></textarea>
-                    </div>
-                </div>
-                <br>
-                <div class="row">
-                    <div class="col-md-12">
-                       <label>7. Bonus : Share with us your worst/best memory during a training or a competition.</label>
-                       <br>
-                       <textarea name="answer7Detail" class="form-control" placeholder="" cols="5" required></textarea>
-                    </div>
-                </div>
-                <br>
-                <div class="row">
-                    <div class="col-md-12">
-                       <label>By checking this box, you declare that you have read and understood the Coach Label Zettaa document and agree to refer to it when you are in contact with your Zettaa customers.</label>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary waves-effect">Add Request</button>
-            </div>
-          </form>
-       </div>
-       <!-- /.modal-content -->
-    </div>
-    <!-- /.modal-dialog -->
- </div>         
- <style type="text/css">
-  .profile-text a i::before {
-    font-size: 28px;
-    padding-top: 15px;
-    color: white;
-    padding-right: 10px;
-}
-</style>
