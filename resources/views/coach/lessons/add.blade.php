@@ -217,7 +217,7 @@
 
                             <input class="table-field1" type="number" placeholder="Duration in min" name="duartion_basic" required>
 
-                            <input class="table-field1 mt-2" type="number" placeholder="Days" name="day_basic" required>
+                            <input class="table-field1 mt-2" type="number" placeholder="No of Session" name="day_basic" required>
 
                            <input class="table-field1 mt-2" type="number" placeholder="Price" name="price_basic" required>
 
@@ -226,7 +226,7 @@
 
                             <input class="table-field1" type="number" placeholder="Duration in min" name="duartion_standard" required>
 
-                            <input class="table-field1 mt-2" type="number" placeholder="Days" name="day_standard" required>
+                            <input class="table-field1 mt-2" type="number" placeholder="No of Session" name="day_standard" required>
 
                            <input class="table-field1 mt-2" type="number" placeholder="Price" name="price_standard" required>
 
@@ -234,7 +234,7 @@
                         <td>
                             <input class="table-field1" type="number" placeholder="Duration in min" name="duartion_premium" required>
 
-                            <input class="table-field1 mt-2" type="number" placeholder="Days" name="day_premium" required>
+                            <input class="table-field1 mt-2" type="number" placeholder="No of Session" name="day_premium" required>
 
                            <input class="table-field1 mt-2" type="number" placeholder="Price" name="price_premium" required>
                         </td>
