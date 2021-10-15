@@ -553,3 +553,18 @@ padding: 9px 30px !important;
     color: white;
 
   }
+.table.slots-table tbody th, .table.slots-table tbody td {
+    border: 0;
+    padding: 0;
+}
+.table.slots-table {
+    font-weight: 300;
+}
+#signUpTerms {
+    height: 16px;
+    width: 16px;
+}
+#r_error_buddy {
+    color: red;
+    padding: 7px 1px;
+}

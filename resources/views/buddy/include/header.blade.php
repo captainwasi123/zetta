@@ -54,6 +54,7 @@
                                         @endif
 
                                         <a class="dropdown-item" href="{{route('web.all','Lessons')}}">Lessons</a>
+                                        <a class="dropdown-item" href="{{route('web.all','Coaches')}}">Coaches</a>
                                       </div>
                                     </li>
                                     <li class="nav-item dropdown">
@@ -61,6 +62,7 @@
                                       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                         <a class="dropdown-item" href="{{route('buddy.activity.add')}}">Create a Activity</a>
                                         <a class="dropdown-item" href="{{route('web.all','Activities')}}">Activities</a>
+                                        <a class="dropdown-item" href="{{route('web.all','Sports Buddies')}}">Sports Buddies</a>
                                       </div>
                                     </li>
                               <!-- <li class="nav-item">

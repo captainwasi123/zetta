@@ -16,10 +16,12 @@ $(document).ready(function(){
         var data = '<input type="text" value="1" name="group_members" data-bts-button-down-class="btn btn-secondary btn-outline" data-bts-button-up-class="btn btn-secondary btn-outline" required>';
         if (this.value == '0') {
             $('#participants_block').html('');
+            $('#dateTimeBlock').css({display: 'none'});
         }
         else if (this.value == '1') {
             $('#participants_block').html(data);
             $("input[name='group_members']").TouchSpin();
+            $('#dateTimeBlock').css({display: 'block'});
         }
     });
 

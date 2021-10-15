@@ -190,7 +190,7 @@
             </div>
             <div class="col-md-6 col-lg-6 col-12">
                <input type="file" name="cover_image" class="form-field1" accept="image/png, image/jpeg, image/jpg" required>
-               <span class="info-tag1"> Allowed File types are jpg, jpeg, doc, docs, pdf </span>
+               <span class="info-tag1"> Allowed File types are jpg, jpeg, png. </span>
             </div>
          </div>
          <div class="row center-row">
@@ -202,7 +202,7 @@
             </div>
             <div class="col-md-6 col-lg-6 col-12">
                <div class="pic-uploader1">
-                  <input type="file" id="input-file-max-fs" class="dropify" data-max-file-size="2M" data-height="100"/>
+                  <input type="file" id="input-file-max-fs" class="dropify" data-max-file-size="1024M" data-height="100" multiple />
                </div>
             </div>
          </div>

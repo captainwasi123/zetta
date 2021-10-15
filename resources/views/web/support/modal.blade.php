@@ -59,11 +59,11 @@
           <div class="join-form">
              <form id="register-form-buddy" action="{{URL::to('/register')}}">
                 {{csrf_field()}}
-                <input type="email" class="email" placeholder="Enter your email" name="email" required>
                 <span id="r_error_buddy" class="error_span"></span>
+                <input type="email" class="email" placeholder="Enter your email" name="email" required>
                 <div id="r_fields_buddy">
 
-                <button type="button" class="signUpStep1"> Continue  </button>
+                <button type="submit" class="signUpStep1"> Continue  </button>
                 </div>
                 <p> By joining I agree to receive emails from Zettaa </p>
              </form>

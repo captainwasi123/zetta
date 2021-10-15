@@ -29,11 +29,7 @@
                   </div>
                   <div class="label-field3">
                      <i class="fa fa-map-marker-alt"></i>
-<<<<<<< HEAD
-                     <input type="text" placeholder="Address, City or neighborhood" id="madd-input" name="add">
-=======
-                     <input type="text" placeholder=" {{ __('content.Address, City or neighborhood') }}" id="madd-input" name="add" required>
->>>>>>> 22b7af3bc13da9d202df534e80641dc654d28902
+                     <input type="text" placeholder=" {{ __('content.Address, City or neighborhood') }}" id="madd-input" name="add">
                      <input type="hidden" name="country" id="madd-country">
                   </div>
                   <div class="submit-field1">
@@ -134,7 +130,7 @@
                      <div class="work">
                      <img src="{{URL::to('/assets/website')}}/images/work2.png">
                      <h2> {{ __('content.Book Your Session') }}</h2>
-                     <p>Reserve your activity or lesson. Follow your progression with your personal dashboard.') }</p>   </div>                     
+                     <p>Reserve your activity or lesson. Follow your progression with your personal dashboard.</p>   </div>                     
                   </div> 
                   <div class="col-md-4">
                      <div class="work">
@@ -518,6 +514,15 @@
       $(document).ready(function(){
          getLocation();  
          mapset();
+
+         $(window).scroll(function() {
+                wS = $(this).scrollTop();
+            if (wS > 650){
+               $('#bottomMenu').css({marginTop: '0px'});
+            }else{
+               $('#bottomMenu').css({marginTop: '-110px'});
+            }
+         });
 
       });
 

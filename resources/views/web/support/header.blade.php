@@ -67,6 +67,7 @@ header.header-2 .logo a img {
                 @endif
 
                 <a class="dropdown-item" href="{{route('web.all','Lessons')}}">Lessons</a>
+                <a class="dropdown-item" href="{{route('web.all','Coaches')}}">Coaches</a>
               </div>
             </li>
             <li class="nav-item dropdown">
@@ -78,6 +79,7 @@ header.header-2 .logo a img {
                     <a class="dropdown-item open-login" href="javascript:void(0)">Create a Activity</a>
                 @endif
                 <a class="dropdown-item" href="{{route('web.all','Activities')}}">Activities</a>
+                <a class="dropdown-item" href="{{route('web.all','Sports Buddies')}}">Sports Buddies</a>
               </div>
             </li>
             <!-- <li class="nav-item">
@@ -168,6 +170,7 @@ header.header-2 .logo a img {
                 @endif
 
                 <a class="dropdown-item" href="{{route('web.all','Lessons')}}">Lessons</a>
+                <a class="dropdown-item" href="{{route('web.all','Coaches')}}">Coaches</a>
               </div>
             </li>
             <li class="nav-item dropdown">
@@ -179,6 +182,7 @@ header.header-2 .logo a img {
                     <a class="dropdown-item open-login" href="javascript:void(0)">Create a Activity</a>
                 @endif
                 <a class="dropdown-item" href="{{route('web.all','Activities')}}">Activities</a>
+                <a class="dropdown-item" href="{{route('web.all','Sports Buddies')}}">Sports Buddies</a>
               </div>
             </li>
           <!--   <li class="nav-item">

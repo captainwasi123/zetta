@@ -41,7 +41,7 @@
       <div class="row">
          <div class="col-7">
             <div class="row">
-               <div class="col-10">
+               <div class="col-7">
                   <div class="lesson-holder-head m-b-15">
                      <h3> {{$data->title}} </h3>
                   </div>
@@ -63,6 +63,12 @@
                            <i class="far fa-heart col-purple"></i>
                         @endif
                      </a>
+                  </div>
+               </div>
+               <div class="col-3">
+                  <div class="activity_category"> 
+                     <img src="{{URL::to('/public/storage/settings/sports/'.$data->sports->image)}}">
+                     <label>{{$data->sports->name}}</label> 
                   </div>
                </div>
                <div class="col-2">

@@ -12,6 +12,7 @@ use App\Models\User;
 use App\Models\FavouriteLesson;
 use App\Models\sportsCategory;
 use App\Models\sports;
+use App\Models\availability\slots;
 use Auth;
 
 class lessons extends Model
@@ -184,5 +185,9 @@ class lessons extends Model
     }
     public function sports(){
         return $this->belongsTo(sports::class, 'sports_id');
+    }
+
+    public function slots(){
+        return $this->hasMany(slots::class, 'lesson_id', 'id');
     }
 }

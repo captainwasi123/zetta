@@ -252,8 +252,9 @@
                      </tr>
                   </tbody>
                </table>
+            <br>
             </div>
-            <div class="block-element m-t-30">
+            <div class="block-element m-t-30" id="dateTimeBlock">
                <div class="row ">
                   <div class="col-md-4 col-lg-4 col-12">
                      <div class="field-name">
@@ -272,6 +273,7 @@
                      </div>
                   </div>
                </div>
+               <br>
             </div>
             <br>
             <div class="row m-t-30">

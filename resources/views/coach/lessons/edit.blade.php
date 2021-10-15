@@ -280,7 +280,7 @@
                   </tbody>
                </table>
             </div>
-            <div class="block-element m-t-30">
+            <div class="block-element m-t-30" id="dateTimeBlock" {{$data->participants == '1' ? 'style=display:block !important;' : ''}}>
                <div class="row ">
                   <div class="col-md-4 col-lg-4 col-12">
                      <div class="field-name">

@@ -32,17 +32,6 @@ $(document).ready(function(){
     });
 
 
-   /* $(document).on('mouseover', '.subCategory', function(){
-        var id = $(this).data('id');
-        $('#subCategoryBlock').html('<div class="col-12"><img src="'+host+'/assets/website/images/loaderr.gif"/></div>');
-        $.get( host+'/stickman/subCategory/'+id, function(data) {
-            $('#subCategoryBlock').html(data);
-            $('.all-actions_sub').slick('unslick');
-            stickmanSub();
-        });
-    });*/
-
-
     $(document).on('click', '.stickman', function(){
         var id = $(this).data('id');
         $('#resultBlock').html('<div class="row"><div class="col-12 stickmanLoader"><br><br><br><br><br><img src="'+host+'/assets/website/images/loaderr.gif"/><br><br><br><br><br><br><br><br><br><br></div></div>');
@@ -331,99 +320,106 @@ var kerywordss = [
 
 
 // for buddy
-
-<<<<<<< HEAD
-    
-$( "#register-form-buddy" ).submit(function( event ) {
-=======
 $(document).ready(function(){
     'use strict'
-
->>>>>>> 22b7af3bc13da9d202df534e80641dc654d28902
-
 
     $(document).on('click', '.signUpStep2buddy', function(){
-        $('#userTypeRegister').val('1');
+        if($('#signUpTerms').is(':checked')){
+            $('#userTypeRegister').val('1');
 
-        var $form = $('#register-form-buddy'),
-          em = $form.find( "input[name='email']" ).val(),
-          token = $form.find( "input[name='_token']" ).val(),
-          url = $form.attr( "action" );
-          var datastrings = $('#register-form-buddy').serialize();
-          // Send the data using post
-          var posting = $.post( url, datastrings );
+            var $form = $('#register-form-buddy'),
+              em = $form.find( "input[name='email']" ).val(),
+              token = $form.find( "input[name='_token']" ).val(),
+              url = $form.attr( "action" );
+              var datastrings = $('#register-form-buddy').serialize();
+              // Send the data using post
+              var posting = $.post( url, datastrings );
 
-          // Put the results in a div
-          posting.done(function( data ) {
-              if(data == 'exist'){
-                  $('#r_error_buddy').html('Email already exists.');
+              // Put the results in a div
+              posting.done(function( data ) {
+                  if(data == 'exist'){
+                      $('#r_error_buddy').html('Email already exists.');
+                      $('#r_error_buddy').css({display: 'block'});
+                  }else if(data == 'success'){
+                      $('#r_content_buddy').html('<div class="r_success_block"><img src="'+host+'/assets/images/success-gif.gif" class="success_gif" /><br><p> Account successfully created.</p></div>');
+                        setTimeout(function(){
+                            window.location.href = host;
+                        }, 2000);
+                  }else if(data == 'nomatch'){
+                      $('#r_error_buddy').html('Password does not match.');
+                      $('#r_error_buddy').css({display: 'block'});
+                  }else if(data == 'strong'){
+                      $('#r_error_buddy').html('Password password is weak.');
+                      $('#r_error_buddy').css({display: 'block'});
+                  }else{
+                      $('#r_social_buddy').remove();
+                      $('#r_error_buddy').css({display: 'none'});
+                      $('.email').prop('readonly',true);
+                      var elements = '<input type="text" name="username" placeholder="Username" required>';
+                      elements    += '<input type="password" placeholder="New Password" name="password" required>';
+                      elements        += '<input type="password" placeholder="Confirm Password" name="confirmation_password" required>';
+                      elements        += '<input type="hidden" class="radio-button" name="user_type" id="userTypeRegister"> ';
+                      elements        += '<button type="button" class="signUpStep2buddy halfContinue"> Continue as Sport Buddy </button> <button type="button" class="signUpStep2coach halfContinue"> Continue as Coach  </button>';
+                      $('#r_fields_buddy').html(elements);
+                  }
+              })
+              .fail(function(error) {
+                  $('#r_error_buddy').html('Something went wrong.');
                   $('#r_error_buddy').css({display: 'block'});
-              }else if(data == 'success'){
-                  $('#r_content_buddy').html('<div class="r_success_block"><img src="'+host+'/assets/images/success-gif.gif" class="success_gif" /><br><p> Account created. Please <a href="javascript:void(0)" class="open-login" data-dismiss="modal"> Sign In </a> here.</p></div>');
-              }else if(data == 'nomatch'){
-                  $('#r_error_buddy').html('Password does not match.');
-                  $('#r_error_buddy').css({display: 'block'});
-              }else{
-                  $('#r_social_buddy').remove();
-                  $('#r_error_buddy').css({display: 'none'});
-                  $('.email').prop('readonly',true);
-                  var elements = '<input type="text" name="username" placeholder="Username" required>';
-                  elements    += '<input type="password" placeholder="New Password" name="password" required>';
-                  elements        += '<input type="password" placeholder="Confirm Password" name="confirmation_password" required>';
-                  elements        += '<input type="hidden" class="radio-button" name="user_type" id="userTypeRegister"> ';
-                  elements        += '<button type="button" class="signUpStep2buddy halfContinue"> Continue as Sport Buddy </button> <button type="button" class="signUpStep2coach halfContinue"> Continue as Coach  </button>';
-                  $('#r_fields_buddy').html(elements);
-              }
-          })
-          .fail(function(error) {
-              $('#r_error_buddy').html('Something went wrong.');
-              $('#r_error_buddy').css({display: 'block'});
-              console.log(error);
-          });
+                  console.log(error);
+              });
+          }else{
+            alert('Please agree terms & conditions.');
+          }
     });
-$(document).ready(function(){
-    'use strict'
 
 
     $(document).on('click', '.signUpStep2coach', function(){
-        $('#userTypeRegister').val('2');
-        
-        var $form = $('#register-form-buddy'),
-          em = $form.find( "input[name='email']" ).val(),
-          token = $form.find( "input[name='_token']" ).val(),
-          url = $form.attr( "action" );
-          var datastrings = $('#register-form-buddy').serialize();
-          // Send the data using post
-          var posting = $.post( url, datastrings );
+        if($('#signUpTerms').is(':checked')){
+            $('#userTypeRegister').val('1');
+            
+            var $form = $('#register-form-buddy'),
+              em = $form.find( "input[name='email']" ).val(),
+              token = $form.find( "input[name='_token']" ).val(),
+              url = $form.attr( "action" );
+              var datastrings = $('#register-form-buddy').serialize();
+              // Send the data using post
+              var posting = $.post( url, datastrings );
 
-          // Put the results in a div
-          posting.done(function( data ) {
-              if(data == 'exist'){
-                  $('#r_error_buddy').html('Email already exists.');
+              // Put the results in a div
+              posting.done(function( data ) {
+                  if(data == 'exist'){
+                      $('#r_error_buddy').html('Email already exists.');
+                      $('#r_error_buddy').css({display: 'block'});
+                  }else if(data == 'success'){
+                    //$('.modal').modal('hide');
+                    $('.coachBecomeModal').modal('show');    
+                  }else if(data == 'nomatch'){
+                      $('#r_error_buddy').html('Password does not match.');
+                      $('#r_error_buddy').css({display: 'block'});
+                  }else if(data == 'strong'){
+                      $('#r_error_buddy').html('Password password is weak.');
+                      $('#r_error_buddy').css({display: 'block'});
+                  }else{
+                      $('#r_social_buddy').remove();
+                      $('#r_error_buddy').css({display: 'none'});
+                      $('.email').prop('readonly',true);
+                      var elements = '<input type="text" name="username" placeholder="Username" required>';
+                      elements    += '<input type="password" placeholder="New Password" name="password" required>';
+                      elements        += '<input type="password" placeholder="Confirm Password" name="confirmation_password" required>';
+                      elements        += '<input type="hidden" class="radio-button" name="user_type" id="userTypeRegister"> ';
+                      elements        += '<button type="button" class="signUpStep2buddy halfContinue"> Continue as Sport Buddy </button> <button type="button" class="signUpStep2coach halfContinue"> Continue as Coach  </button>';
+                      $('#r_fields_buddy').html(elements);
+                  }
+              })
+              .fail(function(error) {
+                  $('#r_error_buddy').html('Something went wrong.');
                   $('#r_error_buddy').css({display: 'block'});
-              }else if(data == 'success'){
-                //$('.modal').modal('hide');
-                $('.coachBecomeModal').modal('show');    
-              }else if(data == 'nomatch'){
-                  $('#r_error_buddy').html('Password does not match.');
-                  $('#r_error_buddy').css({display: 'block'});
-              }else{
-                  $('#r_social_buddy').remove();
-                  $('#r_error_buddy').css({display: 'none'});
-                  $('.email').prop('readonly',true);
-                  var elements = '<input type="text" name="username" placeholder="Username" required>';
-                  elements    += '<input type="password" placeholder="New Password" name="password" required>';
-                  elements        += '<input type="password" placeholder="Confirm Password" name="confirmation_password" required>';
-                  elements        += '<input type="hidden" class="radio-button" name="user_type" id="userTypeRegister"> ';
-                  elements        += '<button type="button" class="signUpStep2buddy halfContinue"> Continue as Sport Buddy </button> <button type="button" class="signUpStep2coach halfContinue"> Continue as Coach  </button>';
-                  $('#r_fields_buddy').html(elements);
-              }
-          })
-          .fail(function(error) {
-              $('#r_error_buddy').html('Something went wrong.');
-              $('#r_error_buddy').css({display: 'block'});
-              console.log(error);
-          });
+                  console.log(error);
+              });
+          }else{
+            alert('Please agree terms & conditions.');
+          }
     });
 });
 
@@ -461,6 +457,7 @@ console.log('abc');
                   elements    += '<input type="password" placeholder="New Password" name="password" required>';
                   elements        += '<input type="password" placeholder="Confirm Password" name="confirmation_password" required>';
                   elements        += '<input type="hidden" class="radio-button" name="user_type" id="userTypeRegister"> ';
+                  elements        += '<p style="display:flex;"><input type="checkbox" name="terms" id="signUpTerms">&nbsp;&nbsp; <label for="signUpTerms">I agree to <a href="'+host+'/terms" target="_blank">Terms & Conditions</a></label></p>';
                   elements        += '<button type="button" class="signUpStep2buddy halfContinue"> Continue as Sport Buddy </button> <button type="button" class="signUpStep2coach halfContinue"> Continue as Coach  </button>';
                   $('#r_fields_buddy').html(elements);
               }
@@ -619,16 +616,5 @@ $(window).on("load resize", function() {
     );
   } else {
     $dropdown.off("mouseenter mouseleave");
-  }
-});
-
-   $(document).scroll(function() {
-  var y = $(this).scrollTop();
-  if (y > 600) {
-    //$('.bottomMenu').fadeIn();
-    $('#bottomMenu').css({marginTop: '0px'});
-  } else {
-    //$('.bottomMenu').fadeOut();
-    $('#bottomMenu').css({marginTop: '-110px'});
   }
 });

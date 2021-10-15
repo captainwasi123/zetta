@@ -677,3 +677,7 @@ padding: 9px 30px !important;
     margin-bottom: -92px;
 }
 }
+
+#dateTimeBlock {
+    display: none;
+}

@@ -179,7 +179,7 @@ function stickmanSub(id){
   slidesToShow: 5,
   slidesToScroll: 1,
   autoplay: false,
-  focusOnSelect: true,
+  focusOnSelect: false,
   autoplaySpeed: 2000,
   responsive: [
     {

@@ -23,7 +23,7 @@
       <div class="row">
          <div class="col-7">
             <div class="row">
-               <div class="col-10">
+               <div class="col-7">
                   <div class="lesson-holder-head m-b-15">
                      <h3>{{$data->title}}</h3>
                   </div>
@@ -45,6 +45,12 @@
                            <i class="far fa-heart col-purple"></i>
                         @endif
                      </a>
+                  </div>
+               </div>
+               <div class="col-3">
+                  <div class="activity_category"> 
+                     <img src="{{URL::to('/public/storage/settings/sports/'.$data->sports->image)}}">
+                     <label>{{$data->sports->name}}</label> 
                   </div>
                </div>
                <div class="col-2">
@@ -369,11 +375,40 @@
                            <div class="package-content-head">
                               
                              
-                             
-                           <h5 class="col-white m-b-20"> 
-                              <img src="{{URL::to('/assets/website')}}/images/clock-icon.jpg">  
-                              {{date('d-M-Y h:i A', strtotime($data->held_date))}}
-                           </h5>
+                           @if($data->participants == 0)
+                              <h5 class="col-white m-b-20">
+                                 <table class="table slots-table col-white">
+                                    <tr>
+                                       <th style="width:50px;">
+                                          <img src="{{URL::to('/assets/website')}}/images/clock-icon.jpg">  
+                                       </th>
+                                       <th colspan="2">
+                                          Availability
+                                       </th>
+                                    </tr>
+                                    @foreach($data->slots as $val)
+                                       <tr>
+                                          <td></td>
+                                          <td>{{$val->day}}</td>
+                                          <td>
+                                             {{date('h:i a', strtotime($val->start_time)).' to '.date('h:i a', strtotime($val->end_time))}}
+                                          </td>
+                                       </tr>
+                                    @endforeach
+                                    @if(count($data->slots) == 0)
+                                       <tr>
+                                          <td></td>
+                                          <td class="col-grey" colspan="2">Not Decided Yet.</td>
+                                       </tr>
+                                    @endif
+                                 </table>
+                              </h5>
+                           @else
+                              <h5 class="col-white m-b-20">
+                                 <img src="{{URL::to('/assets/website')}}/images/clock-icon.jpg">  
+                                 {{date('d-M-Y h:i A', strtotime($data->held_date))}}
+                              </h5>
+                           @endif
                            </div>
                            <ul class="list-type1 no-border">
                               <li class="block-element2"> <i class="fa fa-check col-purple"> </i> {{$data->participants == '0' ? 'Single Activity' : 'Group Activity'}} </li>
