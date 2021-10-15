@@ -183,7 +183,7 @@
                   </div>
                   <div class="col-md-8 col-lg-8 col-12">
                      <div class="pic-uploader1">
-                        <input type="file" id="input-file-max-fs" class="dropify" data-max-file-size="5M" data-height="80"/>
+                        <input type="file" id="input-file-max-fs" class="dropify" name="media[]" data-max-file-size="1024M" data-height="80" multiple />
                      </div>
                   </div>
                </div>

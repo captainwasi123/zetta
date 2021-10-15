@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\userEquipment;
 use App\Models\activity\activities;
+use App\Models\activity\medias;
 use App\Models\activity\equipments;
 use App\Models\activity\friends;
 use App\Models\activity\locations;
@@ -46,6 +47,13 @@ class activityController extends Controller
             $file->move(base_path('/public/storage/user/activity/main_image/'), $filename);
 
             activities::updateImage($id, $filename);
+        }
+        foreach($request->file('media') as $file)
+        {
+            $filename = date('dmyHis').'.'.$file->getClientOriginalExtension();
+            $filename = $id.'-'.$filename;
+            $mid = medias::addMedia($id, $filename);
+            $file->move(base_path('/public/storage/user/activity/media/'), $mid.'-'.$filename); 
         }
 
         return redirect()->back()->with('success', 'New Activity Added.');

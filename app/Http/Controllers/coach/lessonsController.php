@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\userEquipment;
 use App\Models\lesson\lessons;
+use App\Models\lesson\medias;
 use App\Models\lesson\Equipments;
 use App\Models\lesson\Locations;
 use App\Models\lesson\Packages;
@@ -43,6 +44,14 @@ class lessonsController extends Controller
             $file->move(base_path('/public/storage/user/lessons/main_image/'), $filename);
 
             lessons::updateImage($id, $filename);
+        }
+
+        foreach($request->file('media') as $file)
+        {
+            $filename = date('dmyHis').'.'.$file->getClientOriginalExtension();
+            $filename = $id.'-'.$filename;
+            $mid = medias::addMedia($id, $filename);
+            $file->move(base_path('/public/storage/user/lessons/media/'), $mid.'-'.$filename); 
         }
 
         return redirect()->back()->with('success', 'New Lesson Added.');
