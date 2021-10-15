@@ -264,12 +264,12 @@
                   </div>
                   <div class="col-md-5 col-lg-5 col-12">
                      <div class="inline-1">
-                        <input type="date" placeholder="" class="form-field1" name="held_date" required>
+                        <input type="date" placeholder="" class="form-field1" name="held_date" >
                      </div>
                   </div>
                   <div class="col-md-3 col-lg-3 col-12">
                      <div class="inline-1">
-                        <input type="time" placeholder="" class="form-field1" name="held_time" required>
+                        <input type="time" placeholder="" class="form-field1" name="held_time">
                      </div>
                   </div>
                </div>
