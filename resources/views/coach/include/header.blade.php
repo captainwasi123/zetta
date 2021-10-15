@@ -25,11 +25,11 @@
                         <form method="get" action="{{route('web.search')}}">
                            <div class="label-field3">
                               <i class="fa fa-search"> </i>
-                              <input type="text" placeholder="Choose a Sport" name="val" id="keywords_val" value="{{isset($search_data['val']) ? $search_data['val'] : ''}}" required>
+                              <input type="text" placeholder="Choose a Sport" name="val" id="keywords_val" value="{{isset($search_data['val']) ? $search_data['val'] : ''}}">
                            </div>
                            <div class="label-field3">
                               <i class="fa fa-map-marker-alt"></i>
-                              <input type="text" placeholder="Address, City or neighborhood" name="add" id="add-input" value="{{isset($search_data['add']) ? $search_data['add'] : ''}}" required>
+                              <input type="text" placeholder="Address, City or neighborhood" name="add" id="add-input" value="{{isset($search_data['add']) ? $search_data['add'] : ''}}">
                               <input type="hidden" name="country" id="add-country" value="{{isset($search_data['type']) ? $search_data['type'] : ''}}">
                            </div>
                            <div class="submit-field1">
@@ -47,7 +47,7 @@
                               <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Coach <i class="fas fa-chevron-down"></i></a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                  <a class="dropdown-item" href="{{route('buddy.become_a_coach')}}">Create a Lesson</a>
+                                  <a class="dropdown-item" href="{{route('coach.lesson.add')}}">Create a Lesson</a>
                                   <a class="dropdown-item" href="{{route('web.all','Lessons')}}">Lessons</a>
                                 </div>
                               </li>

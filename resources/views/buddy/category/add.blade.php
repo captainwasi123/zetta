@@ -19,14 +19,7 @@
                </div>
             </div>
             <div class="col-md-6 col-lg-6 col-12">
-               <!-- <input type="text" class="form-field1" name="category" required> -->
-               <select class="form-field1" name="category" required>
-                  <option>Select Catagory*</option>
-                  <option>Sports</option>
-                  <option>Sports</option>
-                  <option>Sports</option>
-
-               </select>
+               <input type="text" class="form-field1" name="category" required>
             </div>
          </div>
          <div class="row  m-t-20">

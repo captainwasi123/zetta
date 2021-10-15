@@ -78,6 +78,7 @@
                     <ul aria-expanded="false" class="collapse">
                         <li><a href="{{route('admin.setting.category')}}">Categories</a></li>
                         <li><a href="{{route('admin.setting.sports')}}">Sports</a></li>
+                        <li><a href="{{route('admin.setting.category.requests')}}">Category Request</a></li>
                     </ul>
                 </li>
                 <li>

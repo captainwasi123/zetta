@@ -28,13 +28,14 @@ class webController extends Controller
     function index(){
         $data = array(
         	'lessons' => lessons::with('packages')->where('status', '1')->latest()->limit(10)->get(),
-            'uactivities' => activities::with(['user','equipment','equipment.user_equipment'])->where('status', '1')->where('activity_type', '1')->whereDate('held_date', '>', Carbon::now())->orderBy('held_date', 'asc')->limit(10)->get(),
+            'uactivities' => activities::where('status', '1')->where('activity_type', '1')->whereDate('held_date', '>', Carbon::now())->orderBy('held_date', 'asc')->limit(10)->get(),
             'activities' => activities::with(['user','equipment','equipment.user_equipment'])->where('status', '1')->where('activity_type', '1')->latest()->limit(10)->get(),
             'alocation' => Activity_location::where('lat', '!=', null)->where('lng', '!=', null)->groupBy('lat', 'lng')->get(),
             'llocation' => Locations::where('lat', '!=', null)->where('lng', '!=', null)->groupBy('lat', 'lng')->get(),
             'ulocation' => User::where('status', '1')->where('lat', '!=', null)->where('lng', '!=', null)->get(),
             'sports' => sports::all()
         );
+        //dd($data['uactivities']);
 		return view('web.index')->with($data);
     }
 
@@ -43,15 +44,18 @@ class webController extends Controller
 
         function search(Request $request){
             $data = $request->all();
+            $val = isset($data['val']) ? $data['val'] : 'all';
+            $country = isset($data['country']) ? $data['country'] : 'all';
+            $add = isset($data['add']) ? $data['add'] : 'all';
 
-            return redirect('/filter/'.$data['val'].'/'.$data['country'].'/'.$data['add']);
+            return redirect('/filter/'.$val.'/'.$country.'/'.$add);
         }
         function filter($val, $type, $add){
 
             $data = array(  'search_data' => array(
-                                                    'val' => $val,
-                                                    'type' => $type,
-                                                    'add' => $add
+                                                    'val' => $val == 'all' ? '' : $val,
+                                                    'type' => $type == 'all' ? '' : $type,
+                                                    'add' => $add == 'all' ? '' : $add
                                                 ),
                             'sCategories' => Auth::check() ? userCategory::where('user_id', Auth::id())->get() : sportsCategory::all());
 
@@ -59,40 +63,52 @@ class webController extends Controller
 
 
             $data['lessons'] = lessons::where('status', '1')
-                                ->whereHas('user', function($q) use ($type){
-                                    return $q->whereHas('country', function($qq) use ($type){
-                                        return $qq->where('nicename', 'like', '%'.$type.'%');
+                                ->when($type != 'all', function($w) use ($type){
+                                    return $w->whereHas('user', function($q) use ($type){
+                                        return $q->whereHas('country', function($qq) use ($type){
+                                            return $qq->where('nicename', 'like', '%'.$type.'%');
+                                        });
                                     });
                                 })
-                                ->whereHas('category', function($q) use ($val){
-                                    return $q->where('name', 'like', '%'.$val.'%');
+                                ->when($val != 'all', function($w) use ($val){
+                                    return $w->whereHas('sports', function($q) use ($val){
+                                        return $q->where('name', 'like', '%'.$val.'%');
+                                    });
                                 })
-                                ->latest()->paginate(18);
+                                ->latest()->paginate(6);
 
             $data['activities'] = activities::where('status', '1')
-                                ->whereHas('user', function($q) use ($type){
-                                    return $q->whereHas('country', function($qq) use ($type){
-                                        return $qq->where('nicename', 'like', '%'.$type.'%');
+                                ->when($type != 'all', function($w) use ($type){
+                                    return $w->whereHas('user', function($q) use ($type){
+                                        return $q->whereHas('country', function($qq) use ($type){
+                                            return $qq->where('nicename', 'like', '%'.$type.'%');
+                                        });
                                     });
                                 })
-                                ->whereHas('category', function($q) use ($val){
-                                    return $q->where('name', 'like', '%'.$val.'%');
+                                ->when($val != 'all', function($w) use ($val){
+                                    return $w->whereHas('sports', function($q) use ($val){
+                                        return $q->where('name', 'like', '%'.$val.'%');
+                                    });
                                 })
-                                ->latest()->paginate(18);
+                                ->latest()->paginate(6);
 
             $data['coaches'] = User::where('status', '1')
                                 ->where('type', '2')
-                                ->whereHas('country', function($qq) use ($type){
-                                    return $qq->where('nicename', 'like', '%'.$type.'%');
+                                ->when($type != 'all', function($w) use ($type){
+                                    return $w->whereHas('country', function($qq) use ($type){
+                                        return $qq->where('nicename', 'like', '%'.$type.'%');
+                                    });
                                 })
-                                ->latest()->paginate(18);
+                                ->latest()->paginate(6);
 
             $data['buddies'] = User::where('status', '1')
                                 ->where('type', '1')
-                                ->whereHas('country', function($qq) use ($type){
-                                    return $qq->where('nicename', 'like', '%'.$type.'%');
+                                ->when($type != 'all', function($w) use ($type){
+                                    return $w->whereHas('country', function($qq) use ($type){
+                                        return $qq->where('nicename', 'like', '%'.$type.'%');
+                                    });
                                 })
-                                ->latest()->paginate(18);
+                                ->latest()->paginate(6);
 
             return view('web.filter.search')->with($data);
 

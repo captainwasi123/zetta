@@ -19,13 +19,7 @@
                </div>
             </div>
             <div class="col-md-6 col-lg-6 col-12">
-               <select class="form-field1" name="category" required>
-                  <option>Select*</option>
-                  @foreach($data as $val)
-                     <option value="{{$val->name}}">{{$val->name}}</option>
-                  @endforeach 
-               </select>
-             
+               <input type="text" class="form-field1" name="category" required>
             </div>
          </div>
          <div class="row  m-t-20">

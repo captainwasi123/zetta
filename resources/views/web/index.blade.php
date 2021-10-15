@@ -11,12 +11,12 @@
 <div class="video-background-holder">
   <div class="video-background-overlay"></div>
   <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-        <source src="https://assets.mixkit.co/videos/preview/mixkit-muscular-man-lifting-a-barbell-in-a-dark-gym-23635-large.mp4" type="video/mp4">
-    </video>
+      <source src="https://assets.mixkit.co/videos/preview/mixkit-muscular-man-lifting-a-barbell-in-a-dark-gym-23635-large.mp4" type="video/mp4">
+   </video>
   <div class="video-background-content container h-100">
     <div class="d-flex h-100 text-center align-items-center">
      
-<section class="banner-sec" id="search">
+      <section class="banner-sec" id="search">
          <div class="container-fluid">
             <div class="banner-text text-center">
                <h2 class="gotham-bold col-white"> Find The <br/> Perfect Sport Buddy </h2>
@@ -25,11 +25,11 @@
                <form method="get" action="{{route('web.search')}}">
                   <div class="label-field3 autocomplete">
                      <i class="fa fa-search"> </i>
-                     <input type="text" placeholder="Choose a Sport" name="val" id="keywords_val" required>
+                     <input type="text" placeholder="Choose a Sport" name="val" id="keywords_val">
                   </div>
                   <div class="label-field3">
                      <i class="fa fa-map-marker-alt"></i>
-                     <input type="text" placeholder="Address, City or neighborhood" id="madd-input" name="add" required>
+                     <input type="text" placeholder="Address, City or neighborhood" id="madd-input" name="add">
                      <input type="hidden" name="country" id="madd-country">
                   </div>
                   <div class="submit-field1">
@@ -93,7 +93,7 @@
                               </p>
                               <h6 class="col-white m-b-15"> <i class="fa fa-star col-yellow"> </i> 5.0 </h6>
                               <h6 class="col-white m-b-15 lesson-catagory-text" style="float: right;">
-                                 <span class="bg-purple col-white custom-btn12"> {{@$val->sports->name}} </span>
+                              <p class="bg-purple col-white custom-btn12 cut-sports" title="{{$val->sports->name}}">{{$val->sports->name}}</p>
                               </h6>
                            </div>
                            <div class="lesson-rating-block gig">
@@ -277,7 +277,7 @@
                               </p>
                               <h6 class="col-white m-b-15"> <i class="fa fa-star col-yellow"> </i> 5.0 </h6>
                               <h6 class="col-white m-b-15 lesson-catagory-text" style="float: right;">
-                                 <span class="bg-purple col-white custom-btn12"> {{@$val->sports->name}} </span>
+                              <p class="bg-purple col-white custom-btn12 cut-sports" title="{{$val->sports->name}}">{{$val->sports->name}}</p>
                               </h6>
                            </div>
                            <div class="lesson-rating-block">
@@ -379,7 +379,7 @@
                               </p>
                               <h6 class="col-white m-b-15"> <i class="fa fa-star col-yellow"> </i> 5.0 </h6>
                               <h6 class="col-white m-b-15 lesson-catagory-text" style="float: right;">
-                                 <span class="bg-purple col-white custom-btn12"> {{@$val->sports->name}} </span>
+                              <p class="bg-purple col-white custom-btn12 cut-sports" title="{{$val->sports->name}}">{{$val->sports->name}}</p>
                               </h6>
                            </div>
                            <div class="lesson-rating-block">

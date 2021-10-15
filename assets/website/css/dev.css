@@ -276,7 +276,14 @@ color:white !important;
     overflow: hidden;
     text-overflow: ellipsis;
 }
-
+.cut-sports{
+   text-overflow: ellipsis;
+    overflow: hidden;
+    width: 115px;
+    height: 22px;
+    white-space: nowrap;
+    text-align: right;
+}
 .banner-sec .label-field3 select {
     height: 52px;
     padding-left: 35px;
@@ -354,7 +361,7 @@ color:white !important;
     display: inline-block;
 }
 .custom-btn12 {
-    padding: 4px 15px;
+    padding: 1px 15px;
     letter-spacing: 1px;
     font-size: 11px;
     border: none !important;
@@ -501,8 +508,6 @@ ul#ui-id-1 li {
      transition: 5s;
      font-size: 14px;
 }
-<<<<<<< HEAD
-=======
 
 ul#ui-id-1 li div {
 /*    color: black !important;

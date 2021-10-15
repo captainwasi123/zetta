@@ -375,9 +375,6 @@ $( "#register-form" ).submit(function( event ) {
 
 // for buddy
 
-$(document).ready(function(){
-    'use strict'
-
     
 $( "#register-form-buddy" ).submit(function( event ) {
 
@@ -420,6 +417,9 @@ $( "#register-form-buddy" ).submit(function( event ) {
               console.log(error);
           });
     });
+$(document).ready(function(){
+    'use strict'
+
 
 
     $(document).on('click', '.signUpStep2buddy', function(){

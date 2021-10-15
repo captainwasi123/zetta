@@ -23,11 +23,11 @@
                   <form method="get" action="{{route('web.search')}}">
                      <div class="label-field3">
                         <i class="fa fa-search"> </i>
-                        <input type="text" placeholder="Choose a Sport" name="val" id="keywords_val" value="{{isset($search_data['val']) ? $search_data['val'] : ''}}" required>
+                        <input type="text" placeholder="Choose a Sport" name="val" id="keywords_val" value="{{isset($search_data['val']) ? $search_data['val'] : ''}}">
                      </div>
                      <div class="label-field3">
                         <i class="fa fa-map-marker-alt"></i>
-                        <input type="text" placeholder="Address, City or neighborhood" name="add" id="add-input" value="{{isset($search_data['add']) ? $search_data['add'] : ''}}" required>
+                        <input type="text" placeholder="Address, City or neighborhood" name="add" id="add-input" value="{{isset($search_data['add']) ? $search_data['add'] : ''}}">
                         <input type="hidden" name="country" id="add-country" value="{{isset($search_data['type']) ? $search_data['type'] : ''}}">
                      </div>
                      <div class="submit-field1">

@@ -59,7 +59,7 @@
                         </div>
                         <div class="lesson-title-block">
                            <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{empty($val->user) ? '' : $val->user->profile_img}}" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';">
-                           <h4> {{empty($val->user) ? 'Unknown' : $val->user->fname.' '.$val->user->lname}} <span> Coach </span>  </h4>
+                           <h4> {{empty($val->user->fname) ? 'New User' : $val->user->fname.' '.$val->user->lname}} <span> Coach </span>  </h4>
                            <div class="zoom-tag">
                               @if($val->availability != '2')
                                  <img src="{{URL::to('/assets/website')}}/images/zoom-logo.png" title="Online Zoom Classes">
@@ -81,12 +81,13 @@
                            </div>
                         </div>
                         <div class="lesson-info-block">
+                           <p class="lesson-title">{{$val->title}}</p>
                            <p class="descrip">
                               {{$val->description}}
                            </p>
                            <h6 class="col-white m-b-15"> <i class="fa fa-star col-yellow"> </i> 5.0 </h6>
                            <h6 class="col-white m-b-15" style="float: right;">
-                              <span class="bg-purple col-white custom-btn12"> {{$val->sports->name}} </span>
+                              <p class="bg-purple col-white custom-btn12 cut-sports" title="{{$val->sports->name}}">{{$val->sports->name}}</p>
                            </h6>
                         </div>
                         <div class="lesson-rating-block">
@@ -141,7 +142,7 @@
                         </div>
                         <div class="lesson-title-block">
                            <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{empty($val->user) ? '' : $val->user->profile_img}}" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';">
-                           <h4>  {{empty($val->user) ? 'Unknown' : $val->user->fname.' '.$val->user->lname}} <span>Sports Buddy </span>  </h4>
+                           <h4>  {{empty($val->user->fname) ? 'New User' : $val->user->fname.' '.$val->user->lname}} <span>Sports Buddy </span>  </h4>
                            <div class="zoom-tag">
                               @if($val->availability != '2')
                                  <img src="{{URL::to('/assets/website')}}/images/zoom-logo.png" title="Online Zoom Classes">
@@ -163,12 +164,13 @@
                            </div>
                         </div>
                         <div class="lesson-info-block">
+                           <p class="lesson-title">{{$val->title}}</p>
                            <p class="descrip">
                               {{$val->description}}
                            </p>
                            <h6 class="col-white m-b-15"> <i class="fa fa-star col-yellow"> </i> 5.0 </h6>
                            <h6 class="col-white m-b-15" style="float: right;">
-                              <span class="bg-purple col-white custom-btn12"> {{$val->sports->name}} </span>
+                              <p class="bg-purple col-white custom-btn12 cut-sports" title="{{$val->sports->name}}">{{$val->sports->name}}</p>
                            </h6>
                         </div>
                         <div class="lesson-rating-block">
@@ -189,7 +191,25 @@
                                  <i class="far fa-heart col-purple"></i>
                               @endif
                            </a>
-                           <span class="col-grey"> STARTING AT <b class="col-white"> FREE </b> </span>
+                           <span class="col-grey"><b class="col-white"> 
+                              @if (count($val->equipment)>0)
+                                 @php
+                                     $ids = [];
+                                     $price = 0;
+                                 @endphp
+                                 @foreach ($val->equipment as $k => $val)
+                                     @php
+                                       $price = $price+$val->user_equipment->price;
+                                         $ids[$k] = $val->equip_id;
+                                     @endphp
+                                 @endforeach
+                                  {{--  {{'$'.number_format($price)}}  --}}
+                              {{$price="PARTICIPATE"}}
+                                   
+                             @else
+                             PARTICIPATE
+                             @endif
+                           </b> </span>
                         </div>
                      </div>
                   </a>
