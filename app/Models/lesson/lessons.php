@@ -8,6 +8,7 @@ use App\Models\lesson\Equipments;
 use App\Models\lesson\Locations;
 use App\Models\lesson\Packages;
 use App\Models\lesson\orders;
+use App\Models\lesson\medias;
 use App\Models\User;
 use App\Models\FavouriteLesson;
 use App\Models\sportsCategory;
@@ -189,5 +190,9 @@ class lessons extends Model
 
     public function slots(){
         return $this->hasMany(slots::class, 'lesson_id', 'id');
+    }
+
+    public function medias(){
+        return $this->hasMany(medias::class, 'lesson_id', 'id');
     }
 }

@@ -6,11 +6,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\activity\equipments;
 use App\Models\activity\locations;
+use App\Models\activity\medias;
 use Auth;
 use App\Models\FavouriteActivity;
 use App\Models\sportsCategory;
 use App\Models\sports;
 use App\Models\User;
+use App\Models\ActivityOrders;
 
 class activities extends Model
 {
@@ -159,6 +161,17 @@ class activities extends Model
         return $this->belongsTo(sports::class, 'sports_id');
     }
 
+    public function activeOrders(){
+        return $this->hasMany(ActivityOrders::class, 'activity_id', 'id')->where('status', '1');
+    }
+    public function cancelOrders(){
+        return $this->hasMany(ActivityOrders::class, 'activity_id', 'id')->where('status', '2');
+    }
+
+
+    public function medias(){
+        return $this->hasMany(medias::class, 'activity_id', 'id');
+    }
 
     // public function getAvailabilityForAttribute($value)
     // {

@@ -68,6 +68,15 @@
                <div>
                   <img src="{{URL::to('/public/storage/user/lessons/main_image/'.$data->cover_img)}}">
                </div>
+
+               @foreach($data->medias as $val)
+                  <div>
+                     <video style="height:350px; width: 100%;" controls>
+                        <source src="{{URL::to('/public/storage/user/activity/media/'.$val->id.'-'.$val->media)}}" type="video/mp4">
+                       Your browser does not support the video element.
+                     </video>
+                  </div>
+               @endforeach
             </div>
             <div class="lesson-holder-about m-t-0 no-border">
                <h3 class="col-white m-b-15"> About The Coach </h3>
@@ -413,10 +422,10 @@
                            <ul class="list-type1 no-border">
                               <li class="block-element2"> <i class="fa fa-check col-purple"> </i> {{$data->participants == '0' ? 'Single Activity' : 'Group Activity'}} </li>
 
-                                 @if($data->participants > 0)
+                              @if($data->participants > 0)
                               <li class="block-element2"> <i class="fa fa-check col-purple"> 
-                              </i> {{ $data->group_members == 1 ?    'Participant :'.$data->group_members.' Member' :  'Participant :'.$data->group_members.' Members'}} </li>
-                                 @endif
+                              </i> {{ $data->group_members == 1 ?    'Participant :'.count($data->activeOrders).'/'.$data->group_members.' Member' :  'Participant :'.count($data->activeOrders).'/'.$data->group_members.' Members'}} </li>
+                              @endif
                               <li class="block-element2"> <i class="fa fa-check col-purple"> </i> {{$data->location_covered == '0' ? 'Open Location' : 'Covered Location'}} </li>
                               <li class="block-element2"> <i class="fa fa-check col-purple"> </i> 
                                  @switch($data->availability)
