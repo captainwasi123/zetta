@@ -290,12 +290,12 @@
                   </div>
                   <div class="col-md-5 col-lg-5 col-12">
                      <div class="inline-1">
-                        <input type="date" placeholder="" class="form-field1" name="held_date" value="{{date('Y-m-d', strtotime($data->held_date))}}" required>
+                        <input type="date" placeholder="" class="form-field1" name="held_date" value="{{date('Y-m-d', strtotime($data->held_date))}}" >
                      </div>
                   </div>
                   <div class="col-md-3 col-lg-3 col-12">
                      <div class="inline-1">
-                        <input type="time" placeholder="" class="form-field1" name="held_time" value="{{date('H:i:s', strtotime($data->held_date))}}" required>
+                        <input type="time" placeholder="" class="form-field1" name="held_time" value="{{date('H:i:s', strtotime($data->held_date))}}" >
                      </div>
                   </div>
                </div>
@@ -337,7 +337,7 @@
                    </div>
                    <div class="col-md-8 col-lg-8 col-12">
                         <div class="inline-1">
-                                            
+
                          <label class="custom-control custom-checkbox">
                          <input id="radio2" name="availability_for[]" type="checkbox" value="1" class="custom-control-input"
                            @php $availability_for = json_decode($data->availability_for); @endphp
@@ -352,9 +352,9 @@
                          <span class="custom-control-label"> Senior Citizens </span>
                          </label>
                          <br>
-                      
-                   
-                       
+
+
+
                          <label class="custom-control custom-checkbox">
                          <input id="radio1" name="availability_for[]" type="checkbox" value="2" class="custom-control-input"
                            @php $availability_for = json_decode($data->availability_for); @endphp
@@ -369,8 +369,8 @@
                          <span class="custom-control-label"> Teenagers </span>
                          </label>
                          <br>
-                      
-                         
+
+
                          <label class="custom-control custom-checkbox">
                          <input id="radio2" name="availability_for[]" type="checkbox" value="3" class="custom-control-input"
                            @php $availability_for = json_decode($data->availability_for); @endphp
@@ -384,9 +384,9 @@
                          >
                          <span class="custom-control-label"> handicapped </span>
                          </label>
-                         
 
-                        
+
+
                       </div>
                    </div>
                 </div>
