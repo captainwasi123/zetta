@@ -51,6 +51,20 @@
                </p>
             </div>
          </div>
+
+         <div class="row center-row line">
+            <div class="col-md-6 col-lg-4 col-6">
+               <div class="field-name">
+                  <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/field-icon1.png">
+                  <h5> User Name </h5>
+               </div>
+            </div>
+            <div class="col-md-6 col-lg-8 col-6">
+               <p class="form-field1 text-right mob-text-left off-border">
+                  {{Auth::user()->username}}
+               </p>
+            </div>
+         </div>
          <div class="row center-row line">
             <div class="col-md-6 col-lg-4 col-6">
                <div class="field-name">
@@ -354,9 +368,13 @@
                   </div>
                   <br>
                   <div class="row">
-                     <div class="col-md-12">
+                     <div class="col-md-8">
                         <label>Email</label>
                         <input type="text" name="email" value="{{Auth::user()->email}}" class="form-control" disabled>
+                     </div>
+                        <div class="col-md-4">
+                        <label>Email</label>
+                        <input type="text" name="" value="{{Auth::user()->username}}" class="form-control" disabled>
                      </div>
                   </div>
                   <br>

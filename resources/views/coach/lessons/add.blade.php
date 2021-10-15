@@ -217,7 +217,7 @@
 
                             <input class="table-field1" type="number" placeholder="Duration in min" name="duartion_basic" required>
 
-                            <input class="table-field1 mt-2" type="number" placeholder="Days" name="day_basic" required>
+                            <input class="table-field1 mt-2" type="number" placeholder="No of Session" name="day_basic" required>
 
                            <input class="table-field1 mt-2" type="number" placeholder="Price" name="price_basic" required>
 
@@ -226,7 +226,7 @@
 
                             <input class="table-field1" type="number" placeholder="Duration in min" name="duartion_standard" required>
 
-                            <input class="table-field1 mt-2" type="number" placeholder="Days" name="day_standard" required>
+                            <input class="table-field1 mt-2" type="number" placeholder="No of Session" name="day_standard" required>
 
                            <input class="table-field1 mt-2" type="number" placeholder="Price" name="price_standard" required>
 
@@ -234,7 +234,7 @@
                         <td>
                             <input class="table-field1" type="number" placeholder="Duration in min" name="duartion_premium" required>
 
-                            <input class="table-field1 mt-2" type="number" placeholder="Days" name="day_premium" required>
+                            <input class="table-field1 mt-2" type="number" placeholder="No of Session" name="day_premium" required>
 
                            <input class="table-field1 mt-2" type="number" placeholder="Price" name="price_premium" required>
                         </td>
@@ -282,7 +282,7 @@
                      </div>
                   </div>
                   <div class="col-md-8 col-lg-8 col-12">
-                     <div class="inline-1">
+                     {{-- <div class="inline-1">
                        <label class="custom-control custom-checkbox">
                       <input id="radio2" name="availability_for[]" type="checkbox" value="1" class="custom-control-input"  >
                       <span class="custom-control-label"> Senior Citizens </span>
@@ -290,14 +290,28 @@
                       <br>
                       <label class="custom-control custom-checkbox">
                       <input id="radio1" name="availability_for[]" type="checkbox" value="2" class="custom-control-input" >
-                      <span class="custom-control-label"> Teenagers </span>
+                      <span class="custom-control-label"> Teenagers  </span>
                       </label>
                       <br>
                       <label class="custom-control custom-checkbox">
                       <input id="radio2" name="availability_for[]" type="checkbox" value="3" class="custom-control-input" >
                       <span class="custom-control-label"> handicapped </span>
                       </label>
-                     </div>
+                     </div> --}}
+                     <div class="inline-1">
+                     <label class="custom-control custom-radio">
+                     <input id="radio1" name="availability" type="radio" value="1" class="custom-control-input">
+                     <span class="custom-control-label"> Only Zoom Classes </span>
+                     </label>
+                     <label class="custom-control custom-radio">
+                     <input id="radio2" name="availability" type="radio" value="2" class="custom-control-input">
+                     <span class="custom-control-label"> Only Normal Classes </span>
+                     </label>
+                     <label class="custom-control custom-radio">
+                     <input id="radio2" name="availability" type="radio" value="3" class="custom-control-input" checked>
+                     <span class="custom-control-label"> Both </span>
+                     </label>
+                  </div>
                   </div>
                </div>
                <br>
@@ -309,22 +323,22 @@
                       </div>
                    </div>
                    <div class="col-md-8 col-lg-8 col-12">
-                      <div class="inline-1">
-                         <label class="custom-control custom-radio">
-                         <input id="radio1" name="availability_for" type="radio" value="2" class="custom-control-input">
-                         <span class="custom-control-label"> Senior Citizens </span>
-                         </label>
-                         <br>
-                         <label class="custom-control custom-radio">
-                         <input id="radio2" name="availability_for" type="radio" value="1" class="custom-control-input">
-                         <span class="custom-control-label"> Teenagers </span>
-                         </label>
-                         <br>
-                         <label class="custom-control custom-radio">
-                         <input id="radio2" name="availability_for" type="radio" value="3" class="custom-control-input" checked>
-                         <span class="custom-control-label"> Handicapped </span>
-                         </label>
-                      </div>
+                       <div class="inline-1">
+                    <label class="custom-control custom-checkbox">
+                      <input id="radio2" name="availability_for[]" type="checkbox" value=2 class="custom-control-input" >
+                      <span class="custom-control-label"> Senior Citizens </span>
+                      </label>
+                      <br>
+                      <label class="custom-control custom-checkbox">
+                      <input id="radio1" name="availability_for[]" type="checkbox" value=1 class="custom-control-input" >
+                      <span class="custom-control-label"> Teenagers </span>
+                      </label>
+                      <br>
+                      <label class="custom-control custom-checkbox">
+                      <input id="radio2" name="availability_for[]" type="checkbox" value=3 class="custom-control-input" >
+                      <span class="custom-control-label"> handicapped </span>
+                      </label>
+                   </div>
                    </div>
                 </div>
             </div>

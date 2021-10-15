@@ -328,98 +328,18 @@ var kerywordss = [
 
 //Ajax
 
-// for coach
-$( "#register-form" ).submit(function( event ) {
-
-  // Stop form from submitting normally
-  event.preventDefault();
-
-  // Get some values from elements on the page:
-  var $form = $( this ),
-    em = $form.find( "input[name='email']" ).val(),
-    token = $form.find( "input[name='_token']" ).val(),
-    url = $form.attr( "action" );
-    var datastrings = $(this).serialize();
-    // Send the data using post
-    var posting = $.post( url, datastrings );
-
-    // Put the results in a div
-    posting.done(function( data ) {
-        if(data == 'exist'){
-            $('#r_error').html('Email already exists.');
-            $('#r_error').css({display: 'block'});
-        }else if(data == 'success'){
-            $('#r_content').html('<div class="r_success_block"><img src="'+host+'/assets/images/success-gif.gif" class="success_gif" /><br><p> Account created. Please <a href="javascript:void(0)" class="open-login" data-dismiss="modal"> Sign In </a> here.</p></div>');
-        }else if(data == 'nomatch'){
-            $('#r_error').html('Password does not match.');
-            $('#r_error').css({display: 'block'});
-        }else{
-            $('#r_social').remove();
-            $('#r_error').css({display: 'none'});
-            $('.email_reg').prop('readonly',true);
-            var elements = '<input type="text" name="username" placeholder="Username" required>';
-            elements  += '<input type="password" placeholder="New Password" name="password" required>';
-            elements  += '<input type="password" placeholder="Confirm Password" name="confirmation_password" required>';
-            // elements        += 'I am a / an: <input type="radio" class="radio-button" name="user_type" value="1" checked> Buddy';
-            elements        += '<input type="hidden" class="radio-button" name="user_type" value="2" > ';
-            $('#r_fields').html(elements);
-        }
-    })
-    .fail(function(error) {
-        $('#r_error').html('Something went wrong.');
-        $('#r_error').css({display: 'block'});
-        console.log(error);
-    });
-});
 
 
 // for buddy
 
+<<<<<<< HEAD
     
 $( "#register-form-buddy" ).submit(function( event ) {
-
-  // Stop form from submitting normally
-  event.preventDefault();
-
-        var $form = $('#register-form-buddy'),
-          em = $form.find( "input[name='email']" ).val(),
-          token = $form.find( "input[name='_token']" ).val(),
-          url = $form.attr( "action" );
-          var datastrings = $('#register-form-buddy').serialize();
-          // Send the data using post
-          var posting = $.post( url, datastrings );
-
-          // Put the results in a div
-          posting.done(function( data ) {
-              if(data == 'exist'){
-                  $('#r_error_buddy').html('Email already exists.');
-                  $('#r_error_buddy').css({display: 'block'});
-              }else if(data == 'success'){
-                  $('#r_content_buddy').html('<div class="r_success_block"><img src="'+host+'/assets/images/success-gif.gif" class="success_gif" /><br><p> Account created. Please <a href="javascript:void(0)" class="open-login" data-dismiss="modal"> Sign In </a> here.</p></div>');
-              }else if(data == 'nomatch'){
-                  $('#r_error_buddy').html('Password does not match.');
-                  $('#r_error_buddy').css({display: 'block'});
-              }else{
-                  $('#r_social_buddy').remove();
-                  $('#r_error_buddy').css({display: 'none'});
-                  $('.email').prop('readonly',true);
-                  var elements = '<input type="text" name="username" placeholder="Username" required>';
-                  elements    += '<input type="password" placeholder="New Password" name="password" required>';
-                  elements        += '<input type="password" placeholder="Confirm Password" name="confirmation_password" required>';
-                  elements        += '<input type="hidden" class="radio-button" name="user_type" id="userTypeRegister"> ';
-                  elements        += '<button type="button" class="signUpStep2buddy halfContinue"> Continue as Sport Buddy </button> <button type="button" class="signUpStep2coach halfContinue"> Continue as Coach  </button>';
-                  $('#r_fields_buddy').html(elements);
-              }
-          })
-          .fail(function(error) {
-              $('#r_error_buddy').html('Something went wrong.');
-              $('#r_error_buddy').css({display: 'block'});
-              console.log(error);
-          });
-    });
+=======
 $(document).ready(function(){
     'use strict'
 
+>>>>>>> 22b7af3bc13da9d202df534e80641dc654d28902
 
 
     $(document).on('click', '.signUpStep2buddy', function(){
@@ -461,6 +381,9 @@ $(document).ready(function(){
               console.log(error);
           });
     });
+$(document).ready(function(){
+    'use strict'
+
 
     $(document).on('click', '.signUpStep2coach', function(){
         $('#userTypeRegister').val('2');
@@ -505,48 +428,49 @@ $(document).ready(function(){
 });
 
 
-/*$( "#register-form-buddy" ).submit(function( event ) {
+    
+$( "#register-form-buddy" ).submit(function( event ) {
+console.log('abc');
+  // Stop form from submitting normally
+  event.preventDefault();
 
-    // Stop form from submitting normally
-    event.preventDefault();
+         var $form = $( this ),
+            em = $form.find( "input[name='email']" ).val(),
+            token = $form.find( "input[name='_token']" ).val(),
+            url = $form.attr( "action" );
 
-    // Get some values from elements on the page:
-    var $form = $( this ),
-      em = $form.find( "input[name='email']" ).val(),
-      token = $form.find( "input[name='_token']" ).val(),
-      url = $form.attr( "action" );
-      var datastrings = $(this).serialize();
-      // Send the data using post
-      var posting = $.post( url, datastrings );
+            var datastrings = $(this).serialize();
+          // Send the data using post
+          var posting = $.post( url, datastrings );
 
-      // Put the results in a div
-      posting.done(function( data ) {
-          if(data == 'exist'){
-              $('#r_error_buddy').html('Email already exists.');
+          // Put the results in a div
+          posting.done(function( data ) {
+              if(data == 'exist'){
+                  $('#r_error_buddy').html('Email already exists.');
+                  $('#r_error_buddy').css({display: 'block'});
+              }else if(data == 'success'){
+                  $('#r_content_buddy').html('<div class="r_success_block"><img src="'+host+'/assets/images/success-gif.gif" class="success_gif" /><br><p> Account created. Please <a href="javascript:void(0)" class="open-login" data-dismiss="modal"> Sign In </a> here.</p></div>');
+              }else if(data == 'nomatch'){
+                  $('#r_error_buddy').html('Password does not match.');
+                  $('#r_error_buddy').css({display: 'block'});
+              }else{
+                  $('#r_social_buddy').remove();
+                  $('#r_error_buddy').css({display: 'none'});
+                  $('.email').prop('readonly',true);
+                  var elements = '<input type="text" name="username" placeholder="Username" required>';
+                  elements    += '<input type="password" placeholder="New Password" name="password" required>';
+                  elements        += '<input type="password" placeholder="Confirm Password" name="confirmation_password" required>';
+                  elements        += '<input type="hidden" class="radio-button" name="user_type" id="userTypeRegister"> ';
+                  elements        += '<button type="button" class="signUpStep2buddy halfContinue"> Continue as Sport Buddy </button> <button type="button" class="signUpStep2coach halfContinue"> Continue as Coach  </button>';
+                  $('#r_fields_buddy').html(elements);
+              }
+          })
+          .fail(function(error) {
+              $('#r_error_buddy').html('Something went wrong.');
               $('#r_error_buddy').css({display: 'block'});
-          }else if(data == 'success'){
-              $('#r_content_buddy').html('<div class="r_success_block"><img src="'+host+'/assets/images/success-gif.gif" class="success_gif" /><br><p> Account created. Please <a href="javascript:void(0)" class="open-login" data-dismiss="modal"> Sign In </a> here.</p></div>');
-          }else if(data == 'nomatch'){
-              $('#r_error_buddy').html('Password does not match.');
-              $('#r_error_buddy').css({display: 'block'});
-          }else{
-              $('#r_social_buddy').remove();
-              $('#r_error_buddy').css({display: 'none'});
-              $('.email').prop('readonly',true);
-              var elements = '<input type="text" name="username" placeholder="Username" required>';
-              elements    += '<input type="password" placeholder="New Password" name="password" required>';
-              elements        += '<input type="password" placeholder="Confirm Password" name="confirmation_password" required>';
-              elements        += '<input type="hidden" class="radio-button" name="user_type" value="1" > ';
-              $('#r_fields_buddy').html(elements);
-          }
-      })
-      .fail(function(error) {
-          $('#r_error_buddy').html('Something went wrong.');
-          $('#r_error_buddy').css({display: 'block'});
-          console.log(error);
-      });
-});
-*/
+              console.log(error);
+          });
+    });
 
 
 $( "#login-form" ).submit(function( event ) {

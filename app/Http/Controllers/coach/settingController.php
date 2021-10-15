@@ -42,6 +42,7 @@ class settingController extends Controller
         $u = User::find(Auth::id());
         $u->fname = $data['first_name'];
         $u->lname = $data['last_name'];
+        
         $u->country_id = $data['country'];
         $u->city = $data['city'];
         $u->gender = $data['gender'];

@@ -11,7 +11,8 @@
                     <li> <a href=""> <i class="fa fa-envelope"> </i> info@zettaa.ch </a> </li>
                  </ul>
                  <a href="javascript::void(0)"  style="color: #a5a5a5 !important;" data-toggle="modal" data-target="#languages">
-                  <span class="fa fa-globe"></span> &nbsp; English
+                  <span class="fa fa-globe"></span> &nbsp; {{ __('content.language') }}
+                                                         
                </a>
 
                 <div class="modal fade" id="languages" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -25,9 +26,53 @@
                       </div>
                       <div class="modal-body">
                         <ul class="languages_list">
-                          <li><a href="#"><img src="{{URL::to('/assets/website')}}/images/flag-1.jpg"> &nbsp; Chinese  &nbsp;<span class="fa fa-check"></span></a></li>
-                          <li><a href="#"><img src="{{URL::to('/assets/website')}}/images/flag-2.jpg">  &nbsp; Spanish  &nbsp;</a></li>
-                          <li><a href="#"><img src="{{URL::to('/assets/website')}}/images/flag-3.jpg">  &nbsp; Spanish  &nbsp;</a></li>
+                          <li>
+                         
+                          <a href="{{URL::to('/lang/en')}}">
+                          <img src="{{URL::to('/assets/website')}}/images/flag-2.jpg"> 
+                          &nbsp; English  &nbsp;
+                          @if(session()->has('locale'))
+                             @if (session()->get('locale') == 'en')
+                                 <span class="fa fa-check"></span>
+                             @endif
+                          @else
+                             <span class="fa fa-check"></span>
+                          @endif
+                        
+                          </a>
+                          </li>
+
+                          <li><a href="{{URL::to('/lang/gr')}}">
+                          <img src="{{URL::to('/assets/website')}}/images/flag-3.jpg">
+                           &nbsp; Deutsch  &nbsp;
+                           @if (session()->has('locale'))
+                               @if (session()->get('locale') == 'gr')
+                                <span class="fa fa-check"></span>
+                               @endif  
+                           @endif
+                           </a></li>
+                          <li>
+                          <a href="#">
+                          <img src="{{URL::to('/assets/website')}}/images/flag-4.jpg">  
+                          &nbsp; Spanisch  &nbsp;
+                           {{-- @if (session()->has(locale))
+                               @if (session()->get('locale') == 'sp')
+                                <span class="fa fa-check"></span>
+                               @endif  
+                           @endif --}}
+                          </a>
+                          </li>
+                          <li>
+                          <a href="#">
+                          <img src="{{URL::to('/assets/website')}}/images/flag-1.jpg">
+                            &nbsp; Französisch  &nbsp;
+                             {{-- @if (session()->has(locale))
+                               @if (session()->get('locale') == 'fr')
+                                <span class="fa fa-check"></span>
+                               @endif  
+                           @endif --}}
+                            </a>
+                            </li>
                        </ul>
                       </div>
 

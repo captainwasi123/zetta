@@ -261,6 +261,11 @@
                                 <br>
                                 <b class="col-purple"> {{$data->packages[0]->duration}} </b>
                              </p>
+                                <p class="col-white m-b-20">
+                                No of Session
+                                <br>
+                                <b class="col-purple"> {{$data->packages[0]->days}} </b>
+                             </p>
                               <p class="col-white m-b-20">
                                  Services
                               </p>
@@ -290,6 +295,11 @@
                                 <br>
                                 <b class="col-purple"> {{$data->packages[1]->duration}} </b>
                              </p>
+                                <p class="col-white m-b-20">
+                                No of Session
+                                <br>
+                                <b class="col-purple"> {{$data->packages[1]->days}} </b>
+                             </p>
                               <p class="col-white m-b-20">
                                  Services
                               </p>
@@ -318,6 +328,11 @@
                                 Duration
                                 <br>
                                 <b class="col-purple"> {{$data->packages[2]->duration}} </b>
+                             </p>
+                               <p class="col-white m-b-20">
+                                No of Session
+                                <br>
+                                <b class="col-purple"> {{$data->packages[2]->days}} </b>
                              </p>
                               <p class="col-white m-b-20">
                                  Services
