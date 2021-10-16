@@ -222,7 +222,7 @@
             </div>
             <div class="col-md-6 col-lg-6 col-12">
                <div class="pic-uploader1">
-                  <input type="file" id="input-file-max-fs" class="dropify" data-max-file-size="2M" data-height="100"/>
+                  <input type="file" id="input-file-max-fs" name="media[]" class="dropify" data-max-file-size="1024M" data-height="100" multiple />
                </div>
             </div>
          </div>
