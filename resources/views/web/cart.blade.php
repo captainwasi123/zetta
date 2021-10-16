@@ -113,9 +113,11 @@
                            <th class="col-white"> Total Amount </th>
                            @if ($price != null)
                            <th class="col-purple"> {{'$'.number_format($price)}} </th>
-                            @else
+                           @else
                             @if (!empty($data->packages[$pack]->price))
                             <th class="col-purple"> {{'$'.number_format($data->packages[$pack]->price)}} </th>
+                            @else
+                            <th class="col-purple"> Free </th>
                             @endif
                            @endif
                         </tr>
@@ -129,7 +131,7 @@
                                         ({{'$'.number_format($data->packages[$pack]->price)}})
                                     @endif
                                 @endif
-                                </button>
+                              </button>
                               <p class="col-white m-t-10 m-b-0"> You won't be charged yet  </p>
                            </td>
                         </tr>

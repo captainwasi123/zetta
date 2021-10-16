@@ -507,6 +507,47 @@ body.mini-sidebar .sidebar-nav {
 font-size: 12px;
     width: 46%;
 }
+.profile-text {
+    display: inline-flex;
+}
+b.notif-icon1 {
+    right: 103px;
+}
+b.notif-icon2 {
+    right: 54px !important;
+}
+.profile-text a i::before {
+
+    padding-top: 0px !important;
+    padding-right: 0px !important;
+}
+.profile-text .noti-mob
+{
+    margin-top: -7px !important;
+
+}
+
+
+
+}
+
+b.notif-icon2 {
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    background: #ef5350;
+    border-radius: 100%;
+    font-size: 12px;
+    font-family: Roboto !important;
+    font-style: normal;
+    color: white;
+    font-weight: 400;
+    padding-left: 5px;
+    right: 148px;
+    top: 15px;
+}
+.profile-text a {
+    padding-left: 15px;
 }
 .mini-sidebar .top-navbar .navbar-header {
     width: 240px;

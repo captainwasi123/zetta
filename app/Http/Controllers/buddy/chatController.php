@@ -105,4 +105,16 @@ class chatController extends Controller
             return 'error';
         }
     }
+
+
+    function getNotification(){
+
+        $data_list = chat::where("sender_id",Auth::id())
+                        ->orWhere("receiver_id",Auth::id())
+                        ->distinct("sender_id", "receiver_id")
+                        ->orderBy('created_at', 'desc')
+                        ->count();
+
+        return $data_list;
+    }
 }

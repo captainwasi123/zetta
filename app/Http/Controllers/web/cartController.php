@@ -52,9 +52,9 @@ class cartController extends Controller
         if ($type == 'activity') {
             $data = activities::find($id);
             $userequipment = userEquipment::get();
+            $price = 0;
             if (count($data->equipment)>0){
                 $ids = [];
-                $price = 0;
 
                 foreach ($data->equipment as $k => $val){
                     $ids[$k] = $val->equip_id;
@@ -95,6 +95,7 @@ class cartController extends Controller
 
             $priceDed = $odata['price'];
             $oid = lessonOrders::newOrder($odata);
+            
         }
         if($type == 'activity'){
             $data = $request->all();
@@ -103,9 +104,9 @@ class cartController extends Controller
             $type = base64_decode($data['type']);
             $userequipment = userEquipment::get();
             $act = activities::find($aid);
+            $price = 0;
             if (count($act->equipment)>0){
                 $ids = [];
-                $price = 0;
 
                 foreach ($act->equipment as $k => $val){
                     $ids[$k] = $val->equip_id;
@@ -128,8 +129,11 @@ class cartController extends Controller
             $oid = ActivityOrders::newOrder($odata);
         }
 
-        return view('web.payment', ['type' => $type, 'id' => $oid, 'amount' => $priceDed]);
-
+        if($priceDed == 0){
+            return redirect('/order/confirmed/free/'.$oid.'/'.$type);
+        }else{
+            return view('web.payment', ['type' => $type, 'id' => $oid, 'amount' => $priceDed]);
+        }
     }
 
     //Payment
@@ -160,5 +164,18 @@ class cartController extends Controller
         }
 
         return 'success';
+    }
+    public function orderComfirmedFree($id, $type){
+        if($type == 'lesson'){
+            $d = lessonOrders::find($id);
+            $d->status = '1';
+            $d->save();
+        }elseif($type == 'activity'){
+            $d = ActivityOrders::find($id);
+            $d->status = '1';
+            $d->save();
+        }
+
+        return redirect('/')->with('success', 'Order Confirmed.');
     }
 }

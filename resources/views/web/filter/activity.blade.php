@@ -214,9 +214,7 @@
                            </div>
                         </div>
                         <div class="lesson-info-block">
-                           <p class="descrip">
-                              {{$val->description}}
-                           </p>
+                           <p class="lesson-title">{{$val->title}}</p>
                            <h6 class="col-white m-b-15"> <i class="fa fa-star col-yellow"> </i> 5.0 </h6>
                            <h6 class="col-white m-b-15" style="float: right;">
                               <span class="bg-purple col-white custom-btn12"> {{$val->category->name}} </span>

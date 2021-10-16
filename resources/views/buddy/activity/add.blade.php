@@ -299,6 +299,7 @@
    <link href="{{URL::to('/')}}/assets/user_dashboard/plugins/select2/dist/css/select2.min.css" rel="stylesheet" type="text/css" />
 @endsection
 @section('addScript')
+   <script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
    <script src="{{URL::to('/')}}/assets/user_dashboard/plugins/bootstrap-select/bootstrap-select.min.js" type="text/javascript"></script>
    <script type="text/javascript" src="{{URL::to('/')}}/assets/user_dashboard/plugins/multiselect/js/jquery.multi-select.js"></script>
     <script src="{{URL::to('/')}}/assets/user_dashboard/plugins/select2/dist/js/select2.full.min.js" type="text/javascript"></script>
@@ -312,7 +313,8 @@
        $("input[name='tch3']").TouchSpin();
        $('.dropify').dropify();
        $(".select2").select2();
-
+       CKEDITOR.replace( 'description' );
+       CKEDITOR.addCss('.cke_editable { background-color: #1d242c; color: white }');
    });
 </script>
 

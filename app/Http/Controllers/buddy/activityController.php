@@ -48,12 +48,14 @@ class activityController extends Controller
 
             activities::updateImage($id, $filename);
         }
-        foreach($request->file('media') as $file)
-        {
-            $filename = date('dmyHis').'.'.$file->getClientOriginalExtension();
-            $filename = $id.'-'.$filename;
-            $mid = medias::addMedia($id, $filename);
-            $file->move(base_path('/public/storage/user/activity/media/'), $mid.'-'.$filename); 
+        if(!empty($request->file('media'))){
+            foreach($request->file('media') as $file)
+            {
+                $filename = date('dmyHis').'.'.$file->getClientOriginalExtension();
+                $filename = $id.'-'.$filename;
+                $mid = medias::addMedia($id, $filename);
+                $file->move(base_path('/public/storage/user/activity/media/'), $mid.'-'.$filename); 
+            }
         }
 
         return redirect()->back()->with('success', 'New Activity Added.');

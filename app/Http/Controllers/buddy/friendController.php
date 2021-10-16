@@ -79,4 +79,11 @@ class friendController extends Controller
 
         return redirect()->back()->with('success', 'Friend Removed.');
     }
+
+    function getNotification(){
+
+        $requests = friendRequest::where('friend_id', Auth::id())->count();
+
+        return $requests;
+    }
 }

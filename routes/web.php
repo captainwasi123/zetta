@@ -29,6 +29,7 @@ use Illuminate\Support\Facades\Route;
 			Route::get('cart/{type}/{id}/{package}', 'cartController@cart');
 			Route::post('/payment/stripe', 'cartController@stripePayment')->name('stripe.submit');
 			Route::get('/order/confirmed/{id}/{type}', 'cartController@orderComfirmed');
+			Route::get('/order/confirmed/free/{id}/{type}', 'cartController@orderComfirmedFree');
 
 
 			Route::post('/stickman', 'webController@stickmanSearch');
@@ -147,6 +148,8 @@ use Illuminate\Support\Facades\Route;
 						Route::get('chat/{id}/{name}', 'chatController@inboxChat');
 
 						Route::post('messageSend', 'chatController@sendMessage');
+
+						Route::get('getNotification', 'chatController@getNotification')->name('coach.messages.getNotification');
 					});
 
 				//My Account
@@ -267,6 +270,8 @@ use Illuminate\Support\Facades\Route;
 						Route::get('chat/{id}/{name}', 'chatController@inboxChat');
 
 						Route::post('messageSend', 'chatController@sendMessage');
+
+						Route::get('getNotification', 'chatController@getNotification')->name('buddy.messages.getNotification');
 					});
 
 
@@ -347,6 +352,8 @@ use Illuminate\Support\Facades\Route;
 
                 		Route::get('acceptRequest/{id}', 'friendController@acceptRequestFriend');
                 		Route::get('rejectRequest/{id}', 'friendController@rejectRequestFriend');
+
+                		Route::get('notification', 'friendController@getNotification')->name('buddy.friends.getNotification');
 					});
 
 					//Friends

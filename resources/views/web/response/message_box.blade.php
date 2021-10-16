@@ -7,11 +7,20 @@
     </div>
     <hr>
     <div class="contact-profile-section1">
-      <h3>Please include:</h3>
       <ul>
-        <li>Project Description</li>
-        <li>Project Description</li>
-        <li>Project Description</li>                
+        <li>
+          <strong>Language Preference:</strong><br>
+          @foreach($data->langs as $val)
+              {{$val->language}},
+          @endforeach
+          @if(count($data->langs) == 0)
+            N/A
+          @endif
+        </li>
+        <li class="m-t-20">
+          <strong>Location:</strong><br>
+          {{empty($data->country) ? '-' : $data->country->country}}
+        </li>                
       </ul>
     </div>
     
