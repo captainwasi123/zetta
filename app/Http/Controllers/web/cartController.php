@@ -37,7 +37,7 @@ class cartController extends Controller
             default:
                 // code...
                 break;
-        }
+        } 
         if($type == 'lesson'){
 
             $data = lessons::find($id);
