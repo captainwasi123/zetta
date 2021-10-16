@@ -131,4 +131,14 @@ class activityController extends Controller
 
         return view('buddy.favouriteActivity',['data' => $data]);
     }
+
+
+    function deleteMedia($id){
+        $id = base64_decode($id);
+
+        medias::destroy($id);
+
+
+        return redirect()->back()->with('success', 'Media Item Deleted.');
+    }
 }

@@ -127,4 +127,13 @@ class lessonsController extends Controller
 
         return view('coach.favouriteLesson',['data' => $data]);
     }
+    
+    function deleteMedia($id){
+        $id = base64_decode($id);
+
+        medias::destroy($id);
+
+
+        return redirect()->back()->with('success', 'Media Item Deleted.');
+    }
 }

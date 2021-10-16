@@ -226,6 +226,28 @@
                </div>
             </div>
          </div>
+         <div class="row"> 
+            @foreach($data->medias as $val)
+               @php $cont = explode('.', $val->media); @endphp
+               @if($cont[1] == 'mp4')
+                  <div class="col-md-2">
+                     <a href="{{route('buddy.activity.deleteMedia', base64_encode($val->id))}}" class="btn btn-sm btn-danger">Remove</a>
+                     <video style="height:150px; width: 100%;" controls>
+                        <source src="{{URL::to('/public/storage/user/activity/media/'.$val->id.'-'.$val->media)}}" type="video/mp4">
+                       Your browser does not support the video element.
+                     </video>
+                     <br>
+                  </div>
+               @else
+                  <div class="col-md-2">
+                     <a href="{{route('buddy.activity.deleteMedia', base64_encode($val->id))}}" class="btn btn-sm btn-danger">Remove</a>
+                     <img src="{{URL::to('/public/storage/user/activity/media/'.$val->id.'-'.$val->media)}}" height="150px" width="100%">
+                     <br>
+                  </div>
+               @endif
+            @endforeach
+         </div>
+         <br>
          <div class="row center-row">
             <div class="col-md-3 col-lg-3 col-12">
                <div class="field-name">
