@@ -69,9 +69,15 @@
                   </ul>
 
                   <ul class="navbar-nav my-lg-0">
-                    <div class="profile-text">
-                     <a href="{{route('coach.messages')}}" class="" > <i class="mdi mdi-email"> <b class="notif-icon1"> 5  </b> </i>  </a>
-                    </div>
+                     <div class="profile-text">
+                        <a href="{{route('coach.messages')}}" class="noti-mob"> 
+                           <i class="mdi mdi-email " id="mnotiBadge" style="font-size: 2rem;padding-right: 11px;color: #fff;">  </i>
+                        </a>
+
+                        <a href="{{route('buddy.friends')}}" class="" > 
+                           <i class="fa fa-bell" id="fnotiBadge" style="font-size: 2rem;padding-right: 11px;color: #fff;"></i> 
+                        </a>
+                     </div>
                     @if(Auth::check())
                         <div class="header-login">
                            <div class="dropdown">

@@ -72,30 +72,39 @@
                           </div>
                      </nav>
          </ul>
+         <style type="text/css">
+     
+         </style>
          <ul class="navbar-nav my-lg-0">
-          <div class="profile-text">
-                     <a href="{{route('coach.messages')}}" class="" > <i class="mdi mdi-email"> <b class="notif-icon1"> 5  </b> </i>  </a>
-                    </div>
+            <div class="profile-text">
+               <a href="{{route('buddy.messages')}}" class="noti-mob"> 
+                  <i class="mdi mdi-email " id="mnotiBadge" style="font-size: 2rem;padding-right: 11px;color: #fff;">  </i>
+               </a>
 
-           @if(Auth::check())
-         <div class="header-login">
-            <div class="dropdown">
-               <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-               <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{Auth::user()->profile_img}}" alt="user" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';"> <i class="fa fa-caret-down"> </i>
-               </button>
-               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="{{route('buddy.my_account')}}"> Edit Profile </a>
-                  <a class="dropdown-item" href="{{route('logout')}}"> Logout </a>
-               </div>
+               <a href="{{route('buddy.friends')}}" class="" > 
+                  <i class="fa fa-bell" id="fnotiBadge" style="font-size: 2rem;padding-right: 11px;color: #fff;"></i> 
+               </a>
             </div>
-         </div>
-      @else
-         <div class="header-buttons">
-            <a href="javascript:void(0)" class="open-join-buddy header-btn1" data-id="buddy"> Register </a>
-            <!-- <a href="javascript:void(0)" class="open-join header-btn2"> Become a Coach </a> -->
-            <a href="javascript:void(0)" class="open-login header-btn3"> Login </a>
-         </div>
-      @endif
+
+            @if(Auth::check())
+               <div class="header-login">
+                  <div class="dropdown">
+                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{Auth::user()->profile_img}}" alt="user" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';"> <i class="fa fa-caret-down"> </i>
+                     </button>
+                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="{{route('buddy.my_account')}}"> Edit Profile </a>
+                        <a class="dropdown-item" href="{{route('logout')}}"> Logout </a>
+                     </div>
+                  </div>
+               </div>
+            @else
+               <div class="header-buttons">
+                  <a href="javascript:void(0)" class="open-join-buddy header-btn1" data-id="buddy"> Register </a>
+                  <!-- <a href="javascript:void(0)" class="open-join header-btn2"> Become a Coach </a> -->
+                  <a href="javascript:void(0)" class="open-login header-btn3"> Login </a>
+               </div>
+            @endif
          </ul>
       </div>
    </nav>

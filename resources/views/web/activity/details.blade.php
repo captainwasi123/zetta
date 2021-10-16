@@ -115,9 +115,9 @@
             <div class="lesson-holder-about">
                <h3 class="col-white m-b-15"> About The Activity </h3>
                <h5 class="col-white m-b-30" >  {{$data->title}} </h5>
-               <p class="col-white"  >
-                  {{$data->description}}
-               </p>
+               <div class="col-white"  >
+                  {!! $data->description !!}
+               </div>
             </div>
             <div class="lesson-holder-details m-t-40">
                <div class="profile-details1">
@@ -298,7 +298,6 @@
                                 @else
                                 FREE
                                 @endif </b> </h3>
-                              <p class="col-white m-b-20"> {{$data->description}}  </p>
                               
                               <h5 class="col-white m-b-20"> 
                                  <img src="{{URL::to('/assets/website')}}/images/clock-icon.jpg">  

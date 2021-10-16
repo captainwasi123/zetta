@@ -219,9 +219,11 @@ b.notif-icon1 {
     color: white;
     font-weight: 400;
     padding-left: 5px;
+    padding-top: 3px;
     right: 88px;
     top: 18px;
 }
+
 .sidebar-nav ul li a {
     color: #3b4863;
     padding: 8px 35px 8px 15px;
