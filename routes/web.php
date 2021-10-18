@@ -218,6 +218,8 @@ use Illuminate\Support\Facades\Route;
 
 
 						Route::get('/sports/{id}', 'lessonsController@getSports');
+
+						Route::get('/deleteMedia/{id}', 'lessonsController@deleteMedia')->name('coach.lesson.deleteMedia');
 					});
 
 				//Availability
@@ -341,6 +343,8 @@ use Illuminate\Support\Facades\Route;
 						Route::get('/delete/{id}', 'activityController@delete')->name('buddy.activity.delete');
 
 						Route::get('/sports/{id}', 'activityController@getSports');
+
+						Route::get('/deleteMedia/{id}', 'activityController@deleteMedia')->name('buddy.activity.deleteMedia');
 					});
 
 				//Friends

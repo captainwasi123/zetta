@@ -85,6 +85,17 @@ class lessonsController extends Controller
 
             lessons::updateImage($id, $filename);
         }
+        
+        if(!empty($request->file('media'))){
+            foreach($request->file('media') as $file)
+            {
+                $filename = date('dmyHis').'.'.$file->getClientOriginalExtension();
+                $filename = $id.'-'.$filename;
+                $mid = medias::addMedia($id, $filename);
+                $file->move(base_path('/public/storage/user/lessons/media/'), $mid.'-'.$filename); 
+            }
+        }
+
 
         return redirect()->back()->with('success', 'Lesson Updated.');
     }
@@ -115,5 +126,14 @@ class lessonsController extends Controller
         // dd($data);
 
         return view('coach.favouriteLesson',['data' => $data]);
+    }
+    
+    function deleteMedia($id){
+        $id = base64_decode($id);
+
+        medias::destroy($id);
+
+
+        return redirect()->back()->with('success', 'Media Item Deleted.');
     }
 }

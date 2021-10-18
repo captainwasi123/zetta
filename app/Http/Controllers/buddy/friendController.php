@@ -27,8 +27,7 @@ class friendController extends Controller
         if(empty($val)){
             $data = array();
         }else{
-            $data = User::where('status', '1')
-                ->where('id', '!=', Auth::id())
+            $data = User::where('id', '!=', Auth::id())
                 ->when(1>0, function($q) use ($val){
                     return $q->where('fname', 'like', '%'.$val.'%')
                                 ->orWhere('lname', 'like', '%'.$val.'%');
