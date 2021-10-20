@@ -27,6 +27,7 @@ use Illuminate\Support\Facades\Route;
             ROute::get('/filter/{type}','webController@search_filter')->name('web.search.filter');
 
 			Route::get('cart/{type}/{id}/{package}', 'cartController@cart');
+			Route::get('/cart/getSlot/{date}', 'cartController@getSlots');
 			Route::post('/payment/stripe', 'cartController@stripePayment')->name('stripe.submit');
 			Route::get('/order/confirmed/{id}/{type}', 'cartController@orderComfirmed');
 			Route::get('/order/confirmed/free/{id}/{type}', 'cartController@orderComfirmedFree');

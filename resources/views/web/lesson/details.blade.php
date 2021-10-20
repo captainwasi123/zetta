@@ -402,7 +402,7 @@
                                           Availability
                                        </th>
                                     </tr>
-                                     <tr>
+                                    <!--  <tr>
                                        <td></td>
                                        <td><input type="date" class="form-control" name=""></td>
                                        <td>
@@ -414,8 +414,8 @@
                                                @endforeach 
                                           </select>
                                        </td>
-                                    </tr>
-                                    <!-- @foreach($data->slots as $val)
+                                    </tr> -->
+                                    @foreach($data->slots as $val)
                                        <tr>
                                           <td></td>
                                           <td>{{$val->day}}</td>
@@ -423,13 +423,13 @@
                                              {{date('h:i a', strtotime($val->start_time)).' to '.date('h:i a', strtotime($val->end_time))}}
                                           </td>
                                        </tr>
-                                    @endforeach -->
-                                    <!-- @if(count($data->slots) == 0)
+                                    @endforeach
+                                    @if(count($data->slots) == 0)
                                        <tr>
                                           <td></td>
                                           <td class="col-grey" colspan="2">Not Decided Yet.</td>
                                        </tr>
-                                    @endif -->
+                                    @endif
                                  </table>
                               </h5>
                            @else

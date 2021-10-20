@@ -34,6 +34,8 @@
                         <th> Seller </th>
                         <th> Lesson </th>
                         <th> Total Amount</th>
+                        <th> Type </th>
+                        <th> BookingTime </th>
                         <th> Status </th>
                         <th> Order at </th>
                         <th></th>
@@ -50,6 +52,20 @@
                                {{empty($val->lesson) ? '' : $val->lesson->title}}
                             </td>
                            <td> {{'$'.number_format($val->price, 2)}} </td>
+                           <td>
+                              @if(!empty($val->lesson))
+                                 {{$val->lesson->participants == '0' ? 'Single Lesson' : 'Group Lesson'}}
+                              @endif
+                           </td>
+                           <td>
+                              @if(empty($val->booking_date) && $val->lesson->participants != '0')
+                                 @if(!empty($val->lesson))
+                                    {{date('d-M-Y h:i a', strtotime($val->lesson->held_date))}}
+                                 @endif
+                              @else
+                                 {{date('d-M-Y h:i a', strtotime($val->booking_date.' '.$val->booking_time))}}
+                              @endif
+                           </td>
                            <td>
                               @if($val->status == '1')
                                  <span class="label bg-success"> Active </span>
