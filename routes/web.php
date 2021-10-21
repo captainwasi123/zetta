@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 
 // Web Routes
-	Route::namespace('web')->group(function(){
+	Route::namespace('web')->middleware('changeLang')->group(function(){
 
 		// Main Pages
 			Route::get('/', 'webController@index');

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Stripe Payment Gateway</title>
+  <title> {{ __('content.Stripe Payment Gateway') }}</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -36,7 +36,7 @@
             </div>
             <div class="col-md-12">
               <hr>
-              <h1>Stripe Payment Gateway</h1>
+              <h1>{{ __('content.Stripe Payment Gateway') }}</h1>
             </div>
           </div>
           <br>
@@ -47,7 +47,7 @@
                     <input type="hidden" name="amount" value="{{$amount}}">
                     <input type="hidden" name="orderId" value="{{$id}}">
                     <input type="hidden" name="type" value="{{$type}}">
-                    <label>Please enter your card details</label>
+                    <label>{{ __('content.Please enter your card details')}}</label>
                     <div id="card-element"></div>
                     <br>
                     <div class="col-md-12" id="pybtn">

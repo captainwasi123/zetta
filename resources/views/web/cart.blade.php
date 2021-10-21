@@ -7,31 +7,31 @@
    <div class="container">
       <div class="all-actions arrows1">
          <div>
-            <a href=""> <img src="{{URL::to('/assets/website')}}/images/action-icon1.jpg"> Starting Excercise </a>
+            <a href=""> <img src="{{URL::to('/assets/website')}}/images/action-icon1.jpg"> {{ __('content.Starting Excercise') }} </a>
          </div>
          <div>
-            <a href=""> <img src="{{URL::to('/assets/website')}}/images/action-icon2.jpg"> Fitness Expert </a>
+            <a href=""> <img src="{{URL::to('/assets/website')}}/images/action-icon2.jpg"> {{ __('content.Fitness Expert') }} </a>
          </div>
          <div>
-            <a href=""> <img src="{{URL::to('/assets/website')}}/images/action-icon3.jpg"> Body Fitness </a>
+            <a href=""> <img src="{{URL::to('/assets/website')}}/images/action-icon3.jpg"> {{ __('content.Body Fitness') }} </a>
          </div>
          <div>
-            <a href=""> <img src="{{URL::to('/assets/website')}}/images/action-icon4.jpg"> Martial Art </a>
+            <a href=""> <img src="{{URL::to('/assets/website')}}/images/action-icon4.jpg"> {{ __('content.Martial Art') }} </a>
          </div>
          <div>
-            <a href=""> <img src="{{URL::to('/assets/website')}}/images/action-icon5.jpg"> Swimming </a>
+            <a href=""> <img src="{{URL::to('/assets/website')}}/images/action-icon5.jpg"> {{ __('content.Swimming') }} </a>
+         </div>
+         <div>{{ __('content.Slogan') }}
+            <a href=""> <img src="{{URL::to('/assets/website')}}/images/action-icon6.jpg"> {{ __('content.Boxing') }} </a>
          </div>
          <div>
-            <a href=""> <img src="{{URL::to('/assets/website')}}/images/action-icon6.jpg"> Boxing </a>
+            <a href=""> <img src="{{URL::to('/assets/website')}}/images/action-icon7.jpg"> {{ __('content.Fencing ') }}</a>
          </div>
          <div>
-            <a href=""> <img src="{{URL::to('/assets/website')}}/images/action-icon7.jpg"> Fencing </a>
+            <a href=""> <img src="{{URL::to('/assets/website')}}/images/action-icon8.jpg"> {{ __('content.Racing') }} </a>
          </div>
          <div>
-            <a href=""> <img src="{{URL::to('/assets/website')}}/images/action-icon8.jpg"> Racing </a>
-         </div>
-         <div>
-            <a href=""> <img src="{{URL::to('/assets/website')}}/images/action-icon1.jpg"> Starting Excercise </a>
+            <a href=""> <img src="{{URL::to('/assets/website')}}/images/action-icon1.jpg"> {{ __('content.Starting Excercise ') }}</a>
          </div>
       </div>
    </div>
@@ -44,13 +44,13 @@
          @if(session()->has('success'))
             <div class="col-md-12">
                <div class="alert alert-success">
-                 <strong>Success!</strong> {{ session()->get('success') }}
+                 <strong>{{ __('content.Success!') }}</strong> {{ session()->get('success') }}
                </div>
             </div>
          @endif
          <div class="col-md-12 col-lg-9 col-sm-12 col-12">
             <div class="sec-head1 m-b-30">
-               <h4 class="col-white gotham-bold"> Check Your Order </h4>
+               <h4 class="col-white gotham-bold"> {{ __('content.Check Your Order') }} </h4>
             </div>
             <div class="row" id="accordion">
                <div class="col-md-4 col-lg-4 col-sm-12 col-12">
@@ -70,7 +70,7 @@
                         {{$data->description}}
                      </h5>
                      <h6 class="col-purple"> <i class="fa fa-star"> </i> <i class="fa fa-star"> </i> <i class="fa fa-star"> </i> <i class="fa fa-star"> </i> <i class="fa fa-star"> </i> <b> 5.0 </b>  </h6>
-                     <button class="  collapse-btn1"   data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">  Hide what included  </button>
+                     <button class="  collapse-btn1"   data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">  {{ __('content.Hide what included') }}  </button>
                   </div>
                </div>
                <div class="col-md-0 col-lg-4 col-sm-6 col-12">
@@ -83,9 +83,9 @@
                       @if (!empty($data->packages[$pack]->details))
 
                      <div class="basic-package-head">
-                        <h4 class="col-white"> {{$data->packages[$pack]->title}} Package </h4>
+                        <h4 class="col-white"> {{$data->packages[$pack]->title}} {{ __('content.Package') }} </h4>
                         <p class="col-white m-t-20">
-                           Services
+                           {{ __('content.Services') }}
                         </p>
                         <ul class="list-type1" style="max-width: 300px;">
                            @foreach($data->packages[$pack]->details as $val)
@@ -106,11 +106,11 @@
                <input type="hidden" name="type" value="{{base64_encode($type)}}">
 
                <div class="summary-box m-t-30">
-                  <h5 class="col-white"> Summary </h5>
+                  <h5 class="col-white"> {{ __('content.Summary') }} </h5>
                   <table>
                      <tbody>
                         <tr>
-                           <th class="col-white"> Total Amount </th>
+                           <th class="col-white"> {{ __('content.Total Amount') }} </th>
                            @if ($price != null)
                            <th class="col-purple"> {{'$'.number_format($price)}} </th>
                            @else
@@ -123,7 +123,7 @@
                         </tr>
                         <tr>
                            <td colspan="2" class="text-center no-border">
-                              <button class="custom-btn1 bg-purple col-white rounded block-element2 m-t-10"> Continue to Checkout
+                              <button class="custom-btn1 bg-purple col-white rounded block-element2 m-t-10"> {{ __('content.Continue to Checkout') }}
                                 @if ($price != null)
                                    ({{'$'.number_format($price)}})
                                 @else
@@ -132,7 +132,7 @@
                                     @endif
                                 @endif
                               </button>
-                              <p class="col-white m-t-10 m-b-0"> You won't be charged yet  </p>
+                              <p class="col-white m-t-10 m-b-0">{{ __('content.Slogan') }} {{ __('content.You won`t be charged yet') }}  </p>
                            </td>
                         </tr>
                      </tbody>

@@ -8,31 +8,31 @@
     <div class="container">
        <div class="all-actions arrows1">
           <div>
-             <a href=""> <img src="{{URL::to('/assets/website')}}/images/action-icon1.jpg"> Starting Excercise </a>
+             <a href=""> <img src="{{URL::to('/assets/website')}}/images/action-icon1.jpg"> {{ __('content.Starting Excercise') }} </a>
           </div>
           <div>
-             <a href=""> <img src="{{URL::to('/assets/website')}}/images/action-icon2.jpg"> Fitness Expert </a>
+             <a href=""> <img src="{{URL::to('/assets/website')}}/images/action-icon2.jpg"> {{ __('content.Fitness Expert') }} </a>
           </div>
           <div>
-             <a href=""> <img src="{{URL::to('/assets/website')}}/images/action-icon3.jpg"> Body Fitness </a>
+             <a href=""> <img src="{{URL::to('/assets/website')}}/images/action-icon3.jpg"> {{ __('content.Body Fitness') }} </a>
           </div>
           <div>
-             <a href=""> <img src="{{URL::to('/assets/website')}}/images/action-icon4.jpg"> Martial Art </a>
+             <a href=""> <img src="{{URL::to('/assets/website')}}/images/action-icon4.jpg"> {{ __('content.Martial Art') }} </a>
           </div>
           <div>
-             <a href=""> <img src="{{URL::to('/assets/website')}}/images/action-icon5.jpg"> Swimming </a>
+             <a href=""> <img src="{{URL::to('/assets/website')}}/images/action-icon5.jpg"> {{ __('content.Swimming') }} </a>
           </div>
           <div>
-             <a href=""> <img src="{{URL::to('/assets/website')}}/images/action-icon6.jpg"> Boxing </a>
+             <a href=""> <img src="{{URL::to('/assets/website')}}/images/action-icon6.jpg"> {{ __('content.Boxing') }} </a>
           </div>
           <div>
-             <a href=""> <img src="{{URL::to('/assets/website')}}/images/action-icon7.jpg"> Fencing </a>
+             <a href=""> <img src="{{URL::to('/assets/website')}}/images/action-icon7.jpg"> {{ __('content.Fencing') }} </a>
           </div>
           <div>
-             <a href=""> <img src="{{URL::to('/assets/website')}}/images/action-icon8.jpg"> Racing </a>
+             <a href=""> <img src="{{URL::to('/assets/website')}}/images/action-icon8.jpg"> {{ __('content.Racing') }} </a>
           </div>
           <div>
-             <a href=""> <img src="{{URL::to('/assets/website')}}/images/action-icon1.jpg"> Starting Excercise </a>
+             <a href=""> <img src="{{URL::to('/assets/website')}}/images/action-icon1.jpg"> {{ __('content.Starting Excercise') }} </a>
           </div>
        </div>
     </div>
@@ -60,7 +60,7 @@
                       </div>
                    </div>
                    <div class="profile-image-name text-center">
-                      <h4 class="col-purple"> Hi Coach  </h4>
+                      <h4 class="col-purple"> {{ __('content.Hi Coach') }}  </h4>
                       <p class="col-white"> Lorem Ipsum is a something know you are coach  </p>
                       <h6 class="col-purple"> <i class="fa fa-star "> </i> <i class="fa fa-star "> </i> <i class="fa fa-star "> </i> <i class="fa fa-star "> </i> <i class="fa fa-star "> </i> <b> 5.0 </b> </h6>
                    </div>
@@ -70,7 +70,7 @@
                       <div class="col-md-5 col-lg-5 col-12">
                          <div class="field-name">
                             <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/field-icon1.png">
-                            <span> Full Name </span>
+                            <span> {{ __('content.Full Name') }} </span>
                          </div>
                       </div>
                       <div class="col-md-7 col-lg-7 col-12">
@@ -81,7 +81,7 @@
                       <div class="col-md-5 col-lg-5 col-12">
                          <div class="field-name">
                             <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/field-icon3.png">
-                            <span> Gender </span>
+                            <span> {{ __('content.Gender') }} </span>
                          </div>
                       </div>
                       <div class="col-md-7 col-lg-7 col-12 text-right mob-text-left">
@@ -95,7 +95,7 @@
                       <div class="col-md-5 col-lg-5 col-12">
                          <div class="field-name">
                             <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/field-icon13.png">
-                            <span> Country </span>
+                            <span> {{ __('content.Country') }} </span>
                          </div>
                       </div>
                       <div class="col-md-7 col-lg-7 col-12">
@@ -106,7 +106,7 @@
                       <div class="col-md-5 col-lg-5 col-12">
                          <div class="field-name">
                             <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/field-icon3.png">
-                            <span> City </span>
+                            <span> {{ __('content.City') }} </span>
                          </div>
                       </div>
                       <div class="col-md-7 col-lg-7 col-12">
@@ -117,7 +117,7 @@
                       <div class="col-md-5 col-lg-5 col-12">
                          <div class="field-name">
                             <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/field-icon1.jpg">
-                            <span> Languages </span>
+                            <span> {{ __('content.Languages') }} </span>
                          </div>
                       </div>
                       <div class="col-md-7 col-lg-7 col-12">
@@ -130,17 +130,17 @@
                    </div>
                 </div>
                 <div class="description-profile">
-                   <h5 class="col-purple"> Description </h5>
+                   <h5 class="col-purple"> {{ __('content.Description') }} </h5>
                    <p class="col-grey"> {{$data->description}}  </p>
                 </div>
                 <div class="description-profile">
-                   <h5 class="col-purple"> Languages </h5>
+                   <h5 class="col-purple"> {{ __('content.Languages') }} </h5>
                    @foreach($data->langs as $val)
                    <h6>  {{$val->language}} - <span> {{$val->level}} </span></h6>
                    @endforeach
                 </div>
                 <div class="description-profile">
-                   <h5 class="col-purple"> Sports Category </h5>
+                   <h5 class="col-purple"> {{ __('content.Sports Category') }} </h5>
                    <div class="category-sports m-t-10">
                     @foreach($data->category as $val)
                         <button class="cat-button1"> {{$val->name}} </button>
@@ -148,7 +148,7 @@
                    </div>
                 </div>
                 <div class="description-profile">
-                   <h5 class="col-purple"> Education </h5>
+                   <h5 class="col-purple"> {{ __('content.Education') }} </h5>
                     @foreach($data->education as $val)
                         <div class="edu_block">
                             <h4 class="col-white">{{$val->degree}}</h4>
@@ -156,7 +156,7 @@
                     @endforeach
                 </div>
                 <div class="description-profile no-border">
-                   <h5 class="col-purple"> Certification </h5>
+                   <h5 class="col-purple"> {{ __('content.Certification') }} </h5>
                     @foreach($data->certificate as $val)
                         <div class="edu_block">
                             <h4 class="col-white"> {{$val->certificate}} - {{$val->institute}} </h4>
@@ -168,7 +168,7 @@
           </div>
           <div class="col-md-8 col-lg-8 col-sm-12 col-12">
              <div class="sec-head1 m-b-25">
-                <h5 class="col-white"> My Videos </h5>
+                <h5 class="col-white"> {{ __('content.My Videos') }} </h5>
              </div>
              <div class="row">
                  @foreach ($data->media as $media)
@@ -184,7 +184,7 @@
                  @endforeach
              </div>
              <div class="sec-head1 m-b-25">
-                <h5 class="col-white"> Active Lessons </h5>
+                <h5 class="col-white"> {{ __('content.Active Lessons') }} </h5>
              </div>
              <div class="row">
                 @foreach ($data->lessons as $val)
@@ -205,7 +205,7 @@
                                 <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{$data->profile_img}}">
                             @endif
 
-                            <h4> {{$val->title}} <span> Coach </span>  </h4>
+                            <h4> {{$val->title}} <span> {{ __('content.Coach') }} </span>  </h4>
                             <div class="zoom-tag">
                                 @if ($val->availability == '1')
                                     <img src="{{URL::to('/public/images/zoom-logo.png')}}">
@@ -219,22 +219,21 @@
                         </div>
                         <div class="lesson-rating-block">
                             <a href="" class="col-purple"> <i class="fa fa-heart col-purple"></i> </a>
-                            <span class="col-grey"> STARTING AT <b class="col-white"> {{'$'.number_format($val->packages[0]->price)}} </b> </span>
+                            <span class="col-grey"> {{ __('content.STARTING AT') }} <b class="col-white"> {{'$'.number_format($val->packages[0]->price)}} </b> </span>
                         </div>
                         </div>
                     </div>
                 @endforeach
              </div>
              <div class="sec-head1 m-b-20">
-                <h5 class="col-white"> Reviews as Activity </h5>
+                <h5 class="col-white"> {{ __('content.Reviews as Activity') }} </h5>
              </div>
              <div class="row">
                 <div class="col-md-12">
                    <div class="review-box">
                       <img src="{{URL::to('/public/images/profile-image1.jpg')}}">
                       <h5 class="col-white"> <b class="col-purple"> Lennon <i class="fa fa-star"> </i> </b> 5.0 </h5>
-                      <p class="col-white"> That would be good please share any reference or similar website interms of features
-                         and functionality you need.
+                      <p class="col-white"> {{ __('content.That would be good please share any reference or similar website interms of features and functionality you need.') }}
                       </p>
                    </div>
                    <div class="review-box">
@@ -252,7 +251,7 @@
                       </p>
                    </div>
                    <div class="review-button">
-                      <button> + See more </button>
+                      <button> {{ __('content.+ See more') }} </button>
                    </div>
                 </div>
              </div>

@@ -1,6 +1,6 @@
 <?php
 
-
+ 
 return [
     // language
 
@@ -16,6 +16,8 @@ return [
     'For Senior Citizen'=>'For Senior Citizen',
     'For Teenager' =>'For Teenager',
     'For Handicapped' => 'For Handicapped',
+    'Reviews' => 'Reviews',
+    'Choose a Sport' => 'Choose a Sport',
     'No Gigs Found.'=> 'No Gigs Found.',
     'How it Works' => 'How it Works',
     'Search your Sports'=>'Search your Sports',
@@ -102,6 +104,7 @@ return [
     '3. COOKIES THAT WE USE' => '3. COOKIES THAT WE USE',
     '3.1 We use a few services to help us understand how people use our website and the problems they might encounter as they use it' => '3.1 We use a few services to help us understand how people use our website and the problems they might encounter as they use it',
     'Google Analytics:' => 'Google Analytics:',
+    'We use Google Analytics (which uses cookies) to help us understand what actions people take when they are using the website, and information about the device the user is using to access the website. All of the data we track in Google Analytics is anonymous and there is no personal identifying information contained therein. To opt out of our usage of Google Analytics, you can use this opt-out tool from Google. Google has more information about the cookies they use and how you can be aware of what`s being tracked.' => 'We use Google Analytics (which uses cookies) to help us understand what actions people take when they are using the website, and information about the device the user is using to access the website. All of the data we track in Google Analytics is anonymous and there is no personal identifying information contained therein. To opt out of our usage of Google Analytics, you can use this opt-out tool from Google. Google has more information about the cookies they use and how you can be aware of what`s being tracked.',
     '3.2 We use cookies for the following purposes:' => '3.2 We use cookies for the following purposes:',
     '3.1.1.' => '3.1.1.',
     '3.2 We use cookies for the following purposes' => '3.2 We use cookies for the following purposes',
@@ -122,8 +125,8 @@ return [
     'Any content, materials, information or otherwise obtained through the use of our site is done at your own discretion and risk. We shall have no responsibility for any damage to your computer system or loss of data that results from the content, material or software. Every effort is made to keep the website up and running smoothly. However, we take no responsibility for, and will not be liable for, the website being temporarily unavailable due to technical issues beyond our control. We reserve the right to make changes or updates to the platform at any time without notice.'=>'Any content, materials, information or otherwise obtained through the use of our site is done at your own discretion and risk. We shall have no responsibility for any damage to your computer system or loss of data that results from the content, material or software. Every effort is made to keep the website up and running smoothly. However, we take no responsibility for, and will not be liable for, the website being temporarily unavailable due to technical issues beyond our control. We reserve the right to make changes or updates to the platform at any time without notice. ',
     '2. PERSONAL RESPONSIBILITY'=> '2. PERSONAL RESPONSIBILITY ',
     'We aim to accurately represent the information provided by or throughout website and services. You are acknowledging that you are participating voluntarily in using our website and services, and you alone are solely and personally responsible for your choices, actions and results.'=> 'We aim to accurately represent the information provided by or throughout website and services. You are acknowledging that you are participating voluntarily in using our website and services, and you alone are solely and personally responsible for your choices, actions and results. ',
-    '3. DISCLOSURE OF PERSONAL INFORMATION'=> '',
-    'We do not sell or disclose information that identifies users personally i.e coaches and clients, or which allows for any third parties to contact our users directly without their consent. All coaching information is confidential. We may, however, have to disclose personal information in certain situations to ensure conformance with laws, and in the case of an emergency. The EXCEPTIONS to confidentiality include, but are not limited to, the following: - 3.1 We determine that the user is a threat to himself or herself of another person; 3.2 there is suspected abuse or neglect of a child, elderly or disabled person; 3.3 the user is threatening to commit a crime; 3.4 there is a medical emergency; or 3.5 through a court order to disclose the user’s records. In the event of such we will make reasonable efforts to discuss it with the user before taking any action.' => 'We do not sell or disclose information that identifies users personally i.e coaches and clients, or which allows for any third parties to contact our users directly without their consent. All coaching information is confidential. We may, however, have to disclose personal information in certain situations to ensure conformance with laws, and in the case of an emergency. The EXCEPTIONS to confidentiality include, but are not limited to, the following: - 3.1 We determine that the user is a threat to himself or herself of another person; 3.2 there is suspected abuse or neglect of a child, elderly or disabled person; 3.3 the user is threatening to commit a crime; 3.4 there is a medical emergency; or 3.5 through a court order to disclose the user’s records. In the event of such we will make reasonable efforts to discuss it with the user before taking any action.',
+    '3. DISCLOSURE OF PERSONAL INFORMATION'=> 'DISCLOSURE OF PERSONAL INFORMATION',
+    'We do not sell or disclose information that identifies users personally i.e coaches and clients, or which allows for any third parties to contact our users directly without their consent. All coaching information is confidential. We may, however, have to disclose personal information in certain situations to ensure conformance with laws, and in the case of an emergency. The EXCEPTIONS to confidentiality include, but are not limited to, the following: - 3.1 We determine that the user is a threat to himself or herself of another person; 3.2 there is suspected abuse or neglect of a child, elderly or disabled person; 3.3 the user is threatening to commit a crime; 3.4 there is a medical emergency; or 3.5 through a court order to disclose the user`s records. In the event of such we will make reasonable efforts to discuss it with the user before taking any action.' => 'We do not sell or disclose information that identifies users personally i.e coaches and clients, or which allows for any third parties to contact our users directly without their consent. All coaching information is confidential. We may, however, have to disclose personal information in certain situations to ensure conformance with laws, and in the case of an emergency. The EXCEPTIONS to confidentiality include, but are not limited to, the following: - 3.1 We determine that the user is a threat to himself or herself of another person; 3.2 there is suspected abuse or neglect of a child, elderly or disabled person; 3.3 the user is threatening to commit a crime; 3.4 there is a medical emergency; or 3.5 through a court order to disclose the user’s records. In the event of such we will make reasonable efforts to discuss it with the user before taking any action.',
     '4. MEDICAL DISCLAIMER'=> '4. MEDICAL DISCLAIMER ',
     'All information and results stated in our website and /or by the coaches listed on our website are for educational and information purposes only, to help the user make a better and informed decision. Coaching is NOT a substitute for counseling, psychotherapy, psychoanalysis, mental health care or substance abuse treatment. Coaching is not to be used in place of any form of diagnosis, treatment or therapy. The content provided through our website by the coaches should not substitute for medical advice from a qualified health care professional, medical or psychological (mental) diagnosis, treatment and care. The user should not discontinue or modify any medication or therapy presently being taken pursuant to medical advice, without obtaining approval from a healthcare professional.' => 'All information and results stated in our website and /or by the coaches listed on our website are for educational and information purposes only, to help the user make a better and informed decision. Coaching is NOT a substitute for counseling, psychotherapy, psychoanalysis, mental health care or substance abuse treatment. Coaching is not to be used in place of any form of diagnosis, treatment or therapy. The content provided through our website by the coaches should not substitute for medical advice from a qualified health care professional, medical or psychological (mental) diagnosis, treatment and care. The user should not discontinue or modify any medication or therapy presently being taken pursuant to medical advice, without obtaining approval from a healthcare professional.',
     '5. GENERAL ADVICE DISCLAIMER' => '5. GENERAL ADVICE DISCLAIMER',
@@ -150,7 +153,7 @@ return [
     'The sportbuddy section is meant for people that are looking for friends or activities in their area. You will be able to post your activities,  with our filters (level, age, number of participants) we will help you find the perfect participants. You can also look for activities created by other Sportbuddies in your area and participate in them freely. If you practice an activity that requires equipment you will be able to rent it for a fee that you select. So join us and start building your community!' => 'The sportbuddy section is meant for people that are looking for friends or activities in their area. You will be able to post your activities,  with our filters (level, age, number of participants) we will help you find the perfect participants. You can also look for activities created by other Sportbuddies in your area and participate in them freely. If you practice an activity that requires equipment you will be able to rent it for a fee that you select. So join us and start building your community!',
     '2.2 “Confidential Information” shall mean the Content and any information, technical data, or know-how considered proprietary or confidential by either party to these terms and conditions disclosed by either party, either directly or indirectly in any form whatsoever, including in writing, orally, machine readable form.' => '2.2 “Confidential Information” shall mean the Content and any information, technical data, or know-how considered proprietary or confidential by either party to these terms and conditions disclosed by either party, either directly or indirectly in any form whatsoever, including in writing, orally, machine readable form.',
     'Become a partner:' => 'Become a partner:',
-    'If you think that Zettaa can benefit your business or association please contact us at <b>partners@zettaa.ch </b>. We are always looking for new opportunities to help the community grow.' => 'If you think that Zettaa can benefit your business or association please contact us at <b>partners@zettaa.ch </b>. We are always looking for new opportunities to help the community grow.',
+    'If you think that Zettaa can benefit your business or association please contact us at <b>partners@zettaa.ch</b>. We are always looking for new opportunities to help the community grow.' => 'If you think that Zettaa can benefit your business or association please contact us at <b>partners@zettaa.ch </b>. We are always looking for new opportunities to help the community grow.',
     'Type of lesson:' => 'Type of lesson:',
     'Our coaches will offer two kind of lessons, Personal and group lesson. If you are looking for a one on one session to improve your health or help you achieve your goals a personal lesson is what you need. If you like to workout with other people and use that as a motivation to exercise then the group lesson is meant for you.' => 'Our coaches will offer two kind of lessons, Personal and group lesson. If you are looking for a one on one session to improve your health or help you achieve your goals a personal lesson is what you need. If you like to workout with other people and use that as a motivation to exercise then the group lesson is meant for you.',
     'Equipement:' => 'Equipement:',
@@ -331,6 +334,7 @@ return [
 
 
     // FOOTER START
+    'Choose a language' => 'Choose a language',
     'Chinese' => 'Chinese',
     'Spanish' => 'Spanish',
     'QUICK MENU' => 'QUICK MENU',
@@ -350,6 +354,7 @@ return [
     'Refund Policy'=> 'Refund Policy ',
     'SOCIAL MEDIA' => 'SOCIAL MEDIA',
     'All Rights Reserved' => 'All Rights Reserved',
+    '3 rue du Port, 1204 Genève, Switzerland' => '3 rue du Port, 1204 Genève, Switzerland',
    
     // FOOTER END
 
@@ -381,6 +386,8 @@ return [
     'Register' => 'Register',
     'Become a Coach' => 'Become a Coach',
     'Login' => 'Login',
+    'Sports Buddies' => 'Sports Buddies',
+    
     
     // HEADER END
 
@@ -397,30 +404,31 @@ return [
     'Sign In' => 'Sign In',
     'Select User Type' => 'Select User Type',
     'Become a Coach' => 'Become a Coach',
-    '1. Have you ever coached?' => '1. Have you ever coached?',
-    '2. What motivated you to become a coach? Is this your main activity?' => '2. What motivated you to become a coach? Is this your main activity?',
+    'Have you ever coached?' => '1. Have you ever coached?',
+    'What motivated you to become a coach? Is this your main activity?' => '2. What motivated you to become a coach? Is this your main activity?',
     'If not, what is your main occupation?' => 'If not, what is your main occupation?',
     'If Yes or not please explain.' => 'If Yes or not please explain.',
     'Enter your email' => 'Enter your email',
     'Enter your email Or username' => 'Enter your email Or username',
     'Enter your password' => 'Enter your password',
     'If not, what is your main occupation?' => 'If not, what is your main occupation?',
-    '3. Do you have a qualification or diploma in a sport-related discipline? (Ex. Nutrition; physiotherapy; sports coaching etc.)' => '3. Do you have a qualification or diploma in a sport-related discipline? (Ex. Nutrition; physiotherapy; sports coaching etc.)',
-    '4. Have you practiced a sport for many years or even at high level?' => '4. Have you practiced a sport for many years or even at high level?',
+    'Do you have a qualification or diploma in a sport-related discipline? (Ex. Nutrition; physiotherapy; sports coaching etc.)' => '3. Do you have a qualification or diploma in a sport-related discipline? (Ex. Nutrition; physiotherapy; sports coaching etc.)',
+    'Have you practiced a sport for many years or even at high level?' => '4. Have you practiced a sport for many years or even at high level?',
     'If so, how many years? At what level? Which sport?' => 'If so, how many years? At what level? Which sport?',
-    '5. As a coach, what are the qualities that make you an exceptional instructor?' => '5. As a coach, what are the qualities that make you an exceptional instructor?',
-    '6. As an athlete, what do you think are the fundamental values for progress?' => '6. As an athlete, what do you think are the fundamental values for progress?',
-    '7. Bonus : Share with us your worst/best memory during a training or a competition.' => '7. Bonus : Share with us your worst/best memory during a training or a competition.',
+    'As a coach, what are the qualities that make you an exceptional instructor?' => '5. As a coach, what are the qualities that make you an exceptional instructor?',
+    'As an athlete, what do you think are the fundamental values for progress?' => '6. As an athlete, what do you think are the fundamental values for progress?',
+    'Bonus : Share with us your worst/best memory during a training or a competition.' => '7. Bonus : Share with us your worst/best memory during a training or a competition.',
     'By checking this box, you declare that you have read and understood the Coach Label Zettaa document and agree to refer to it when you are in contact with your Zettaa customers.' => 'By checking this box, you declare that you have read and understood the Coach Label Zettaa document and agree to refer to it when you are in contact with your Zettaa customers.',
    
     // MODAL END
 
 
     // MESSAGE BOX START
-
+    'Language Preference' =>'Language Preference',
+    'Location' => 'Location',
     'Please include' => 'Please include',
     'Project Description' => 'Project Description',
-    'Write your message...' => 'Write your message...',
+    'Write your message' => 'Write your message...',
     
 
     // MESSAGE BOX END
@@ -496,6 +504,10 @@ return [
     'Coach Lesson' => 'Coach Lesson',
     'Related Lesson' => 'Related Lesson',
     'Send a Message' => 'Send a Message',
+    'No of Session' => 'No of Session',
+    'Single Activity'=> 'Single Activity',
+    'Your browser does not support the video element.'=>'Your browser does not support the video element.',
+
 
     
     // LESSON DETAIL END
@@ -545,6 +557,5 @@ return [
     'Sports Buddy`s Activity'=> 'Sports Buddy`s Activity ',
   
 
-]
+];
 
-?>

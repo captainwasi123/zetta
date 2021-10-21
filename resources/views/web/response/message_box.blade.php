@@ -9,7 +9,7 @@
     <div class="contact-profile-section1">
       <ul>
         <li>
-          <strong>Language Preference:</strong><br>
+          <strong>{{ __('content.Language Preference')}}:</strong><br>
           @foreach($data->langs as $val)
               {{$val->language}},
           @endforeach
@@ -18,7 +18,7 @@
           @endif
         </li>
         <li class="m-t-20">
-          <strong>Location:</strong><br>
+          <strong>{{ __('content.Location')}}:</strong><br>
           {{empty($data->country) ? '-' : $data->country->country}}
         </li>                
       </ul>
@@ -30,7 +30,7 @@
       <form method="post" action="{{URL::to('/sendMessage')}}">
         {{csrf_field()}}
         <input type="hidden" name="msg_id" value="{{base64_encode($data->id)}}">
-        <textarea rows="11" cols="5" placeholder="Write your message..." name="message" required></textarea>
+        <textarea rows="11" cols="5" placeholder="{{ __('content.Write your message')}}" name="message" required></textarea>
         <input type="submit" name="">
       </form>                
     </div>

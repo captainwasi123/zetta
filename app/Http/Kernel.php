@@ -49,10 +49,11 @@ class Kernel extends HttpKernel
      * The application's route middleware.
      *
      * These middleware may be assigned to groups or used individually.
-     *
+     * 
      * @var array
      */
     protected $routeMiddleware = [
+        'changeLang' => \App\Http\Middleware\changeLang::class,
         'auth' => \App\Http\Middleware\Authenticate::class,
         'userAuth' => \App\Http\Middleware\userAuth::class,
         'adminAuth' => \App\Http\Middleware\adminAuth::class,

@@ -25,7 +25,7 @@
                <form method="get" action="{{route('web.search')}}">
                   <div class="label-field3 autocomplete">
                      <i class="fa fa-search"> </i>
-                     <input type="text" placeholder="Choose a Sport" name="val" id="keywords_val">
+                     <input type="text" placeholder="{{ __('content.Choose a Sport') }}" name="val" id="keywords_val">
                   </div>
                   <div class="label-field3">
                      <i class="fa fa-map-marker-alt"></i>
@@ -121,13 +121,13 @@
                      <div class="work">
                      <img src="{{URL::to('/assets/website')}}/images/work1.png">
                      <h2> {{ __('content.Search your Sports') }}</h2>
-                     <p> {{ __('content.Find the right sport partner near you. Either you’re looking for a coach a buddy, our filters will guide you.') }}Find the right sport partner near you. Either you’re looking for a coach a buddy, our filters will guide you.</p>   </div>                     
+                     <p> {{ __('content.Find the right sport partner near you. Either you’re looking for a coach a buddy, our filters will guide you.') }}</p>   </div>                     
                   </div> 
                   <div class="col-md-4">
                      <div class="work">
                      <img src="{{URL::to('/assets/website')}}/images/work2.png">
                      <h2> {{ __('content.Book Your Session') }}</h2>
-                     <p>Reserve your activity or lesson. Follow your progression with your personal dashboard.</p>   </div>                     
+                     <p> {{ __('content.Reserve your activity or lesson. Follow your progression with your personal dashboard.') }}</p>   </div>                     
                   </div> 
                   <div class="col-md-4">
                      <div class="work">
@@ -305,7 +305,7 @@
                                         @endphp
                                     @endforeach
                                      {{--  {{'$'.number_format($price)}}  --}}
-                                 {{$price="PARTICIPATE"}}
+                                 {{$price=__('content.PARTICIPATE')}}
                                       
                                 @else
                                  {{ __('content.PARTICIPATE') }}
@@ -421,7 +421,7 @@
                   <div class="review-text review-bg1">
                      <p class="  m-b-15">  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.  </p>
                      <h5 class="col-white">  Hennyfercity L </h5>
-                     <h6> Reviews </h6>
+                     <h6> {{ __('content.Reviews') }}  </h6>
                      <p class="m-b-0"> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> </p>
                   </div>
                </div>
@@ -429,7 +429,7 @@
                   <div class="review-text review-bg2">
                      <p class="  m-b-15">  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.  </p>
                      <h5 class="col-white">  Hennyfercity L </h5>
-                     <h6> Reviews </h6>
+                     <h6> {{ __('content.Reviews') }}  </h6>
                      <p class="m-b-0"> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> </p>
                   </div>
                </div>
@@ -437,7 +437,7 @@
                   <div class="review-text review-bg1">
                      <p class="  m-b-15">  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.  </p>
                      <h5 class="col-white">  Hennyfercity L </h5>
-                     <h6> Reviews </h6>
+                     <h6>   {{ __('content.Reviews') }} </h6>
                      <p class="m-b-0"> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> </p>
                   </div>
                </div>

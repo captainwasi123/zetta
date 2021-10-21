@@ -53,37 +53,37 @@ header.header-2 .logo a img {
            
             
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Coach <i class="fas fa-chevron-down"></i></a>
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ __('content.Coach')}} <i class="fas fa-chevron-down"></i></a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-               <a class="dropdown-item {{Auth::check() ? '' : 'open-join-buddy' }}" href="javascript:void(0)">Become a Coach </a>
+               <a class="dropdown-item {{Auth::check() ? '' : 'open-join-buddy' }}" href="javascript:void(0)">{{ __('content.Become a Coach')}} </a>
                 @if(Auth::check())
                     @if(Auth::user()->type == '2')
-                        <a class="dropdown-item" href="{{route('coach.lesson.add')}}">Create a Lesson</a>
+                        <a class="dropdown-item" href="{{route('coach.lesson.add')}}">{{ __('content.Create a Lesson')}}</a>
                     @else
-                        <a class="dropdown-item" href="{{route('buddy.become_a_coach')}}">Create a Lesson</a>
+                        <a class="dropdown-item" href="{{route('buddy.become_a_coach')}}">{{ __('content.Create a Lesson')}}</a>
                     @endif
                 @else
-                    <a class="dropdown-item open-login" href="javascript:void(0)">Create a Lesson</a>
+                    <a class="dropdown-item open-login" href="javascript:void(0)">{{ __('content.Create a Lesson')}}</a>
                 @endif
 
-                <a class="dropdown-item" href="{{route('web.all','Lessons')}}">Lessons</a>
-                <a class="dropdown-item" href="{{route('web.all','Coaches')}}">Coaches</a>
+                <a class="dropdown-item" href="{{route('web.all','Lessons')}}">{{ __('content.Lessons')}}</a>
+                <a class="dropdown-item" href="{{route('web.all','Coaches')}}">{{ __('content.Coaches')}}</a>
               </div>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Sports Buddy <i class="fas fa-chevron-down"></i></a>
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> {{ __('content.Sports Buddy')}} <i class="fas fa-chevron-down"></i></a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 @if(Auth::check())
-                    <a class="dropdown-item" href="{{route('buddy.activity.add')}}">Create a Activity</a>
+                    <a class="dropdown-item" href="{{route('buddy.activity.add')}}">{{ __('content.Create a Activity')}}</a>
                 @else
-                    <a class="dropdown-item open-login" href="javascript:void(0)">Create a Activity</a>
+                    <a class="dropdown-item open-login" href="javascript:void(0)">{{ __('content.Create a Activity')}}</a>
                 @endif
-                <a class="dropdown-item" href="{{route('web.all','Activities')}}">Activities</a>
-                <a class="dropdown-item" href="{{route('web.all','Sports Buddies')}}">Sports Buddies</a>
+                <a class="dropdown-item" href="{{route('web.all','Activities')}}">{{ __('content.Activities')}}</a>
+                <a class="dropdown-item" href="{{route('web.all','Sports Buddies')}}">{{ __('content.Sports Buddies')}}</a>
               </div>
             </li>
             <!-- <li class="nav-item">
-              <a class="nav-link" href="{{URL::to('about_us')}}">About Us</a>
+              <a class="nav-link" href="{{URL::to('about_us')}}">{{ __('content.About Us')}}</a>
             </li> -->
           </ul>
         </div>
@@ -108,16 +108,16 @@ header.header-2 .logo a img {
                <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{Auth::user()->profile_img}}" alt="user" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';"> <i class="fa fa-caret-down"> </i>
                </button>
                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="{{route('buddy.dashboard')}}"> Dashboard </a>
-                  <a class="dropdown-item" href="{{route('logout')}}"> Logout </a>
+                  <a class="dropdown-item" href="{{route('buddy.dashboard')}}"> {{ __('content.Dashboard')}} </a>
+                  <a class="dropdown-item" href="{{route('logout')}}"> {{ __('content.Logout')}} </a>
                </div>
             </div>
          </div>
       @else
          <div class="header-buttons">
-            <a href="javascript:void(0)" class="open-join-buddy header-btn1" data-id="buddy"> Register </a>
-            <!-- <a href="javascript:void(0)" class="open-join header-btn2"> Become a Coach </a> -->
-            <a href="javascript:void(0)" class="open-login header-btn3"> Login </a>
+            <a href="javascript:void(0)" class="open-join-buddy header-btn1" data-id="buddy"> {{ __('content.Register')}} </a>
+            <!-- <a href="javascript:void(0)" class="open-join header-btn2"> {{ __('content.Become a Coach')}}</a> -->
+            <a href="javascript:void(0)" class="open-login header-btn3"> {{ __('content.Login')}} </a>
          </div>
       @endif
    </div>
@@ -143,7 +143,7 @@ header.header-2 .logo a img {
                <input type="hidden" name="country" id="add-country" value="{{isset($search_data['type']) ? $search_data['type'] : ''}}">
             </div>
             <div class="submit-field1">
-               <button class="bg-purple col-white custom-btn1"> Search </button>
+               <button class="bg-purple col-white custom-btn1"> {{ __('content.Search')}} </button>
             </div>
          </form>
           <nav class="navbar navbar-expand-lg navbar-dark stickey-custom "> 
@@ -161,32 +161,32 @@ header.header-2 .logo a img {
                <a class="dropdown-item {{Auth::check() ? '' : 'open-join-buddy' }}" href="javascript:void(0)">Become a Coach </a>
                 @if(Auth::check())
                     @if(Auth::user()->type == '2')
-                        <a class="dropdown-item" href="{{route('coach.lesson.add')}}">Create a Lesson</a>
+                        <a class="dropdown-item" href="{{route('coach.lesson.add')}}">{{ __('content.Create a Lesson')}}</a>
                     @else
-                        <a class="dropdown-item" href="{{route('buddy.become_a_coach')}}">Create a Lesson</a>
+                        <a class="dropdown-item" href="{{route('buddy.become_a_coach')}}">{{ __('content.Create a Lesson')}}</a>
                     @endif
                 @else
-                    <a class="dropdown-item open-login" href="javascript:void(0)">Create a Lesson</a>
+                    <a class="dropdown-item open-login" href="javascript:void(0)">{{ __('content.Create a Lesson')}}</a>
                 @endif
 
-                <a class="dropdown-item" href="{{route('web.all','Lessons')}}">Lessons</a>
-                <a class="dropdown-item" href="{{route('web.all','Coaches')}}">Coaches</a>
+                <a class="dropdown-item" href="{{route('web.all','Lessons')}}">{{ __('content.Lessons')}}</a>
+                <a class="dropdown-item" href="{{route('web.all','Coaches')}}">{{ __('content.Coaches')}}</a>
               </div>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Sports Buddy <i class="fas fa-chevron-down"></i></a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 @if(Auth::check())
-                    <a class="dropdown-item" href="{{route('buddy.activity.add')}}">Create a Activity</a>
+                    <a class="dropdown-item" href="{{route('buddy.activity.add')}}">{{ __('content.Create a Activity')}}</a>
                 @else
-                    <a class="dropdown-item open-login" href="javascript:void(0)">Create a Activity</a>
+                    <a class="dropdown-item open-login" href="javascript:void(0)">{{ __('content.Create a Activity')}}</a>
                 @endif
-                <a class="dropdown-item" href="{{route('web.all','Activities')}}">Activities</a>
-                <a class="dropdown-item" href="{{route('web.all','Sports Buddies')}}">Sports Buddies</a>
+                <a class="dropdown-item" href="{{route('web.all','Activities')}}">{{ __('content.Activitie')}}s</a>
+                <a class="dropdown-item" href="{{route('web.all','Sports Buddies')}}">{{ __('content.Sports Buddies')}}</a>
               </div>
             </li>
           <!--   <li class="nav-item">
-              <a class="nav-link" href="{{URL::to('about_us')}}">About Us</a>
+              <a class="nav-link" href="{{URL::to('about_us')}}">{{ __('content.About Us')}}</a>
             </li> -->
           </ul>
         </div>
@@ -204,33 +204,33 @@ header.header-2 .logo a img {
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Coach <i class="fas fa-chevron-down"></i></a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-               <a class="dropdown-item {{Auth::check() ? '' : 'open-join-buddy' }}" href="javascript:void(0)">Become a Coach </a>
+               <a class="dropdown-item {{Auth::check() ? '' : 'open-join-buddy' }}" href="javascript:void(0)">{{ __('content.Become a Coach')}} </a>
                 @if(Auth::check())
                     @if(Auth::user()->type == '2')
-                        <a class="dropdown-item" href="{{route('coach.lesson.add')}}">Create a Lesson</a>
+                        <a class="dropdown-item" href="{{route('coach.lesson.add')}}">{{ __('content.Create a Lesson')}}</a>
                     @else
-                        <a class="dropdown-item" href="{{route('buddy.become_a_coach')}}">Create a Lesson</a>
+                        <a class="dropdown-item" href="{{route('buddy.become_a_coach')}}">{{ __('content.Create a Lesson')}}</a>
                     @endif
                 @else
-                    <a class="dropdown-item open-login" href="javascript:void(0)">Create a Lesson</a>
+                    <a class="dropdown-item open-login" href="javascript:void(0)">{{ __('content.Create a Lesson')}}</a>
                 @endif
 
-                <a class="dropdown-item" href="{{route('web.all','Lessons')}}">Lessons</a>
+                <a class="dropdown-item" href="{{route('web.all','Lessons')}}">{{ __('content.Lessons')}}</a>
               </div>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Sports Buddy <i class="fas fa-chevron-down"></i></a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 @if(Auth::check())
-                    <a class="dropdown-item" href="{{route('buddy.activity.add')}}">Create a Activity</a>
+                    <a class="dropdown-item" href="{{route('buddy.activity.add')}}">{{ __('content.Create a Activity')}}</a>
                 @else
-                    <a class="dropdown-item open-login" href="javascript:void(0)">Create a Activity</a>
+                    <a class="dropdown-item open-login" href="javascript:void(0)">{{ __('content.Create a Activity')}}</a>
                 @endif
-                <a class="dropdown-item" href="{{route('web.all','Activities')}}">Activities</a>
+                <a class="dropdown-item" href="{{route('web.all','Activities')}}">{{ __('content.Activities')}}</a>
               </div>
             </li>
           <!--   <li class="nav-item">
-              <a class="nav-link" href="{{URL::to('about_us')}}">About Us</a>
+              <a class="nav-link" href="{{URL::to('about_us')}}">{{ __('content.About Us')}}</a>
             </li> -->
           </ul>
         </div>
@@ -247,16 +247,16 @@ header.header-2 .logo a img {
                <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{Auth::user()->profile_img}}" alt="user" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';"> <i class="fa fa-caret-down"> </i>
                </button>
                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="{{route('buddy.dashboard')}}"> Dashboard </a>
-                  <a class="dropdown-item" href="{{route('logout')}}"> Logout </a>
+                  <a class="dropdown-item" href="{{route('buddy.dashboard')}}"> {{ __('content.Dashboard')}} </a>
+                  <a class="dropdown-item" href="{{route('logout')}}"> {{ __('content.Logout')}} </a>
                </div>
             </div>
          </div>
       @else
          <div class="header-buttons">
-            <a href="javascript:void(0)" class="open-join header-btn1"> Register </a>
-            <!-- <a href="javascript:void(0)" class="open-join-coach header-btn2"> Become a Coach </a> -->
-            <a href="javascript:void(0)" class="open-login header-btn3"> Login </a>
+            <a href="javascript:void(0)" class="open-join header-btn1"> {{ __('content.Register')}} </a>
+            <!-- <a href="javascript:void(0)" class="open-join-coach header-btn2"> {{ __('content.Become a Coach')}} </a> -->
+            <a href="javascript:void(0)" class="open-login header-btn3"> {{ __('content.Login')}} </a>
          </div>
       @endif
    </div>
@@ -277,23 +277,23 @@ header.header-2 .logo a img {
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Coach <i class="fas fa-chevron-down"></i></a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 
-               <a class="dropdown-item" href="javascript:void(0)">Become a Coach </a>
-                <a class="dropdown-item" href="#">Online Lessons</a>
-                <a class="dropdown-item" href="#">Group Lessons</a>
-                <a class="dropdown-item" href="#">Private Lessons</a>
+               <a class="dropdown-item" href="javascript:void(0)">{{ __('content.Become a Coach')}} </a>
+                <a class="dropdown-item" href="#">{{ __('content.Online Lessons')}}</a>
+                <a class="dropdown-item" href="#">{{ __('content.Group Lessons')}}</a>
+                <a class="dropdown-item" href="#">{{ __('content.Private Lesson')}}s</a>
               </div>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Sports Buddy <i class="fas fa-chevron-down"></i></a>
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> {{ __('content.Sports Buddy')}} <i class="fas fa-chevron-down"></i></a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Online Activities</a>
-                <a class="dropdown-item" href="#">Group Activities</a>
-                <a class="dropdown-item" href="#">Private Activities</a>
-                <a class="dropdown-item" href="#">Girl Activities</a>
+                <a class="dropdown-item" href="#">{{ __('content.Online Activitie')}}s</a>
+                <a class="dropdown-item" href="#">{{ __('content.Group Activities')}}</a>
+                <a class="dropdown-item" href="#">{{ __('content.Private Activities')}}</a>
+                <a class="dropdown-item" href="#">{{ __('content.Girl Activities')}}</a>
               </div>
             </li>
            <!--  <li class="nav-item">
-              <a class="nav-link" href="{{URL::to('about_us')}}">About Us</a>
+              <a class="nav-link" href="{{URL::to('about_us')}}">{{ __('content.About Us')}}</a>
             </li> -->
           </ul>
         </div>
@@ -322,16 +322,16 @@ header.header-2 .logo a img {
                <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{Auth::user()->profile_img}}" alt="user" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';"> <i class="fa fa-caret-down"> </i>
                </button>
                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="{{route('buddy.dashboard')}}"> Dashboard </a>
-                  <a class="dropdown-item" href="{{route('logout')}}"> Logout </a>
+                  <a class="dropdown-item" href="{{route('buddy.dashboard')}}"> {{ __('content.Dashboard')}} </a>
+                  <a class="dropdown-item" href="{{route('logout')}}"> {{ __('content.Logout')}} </a>
                </div>
             </div>
          </div>
       @else
          <div class="header-buttons">
             <a href="javascript:void(0)" class="open-join-buddy header-btn1" data-id="buddy"> Register </a>
-            <!-- <a href="javascript:void(0)" class="open-join header-btn2"> Become a Coach </a> -->
-            <a href="javascript:void(0)" class="open-login header-btn3"> Login </a>
+            <!-- <a href="javascript:void(0)" class="open-join header-btn2"> {{ __('content.Become a Coach')}} </a> -->
+            <a href="javascript:void(0)" class="open-login header-btn3"> {{ __('content.Login')}} </a>
          </div>
       @endif
    </div>

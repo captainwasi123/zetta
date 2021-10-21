@@ -75,7 +75,7 @@
                      <div>
                         <video style="height:350px; width: 100%;" controls>
                            <source src="{{URL::to('/public/storage/user/activity/media/'.$val->id.'-'.$val->media)}}" type="video/mp4">
-                          Your browser does not support the video element.
+                          {{ __('content.Your browser does not support the video element.')}}
                         </video>
                      </div>
                   @else
@@ -86,7 +86,7 @@
                @endforeach
             </div>
             <div class="lesson-holder-about m-t-0 no-border">
-               <h3 class="col-white m-b-15"> About The Coach </h3>
+               <h3 class="col-white m-b-15"> {{ __('content.About The Coach')}} </h3>
             </div>
             <div class="lesson-holder-profile">
                <div>
@@ -95,12 +95,12 @@
                <a href="{{route('web.coach.details', base64_encode($data->user->id))}}">
                   <h4 class="col-white no-margin m-t-0 m-b-0"> {{empty($data->user->fname) ? 'Anonymous' : $data->user->fname.' '.$data->user->lname}} </h4>
                </a>
-               <h6 class="col-grey"> Coach </h6>
+               <h6 class="col-grey"> {{ __('content.Coach')}} </h6>
                <h5 class="col-purple m-b-15"> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> 5.0  </h5>
             </div>
             
             <div class="lesson-holder-about">
-               <h3 class="col-white m-b-15"> About The Lesson </h3>
+               <h3 class="col-white m-b-15"> {{ __('content.About The Lesson')}} </h3>
                <h5 class="col-white m-b-30" >  {{$data->title}} </h5>
                <div class="col-white"  >
                   {!! $data->description !!}
@@ -113,7 +113,7 @@
                      <div class="col-md-5 col-lg-5 col-12">
                         <div class="field-name">
                            <img src="{{URL::to('/assets/website')}}/images/field-icon5.jpg">
-                           <span> City </span>
+                           <span> {{ __('content.City')}} </span>
                         </div>
                      </div>
                      <div class="col-md-7 col-lg-7 col-12">
@@ -124,7 +124,7 @@
                      <div class="col-md-5 col-lg-5 col-12">
                         <div class="field-name">
                            <img src="{{URL::to('/assets/website')}}/images/field-icon6.jpg">
-                           <span> Sports Category</span>
+                           <span> {{ __('content.Sports Category')}}</span>
                         </div>
                      </div>
                      <div class="col-md-7 col-lg-7 col-12">
@@ -139,14 +139,13 @@
                </div>
             </div>
             <div class="sec-head1 m-t-40 m-b-15 extra">
-               <h3 class="col-white"> Reviews as Coach </h3>
+               <h3 class="col-white"> {{ __('content.Reviews as Coach')}} </h3>
             </div>
             <div class="review-slider arrows3 extra">
                <div class="review-box">
                   <img src="{{URL::to('/assets/website')}}/images/profile-image1.jpg">
                   <h5 class="col-white"> <b class="col-purple"> Lennon <i class="fa fa-star"> </i> </b> 5.0 </h5>
-                  <p class="col-white"> That would be good please share any reference or similar website interms of features
-                     and functionality you need.
+                  <p class="col-white"> {{ __('content.That would be good please share any reference or similar website interms of features and functionality you need.')}}
                   </p>
                </div>
                <div class="review-box">
@@ -164,12 +163,12 @@
                   </p>
                </div>
             </div><div class="sec-head1 m-t-40 m-b-15">
-               <h3 class="col-white"> Reviews as Coach </h3>
+               <h3 class="col-white"> {{ __('content.Reviews as Coach')}} </h3>
             </div>
             <div class="review-slider arrows3">
                <div class="review-box">
                   <img src="{{URL::to('/assets/website')}}/images/profile-image1.jpg">
-                  <h5 class="col-white"> <b class="col-purple"> Lennon <i class="fa fa-star"> </i> </b> 5.0 </h5>
+                  <h5 class="col-white"> <b class="col-purple"> {{ __('content.Lennon')}} <i class="fa fa-star"> </i> </b> 5.0 </h5>
                   <p class="col-white"> That would be good please share any reference or similar website interms of features
                      and functionality you need.
                   </p>
@@ -233,19 +232,19 @@
                   </div>
                   <div class="col-md-5 col-lg-5 col-sm-12 col-12">
                      <div class="rating-breakdown">
-                        <h3 class="col-white"> Rating Breakdown </h3>
+                        <h3 class="col-white"> {{ __('content.Rating Breakdown')}} </h3>
                         <table>
                            <tbody>
                               <tr>
-                                 <td class="col-white"> Seller communication level  </td>
+                                 <td class="col-white"> {{ __('content.Seller communication level')}}  </td>
                                  <td class="col-white"> 4.9 <span class="col-purple"> <i class="fa fa-star"> </i> </span> </td>
                               </tr>
                               <tr>
-                                 <td class="col-white">Recommend to a friend  </td>
+                                 <td class="col-white">{{ __('content.Recommend to a friend')}}  </td>
                                  <td class="col-white"> 4.9 <span class="col-purple"> <i class="fa fa-star"> </i> </span> </td>
                               </tr>
                               <tr>
-                                 <td class="col-white"> Service as described  </td>
+                                 <td class="col-white"> {{ __('content.Service as described')}}  </td>
                                  <td class="col-white"> 4.9 <span class="col-purple"> <i class="fa fa-star"> </i> </span> </td>
                               </tr>
                            </tbody>
@@ -260,13 +259,13 @@
                <div class="packages-main">
                   <ul class="nav nav-tabs" role="tablist">
                      <li class="nav-item">
-                        <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">Basic</a>
+                        <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">{{ __('content.Basic')}}</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link " data-toggle="tab" href="#tabs-2" role="tab">Standard</a>
+                        <a class="nav-link " data-toggle="tab" href="#tabs-2" role="tab">{{ __('content.Standard')}}</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link " data-toggle="tab" href="#tabs-3" role="tab">Premium</a>
+                        <a class="nav-link " data-toggle="tab" href="#tabs-3" role="tab">{{ __('content.Premium')}}</a>
                      </li>
                   </ul>
                   <!-- Tab panes -->
@@ -275,21 +274,21 @@
                         <div class="package-content">
                            <div class="package-content-head">
                               <h3 class="m-b-20 col-white">
-                                 Basic Package
+                                 {{ __('content.Basic Package')}}
                                  <b class="col-purple"> {{'$ '.number_format($data->packages[0]->price)}} </b>
                               </h3>
                               <p class="col-white m-b-20">
-                                Duration
+                                {{ __('content.Duration')}}
                                 <br>
                                 <b class="col-purple"> {{$data->packages[0]->duration}} </b>
                              </p>
                                 <p class="col-white m-b-20">
-                                No of Session
+                                {{ __('content.No of Session')}}
                                 <br>
                                 <b class="col-purple"> {{$data->packages[0]->days}} </b>
                              </p>
                               <p class="col-white m-b-20">
-                                 Services
+                                 {{ __('content.Services')}}
                               </p>
                            </div>
                            <ul class="list-type1 no-border">
@@ -309,21 +308,21 @@
                        <div class="package-content">
                            <div class="package-content-head">
                               <h3 class="m-b-20 col-white">
-                                 Standard Package
+                                 {{ __('content.Standard Package')}}
                                  <b class="col-purple"> {{'$ '.number_format($data->packages[1]->price)}} </b>
                               </h3>
                               <p class="col-white m-b-20">
-                                Duration
+                                {{ __('content.Duration')}}
                                 <br>
                                 <b class="col-purple"> {{$data->packages[1]->duration}} </b>
                              </p>
                                 <p class="col-white m-b-20">
-                                No of Session
+                                {{ __('content.No of Session')}}
                                 <br>
                                 <b class="col-purple"> {{$data->packages[1]->days}} </b>
                              </p>
                               <p class="col-white m-b-20">
-                                 Services
+                                 {{ __('content.Services')}}
                               </p>
                            </div>
                            <ul class="list-type1 no-border">
@@ -343,21 +342,21 @@
                        <div class="package-content">
                            <div class="package-content-head">
                               <h3 class="m-b-20 col-white">
-                                 Premium Package
+                                 {{ __('content.Premium Package')}}
                                  <b class="col-purple"> {{'$ '.number_format($data->packages[2]->price)}} </b>
                               </h3>
                               <p class="col-white m-b-20">
-                                Duration
+                                {{ __('content.Duration')}}
                                 <br>
                                 <b class="col-purple"> {{$data->packages[2]->duration}} </b>
                              </p>
                                <p class="col-white m-b-20">
-                                No of Session
+                                {{ __('content.No of Session')}}
                                 <br>
                                 <b class="col-purple"> {{$data->packages[2]->days}} </b>
                              </p>
                               <p class="col-white m-b-20">
-                                 Services
+                                 {{ __('content.Services')}}
                               </p>
                            </div>
                            <ul class="list-type1 no-border">
@@ -399,7 +398,7 @@
                                           <img src="{{URL::to('/assets/website')}}/images/clock-icon.jpg">  
                                        </th>
                                        <th colspan="2">
-                                          Availability
+                                          {{ __('content.Availability')}}
                                        </th>
                                     </tr>
                                      <tr>
@@ -450,20 +449,20 @@
                               <li class="block-element2"> <i class="fa fa-check col-purple"> </i> 
                                  @switch($data->availability)
                                     @case('1')
-                                       Only Zoom Classes
+                                       {{ __('content.Only Zoom Classes')}}
                                        @break
 
                                     @case('2')
-                                       Only Normal Classes
+                                       {{ __('content.Only Normal Classes')}}
                                        @break
 
                                     @case('3')
-                                       Normal Classes, Zoom Classess
+                                       {{ __('content.Normal Classes, Zoom Classess')}}
                                        @break
                                  @endswitch
                               </li>
                               <li class="block-element2"> <i class="fa fa-check col-purple"> </i> 
-                                 Available For: 
+                                 {{ __('content.Available For')}}: 
                                  <strong>
                                     @php $availability_for = json_decode($data->availability_for); @endphp
                                     @if(!empty($availability_for))
@@ -491,7 +490,7 @@
                               <li class="block-element2"> <i class="fa fa-check col-purple"> </i> 
                                 Equipment :
                                  @if($data->equipment->count() > 0)
-                                  <strong> Available</strong>
+                                  <strong> {{ __('content.Available')}}</strong>
                                  <table class="table table-striped col-white ">
                                      <tbody>
                                    
@@ -508,7 +507,7 @@
                                     </table>
                                  
                                  @else
-                                   Not Available: 
+                                   {{ __('content.Not Available')}}: 
                                  @endif
                                 
                               </li>
@@ -546,7 +545,7 @@
 <section class="pad-top-40 bg-dark2 pad-bot-20" style="border-bottom: 1px solid grey">
    <div class="container">
       <div class="sec-head1 m-b-25">
-         <h3 class="col-white"> Coach Lesson </h3>
+         <h3 class="col-white"> {{ __('content.Coach Lesson')}} </h3>
       </div>
       <div class="boxes-slider1 arrows1">
          @foreach($tlessons as $val)
@@ -558,7 +557,7 @@
                      </div>
                      <div class="lesson-title-block">
                         <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{empty($val->user) ? '' : $val->user->profile_img}}" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';">
-                        <h4> {{empty($val->user) ? 'Unknown' : $val->user->fname.' '.$val->user->lname}} <span> Coach </span>  </h4>
+                        <h4> {{empty($val->user) ? 'Unknown' : $val->user->fname.' '.$val->user->lname}} <span> {{ __('content.Coach')}} </span>  </h4>
                         @if($val->availability != '2')
                            <div class="zoom-tag"> <img src="{{URL::to('/assets/website')}}/images/zoom-logo.png"> Only Zoom Classes </div>
                         @endif
@@ -571,7 +570,7 @@
                      </div>
                      <div class="lesson-rating-block">
                         <a href="" class="col-purple"> <i class="fa fa-heart col-purple"></i> </a>
-                        <span class="col-grey"> STARTING AT <b class="col-white"> {{'$'.number_format($val->packages[0]->price)}} </b> </span>
+                        <span class="col-grey"> {{ __('content.STARTING AT')}} <b class="col-white"> {{'$'.number_format($val->packages[0]->price)}} </b> </span>
                      </div>
                   </div>
                </a>
@@ -585,7 +584,7 @@
 <section class="pad-top-40 pad-bot-40 bg-dark2">
    <div class="container">
       <div class="sec-head1 m-b-25">
-         <h3 class="col-white"> Related Lesson </h3>
+         <h3 class="col-white"> {{ __('content.Related Lesson')}} </h3>
       </div>
       <div class="boxes-slider1 arrows1">
          @foreach($olessons as $val)
@@ -597,9 +596,9 @@
                      </div>
                      <div class="lesson-title-block">
                         <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{empty($val->user) ? '' : $val->user->profile_img}}" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';">
-                        <h4> {{empty($val->user) ? 'Unknown' : $val->user->fname.' '.$val->user->lname}} <span> Coach </span>  </h4>
+                        <h4> {{empty($val->user) ? 'Unknown' : $val->user->fname.' '.$val->user->lname}} <span> {{ __('content.Coach')}} </span>  </h4>
                         @if($val->availability != '2')
-                           <div class="zoom-tag"> <img src="{{URL::to('/assets/website')}}/images/zoom-logo.png"> Only Zoom Classes </div>
+                           <div class="zoom-tag"> <img src="{{URL::to('/assets/website')}}/images/zoom-logo.png"> {{ __('content.Only Zoom Classes')}} </div>
                         @endif
                      </div>
                      <div class="lesson-info-block">
@@ -610,7 +609,7 @@
                      </div>
                      <div class="lesson-rating-block">
                         <a href="" class="col-purple"> <i class="fa fa-heart col-purple"></i> </a>
-                        <span class="col-grey"> STARTING AT <b class="col-white"> {{'$'.number_format($val->packages[0]->price)}} </b> </span>
+                        <span class="col-grey"> {{ __('content.STARTING AT')}} <b class="col-white"> {{'$'.number_format($val->packages[0]->price)}} </b> </span>
                      </div>
                   </div>
                </a>
@@ -628,7 +627,7 @@
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header contact-profile">
-          <h4 class="modal-title ">Send a Message</h4>
+          <h4 class="modal-title ">{{ __('content.Send a Message')}}</h4>
           <button type="button" class="close" data-dismiss="modal">&times;</button>          
         </div>
         <div class="modal-body" id="getUserMessageModalContent">

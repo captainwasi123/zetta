@@ -2,34 +2,34 @@
    <div class="modal-dialog modal-lg" role="document" style="max-width: 500px;">
       <div class="modal-content" id="r_content">
          <div class="join-pop-head">
-            <h3> Join Zettaa <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button> </h3>
+            <h3> {{ __('content.Join')}} Zettaa <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button> </h3>
          </div>
          <div id="r_social">
             <div class="join-social">
-               <a href="{{ url('auth/facebook') }}"> <i class="fab fa-facebook-f"> </i> Continue with Facebook </a>
+               <a href="{{ url('auth/facebook') }}"> <i class="fab fa-facebook-f"> </i>   Continue with Facebook </a>
                
             </div>
             <div class="join-socialg">
-                <a href="{{ url('auth/google') }}"> <i><img class="img-goolge" src="{{URL::to('/public/google.png')}}"  height="16" width="16"> </i> Continue with Google </a>
+                <a href="{{ url('auth/google') }}"> <i><img class="img-goolge" src="{{URL::to('/public/google.png')}}"  height="16" width="16"> </i> {{ __('content.Continue with Google')}}  </a>
              </div>
             <div class="join-or">
-               <p> <b> OR </b> </p>
+               <p> <b>  OR </b> </p>
             </div>
          </div>
          <div class="join-form">
             <form id="register-form" action="{{URL::to('/register')}}">
                {{csrf_field()}}
-               <input type="email" class="email_reg" placeholder="Enter your email" name="email" required>
+               <input type="email" class="email_reg" placeholder="{{ __('content.Enter your email')}}" name="email" required>
                <span id="r_error" class="error_span"></span>
                <div id="r_fields">
 
                </div>
-               <button type="submit"> Continue  </button>
-               <p> By joining I agree to receive emails from Zettaa </p>
+               <button type="submit">  {{ __('content.Continue')}}  </button>
+               <p>  {{ __('content.By joining I agree to receive emails')}} from Zettaa </p>
             </form>
          </div>
          <div class="join-already">
-            <p> Already a member? <a href="javascript:void(0)" class="open-login" data-dismiss="modal"> Sign In </a> </p>
+            <p>  {{ __('content.Already a member?')}} <a href="javascript:void(0)" class="open-login" data-dismiss="modal"> {{ __('content.Sign In')}}  </a> </p>
          </div>
       </div>
    </div>
@@ -42,15 +42,15 @@
     <div class="modal-dialog modal-lg" role="document" style="max-width: 500px;">
        <div class="modal-content" id="r_content_buddy">
           <div class="join-pop-head">
-             <h3> Join Zettaa <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button> </h3>
+             <h3>  {{ __('content.Join')}} Zettaa <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button> </h3>
           </div>
           <div id="r_social_buddy">
              <div class="join-social">
-                <a href="{{ url('auth/facebook') }}"> <i class="fab fa-facebook-f"> </i> Continue with Facebook </a>
+                <a href="{{ url('auth/facebook') }}"> <i class="fab fa-facebook-f"> </i>  {{ __('content.Continue with Facebook')}} </a>
                 
              </div>
               <div class="join-socialg">
-                <a href="{{ url('auth/google') }}"> <i><img class="img-goolge" src="{{URL::to('/public/google.png')}}"  height="16" width="16"> </i> Continue with Google </a>
+                <a href="{{ url('auth/google') }}"> <i><img class="img-goolge" src="{{URL::to('/public/google.png')}}"  height="16" width="16"> </i> {{ __('content.Continue with Google')}}  </a>
              </div>
              <div class="join-or">
                 <p> <b> OR </b> </p>
@@ -60,12 +60,12 @@
              <form id="register-form-buddy" action="{{URL::to('/register')}}">
                 {{csrf_field()}}
                 <span id="r_error_buddy" class="error_span"></span>
-                <input type="email" class="email" placeholder="Enter your email" name="email" required>
+                <input type="email" class="email" placeholder="{{ __('content.Enter your email')}}" name="email" required>
                 <div id="r_fields_buddy">
 
-                <button type="submit" class="signUpStep1"> Continue  </button>
+                <button type="submit" class="signUpStep1">  {{ __('content.Continue')}}  </button>
                 </div>
-                <p> By joining I agree to receive emails from Zettaa </p>
+                <p>  {{ __('content.By joining I agree to receive emails from')}} Zettaa </p>
              </form>
           </div>
           <div class="join-already">
@@ -84,25 +84,25 @@
             <h3> Sign In Zettaa <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button> </h3>
          </div>
          <div class="join-social">
-            <a href="{{ url('auth/facebook') }}"> <i class="fab fa-facebook-f"> </i> Continue with Facebook </a>
+            <a href="{{ url('auth/facebook') }}"> <i class="fab fa-facebook-f"> </i>  {{ __('content.Continue with Facebook')}} </a>
          </div>
          <div class="join-socialg">
-                <a href="{{ url('auth/google') }}"> <i><img class="img-goolge" src="{{URL::to('/public/google.png')}}"  height="16" width="16"> </i> Continue with Google </a>
+                <a href="{{ url('auth/google') }}"> <i><img class="img-goolge" src="{{URL::to('/public/google.png')}}"  height="16" width="16"> </i>  {{ __('content.Continue with Google')}} </a>
              </div>
          <div class="join-or">
-            <p> <b> OR </b> </p>
+            <p> <b>  {{ __('content.OR')}} </b> </p>
          </div>
          <div class="join-form">
             <form id="login-form" action="{{URL::to('/login')}}">
                {{csrf_field()}}
-               <input type="text" placeholder="Enter your email Or username" name="email" required>
-               <input type="password" placeholder="Enter your password" name="password" required>
+               <input type="text" placeholder=" {{ __('content.Enter your email Or username')}}" name="email" required>
+               <input type="password" placeholder=" {{ __('content.Enter your password')}}" name="password" required>
                <span id="l_error" class="error_span"></span>
-               <button type="submit"> Sign In  </button>
+               <button type="submit"> {{ __('content.Sign In')}} </button>
             </form>
          </div>
          <div class="join-already">
-            <p> Don`t have an account? <a href="javascript:void(0)" class="open-join"> Sign Up </a> </p>
+            <p>  {{ __('content.Don`t have an account?')}} <a href="javascript:void(0)" class="open-join"> Sign Up </a> </p>
          </div>
       </div>
    </div>
@@ -114,7 +114,7 @@
       <div class="modal-dialog modal-lg" role="document" style="max-width: 500px;">
          <div class="modal-content" id="o_content">
             <div class="join-pop-head">
-               <h3> Select User Type </h3>
+               <h3>  {{ __('content.Select User Type')}} </h3>
                <hr>
             </div>
             <div class="type-form">
@@ -150,7 +150,7 @@
    <div class="modal-dialog modal-lg2" role="document" style="max-width: 800px;">
       <div class="modal-content" id="r_content">
          <div class="join-pop-head">
-            <h3> Become a Coach <h3>
+            <h3>  {{ __('content.Become a Coach')}} <h3>
          </div>
          <div class="card become_coach">
             <form method="post" action="{{route('buddy.coach.request')}}">
@@ -158,19 +158,19 @@
                <div class="col-white">
                   <div class="row">
                        <div class="col-md-12">
-                          <label>1. Have you ever coached?</label>
+                          <label>1.  {{ __('content.Have you ever coached?')}}</label>
                           <br> 
                           <input type="radio" id="yes" name="answer1" value="Yes"><label for="yes">Yes</label>
                           <input type="radio" id="no" name="answer1" value="No" checked><label for="no">No</label>
                           
                           <br><br>
-                          <textarea name="answer1Detail" class="form-control" placeholder="If Yes or not please explain." cols="5" required></textarea>
+                          <textarea name="answer1Detail" class="form-control" placeholder=" {{ __('content.If Yes or not please explain.')}}" cols="5" required></textarea>
                        </div>
                    </div>
                    <br>
                    <div class="row">
                        <div class="col-md-12">
-                          <label>2. What motivated you to become a coach? Is this your main activity? </label>
+                          <label>2.  {{ __('content.What motivated you to become a coach? Is this your main activity?')}} </label>
                           <br>
                           <input type="radio" id="yes1" name="answer2" value="Yes"><label for="yes1">Yes</label>
                           <input type="radio" id="no1" name="answer2" value="No" checked><label for="no1">No</label>
@@ -181,7 +181,7 @@
                    <br>
                    <div class="row">
                        <div class="col-md-12">
-                          <label>3. Do you have a qualification or diploma in a sport-related discipline? (Ex. Nutrition; physiotherapy; sports coaching etc.) </label>
+                          <label>3.  {{ __('content.Do you have a qualification or diploma in a sport-related discipline? (Ex. Nutrition; physiotherapy; sports coaching etc.)')}} </label>
                           <br>
                           <textarea name="answer3Detail" class="form-control" placeholder="" cols="5" required></textarea>
                        </div>
@@ -194,13 +194,13 @@
                           <input type="radio" id="yes2" name="answer4" value="Yes"><label for="yes2">Yes</label>
                           <input type="radio" id="no2" name="answer4" value="No" checked><label for="no2">No</label>
                           <br><br>
-                          <textarea name="answer4Detail" class="form-control" placeholder="If so, how many years? At what level? Which sport?" cols="5" required></textarea>
+                          <textarea name="answer4Detail" class="form-control" placeholder=" {{ __('content.If so, how many years? At what level? Which sport?')}}" cols="5" required></textarea>
                        </div>
                    </div>
                    <br>
                    <div class="row">
                        <div class="col-md-12">
-                          <label>5. As a coach, what are the qualities that make you an exceptional instructor? </label>
+                          <label>5.  {{ __('content.As a coach, what are the qualities that make you an exceptional instructor?')}} </label>
                           <br>
                           <textarea name="answer5Detail" class="form-control" placeholder="" cols="5" required></textarea>
                        </div>
@@ -208,7 +208,7 @@
                    <br>
                    <div class="row">
                        <div class="col-md-12">
-                          <label>6. As an athlete, what do you think are the fundamental values for progress?</label>
+                          <label>6.  {{ __('content.As an athlete, what do you think are the fundamental values for progress?')}}</label>
                           <br>
                           <textarea name="answer6Detail" class="form-control" placeholder="" cols="5" required></textarea>
                        </div>
@@ -216,7 +216,7 @@
                    <br>
                    <div class="row">
                        <div class="col-md-12">
-                          <label>7. Bonus : Share with us your worst/best memory during a training or a competition.</label>
+                          <label>7.  {{ __('content.Bonus : Share with us your worst/best memory during a training or a competition.')}}</label>
                           <br>
                           <textarea name="answer7Detail" class="form-control" placeholder="" cols="5" required></textarea>
                        </div>
@@ -225,12 +225,12 @@
                    <div class="row">
                        <div class="col-md-12">
                            <input type="checkbox" id="agree" name="agree" value="1" required>
-                           <label for="agree">By checking this box, you declare that you have read and understood the Coach Label Zettaa document and agree to refer to it when you are in contact with your Zettaa customers.</label>
+                           <label for="agree"> {{ __('content.By checking this box, you declare that you have read and understood the Coach Label Zettaa document and agree to refer to it when you are in contact with your Zettaa customers.')}}</label>
                        </div>
                    </div>
                    <div class="row">
                        <div class="col-md-12">
-                          <button type="submit">Become a Coach</button>
+                          <button type="submit"> {{ __('content.Become a Coach')}}</button>
                        </div>
                    </div>
                </div>
