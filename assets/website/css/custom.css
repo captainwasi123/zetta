@@ -528,6 +528,8 @@ footer {
     color:#9a49ff !important;
 }
 
+
+
 .footer-list {
     float: left;
     width: 100%;
@@ -572,6 +574,56 @@ footer {
 .footer-list ul li a:hover {
     color:#9a49ff;
 }
+
+
+/* sa work for social media */
+
+
+.footer-list-c {
+    float: left;
+    /* width: 100%;
+    padding-left: 50px; */
+}
+
+.footer-list-c h4 {
+    font-size: 20px;
+    letter-spacing: 1.5px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    font-family: Poppins;
+    font-weight: 600;
+}
+
+
+
+.footer-list-c ul {
+    padding: 0px;
+    list-style: none;
+}
+
+
+.footer-list-c ul li {
+    margin-bottom: 8px;
+}
+
+
+.footer-list-c ul li a {
+    color: #a5a5a5;
+    font-size: 15px;
+    letter-spacing: 0.6px;
+    font-weight: 300;
+}
+
+
+.footer-list-c ul li a img {
+    width: 35px;
+    margin-right: 10px;
+}
+
+.footer-list-c ul li a:hover {
+    color:#9a49ff;
+}
+/* sa */
 
 
 header.header-1 {

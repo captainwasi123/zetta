@@ -51,7 +51,7 @@ return [
 
     // about us page start
 
-    'About Us' => 'About Us',
+    'About Usf' => 'About',
     'Zettaa is a multisided platform aiming at gathering people through sport activities, may they be as varied as possible. The three founders came up with the idea on a spring day in 2020, as the pandemic was reaching its peak. Tahar Petrucci, one of the founders and an absolute rollerblade fan wanted to share his passion with others by giving some lessons. Unfortunately, he could not find a platform where he could contact other peers and give lessons to rollerblade enthusiasts. “Why not create a space where people from the same area would communicate in order to practice sports together?” And there it was, the passion that was linking the three friends together and that had been the initiator of their friendship.' => 'Zettaa is a multisided platform aiming at gathering people through sport activities, may they be as varied as possible. The three founders came up with the idea on a spring day in 2020, as the pandemic was reaching its peak. Tahar Petrucci, one of the founders and an absolute rollerblade fan wanted to share his passion with others by giving some lessons. Unfortunately, he could not find a platform where he could contact other peers and give lessons to rollerblade enthusiasts. “Why not create a space where people from the same area would communicate in order to practice sports together?” And there it was, the passion that was linking the three friends together and that had been the initiator of their friendship.',
     'Zettaa aims at enhancing people’s lives by facilitating social connections through sport events. Its focus as a brand is to include as many sports as possible, focusing on smaller scale activities that are still not widely known by sport enthusiasts.' => 'Zettaa aims at enhancing people’s lives by facilitating social connections through sport events. Its focus as a brand is to include as many sports as possible, focusing on smaller scale activities that are still not widely known by sport enthusiasts.',
     'Being part of the Zettaa community allows for people to connect, engage, and make healthy decisions for their bodies. Sportbuddies allows for two or more people to embrace a physical exercise while getting to know someone with the same level and similar goals in a sport. Another option could be to schedule sessions with coaches who would accompany a sport enthusiast to each step in the path to outdo themselves.' => 'Being part of the Zettaa community allows for people to connect, engage, and make healthy decisions for their bodies. Sportbuddies allows for two or more people to embrace a physical exercise while getting to know someone with the same level and similar goals in a sport. Another option could be to schedule sessions with coaches who would accompany a sport enthusiast to each step in the path to outdo themselves.',
@@ -334,6 +334,7 @@ return [
 
 
     // FOOTER START
+    'support'=> 'SUPPORT',
     'Choose a language' => 'Choose a language',
     'Chinese' => 'Chinese',
     'Spanish' => 'Spanish',

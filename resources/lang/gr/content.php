@@ -49,7 +49,7 @@ return [
 
  // about us page start
 
- 'About Us' => 'Über uns',
+ 'About Usf' => 'Über uns',
  'Zettaa is a multisided platform aiming at gathering people through sport activities, may they be as varied as possible. The three founders came up with the idea on a spring day in 2020, as the pandemic was reaching its peak. Tahar Petrucci, one of the founders and an absolute rollerblade fan wanted to share his passion with others by giving some lessons. Unfortunately, he could not find a platform where he could contact other peers and give lessons to rollerblade enthusiasts. “Why not create a space where people from the same area would communicate in order to practice sports together?” And there it was, the passion that was linking the three friends together and that had been the initiator of their friendship.' => 'Zettaa ist eine vielseitige Plattform, die darauf abzielt, Menschen durch sportliche Aktivitäten zusammenzubringen, mögen diese so vielfältig wie möglich sein. Auf die Idee kamen die drei Gründer an einem Frühlingstag im Jahr 2020, als die Pandemie ihren Höhepunkt erreichte. Tahar Petrucci, einer der Gründer und absoluter Rollerblade-Fan, wollte seine Leidenschaft mit anderen teilen, indem er einige Lektionen gab. Leider fand er keine Plattform, um mit anderen Kollegen in Kontakt zu treten und Rollerblade-Enthusiasten Unterricht zu geben. "Warum nicht einen Raum schaffen, in dem Menschen aus der gleichen Gegend miteinander kommunizieren, um gemeinsam Sport zu treiben?" Und da war sie, die Leidenschaft, die die drei Freunde verband und die ihre Freundschaft begründet hatte.',
  'Zettaa aims at enhancing people’s lives by facilitating social connections through sport events. Its focus as a brand is to include as many sports as possible, focusing on smaller scale activities that are still not widely known by sport enthusiasts.' => 'Zettaa zielt darauf ab, das Leben der Menschen zu verbessern, indem soziale Verbindungen durch Sportveranstaltungen erleichtert werden. Der Fokus als Marke liegt darauf, so viele Sportarten wie möglich einzubeziehen, wobei der Schwerpunkt auf kleineren Aktivitäten liegt, die bei Sportbegeisterten noch nicht allgemein bekannt sind.',
  'Being part of the Zettaa community allows for people to connect, engage, and make healthy decisions for their bodies. Sportbuddies allows for two or more people to embrace a physical exercise while getting to know someone with the same level and similar goals in a sport. Another option could be to schedule sessions with coaches who would accompany a sport enthusiast to each step in the path to outdo themselves.' => 'Als Teil der Zettaa-Community können sich Menschen verbinden, sich engagieren und gesunde Entscheidungen für ihren Körper treffen. Sportbuddies ermöglicht es zwei oder mehr Personen, sich körperlich zu betätigen und gleichzeitig jemanden mit dem gleichen Niveau und ähnlichen Zielen in einer Sportart kennenzulernen. Eine andere Möglichkeit könnte sein, Sitzungen mit Trainern zu vereinbaren, die einen Sportbegeisterten bei jedem Schritt auf dem Weg begleiten, sich selbst zu übertreffen.',
@@ -335,6 +335,7 @@ return [
 
 
      // FOOTER START
+     'support'=> 'UNTERSTÜTZUNG',
      'Choose a language' => 'Wählen Sie eine Sprache',
      'Chinese' => 'Chinesisch',
      'Spanish' => 'Spanisch',

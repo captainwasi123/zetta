@@ -92,6 +92,12 @@
 
 /* sa start google  */
 
+.footer-list {
+    float: left;
+    /* width: 100%; */
+    /* padding-left: 50px; */
+}
+
 .join-socialg {
     float: left;
     width: 100%;
