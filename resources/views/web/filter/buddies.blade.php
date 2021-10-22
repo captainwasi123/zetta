@@ -33,10 +33,10 @@
    <section class="pad-top-40 bg-dark2">
       <div class="container">
          <div class="sec-head1 m-b-25">
-            <h4 class="gotham-bold col-white"> Results for "{{@$search_data['val']}} - Sports Buddies" </h4>
+            <h4 class="gotham-bold col-white"> {{ __('content.Results for')}} "{{@$search_data['val']}} - Sports Buddies" </h4>
          </div>
          @if(count($buddies) == 0)
-            <h4>No Results Found.</h4>
+            <h4>{{ __('content.No Results Found.')}}</h4>
          @else
            <!--  <div class="all-filters">
                <div class="btn-group">
@@ -45,7 +45,7 @@
                   </button>
                   <div class="dropdown-menu keep-open">
                      <div class="filters-main-bg">
-                        <span class="col-black"> No Filter </span>
+                        <span class="col-black"> {{ __('content.No Filter')}} </span>
                      </div>
                   </div>
                </div>
@@ -137,11 +137,11 @@
                   <div class="dropdown-menu keep-open">
                      <div class="filters-main-bg">
                         <div class="gender-filter">
-                           <label class="container-radio col-black no-margin m-b-0"> Male
+                           <label class="container-radio col-black no-margin m-b-0"> {{ __('content.Male')}}
                            <input type="radio" checked="checked" name="radio">
                            <span class="checkmark"></span>
                            </label>
-                           <label class="container-radio col-black no-margin m-b-0"> Female
+                           <label class="container-radio col-black no-margin m-b-0"> {{ __('content.Female')}}
                            <input type="radio" checked="checked" name="radio">
                            <span class="checkmark"></span>
                            </label>
@@ -156,11 +156,11 @@
                   <div class="dropdown-menu keep-open">
                      <div class="filters-main-bg">
                         <div class="filters-rating">
-                           <button class="col-black active"> 5 star </button>
-                           <button class="col-black"> 4 star </button>
-                           <button class="col-black"> 3 star </button>
-                           <button class="col-black"> 2 star </button>
-                           <button class="col-black"> 1 star </button>
+                           <button class="col-black active"> 5 {{ __('content.star')}} </button>
+                           <button class="col-black"> 4 {{ __('content.star')}} </button>
+                           <button class="col-black"> 3 {{ __('content.star')}} </button>
+                           <button class="col-black"> 2 {{ __('content.star')}} </button>
+                           <button class="col-black"> 1 {{ __('content.star')}} </button>
                         </div>
                      </div>
                   </div>

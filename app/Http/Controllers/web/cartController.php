@@ -11,7 +11,9 @@ use App\Models\ActivityOrders;
 use App\Models\saleSetting;
 use App\Models\userEquipment;
 use Auth;
-
+use App\Models\User;
+use App\Models\availability\holidays;
+use App\Models\availability\slots;
 use Stripe;
 use StripeClient;
 
@@ -43,7 +45,24 @@ class cartController extends Controller
             $data = lessons::find($id);
             $price = null;
             if(!empty($data->id)){
-                return view('web.cart', ['data' => $data, 'pack' => $packk, 'type' => $type,'price'=>$price]);
+
+                $holiday = array();
+                $holiarr = array();
+                $holi = holidays::where('user_id', $data->user_id)->get();
+                $slots = slots::where('lesson_id', $data->id)->get();
+
+                foreach ($holi as $key => $value) {
+                    $day = array();
+                    array_push($day, date('n', strtotime($value->date)));
+                    array_push($day, date('j', strtotime($value->date)));
+                    array_push($day, date('Y', strtotime($value->date)));
+                    
+                    array_push($holiday, $day);
+                    
+                    array_push($holiarr, $value->holiday);
+                    
+                }
+                return view('web.cart', ['data' => $data, 'pack' => $packk, 'type' => $type,'price'=>$price, 'holiday' => $holiday, 'slots' => $slots]);
             }else{
                 return redirect('/');
             }
@@ -90,7 +109,9 @@ class cartController extends Controller
                 'plan' => $pack,
                 'price' => $lesson->packages[$pack]->price,
                 'commision' =>  ($lesson->packages[$pack]->price/100)*$saleSetting->commision,
-                'earning' => ($lesson->packages[$pack]->price - ($lesson->packages[$pack]->price/100)*$saleSetting->commision)
+                'earning' => ($lesson->packages[$pack]->price - ($lesson->packages[$pack]->price/100)*$saleSetting->commision),
+                'booking_date' => empty($data['booking_date']) ? null : date('Y-m-d', strtotime($data['booking_date'])),
+                'booking_time' => empty($data['booking_time']) ? null : date('H:i:s', strtotime($data['booking_time'])),
             );
 
             $priceDed = $odata['price'];
@@ -177,5 +198,28 @@ class cartController extends Controller
         }
 
         return redirect('/')->with('success', 'Order Confirmed.');
+    }
+
+    public function getSlots($date){
+        $data = explode('|', $date);
+        $day = date('l', strtotime($data[0]));
+
+        $slots = slots::where('lesson_id',$data[1])->where('day',$day)->get();
+        $select = '';
+        foreach($slots as $val){
+            $booked = lessonOrders::where('lesson_id', $data[1])
+                                    ->where('booking_date', date('Y-m-d', strtotime($data[0])))
+                                    ->where('booking_time', $val->start_time)->first();
+            //dd($booked);                   
+            if(!empty($booked->id)){
+                $select .= '<option value="">'.date('h:i A', strtotime($val->start_time)).' - Reserved</option>';
+            }else{
+                $select .= '<option value="'.$val->start_time.'">'.date('h:i A', strtotime($val->start_time)).'</option>';
+            } 
+        }
+        if(count($slots) == 0){
+            $select = '<option value="">No Slots Available</option>';
+        }
+        return $select;
     }
 }

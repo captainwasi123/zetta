@@ -3,6 +3,7 @@
 
 @section('content')
 
+<<<<<<< HEAD
 <section class="action-bar">
    <div class="container">
       <div class="all-actions arrows1">
@@ -36,9 +37,11 @@
       </div>
    </div>
 </section>
+=======
+>>>>>>> 714edb0cdee02b5d32c0ea29824d3b0c9242a1d2
 <!-- Action Bar Ends Here -->
 <!-- Page Content Starts Here -->
-<section class="pad-top-40 pad-bot-40 bg-dark2">
+<section class="pad-top-130 pad-bot-40 bg-dark2">
    <div class="container">
       <div class="row">
          @if(session()->has('success'))
@@ -66,9 +69,9 @@
                </div>
                <div class="col-md-8 col-lg-4 col-sm-6 col-12">
                   <div class="order-text1">
-                     <h5 class="col-white">
-                        {{$data->description}}
-                     </h5>
+                     <div class="col-white">
+                        {!! $data->description !!}
+                     </div>
                      <h6 class="col-purple"> <i class="fa fa-star"> </i> <i class="fa fa-star"> </i> <i class="fa fa-star"> </i> <i class="fa fa-star"> </i> <i class="fa fa-star"> </i> <b> 5.0 </b>  </h6>
                      <button class="  collapse-btn1"   data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">  {{ __('content.Hide what included') }}  </button>
                   </div>
@@ -112,15 +115,40 @@
                         <tr>
                            <th class="col-white"> {{ __('content.Total Amount') }} </th>
                            @if ($price != null)
-                           <th class="col-purple"> {{'$'.number_format($price)}} </th>
+                           <th class="col-purple text-right"> {{'$'.number_format($price)}} </th>
                            @else
                             @if (!empty($data->packages[$pack]->price))
-                            <th class="col-purple"> {{'$'.number_format($data->packages[$pack]->price)}} </th>
+                            <th class="col-purple text-right"> {{'$'.number_format($data->packages[$pack]->price)}} </th>
                             @else
-                            <th class="col-purple"> Free </th>
+                            <th class="col-purple text-right"> Free </th>
                             @endif
                            @endif
                         </tr>
+                        @if($type == 'lesson' && $data->participants == 0)
+                           <tr>
+                              <th colspan="2" class="col-white">
+                                 <hr class="hr-white"> 
+                              </th>
+                           </tr>
+                           <tr>
+                              <th class="col-white">
+                                 Booking Date
+                              </th>
+                              <th class="col-white">
+                                 <input type="text" class="form-control form-dark" placeholder="Select" id="datepicker" name="booking_date" required>
+                              </th>
+                           </tr>
+                           <tr>
+                              <th class="col-white">
+                                 Booking Time
+                              </th>
+                              <th class="col-white">
+                                 <select class="form-control form-dark bookingTime" name="booking_time" required>
+                                    <option value="">Select</option>
+                                 </select>
+                              </th>
+                           </tr>
+                        @endif
                         <tr>
                            <td colspan="2" class="text-center no-border">
                               <button class="custom-btn1 bg-purple col-white rounded block-element2 m-t-10"> {{ __('content.Continue to Checkout') }}
@@ -144,5 +172,63 @@
    </div>
 </section>
 
+@endsection
+@section('addScript')
+   @if($type == 'lesson' && $data->participants == 0)
+      <script type="text/javascript">
+         $(document).ready(function(){
+            'use strict'
+
+            $( "#datepicker" ).datepicker({ 
+               minDate: new Date("{{date('d-M-Y')}}"),
+               beforeShowDay: nonWorkingDates,
+               dateFormat: 'dd-mm-yy' 
+            });
+
+            $(document).on('change', '#datepicker', function(){
+               var date = $(this).val();
+               $('.bookingTime').html('<option value="">...</option>');
+               $.get("{{URL::to('/cart/getSlot')}}/"+date+"|{{$data->id}}", function(data){
+
+                  $('.bookingTime').html(data);
+               });
+            });
+         });
+
+         var unavailableDates = @json($holiday);
+         function unavailable(date) {
+            dmy = date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear();
+            if ($.inArray(dmy, unavailableDates) == -1) {
+                return [true, ""];
+            } else {
+                return [false, "", "Unavailable"];
+            }
+         }
+
+         function nonWorkingDates(date){
+            var day = date.getDay(), Sunday = 0, Monday = 1, Tuesday = 2, Wednesday = 3, Thursday = 4, Friday = 5, Saturday = 6;
+            var closedDates = unavailableDates;
+            var closedDays = [
+               @foreach($slots as $val)
+                  {{$val->day}},
+               @endforeach
+            ];
+            
+            if (closedDays.includes(day) == false) {
+               return [false];
+            }
+
+            for (i = 0; i < closedDates.length; i++) {
+               if (date.getMonth() == closedDates[i][0] - 1 &&
+                  date.getDate() == closedDates[i][1] &&
+                  date.getFullYear() == closedDates[i][2]) {
+                     return [false];
+               }
+            }
+
+            return [true];
+         }
+      </script>
+   @endif
 @endsection
 

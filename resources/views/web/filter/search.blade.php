@@ -34,7 +34,7 @@
    <section class="pad-top-40 bg-dark2">
       <div class="container">
          <div class="sec-head1 m-b-25">
-            <h4 class="gotham-bold col-white"> <small>Results for</small> "<span id="searchLabel">{{@$search_data['val']}}</span> | {{@$search_data['type']}}" </h4>
+            <h4 class="gotham-bold col-white"> <small>{{ __('content.Results for')}}</small> "<span id="searchLabel">{{@$search_data['val']}}</span> | {{@$search_data['type']}}" </h4>
          </div>
       </div>
    </section>
@@ -43,7 +43,7 @@
       <div class="container">
          <div class="row">
             <div class="col-12 sectionHeading">
-               <h4>LESSONS</h4>
+               <h4>{{ __('content.LESSONS')}}</h4>
             </div>
          </div>
          <div class="row">
@@ -59,7 +59,7 @@
                         </div>
                         <div class="lesson-title-block">
                            <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{empty($val->user) ? '' : $val->user->profile_img}}" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';">
-                           <h4> {{empty($val->user->fname) ? 'New User' : $val->user->fname.' '.$val->user->lname}} <span> Coach </span>  </h4>
+                           <h4> {{empty($val->user->fname) ? 'New User' : $val->user->fname.' '.$val->user->lname}} <span> {{ __('content.Coach')}} </span>  </h4>
                            <div class="zoom-tag">
                               @if($val->availability != '2')
                                  <img src="{{URL::to('/assets/website')}}/images/zoom-logo.png" title="Online Zoom Classes">
@@ -108,14 +108,14 @@
                                     <i class="far fa-heart col-purple"></i>
                                  @endif
                             </a>
-                           <span class="col-grey"> STARTING AT <b class="col-white"> {{'$'.number_format($val->packages[0]->price)}} </b> </span>
+                           <span class="col-grey"> {{ __('content.STARTING AT')}} <b class="col-white"> {{'$'.number_format($val->packages[0]->price)}} </b> </span>
                         </div>
                      </div>
                   </a>
                </div>
             @endforeach
             @if(count($lessons) == 0)
-               <h4>No Results Found.</h4>
+               <h4>{{ __('content.No Results Found.')}}</h4>
             @endif
          </div>
       </div>
@@ -126,7 +126,7 @@
       <div class="container">
          <div class="row">
             <div class="col-12 sectionHeading">
-               <h4>ACTIVITIES</h4>
+               <h4>{{ __('content.ACTIVITIES')}}</h4>
             </div>
          </div>
          <div class="row" id="resultBlock">
@@ -142,7 +142,7 @@
                         </div>
                         <div class="lesson-title-block">
                            <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{empty($val->user) ? '' : $val->user->profile_img}}" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';">
-                           <h4>  {{empty($val->user->fname) ? 'New User' : $val->user->fname.' '.$val->user->lname}} <span>Sports Buddy </span>  </h4>
+                           <h4>  {{empty($val->user->fname) ? 'New User' : $val->user->fname.' '.$val->user->lname}} <span>{{ __('content.Sports Buddy')}} </span>  </h4>
                            <div class="zoom-tag">
                               @if($val->availability != '2')
                                  <img src="{{URL::to('/assets/website')}}/images/zoom-logo.png" title="Online Zoom Classes">
@@ -206,7 +206,7 @@
                               {{$price="PARTICIPATE"}}
                                    
                              @else
-                             PARTICIPATE
+                             {{ __('content.PARTICIPATE')}}
                              @endif
                            </b> </span>
                         </div>
@@ -215,7 +215,7 @@
                </div>
             @endforeach
             @if(count($activities) == 0)
-               <h4>No Results Found.</h4>
+               <h4>{{ __('content.No Results Found.')}}</h4>
             @endif
          </div>
       </div>
@@ -226,7 +226,7 @@
       <div class="container">
          <div class="row">
             <div class="col-12 sectionHeading">
-               <h4>COACHES</h4>
+               <h4>{{ __('content.COACHES')}}</h4>
             </div>
          </div>
          <div class="row" id="resultBlock">
@@ -260,7 +260,7 @@
                </div>
             @endforeach
             @if(count($coaches) == 0)
-               <h4>No Results Found.</h4>
+               <h4>{{ __('content.No Results Found.')}}</h4>
             @endif
          </div>
       </div>
@@ -271,7 +271,7 @@
       <div class="container">
          <div class="row">
             <div class="col-12 sectionHeading">
-               <h4>SPORTS BUDDY</h4>
+               <h4>{{ __('content.SPORTS BUDDY')}}</h4>
             </div>
          </div>
          <div class="row" id="resultBlock">
@@ -305,7 +305,7 @@
                </div>
             @endforeach
             @if(count($buddies) == 0)
-               <h4>No Results Found.</h4>
+               <h4>{{ __('content.No Results Found.')}}</h4>
             @endif
          </div>
       </div>

@@ -4,9 +4,9 @@
            <div class="col-md-3 col-lg-3 col-sm-12 col-12">
               <div class="footer-about">
                  <a href=""> <img src="{{URL::to('/assets/website')}}/images/zetta-logo.png"> </a>
-                 <p> Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface. </p>
+                 <p> United through sport	 </p>
                  <ul>
-                    <li> <a href=""> <i class="fa fa-phone"> </i> 2155655845 </a> </li>
+                    {{--  <li> <a href=""> <i class="fa fa-phone"> </i> 2155655845 </a> </li>  --}}
                     <li> <a href=""> <i class="fa fa-map-marker"> </i> {{ __('content.3 rue du Port, 1204 Genève, Switzerland') }} </a> </li>
                     <li> <a href=""> <i class="fa fa-envelope"> </i> info@zettaa.ch </a> </li>
                  </ul>
@@ -88,10 +88,13 @@
                  <ul>
                     <li> <a href="{{URL::to('/')}}"> Home </a> </li>
 
-                    <li> <a href="{{route('web.all','Coaches')}}"> {{ __('content.Coaches') }} </a> </li>
+                    <li> <a href="{{route('web.all','Coaches')}}"> {{ __('content.Coach') }} </a> </li>
                     <li> <a href="{{route('web.all','Sports Buddies')}}"> {{ __('content.Sports Buddy') }} </a> </li>
                     <li> <a href="{{route('web.all','Lessons')}}"> {{ __('content.Lesson') }} </a> </li>
                     <li> <a href="{{route('web.all','Activities')}}"> {{ __('content.Activity') }} </a> </li>
+                    <li> <a href="#"> Sports </a> </li>
+
+                    
                     <li> <a href="{{URL::to('/')}}#mapa"> {{ __('content.Near Me') }} </a> </li>
 
                  </ul>
@@ -110,8 +113,8 @@
                  <h4 class="col-white"> {{ __('content.ABOUT') }}</h4>
                  <ul>
 
+                    <li> <a href="#"> {{ __('content.Contact') }}  </a> </li>
                     <li> <a href="{{URL::to('about_us')}}">{{ __('content.About Us') }} </a> </li>
-                    <li> <a href="#"> {{ __('contentContact') }}  </a> </li>
                     <li> <a href="{{route('web.faq')}}"> {{ __('content.Faq') }} </a> </li>
                     <li> <a href="{{route('web.terms')}}"> {{ __('content.Terms & Condition') }}  </a> </li>
                     <li> <a href="{{route('web.cookiePolicy')}}"> {{ __('content.Cookie Policy') }} </a> </li>

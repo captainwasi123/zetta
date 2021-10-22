@@ -23,6 +23,8 @@ class orders extends Model
         $o->price = $data['price'];
         $o->commision = $data['commision'];
         $o->earning = $data['earning'];
+        $o->booking_date = $data['booking_date'];
+        $o->booking_time = $data['booking_time'];
         $o->status = '0';
         $o->save();
 

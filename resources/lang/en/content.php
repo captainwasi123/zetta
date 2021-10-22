@@ -501,6 +501,7 @@ return [
     'Available For' => 'Available For',
     'Equipment' => 'Equipment',
     'Not Available' => 'Not Available',
+    'Availability' => 'Available',
     'Coach Lesson' => 'Coach Lesson',
     'Related Lesson' => 'Related Lesson',
     'Send a Message' => 'Send a Message',
@@ -521,6 +522,8 @@ return [
     'star' => 'star',
     'Sports Buddy'=> 'Sports Buddy ',
     'FREE' => 'FREE',
+    'Female' => 'Female',
+    'Male'=>'Male',
   
     // // filter->activity=seach_fiter==lessonbuddies=coach END
 
@@ -532,6 +535,7 @@ return [
     'Sports Buddy' => 'Sports Buddy',
     'COACHES' => 'COACHES',
     'SPORTS BUDDY' => 'SPORTS BUDDY',
+    'LESSONS' => 'LESSONS',
     
     // filter->search end
 

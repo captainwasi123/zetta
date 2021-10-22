@@ -1,5 +1,5 @@
 @extends('coach.include.master')
-@section('title', 'Registration Form')
+@section('title', 'Manage Order')
 
 @section('content')
 
@@ -35,6 +35,8 @@
                      <th> Total Amount </th>
                      <th> Site Commision </th>
                      <th> Total Earning </th>
+                     <th> Type </th>
+                     <th> BookingTime </th>
                      <th> Status </th>
                      <th></th>
                   </tr>
@@ -47,12 +49,25 @@
                            <a href="javascript:void(0)"><img src="{{URL::to('/')}}/public/storage/user/profile_img/{{empty($val->buyer) ? '' : $val->buyer->profile_img}}" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';" width="40" class="img-circle" /> {{empty($val->buyer) ? 'Unknown' : $val->buyer->fname.' '.$val->buyer->lname}} </a>
                         </td>
                         <td>
-                           <span class="label bg-green2"> Custom Order </span>
                             {{empty($val->lesson) ? '' : $val->lesson->title}}
                          </td>
                         <td> {{'$'.number_format($val->price, 2)}} </td>
                         <td> {{'$'.number_format($val->commision, 2)}} </td>
                         <td> {{'$'.number_format($val->earning, 2)}} </td>
+                        <td>
+                           @if(!empty($val->lesson))
+                              {{$val->lesson->participants == '0' ? 'Single Lesson' : 'Group Lesson'}}
+                           @endif
+                        </td>
+                        <td>
+                           @if(empty($val->booking_date) && $val->lesson->participants != '0')
+                              @if(!empty($val->lesson))
+                                 {{date('d-M-Y h:i a', strtotime($val->lesson->held_date))}}
+                              @endif
+                           @else
+                              {{date('d-M-Y h:i a', strtotime($val->booking_date.' '.$val->booking_time))}}
+                           @endif
+                        </td>
                         <td>
                            @if($val->status == '1')
                               <span class="label bg-success"> Active </span>

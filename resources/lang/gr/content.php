@@ -501,6 +501,7 @@ return [
      'Available For' => 'Verfügbar für',
      'Equipment' => 'Ausrüstung',
      'Not Available' => 'Nicht verfügbar',
+     'Availability'=>'Availability',
      'Coach Lesson' => 'Coach-Lektion',
      'Related Lesson' => 'Verwandte Lektion',
      'Send a Message' => 'Nachricht senden',
@@ -520,6 +521,8 @@ return [
      'star' => 'Stern',
      'Sports Buddy'=> 'SSportfreund ',
      'FREE' => 'FREI',
+     'Female' => 'Female',
+     'Male'=>'Male',
 
      // // filter->activity=seach_fiter==lessonbuddies=coach END
 
@@ -531,6 +534,7 @@ return [
      'Sports Buddy' => 'Sportfreund',
      'COACHES' => 'TRAINER',
      'SPORTS BUDDY' => 'SPORTBUDDY',
+     'LESSONS' => 'LEKTIONEN',
 
      // filter->search end
 
