@@ -38,7 +38,7 @@
                           <li>
                          
                           <a href="{{URL::to('/lang/en')}}">
-                          <img src="{{URL::to('/assets/website')}}/images/flag-2.jpg"> 
+                          <img src="{{URL::to('/assets/website')}}/images/flag-2.png"> 
                           &nbsp; English  &nbsp;
                           @if(session()->has('locale'))
                              @if (session()->get('locale') == 'en')
