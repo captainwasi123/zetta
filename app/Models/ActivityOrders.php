@@ -18,6 +18,9 @@ class ActivityOrders extends Model
         $o->activity_id = $data['activity_id'];
         $o->seller_id = $data['seller_id'];
         $o->buyer_id = Auth::id();
+        
+        $o->with_without_equipment =empty($data['with_without_equipment']) ? 1 :  json_encode($data['with_without_equipment']);
+        
         $o->price = $data['price'];
         $o->commision = $data['commision'];
         $o->earning = $data['earning'];

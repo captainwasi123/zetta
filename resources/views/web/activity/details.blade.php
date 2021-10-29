@@ -308,7 +308,7 @@
                               
                               <h5 class="col-white m-b-20"> 
                                  <img src="{{URL::to('/assets/website')}}/images/clock-icon.jpg">  
-                                 {{date('d-M-Y h:i A', strtotime($data->held_date))}}
+                                 {{date('d-M-Y H:i:s', strtotime($data->held_date))}}
                               </h5>
                            </div>
                            <ul class="list-type1 no-border">
@@ -394,6 +394,7 @@
                               </li>
 
                            </ul>
+                  
                            <div class="block-element2 m-t-30">
                               <p class="m-b-10" >  <a href="{{URL::to('/cart/activity/'.base64_encode($data->id).'/basic')}}" class="block-element2 bg-purple col-white rounded custom-btn1 text-center"> Continue
                                 @if (count($data->equipment)>0)

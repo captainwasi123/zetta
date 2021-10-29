@@ -83,12 +83,12 @@ return [
     'Success!' => '¡Éxito!',
    'Check Your Order'=>'Verifique su pedido',
     '5.0'=> '5.0',
-   'Hide what included '=>'Ocultar lo que incluye',
+   'Hide what included'=>'Ocultar lo que incluye',
     'Package' => 'Paquete',
     'Summary' => 'Resumen',
     'Total Amount'=> 'Importe total',
     'Continue to Checkout' => 'Continuar con el pago',
-   'You won`t be charged yet '=>'No se le cobrará todavía',
+   'You won`t be charged yet'=>'No se le cobrará todavía',
     
     // cart page end
 
@@ -96,7 +96,7 @@ return [
     'Cookie Policy' => 'Política de cookies',
     'COOKIE POLICY'=> 'POLÍTICA DE COOKIES',
     'Please read the following carefully to understand our policies and practices regarding your personal information and how we will treat it. By using or accessing our website, you agree to this privacy policy. This policy may change from time to time and your continued use of our website is deemed to be acceptance of such changes, so please check the policy periodically for updates.' => 'Lea atentamente lo siguiente para comprender nuestras políticas y prácticas con respecto a su información personal y cómo la trataremos. Al utilizar o acceder a nuestro sitio web, acepta esta política de privacidad. Esta política puede cambiar de vez en cuando y se considera que su uso continuado de nuestro sitio web significa la aceptación de dichos cambios, así que consulte la política periódicamente para conocer las actualizaciones',
-    '1. ABOUT COOKIES '=> '1. ACERCA DE LAS COOKIES ',
+    '1. ABOUT COOKIES'=> '1. ACERCA DE LAS COOKIES ',
     'A cookie is a small text file containing a unique identification number that is placed on the hard disk of your computer by a web page server, enabling the web server to identify your web browser and passively track its activities on that website. A cookie does not reveal any personally identifiable information that you have not otherwise disclosed. Cookies do not contain any executable code and cannot be used for infecting your computer with a virus. Most Web browsers automatically accept cookies but usually provide the option of configuring your browser to accept all cookies, reject all cookies, or notify you when a cookie is sent. You can change your settings in the preferences or options menu of your browser. If you choose to decline cookies, certain features of our site may not be available to you.' => 'Una cookie es un pequeño archivo de texto que contiene un número de identificación único que se coloca en el disco duro de su computadora por un servidor de página web, lo que permite al servidor web identificar su navegador web y rastrear pasivamente sus actividades en ese sitio web. Una cookie no revela ninguna información de identificación personal que no haya revelado de otra manera. Las cookies no contienen ningún código ejecutable y no se pueden utilizar para infectar su computadora con un virus. La mayoría de los navegadores web aceptan automáticamente las cookies, pero generalmente brindan la opción de configurar su navegador para aceptar todas las cookies, rechazar todas las cookies o notificarle cuando se envía una cookie. Puede cambiar su configuración en el menú de preferencias u opciones de su navegador. Si elige rechazar las cookies, es posible que ciertas funciones de nuestro sitio no estén disponibles para usted',
     '2. HOW DO WE USE COOKIES?' => '2. ¿CÓMO USAMOS LAS COOKIES?',
     '2.1 In line with standard industry practice, we use cookies to track site usage. We use cookies that are strictly necessary to enable/allow you to move around our site. We also use cookies to improve your experience by remembering your details so that you do not need to keep re-entering them when navigating our website.' => '2.1 De acuerdo con la práctica estándar de la industria, utilizamos cookies para rastrear el uso del sitio. Usamos cookies que son estrictamente necesarias para permitirle moverse por nuestro sitio. También utilizamos cookies para mejorar su experiencia recordando sus datos para que no tenga que volver a introducirlos cuando navega por nuestro sitio web',
@@ -121,7 +121,7 @@ return [
 
     // DeicimPolicy start
     'LEGAL DISCLAIMER' => 'RENUNCIA LEGAL',
-    '1. OWN RISK OF WEBSITE USE  '=> '1. PROPIO RIESGO DE USO DEL SITIO WEB',
+    '1. OWN RISK OF WEBSITE USE'=> '1. PROPIO RIESGO DE USO DEL SITIO WEB',
     'Any content, materials, information or otherwise obtained through the use of our site is done at your own discretion and risk. We shall have no responsibility for any damage to your computer system or loss of data that results from the content, material or software. Every effort is made to keep the website up and running smoothly. However, we take no responsibility for, and will not be liable for, the website being temporarily unavailable due to technical issues beyond our control. We reserve the right to make changes or updates to the platform at any time without notice.'=>' Cualquier contenido, material, información o que se obtenga de otra manera a través del uso de nuestro sitio se realiza a su propia discreción y riesgo. No seremos responsables de ningún daño a su sistema informático o pérdida de datos que resulte del contenido, material o software. Se hace todo lo posible para mantener el sitio web en funcionamiento sin problemas. Sin embargo, no asumimos ninguna responsabilidad ni seremos responsables de que el sitio web no esté disponible temporalmente debido a problemas técnicos fuera de nuestro control. Nos reservamos el derecho de realizar cambios o actualizaciones en la plataforma en cualquier momento sin previo aviso.',
     '2. PERSONAL RESPONSIBILITY'=> '2. RESPONSABILIDAD PERSONAL ',
     'We aim to accurately represent the information provided by or throughout website and services. You are acknowledging that you are participating voluntarily in using our website and services, and you alone are solely and personally responsible for your choices, actions and results.'=> 'Nuestro objetivo es representar con precisión la información proporcionada por o en todo el sitio web y los servicios. Usted reconoce que participa voluntariamente en el uso de nuestro sitio web y nuestros servicios, y que solo usted es el único y personalmente responsable de sus elecciones, acciones y resultados. ',
@@ -174,7 +174,7 @@ return [
     // REFUND Policy start
     'Refund Policy' => 'Política de reembolso',
     'REFUNDAND CANCELLATION POLICY'=> 'POLÍTICA DE REEMBOLSO Y CANCELACIÓN',
-    '1. INTRODUCTION '=> '1. INTRODUCCIÓN ',
+    '1. INTRODUCTION'=> '1. INTRODUCCIÓN ',
     '1.1 For purposes of this Refund and Cancellation Policy, “we” or “our” refers to us, and “you” or “your” refers to the client/user. Please read this Refundand Cancellation Policy carefully as it constitutes your agreement with us' => '1.1 Para los propósitos de esta Política de Reembolso y Cancelación, "nosotros" o "nuestro" se refiere a nosotros, y "usted" o "su" se refiere al cliente / usuario. Lea atentamente esta Política de reembolso y cancelación, ya que constituye su acuerdo con nosotros',
     '1.2 By engaging us to provide services to you, you agree to be legally bound by this Refund and Cancellation Policy. We reserve the right to change or modify this Refundand Cancellation Policy at any time.' => '1.2 Al contratarnos para brindarle servicios, usted acepta estar legalmente vinculado por esta Política de reembolso y cancelación. Nos reservamos el derecho de cambiar o modificar esta Política de reembolso y cancelación en cualquier momento. ',
     '1.3 Unless otherwise specified, any changes or modifications will be effective immediately and your continued use of our services after such time will constitute your acceptance of such changes or modifications.' => '1.3 A menos que se especifique lo contrario, cualquier cambio o modificación entrará en vigencia de inmediato y su uso continuado de nuestros servicios después de ese tiempo constituirá su aceptación de dichos cambios o modificaciones',

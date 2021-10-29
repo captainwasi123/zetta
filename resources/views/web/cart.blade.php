@@ -108,10 +108,29 @@
                <input type="hidden" name="pack_id" value="{{base64_encode($pack)}}">
                <input type="hidden" name="type" value="{{base64_encode($type)}}">
 
+
                <div class="summary-box m-t-30">
-                  <h5 class="col-white"> {{ __('content.Summary') }} </h5>
+                  <h5 class="col-white text-center"> {{ __('content.Summary') }} </h5>
+                  
                   <table>
                      <tbody>
+
+                     <tr colspan="2"  >
+                    <h5 class="col-white"> Equipment:</h5>
+                            <th >
+                              <label class="custom-control custom-radio col-white" >
+                     <input id="radio1" name="with_without_equipment" type="radio" value="2" class="custom-control-input" checked>
+                     <span class="custom-control-label"> With Equipment  </span>
+                     </label>       
+                             
+                   
+                     <label class="custom-control custom-radio col-white">
+                     <input id="radio2" name="with_without_equipment" type="radio" value="1" class="custom-control-input">
+                     <span class="custom-control-label"> Without Equipment </span>
+                     </label>
+                    </th>
+               
+                     </tr>
                         <tr>
                            <th class="col-white"> {{ __('content.Total Amount') }} </th>
                            @if ($price != null)
@@ -149,6 +168,7 @@
                               </th>
                            </tr>
                         @endif
+                        
                         <tr>
                            <td colspan="2" class="text-center no-border">
                               <button class="custom-btn1 bg-purple col-white rounded block-element2 m-t-10"> {{ __('content.Continue to Checkout') }}

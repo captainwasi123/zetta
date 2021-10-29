@@ -48,15 +48,15 @@
                   </div>
                </div>
                <div class="col-3">
-                  <div class="activity_category"> 
+                  <div class="activity_category">
                      <img src="{{URL::to('/public/storage/settings/sports/'.$data->sports->image)}}">
-                     <label>{{$data->sports->name}}</label> 
+                     <label>{{$data->sports->name}}</label>
                   </div>
                </div>
                <div class="col-2">
-                  <div class="activity_category"> 
+                  <div class="activity_category">
                      <img src="{{URL::to('/public/storage/settings/category/'.$data->category->image)}}">
-                     <label>{{$data->category->name}}</label> 
+                     <label>{{$data->category->name}}</label>
                   </div>
                </div>
             </div>
@@ -98,7 +98,7 @@
                <h6 class="col-grey"> {{ __('content.Coach')}} </h6>
                <h5 class="col-purple m-b-15"> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> 5.0  </h5>
             </div>
-            
+
             <div class="lesson-holder-about">
                <h3 class="col-white m-b-15"> {{ __('content.About The Lesson')}} </h3>
                <h5 class="col-white m-b-30" >  {{$data->title}} </h5>
@@ -106,7 +106,7 @@
                   {!! $data->description !!}
                </div>
             </div>
-                        
+
             <div class="lesson-holder-details m-t-40">
                <div class="profile-details1">
                   <div class="row center-row m-b-20">
@@ -188,7 +188,7 @@
                   </p>
                </div>
             </div>
-            
+
             <div class="all-ratings m-t-40">
                <div class="row">
                   <div class="col-md-7 col-lg-7 col-sm-12 col-12">
@@ -375,10 +375,10 @@
 
                   </div>
                     {{--  sa start  --}}
-         
+
             <div class="packages-wrapper">
                <div class="packages-main">
-                  <ul class="nav nav-tabs" role="tablist" > 
+                  <ul class="nav nav-tabs" role="tablist" >
                      {{-- <li class="nav-item">
                         <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">Basic</a>
                      </li> --}}
@@ -388,14 +388,14 @@
                      <div class="tab-pane active" id="tabs-1" role="tabpanel">
                         <div class="package-content">
                            <div class="package-content-head">
-                              
-                             
+
+
                            @if($data->participants == 0)
                               <h5 class="col-white m-b-20">
                                  <table class="table slots-table col-white">
                                     <tr>
                                        <th style="width:50px;">
-                                          <img src="{{URL::to('/assets/website')}}/images/clock-icon.jpg">  
+                                          <img src="{{URL::to('/assets/website')}}/images/clock-icon.jpg">
                                        </th>
                                        <th colspan="2">
                                           {{ __('content.Availability')}}
@@ -410,7 +410,7 @@
 
                                                @foreach($data->slots as $val)
                                                 <option value=""> {{date('h:i a', strtotime($val->start_time))}}</option>
-                                               @endforeach 
+                                               @endforeach
                                           </select>
                                        </td>
                                     </tr> -->
@@ -433,8 +433,8 @@
                               </h5>
                            @else
                               <h5 class="col-white m-b-20">
-                                 <img src="{{URL::to('/assets/website')}}/images/clock-icon.jpg">  
-                                 {{date('d-M-Y h:i A', strtotime($data->held_date))}}
+                                 <img src="{{URL::to('/assets/website')}}/images/clock-icon.jpg">
+                                 {{date('d-M-Y H:i:s', strtotime($data->held_date))}}
                               </h5>
                            @endif
                            </div>
@@ -442,11 +442,11 @@
                               <li class="block-element2"> <i class="fa fa-check col-purple"> </i> {{$data->participants == '0' ? 'Single Activity' : 'Group Activity'}} </li>
 
                               @if($data->participants > 0)
-                              <li class="block-element2"> <i class="fa fa-check col-purple"> 
+                              <li class="block-element2"> <i class="fa fa-check col-purple">
                               </i> {{ $data->group_members == 1 ?    'Participant :'.count($data->activeOrders).'/'.$data->group_members.' Member' :  'Participant :'.count($data->activeOrders).'/'.$data->group_members.' Members'}} </li>
                               @endif
                               <li class="block-element2"> <i class="fa fa-check col-purple"> </i> {{$data->location_covered == '0' ? 'Open Location' : 'Covered Location'}} </li>
-                              <li class="block-element2"> <i class="fa fa-check col-purple"> </i> 
+                              <li class="block-element2"> <i class="fa fa-check col-purple"> </i>
                                  @switch($data->availability)
                                     @case('1')
                                        {{ __('content.Only Zoom Classes')}}
@@ -461,8 +461,8 @@
                                        @break
                                  @endswitch
                               </li>
-                              <li class="block-element2"> <i class="fa fa-check col-purple"> </i> 
-                                 {{ __('content.Available For')}}: 
+                              <li class="block-element2"> <i class="fa fa-check col-purple"> </i>
+                                 {{ __('content.Available For')}}:
                                  <strong>
                                     @php $availability_for = json_decode($data->availability_for); @endphp
                                     @if(!empty($availability_for))
@@ -473,7 +473,7 @@
                                                 @break
 
                                              @case('2')
-                                                <img src="{{URL::to('/assets/')}}/teenager.png" title="For Teenager"> 
+                                                <img src="{{URL::to('/assets/')}}/teenager.png" title="For Teenager">
                                                 @break
 
                                              @case('3')
@@ -487,46 +487,46 @@
                                  </strong>
                               </li>
 
-                              <li class="block-element2"> <i class="fa fa-check col-purple"> </i> 
+                              <li class="block-element2"> <i class="fa fa-check col-purple"> </i>
                                 Equipment :
                                  @if($data->equipment->count() > 0)
                                   <strong> {{ __('content.Available')}}</strong>
                                  <table class="table table-striped col-white ">
                                      <tbody>
-                                   
-                                      
+
+
 
                                       @foreach($data->equipment as $key => $equ)
                                        <tr>
-                                         <td class="equ-table">{{ @$equ->user_equipment->name}}</td> 
-                                         <td class="equ-table">{{'$ '.number_format(@$equ->user_equipment->price)}}</td> 
-                                      </tr>  
-                                      @endforeach 
-                                                               
+                                         <td class="equ-table">{{ @$equ->user_equipment->name}}</td>
+                                         <td class="equ-table">{{'$ '.number_format(@$equ->user_equipment->price)}}</td>
+                                      </tr>
+                                      @endforeach
+
                                  </tbody>
                                     </table>
-                                 
+
                                  @else
-                                   {{ __('content.Not Available')}}: 
+                                   {{ __('content.Not Available')}}:
                                  @endif
-                                
+
                               </li>
 
                            </ul>
-                           
+
                         </div>
                      </div>
                   </div>
                </div>
-              
+
             </div>
-            
-       
+
+
          {{--  sa end  --}}
                </div>
-               
+
                <div class="block-element3 m-t-30">
-                  <p class="m-b-0" style="padding:0px 30px">   
+                  <p class="m-b-0" style="padding:0px 30px">
                      <a href="javascript:void(0)" class="block-element2 bg-white col-purple rounded custom-btn1 text-center getUserMessage" data-id="{{base64_encode(@$data->user->id)}}"> Contact Coach  </a> </p>
                </div>
             </div>
@@ -623,15 +623,15 @@
 <!-- Modal -->
   <div class="modal fade" id="getUserMessageModal" role="dialog">
     <div class="modal-dialog">
-    
+
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header contact-profile">
           <h4 class="modal-title ">{{ __('content.Send a Message')}}</h4>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>          
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
         <div class="modal-body" id="getUserMessageModalContent">
-          
+
         </div>
       </div>
 

@@ -82,12 +82,12 @@ return [
     'Success!' => 'Erfolg!',
    'Check Your Order'=>'Überprüfen Sie Ihre Bestellung',
     '5.0'=> '5.0 ',
-   'Hide what included '=>'Ausblenden, was enthalten ist',
+   'Hide what included'=>'Ausblenden, was enthalten ist',
     'Package' => 'Paket',
     'Summary' => 'Zusammenfassung',
     'Total Amount'=> 'Gesamtsumme ',
     'Continue to Checkout' => 'Weiter zur Kasse',
-   'You won`t be charged yet '=>'Sie werden noch nicht belastet',
+   'You won`t be charged yet'=>'Sie werden noch nicht belastet',
 
     // cart page end
 
@@ -96,7 +96,7 @@ return [
      'Cookie Policy' => 'Cookie-Richtlinie',
      'COOKIE POLICY'=> 'COOKIE-RICHTLINIE',
      'Please read the following carefully to understand our policies and practices regarding your personal information and how we will treat it. By using or accessing our website, you agree to this privacy policy. This policy may change from time to time and your continued use of our website is deemed to be acceptance of such changes, so please check the policy periodically for updates.' => 'Bitte lesen Sie die folgenden Informationen sorgfältig durch, um unsere Richtlinien und Praktiken in Bezug auf Ihre personenbezogenen Daten und unseren Umgang damit zu verstehen. Durch die Nutzung oder den Zugriff auf unsere Website stimmen Sie dieser Datenschutzerklärung zu. Diese Richtlinie kann sich von Zeit zu Zeit ändern und Ihre fortgesetzte Nutzung unserer Website gilt als Zustimmung zu solchen Änderungen. Bitte überprüfen Sie die Richtlinie daher regelmäßig auf Aktualisierungen.',
-     '1. ABOUT COOKIES '=> '1. ÜBER COOKIES  ',
+     '1. ABOUT COOKIES'=> '1. ÜBER COOKIES  ',
      'A cookie is a small text file containing a unique identification number that is placed on the hard disk of your computer by a web page server, enabling the web server to identify your web browser and passively track its activities on that website. A cookie does not reveal any personally identifiable information that you have not otherwise disclosed. Cookies do not contain any executable code and cannot be used for infecting your computer with a virus. Most Web browsers automatically accept cookies but usually provide the option of configuring your browser to accept all cookies, reject all cookies, or notify you when a cookie is sent. You can change your settings in the preferences or options menu of your browser. If you choose to decline cookies, certain features of our site may not be available to you.' => 'Ein Cookie ist eine kleine Textdatei mit einer eindeutigen Identifikationsnummer, die von einem Webseitenserver auf der Festplatte Ihres Computers abgelegt wird und es dem Webserver ermöglicht, Ihren Webbrowser zu identifizieren und seine Aktivitäten auf dieser Website passiv zu verfolgen. Ein Cookie gibt keine personenbezogenen Daten preis, die Sie nicht anderweitig offengelegt haben. Cookies enthalten keinen ausführbaren Code und können nicht dazu verwendet werden, Ihren Computer mit einem Virus zu infizieren. Die meisten Webbrowser akzeptieren Cookies automatisch, bieten jedoch normalerweise die Möglichkeit, Ihren Browser so zu konfigurieren, dass er alle Cookies akzeptiert, alle Cookies ablehnt oder Sie benachrichtigt, wenn ein Cookie gesendet wird. Sie können Ihre Einstellungen in den Einstellungen oder im Optionsmenü Ihres Browsers ändern. Wenn Sie Cookies ablehnen, stehen Ihnen möglicherweise bestimmte Funktionen unserer Website nicht zur Verfügung.',
      '2. HOW DO WE USE COOKIES?' => '2. WIE VERWENDEN WIR COOKIES?',
      '2.1 In line with standard industry practice, we use cookies to track site usage. We use cookies that are strictly necessary to enable/allow you to move around our site. We also use cookies to improve your experience by remembering your details so that you do not need to keep re-entering them when navigating our website.' => '2.1 In Übereinstimmung mit der branchenüblichen Praxis verwenden wir Cookies, um die Nutzung der Website zu verfolgen. Wir verwenden Cookies, die unbedingt erforderlich sind, damit Sie sich auf unserer Website bewegen können. Wir verwenden Cookies auch, um Ihre Erfahrung zu verbessern, indem wir uns Ihre Daten merken, damit Sie sie beim Navigieren auf unserer Website nicht immer wieder eingeben müssen.',
@@ -122,7 +122,7 @@ return [
 
      // DeicimPolicy start
      'LEGAL DISCLAIMER' => 'HAFTUNGSAUSSCHLUSS',
-     '1. OWN RISK OF WEBSITE USE  '=> '1. EIGENES RISIKO DER NUTZUNG DER WEBSITE  ',
+     '1. OWN RISK OF WEBSITE USE'=> '1. EIGENES RISIKO DER NUTZUNG DER WEBSITE  ',
      'Any content, materials, information or otherwise obtained through the use of our site is done at your own discretion and risk. We shall have no responsibility for any damage to your computer system or loss of data that results from the content, material or software. Every effort is made to keep the website up and running smoothly. However, we take no responsibility for, and will not be liable for, the website being temporarily unavailable due to technical issues beyond our control. We reserve the right to make changes or updates to the platform at any time without notice.'=>'Jegliche Inhalte, Materialien, Informationen oder anderweitig, die durch die Nutzung unserer Website erlangt werden, erfolgen nach eigenem Ermessen und auf eigenes Risiko. Wir übernehmen keine Verantwortung für Schäden an Ihrem Computersystem oder Datenverlust, die aus Inhalten, Materialien oder Software resultieren. Es werden alle Anstrengungen unternommen, um einen reibungslosen Betrieb der Website zu gewährleisten. Wir übernehmen jedoch keine Verantwortung und Haftung dafür, dass die Website aufgrund technischer Probleme außerhalb unserer Kontrolle vorübergehend nicht verfügbar ist. Wir behalten uns das Recht vor, jederzeit ohne vorherige Ankündigung Änderungen oder Aktualisierungen an der Plattform vorzunehmen.',
      '2. PERSONAL RESPONSIBILITY'=> '2. PERSÖNLICHE VERANTWORTUNG',
      'We aim to accurately represent the information provided by or throughout website and services. You are acknowledging that you are participating voluntarily in using our website and services, and you alone are solely and personally responsible for your choices, actions and results.'=> 'Wir sind bestrebt, die Informationen, die von oder auf der gesamten Website und den Diensten bereitgestellt werden, genau wiederzugeben. Sie erkennen an, dass Sie freiwillig an der Nutzung unserer Website und Dienste teilnehmen, und Sie allein und persönlich für Ihre Entscheidungen, Handlungen und Ergebnisse verantwortlich sind. ',
@@ -175,7 +175,7 @@ return [
      // REFUND Policy start
      'Refund Policy' => 'Rückgaberecht',
      'REFUNDAND CANCELLATION POLICY'=> 'RÜCKERSTATTUNG UND STORNIERUNGSBEDINGUNGEN ',
-     '1. INTRODUCTION '=> '1. EINLEITUNG ',
+     '1. INTRODUCTION'=> '1. EINLEITUNG ',
      '1.1 For purposes of this Refund and Cancellation Policy, “we” or “our” refers to us, and “you” or “your” refers to the client/user. Please read this Refundand Cancellation Policy carefully as it constitutes your agreement with us' => '1.1 Für die Zwecke dieser Rückerstattungs- und Stornierungsrichtlinie bezieht sich „wir“ oder „unser“ auf uns und „Sie“ oder „Ihr“ auf den Kunden/Benutzer. Bitte lesen Sie diese Rückerstattungs- und Stornierungsbedingungen sorgfältig durch, da sie Ihre Vereinbarung mit uns darstellen',
      '1.2 By engaging us to provide services to you, you agree to be legally bound by this Refund and Cancellation Policy. We reserve the right to change or modify this Refundand Cancellation Policy at any time.' => '1.2 Indem Sie uns mit der Erbringung von Dienstleistungen für Sie beauftragen, erklären Sie sich damit einverstanden, rechtlich an diese Rückerstattungs- und Stornierungsrichtlinie gebunden zu sein. Wir behalten uns das Recht vor, diese Rückerstattungs- und Stornierungsbedingungen jederzeit zu ändern oder zu modifizieren.',
      '1.3 Unless otherwise specified, any changes or modifications will be effective immediately and your continued use of our services after such time will constitute your acceptance of such changes or modifications.' => '1.3 Sofern nicht anders angegeben, werden alle Änderungen oder Modifikationen sofort wirksam und Ihre fortgesetzte Nutzung unserer Dienste nach diesem Zeitpunkt stellt Ihre Zustimmung zu diesen Änderungen oder Modifikationen dar.',

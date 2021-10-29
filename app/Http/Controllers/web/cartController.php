@@ -147,6 +147,8 @@ class cartController extends Controller
             );
 
             $priceDed = $odata['price'];
+            $priceDed = $odata['price'];
+
             $oid = ActivityOrders::newOrder($odata);
         }
 

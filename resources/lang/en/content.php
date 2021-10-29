@@ -83,12 +83,12 @@ return [
     'Success!' => 'Success!',
    'Check Your Order'=>'Check Your Order ',
     '5.0'=> '5.0 ',
-   'Hide what included '=>'Hide what included  ',
+   'Hide what included'=>'Hide what included  ',
     'Package' => 'Package',
     'Summary' => 'Summary',
     'Total Amount'=> 'Total Amount ',
     'Continue to Checkout' => 'Continue to Checkout',
-   'You won`t be charged yet '=>'You won`t be charged yet  ',
+   'You won`t be charged yet'=>'You won`t be charged yet  ',
     
     // cart page end
 
@@ -96,7 +96,7 @@ return [
     'Cookie Policy' => 'Cookie Policy',
     'COOKIE POLICY'=> 'COOKIE POLICY ',
     'Please read the following carefully to understand our policies and practices regarding your personal information and how we will treat it. By using or accessing our website, you agree to this privacy policy. This policy may change from time to time and your continued use of our website is deemed to be acceptance of such changes, so please check the policy periodically for updates.' => 'Please read the following carefully to understand our policies and practices regarding your personal information and how we will treat it. By using or accessing our website, you agree to this privacy policy. This policy may change from time to time and your continued use of our website is deemed to be acceptance of such changes, so please check the policy periodically for updates.',
-    '1. ABOUT COOKIES '=> '1. ABOUT COOKIES  ',
+    '1. ABOUT COOKIES'=> '1. ABOUT COOKIES  ',
     'A cookie is a small text file containing a unique identification number that is placed on the hard disk of your computer by a web page server, enabling the web server to identify your web browser and passively track its activities on that website. A cookie does not reveal any personally identifiable information that you have not otherwise disclosed. Cookies do not contain any executable code and cannot be used for infecting your computer with a virus. Most Web browsers automatically accept cookies but usually provide the option of configuring your browser to accept all cookies, reject all cookies, or notify you when a cookie is sent. You can change your settings in the preferences or options menu of your browser. If you choose to decline cookies, certain features of our site may not be available to you.' => 'A cookie is a small text file containing a unique identification number that is placed on the hard disk of your computer by a web page server, enabling the web server to identify your web browser and passively track its activities on that website. A cookie does not reveal any personally identifiable information that you have not otherwise disclosed. Cookies do not contain any executable code and cannot be used for infecting your computer with a virus. Most Web browsers automatically accept cookies but usually provide the option of configuring your browser to accept all cookies, reject all cookies, or notify you when a cookie is sent. You can change your settings in the preferences or options menu of your browser. If you choose to decline cookies, certain features of our site may not be available to you.',
     '2. HOW DO WE USE COOKIES?' => '2. HOW DO WE USE COOKIES?',
     '2.1 In line with standard industry practice, we use cookies to track site usage. We use cookies that are strictly necessary to enable/allow you to move around our site. We also use cookies to improve your experience by remembering your details so that you do not need to keep re-entering them when navigating our website.' => '2.1 In line with standard industry practice, we use cookies to track site usage. We use cookies that are strictly necessary to enable/allow you to move around our site. We also use cookies to improve your experience by remembering your details so that you do not need to keep re-entering them when navigating our website.',
@@ -121,7 +121,7 @@ return [
 
     // DeicimPolicy start
     'LEGAL DISCLAIMER' => 'LEGAL DISCLAIMER',
-    '1. OWN RISK OF WEBSITE USE  '=> '1. OWN RISK OF WEBSITE USE   ',
+    '1. OWN RISK OF WEBSITE USE'=> '1. OWN RISK OF WEBSITE USE   ',
     'Any content, materials, information or otherwise obtained through the use of our site is done at your own discretion and risk. We shall have no responsibility for any damage to your computer system or loss of data that results from the content, material or software. Every effort is made to keep the website up and running smoothly. However, we take no responsibility for, and will not be liable for, the website being temporarily unavailable due to technical issues beyond our control. We reserve the right to make changes or updates to the platform at any time without notice.'=>'Any content, materials, information or otherwise obtained through the use of our site is done at your own discretion and risk. We shall have no responsibility for any damage to your computer system or loss of data that results from the content, material or software. Every effort is made to keep the website up and running smoothly. However, we take no responsibility for, and will not be liable for, the website being temporarily unavailable due to technical issues beyond our control. We reserve the right to make changes or updates to the platform at any time without notice. ',
     '2. PERSONAL RESPONSIBILITY'=> '2. PERSONAL RESPONSIBILITY ',
     'We aim to accurately represent the information provided by or throughout website and services. You are acknowledging that you are participating voluntarily in using our website and services, and you alone are solely and personally responsible for your choices, actions and results.'=> 'We aim to accurately represent the information provided by or throughout website and services. You are acknowledging that you are participating voluntarily in using our website and services, and you alone are solely and personally responsible for your choices, actions and results. ',
@@ -174,7 +174,7 @@ return [
     // REFUND Policy start
     'Refund Policy' => 'Refund Policy',
     'REFUNDAND CANCELLATION POLICY'=> 'REFUNDAND CANCELLATION POLICY ',
-    '1. INTRODUCTION '=> '1. INTRODUCTION  ',
+    '1. INTRODUCTION'=> '1. INTRODUCTION  ',
     '1.1 For purposes of this Refund and Cancellation Policy, “we” or “our” refers to us, and “you” or “your” refers to the client/user. Please read this Refundand Cancellation Policy carefully as it constitutes your agreement with us' => '1.1 For purposes of this Refund and Cancellation Policy, “we” or “our” refers to us, and “you” or “your” refers to the client/user. Please read this Refundand Cancellation Policy carefully as it constitutes your agreement with us',
     '1.2 By engaging us to provide services to you, you agree to be legally bound by this Refund and Cancellation Policy. We reserve the right to change or modify this Refundand Cancellation Policy at any time.' => '1.2 By engaging us to provide services to you, you agree to be legally bound by this Refund and Cancellation Policy. We reserve the right to change or modify this Refundand Cancellation Policy at any time.',
     '1.3 Unless otherwise specified, any changes or modifications will be effective immediately and your continued use of our services after such time will constitute your acceptance of such changes or modifications.' => '1.3 Unless otherwise specified, any changes or modifications will be effective immediately and your continued use of our services after such time will constitute your acceptance of such changes or modifications.',
