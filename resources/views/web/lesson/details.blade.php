@@ -419,7 +419,7 @@
                                           <td></td>
                                           <td>{{$val->day}}</td>
                                           <td>
-                                             {{date('h:i a', strtotime($val->start_time)).' to '.date('h:i a', strtotime($val->end_time))}}
+                                             {{date('H:i:s', strtotime($val->start_time)).' to '.date('H:i:s', strtotime($val->end_time))}}
                                           </td>
                                        </tr>
                                     @endforeach

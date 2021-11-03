@@ -21,7 +21,7 @@ class settingController extends Controller
     {
         $data = array(
             'countries' => country::all(),
-            'languages' => Language::all(),
+            'languages' => Language::orderBy('name')->get(),
         );
         return view('coach.my_account.index')->with($data);
     }

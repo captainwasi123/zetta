@@ -13,6 +13,6 @@ class CoachRequest extends Model
 
     public function user()
     {
-        return $this->belongsTo(User::class,'user_id')->where('coach_request_status',0);
+        return $this->belongsTo(User::class,'user_id');
     }
 }

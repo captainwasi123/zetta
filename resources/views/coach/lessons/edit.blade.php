@@ -119,11 +119,34 @@
                      </div>
                   </div>
                   <div class="col-md-8 col-lg-8 col-12">
-                     <select class="form-field1" name="skill_level" required>
-                        <option {{$data->skills_level == 'Beginner' ? 'selected' : ''}}> Beginner  </option>
-                        <option {{$data->skills_level == 'Intermediate' ? 'selected' : ''}}> Intermediate  </option>
-                        <option {{$data->skills_level == 'Advanced' ? 'selected' : ''}}> Advanced  </option>
-                     </select>
+                     <div class="inline-1">
+                         <label class="custom-control custom-checkbox">
+                            <input name="skill_level[]" type="checkbox" value="Beginner" class="custom-control-input"
+                              @foreach($data->skills as $val)
+                                 {{$val->skills == 'Beginner' ? 'checked' : ''}}
+                              @endforeach
+                            >
+                            <span class="custom-control-label"> Beginner </span>
+                         </label>
+
+                         <label class="custom-control custom-checkbox">
+                            <input name="skill_level[]" type="checkbox" value="Intermediate" class="custom-control-input"
+                              @foreach($data->skills as $val)
+                                 {{$val->skills == 'Intermediate' ? 'checked' : ''}}
+                              @endforeach
+                            >
+                            <span class="custom-control-label"> Intermediate </span>
+                         </label>
+
+                         <label class="custom-control custom-checkbox">
+                            <input name="skill_level[]" type="checkbox" value="Advanced" class="custom-control-input"
+                              @foreach($data->skills as $val)
+                                 {{$val->skills == 'Advanced' ? 'checked' : ''}}
+                              @endforeach
+                            >
+                            <span class="custom-control-label"> Advanced </span>
+                         </label>
+                      </div>
                   </div>
                </div>
                <div class="row center-row">

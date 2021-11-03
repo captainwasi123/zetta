@@ -260,7 +260,7 @@
       </div>
       <div class="col-md-6 col-lg-6 col-sm-12 col-12">
          <div class="sec-head1 m-b-15">
-            <h3> Active Lesson </h3>
+            <h3> Created Activities </h3>
          </div>
          <div class="block-element">
             <div class="row">

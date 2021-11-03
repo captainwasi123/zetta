@@ -1,9 +1,7 @@
 @extends('web.support.master2')
-@section('title', 'Home')
+@section('title', 'Cart')
 
 @section('content')
-
-<<<<<<< HEAD
 <section class="action-bar">
    <div class="container">
       <div class="all-actions arrows1">
@@ -37,8 +35,6 @@
       </div>
    </div>
 </section>
-=======
->>>>>>> 714edb0cdee02b5d32c0ea29824d3b0c9242a1d2
 <!-- Action Bar Ends Here -->
 <!-- Page Content Starts Here -->
 <section class="pad-top-130 pad-bot-40 bg-dark2">
@@ -208,7 +204,7 @@
             $(document).on('change', '#datepicker', function(){
                var date = $(this).val();
                $('.bookingTime').html('<option value="">...</option>');
-               $.get("{{URL::to('/cart/getSlot')}}/"+date+"|{{$data->id}}", function(data){
+               $.get("{{URL::to('/cart/getSlot')}}/"+date+"|{{$data->id}}|{{$pack}}", function(data){
 
                   $('.bookingTime').html(data);
                });

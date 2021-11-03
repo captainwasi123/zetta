@@ -111,7 +111,7 @@ class userController extends Controller
         $req = CoachRequest::find($id);
         $u = User::where('id',$req->user_id)->first();
         $u->type = 2;
-        $u->coach_request_status = 1;
+        $u->coach_request_status = 2;
         $u->save();
         $req->delete();
         return redirect()->back()->with('success', 'User Request For Coach Is Approved.');

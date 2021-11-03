@@ -56,6 +56,7 @@ class Kernel extends HttpKernel
         'changeLang' => \App\Http\Middleware\changeLang::class,
         'auth' => \App\Http\Middleware\Authenticate::class,
         'userAuth' => \App\Http\Middleware\userAuth::class,
+        'coachAuth' => \App\Http\Middleware\coachAuth::class,
         'adminAuth' => \App\Http\Middleware\adminAuth::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'cache.headers' => \Illuminate\Http\Middleware\SetCacheHeaders::class,

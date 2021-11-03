@@ -131,7 +131,7 @@ use Illuminate\Support\Facades\Route;
 
 
 		//Coach
-			Route::prefix('coach')->namespace('coach')->group(function(){
+			Route::prefix('coach')->middleware('coachAuth')->namespace('coach')->group(function(){
 
 				Route::get('/', 'CoachController@index')->name('coach.dashboard');
                 Route::get('/friends','CoachController@friend')->name('coach.friends');

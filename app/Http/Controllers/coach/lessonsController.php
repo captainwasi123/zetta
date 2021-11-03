@@ -10,6 +10,7 @@ use App\Models\lesson\medias;
 use App\Models\lesson\Equipments;
 use App\Models\lesson\Locations;
 use App\Models\lesson\Packages;
+use App\Models\lesson\skills;
 use App\Models\sportsCategory;
 use App\Models\sports;
 use App\Models\FavouriteLesson as FL;
@@ -28,7 +29,7 @@ class lessonsController extends Controller
 
     function add(){
         $equip = userEquipment::where('user_id', Auth::id())->get();
-        $categories = sportsCategory::all();
+        $categories = sportsCategory::orderBy('name')->get();
 
         return view('coach.lessons.add', ['equip' => $equip, 'categories' => $categories]);
     }
@@ -36,7 +37,14 @@ class lessonsController extends Controller
     function insert(Request $request){
         $data = $request->all();
         $id = lessons::addLesson($data);
-
+        if(!empty($data['skill_level'])){
+            foreach($data['skill_level'] as $val){
+                $s = new skills;
+                $s->lesson_id = $id;
+                $s->skills = $val;
+                $s->save();
+            }
+        }
         if ($request->hasFile('cover_image')) {
             $file = $request->file('cover_image');
             $filename = date('dmyHis').'.'.$file->getClientOriginalExtension();
@@ -76,7 +84,15 @@ class lessonsController extends Controller
         $data = $request->all();
         $id = base64_decode($data['lid']);
         lessons::editLesson($data);
-
+        skills::where('lesson_id', $id)->delete();
+        if(!empty($data['skill_level'])){
+            foreach($data['skill_level'] as $val){
+                $s = new skills;
+                $s->lesson_id = $id;
+                $s->skills = $val;
+                $s->save();
+            }
+        }
         if ($request->hasFile('cover_image')) {
             $file = $request->file('cover_image');
             $filename = date('dmyHis').'.'.$file->getClientOriginalExtension();
@@ -113,7 +129,7 @@ class lessonsController extends Controller
     }
 
     function getSports($id){
-        $data = sports::where('category_id', $id)->get();
+        $data = sports::where('category_id', $id)->orderBy('name')->get();
 
         return view('coach.lessons.response.sports_name', ['sports' => $data]);
     }

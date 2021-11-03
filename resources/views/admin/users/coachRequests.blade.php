@@ -31,7 +31,7 @@
                             @foreach($data as $key => $val)
                                 <tr>
                                     <td>{{++$key}}</td>
-                                    <td>{{@$val->user->fname.' '.$val->user->lname}}</td>
+                                    <td>{{@$val->user->fname.' '.@$val->user->lname}}</td>
                                     <td>{{@$val->user->email}}</td>
                                     <td>{{@$val->user->gender}}</td>
                                     <td>{{@$val->user->country->nicename}}</td>

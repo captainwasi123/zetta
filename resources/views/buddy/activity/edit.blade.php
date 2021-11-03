@@ -278,11 +278,11 @@
                   <div class="inline-1">
                      <label class="custom-control custom-radio">
                      <input id="radio1" name="availability" type="radio" value="1" class="custom-control-input" {{$data->availability == '1' ? 'checked' : ''}}>
-                     <span class="custom-control-label"> Only Zoom Classes </span>
+                     <span class="custom-control-label"> Only Zoom Activity </span>
                      </label>
                      <label class="custom-control custom-radio">
                      <input id="radio2" name="availability" type="radio" value="2" class="custom-control-input" {{$data->availability == '2' ? 'checked' : ''}}>
-                     <span class="custom-control-label"> Only Normal Classes </span>
+                     <span class="custom-control-label"> Only Normal Activity </span>
                      </label>
                      <label class="custom-control custom-radio">
                      <input id="radio2" name="availability" type="radio" value="3" class="custom-control-input" {{$data->availability == '3' ? 'checked' : ''}}>

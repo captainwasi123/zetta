@@ -332,15 +332,15 @@
                               <li class="block-element2"> <i class="fa fa-check col-purple"> </i> 
                                  @switch($data->availability)
                                     @case('1')
-                                       {{ __('content.Only Zoom Classes')}}
+                                       Only Zoom Activity
                                        @break
 
                                     @case('2')
-                                       {{ __('content.Only Normal Classes')}}
+                                       Only Normal Activity
                                        @break
 
                                     @case('3')
-                                       {{ __('content.Normal Classes, Zoom Classess')}}
+                                       Normal Activity, Zoom Activity
                                        @break
                                  @endswitch
                               </li>

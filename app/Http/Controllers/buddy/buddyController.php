@@ -60,7 +60,7 @@ class buddyController extends Controller
             return back()->with('pending', 'Your Reqest For Coach Is In Pending !');
         }else if(auth()->user()->coach_request_status == null){
             $u = User::find(auth()->user()->id);
-            $u->coach_request_status = 0;
+            $u->coach_request_status = 1;
             $u->save();
 
             $req = new CoachRequest();

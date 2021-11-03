@@ -9,6 +9,7 @@ use App\Models\lesson\Locations;
 use App\Models\lesson\Packages;
 use App\Models\lesson\orders;
 use App\Models\lesson\medias;
+use App\Models\lesson\skills;
 use App\Models\User;
 use App\Models\FavouriteLesson;
 use App\Models\sportsCategory;
@@ -27,7 +28,6 @@ class lessons extends Model
         $l->title = $data['title'];
         $l->description = $data['description'];
         $l->location_covered = $data['locationType'];
-        $l->skills_level = $data['skill_level'];
         $l->participants = $data['participants'];
         $l->group_members = empty($data['group_members']) ? null : $data['group_members'];
         $l->held_date = $data['held_date'].' '.$data['held_time'];
@@ -40,7 +40,9 @@ class lessons extends Model
         $l->save();
         $id = $l->id;
 
-        lessons::addEquipment($id, $data['equipments']);
+        if(isset($data['equipments'])){
+            lessons::addEquipment($id, $data['equipments']);
+        }
         lessons::addLocation($id, $data);
         $pack = array(
             'basic' => array(
@@ -72,7 +74,6 @@ class lessons extends Model
         $l->title = $data['title'];
         $l->description = $data['description'];
         $l->location_covered = $data['locationType'];
-        $l->skills_level = $data['skill_level'];
         $l->participants = $data['participants'];
         $l->group_members = empty($data['group_members']) ? null : $data['group_members'];
         $l->held_date = $data['held_date'].' '.$data['held_time'];
@@ -87,7 +88,9 @@ class lessons extends Model
         Locations::where('lesson_id', $id)->delete();
         Packages::where('lesson_id', $id)->delete();
 
-        lessons::addEquipment($id, $data['equipments']);
+        if(isset($data['equipments'])){
+            lessons::addEquipment($id, $data['equipments']);
+        }
         lessons::addLocation($id, $data);
         $pack = array(
             'basic' => array(
@@ -153,6 +156,10 @@ class lessons extends Model
  
 
 
+
+    public function skills(){
+        return $this->hasMany(skills::class, 'lesson_id', 'id');
+    }
 
     public function equipment(){
         return $this->hasMany(Equipments::class, 'lesson_id', 'id');

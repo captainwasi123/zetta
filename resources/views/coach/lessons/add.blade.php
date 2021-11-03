@@ -44,7 +44,7 @@
                      </div>
                   </div>
                   <div class="col-md-8 col-lg-8 col-12">
-                     <select class="select2 select2-multiple" style="width: 100%" name="equipments[]" multiple="multiple" data-placeholder="" required>
+                     <select class="select2 select2-multiple" style="width: 100%" name="equipments[]" multiple="multiple" data-placeholder="">
                         @foreach($equip as $val)
                            <option value="{{$val->id}}">{{$val->name}}</option>
                         @endforeach
@@ -103,11 +103,22 @@
                      </div>
                   </div>
                   <div class="col-md-8 col-lg-8 col-12">
-                     <select class="form-field1" name="skill_level" required>
-                        <option> Beginner  </option>
-                        <option> Intermediate  </option>
-                        <option> Advanced  </option>
-                     </select>
+                     <div class="inline-1">
+                         <label class="custom-control custom-checkbox">
+                            <input name="skill_level[]" type="checkbox" value="Beginner" class="custom-control-input" checked>
+                            <span class="custom-control-label"> Beginner </span>
+                         </label>
+
+                         <label class="custom-control custom-checkbox">
+                            <input name="skill_level[]" type="checkbox" value="Intermediate" class="custom-control-input">
+                            <span class="custom-control-label"> Intermediate </span>
+                         </label>
+
+                         <label class="custom-control custom-checkbox">
+                            <input name="skill_level[]" type="checkbox" value="Advanced" class="custom-control-input">
+                            <span class="custom-control-label"> Advanced </span>
+                         </label>
+                      </div>
                   </div>
                </div>
                <div class="row center-row">
@@ -284,22 +295,6 @@
                      </div>
                   </div>
                   <div class="col-md-8 col-lg-8 col-12">
-                     {{-- <div class="inline-1">
-                       <label class="custom-control custom-checkbox">
-                      <input id="radio2" name="availability_for[]" type="checkbox" value="1" class="custom-control-input"  >
-                      <span class="custom-control-label"> Senior Citizens </span>
-                      </label>
-                      <br>
-                      <label class="custom-control custom-checkbox">
-                      <input id="radio1" name="availability_for[]" type="checkbox" value="2" class="custom-control-input" >
-                      <span class="custom-control-label"> Teenagers  </span>
-                      </label>
-                      <br>
-                      <label class="custom-control custom-checkbox">
-                      <input id="radio2" name="availability_for[]" type="checkbox" value="3" class="custom-control-input" >
-                      <span class="custom-control-label"> handicapped </span>
-                      </label>
-                     </div> --}}
                      <div class="inline-1">
                      <label class="custom-control custom-radio">
                      <input id="radio1" name="availability" type="radio" value="1" class="custom-control-input">
@@ -326,21 +321,21 @@
                    </div>
                    <div class="col-md-8 col-lg-8 col-12">
                        <div class="inline-1">
-                    <label class="custom-control custom-checkbox">
-                      <input id="radio2" name="availability_for[]" type="checkbox" value=2 class="custom-control-input" >
-                      <span class="custom-control-label"> Senior Citizens </span>
-                      </label>
-                      <br>
-                      <label class="custom-control custom-checkbox">
-                      <input id="radio1" name="availability_for[]" type="checkbox" value=1 class="custom-control-input" >
-                      <span class="custom-control-label"> Teenagers </span>
-                      </label>
-                      <br>
-                      <label class="custom-control custom-checkbox">
-                      <input id="radio2" name="availability_for[]" type="checkbox" value=3 class="custom-control-input" >
-                      <span class="custom-control-label"> handicapped </span>
-                      </label>
-                   </div>
+                         <label class="custom-control custom-checkbox">
+                            <input id="radio2" name="availability_for[]" type="checkbox" value="2" class="custom-control-input" >
+                            <span class="custom-control-label"> Senior Citizens </span>
+                         </label>
+
+                         <label class="custom-control custom-checkbox">
+                            <input id="radio1" name="availability_for[]" type="checkbox" value="1" class="custom-control-input" >
+                            <span class="custom-control-label"> Teenagers </span>
+                         </label>
+
+                         <label class="custom-control custom-checkbox">
+                            <input id="radio2" name="availability_for[]" type="checkbox" value="3" class="custom-control-input" >
+                            <span class="custom-control-label"> handicapped </span>
+                         </label>
+                      </div>
                    </div>
                 </div>
             </div>

@@ -31,7 +31,7 @@ class activityController extends Controller
     function add(){
         $equip = userEquipment::where('user_id', Auth::id())->get();
         $users = friendsList::where('user_id',Auth::id())->get();
-        $categories = sportsCategory::all();
+        $categories = sportsCategory::orderBy('name')->get();
 
         return view('buddy.activity.add', ['equip' => $equip,'users'=>$users, 'categories' => $categories]);
     }
@@ -115,7 +115,7 @@ class activityController extends Controller
     }
 
     function getSports($id){
-        $data = sports::where('category_id', $id)->get();
+        $data = sports::where('category_id', $id)->orderBy('name')->get();
 
         return view('coach.lessons.response.sports_name', ['sports' => $data]);
     }
