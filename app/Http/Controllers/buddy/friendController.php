@@ -45,7 +45,7 @@ class friendController extends Controller
         $f->friend_id = $id;
         $f->save();
 
-        return redirect()->back()->with('success', 'Friend Request Sent.');
+        return redirect('/buddy/friends')->with('success', 'Friend Request Sent.');
     }
 
     function acceptRequestFriend($id){

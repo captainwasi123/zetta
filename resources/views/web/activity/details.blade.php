@@ -457,9 +457,7 @@
                         <h4>  {{empty($val->user) ? 'Unknown' : $val->user->fname.' '.$val->user->lname}} <span>{{ __('content.Coach')}} </span>  </h4>
                      </div>
                      <div class="lesson-info-block">
-                        <p class="descrip">
-                           {{$val->description}}
-                        </p>
+                        <p class="lesson-title">{{$val->title}}</p>
                         <h6 class="col-white m-b-15"> <i class="fa fa-star col-yellow"> </i> 5.0 </h6>
                      </div>
                      <div class="lesson-rating-block">
@@ -478,7 +476,7 @@
 <section class="pad-top-40 pad-bot-40 bg-dark2">
    <div class="container">
       <div class="sec-head1 m-b-25">
-         <h3 class="col-white"> {{ __('content.Related Activity')}} </h3>
+         <h3 class="col-white"> {{ __('content.Related Lesson')}} </h3>
       </div>
       <div class="boxes-slider1 arrows1">
          @foreach($oactivities as $val)
@@ -493,9 +491,7 @@
                         <h4>  {{empty($val->user) ? 'Unknown' : $val->user->fname.' '.$val->user->lname}} <span>{{ __('content.Coach')}}   </span>  </h4>
                      </div>
                      <div class="lesson-info-block">
-                        <p class="descrip">
-                           {{$val->description}}
-                        </p>
+                        <p class="lesson-title">{{$val->title}}</p>
                         <h6 class="col-white m-b-15"> <i class="fa fa-star col-yellow"> </i> 5.0 </h6>
                      </div>
                      <div class="lesson-rating-block">

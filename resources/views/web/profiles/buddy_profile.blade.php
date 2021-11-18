@@ -29,6 +29,12 @@
                       <h4 class="col-purple"> {{ __('content.Hi Buddy')}}  </h4>
                       <p class="col-white"> Lorem Ipsum is a something know you are coach  </p>
                       <h6 class="col-purple"> <i class="fa fa-star "> </i> <i class="fa fa-star "> </i> <i class="fa fa-star "> </i> <i class="fa fa-star "> </i> <i class="fa fa-star "> </i> <b> 5.0 </b> </h6>
+
+
+                      <div class="profile-btn">
+                         <a href="#" class="bg-white col-purple rounded custom-btn1 text-center addFriend" data-id="{{base64_encode(@$data->id)}}">&nbsp;&nbsp;&nbsp;&nbsp;Add Friend&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                         <a href="#" class="bg-white col-purple rounded custom-btn1 text-center getUserMessage"  data-id="{{base64_encode(@$data->id)}}">Send Message</a>
+                      </div>
                    </div>
                 </div>
                 <div class="profile-details1">
@@ -77,21 +83,6 @@
                       </div>
                       <div class="col-md-7 col-lg-7 col-12">
                          <input type="text" class="form-field3" value="{{@$data->city}}" readonly="" name="">
-                      </div>
-                   </div>
-                   <div class="row center-row m-b-20">
-                      <div class="col-md-5 col-lg-5 col-12">
-                         <div class="field-name">
-                            <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/field-icon1.jpg">
-                            <span> {{ __('content.Languages')}} </span>
-                         </div>
-                      </div>
-                      <div class="col-md-7 col-lg-7 col-12">
-                        @foreach($data->langs as $val)
-                        <input type="text" class="form-field3" value="{{$val->language}}" readonly="" name="">
-                        @break
-                        @endforeach
-
                       </div>
                    </div>
                 </div>
@@ -244,4 +235,48 @@
  </section>
  <!-- Page Content Ends Here -->
 
+
+
+<!-- Modal -->
+  <div class="modal fade" id="getUserMessageModal" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header contact-profile">
+          <h4 class="modal-title ">{{ __('content.Send a Message')}}</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body" id="getUserMessageModalContent">
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+@endsection
+@section('addScript')
+   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+   <script type="text/javascript">
+      $(document).ready(function(){
+         'use strict'
+
+         $(document).on('click', '.addFriend', function(){
+            var id = $(this).data('id');
+            Swal.fire({
+              title: 'Are you sure?',
+              text: "You want this user as friend.",
+              icon: 'warning',
+              showCancelButton: true,
+              confirmButtonColor: '#9a49ff',
+              cancelButtonColor: '#b9b9b9',
+              confirmButtonText: 'Yes, Add Friend!'
+            }).then((result) => {
+              if (result.isConfirmed) {
+                window.location.href = "{{URL::to('/buddy')}}/friends/add/"+id;
+              }
+            });
+         });
+      });
+   </script>
 @endsection
