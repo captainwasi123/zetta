@@ -39,23 +39,27 @@
                   @foreach($recent as $val)
                      @if($val->user_id == Auth::id())
                       <div class="col-md-3 col-lg-3 col-sm-6 col-12 pad-less1">
-                         <div class="friends-box m-b-25">
-                            <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{$val->friend->profile_img}}" alt="user" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';">
-                            <div>
-                               <h5> {{$val->friend->fname.' '.$val->friend->lname}} </h5>
-                               <h6> <span> <i class="fa fa-star  col-yellow"> </i> 5.0 </span> <span> {{@$val->friend->country->nicename}} </span> </h6>
+                        <a href="{{route('web.buddy.details', base64_encode($val->friend->id))}}" target="_blank">
+                            <div class="friends-box m-b-25">
+                               <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{$val->friend->profile_img}}" alt="user" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';">
+                               <div>
+                                  <h5> {{$val->friend->fname.' '.$val->friend->lname}} </h5>
+                                  <h6> <span> <i class="fa fa-star  col-yellow"> </i> 5.0 </span> <span> {{@$val->friend->country->nicename}} </span> </h6>
+                               </div>
                             </div>
-                         </div>
+                        </a>
                       </div>
                      @else
                       <div class="col-md-3 col-lg-3 col-sm-6 col-12 pad-less1">
-                         <div class="friends-box m-b-25">
-                            <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{$val->user->profile_img}}" alt="user" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';">
-                            <div>
-                               <h5> {{$val->user->fname.' '.$val->user->lname}} </h5>
-                               <h6> <span> <i class="fa fa-star  col-yellow"> </i> 5.0 </span> <span> {{@$val->user->country->nicename}} </span> </h6>
+                        <a href="{{route('web.buddy.details', base64_encode($val->user->id))}}" target="_blank">
+                            <div class="friends-box m-b-25">
+                               <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{$val->user->profile_img}}" alt="user" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';">
+                               <div>
+                                  <h5> {{$val->user->fname.' '.$val->user->lname}} </h5>
+                                  <h6> <span> <i class="fa fa-star  col-yellow"> </i> 5.0 </span> <span> {{@$val->user->country->nicename}} </span> </h6>
+                               </div>
                             </div>
-                         </div>
+                        </a>
                       </div>
                      @endif
                   @endforeach
@@ -76,7 +80,7 @@
                                        @foreach($requests as $val)
                                            <tr>
                                               <td class="table-image">
-                                                 <a href="javascript:void(0)"><img src="{{URL::to('/')}}/public/storage/user/profile_img/{{$val->user->profile_img}}" alt="user" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';" alt="user" width="40" class="img-circle"> {{$val->user->fname.' '.$val->user->lname}} <br> {{'@'.$val->user->username}} </a>
+                                                 <a href="{{route('web.buddy.details', base64_encode($val->user->id))}}"><img src="{{URL::to('/')}}/public/storage/user/profile_img/{{$val->user->profile_img}}" alt="user" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';" alt="user" width="40" class="img-circle"> {{$val->user->fname.' '.$val->user->lname}} <br> {{'@'.$val->user->username}} </a>
                                               </td>
                                               <td> <i class="fa fa-star col-yellow"> </i> 4.8 </td>
                                               <td> Country: {{@$val->user->country->nicename}} </td>
@@ -122,7 +126,7 @@
                                           @if($val->user_id == Auth::id())
                                            <tr>
                                               <td class="table-image">
-                                                 <a href="javascript:void(0)"><img src="{{URL::to('/')}}/public/storage/user/profile_img/{{$val->friend->profile_img}}" alt="user" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';" alt="user" width="40" class="img-circle"> {{$val->friend->fname.' '.$val->friend->lname}} <br> {{'@'.$val->friend->username}} </a>
+                                                 <a href="{{route('web.buddy.details', base64_encode($val->friend->id))}}" target="_blank"><img src="{{URL::to('/')}}/public/storage/user/profile_img/{{$val->friend->profile_img}}" alt="user" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';" alt="user" width="40" class="img-circle"> {{$val->friend->fname.' '.$val->friend->lname}} <br> {{'@'.$val->friend->username}} </a>
                                               </td>
                                               <td> <i class="fa fa-star col-yellow"> </i> 4.8 </td>
                                               <td> Country: {{@$val->friend->country->nicename}} </td>
@@ -139,7 +143,7 @@
                                           @else
                                            <tr>
                                               <td class="table-image">
-                                                 <a href="javascript:void(0)"><img src="{{URL::to('/')}}/public/storage/user/profile_img/{{$val->user->profile_img}}" alt="user" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';" alt="user" width="40" class="img-circle"> {{$val->user->fname.' '.$val->user->lname}} <br> {{'@'.$val->user->username}} </a>
+                                                 <a href="{{route('web.buddy.details', base64_encode($val->user->id))}}" target="_blank"><img src="{{URL::to('/')}}/public/storage/user/profile_img/{{$val->user->profile_img}}" alt="user" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';" alt="user" width="40" class="img-circle"> {{$val->user->fname.' '.$val->user->lname}} <br> {{'@'.$val->user->username}} </a>
                                               </td>
                                               <td> <i class="fa fa-star col-yellow"> </i> 4.8 </td>
                                               <td> Country: {{@$val->user->country->nicename}} </td>

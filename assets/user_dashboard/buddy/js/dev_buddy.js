@@ -51,10 +51,7 @@ $(document).ready(function(){
         }
     });
 
-    $(document).on('click', '.addLocationBlock', function(){
-        var data = '<br><div class="location-field"><input type="text" placeholder="Location" class="form-field1" name="location[]" required></div>';
-        $('#location_block').append(data);
-    });
+    
 
     $(document).on('change', '#id_proof_field', function(){
         $('#id_proof_form').submit();

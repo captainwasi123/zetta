@@ -107,9 +107,10 @@ class cartController extends Controller
                 'lesson_id' => $lid,
                 'seller_id' => $lesson->user_id,
                 'plan' => $pack,
-                'price' => $lesson->packages[$pack]->price,
-                'commision' =>  ($lesson->packages[$pack]->price/100)*$saleSetting->commision,
-                'earning' => ($lesson->packages[$pack]->price - ($lesson->packages[$pack]->price/100)*$saleSetting->commision),
+                'price' => $lesson->packages[$pack]->price*$_POST['qty'],
+                'qty' => $_POST['qty'],
+                'commision' =>  (($lesson->packages[$pack]->price*$_POST['qty'])/100)*$saleSetting->commision,
+                'earning' => ($lesson->packages[$pack]->price*$_POST['qty'] - (($lesson->packages[$pack]->price*$_POST['qty'])/100)*$saleSetting->commision),
                 'booking_date' => empty($data['booking_date']) ? null : date('Y-m-d', strtotime($data['booking_date'])),
                 'booking_time' => empty($data['booking_time']) ? null : date('H:i:s', strtotime($data['booking_time'])),
             );
@@ -126,15 +127,17 @@ class cartController extends Controller
             $userequipment = userEquipment::get();
             $act = activities::find($aid);
             $price = 0;
-            if (count($act->equipment)>0){
-                $ids = [];
+            if($data['with_without_equipment'] == '2'){
+                if (count($act->equipment)>0){
+                    $ids = [];
 
-                foreach ($act->equipment as $k => $val){
-                    $ids[$k] = $val->equip_id;
-                }
+                    foreach ($act->equipment as $k => $val){
+                        $ids[$k] = $val->equip_id;
+                    }
 
-                foreach ($userequipment->whereIn('id',$ids) as $equ){
-                    $price += $equ->price;
+                    foreach ($userequipment->whereIn('id',$ids) as $equ){
+                        $price += $equ->price;
+                    }
                 }
             }
 
@@ -142,8 +145,10 @@ class cartController extends Controller
                 'activity_id' => $aid,
                 'seller_id' => $act->user_id,
                 'price' => $price,
+                'qty' => $_POST['qty'],
                 'commision' =>  ($price/100)*$saleSetting->commision,
-                'earning' => ($price - ($price/100)*$saleSetting->commision)
+                'earning' => ($price - ($price/100)*$saleSetting->commision),
+                'with_without_equipment' => $data['with_without_equipment']
             );
 
             $priceDed = $odata['price'];

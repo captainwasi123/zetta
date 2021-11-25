@@ -33,6 +33,7 @@
                         <th> # </th>
                         <th> Seller </th>
                         <th> Lesson </th>
+                        <th> Qty </th>
                         <th> Total Amount</th>
                         <th> Type </th>
                         <th> BookingTime </th>
@@ -51,6 +52,7 @@
                            <td>
                                {{empty($val->lesson) ? '' : $val->lesson->title}}
                             </td>
+                            <td> {{$val->qty}} </td>
                            <td> {{'$'.number_format($val->price, 2)}} </td>
                            <td>
                               @if(!empty($val->lesson))

@@ -60,10 +60,10 @@
                   </div>
                   <div class="col-md-8 col-lg-8 col-12" id="location_block">
                      <div class="location-field">
-                        <input type="text" placeholder="Location" class="form-field1" name="location[]" required>
+                        <input type="text" placeholder="Location" class="form-field1" data-row="0" id="location_field_0" name="location[]" required>
 
-                        <input type="hidden" name="lat" id="lat">
-                        <input type="hidden" name="lng" id="lng">
+                        <input type="hidden" name="lat[]" id="lat_0">
+                        <input type="hidden" name="lng[]" id="lng_0">
                      </div>
                   </div>
                </div>
@@ -376,24 +376,32 @@
 
 
 <script>
+   var r = 0;
     $(document ).ready(function() {
-        getLocation();
-    });
+        initialize('location_field_0');
 
-    function getLocation() {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(showPosition);
-        } else {
-            alert("Geolocation is not supported by this browser.");
-        }
-    }
+       $(document).on('click', '.addLocationBlock', function(){
+           r++;
+           var data = '<br><div class="location-field"><input type="text" placeholder="Location" class="form-field1" name="location[]" id="location_field_'+r+'" data-row="'+r+'" required><input type="hidden" name="lat[]" id="lat_'+r+'"><input type="hidden" name="lng[]" id="lng_'+r+'"></div>';
+           $('#location_block').append(data);
+           initialize('location_field_'+r);
+       });
+   });
 
-    function showPosition(position) {
-        // initMap(position.coords.latitude,position.coords.longitude);
-        console.log(position);
-        $('#lat').val(position.coords.latitude);
-        $('#lng').val(position.coords.longitude);
-    }
+
+   function initialize(field) {
+      var input = document.getElementById(field);
+      var row = input.getAttribute("data-row");
+
+      var autocomplete = new google.maps.places.Autocomplete(input);
+      autocomplete.addListener('place_changed', function () {
+            var place = autocomplete.getPlace();
+
+            $('#lat_'+row).val(place.geometry['location'].lat());
+            $('#lng_'+row).val(place.geometry['location'].lng());
+
+      });
+   }
 
 </script>
 

@@ -116,6 +116,32 @@
                </p>
             </div>
          </div>
+         <div class="row center-row line">
+            <div class="col-md-6 col-lg-4 col-6">
+               <div class="field-name">
+                  <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/field-icon1.png">
+                  <h5> Bank Name </h5>
+               </div>
+            </div>
+            <div class="col-md-6 col-lg-8 col-6">
+               <p class="form-field1 text-right mob-text-left off-border">
+                  {{Auth::user()->bank_name}}
+               </p>
+            </div>
+         </div>
+         <div class="row center-row line">
+            <div class="col-md-6 col-lg-4 col-6">
+               <div class="field-name">
+                  <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/field-icon1.png">
+                  <h5> IBAN </h5>
+               </div>
+            </div>
+            <div class="col-md-6 col-lg-8 col-6">
+               <p class="form-field1 text-right mob-text-left off-border">
+                  {{Auth::user()->iban}}
+               </p>
+            </div>
+         </div>
       </div>
       <div class="col-md-6 col-lg-6 col-sm-12 col-12">
          <div class="row center-row m-t-30 line">
@@ -463,6 +489,18 @@
                         <textarea name="description" class="form-control" rows="4">{{Auth::user()->description}}</textarea>
                      </div>
                   </div>
+                  <br>
+                  <div class="row">
+                     <div class="col-md-6">
+                        <label>Bank Name</label>
+                        <input type="text" name="bank_name" value="{{Auth::user()->bank_name}}" class="form-control">
+                     </div>
+                     <div class="col-md-6">
+                        <label>IBAN</label>
+                        <input type="text" name="iban" value="{{Auth::user()->iban}}" class="form-control">
+                     </div>
+                  </div>
+                  <br>
               </div>
               <div class="modal-footer">
                   <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Close</button>

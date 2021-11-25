@@ -45,7 +45,7 @@ class orderController extends Controller
         $forms->order_id = $request->order_id;
         $forms->user_id = $request->user_id;
         $forms->msg = $request->msg;
-//        $forms->save();
+        $forms->save();
         $last = $forms::with('user')->latest()->first();
 
         $html = ' <li>
