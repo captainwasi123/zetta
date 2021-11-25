@@ -24,6 +24,8 @@ class activityController extends Controller
     function index(){
         $data = array(
             'active' => activities::where('user_id', Auth::id())->where('status', '1')->get(),
+            'draft' => activities::where('user_id', Auth::id())->where('status', '0')->get(),
+            'paused' => activities::where('user_id', Auth::id())->where('status', '2')->get(),
         );
         return view('buddy.activity.index', ['data' => $data]);
     }
@@ -74,6 +76,33 @@ class activityController extends Controller
         }else{
             return redirect()->back();
         }
+    }
+
+    function draft($id){
+        $id = base64_decode($id);
+        $data = activities::find($id);
+        $data->status = '0';
+        $data->save();
+
+        return redirect()->back()->with('success', 'Activity sent to draft.');
+    }
+
+    function paused($id){
+        $id = base64_decode($id);
+        $data = activities::find($id);
+        $data->status = '2';
+        $data->save();
+
+        return redirect()->back()->with('success', 'Activity sent to paused.');
+    }
+
+    function active($id){
+        $id = base64_decode($id);
+        $data = activities::find($id);
+        $data->status = '1';
+        $data->save();
+
+        return redirect()->back()->with('success', 'Activity sent to active.');
     }
 
     function update(Request $request){

@@ -20,6 +20,8 @@ use Illuminate\Support\Facades\Route;
 
 		// Main Pages
 			Route::get('/', 'webController@index');
+			Route::get('/contact', 'webController@contact');
+			Route::get('/thankyou', 'webController@thankyou');
 			Route::get('/about_us', 'webController@aboutUs');
 			Route::get('/all/{type}', 'webController@all')->name('web.all');
 			Route::get('/search', 'webController@search')->name('web.search');
@@ -346,6 +348,11 @@ use Illuminate\Support\Facades\Route;
 						Route::get('/sports/{id}', 'activityController@getSports');
 
 						Route::get('/deleteMedia/{id}', 'activityController@deleteMedia')->name('buddy.activity.deleteMedia');
+
+
+						Route::get('/active/{id}', 'activityController@active')->name('buddy.activity.active');
+						Route::get('/draft/{id}', 'activityController@draft')->name('buddy.activity.draft');
+						Route::get('/paused/{id}', 'activityController@paused')->name('buddy.activity.paused');
 					});
 
 				//Friends

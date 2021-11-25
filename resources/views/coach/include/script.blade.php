@@ -47,13 +47,15 @@
             'use strict'
 
             $.get("{{route('buddy.friends.getNotification')}}", function(data){
-
-                  $('#fnotiBadge').html('<b class="notif-icon1">'+data+'</b>');
+                  if(data != 0){
+                        $('#fnotiBadge').html('<b class="notif-icon1">'+data+'</b>');
+                  }
             });
 
             $.get("{{route('coach.messages.getNotification')}}", function(data){
-
-                  $('#mnotiBadge').html('<b class="notif-icon2">'+data+'</b>');
+                  if(data != 0){
+                        $('#mnotiBadge').html('<b class="notif-icon2">'+data+'</b>');
+                  }
             });
       });
 </script>
