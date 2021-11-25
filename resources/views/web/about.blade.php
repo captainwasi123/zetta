@@ -6,6 +6,7 @@
 body{
     background-image: url('{{URL::to('/assets/website')}}/images/side-particles.png');
     background-size: contain;
+    background-color: #1d242c;
 }
 
 h1.main-heading {
@@ -27,7 +28,7 @@ section.action-bar {
     background-size: contain;
     padding-top: 200px;
     padding-bottom: 200px;
-    background-position: 
+    border-bottom:none !important;
 }
 
 section.reasons-run{
@@ -240,6 +241,11 @@ section.reasons-run {
 }
 }
 
+.text-white {
+
+    color:#fff !important;
+}
+
 
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px){
 
@@ -280,7 +286,7 @@ section.reasons-run {
    <div class="container custom-container">
         <div class="row">
               <div class="col-md-12">
-                    <h1 class="main-heading">ABOUT US</h1>
+                    <h1 class="main-heading text-white">ABOUT US</h1>
                     <p class="main-head-text">HOME&nbsp;&nbsp; | &nbsp;&nbsp;ABOUT US</p>
               </div>
         </div>
@@ -291,19 +297,19 @@ section.reasons-run {
     <div class="container custom-container">
         <div class="row">
               <div class="col-md-12 sec-2">
-                    <h2 class="reasons-run-main-head">WELCOME</h2>
-                    <h2 class="reasons-run-main-head-text">REASONS TO RUN WITH US!</h2>
+                    <h2 class="reasons-run-main-head text-white">WELCOME</h2>
+                    <h2 class="reasons-run-main-head-text text-white">REASONS TO RUN WITH US!</h2>
               </div>
         </div>
         <div class="row">
             <div class="col-md-3 reason-one-main-div">
                 <div class="reason-one-main">
-                    <h3 class="reason-one">BE HEALTHY</h3>
-                    <p class="reason-one-text">Fresh air and early morning running trips sure can cure almost anything.</p>
+                    <h3 class="reason-one text-white">BE HEALTHY</h3>
+                    <p class="reason-one-text text-white">Fresh air and early morning running trips sure can cure almost anything.</p>
                 </div>
                 <div class="reason-three-main">
-                    <h3 class="reason-three">FEEL FREE</h3>
-                    <p class="reason-one-text">Nothing makes you feel more free and independent as running open road.</p>
+                    <h3 class="reason-three text-white">FEEL FREE</h3>
+                    <p class="reason-one-text text-white">Nothing makes you feel more free and independent as running open road.</p>
                 </div>
             </div>
             <div class="col-md-6">
@@ -313,13 +319,13 @@ section.reasons-run {
             </div>
             <div class="col-md-3 reason-one-main-div">
                 <div class="reason-two-main">
-                    <h3 class="reason-two">BE ONE OF US</h3>
-                    <p class="reason-two-text">By joining our group, you get to experience 100% unforgettable moments.</p>
+                    <h3 class="reason-two text-white">BE ONE OF US</h3>
+                    <p class="reason-two-text text-white">By joining our group, you get to experience 100% unforgettable moments.</p>
                 </div>
             
                 <div class="reason-four-main">
-                    <h3 class="reason-four">BE STRONG</h3>
-                    <p class="reason-two-text">Regular running helps you stay fit, healthy and hardy no matter what.</p>
+                    <h3 class="reason-four text-white">BE STRONG</h3>
+                    <p class="reason-two-text text-white">Regular running helps you stay fit, healthy and hardy no matter what.</p>
                 </div>
             </div>
         </div>
@@ -330,8 +336,8 @@ section.reasons-run {
     <div class="container custom-container">
         <div class="row">
             <div class="col-md-12 sec-3">
-                <h2 class="reasons-run-main-head">TEAM</h2>
-                <h2 class="reasons-run-main-head-text">OUR COACHES</h2>
+                <h2 class="reasons-run-main-head text-white">TEAM</h2>
+                <h2 class="reasons-run-main-head-text text-white">OUR COACHES</h2>
             </div>
         </div>
         <div class="row">
@@ -340,17 +346,17 @@ section.reasons-run {
                     <img src="{{URL::to('/assets/website/images/women-biceps.png')}}"/>
                 </div>
                 <div class="reason-four-main">
-                    <h3 class="coach1-head">LAURA PRISTON</h3>
-                    <p class="coach1-text">COACH, PACER</p>
+                    <h3 class="coach1-head text-white">LAURA PRISTON</h3>
+                    <p class="coach1-text text-white">COACH, PACER</p>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="wom-bi-main1">
                     <img src="{{URL::to('/assets/website/images/squats-train.png')}}"/>
                 </div>
-                <div class="reason-four-main">
-                    <h3 class="coach2-head">LAURA PRISTON</h3>
-                    <p class="coach2-text">COACH, PACER</p>
+                <div class="reason-four-main ">
+                    <h3 class="coach2-head text-white">LAURA PRISTON</h3>
+                    <p class="coach2-text text-white">COACH, PACER</p>
                 </div>
             </div>
             <div class="col-md-4">
@@ -358,8 +364,8 @@ section.reasons-run {
                     <img src="{{URL::to('/assets/website/images/card-holder.png')}}"/>
                 </div>
                 <div class="reason-four-main">
-                    <h3 class="coach3-head">LAURA PRISTON</h3>
-                    <p class="coach3-text">COACH, PACER</p>
+                    <h3 class="coach3-head text-white">LAURA PRISTON</h3>
+                    <p class="coach3-text text-white">COACH, PACER</p>
                 </div>
             </div>
         </div>
@@ -370,8 +376,8 @@ section.reasons-run {
     <div class="container custom-container">
         <div class="row">
             <div class="col-md-6">
-                <h2 class="how-it-was-main-head">HOW IT WAS</h2>
-                <p class="how-it-was-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim.</p>
+                <h2 class="how-it-was-main-head text-white">HOW IT WAS</h2>
+                <p class="how-it-was-text text-white">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim.</p>
             </div>
             <div class="col-md-6">
                 <div class="how-it-was-img">
