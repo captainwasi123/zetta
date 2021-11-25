@@ -2,77 +2,384 @@
 @section('title', 'About Us')
 @section('addStyle')
 <style>
+
+body{
+    background-image: url('{{URL::to('/assets/website')}}/images/side-particles.png');
+    background-size: contain;
+}
+
+h1.main-heading {
+    color: white;
+    font-weight: 900;
+    font-size: 70px;
+    text-align: center;
+}
+
+p.main-head-text {
+    text-align: center;
+    color: #a2a2a2;
+    letter-spacing: 2px;
+}
+
+section.action-bar {
+    margin-top: 70px !important;
+    background-image: url('{{URL::to('/assets/website')}}/images/Banner.png');
+    background-size: contain;
+    padding-top: 200px;
+    padding-bottom: 200px;
+    background-position: 
+}
+
+section.reasons-run{
+    /*background-image: url('{{URL::to('/assets/website')}}/images/side-particles.png');
+    background-size: cover;*/
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+h2.reasons-run-main-head {
+    text-align: center;
+    font-size: 20px;
+    padding-bottom: 15px;
+}
+
+.sec-2 {
+    padding-bottom: 60px;
+}
+
+.sec-3 {
+    padding-bottom: 40px;
+
+}
+
+h2.reasons-run-main-head-text {
+    text-align: center;
+    font-size: 45px;
+    font-weight: 900;
+    color: #6f1ad9;
+}
+
+.center-video img {
+    width: 80%;
+}
+
+.center-video { 
+    text-align: center;
+}
+
+.reason-one-text, .reason-two-text, .reason-three-text, .reason-four-text {
+    color: #515151;
+    font-size: 15px;
+}
+
+.reason-one-main {
+    padding-top: 60px;
+}
+
+.reason-two-main {
+    padding-top: 60px;
+}
+
+.reason-one-main-div {
+    display: grid;
+}
+
+.reason-two, .reason-four, .reason-two-text, .reason-four-text {
+    text-align: right;
+}
+
+.wom-bi-main {
+    text-align: left;
+}
+
+.wom-bi-main1 {
+    text-align: center;
+}
+
+.wom-bi-main2 {
+    text-align: right;
+}
+
+.wom-bi-main img, .wom-bi-main1 img, .wom-bi-main2 img {
+    width: 95%
+}
+
+.reason-one, .reason-two, .reason-three, .reason-four {
+    color: #6f1ad9;
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 60px;
+}
+.custom-container {
+    width: 100% !important;
+    max-width: 1300px !important;
+}
+
+.coach1-head, .coach2-head, .coach3-head {
+    text-align: center;
+    padding-top: 25px;
+    font-weight: 900;
+    color: #6f1ad9;
+}
+
+.coach1-text, .coach2-text, .coach3-text {
+    text-align: center;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.coaches-section {
+    padding-bottom: 60px;
+}
+.how-it-was-main-head {
+    font-size: 45px;
+    font-weight: 900;
+    line-height: 70px;
+    color: #6f1ad9;
+}
+.how-it-was-img {
+    text-align: right;
+}
+
+.how-it-was-img img {
+    width: 85%;
+}
+.how-it-was {
+    padding-bottom: 60px;
+}
+
+.how-it-was-text {
+    padding-right: 60px;
+    font-size: 16px;
+    color: #000000;
+    line-height: 30px;
+    letter-spacing: 1px;
+}
+
+
+@media only screen and (max-width: 767px){
+
+    section.action-bar {
+    margin-top: 160px !important;
+    background-size: cover;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-repeat: no-repeat;
+    background-position: center;
+        }
+
+    h1.main-heading {
+    font-size: 50px;
+        }
+.sec-2 {
+    padding-bottom: 10px;
+}
+h2.reasons-run-main-head-text {
+    font-size: 35px;
+}
+.reason-one, .reason-two, .reason-three, .reason-four {
+    text-align: center;
+    line-height: 40px;
+}  
+.reason-one-text, .reason-two-text, .reason-three-text, .reason-four-text {
+    font-size: 16px;
+    text-align: center;
+
+}
+.reason-two-text {
+    text-align: center;
+}
+.reasons-run-main-head-text {
+    text-align: center;
+}   
+.center-video img {
+    width: 100%;
+    padding-top: 30px;
+}
+.reason-two-main {
+    padding-top: 30px;
+}
+section.reasons-run {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.wom-bi-main img, .wom-bi-main1 img, .wom-bi-main2 img {
+    width: 90%;
+}
+.wom-bi-main, .wom-bi-main1, .wom-bi-main2 {
+    text-align: center;
+}
+.reason-four-main {
+    padding-bottom: 30px;
+}
+.coach2-head, .coach1-head, .coach3-head {
+    padding-top: 10px;
+}
+.coaches-section {
+    padding-bottom: 00px;
+}
+.how-it-was-main-head {
+    font-size: 35px;
+    text-align: center;
+    line-height: 40px;
+}
+.how-it-was-text {
+    padding: 0px 0px 30px 0px !important;
+    text-align: center;
+    line-height: 25px;
+    letter-spacing: 0px;
+}
+.reason-one-main {
+    padding-top: 30px;
+}
+.how-it-was-img img {
+    width: 90%;
+}
+.how-it-was-img {
+    text-align: center;
+}
+}
+
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px){
+
+.center-video img {
+    width: 100%;
+}
+
+.reason-one-main {
+    padding-top: 0px;
+}
+.reason-two-main {
+    padding-top: 0px;
+}
+.reason-one, .reason-two, .reason-three, .reason-four {
     
+    line-height: 40px;
+}
+
+.how-it-was-text {
+    padding-right: 0px;
+    font-size: 16px;
+    letter-spacing: 0px;
+}
+.how-it-was-img img {
+    width: 100%;
+}
+
+
+
+}
+
 </style>
 @endsection
 @section('content')
 
-<style type="text/css">
-   .term-sec1 h2 {
-    color: white;
-    text-align: center;
-    letter-spacing: 1px;
-    padding-top: 20px;
-}
-.term-sec1 p {
-    font-size: 15px;
-    letter-spacing: 0.6px;
-    line-height: 26px;
-    font-weight: 300;
-    color: white;
-}
-.term-sec1 h3 {
-    font-size: 24px;
-    font-weight: 500;
-    letter-spacing: 1px;
-    color: white;
-    padding-top: 30px;
-}
-
-.term-sec1 ul li
-{
-   font-size: 15px;
-    letter-spacing: 0.6px;
-    line-height: 26px;
-    font-weight: 300;
-    color: white;
-}
-
-section.action-bar {
-    margin-top: 78px;
-}
-</style>
-
 
 <section class="action-bar">
-   <div class="container">
-      <div class="term-sec1">
-         <h2>  </h2>
+   <div class="container custom-container">
+        <div class="row">
+              <div class="col-md-12">
+                    <h1 class="main-heading">ABOUT US</h1>
+                    <p class="main-head-text">HOME&nbsp;&nbsp; | &nbsp;&nbsp;ABOUT US</p>
+              </div>
+        </div>
+    </div>
+</section>
 
-         <p>{{ __('content.Zettaa is a multisided platform aiming at gathering people through sport activities, may they be as varied as possible. The three founders came up with the idea on a spring day in 2020, as the pandemic was reaching its peak. Tahar Petrucci, one of the founders and an absolute rollerblade fan wanted to share his passion with others by giving some lessons. Unfortunately, he could not find a platform where he could contact other peers and give lessons to rollerblade enthusiasts. “Why not create a space where people from the same area would communicate in order to practice sports together?” And there it was, the passion that was linking the three friends together and that had been the initiator of their friendship.') }}</p>
+<section class="reasons-run">
+    <div class="container custom-container">
+        <div class="row">
+              <div class="col-md-12 sec-2">
+                    <h2 class="reasons-run-main-head">WELCOME</h2>
+                    <h2 class="reasons-run-main-head-text">REASONS TO RUN WITH US!</h2>
+              </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 reason-one-main-div">
+                <div class="reason-one-main">
+                    <h3 class="reason-one">BE HEALTHY</h3>
+                    <p class="reason-one-text">Fresh air and early morning running trips sure can cure almost anything.</p>
+                </div>
+                <div class="reason-three-main">
+                    <h3 class="reason-three">FEEL FREE</h3>
+                    <p class="reason-one-text">Nothing makes you feel more free and independent as running open road.</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="center-video">
+                    <img src="{{URL::to('/assets/website/images/video-picture.png')}}"/>
+                </div>
+            </div>
+            <div class="col-md-3 reason-one-main-div">
+                <div class="reason-two-main">
+                    <h3 class="reason-two">BE ONE OF US</h3>
+                    <p class="reason-two-text">By joining our group, you get to experience 100% unforgettable moments.</p>
+                </div>
+            
+                <div class="reason-four-main">
+                    <h3 class="reason-four">BE STRONG</h3>
+                    <p class="reason-two-text">Regular running helps you stay fit, healthy and hardy no matter what.</p>
+                </div>
+            </div>
+        </div>
+    </div>    
+</section>
 
-         <p>{{ __('content.Zettaa aims at enhancing people’s lives by facilitating social connections through sport events. Its focus as a brand is to include as many sports as possible, focusing on smaller scale activities that are still not widely known by sport enthusiasts.') }}</p>
+<section class="coaches-section">
+    <div class="container custom-container">
+        <div class="row">
+            <div class="col-md-12 sec-3">
+                <h2 class="reasons-run-main-head">TEAM</h2>
+                <h2 class="reasons-run-main-head-text">OUR COACHES</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="wom-bi-main">
+                    <img src="{{URL::to('/assets/website/images/women-biceps.png')}}"/>
+                </div>
+                <div class="reason-four-main">
+                    <h3 class="coach1-head">LAURA PRISTON</h3>
+                    <p class="coach1-text">COACH, PACER</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="wom-bi-main1">
+                    <img src="{{URL::to('/assets/website/images/squats-train.png')}}"/>
+                </div>
+                <div class="reason-four-main">
+                    <h3 class="coach2-head">LAURA PRISTON</h3>
+                    <p class="coach2-text">COACH, PACER</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="wom-bi-main2">
+                    <img src="{{URL::to('/assets/website/images/card-holder.png')}}"/>
+                </div>
+                <div class="reason-four-main">
+                    <h3 class="coach3-head">LAURA PRISTON</h3>
+                    <p class="coach3-text">COACH, PACER</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-         <p>{{ __('content.Being part of the Zettaa community allows for people to connect, engage, and make healthy decisions for their bodies. Sportbuddies allows for two or more people to embrace a physical exercise while getting to know someone with the same level and similar goals in a sport. Another option could be to schedule sessions with coaches who would accompany a sport enthusiast to each step in the path to outdo themselves.') }}</p>
-
-         <h3>{{ __('content.Mission Statement') }}</h3>
-         <p>{{ __('content.Connect people between each other through sports and give local access to a diverse community worldwide.') }}</p>
-
-         <h3>{{ __('content.Vision Statement') }}</h3>
-         <p>{{ __('content.Find the motivation that enables you to move') }}.</p>
-
-         <h3>{{ __('content.Slogan') }}</h3>
-         <p>{{ __('content.Unite through sport') }}.</p>
-
-         <h3>{{ __('content.Our People') }}</h3>
-
-         <ul>
-            <li>{{ __('content.Axel Olson: sports passionate, hockey player, studied sports management at the southern New Hampshire university.') }}</li>
-            <li>{{ __('content.Tahar Petrucci:  sport afficionado, hockey player, multitalented in many areas.') }}</li>
-            <li>{{ __('content.Sylvestre Galli: sports lover, golfer, and other sport activities, studied business administration at the University of Geneva.') }}</li>
-         </ul>
-      </div>
-   </div>
+<section class="how-it-was">
+    <div class="container custom-container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2 class="how-it-was-main-head">HOW IT WAS</h2>
+                <p class="how-it-was-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim.</p>
+            </div>
+            <div class="col-md-6">
+                <div class="how-it-was-img">
+                    <img src="{{URL::to('/assets/website/images/bi-with-bar.png')}}"/>
+                </div>
+            </div>
+        </div>   
+    </div>
 </section>
 
 @endsection
