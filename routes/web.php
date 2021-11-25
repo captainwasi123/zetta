@@ -20,6 +20,8 @@ use Illuminate\Support\Facades\Route;
 
 		// Main Pages
 			Route::get('/', 'webController@index');
+			Route::get('/contact', 'webController@contact');
+			Route::get('/thankyou', 'webController@thankyou');
 			Route::get('/about_us', 'webController@aboutUs');
 			Route::get('/all/{type}', 'webController@all')->name('web.all');
 			Route::get('/search', 'webController@search')->name('web.search');

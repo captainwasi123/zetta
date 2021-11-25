@@ -408,6 +408,18 @@ class webController extends Controller
             return redirect()->back();
         }
 
+
+
+    //New Pages
+        public function contact(){
+
+            return view('web.contact');
+        }
+
+        public function thankyou(){
+
+            return view('web.thankyou');
+        }
 }
 
 
