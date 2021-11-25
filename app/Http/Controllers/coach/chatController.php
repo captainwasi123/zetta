@@ -47,6 +47,8 @@ class chatController extends Controller
                         ->orderBy('created_at', 'desc')
                         ->get();
 
+        chat::where("receiver_id",$sender)->where("sender_id",$receiver)->update(['views' => '1']);
+
         return view('coach.messages.chat', ['user' => $user, 'chat' =>$data, 'chat_list' => $data_list]);
     }
 
@@ -109,9 +111,9 @@ class chatController extends Controller
 
     function getNotification(){
 
-        $data_list = chat::where("sender_id",Auth::id())
-                        ->orWhere("receiver_id",Auth::id())
-                        ->distinct("sender_id", "receiver_id")
+        $data_list = chat::where("receiver_id",Auth::id())
+                        ->where('views', '0')
+                        ->distinct("receiver_id")
                         ->orderBy('created_at', 'desc')
                         ->count();
 

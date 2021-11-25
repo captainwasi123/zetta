@@ -348,6 +348,11 @@ use Illuminate\Support\Facades\Route;
 						Route::get('/sports/{id}', 'activityController@getSports');
 
 						Route::get('/deleteMedia/{id}', 'activityController@deleteMedia')->name('buddy.activity.deleteMedia');
+
+
+						Route::get('/active/{id}', 'activityController@active')->name('buddy.activity.active');
+						Route::get('/draft/{id}', 'activityController@draft')->name('buddy.activity.draft');
+						Route::get('/paused/{id}', 'activityController@paused')->name('buddy.activity.paused');
 					});
 
 				//Friends
