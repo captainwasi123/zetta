@@ -119,7 +119,7 @@
                  <h4 class="col-white"> {{ __('content.ABOUT') }}</h4>
                  <ul>
                      <li> <a href="{{URL::to('about_us')}}">{{ __('content.About Usf').' Zettaa' }} </a> </li>
-                    <li> <a href="#"> {{ __('content.Contact') }}  </a> </li>
+                    <li> <a href="{{URL::to('contact')}}"> {{ __('content.Contact') }}  </a> </li>
                     <li> <a href="#"> Label Coach </a> </li>
                     <li> <a href="#"> Partnership </a> </li>
 

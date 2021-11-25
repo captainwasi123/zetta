@@ -560,6 +560,58 @@ return [
     'Available' => 'Disponible',
     'Not Available:' => 'No disponible:',
     'Sports Buddy`s Activity'=> 'Sports Buddy`s Activity ',
+
+
+     //Contact Us
+
+     'Contact_CONTACT US' => 'CONTÁCTENOS',
+     'Contact_HAVE A QUESTION?' => '¿TENGO UNA PREGUNTA?',
+     'Contact_SEND MESSAGE' => 'ENVIAR MENSAJE',
+     'Contact_Name' => 'Nombre',
+     'Contact_Email' => 'Correo electrónico',
+     'Contact_Message' => 'Mensaje',
+     'Contact_SEND MESSAGE' => 'ENVIAR MENSAJE',
+     'Contact_CONTACT INFO' => 'DATOS DE CONTACTO',
+     'Contact_FIND US' => 'ENCUÉNTRANOS',
+     'Contact_Location' => 'Localización',
+     'Contact_Phone' => 'Teléfono',
+     'Contact_Email' => 'Correo electrónico',
+     'I agree that my submitted data is being collected and stored' => 'Acepto que mis datos enviados se recopilen y almacenen',
+
+
+     //Thankyou
+
+     'Thnkyou_Order #:' => 'Pedido #:',
+     'Thnkyou_Thankyou for your order!' => '¡Gracias por su orden!',
+     'Thnkyou_paragraph' => 'siglos, sino también el salto a la composición tipográfica electrónica, permaneciendo esencialmente sin cambios. Se popularizó en la década de 1960 con el lanzamiento de las hojas de Letraset conta',
+     'Thnkyou_Back to Home' => 'De vuelta a casa',
+
+
+      //About Us
+
+     'aboutus_ABOUT US' => 'Sobre nosotras',
+     'aboutus_HOME' => 'HOGAR',
+     'aboutus_ABOUT US' => 'Sobre nosotras',
+     'aboutus_WELCOME' => 'BIENVENIDA',
+     'aboutus_REASONS TO RUN WITH US!' => 'RAZONES PARA CORRER CON NOSOTROS!',
+     'aboutus_BE HEALTHY' => 'ESTAR SANO',
+     'aboutus_Fresh air and early morning running trips sure can cure almost anything.' => 'El aire fresco y los viajes para correr temprano en la mañana pueden curar casi cualquier cosa.',
+     'aboutus_FEEL FREE' => 'SENTIRSE LIBRE',
+     'aboutus_Nothing makes you feel more free and independent as running open road.' => 'Nada te hace sentir más libre e independiente que correr en carretera.',
+     'aboutus_BE ONE OF US' => 'Ser una de nosotras',
+     'aboutus_By joining our group, you get to experience 100% unforgettable moments.' => 'Al unirse a nuestro grupo, puede vivir momentos 100% inolvidables.',
+     'aboutus_BE STRONG' => 'SÉ FUERTE',
+     'aboutus_Regular running helps you stay fit, healthy and hardy no matter what.' => 'Correr con regularidad te ayuda a mantenerte en forma, saludable y resistente sin importar nada.',
+     'aboutus_TEAM' => 'EQUIPO',
+     'aboutus_OUR COACHES' => 'Nuestras entrenadoras',
+     'aboutus_LAURA PRISTON' => 'LAURA PRISTON',
+     'aboutus_COACH PACER' => 'ENTRENADOR, PACER',
+     'aboutus_LAURA PRISTON' => 'LAURA PRISTON',
+     'aboutus_COACH PACER' => 'ENTRENADOR, PACER',
+     'aboutus_LAURA PRISTON' => 'LAURA PRISTON',
+     'aboutus_COACH PACER' => 'ENTRENADOR, PACER',
+     'aboutus_HOW IT WAS' => 'CÓMO FUE',
+     'aboutus_Lorem ipsum dolor sit amet consectetuer adipiscing elit sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim.' => 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud ejercicio ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim.',
   
 
 ];

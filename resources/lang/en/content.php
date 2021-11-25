@@ -561,6 +561,55 @@ return [
     'Not Available:' => 'Not Available:',
     'Sports Buddy`s Activity'=> 'Sports Buddy`s Activity ',
   
+    //Contact Us
 
+     'Contact_CONTACT US' => 'CONTACT US',
+     'Contact_HAVE A QUESTION?' => 'HAVE A QUESTION?',
+     'Contact_SEND MESSAGE' => 'SEND MESSAGE',
+     'Contact_Name' => 'Name',
+     'Contact_Email' => 'Email',
+     'Contact_Message' => 'Message',
+     'Contact_SEND MESSAGE' => 'SEND MESSAGE',
+     'Contact_CONTACT INFO' => 'CONTACT INFO',
+     'Contact_FIND US' => 'FIND US',
+     'Contact_Location' => 'Location',
+     'Contact_Phone' => 'Phone',
+     'Contact_Email' => 'Email',
+     'I agree that my submitted data is being collected and stored' => 'I agree that my submitted data is being collected and stored',
+
+
+     //Thankyou
+
+     'Thnkyou_Order #:' => 'Order #:',
+     'Thnkyou_Thankyou for your order!' => 'Thankyou for your order!',
+     'Thnkyou_paragraph' => 'centuries, but also the leap into electronic typesetting, remaining essentially unchanged. <br>It was popularised in the 1960s with the release of Letraset sheets conta',
+     'Thnkyou_Back to Home' => 'Back to Home',
+
+
+      //About Us
+
+     'aboutus_ABOUT US' => 'ABOUT US',
+     'aboutus_HOME' => 'HOME',
+     'aboutus_ABOUT US' => 'ABOUT US',
+     'aboutus_WELCOME' => 'WELCOME',
+     'aboutus_REASONS TO RUN WITH US!' => 'REASONS TO RUN WITH US!',
+     'aboutus_BE HEALTHY' => 'BE HEALTHY',
+     'aboutus_Fresh air and early morning running trips sure can cure almost anything.' => 'Fresh air and early morning running trips sure can cure almost anything.',
+     'aboutus_FEEL FREE' => 'FEEL FREE',
+     'aboutus_Nothing makes you feel more free and independent as running open road.' => 'Nothing makes you feel more free and independent as running open road.',
+     'aboutus_BE ONE OF US' => 'BE ONE OF US',
+     'aboutus_By joining our group, you get to experience 100% unforgettable moments.' => 'By joining our group, you get to experience 100% unforgettable moments.',
+     'aboutus_BE STRONG' => 'BE STRONG',
+     'aboutus_Regular running helps you stay fit, healthy and hardy no matter what.' => 'Regular running helps you stay fit, healthy and hardy no matter what.',
+     'aboutus_TEAM' => 'TEAM',
+     'aboutus_OUR COACHES' => 'OUR COACHES',
+     'aboutus_LAURA PRISTON' => 'LAURA PRISTON',
+     'aboutus_COACH PACER' => 'COACH, PACER',
+     'aboutus_LAURA PRISTON' => 'LAURA PRISTON',
+     'aboutus_COACH PACER' => 'COACH, PACER',
+     'aboutus_LAURA PRISTON' => 'LAURA PRISTON',
+     'aboutus_COACH PACER' => 'COACH, PACER',
+     'aboutus_HOW IT WAS' => 'HOW IT WAS',
+     'aboutus_Lorem ipsum dolor sit amet consectetuer adipiscing elit sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim.' => 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim.',
 ];
 

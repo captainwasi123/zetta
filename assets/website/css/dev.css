@@ -642,10 +642,12 @@ ul#ui-id-1 li div:hover {
     padding-top: 10px;
 }
 
-.thankyou p{
+.thankyou p {
     color: #fff;
     text-align: center;
     padding-top: 10px;
+    padding-left: 450px;
+    padding-right: 450px;
 }
 
 .thankyou a{

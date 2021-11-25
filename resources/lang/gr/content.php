@@ -560,6 +560,59 @@ return [
      'Not Available:' => 'Nicht verfügbar:',
      'Sports Buddy`s Activity'=> 'Sports Buddy`s Aktivität',
 
+
+     //Contact Us
+
+     'CONTACT US' => 'KONTAKTIERE UNS',
+     'Contact_HAVE A QUESTION?' => 'EINE FRAGE HABEN?',
+     'Contact_SEND MESSAGE' => 'NACHRICHT SENDEN',
+     'Contact_Name' => 'Name',
+     'Contact_Email' => 'Email',
+     'Contact_Message' => 'Nachricht',
+     'Contact_SEND MESSAGE' => 'NACHRICHT SENDEN',
+     'Contact_CONTACT INFO' => 'KONTAKTINFORMATION',
+     'Contact_FIND US' => 'FINDE UNS',
+     'Contact_Location' => 'Standort',
+     'Contact_Phone' => 'Telefon',
+     'Contact_Email' => 'Email',
+     'I agree that my submitted data is being collected and stored' => 'Ich stimme zu, dass meine übermittelten Daten erhoben und gespeichert werden',
+
+
+     //Thankyou
+
+     'Thnkyou_Order #:' => 'Befehl #:',
+     'Thnkyou_Thankyou for your order!' => 'Vielen Dank für Ihren Auftrag!',
+     'Thnkyou_paragraph' => 'Jahrhunderte, sondern auch der Sprung in den elektronischen Schriftsatz, der im Wesentlichen unverändert blieb. Es wurde in den 1960er Jahren mit der Veröffentlichung von Letraset-Blättern bekannt gemacht',
+     'Thnkyou_Back to Home' => 'Zurück nach Hause',
+
+
+      //About Us
+
+     'aboutus_ABOUT US' => 'ÜBER UNS',
+     'aboutus_HOME' => 'HEIMAT',
+     'aboutus_ABOUT US' => 'ÜBER UNS',
+     'aboutus_WELCOME' => 'WILLKOMMEN',
+     'aboutus_REASONS TO RUN WITH US!' => 'GRÜNDE, MIT UNS ZU LAUFEN!',
+     'aboutus_BE HEALTHY' => 'GESUND SEIN',
+     'aboutus_Fresh air and early morning running trips sure can cure almost anything.' => 'Frische Luft und Laufausflüge am frühen Morgen können fast alles heilen.',
+     'aboutus_FEEL FREE' => 'FÜHLEN SIE SICH FREI',
+     'aboutus_Nothing makes you feel more free and independent as running open road.' => 'Nichts macht dich freier und unabhängiger als das Laufen auf offener Straße.',
+     'aboutus_BE ONE OF US' => 'WERDE EINER VON UNS',
+     'aboutus_By joining our group, you get to experience 100% unforgettable moments.' => 'Wenn Sie sich unserer Gruppe anschließen, erleben Sie 100% unvergessliche Momente.',
+     'aboutus_BE STRONG' => 'SEI STARK',
+     'aboutus_Regular running helps you stay fit, healthy and hardy no matter what.' => 'Regelmäßiges Laufen hilft Ihnen, fit, gesund und robust zu bleiben, egal was passiert.',
+     'aboutus_TEAM' => 'MANNSCHAFT',
+     'aboutus_OUR COACHES' => 'UNSERE COACHES',
+     'aboutus_LAURA PRISTON' => 'LAURA PRISTON',
+     'aboutus_COACH PACER' => 'UNSERE COACHES',
+     'aboutus_LAURA PRISTON' => 'LAURA PRISTON',
+     'aboutus_COACH PACER' => 'UNSERE COACHES',
+     'aboutus_LAURA PRISTON' => 'LAURA PRISTON',
+     'aboutus_COACH PACER' => 'UNSERE COACHES',
+     'aboutus_HOW IT WAS' => 'WIE WAR ES',
+     'aboutus_Lorem ipsum dolor sit amet consectetuer adipiscing elit sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim.' => 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim.',
+  
+
 ];
 
 
