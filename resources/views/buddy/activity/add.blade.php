@@ -146,10 +146,10 @@
             </div>
             <div class="col-md-6 col-lg-6 col-12" id="location_block">
                <div class="location-field">
-                  <input type="text" placeholder="Location" class="form-field1" name="location[]" required>
+                  <input type="text" placeholder="Location" class="form-field1" data-row="0" id="location_field_0" name="location[]" required>
 
-                  <input type="hidden" name="lat" id="lat">
-                  <input type="hidden" name="lng" id="lng">
+                  <input type="hidden" name="lat[]" id="lat_0">
+                  <input type="hidden" name="lng[]" id="lng_0">
                </div>
             </div>
          </div>
@@ -308,6 +308,7 @@
    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key={{env('GOOGLE_MAP_KEY')}}&libraries=places"></script>
 <script type="text/javascript">
+   var r = 0;
    jQuery(document).ready(function() {
 
        $("input[name='tch3']").TouchSpin();
@@ -315,28 +316,30 @@
        $(".select2").select2();
        CKEDITOR.replace( 'description' );
        CKEDITOR.addCss('.cke_editable { background-color: #1d242c; color: white }');
+
+       initialize('location_field_0');
+
+       $(document).on('click', '.addLocationBlock', function(){
+           r++;
+           var data = '<br><div class="location-field"><input type="text" placeholder="Location" class="form-field1" name="location[]" id="location_field_'+r+'" data-row="'+r+'" required><input type="hidden" name="lat[]" id="lat_'+r+'"><input type="hidden" name="lng[]" id="lng_'+r+'"></div>';
+           $('#location_block').append(data);
+           initialize('location_field_'+r);
+       });
    });
-</script>
 
-<script>
-    $(document ).ready(function() {
-        getLocation();
-    });
 
-    function getLocation() {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(showPosition);
-        } else {
-            alert("Geolocation is not supported by this browser.");
-        }
-    }
+   function initialize(field) {
+      var input = document.getElementById(field);
+      var row = input.getAttribute("data-row");
 
-    function showPosition(position) {
-        // initMap(position.coords.latitude,position.coords.longitude);
-        console.log(position);
-        $('#lat').val(position.coords.latitude);
-        $('#lng').val(position.coords.longitude);
-    }
+      var autocomplete = new google.maps.places.Autocomplete(input);
+      autocomplete.addListener('place_changed', function () {
+            var place = autocomplete.getPlace();
 
+            $('#lat_'+row).val(place.geometry['location'].lat());
+            $('#lng_'+row).val(place.geometry['location'].lng());
+
+      });
+   }
 </script>
 @endsection

@@ -51,6 +51,8 @@ class settingController extends Controller
         $u->lat = $data['lat'];
         $u->lng = $data['lng'];
         $u->description = $data['description'];
+        $u->bank_name = $data['bank_name'];
+        $u->iban = $data['iban'];
         $u->save();
 
         return redirect()->back()->with('success', 'Profile Successfully updated.');

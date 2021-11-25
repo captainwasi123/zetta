@@ -32,6 +32,7 @@
                      <th> Order# </th>
                      <th> Buyer </th>
                      <th> Lesson </th>
+                     <Th> Qty </Th>
                      <th> Total Amount </th>
                      <th> Site Commision </th>
                      <th> Total Earning </th>
@@ -51,6 +52,7 @@
                         <td>
                             {{empty($val->lesson) ? '' : $val->lesson->title}}
                          </td>
+                         <td> {{$val->qty}} </td>
                         <td> {{'$'.number_format($val->price, 2)}} </td>
                         <td> {{'$'.number_format($val->commision, 2)}} </td>
                         <td> {{'$'.number_format($val->earning, 2)}} </td>
@@ -60,7 +62,7 @@
                            @endif
                         </td>
                         <td>
-                           @if(empty($val->booking_date) && $val->lesson->participants != '0')
+                           @if(empty($val->booking_date) && @$val->lesson->participants != '0')
                               @if(!empty($val->lesson))
                                  {{date('d-M-Y h:i a', strtotime($val->lesson->held_date))}}
                               @endif

@@ -106,15 +106,8 @@ class activities extends Model
         foreach($data['location'] as $k => $val){
             $new[$k]['activity_id'] = $id;
             $new[$k]['address'] = $val;
-            $new[$k]['lat'] = $data['lat'];
-            $new[$k]['lng'] = $data['lng'];
-
-            // $e = new Locations;
-            // $e->lesson_id = $id;
-            // $e->address = $val;
-            // $e->lat = $data['lat'];
-            // $e->lat = $data['lng'];
-            // $e->save();
+            $new[$k]['lat'] = $data['lat'][$k];
+            $new[$k]['lng'] = $data['lng'][$k];
         }
         Locations::insert($new);
     }

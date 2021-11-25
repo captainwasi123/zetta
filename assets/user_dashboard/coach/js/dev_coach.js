@@ -25,10 +25,6 @@ $(document).ready(function(){
         }
     });
 
-    $(document).on('click', '.addLocationBlock', function(){
-        var data = '<br><div class="location-field"><input type="text" placeholder="Location" class="form-field1" name="location[]" required><a href="" class="location-cross"> <i class="fa fa-times"></i>  </a></div>';
-        $('#location_block').append(data);
-    });
 
     $(document).on('click', '.addServicePackage', function(){
         var data = '<tr><td>  <textarea class="table-field1" placeholder="Service" name="service_basic[]"></textarea></td><td> <textarea class="table-field1" placeholder="Service" name="service_standard[]"></textarea></td><td> <textarea class="table-field1" placeholder="Service" name="service_premium[]"></textarea></td></tr>';

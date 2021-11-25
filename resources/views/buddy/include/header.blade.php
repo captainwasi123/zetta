@@ -58,7 +58,7 @@
                                       </div>
                                     </li>
                                     <li class="nav-item dropdown">
-                                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Sports Buddy <i class="fas fa-chevron-down"></i></a>
+                                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Sports Buddies <i class="fas fa-chevron-down"></i></a>
                                       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                         <a class="dropdown-item" href="{{route('buddy.activity.add')}}">Create a Activity</a>
                                         <a class="dropdown-item" href="{{route('web.all','Activities')}}">Activities</a>

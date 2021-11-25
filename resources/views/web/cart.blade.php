@@ -2,39 +2,7 @@
 @section('title', 'Cart')
 
 @section('content')
-<section class="action-bar">
-   <div class="container">
-      <div class="all-actions arrows1">
-         <div>
-            <a href=""> <img src="{{URL::to('/assets/website')}}/images/action-icon1.jpg"> {{ __('content.Starting Excercise') }} </a>
-         </div>
-         <div>
-            <a href=""> <img src="{{URL::to('/assets/website')}}/images/action-icon2.jpg"> {{ __('content.Fitness Expert') }} </a>
-         </div>
-         <div>
-            <a href=""> <img src="{{URL::to('/assets/website')}}/images/action-icon3.jpg"> {{ __('content.Body Fitness') }} </a>
-         </div>
-         <div>
-            <a href=""> <img src="{{URL::to('/assets/website')}}/images/action-icon4.jpg"> {{ __('content.Martial Art') }} </a>
-         </div>
-         <div>
-            <a href=""> <img src="{{URL::to('/assets/website')}}/images/action-icon5.jpg"> {{ __('content.Swimming') }} </a>
-         </div>
-         <div>{{ __('content.Slogan') }}
-            <a href=""> <img src="{{URL::to('/assets/website')}}/images/action-icon6.jpg"> {{ __('content.Boxing') }} </a>
-         </div>
-         <div>
-            <a href=""> <img src="{{URL::to('/assets/website')}}/images/action-icon7.jpg"> {{ __('content.Fencing ') }}</a>
-         </div>
-         <div>
-            <a href=""> <img src="{{URL::to('/assets/website')}}/images/action-icon8.jpg"> {{ __('content.Racing') }} </a>
-         </div>
-         <div>
-            <a href=""> <img src="{{URL::to('/assets/website')}}/images/action-icon1.jpg"> {{ __('content.Starting Excercise ') }}</a>
-         </div>
-      </div>
-   </div>
-</section>
+
 <!-- Action Bar Ends Here -->
 <!-- Page Content Starts Here -->
 <section class="pad-top-130 pad-bot-40 bg-dark2">
@@ -111,24 +79,28 @@
                   <table>
                      <tbody>
 
-                     <tr colspan="2"  >
-                    <h5 class="col-white"> Equipment:</h5>
-                            <th >
-                              <label class="custom-control custom-radio col-white" >
-                     <input id="radio1" name="with_without_equipment" type="radio" value="2" class="custom-control-input" checked>
-                     <span class="custom-control-label"> With Equipment  </span>
-                     </label>       
-                             
-                   
-                     <label class="custom-control custom-radio col-white">
-                     <input id="radio2" name="with_without_equipment" type="radio" value="1" class="custom-control-input">
-                     <span class="custom-control-label"> Without Equipment </span>
-                     </label>
-                    </th>
-               
-                     </tr>
                         <tr>
-                           <th class="col-white"> {{ __('content.Total Amount') }} </th>
+                           <th colspan="2">
+                              <h5 class="col-white"> Equipment:</h5>
+                              <label class="custom-control custom-radio col-white" >
+                                 <input id="radio1" name="with_without_equipment" type="radio" value="2" class="custom-control-input" checked>
+                                 <span class="custom-control-label"> With Equipment  </span>
+                              </label>       
+                                   
+                              <label class="custom-control custom-radio col-white">
+                                 <input id="radio2" name="with_without_equipment" type="radio" value="1" class="custom-control-input">
+                                 <span class="custom-control-label"> Without Equipment </span>
+                              </label>
+                          </th>
+                        </tr>
+                        <tr>
+                           <th class="col-white" style="width: 70%;"> Quantity </th>
+                           <th>
+                              <input type="number" name="qty" class="form-control" value="1" required>
+                           </th>
+                        </tr>
+                        <tr>
+                           <th class="col-white"> Amount </th>
                            @if ($price != null)
                            <th class="col-purple text-right"> {{'$'.number_format($price)}} </th>
                            @else
@@ -168,13 +140,6 @@
                         <tr>
                            <td colspan="2" class="text-center no-border">
                               <button class="custom-btn1 bg-purple col-white rounded block-element2 m-t-10"> {{ __('content.Continue to Checkout') }}
-                                @if ($price != null)
-                                   ({{'$'.number_format($price)}})
-                                @else
-                                    @if (!empty($data->packages[$pack]->price))
-                                        ({{'$'.number_format($data->packages[$pack]->price)}})
-                                    @endif
-                                @endif
                               </button>
                               <p class="col-white m-t-10 m-b-0">{{ __('content.Slogan') }} {{ __('content.You won`t be charged yet') }}  </p>
                            </td>

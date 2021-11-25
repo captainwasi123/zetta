@@ -164,11 +164,11 @@
                @foreach($data->locations as $key => $val)
                   @if($key >= 1) <br> @endif
                   <div class="location-field">
-                     <input type="text" placeholder="Location" class="form-field1" value="{{$val->address}}" name="location[]" required>
+                     <input type="text" placeholder="Location" class="form-field1" data-row="{{$key}}" id="location_field_{{$key}}" value="{{$val->address}}" name="location[]" required>
                   </div>
+                  <input type="hidden" name="lat[]" id="lat_{{$key}}" value="{{$val->lat}}">
+                  <input type="hidden" name="lng[]" id="lng_{{$key}}" value="{{$val->lng}}">
                @endforeach
-                <input type="hidden" name="lat" id="lat">
-                <input type="hidden" name="lng" id="lng">
             </div>
          </div>
          <div class="row">
@@ -397,32 +397,42 @@
     <script src="{{URL::to('/')}}/assets/user_dashboard/plugins/select2/dist/js/select2.full.min.js" type="text/javascript"></script>
    <script src="{{URL::to('/')}}/assets/user_dashboard/plugins/dropify/dist/js/dropify.min.js"></script>
    <script src="{{URL::to('/')}}/assets/user_dashboard/plugins/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.js" type="text/javascript"></script>
+   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key={{env('GOOGLE_MAP_KEY')}}&libraries=places"></script>
 
 <script type="text/javascript">
+   var r = {{count($data->locations)}};
    jQuery(document).ready(function() {
-        getLocation();
        $("input[name='tch3']").TouchSpin();
        $('.dropify').dropify();
        $(".select2").select2();
 
        CKEDITOR.replace( 'description' );
        CKEDITOR.addCss('.cke_editable { background-color: #1d242c; color: white }');
+
+       @foreach($data->locations as $key => $val)
+         initialize('location_field_{{$key}}');
+       @endforeach
+       $(document).on('click', '.addLocationBlock', function(){
+           r++;
+           var data = '<br><div class="location-field"><input type="text" placeholder="Location" class="form-field1" name="location[]" id="location_field_'+r+'" data-row="'+r+'" required><input type="hidden" name="lat[]" id="lat_'+r+'"><input type="hidden" name="lng[]" id="lng_'+r+'"></div>';
+           $('#location_block').append(data);
+           initialize('location_field_'+r);
+       });
    });
 
-   function getLocation() {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(showPosition);
-        } else {
-            alert("Geolocation is not supported by this browser.");
-        }
-    }
+   function initialize(field) {
+      var input = document.getElementById(field);
+      var row = input.getAttribute("data-row");
 
-    function showPosition(position) {
-        // initMap(position.coords.latitude,position.coords.longitude);
-        console.log(position);
-        $('#lat').val(position.coords.latitude);
-        $('#lng').val(position.coords.longitude);
-    }
+      var autocomplete = new google.maps.places.Autocomplete(input);
+      autocomplete.addListener('place_changed', function () {
+            var place = autocomplete.getPlace();
+
+            $('#lat_'+row).val(place.geometry['location'].lat());
+            $('#lng_'+row).val(place.geometry['location'].lng());
+
+      });
+   }
 </script>
 
 @endsection

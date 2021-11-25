@@ -73,4 +73,27 @@ class orderController extends Controller
         return redirect()->back()->with('success', 'Review Submitted.');
     }
 
+    function group_order_msg(Request $request){
+        // dd($request);
+
+        $forms = new lessonFroms();
+        $forms->order_id = $request->order_id;
+        $forms->user_id = $request->user_id;
+        $forms->msg = $request->msg;
+        $forms->save();
+        $last = $forms::with('user')->latest()->first();
+
+        $html = ' <li>
+        <div class="chat-img"><img src="'.asset('public').'/storage/user/profile_img/'.$last->user->profile_img.'" alt="user" /></div>
+        <div class="chat-content">
+           <h5 class="col-white">'.$last->user->fname.' '.$last->user->lname.'</h5>
+           <div class="box bg-light-info col-silver">'.$last->msg.'</div>
+        </div>
+        <div class="chat-time">'.$last->created_at->format('M d | g:i a').'</div>
+     </li>';
+
+        $data['html'] = $html;
+        return response()->json($data);
+    }
+
 }

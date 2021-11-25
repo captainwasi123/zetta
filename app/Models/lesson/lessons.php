@@ -122,10 +122,6 @@ class lessons extends Model
         foreach($data as $k => $val){
             $new[$k]['lesson_id'] = $id;
             $new[$k]['equip_id'] = $val;
-            // $e = new Equipments;
-            // $e->lesson_id = $id;
-            // $e->equip_id = $val;
-            // $e->save();
         }
         Equipments::insert($new);
     }
@@ -135,15 +131,8 @@ class lessons extends Model
         foreach($data['location'] as $k => $val){
             $new1[$k]['lesson_id'] = $id;
             $new1[$k]['address'] = $val;
-            $new1[$k]['lat'] = $data['lat'];
-            $new1[$k]['lng'] = $data['lng'];
-
-            // $e = new Locations;
-            // $e->lesson_id = $id;
-            // $e->address = $val;
-            // $e->lat = $data['lat'];
-            // $e->lat = $data['lng'];
-            // $e->save();
+            $new1[$k]['lat'] = $data['lat'][$k];
+            $new1[$k]['lng'] = $data['lng'][$k];
         }
         Locations::insert($new1);
     }

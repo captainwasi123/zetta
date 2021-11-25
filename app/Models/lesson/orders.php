@@ -21,6 +21,7 @@ class orders extends Model
         $o->buyer_id = \Auth::id();
         $o->plan = $data['plan'];
         $o->price = $data['price'];
+        $o->qty = $data['qty'];
         $o->commision = $data['commision'];
         $o->earning = $data['earning'];
         $o->booking_date = $data['booking_date'];

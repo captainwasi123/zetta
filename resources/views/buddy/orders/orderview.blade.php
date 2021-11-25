@@ -146,34 +146,6 @@
                                             <div class="chat-time"> {{$form->created_at->format('M d | g:i a')}}</div>
                                          </li>
                                         @endforeach
-                                     <!--chat Row -->
-                                     {{-- <li>
-                                        <div class="chat-img"><img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/users/1.jpg" alt="user" /></div>
-                                        <div class="chat-content">
-                                           <h5 class="col-white">James Anderson</h5>
-                                           <div class="box bg-light-info col-silver">Lorem Ipsum is simply dummy text of the printing & type setting industry.</div>
-                                        </div>
-                                        <div class="chat-time"> May 5 | 10:56 am</div>
-                                     </li>
-                                     <!--chat Row -->
-                                     <li>
-                                        <div class="chat-img"><img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/users/2.jpg" alt="user" /></div>
-                                        <div class="chat-content">
-                                           <h5 class="col-white">Bianca Doe</h5>
-                                           <div class="box bg-light-info col-silver">It’s Great opportunity to work.</div>
-                                        </div>
-                                        <div class="chat-time"> April 21 | 10:57 am</div>
-                                     </li>
-                                     <!--chat Row -->
-                                     <li>
-                                        <div class="chat-img"><img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/users/3.jpg" alt="user" /></div>
-                                        <div class="chat-content">
-                                           <h5 class="col-white">Angelina Rhodes</h5>
-                                           <div class="box bg-light-info col-silver">Well we have good budget for the project</div>
-                                        </div>
-                                        <div class="chat-time"> June 24 | 11:00 am</div>
-                                     </li> --}}
-                                     <!--chat Row -->
                                   </ul>
                                </div>
                             </div>
@@ -338,6 +310,7 @@
                console.log('Something went wrong.');
             }
          });
+        clearInterval(x);
      }
      //seconds
     }, 0)
@@ -387,10 +360,10 @@
                 // var editor = summernote.instances['details'].getData();
                 var formData =  $(this).serializeArray() // new FormData(this);
                 // formData.append('details', editor);
-                console.log(formData);
+                //console.log(formData);
                 $.ajax({
                     type: "post",
-                    url: "{{route('coach.group.msg')}}",
+                    url: "{{route('buddy.group.msg')}}",
                     data: formData,
                     dataType: "json",
                     success: function (res) {
