@@ -388,6 +388,5 @@ section.reasons-run {
     </div>
 </section>
 
-<h1>Hello World!</h1>
 
 @endsection
