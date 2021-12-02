@@ -25,7 +25,6 @@
    </div>
 </section>
 
-
 <!-- Action Bar Ends Here -->
 <div id="resultBlock">
    <!-- Page Content Section Starts Here -->
@@ -37,134 +36,7 @@
          @if(count($lessons) == 0)
             <h4>{{ __('content.No Results Found.')}}</h4>
          @else
-            <!-- <div class="all-filters">
-               <div class="btn-group">
-                  <button class="btn btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Sports <i class="fa fa-caret-down"> </i>
-                  </button>
-                  <div class="dropdown-menu keep-open">
-                     <div class="filters-main-bg">
-                        <span class="col-black"> No Filter </span>
-                     </div>
-                  </div>
-               </div>
-               <div class="btn-group">
-                  <button class="btn btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Date <i class="fa fa-caret-down"> </i>
-                  </button>
-                  <div class="dropdown-menu keep-open">
-                     <div class="filters-main-bg">
-                        <div class="filter-date">
-                           <input type="date" format="" name="">
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="btn-group">
-                  <button class="btn btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Price <i class="fa fa-caret-down"> </i>
-                  </button>
-                  <div class="dropdown-menu keep-open">
-                     <div class="filters-main-bg">
-                        <div class="price-range-slider">
-                           <p class="range-value">
-                              <input type="text" id="amount" readonly>
-                           </p>
-                           <div id="slider-range" class="range-bar"></div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="btn-group">
-                  <button class="btn btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Time <i class="fa fa-caret-down"> </i>
-                  </button>
-                  <div class="dropdown-menu keep-open">
-                     <div class="filters-main-bg">
-                        <div class="filter-date">
-                           <input type="time" name="" value="now">
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="btn-group">
-                  <button class="btn btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Perimeter <i class="fa fa-caret-down"> </i>
-                  </button>
-                  <div class="dropdown-menu keep-open">
-                     <div class="filters-main-bg">
-                        <div class="price-range-slider">
-                           <p class="range-value">
-                              <input type="text" id="amount2" readonly>
-                           </p>
-                           <div id="slider-range2" class="range-bar"></div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="btn-group">
-                  <button class="btn btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Favourite <i class="fa fa-caret-down"> </i>
-                  </button>
-                  <div class="dropdown-menu keep-open">
-                     <div class="filters-main-bg">
-                     </div>
-                  </div>
-               </div>
-               <div class="btn-group">
-                  <button class="btn btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Coach Level <i class="fa fa-caret-down"> </i>
-                  </button>
-                  <div class="dropdown-menu keep-open">
-                     <div class="filters-main-bg">
-                     </div>
-                  </div>
-               </div>
-               <div class="btn-group">
-                  <button class="btn btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  My Friends <i class="fa fa-caret-down"> </i>
-                  </button>
-                  <div class="dropdown-menu keep-open">
-                     <div class="filters-main-bg">
-                     </div>
-                  </div>
-               </div>
-               <div class="btn-group">
-                  <button class="btn btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Gender <i class="fa fa-caret-down"> </i>
-                  </button>
-                  <div class="dropdown-menu keep-open">
-                     <div class="filters-main-bg">
-                        <div class="gender-filter">
-                           <label class="container-radio col-black no-margin m-b-0"> {{ __('content.Male')}}
-                           <input type="radio" checked="checked" name="radio">
-                           <span class="checkmark"></span>
-                           </label>
-                           <label class="container-radio col-black no-margin m-b-0"> {{ __('content.Female')}}
-                           <input type="radio" checked="checked" name="radio">
-                           <span class="checkmark"></span>
-                           </label>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="btn-group">
-                  <button class="btn btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Based on ratings <i class="fa fa-caret-down"> </i>
-                  </button>
-                  <div class="dropdown-menu keep-open">
-                     <div class="filters-main-bg">
-                        <div class="filters-rating">
-                           <button class="col-black active"> 5 {{ __('content.star')}} </button>
-                           <button class="col-black"> 4 {{ __('content.star')}} </button>
-                           <button class="col-black"> 3 {{ __('content.star')}} </button>
-                           <button class="col-black"> 2 {{ __('content.star')}} </button>
-                           <button class="col-black"> 1 {{ __('content.star')}} </button>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div> -->
+      
          @endif
       </div>
    </section>

@@ -3324,7 +3324,7 @@ div#countdown ul li {
     float: left;
     width: 100%;
     text-align: center;
-    background: white;
+    /*background: white;*/
     padding: 30px 30px;
 }
 .level-box {

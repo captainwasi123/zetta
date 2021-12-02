@@ -509,12 +509,19 @@ font-size: 12px;
 }
 .profile-text {
     display: inline-flex;
+        position: relative;
+    right: 0px;
+    top: 25px;
+}
+.header-login {
+    padding-top: 20px;
 }
 b.notif-icon1 {
     right: 103px;
 }
 b.notif-icon2 {
-    right: 54px !important;
+    right: 40px !important;
+    top: 0px !important;
 }
 .profile-text a i::before {
 
@@ -717,6 +724,16 @@ padding: 9px 30px !important;
 
     margin-bottom: -92px;
 }
+.search-form.desktop-v {
+    display: none;
+}
+.card-body.b-l.calender-sidebar {
+    padding-left: 45px;
+}
+.sec-head1.ps h3 {
+    padding-left: 40px;
+}
+
 }
 
 #dateTimeBlock {

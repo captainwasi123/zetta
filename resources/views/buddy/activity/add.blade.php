@@ -20,7 +20,7 @@
                </div>
             </div>
             <div class="col-md-6 col-lg-6 col-12">
-               <input type="text" placeholder="" class="form-field1" name="title" required>
+               <input type="text" placeholder="Enter Title" class="form-field1" name="title" required>
             </div>
          </div>
          <div class="row m-b-20">
@@ -42,7 +42,7 @@
                </div>
             </div>
             <div class="col-md-6 col-lg-6 col-12">
-               <select class="select2 select2-multiple" style="width: 100%" name="equipments[]" multiple="multiple" data-placeholder="">
+               <select class="select2 select2-multiple" style="width: 100%" name="equipments[]" multiple="multiple" data-placeholder="Enter Equipment" required>
                   @foreach($equip as $val)
                      <option value="{{$val->id}}">{{$val->name}}</option>
                   @endforeach
@@ -129,7 +129,7 @@
                </div>
             </div>
             <div class="col-md-6 col-lg-6 col-12">
-               <select name="friend" id="friend" class="form-field1">
+               <select name="friend" id="friend" class="form-field1" required>
                    <option value="">Select</option>
                     @foreach ($users as $val)
                         <option value="{{$val->friend->id}}">{{$val->friend->fname .' '. $val->friend->lname}}</option>
@@ -147,7 +147,6 @@
             <div class="col-md-6 col-lg-6 col-12" id="location_block">
                <div class="location-field">
                   <input type="text" placeholder="Location" class="form-field1" data-row="0" id="location_field_0" name="location[]" required>
-
                   <input type="hidden" name="lat[]" id="lat_0">
                   <input type="hidden" name="lng[]" id="lng_0">
                </div>

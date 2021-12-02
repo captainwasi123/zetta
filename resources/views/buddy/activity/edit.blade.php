@@ -21,7 +21,7 @@
                </div>
             </div>
             <div class="col-md-6 col-lg-6 col-12">
-               <input type="text" placeholder="" class="form-field1" name="title" value="{{$data->title}}" required>
+               <input type="text" placeholder="Enter Title" class="form-field1" name="title" value="{{$data->title}}" required>
             </div>
          </div>
          <div class="row m-b-20">
@@ -43,7 +43,7 @@
                </div>
             </div>
             <div class="col-md-6 col-lg-6 col-12">
-               <select class="select2 select2-multiple" style="width: 100%" name="equipments[]" multiple="multiple" data-placeholder="">
+               <select class="select2 select2-multiple" style="width: 100%" name="equipments[]" multiple="multiple" data-placeholder="Enter Equipment" required>
                   @foreach($equip as $val)
                      <option value="{{$val->id}}"
                         @foreach($data->equipment as $eq)
@@ -141,7 +141,7 @@
              </div>
             <div class="col-md-6 col-lg-6 col-12">
                 {{-- <input type="text" placeholder="" class="form-field1" name=""> --}}
-                <select name="friend" id="friend" class="form-field1">
+                <select name="friend" id="friend" class="form-field1" required>
                     <option value="">select friend</option>
                      @foreach ($users as $val)
                          <option value="{{$val->id}}"
@@ -207,7 +207,7 @@
                </div>
             </div>
             <div class="col-md-6 col-lg-6 col-12">
-               <input type="file" name="cover_image" class="form-field1" accept="image/png, image/jpeg, image/jpg">
+               <input type="file" name="cover_image" class="form-field1" accept="image/png, image/jpeg, image/jpg" required>
                <span class="info-tag1"> Allowed File types are jpg, jpeg, png </span>
                <br>
                <img src="{{URL::to('/public/storage/user/activity/main_image/'.$data->cover_img)}}" width="100px">
@@ -222,7 +222,7 @@
             </div>
             <div class="col-md-6 col-lg-6 col-12">
                <div class="pic-uploader1">
-                  <input type="file" id="input-file-max-fs" name="media[]" class="dropify" data-max-file-size="1024M" data-height="100" multiple />
+                  <input type="file" id="input-file-max-fs" name="media[]" class="dropify" data-max-file-size="1024M" data-height="100" multiple required />
                </div>
             </div>
          </div>

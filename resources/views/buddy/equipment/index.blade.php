@@ -79,7 +79,7 @@
                         </p>
                      </div>
                      <div class="block-element">
-                        <div id="morris-area-chart"></div>
+                        <div id="morris-area-chart" style="width: 100%;"></div>
                      </div>
                   </div>
                </div>

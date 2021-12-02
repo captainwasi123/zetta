@@ -456,6 +456,9 @@
         position: unset;
         margin-bottom: -92px;
     }
+  /*  button.navbar-toggler.desktop {
+    display: none;
+    }*/
 }
 
 .at-expanding-share-button-toggle label {

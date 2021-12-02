@@ -2,7 +2,11 @@
 @section('title', 'Create your Lessons')
 
 @section('content')
-
+<style type="text/css">
+   li.select2-search input {
+    color: white;
+}
+</style>
 <div class="box-wrapper1">
    <form method="post" enctype="multipart/form-data">
       @csrf
@@ -22,7 +26,7 @@
                      </div>
                   </div>
                   <div class="col-md-8 col-lg-8 col-12">
-                     <input type="text" placeholder="" class="form-field1" name="title" required>
+                     <input type="text" class="form-field1" name="title" placeholder="Enter Title" required>
                   </div>
                </div>
                <div class="row m-b-20">
@@ -44,7 +48,7 @@
                      </div>
                   </div>
                   <div class="col-md-8 col-lg-8 col-12">
-                     <select class="select2 select2-multiple" style="width: 100%" name="equipments[]" multiple="multiple" data-placeholder="">
+                     <select class="select2 select2-multiple" style="width: 100%" name="equipments[]" multiple="multiple" data-placeholder="Select Equipment" required>
                         @foreach($equip as $val)
                            <option value="{{$val->id}}">{{$val->name}}</option>
                         @endforeach
@@ -61,7 +65,6 @@
                   <div class="col-md-8 col-lg-8 col-12" id="location_block">
                      <div class="location-field">
                         <input type="text" placeholder="Location" class="form-field1" data-row="0" id="location_field_0" name="location[]" required>
-
                         <input type="hidden" name="lat[]" id="lat_0">
                         <input type="hidden" name="lng[]" id="lng_0">
                      </div>
@@ -85,7 +88,7 @@
                   <div class="col-md-8 col-lg-8 col-12">
                      <div class="m-b-15">
                         <label class="custom-control custom-radio">
-                        <input id="radio1" name="locationType" type="radio" value="1" class="custom-control-input" checked>
+                        <input id="radio1" name="locationType" type="radio" value="1" class="custom-control-input" required checked>
                         <span class="custom-control-label"> Yes </span>
                         </label>
                         <label class="custom-control custom-radio">
@@ -110,7 +113,7 @@
                          </label>
 
                          <label class="custom-control custom-checkbox">
-                            <input name="skill_level[]" type="checkbox" value="Intermediate" class="custom-control-input">
+                            <input name="skill_level[]" type="checkbox" value="Intermediate" class="custom-control-input" >
                             <span class="custom-control-label"> Intermediate </span>
                          </label>
 
@@ -160,7 +163,7 @@
                   <div class="col-md-8 col-lg-8 col-12">
                      <div class="inline-1">
                         <label class="custom-control custom-radio">
-                        <input id="radio1" name="participants" type="radio" value="0" class="custom-control-input" checked>
+                        <input id="radio1" name="participants" type="radio" value="0" class="custom-control-input" required checked>
                         <span class="custom-control-label"> Single Lesson </span>
                         </label>
                         <label class="custom-control custom-radio">
@@ -194,7 +197,7 @@
                   </div>
                   <div class="col-md-8 col-lg-8 col-12">
                      <div class="pic-uploader1">
-                        <input type="file" id="input-file-max-fs" class="dropify" name="media[]" data-max-file-size="1024M" data-height="80" multiple />
+                        <input type="file" id="input-file-max-fs" class="dropify" name="media[]" data-max-file-size="1024M" data-height="80" multiple required />
                      </div>
                   </div>
                </div>
@@ -270,12 +273,12 @@
                   <div class="col-md-4 col-lg-4 col-12">
                      <div class="field-name">
                         <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/field-icon19.png">
-                        <h5> DateTime </h5>
+                        <h5> Date Time </h5>
                      </div>
                   </div>
                   <div class="col-md-5 col-lg-5 col-12">
                      <div class="inline-1">
-                        <input type="date" placeholder="" class="form-field1" name="held_date" >
+                        <input type="date" placeholder="" class="form-field1" name="held_date">
                      </div>
                   </div>
                   <div class="col-md-3 col-lg-3 col-12">
@@ -305,7 +308,7 @@
                      <span class="custom-control-label"> Only Normal Classes </span>
                      </label>
                      <label class="custom-control custom-radio">
-                     <input id="radio2" name="availability" type="radio" value="3" class="custom-control-input" checked>
+                     <input id="radio2" name="availability" type="radio" value="3" class="custom-control-input"  checked>
                      <span class="custom-control-label"> Both </span>
                      </label>
                   </div>
@@ -322,7 +325,7 @@
                    <div class="col-md-8 col-lg-8 col-12">
                        <div class="inline-1">
                          <label class="custom-control custom-checkbox">
-                            <input id="radio2" name="availability_for[]" type="checkbox" value="2" class="custom-control-input" >
+                            <input id="radio2" name="availability_for[]" type="checkbox" value="2" class="custom-control-input" checked>
                             <span class="custom-control-label"> Senior Citizens </span>
                          </label>
 
