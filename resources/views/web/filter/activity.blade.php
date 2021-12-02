@@ -1,9 +1,6 @@
 @extends('web.support.master2')
 @section('title', 'Home')
 @section('addStyle')
-   <style>
-      
-   </style>
 @endsection
 
 @section('content')

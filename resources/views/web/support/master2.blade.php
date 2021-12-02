@@ -9,6 +9,15 @@
       @include('web.support.style')
       @yield('addStyle')
 
+      @if(!Auth::check())
+         <style type="text/css">
+            @media only screen and (max-width: 767px) {
+               section.action-bar {
+                   margin-top: 124px !important;
+               }
+            }
+         </style>
+      @endif
    </head>
    <body>
       <!-- Header Section Starts Here -->

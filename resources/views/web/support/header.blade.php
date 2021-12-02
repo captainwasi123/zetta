@@ -25,7 +25,6 @@ header.header-2 .logo a img {
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script type="text/javascript">
    $(document).scroll(function () {
-    //stick nav to top of page
     var y = $(this).scrollTop();
     var navWrap = $('#navWrap').offset().top;
     if (y > navWrap) {
@@ -43,7 +42,7 @@ header.header-2 .logo a img {
       <div class="logo">
          <a href="{{URL::to('/')}}"> <img src="{{URL::to('/assets/website')}}/images/zetta-logo.png"> </a>
       </div>       
-      <nav class="navbar navbar-expand-lg navbar-dark  "> 
+      <nav class="navbar navbar-expand-lg navbar-dark"> 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -65,7 +64,7 @@ header.header-2 .logo a img {
                 @else
                     <a class="dropdown-item open-login" href="javascript:void(0)">{{ __('content.Create a Lesson')}}</a>
                 @endif
-
+<!--                   anas -->
                 <a class="dropdown-item" href="{{route('web.all','Lessons')}}">{{ __('content.Lessons')}}</a>
                 <a class="dropdown-item" href="{{route('web.all','Coaches')}}">{{ __('content.Coaches')}}</a>
               </div>
@@ -94,7 +93,7 @@ header.header-2 .logo a img {
          <button class="flag-1"> <img src="{{URL::to('/assets/website')}}/images/flag-2.jpg"> </button>
          <button class="flag-1"> <img src="{{URL::to('/assets/website')}}/images/flag-3.jpg"> </button>
       </div> -->
-      <nav class="navbar navbar-expand-lg navbar-dark "> 
+      <nav class="navbar navbar-expand-lg navbar-dark"> 
         <button class="navbar-toggler desktop" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -114,7 +113,7 @@ header.header-2 .logo a img {
             </div>
          </div>
       @else
-         <div class="header-buttons">
+         <div class="header-button">
             <a href="javascript:void(0)" class="open-join-buddy header-btn1" data-id="buddy"> {{ __('content.Register')}} </a>
             <!-- <a href="javascript:void(0)" class="open-join header-btn2"> {{ __('content.Become a Coach')}}</a> -->
             <a href="javascript:void(0)" class="open-login header-btn3"> {{ __('content.Login')}} </a>
@@ -123,7 +122,7 @@ header.header-2 .logo a img {
    </div>
 </header>
 <div class="bottomMenu">
-<header class="header-1 desktop fixed-top " id="bottomMenu" >
+<header class="header-1 desktop fixed-top" id="bottomMenu" >
    <div class="container ">
       <div class="logo">
          <a href="{{URL::to('/')}}"> <img src="{{URL::to('/assets/website')}}/images/zetta-logo.png"> </a>
@@ -253,7 +252,7 @@ header.header-2 .logo a img {
             </div>
          </div>
       @else
-         <div class="header-buttons">
+         <div class="header-buttons ">
             <a href="javascript:void(0)" class="open-join header-btn1"> {{ __('content.Register')}} </a>
             <!-- <a href="javascript:void(0)" class="open-join-coach header-btn2"> {{ __('content.Become a Coach')}} </a> -->
             <a href="javascript:void(0)" class="open-login header-btn3"> {{ __('content.Login')}} </a>
@@ -277,10 +276,13 @@ header.header-2 .logo a img {
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Coach <i class="fas fa-chevron-down"></i></a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 
-               <a class="dropdown-item" href="javascript:void(0)">{{ __('content.Become a Coach')}} </a>
-                <a class="dropdown-item" href="#">{{ __('content.Online Lessons')}}</a>
+               <a class="dropdown-item {{Auth::check() ? '' : 'open-join-buddy' }}" href="javascript:void(0)">{{ __('content.Become a Coach')}} </a>
+               <!-- <a class="dropdown-item" href="javascript:void(0)">{{ __('content.Become a Coach')}} </a> -->
+
+               
+                <a class="dropdown-item" href="{{route('web.all','Lessons')}}">{{ __('content.Online Lessons')}}</a>
                 <a class="dropdown-item" href="#">{{ __('content.Group Lessons')}}</a>
-                <a class="dropdown-item" href="#">{{ __('content.Private Lesson')}}s</a>
+                <a class="dropdown-item" href="#">{{ __('content.Private Lesson')}}</a>
               </div>
             </li>
             <li class="nav-item dropdown">
@@ -302,13 +304,12 @@ header.header-2 .logo a img {
       <div class="logo">
          <a href="{{URL::to('/')}}"> <img src="{{URL::to('/assets/website')}}/images/zetta-logo.png"> </a>
       </div>       
-      
 
-      <div class="lang-option">
+      <!-- <div class="lang-option">
          <button class="flag-1"> <img src="{{URL::to('/assets/website')}}/images/flag-1.jpg"> </button>
          <button class="flag-1"> <img src="{{URL::to('/assets/website')}}/images/flag-2.jpg"> </button>
          <button class="flag-1"> <img src="{{URL::to('/assets/website')}}/images/flag-3.jpg"> </button>
-      </div>
+      </div> -->
       <nav class="navbar navbar-expand-lg navbar-dark "> 
         <button class="navbar-toggler desktop" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -316,6 +317,7 @@ header.header-2 .logo a img {
      </nav>
 
       @if(Auth::check())
+      
          <div class="header-login">
             <div class="dropdown">
                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

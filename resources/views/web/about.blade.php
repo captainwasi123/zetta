@@ -2,7 +2,6 @@
 @section('title', 'About Us')
 @section('addStyle')
 <style>
-
 body{
     background-image: url('{{URL::to('/assets/website')}}/images/side-particles.png');
     background-size: contain;
@@ -23,12 +22,13 @@ p.main-head-text {
 }
 
 section.action-bar {
-    margin-top: 70px !important;
+    /*margin-top: 70px !important;*/
     background-image: url('{{URL::to('/assets/website')}}/images/Banner.png');
-    background-size: contain;
+    background-size: cover;
     padding-top: 200px;
     padding-bottom: 200px;
     border-bottom:none !important;
+    background-position: center;
 }
 
 section.reasons-run{
@@ -161,10 +161,9 @@ h2.reasons-run-main-head-text {
 @media only screen and (max-width: 767px){
 
     section.action-bar {
-    margin-top: 160px !important;
     background-size: cover;
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding-top: 50px;
+    padding-bottom: 50px;
     background-repeat: no-repeat;
     background-position: center;
         }
@@ -272,6 +271,9 @@ section.reasons-run {
 .how-it-was-img img {
     width: 100%;
 }
+section.action-bar {
+    padding: 100px 0px !important;
+    }
 
 
 

@@ -620,6 +620,10 @@ header.header-1 {
     float: right;
     margin-top: 5px;
 }
+.header-button {
+    float: right;
+    margin-top: 5px;
+}
 
 a.header-btn1 {
     color: white;
@@ -2488,10 +2492,23 @@ body .container {
     }
     .logo {
         float: left;
-        width: 70%;
+        /*width: 70%;*/
+        width: 18%;
     }
+    section.action-bar {
+    margin-top: 69px !important;
+}
+.contact-div {
+    padding: 100px 0px !important;
+}
+.contact-div-2 {
+    padding: 50px 30px 50px 30px !important;
+}
+.right-pd {
+    padding-right: 0px !important;
+}
     .search-handler {
-        display: block;
+        display: none;
         float: right;
     }
     .search-handler img {
@@ -2526,10 +2543,10 @@ body .container {
         margin-bottom: 10px;
     }
     .header-buttons {
-        float: left;
+       /* float: left;
         width: 100%;
         margin-top: 15px;
-        text-align: center;
+        text-align: center;*/
     }
     .banner-sec .search-form {
         display: block;
@@ -2797,6 +2814,12 @@ body .container {
     .mob-text-left {
         text-align: left !important;
     }
+    .header-buttons-all {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 10px !important;
+}
     .modal {
         padding: 0px 20px !important;
     }
@@ -2850,19 +2873,26 @@ body .container {
         margin-bottom: 18px;
     }
     .header-buttons {
-        float: right;
+        padding-top: 4px;
+        /*float: right;
         margin-top: 5px;
         width: 100%;
         display: flex;
         justify-content: space-between;
-        margin-top: 25px;
+        margin-top: 25px;*/
     }
     a.header-btn1,
     a.header-btn2,
     a.header-btn3 {
-        padding: 5px 12px;
-        min-width: 70px;
+        padding: 5px 10px;
+       /* min-width: 70px;*/
         text-align: center;
+        font-size: 13px;
+    }
+    a.header-btn3
+    {
+        margin-left: 0px;
+        font-size: 13px;
     }
     .search-handler img {
         width: 25px;
@@ -2877,7 +2907,7 @@ body .container {
         position: relative;
         padding-right: 15px;
         margin-top: 20px;
-        max-width: 300px;
+        max-width: 330px;
         display: none;
         padding: 8px 10px;
     }

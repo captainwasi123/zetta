@@ -288,10 +288,10 @@
 .cut-sports {
     text-overflow: ellipsis;
     overflow: hidden;
-    width: 115px;
+    width: 93px;
     height: 22px;
     white-space: nowrap;
-    text-align: right;
+  /*  text-align: right;*/
 }
 
 .banner-sec .label-field3 select {
@@ -431,7 +431,8 @@
 }
 
 .lesson-catagory-text {
-    width: 130px;
+    /*width: 130px;*/
+    width: 85px;
 }
 
 .lesson-catagory-text span {
@@ -533,6 +534,7 @@ ul#ui-id-1 li {
 }
 
 ul#ui-id-1 li div {
+    text-align: left !important; 
     /*    color: black !important;
     padding: 8px !important;
     border: 0px !important;*/
@@ -739,6 +741,7 @@ ul#ui-id-1 li div:hover {
     padding-top: 50px;
 } 
 
+
 /*---media query start---*/
 
 @media only screen and (max-width: 767px) {
@@ -746,9 +749,14 @@ ul#ui-id-1 li div:hover {
     font-size: 45px;
 }
 .contact-div {
-    padding: 180px 0px 100px 0px;
+    padding: 50px 0px 50px 0px;
 }
-
+.right-pd {
+    padding-right: 0px;
+}
+.contact-div-2 form {
+    padding-top: 20px;
+}
 .contact-div-2 h1 {
     font-size: 35px;
 }
@@ -775,6 +783,13 @@ ul#ui-id-1 li div:hover {
 
 }
 
+@media screen and (max-width:519px) and (min-width:320px) {
+header.header-1 {
+    padding: 12px 0px !important;
+    margin-bottom: 0px;
+    background: black !important;
+}
+}
 /*---media query end---*/
 
 

@@ -123,7 +123,7 @@ nav.navbar.navbar-expand-lg.navbar-dark {
             
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ __('content.Coach')}} <i class="fas fa-chevron-down"></i></a>
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ __('content.Coach')}} <i class="fas fa-chevron-down"></i></a>
+              <!-- <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ __('content.Coach')}} <i class="fas fa-chevron-down"></i></a> -->
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                <a class="dropdown-item {{Auth::check() ? '' : 'open-join-buddy' }}" href="javascript:void(0)">{{ __('content.Become a Coach')}} </a>
                 @if(Auth::check())
@@ -156,6 +156,8 @@ nav.navbar.navbar-expand-lg.navbar-dark {
           </ul>
         </div>
       </nav>
+
+
       <div class="logo">
          <a href="{{URL::to('/')}}"> <img src="{{URL::to('/assets/website')}}/images/zetta-logo.png"> </a>
       </div>
@@ -179,6 +181,12 @@ nav.navbar.navbar-expand-lg.navbar-dark {
          </form>
       </div>
       @if(Auth::check())
+
+
+
+      
+        
+   
          <div class="header-login">
             <div class="dropdown">
                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -191,7 +199,7 @@ nav.navbar.navbar-expand-lg.navbar-dark {
             </div>
          </div>
       @else
-         <div class="header-buttons">
+         <div class="header-buttons header-buttons-all">
             <a href="javascript:void(0)" class="open-join header-btn1"> {{ __('content.Register')}} </a>
             <!-- <a href="javascript:void(0)" class="open-join-coach header-btn2"> {{ __('content.Become a Coach')}} </a> -->
             <a href="javascript:void(0)" class="open-login header-btn3"> {{ __('content.Login')}} </a>
