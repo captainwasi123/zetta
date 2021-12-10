@@ -15,9 +15,22 @@ class orderController extends Controller
 {
     //
     function index(){
-        $data = orders::where('buyer_id', Auth::id())->latest()->get();
+        $data = orders::where('buyer_id', Auth::id())->where('status', '0')->latest()->get();
 
-        return view('buddy.orders.index', ['data' => $data]);
+        return view('buddy.orders.index', ['data' => $data, 'status' => '0']);
+    }
+
+
+    function delivered(){
+        $data = orders::where('buyer_id', Auth::id())->where('status', '1')->latest()->get();
+
+        return view('buddy.orders.index', ['data' => $data, 'status' => '1']);
+    }
+
+    function cancelled(){
+        $data = orders::where('buyer_id', Auth::id())->where('status', '2')->latest()->get();
+
+        return view('buddy.orders.index', ['data' => $data, 'status' => '2']);
     }
 
     public function orderView($id)

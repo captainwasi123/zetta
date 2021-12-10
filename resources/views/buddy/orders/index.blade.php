@@ -14,9 +14,9 @@
        <div class="row">
           <div class="col-lg-6 col-sm-6 col-md-6 col-12">
              <div class="order-sorting-text m-b-10">
-                <a href="" class="active"> Active </a>
-                <a href="" class="col-silver"> Delivered  </a>
-                <a href="" class="col-silver"> Cancellation </a>
+                <a href="{{route('buddy.order')}}" class="{{$status == '0' ? 'active' : ''}}"> Active </a>
+                <a href="{{route('buddy.order.delivered')}}" class="col-silver {{$status == '1' ? 'active' : ''}}"> Delivered </a>
+                <a href="{{route('buddy.order.cancelled')}}" class="col-silver {{$status == '2' ? 'active' : ''}}"> Cancelled </a>
              </div>
           </div>
           <div class="col-lg-6 col-sm-6 col-md-6 col-12 text-right mob-text-left">
@@ -69,8 +69,10 @@
                               @endif
                            </td>
                            <td>
-                              @if($val->status == '1')
+                              @if($val->status == '0')
                                  <span class="label bg-success"> Active </span>
+                              @elseif($val->status == '1')
+                                 <span class="label bg-primary"> Delivered </span>
                               @else
                                  <span class="label bg-danger"> Cancelled </span>
                               @endif
@@ -84,7 +86,7 @@
                      @endforeach
                      @if(count($data) == 0)
                         <tr>
-                           <td colspan="4" align="center">No Order Found</td>
+                           <td colspan="10" align="center">No Order Found</td>
                         </tr>
                      @endif
                 </tbody>

@@ -27,7 +27,7 @@
             </div>
             <div class="col-md-6 col-lg-6 col-12">
                <button class="submit-btn1"> <i class="fa fa-plus"> </i> SEND REQUEST </button>
-               <a href="" class="submit-btn1 bg-green2 m-l-10">  BACK </a>
+               <a href="{{route('buddy.category')}}" class="submit-btn1 bg-green2 m-l-10">  BACK </a>
             </div>
          </div>
       </form>

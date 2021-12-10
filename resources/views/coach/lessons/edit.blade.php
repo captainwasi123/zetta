@@ -66,13 +66,17 @@
                   <div class="col-md-8 col-lg-8 col-12" id="location_block">
                         @if (count($data->locations)>0)
                             @foreach($data->locations as $key => $val)
-                                @if($key >= 1) <br> @endif
-                                <div class="location-field">
-                                <input type="text" placeholder="Location" class="form-field1" data-row="{{$key}}" id="location_field_{{$key}}" value="{{$val->address}}" name="location[]" required>
+                                
+                                <div class="location-field m-t-10">
+                                   <input type="text" placeholder="Location" class="form-field1" data-row="{{$key}}" id="location_field_{{$key}}" value="{{$val->address}}" name="location[]" required>
+
+                                   <input type="hidden" name="lat[]" id="lat_{{$key}}" value="{{$val->lat}}">
+                                   <input type="hidden" name="lng[]" id="lng_{{$key}}" value="{{$val->lng}}">
+                                   @if($key > 0)
+                                       <a href="javascript:void(0)" class="closeLocation"><i class="fa fa-minus"></i></a>
+                                   @endif
                                 </div>
 
-                                <input type="hidden" name="lat[]" id="lat_{{$key}}" value="{{$val->lat}}">
-                                <input type="hidden" name="lng[]" id="lng_{{$key}}" value="{{$val->lng}}">
                             @endforeach
                         @else
                         <div class="location-field">
@@ -200,7 +204,7 @@
                      </div>
                      <div class="inc-dec inline-1 increment-holder1" id="participants_block">
                         @if($data->participants == '1')
-                           <input type="text" value="{{$data->group_members}}" name="group_members" data-bts-button-down-class="btn btn-secondary btn-outline" data-bts-button-up-class="btn btn-secondary btn-outline" required>
+                           <input type="text" value="{{$data->group_members}}" name="group_members" data-bts-button-down-class="btn btn-secondary btn-outline" data-bts-button-up-class="btn btn-secondary btn-outline" readonly required>
                         @endif
                      </div>
                   </div>
@@ -461,13 +465,22 @@
    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key={{env('GOOGLE_MAP_KEY')}}&libraries=places"></script>
 
 <script type="text/javascript">
+
+   CKEDITOR.replace( 'description' );
+   $("form").submit( function(e) {
+        var description = CKEDITOR.instances['description'].getData().replace(/<[^>]*>/gi, '').length;
+        if( !description ) {
+            alert( 'Please fill all required fields.' );
+            e.preventDefault();
+        }
+    });
+
    var r = {{count($data->locations)}};
    jQuery(document).ready(function() {
        $("input[name='group_members']").TouchSpin();
        $('.dropify').dropify();
        $(".select2").select2();
 
-       CKEDITOR.replace( 'description' );
        CKEDITOR.addCss('.cke_editable { background-color: #1d242c; color: white }');
    
       @foreach($data->locations as $key => $val)
@@ -475,9 +488,13 @@
       @endforeach
        $(document).on('click', '.addLocationBlock', function(){
            r++;
-           var data = '<br><div class="location-field"><input type="text" placeholder="Location" class="form-field1" name="location[]" id="location_field_'+r+'" data-row="'+r+'" required><input type="hidden" name="lat[]" id="lat_'+r+'"><input type="hidden" name="lng[]" id="lng_'+r+'"></div>';
+           var data = '<br><div class="location-field"><input type="text" placeholder="Location" class="form-field1" name="location[]" id="location_field_'+r+'" data-row="'+r+'" required><input type="hidden" name="lat[]" id="lat_'+r+'"><input type="hidden" name="lng[]" id="lng_'+r+'"><a href="javascript:void(0)" class="closeLocation"><i class="fa fa-minus"></i></a></div>';
            $('#location_block').append(data);
            initialize('location_field_'+r);
+       });
+
+       $(document).on('click', '.closeLocation', function(){
+            $(this).parent().remove();
        });
    });
 

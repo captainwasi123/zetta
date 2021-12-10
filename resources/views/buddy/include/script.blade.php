@@ -52,7 +52,7 @@
             });
 
             $.get("{{route('buddy.messages.getNotification')}}", function(data){
-
+                  
                   if(data != 0){
                         $('#mnotiBadge').html('<b class="notif-icon2">'+data+'</b>');
                   }

@@ -92,6 +92,24 @@
                </div>
             </div>
          </div>
+         <div id="friend_participant">
+            <div class="row center-row">
+               <div class="col-md-3 col-lg-3 col-12">
+                  <div class="field-name">
+                     <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/field-icon10.png">
+                     <h5> Friend Participant </h5>
+                  </div>
+               </div>
+               <div class="col-md-6 col-lg-6 col-12">
+                  <select name="friend" id="friend" class="form-field1">
+                      <option value="">Select</option>
+                       @foreach ($users as $val)
+                           <option value="{{$val->friend->id}}">{{$val->friend->fname .' '. $val->friend->lname}}</option>
+                       @endforeach
+                  </select>
+               </div>
+            </div>
+         </div>
          <div class="row center-row">
             <div class="col-md-3 col-lg-3 col-12">
                <div class="field-name">
@@ -118,22 +136,6 @@
             <div class="col-md-6 col-lg-6 col-12">
                <select name="sports" class="form-field1" id="sports_id" required>
                    <option value="">Select</option>
-               </select>
-            </div>
-         </div>
-         <div class="row center-row">
-            <div class="col-md-3 col-lg-3 col-12">
-               <div class="field-name">
-                  <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/field-icon10.png">
-                  <h5> Friend Participant </h5>
-               </div>
-            </div>
-            <div class="col-md-6 col-lg-6 col-12">
-               <select name="friend" id="friend" class="form-field1" required>
-                   <option value="">Select</option>
-                    @foreach ($users as $val)
-                        <option value="{{$val->friend->id}}">{{$val->friend->fname .' '. $val->friend->lname}}</option>
-                    @endforeach
                </select>
             </div>
          </div>
@@ -307,23 +309,44 @@
    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key={{env('GOOGLE_MAP_KEY')}}&libraries=places"></script>
 <script type="text/javascript">
+
+   CKEDITOR.replace( 'description' );
+   $("form").submit( function(e) {
+        var description = CKEDITOR.instances['description'].getData().replace(/<[^>]*>/gi, '').length;
+        if( !description ) {
+            alert( 'Please fill all required fields.' );
+            e.preventDefault();
+        }
+    });
    var r = 0;
    jQuery(document).ready(function() {
 
        $("input[name='tch3']").TouchSpin();
        $('.dropify').dropify();
        $(".select2").select2();
-       CKEDITOR.replace( 'description' );
        CKEDITOR.addCss('.cke_editable { background-color: #1d242c; color: white }');
 
        initialize('location_field_0');
 
        $(document).on('click', '.addLocationBlock', function(){
            r++;
-           var data = '<br><div class="location-field"><input type="text" placeholder="Location" class="form-field1" name="location[]" id="location_field_'+r+'" data-row="'+r+'" required><input type="hidden" name="lat[]" id="lat_'+r+'"><input type="hidden" name="lng[]" id="lng_'+r+'"></div>';
+           var data = '<div class="location-field m-t-10"><input type="text" placeholder="Location" class="form-field1" name="location[]" id="location_field_'+r+'" data-row="'+r+'" required><input type="hidden" name="lat[]" id="lat_'+r+'"><input type="hidden" name="lng[]" id="lng_'+r+'"><a href="javascript:void(0)" class="closeLocation"><i class="fa fa-minus"></i></a></div>';
            $('#location_block').append(data);
            initialize('location_field_'+r);
        });
+
+       $(document).on('click', '.closeLocation', function(){
+            $(this).parent().remove();
+       });
+
+      $('input[type=radio][name=activityType]').change(function() {
+         if (this.value == '2') {
+            $('#friend_participant').show();
+         }
+         else if (this.value == '1') {
+            $('#friend_participant').hide();
+         }
+      });
    });
 
 

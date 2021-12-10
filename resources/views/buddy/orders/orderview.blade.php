@@ -188,13 +188,13 @@
                 <h4 class="m-b-15"> Order #FO71025F2BF81  <b> {{'$'.number_format($data->price, 2)}}  </b> </h4>
                 <p class="m-b-10"> Buyer:{{$data->buyer->fname}} <a href="" class="col-green"> view history </a> </p>
                 <p class="m-b-20"> {{$data->created_at->format('m,d,y')}} </p>
-                <a href="" class="custom-btn2"> VIEW GIG </a>
+                <a href="{{route('activity.details', base64_encode($data->activity_id))}}" class="custom-btn2"> VIEW GIG </a>
              </div>
-             <div class="order-box1 support-box1 text-center m-b-30">
+             <!-- <div class="order-box1 support-box1 text-center m-b-30">
                 <a href="" class="bg-danger custom-btn2"> ORDER CANCEL </a>
                 <h5 class="col-white m-b-5 m-t-20"> ORDER REQUIREMENTS  </h5>
                 <p class="m-b-0 col-silver"> Your buyer has filled out the requirements</p>
-             </div>
+             </div> -->
              <div class="order-box1 support-box1 text-center">
                 <h5 class="col-white m-b-5"> ORDER STARTED  </h5>
                 <p class="m-b-15 col-silver"> Your buyer has filled out the requirements</p>

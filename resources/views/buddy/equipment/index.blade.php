@@ -66,7 +66,7 @@
                         </div>
                      </div>
                   </div>
-                  <div class="block-element m-t-30">
+                  <!-- <div class="block-element m-t-30">
                      <div class="sec-head1">
                         <h3> Your Zettaa Lead   </h3>
                      </div>
@@ -81,7 +81,7 @@
                      <div class="block-element">
                         <div id="morris-area-chart" style="width: 100%;"></div>
                      </div>
-                  </div>
+                  </div> -->
                </div>
 
 @endsection

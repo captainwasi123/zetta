@@ -34,6 +34,7 @@
 }
 .location-field .form-field1 {
     padding-left: 45px !important;
+    padding-right: 45px !important;
 }
 .wallet-table table tbody tr td {
     vertical-align: top;
@@ -737,5 +738,19 @@ padding: 9px 30px !important;
 }
 
 #dateTimeBlock {
+    display: none;
+}
+.closeLocation {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    background: red;
+    color: #fff;
+    padding: 2px 5px;
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+}
+#friend_participant{
     display: none;
 }

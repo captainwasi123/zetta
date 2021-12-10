@@ -66,7 +66,7 @@
                         </div>
                      </div>
                   </div>
-                  <div class="block-element m-t-30">
+                  <!-- <div class="block-element m-t-30">
                      <div class="sec-head1">
                         <h3> Your Zettaa Lead   </h3>
                      </div>
@@ -81,7 +81,7 @@
                      <div class="block-element">
                         <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/lead-graph2.jpg" width="850">
                      </div>
-                  </div>
+                  </div> -->
                </div>
 
 @endsection

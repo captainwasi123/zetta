@@ -366,13 +366,22 @@
    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key={{env('GOOGLE_MAP_KEY')}}&libraries=places"></script>
 <script type="text/javascript">
+
+   CKEDITOR.replace( 'description' );
+   $("form").submit( function(e) {
+        var description = CKEDITOR.instances['description'].getData().replace(/<[^>]*>/gi, '').length;
+        if( !description ) {
+            alert( 'Please fill all required fields.' );
+            e.preventDefault();
+        }
+    });
+
    jQuery(document).ready(function() {
 
        $("input[name='tch3']").TouchSpin();
        $('.dropify').dropify();
        $(".select2").select2();
 
-       CKEDITOR.replace( 'description' );
        CKEDITOR.addCss('.cke_editable { background-color: #1d242c; color: white }');
    });
 </script>
@@ -385,9 +394,13 @@
 
        $(document).on('click', '.addLocationBlock', function(){
            r++;
-           var data = '<br><div class="location-field"><input type="text" placeholder="Location" class="form-field1" name="location[]" id="location_field_'+r+'" data-row="'+r+'" required><input type="hidden" name="lat[]" id="lat_'+r+'"><input type="hidden" name="lng[]" id="lng_'+r+'"></div>';
+           var data = '<div class="location-field m-t-10"><input type="text" placeholder="Location" class="form-field1" name="location[]" id="location_field_'+r+'" data-row="'+r+'" required><input type="hidden" name="lat[]" id="lat_'+r+'"><input type="hidden" name="lng[]" id="lng_'+r+'"><a href="javascript:void(0)" class="closeLocation"><i class="fa fa-minus"></i></a></div>';
            $('#location_block').append(data);
            initialize('location_field_'+r);
+       });
+
+       $(document).on('click', '.closeLocation', function(){
+            $(this).parent().remove();
        });
    });
 

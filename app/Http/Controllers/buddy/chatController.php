@@ -109,8 +109,8 @@ class chatController extends Controller
 
     function getNotification(){
 
-        $data_list = chat::where("sender_id",Auth::id())
-                        ->orWhere("receiver_id",Auth::id())
+        $data_list = chat::where("receiver_id",Auth::id())
+                        ->where('views', '0')
                         ->distinct("sender_id", "receiver_id")
                         ->orderBy('created_at', 'desc')
                         ->count();

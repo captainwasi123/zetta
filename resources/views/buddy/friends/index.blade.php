@@ -134,7 +134,7 @@
                                               <td class="">
                                                  <a href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-ellipsis-v"> </i> </a>
                                                  <div class="dropdown-menu animated flipInY" style="">
-                                                    <a href="{{URL::to('/buddy/inbox/chat/'.base64_encode($val->friend->id).'/'.$val->friend->fname.' '.$val->friend->lname)}}" class="dropdown-item"> Send Message </a>
+                                                    <a href="{{URL::to('/buddy/inbox/chat/'.base64_encode($val->friend->id))}}/{{empty($val->friend->fname) ? 'New User' : $val->friend->fname.' '.$val->friend->lname}}" class="dropdown-item"> Send Message </a>
                                                     <div class="dropdown-divider"></div>
                                                     <a href="javascript:void(0)" data-id="{{base64_encode($val->id)}}" class="dropdown-item removeFriend"> Remove Friend </a>
                                                  </div>
@@ -151,7 +151,7 @@
                                               <td class="">
                                                  <a href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-ellipsis-v"> </i> </a>
                                                  <div class="dropdown-menu animated flipInY" style="">
-                                                    <a href="{{URL::to('/buddy/inbox/chat/'.base64_encode($val->user->id).'/'.$val->user->fname.' '.$val->user->lname)}}" class="dropdown-item"> Send Message </a>
+                                                    <a href="{{URL::to('/buddy/inbox/chat/'.base64_encode($val->user->id))}}/{{empty($val->user->fname) ? 'New User' : $val->user->fname.' '.$val->user->lname}}" class="dropdown-item"> Send Message </a>
                                                     <div class="dropdown-divider"></div>
                                                     <a href="javascript:void(0)" data-id="{{base64_encode($val->id)}}" class="dropdown-item removeFriend"> Remove Friend </a>
                                                  </div>

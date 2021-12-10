@@ -378,6 +378,7 @@ var kerywordss = [
             if (isConfirm) {
                 window.location.href = host+"/friends/add/"+id;
             } else {
+                swal.close();
             }
         });
       });

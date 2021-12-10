@@ -378,7 +378,9 @@ use Illuminate\Support\Facades\Route;
 					Route::prefix('orders')->group(function(){
 
 						Route::get('/', 'orderController@index')->name('buddy.order');
-                        Route::get('/{id}', 'orderController@orderView')->name('buddy.orders.view');
+						Route::get('/cancelled', 'orderController@cancelled')->name('buddy.order.cancelled');
+						Route::get('/delivered', 'orderController@delivered')->name('buddy.order.delivered');
+                        Route::get('/detail/{id}', 'orderController@orderView')->name('buddy.orders.view');
                         Route::post('/group/msg','orderController@group_order_msg')->name('buddy.group.msg');
 
                         Route::get('checkReview/{id}', 'orderController@checkReview');
