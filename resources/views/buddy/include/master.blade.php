@@ -84,49 +84,22 @@
 
     @include('buddy.include.script')
 
+    
     @if(session()->has('success'))
         <script type="text/javascript">
-            !function($) {
-                "use strict";
-
-                var SweetAlert = function() {};
-
-                //examples
-                SweetAlert.prototype.init = function() {
-                    var data = "{{ session()->get('success') }}";
-                    swal("Success!", data, "success");
-                },
-                //init
-                $.SweetAlert = new SweetAlert, $.SweetAlert.Constructor = SweetAlert
-            }(window.jQuery),
-
-            //initializing
-            function($) {
-                "use strict";
-                $.SweetAlert.init()
-            }(window.jQuery);
+            Swal.fire(
+              'Success!',
+              "{{ session()->get('success') }}",
+              'success'
+            );
         </script>
     @elseif (session()->has('pending'))
         <script type="text/javascript">
-            !function($) {
-                "use strict";
-
-                var SweetAlert = function() {};
-
-                //examples
-                SweetAlert.prototype.init = function() {
-                    var data = "{{ session()->get('pending') }}";
-                    swal("Pending!", data, "warning");
-                },
-                //init
-                $.SweetAlert = new SweetAlert, $.SweetAlert.Constructor = SweetAlert
-            }(window.jQuery),
-
-            //initializing
-            function($) {
-                "use strict";
-                $.SweetAlert.init()
-            }(window.jQuery);
+            Swal.fire(
+              'Pending!',
+              "{{ session()->get('success') }}",
+              'warning'
+            );
         </script>
     @endif
 

@@ -754,3 +754,6 @@ padding: 9px 30px !important;
 #friend_participant{
     display: none;
 }
+.newRequest-modal .modal-content {
+    padding: 12px 15px;
+}

@@ -241,8 +241,16 @@ use Illuminate\Support\Facades\Route;
 					Route::prefix('orders')->group(function(){
 
 						Route::get('/', 'orderController@index')->name('coach.orders');
-                        Route::get('/{id}', 'orderController@orderView')->name('coach.orders.view');
+						Route::get('/delivered', 'orderController@delivered')->name('coach.orders.delivered');
+						Route::get('/cancelled', 'orderController@cancelled')->name('coach.orders.cancelled');
+                        Route::get('/detail/{id}', 'orderController@orderView')->name('coach.orders.view');
                         Route::post('/group/msg','orderController@group_order_msg')->name('coach.group.msg');
+
+                        Route::prefix('session')->group(function(){
+
+                        	Route::get('delete/{id}', 'orderController@deleteSession')->name('coach.orders.session.delete');
+                        	Route::get('complete/{id}', 'orderController@completeSession')->name('coach.orders.session.complete');
+                        });
 					});
 
 				//My Account Area
@@ -385,6 +393,8 @@ use Illuminate\Support\Facades\Route;
 
                         Route::get('checkReview/{id}', 'orderController@checkReview');
                         Route::post('submitReview', 'orderController@submitReview')->name('buddy.review.submit');
+
+                        Route::post('sessionRequest', 'orderController@sessionRequest')->name('buddy.session.request');
 					});
 
 				//Analytics and Redeem

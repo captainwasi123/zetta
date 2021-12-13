@@ -7,6 +7,7 @@ use App\Models\lesson\lessonFroms;
 use App\Models\lesson\Locations;
 use Illuminate\Http\Request;
 use App\Models\lesson\orders;
+use App\Models\lesson\orderSessions;
 use App\Models\User;
 use App\Models\reviews;
 use Auth;
@@ -107,6 +108,18 @@ class orderController extends Controller
 
         $data['html'] = $html;
         return response()->json($data);
+    }
+
+    public function sessionRequest(Request $request){
+        $data = $request->all();
+        $s = new orderSessions;
+        $s->order_id = base64_decode($data['order_id']);
+        $s->start_date = date('Y-m-d', strtotime($data['book_date']));
+        $s->start_time = date('H:i:s', strtotime($data['book_time']));
+        $s->status = '1';
+        $s->save();
+
+        return redirect()->back()->with('success', 'New Request Generated.');
     }
 
 }

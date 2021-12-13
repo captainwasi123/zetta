@@ -104,6 +104,62 @@
                       </div>
                    </div>
                 </div>
+
+                <div class="row m-t-20">
+                   <div class="col-md-12 col-lg-12 col-lg-12">
+                      <div class="block-element">
+                         <div class="table-responsive custom-table1 group-table">
+                            <table  class="table table-hover contact-list border-off" data-page-size="10">
+                               <thead>
+                                 <tr>
+                                    <th colspan="2">Sessions History</th>
+                                    <th colspan="2" class="text-right">
+                                       @php $totalSessions = 0; $completedSessions = count($data->sessionsCompleted); @endphp
+                                       @foreach ($data->lesson->packages as $key => $duration)
+                                          @if ($data->plan == $key)
+                                             @php $totalSessions = $duration->days; @endphp
+                                          @elseif ($data->plan == $key)
+                                             @php $totalSessions = $duration->days; @endphp
+                                          @elseif ($data->plan == $key)
+                                             @php $totalSessions = $duration->days; @endphp
+                                          @endif
+                                       @endforeach
+                                       @if(count($data->sessions) < $totalSessions)
+                                       <a href="javascript:void(0)" class="btn btn-primary addRequest">
+                                          <i class="fa fa-plus"></i> New Request
+                                       </a>
+                                       @endif
+                                    </th>
+                                 </tr>
+                                 <tr>
+                                    <th> # </th>
+                                    <th class="text-center"> Booking Date </th>
+                                    <th class="text-center"> Booking Time </th>
+                                    <th class="text-center"> Status </th>
+                                 </tr>
+                               </thead>
+                               <tbody>
+                                 @foreach($data->sessions as $key => $val)
+                                    <tr>
+                                       <td>{{++$key}}</td>
+                                       <td>{{date('d-M-Y', strtotime($val->start_date))}}</td>
+                                       <td>{{date('h:i a', strtotime($val->start_time))}}</td>
+                                       <td>
+                                          @if($val->status == '1')
+                                             <i class="badge badge-info">Upcomming</i>
+                                          @else
+                                             <i class="badge badge-success">Completed</i>
+                                          @endif
+                                       </td>
+                                    </tr>
+                                 @endforeach
+                               </tbody>
+                            </table>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+
                 <div class="row m-t-20">
                    <div class="col-md-12 col-lg-12">
                       <div id="countdown">
@@ -230,6 +286,41 @@
    </div>
 </div>
 
+<div class="modal fade newRequest-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+   <div class="modal-dialog modal-lg" role="document" style="max-width: 500px;">
+      <div class="modal-content" id="re_content">
+         <div class="join-pop-head">
+            <h3> New Session Request <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button> </h3>
+            <hr>
+         </div>
+         <div class="join-form">
+            <form method="post" action="{{route('buddy.session.request')}}">
+                {{csrf_field()}}
+                <input type="hidden" name="order_id" value="{{base64_encode($data->id)}}">
+                <div class="container">
+                   <div class="row">
+                      <div class="col-md-12">
+                        <label>Booking Date</label>
+                        <input type="date" name="book_date" class="form-control" required>
+                      </div>
+                   </div>
+                   <br>
+                   <div class="row">
+                      <div class="col-md-12">
+                        <label>Booking Time</label>
+                        <input type="time" name="book_time" class="form-control" required>
+                      </div>
+                   </div>
+                </div>
+                <br>
+                <button type="submit" class="btn btn-primary"> Submit </button>
+                <button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close"> Cancel </button>
+            </form>
+         </div>
+      </div>
+   </div>
+</div>
+
 @endsection
 @section('addScript')
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
@@ -239,6 +330,17 @@
 <script src="https://use.fontawesome.com/5ac93d4ca8.js"></script>
 <script src="{{URL::to('/')}}/assets/js/bootstrap4-rating-input.js"></script>
 <script>
+
+   $(document).ready(function(){
+
+      $(document).on('click', '.addRequest', function(){
+
+         $('.newRequest-modal').modal('show');
+      });
+   });
+
+
+
     jQuery(document).ready(function() {
 
         $('.summernote').summernote({

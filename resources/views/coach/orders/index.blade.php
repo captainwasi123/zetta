@@ -13,9 +13,9 @@
       <div class="row">
          <div class="col-lg-6 col-sm-6 col-md-6 col-12">
             <div class="order-sorting-text m-b-10">
-               <a href="" class="active"> Active </a>
-               <a href="" class="col-silver"> Delivered  </a>
-               <a href="" class="col-silver"> Cancellation </a>
+               <a href="{{route('coach.orders')}}" class="{{$status == '0' ? 'active' : ''}}"> Active </a>
+               <a href="{{route('coach.orders.delivered')}}" class="col-silver {{$status == '1' ? 'active' : ''}}"> Delivered  </a>
+               <a href="{{route('coach.orders.cancelled')}}" class="col-silver {{$status == '2' ? 'active' : ''}}"> Cancellation </a>
             </div>
          </div>
          <div class="col-lg-6 col-sm-6 col-md-6 col-12 text-right mob-text-left">
@@ -38,6 +38,7 @@
                      <th> Total Earning </th>
                      <th> Type </th>
                      <th> BookingTime </th>
+                     <th> Seesion </th>
                      <th> Status </th>
                      <th></th>
                   </tr>
@@ -71,9 +72,24 @@
                            @endif
                         </td>
                         <td>
-                           @if($val->status == '1')
-                              <span class="label bg-success"> Active </span>
-                           @else
+                           @php $totalSessions = 0; $completedSessions = count($val->sessionsCompleted); @endphp
+                           @foreach ($val->lesson->packages as $key => $duration)
+                              @if ($val->plan == $key)
+                                 @php $totalSessions = $duration->days; @endphp
+                              @elseif ($val->plan == $key)
+                                 @php $totalSessions = $duration->days; @endphp
+                              @elseif ($val->plan == $key)
+                                 @php $totalSessions = $duration->days; @endphp
+                              @endif
+                           @endforeach
+                           {{$completedSessions.'/'.$totalSessions}}
+                        </td>
+                        <td>
+                           @if($val->status == '0')
+                              <span class="label bg-primary"> Active </span>
+                           @elseif($val->status == '1')
+                              <span class="label bg-success"> Delivered </span>
+                           @elseif($val->status == '2')
                               <span class="label bg-danger"> Cancelled </span>
                            @endif
                         </td>
@@ -83,6 +99,11 @@
                         </td>
                      </tr>
                   @endforeach
+                  @if(count($data) == 0)
+                     <tr>
+                        <td colspan="11">No Orders Found. </td>
+                     </tr>
+                  @endif
                </tbody>
             </table>
          </div>

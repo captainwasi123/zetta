@@ -20,7 +20,7 @@ class order extends Model
     	$o->buyer_id = Auth::id();
     	$o->seller_id = base64_decode($data['seller']);
     	$o->description = $data['description'];
-    	$o->status = '1';
+    	$o->status = '0';
     	$o->save();
 
     	return $o->id;

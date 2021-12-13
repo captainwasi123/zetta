@@ -7,6 +7,7 @@ use App\Models\lesson\lessonFroms;
 use App\Models\lesson\Locations;
 use Illuminate\Http\Request;
 use App\Models\lesson\orders;
+use App\Models\lesson\orderSessions;
 use App\Models\User;
 use Auth;
 
@@ -14,9 +15,19 @@ class orderController extends Controller
 {
     //
     function index(){
-        $data = orders::where('seller_id', Auth::id())->latest()->get();
+        $data = orders::where('seller_id', Auth::id())->where('status', '0')->latest()->get();
 
-        return view('coach.orders.index', ['data' => $data]);
+        return view('coach.orders.index', ['data' => $data, 'status' => '0']);
+    }
+    function delivered(){
+        $data = orders::where('seller_id', Auth::id())->where('status', '1')->latest()->get();
+
+        return view('coach.orders.index', ['data' => $data, 'status' => '1']);
+    }
+    function cancelled(){
+        $data = orders::where('seller_id', Auth::id())->where('status', '2')->latest()->get();
+
+        return view('coach.orders.index', ['data' => $data, 'status' => '2']);
     }
 
     public function orderView($id)
@@ -59,5 +70,19 @@ class orderController extends Controller
 
         $data['html'] = $html;
         return response()->json($data);
+    }
+
+    public function deleteSession($id){
+        $id = base64_decode($id);
+        orderSessions::destroy($id);
+        return redirect()->back()->with('success', 'Session request deleted.');
+    }
+
+    public function completeSession($id){
+        $id = base64_decode($id);
+        $s = orderSessions::find($id);
+        $s->status = '2';
+        $s->save();
+        return redirect()->back()->with('success', 'Session completed.');
     }
 }

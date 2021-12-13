@@ -86,25 +86,11 @@
 
     @if(session()->has('success'))
         <script type="text/javascript">
-            !function($) {
-                "use strict";
-
-                var SweetAlert = function() {};
-
-                //examples
-                SweetAlert.prototype.init = function() {
-                    var data = "{{ session()->get('success') }}";
-                    swal("Success!", data, "success");
-                },
-                //init
-                $.SweetAlert = new SweetAlert, $.SweetAlert.Constructor = SweetAlert
-            }(window.jQuery),
-
-            //initializing
-            function($) {
-                "use strict";
-                $.SweetAlert.init()
-            }(window.jQuery);
+            Swal.fire(
+              'Success!',
+              "{{ session()->get('success') }}",
+              'success'
+            );
         </script>
 
     @endif

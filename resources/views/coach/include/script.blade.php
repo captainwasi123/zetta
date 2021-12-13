@@ -18,7 +18,7 @@
 <script src="{{URL::to('/')}}/assets/user_dashboard/plugins/bootstrap/js/bootstrap.min.js"></script>
 <script src="{{URL::to('/')}}/assets/user_dashboard/plugins/sweetalert/sweetalert.min.js"></script>
 {{-- <script src="{{URL::to('/')}}/assets/user_dashboard/plugins/summernote/dist/summernote.min.js"></script> --}}
-<script src="{{URL::to('/')}}/assets/user_dashboard/plugins/sweetalert/jquery.sweet-alert.custom.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://js.pusher.com/7.0/pusher.min.js"></script>
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key={{env('GOOGLE_MAP_KEY')}}&libraries=places"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>

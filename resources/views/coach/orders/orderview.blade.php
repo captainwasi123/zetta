@@ -56,18 +56,18 @@
                                     <tr>
                                         <td class="table-image3"> <img src="{{asset('public/storage/user/profile_img/'.$buyer->profile_img.'')}}" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';">  {{$buyer->fname}} </td>
                                         <td class="text-center"> 01  </td>
-                                        @foreach ($data->lesson->packages as $key => $duration)
-                                        @if ($data->plan == $key)
-                                           <td class="text-center"> {{ $duration->duration ." min" }}
-                                           <td class="text-center"> {{ $day = $duration->days}}
-                                       @elseif ($data->plan == $key)
-                                           <td class="text-center"> {{ $duration->duration ." min" }}
-                                           <td class="text-center"> {{ $day = $duration->days}}
-                                       @elseif ($data->plan == $key)
-                                           <td class="text-center"> {{ $duration->duration ." min" }}
-                                           <td class="text-center"> {{ $day = $duration->days}}
-                                        @endif
-                                        @endforeach
+                                       @foreach ($data->lesson->packages as $key => $duration)
+                                          @if ($data->plan == $key)
+                                              <td class="text-center"> {{ $duration->duration ." min" }}
+                                              <td class="text-center"> {{ $day = $duration->days}}
+                                          @elseif ($data->plan == $key)
+                                              <td class="text-center"> {{ $duration->duration ." min" }}
+                                              <td class="text-center"> {{ $day = $duration->days}}
+                                          @elseif ($data->plan == $key)
+                                              <td class="text-center"> {{ $duration->duration ." min" }}
+                                              <td class="text-center"> {{ $day = $duration->days}}
+                                          @endif
+                                       @endforeach
                                        </td>
                                         <td class="text-center"> {{'$'.number_format($data->price, 2)}} </td>
                                     </tr>
@@ -79,18 +79,18 @@
                                   <tr>
                                      <td class="table-image3"> <img src="{{asset('public/storage/user/profile_img/'.$data->buyer->profile_img.'')}}" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';">  {{$data->buyer->fname}} </td>
                                      <td class="text-center"> 01  </td>
-                                     @foreach ($data->lesson->packages as $key => $duration)
-                                     @if ($data->plan == $key)
-                                        <td class="text-center"> {{ $duration->duration ." min" }}
-                                        <td class="text-center"> {{ $day = $duration->days}}
-                                    @elseif ($data->plan == $key)
-                                        <td class="text-center"> {{ $duration->duration ." min" }}
-                                        <td class="text-center"> {{ $day = $duration->days}}
-                                    @elseif ($data->plan == $key)
-                                        <td class="text-center"> {{ $duration->duration ." min" }}
-                                        <td class="text-center"> {{ $day = $duration->days}}
-                                     @endif
-                                     @endforeach
+                                    @foreach ($data->lesson->packages as $key => $duration)
+                                       @if ($data->plan == $key)
+                                           <td class="text-center"> {{ $duration->duration ." min" }}</td>
+                                           <td class="text-center"> {{ $day = $duration->days}}</td>
+                                       @elseif ($data->plan == $key)
+                                           <td class="text-center"> {{ $duration->duration ." min" }}</td>
+                                           <td class="text-center"> {{ $day = $duration->days}}</td>
+                                       @elseif ($data->plan == $key)
+                                           <td class="text-center"> {{ $duration->duration ." min" }}</td>
+                                           <td class="text-center"> {{ $day = $duration->days}}</td>
+                                       @endif
+                                    @endforeach
                                     </td>
                                      <td class="text-center"> {{'$'.number_format($data->price, 2)}} </td>
                                   </tr>
@@ -98,6 +98,68 @@
                                     <td colspan="5" class="text-right mob-text-left order-total-price"> <b> Total:  {{'$'.number_format($data->price, 2)}}  </b> </td>
                                  </tr>
                                   @endif
+                               </tbody>
+                            </table>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+                <div class="row m-t-20">
+                   <div class="col-md-12 col-lg-12 col-lg-12">
+                      <div class="block-element">
+                         <div class="table-responsive custom-table1 group-table">
+                            <table  class="table table-hover contact-list border-off" data-page-size="10">
+                               <thead>
+                                 <tr>
+                                    <th colspan="4">Sessions History</th>
+                                    <th colspan="1" class="text-right">
+                                       @php $totalSessions = 0; $completedSessions = count($data->sessionsCompleted); @endphp
+                                       @foreach ($data->lesson->packages as $key => $duration)
+                                          @if ($data->plan == $key)
+                                             @php $totalSessions = $duration->days; @endphp
+                                          @elseif ($data->plan == $key)
+                                             @php $totalSessions = $duration->days; @endphp
+                                          @elseif ($data->plan == $key)
+                                             @php $totalSessions = $duration->days; @endphp
+                                          @endif
+                                       @endforeach
+                                       {{$completedSessions.'/'.$totalSessions}}
+                                    </th>
+                                 </tr>
+                                 <tr>
+                                    <th> # </th>
+                                    <th class="text-center"> Booking Date </th>
+                                    <th class="text-center"> Booking Time </th>
+                                    <th class="text-center"> Status </th>
+                                    <th class="text-center"> Action </th>
+                                 </tr>
+                               </thead>
+                               <tbody>
+                                 @foreach($data->sessions as $key => $val)
+                                    <tr>
+                                       <td>{{++$key}}</td>
+                                       <td>{{date('d-M-Y', strtotime($val->start_date))}}</td>
+                                       <td>{{date('h:i a', strtotime($val->start_time))}}</td>
+                                       <td>
+                                          @if($val->status == '1')
+                                             <i class="badge badge-info">Upcomming</i>
+                                          @else
+                                             <i class="badge badge-success">Completed</i>
+                                          @endif
+                                       </td>
+                                       <td class="text-right">
+                                          @if($val->status == '1')
+                                             <a href="javascript:void(0)" class="btn btn-sm btn-primary completedSession" data-href="{{route('coach.orders.session.complete', base64_encode($val->id))}}">
+                                                <i class="fa fa-check"></i>
+                                             </a>
+
+                                             <a href="javascript:void(0)" class="btn btn-sm btn-danger deleteSession" data-href="{{route('coach.orders.session.delete', base64_encode($val->id))}}">
+                                                <i class="fa fa-trash"></i>
+                                             </a>
+                                          @endif
+                                       </td>
+                                    </tr>
+                                 @endforeach
                                </tbody>
                             </table>
                          </div>
@@ -136,7 +198,7 @@
                                                 No Data Found
                                             </li>
                                         @endif
-                                        @foreach ($data->forms as $form)
+                                        @foreach($data->forms as $form)
                                         <li>
                                             <div class="chat-img"><img src="{{asset('public')}}/storage/user/profile_img/{{$form->user->profile_img}}" alt="user" /></div>
                                             <div class="chat-content">
@@ -146,34 +208,6 @@
                                             <div class="chat-time"> {{$form->created_at->format('M d | g:i a')}}</div>
                                          </li>
                                         @endforeach
-                                     <!--chat Row -->
-                                     {{-- <li>
-                                        <div class="chat-img"><img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/users/1.jpg" alt="user" /></div>
-                                        <div class="chat-content">
-                                           <h5 class="col-white">James Anderson</h5>
-                                           <div class="box bg-light-info col-silver">Lorem Ipsum is simply dummy text of the printing & type setting industry.</div>
-                                        </div>
-                                        <div class="chat-time"> May 5 | 10:56 am</div>
-                                     </li>
-                                     <!--chat Row -->
-                                     <li>
-                                        <div class="chat-img"><img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/users/2.jpg" alt="user" /></div>
-                                        <div class="chat-content">
-                                           <h5 class="col-white">Bianca Doe</h5>
-                                           <div class="box bg-light-info col-silver">It’s Great opportunity to work.</div>
-                                        </div>
-                                        <div class="chat-time"> April 21 | 10:57 am</div>
-                                     </li>
-                                     <!--chat Row -->
-                                     <li>
-                                        <div class="chat-img"><img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/users/3.jpg" alt="user" /></div>
-                                        <div class="chat-content">
-                                           <h5 class="col-white">Angelina Rhodes</h5>
-                                           <div class="box bg-light-info col-silver">Well we have good budget for the project</div>
-                                        </div>
-                                        <div class="chat-time"> June 24 | 11:00 am</div>
-                                     </li> --}}
-                                     <!--chat Row -->
                                   </ul>
                                </div>
                             </div>
@@ -216,12 +250,7 @@
                 <h4 class="m-b-15"> Order #FO71025F2BF81  <b> {{'$'.number_format($data->price, 2)}}  </b> </h4>
                 <p class="m-b-10"> Buyer:{{$data->buyer->fname}} <a href="" class="col-green"> view history </a> </p>
                 <p class="m-b-20"> {{$data->created_at->format('m,d,y')}} </p>
-                <a href="" class="custom-btn2"> VIEW GIG </a>
-             </div>
-             <div class="order-box1 support-box1 text-center m-b-30">
-                <a href="" class="bg-danger custom-btn2"> ORDER CANCEL </a>
-                <h5 class="col-white m-b-5 m-t-20"> ORDER REQUIREMENTS  </h5>
-                <p class="m-b-0 col-silver"> Your buyer has filled out the requirements</p>
+                <a href="{{route('lesson.details', base64_encode($data->id))}}" target="_blank" class="custom-btn2"> VIEW GIG </a>
              </div>
              <div class="order-box1 support-box1 text-center">
                 <h5 class="col-white m-b-5"> ORDER STARTED  </h5>
@@ -239,6 +268,52 @@
 <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key={{env('GOOGLE_MAP_KEY')}}&libraries=places"></script>
 <script>
+
+   $(document).ready(function(){
+
+      $(document).on('click', '.deleteSession', function(){
+         var href = $(this).data('href');
+         Swal.fire({
+           title: 'Are you sure?',
+           text: "You won't be able to revert this!",
+           icon: 'warning',
+           showCancelButton: true,
+           confirmButtonColor: '#3085d6',
+           cancelButtonColor: '#d33',
+           confirmButtonText: 'Yes, delete it!'
+         }).then((result) => {
+           if (result.isConfirmed) {
+               window.location.href = href;
+           }else{
+            swal.close();
+           }
+         })
+
+      });
+
+
+      $(document).on('click', '.completedSession', function(){
+         var href = $(this).data('href');
+         Swal.fire({
+           title: 'Are you sure?',
+           text: "You won't be able to revert this!",
+           icon: 'warning',
+           showCancelButton: true,
+           confirmButtonColor: '#3085d6',
+           cancelButtonColor: '#d33',
+           confirmButtonText: 'Yes, complete it!'
+         }).then((result) => {
+           if (result.isConfirmed) {
+               window.location.href = href;
+           }else{
+            swal.close();
+           }
+         })
+
+      });
+   });
+
+
     jQuery(document).ready(function() {
 
         $('.summernote').summernote({

@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
 use App\Models\lesson\lessons;
 use App\Models\userWallet;
+use App\Models\lesson\orderSessions;
 use Auth;
 
 class orders extends Model
@@ -49,5 +50,13 @@ class orders extends Model
     public function forms()
     {
         return $this->hasMany(lessonFroms::class, 'order_id','id');
+    }
+    public function sessions()
+    {
+        return $this->hasMany(orderSessions::class, 'order_id','id');
+    }
+    public function sessionsCompleted()
+    {
+        return $this->hasMany(orderSessions::class, 'order_id','id')->where('status', '2');
     }
 }
