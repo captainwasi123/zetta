@@ -330,20 +330,10 @@ var kerywordss = [
         });
     });
 
-});
 
-
-!function($) {
-    "use strict";
-
-    var SweetAlert = function() {};
-
-    //examples
-    SweetAlert.prototype.init = function() {
-
-      $(document).on('click', '.deleteItem', function(){
+    $(document).on('click', '.deleteItem', function(){
         var href = $(this).data('href');
-        swal({
+        swal.fire({
             title: "Are you sure?",
             text: "You will not be able to recover this record.",
             type: "warning",
@@ -364,7 +354,7 @@ var kerywordss = [
 
       $(document).on('click', '.addFriend', function(){
         var id = $(this).data('id');
-        swal({
+        swal.fire({
             title: "Are you sure?",
             text: "You want this user as friend.",
             type: "warning",
@@ -385,7 +375,7 @@ var kerywordss = [
 
       $(document).on('click', '.approveFriendRequest', function(){
         var id = $(this).data('id');
-        swal({
+        swal.fire({
             title: "Are you sure?",
             text: "You want to accept this request.",
             type: "warning",
@@ -405,7 +395,7 @@ var kerywordss = [
 
       $(document).on('click', '.rejectFriendRequest', function(){
         var id = $(this).data('id');
-        swal({
+        swal.fire({
             title: "Are you sure?",
             text: "You want to reject this request.",
             type: "warning",
@@ -425,7 +415,7 @@ var kerywordss = [
 
       $(document).on('click', '.removeFriend', function(){
         var id = $(this).data('id');
-        swal({
+        swal.fire({
             title: "Are you sure?",
             text: "You want to remove this from friendlist.",
             type: "warning",
@@ -442,6 +432,19 @@ var kerywordss = [
             }
         });
       });
+
+});
+
+
+!function($) {
+    "use strict";
+
+    var SweetAlert = function() {};
+
+    //examples
+    SweetAlert.prototype.init = function() {
+
+      
     },
     //init
     $.SweetAlert = new SweetAlert, $.SweetAlert.Constructor = SweetAlert
