@@ -14,10 +14,10 @@
 <script src="{{URL::to('/')}}/assets/user_dashboard/plugins/morrisjs/morris.min.js"></script>
 <script src="{{URL::to('/')}}/assets/user_dashboard/buddy/js/dashboard1.js"></script>
 <script src="{{URL::to('/')}}/assets/user_dashboard/plugins/styleswitcher/jQuery.style.switcher.js"></script>
-<script src="{{URL::to('/')}}/assets/user_dashboard/buddy/js/dev_buddy.js"></script>
 <script src="{{URL::to('/')}}/assets/user_dashboard/plugins/bootstrap/js/bootstrap.min.js"></script>
 <script src="{{URL::to('/')}}/assets/user_dashboard/plugins/sweetalert/sweetalert.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="{{URL::to('/')}}/assets/user_dashboard/buddy/js/dev_buddy.js"></script>
 
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key={{env('GOOGLE_MAP_KEY')}}&libraries=places"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
