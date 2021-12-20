@@ -160,6 +160,38 @@ h2.reasons-run-main-head-text {
 
 @media only screen and (max-width: 767px){
 
+.why-we-do-it {
+    padding-bottom: 30px !important;
+    padding-top: 30px !important;
+}
+.how-it-was {
+    padding-top: 50px !important;
+}
+
+.how-we-do-it, .howwedoit-text, .how-it-started-text {
+    /*padding-bottom: 30px !important;*/
+    padding-top: 30px !important;
+}
+
+.how-we-do-it .row, .how-it-started .row {
+    flex-direction: column-reverse;
+}
+.howwedoit-img img {
+    width: 100% !important;
+}
+
+p.text-white {
+    padding: 0px !important;
+}
+
+.whywedoit-img img {
+    text-align: left;
+    width: 100% !important;
+    padding-bottom: 40px;
+}
+
+
+
     section.action-bar {
     background-size: cover;
     padding-top: 50px;
@@ -279,6 +311,27 @@ section.action-bar {
 
 }
 
+.how-it-started {
+    padding-top: 100px;
+}
+
+.how-it-started-img img {
+    width: 100%;
+}
+.whywedoit-img {
+    text-align: left;
+}
+
+.how-we-do-it {
+    padding-bottom: 60px;
+    padding-top: 60px;
+}
+
+.why-we-do-it {
+    padding-bottom: 60px;
+    padding-top: 60px;
+}
+
 </style>
 @endsection
 @section('content')
@@ -295,23 +348,111 @@ section.action-bar {
     </div>
 </section>
 
+<section class="how-it-was how-it-started">
+    <div class="container custom-container">
+        <div class="row">
+            <div class="col-md-6 how-it-started-text">
+                <h2 class="how-it-was-main-head text-white">How it Started</h2>
+                <p class="how-it-was-text text-white">Zettaa is an idea that emerged from three friends based in Geneva Switzerland. We all played ice hockey and one day in February 2021 we were looking to organize a game with our other friends but none were available. We were stuck and couldn’t find any partners to play with. We then came up with the idea to create a platform where sports passionate just like us could post their activity and get people to participate in them. We put all our time and energy to make sure to create the best platform for our users so they can go and enjoy their activity without wondering if they will find partners. We also dedicated a space for coaches to showcase their knowledge and help them find new clients.</p>
+            </div>
+            <div class="col-md-6">
+                <div class="how-it-was-img how-it-started-img">
+                    <img src="{{URL::to('/assets/website/images/bi-with-bar.png')}}"/>
+                </div>
+            </div>
+        </div>   
+    </div>
+</section>
+
+<section class="coaches-section">
+    <div class="container custom-container">
+        <div class="row">
+            <div class="col-md-12 sec-3">
+                <h2 class="reasons-run-main-head text-white">{{ __('content.aboutus_TEAM') }}</h2>
+                <h2 class="reasons-run-main-head-text text-white">MEET OUR TEAM</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="wom-bi-main">
+                    <img src="{{URL::to('/assets/website/images/women-biceps.png')}}"/>
+                </div>
+                <div class="reason-four-main">
+                    <h3 class="coach1-head text-white">Axel Olson</h3>
+                    <p class="coach1-text text-white">{{ __('content.aboutus_COACH PACER') }}</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="wom-bi-main1">
+                    <img src="{{URL::to('/assets/website/images/squats-train.png')}}"/>
+                </div>
+                <div class="reason-four-main ">
+                    <h3 class="coach2-head text-white">Tahar Petrucci</h3>
+                    <p class="coach2-text text-white">{{ __('content.aboutus_COACH PACER') }}</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="wom-bi-main2">
+                    <img src="{{URL::to('/assets/website/images/card-holder.png')}}"/>
+                </div>
+                <div class="reason-four-main">
+                    <h3 class="coach3-head text-white">Sylvestre Galli</h3>
+                    <p class="coach3-text text-white">{{ __('content.aboutus_COACH PACER') }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="coaches-section">
+    <div class="container custom-container">
+        
+        <div class="row">
+            <div class="col-md-2">
+                                
+            </div>
+            <div class="col-md-4">
+                <div class="wom-bi-main1">
+                    <img src="{{URL::to('/assets/website/images/squats-train.png')}}"/>
+                </div>
+                <div class="reason-four-main ">
+                    <h3 class="coach2-head text-white">Neal Schiffelholz</h3>
+                    <p class="coach2-text text-white">{{ __('content.aboutus_COACH PACER') }}</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="wom-bi-main2">
+                    <img src="{{URL::to('/assets/website/images/card-holder.png')}}"/>
+                </div>
+                <div class="reason-four-main">
+                    <h3 class="coach3-head text-white">Tobias Wicht</h3>
+                    <p class="coach3-text text-white">{{ __('content.aboutus_COACH PACER') }}</p>
+                </div>
+            </div>
+            <div class="col-md-2">
+                               
+            </div>
+        </div>
+    </div>
+</section>
+
 <section class="reasons-run">
     <div class="container custom-container">
         <div class="row">
               <div class="col-md-12 sec-2">
                     <h2 class="reasons-run-main-head text-white">{{ __('content.aboutus_WELCOME') }}</h2>
-                    <h2 class="reasons-run-main-head-text text-white">{{ __('content.aboutus_REASONS TO RUN WITH US!') }}</h2>
+                    <h2 class="reasons-run-main-head-text text-white">REASONS TO USE ZETTAA</h2>
               </div>
         </div>
         <div class="row">
             <div class="col-md-3 reason-one-main-div">
                 <div class="reason-one-main">
-                    <h3 class="reason-one text-white">{{ __('content.aboutus_BE HEALTHY') }}</h3>
-                    <p class="reason-one-text text-white">{{ __('content.aboutus_Fresh air and early morning running trips sure can cure almost anything.') }}</p>
+                    <h3 class="reason-one text-white">Save time and money:</h3>
+                    <p class="reason-one-text text-white">Due to the centralisation of our platform, find the right partner or coach that fits your expectations easily. (whether it is financial or scheduling)</p>
                 </div>
                 <div class="reason-three-main">
-                    <h3 class="reason-three text-white">{{ __('content.aboutus_FEEL FREE') }}</h3>
-                    <p class="reason-one-text text-white">{{ __('content.aboutus_Nothing makes you feel more free and independent as running open road.') }}</p>
+                    <h3 class="reason-three text-white">Be healthy:</h3>
+                    <p class="reason-one-text text-white">Exercising regularly helps you stay fit and clear your mind from stress and daily problems</p>
                 </div>
             </div>
             <div class="col-md-6">
@@ -321,68 +462,48 @@ section.action-bar {
             </div>
             <div class="col-md-3 reason-one-main-div">
                 <div class="reason-two-main">
-                    <h3 class="reason-two text-white">{{ __('content.aboutus_BE ONE OF US') }}</h3>
-                    <p class="reason-two-text text-white">{{ __('content.aboutus_By joining our group, you get to experience 100% unforgettable moments.') }}</p>
+                    <h3 class="reason-two text-white">Be one of us:</h3>
+                    <p class="reason-two-text text-white">By joining Zettaa you get full access to our services and our different communities and join all the activities close to you.</p>
                 </div>
             
                 <div class="reason-four-main">
-                    <h3 class="reason-four text-white">{{ __('content.aboutus_BE STRONG') }}</h3>
-                    <p class="reason-two-text text-white">{{ __('content.aboutus_Regular running helps you stay fit healthy and hardy no matter what.') }}</p>
+                    <h3 class="reason-four text-white">Be independant:</h3>
+                    <p class="reason-two-text text-white">No more memberships or club affiliation, be free to do your activity when you feel like it by creating your own activities.</p>
                 </div>
             </div>
         </div>
     </div>    
 </section>
 
-<section class="coaches-section">
+
+
+<section class="how-it-was why-we-do-it">
     <div class="container custom-container">
         <div class="row">
-            <div class="col-md-12 sec-3">
-                <h2 class="reasons-run-main-head text-white">{{ __('content.aboutus_TEAM') }}</h2>
-                <h2 class="reasons-run-main-head-text text-white">{{ __('content.aboutus_OUR COACHES') }}</h2>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="wom-bi-main">
-                    <img src="{{URL::to('/assets/website/images/women-biceps.png')}}"/>
-                </div>
-                <div class="reason-four-main">
-                    <h3 class="coach1-head text-white">{{ __('content.aboutus_LAURA PRISTON') }}</h3>
-                    <p class="coach1-text text-white">{{ __('content.aboutus_COACH PACER') }}</p>
+            <div class="col-md-6">
+                <div class="how-it-was-img whywedoit-img">
+                    <img src="{{URL::to('/assets/website/images/bi-with-bar.png')}}"/>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="wom-bi-main1">
-                    <img src="{{URL::to('/assets/website/images/squats-train.png')}}"/>
-                </div>
-                <div class="reason-four-main ">
-                    <h3 class="coach2-head text-white">{{ __('content.aboutus_LAURA PRISTON') }}</h3>
-                    <p class="coach2-text text-white">{{ __('content.aboutus_COACH PACER') }}</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="wom-bi-main2">
-                    <img src="{{URL::to('/assets/website/images/card-holder.png')}}"/>
-                </div>
-                <div class="reason-four-main">
-                    <h3 class="coach3-head text-white">{{ __('content.aboutus_LAURA PRISTON') }}</h3>
-                    <p class="coach3-text text-white">{{ __('content.aboutus_COACH PACER') }}</p>
-                </div>
-            </div>
-        </div>
+            <div class="col-md-6">
+                <h2 class="how-it-was-main-head text-white">WHY WE DO IT?</h2>
+                <p class="how-it-was-text text-white">We created this platform for everyone to use, no matter who you are or what sport you play. We value equality for all our users and we promote all sports in order to create a healthy lifestyle for our users. We want you to be able to create your community or expand the one you already have. We also want our coaches to find new clients and make their life easier for them with our platform. At Zettaa we aim to create a healthy habit for our customers by helping them exercise and get fit as well as contributing to a sustainable society</p>
+            </div>            
+        </div>   
     </div>
 </section>
 
-<section class="how-it-was">
+
+
+<section class="how-it-was how-we-do-it">
     <div class="container custom-container">
         <div class="row">
-            <div class="col-md-6">
-                <h2 class="how-it-was-main-head text-white">{{ __('content.aboutus_HOW IT WAS') }}</h2>
-                <p class="how-it-was-text text-white">{{ __('content.aboutus_Lorem ipsum dolor sit amet consectetuer adipiscing elit sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim.') }}</p>
+            <div class="col-md-6 howwedoit-text">
+                <h2 class="how-it-was-main-head text-white">HOW WE DO IT?</h2>
+                <p class="how-it-was-text text-white">We are able to accomplish all of our services on our platform by using an algorithm that links you directly to your sport and lead you to what you are looking for, whether you want to create or join an activity or find the right coach for you. You will be able to use your personalized dashboard that tracks your activity and will show you your progression instantly. We also offer safe payment with our partner Stripe. We make our platform easy to use, so you can find what you are looking for in just a couple clicks.</p>
             </div>
             <div class="col-md-6">
-                <div class="how-it-was-img">
+                <div class="how-it-was-img howwedoit-img">
                     <img src="{{URL::to('/assets/website/images/bi-with-bar.png')}}"/>
                 </div>
             </div>
