@@ -17,11 +17,15 @@ use Illuminate\Support\Facades\Route;
 
 // Web Routes
 	Route::namespace('web')->middleware('changeLang')->group(function(){
-
+		
 		// Main Pages
 			Route::get('/', 'webController@index');
 			Route::get('/contact', 'webController@contact');
 			Route::get('/thankyou', 'webController@thankyou');
+			Route::get('/partner', 'webController@partner');
+			
+
+
 			Route::get('/about_us', 'webController@aboutUs');
 			Route::get('/all/{type}', 'webController@all')->name('web.all');
 			Route::get('/search', 'webController@search')->name('web.search');
@@ -54,6 +58,8 @@ use Illuminate\Support\Facades\Route;
 			Route::get('cookie_policy', 'webController@cookie_policy')->name('web.cookie_policy');
 			Route::get('cookiePolicy', 'webController@cookiePolicy')->name('web.cookiePolicy');
 			Route::get('disclaimerPolicy', 'webController@disclaimerPolicy')->name('web.disclaimerPolicy');
+			Route::get('labelzettacoach', 'webController@labelzettacoach')->name('web.labelzettacoach');
+
 
 
 

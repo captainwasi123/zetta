@@ -54,7 +54,7 @@
                       <button class="btn btn-primary btn-block">Pay £{{$amount}}</button>
                     </div>
                     <div id="pybtn2">
-                        
+
                     </div>
                 </form>
             </div>
@@ -63,23 +63,23 @@
       <div class="col-md-3"></div>
       </div>
     </div>
-  
+
 </div>
   <script src="https://js.stripe.com/v3/"></script>
     <script type="text/javascript">
         var url = "{{route('stripe.submit')}}";
         var stripe = Stripe("{{env('STRIPE_API_KEY')}}");
         var form = document.getElementById('payment-form');
-        
+
         var element = stripe.elements();
         var cardElement = element.create('card');
         cardElement.mount('#card-element');
-        
-        
+
+
        console.log('Registering Form submit handling....');
         form.addEventListener('submit', function(e){
             e.preventDefault();
-            
+
             console.log('Createing Payment intent');
             fetch(url, {
                 method: 'POST',
@@ -90,7 +90,7 @@
             })
             .then((response) => response.json())
             .then((data) => {
-                
+
                 console.log('Created payment intent: '+data.client_secret);
                 stripe.confirmCardPayment(
                     data.client_secret, {
@@ -119,12 +119,12 @@
                         };
                         xhttp.open("GET", "{{URL::to('/order/confirmed/'.$id.'/'.$type)}}", true);
                         xhttp.send();
-                        
+
                     }
                 })
             })
             .catch((error) => {
-                
+
             });
         });
     </script>

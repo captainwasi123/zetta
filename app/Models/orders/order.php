@@ -13,7 +13,7 @@ class order extends Model
 {
     use HasFactory;
 
-    protected $table = 'tbl_orders_info';
+    protected $table = 'tbl_orders_lesson_info';
 
     public static function addOrder(array $data){
     	$o = new order;

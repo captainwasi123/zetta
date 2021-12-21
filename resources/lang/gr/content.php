@@ -613,6 +613,25 @@ return [
      'aboutus_Lorem ipsum dolor sit amet consectetuer adipiscing elit sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim.' => 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim.',
   
 
+     
+   
+// about
+
+'REASONS TO USE ZETTAA' => 'RAZONES PARA USAR ZETTAA',
+'Save time and money:' => 'Ahorre tiempo y dinero:',
+'Due to the centralisation of our platform, find the right partner or coach that fits your expectations easily. (whether it is financial or scheduling)' => 'Debido a la centralización de nuestra plataforma, encuentre fácilmente el socio o entrenador adecuado que se ajuste a sus expectativas. (ya sea financiero o de programación)',
+'Be healthy:' => 'Mantente saludable:',
+'Exercising regularly helps you stay fit and clear your mind from stress and daily problems' => 'Hacer ejercicio con regularidad te ayuda a mantenerte en forma y despejar tu mente del estrés y los problemas diarios',
+'Be one of us:' => 'Sé uno de nosotros:',
+'By joining Zettaa you get full access to our services and our different communities and join all the activities close to you.' => 'Als Unirse a Zettaa, obtiene acceso completo a nuestros servicios y nuestras diferentes comunidades y se une a todas las actividades cercanas a usted',
+'Be independant:' => 'Ser unabhängig:',
+'No more memberships or club affiliation, be free to do your activity when you feel like it by creating your own activities.' => 'No más membresías o afiliaciones a clubes, sé libre de hacer tu actividad cuando te apetezca creando tus propias actividades',
+'WHY WE DO IT?' => '¿POR QUÉ LO HACEMOS?',
+'We created this platform for everyone to use, no matter who you are or what sport you play. We value equality for all our users and we promote all sports in order to create a healthy lifestyle for our users. We want you to be able to create your community or expand the one you already have. We also want our coaches to find new clients and make their life easier for them with our platform. At Zettaa we aim to create a healthy habit for our customers by helping them exercise and get fit as well as contributing to a sustainable society' => 'Creamos this plataforma para que todos la usen, sin importar quién eres o qué deporte practicas. Valoramos la igualdad para todos nuestros usuarios y promovemos todos los deportes con el fin de crear un estilo de vida saludable para nuestros usuarios. Queremos que puedas crear tu comunidad oder ampliar la que ya tienes. También queremos que nuestros coaches encuentren nuevos clientes y les faciliten la vida con nuestra plataforma. En Zettaa nuestro objetivo es crear un hábito saludable para nuestros clientes ayudándoles a hacer ejercicio y ponerse en forma, además de contribuir a una sociedad sostenible',
+'HOW WE DO IT?' => '¿CÓMO LO HACEMOS?',
+'We are able to accomplish all of our services on our platform by using an algorithm that links you directly to your sport and lead you to what you are looking for, whether you want to create or join an activity or find the right coach for you. You will be able to use your personalized dashboard that tracks your activity and will show you your progression instantly. We also offer safe payment with our partner Stripe. We make our platform easy to use, so you can find what you are looking for in just a couple clicks.' => 'Podemos realizar todos nuestros servicios en nuestra plataforma mediante el uso de un algoritmo que lo vincula directamente con su deporte y lo lleva a lo que está buscando, ya sea que desee crear o unirse ent a para us a arde. . Podrá utilizar su panel personalizado que rastrea su actividad y le mostrará su progresión al instante. También ofrecemos pagos seguros con nuestro Socio Stripe. Hacemos que nuestra plataforma sea fácil de usar, para que puedaounter lo que busca con solo un par de clics',
+
+// about end 
 ];
 
 

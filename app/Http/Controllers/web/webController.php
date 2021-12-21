@@ -20,6 +20,7 @@ use Carbon\Carbon;
 use App\Models\inbox\chat;
 use App\Events\sendChat;
 use Pusher\Pusher;
+use App\Models\orders\order;
 use URL;
 use App;
 class webController extends Controller
@@ -417,8 +418,23 @@ class webController extends Controller
         }
 
         public function thankyou(){
+            $data=order::where('buyer_id', Auth::id())->where('status', '1')->latest()->limit(1)->get();
+       
+            return view('web.thankyou', ['data' => $data]);
+        }
 
-            return view('web.thankyou');
+        
+        public function partner(){
+
+           
+            return view('web.partner');
+        }
+
+        
+        public function labelzettacoach(){
+
+           
+            return view('web.labelzettacoach');
         }
 }
 

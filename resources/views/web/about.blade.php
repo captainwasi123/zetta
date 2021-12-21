@@ -64,7 +64,7 @@ h2.reasons-run-main-head-text {
     width: 80%;
 }
 
-.center-video { 
+.center-video {
     text-align: center;
 }
 
@@ -212,7 +212,7 @@ h2.reasons-run-main-head-text {
 .reason-one, .reason-two, .reason-three, .reason-four {
     text-align: center;
     line-height: 40px;
-}  
+}
 .reason-one-text, .reason-two-text, .reason-three-text, .reason-four-text {
     font-size: 16px;
     text-align: center;
@@ -223,7 +223,7 @@ h2.reasons-run-main-head-text {
 }
 .reasons-run-main-head-text {
     text-align: center;
-}   
+}
 .center-video img {
     width: 100%;
     padding-top: 30px;
@@ -291,7 +291,7 @@ section.reasons-run {
     padding-top: 0px;
 }
 .reason-one, .reason-two, .reason-three, .reason-four {
-    
+
     line-height: 40px;
 }
 
@@ -360,7 +360,7 @@ section.action-bar {
                     <img src="{{URL::to('/assets/website/images/bi-with-bar.png')}}"/>
                 </div>
             </div>
-        </div>   
+        </div>
     </div>
 </section>
 
@@ -406,10 +406,10 @@ section.action-bar {
 
 <section class="coaches-section">
     <div class="container custom-container">
-        
+
         <div class="row">
             <div class="col-md-2">
-                                
+
             </div>
             <div class="col-md-4">
                 <div class="wom-bi-main1">
@@ -430,7 +430,7 @@ section.action-bar {
                 </div>
             </div>
             <div class="col-md-2">
-                               
+
             </div>
         </div>
     </div>
@@ -447,12 +447,12 @@ section.action-bar {
         <div class="row">
             <div class="col-md-3 reason-one-main-div">
                 <div class="reason-one-main">
-                    <h3 class="reason-one text-white">Save time and money:</h3>
-                    <p class="reason-one-text text-white">Due to the centralisation of our platform, find the right partner or coach that fits your expectations easily. (whether it is financial or scheduling)</p>
+                    <h3 class="reason-one text-white">{{ __('content.Save time and money:')}}</h3>
+                    <p class="reason-one-text text-white">{{ __('content.Due to the centralisation of our platform, find the right partner or coach that fits your expectations easily. (whether it is financial or scheduling)')}}</p>
                 </div>
                 <div class="reason-three-main">
-                    <h3 class="reason-three text-white">Be healthy:</h3>
-                    <p class="reason-one-text text-white">Exercising regularly helps you stay fit and clear your mind from stress and daily problems</p>
+                    <h3 class="reason-three text-white">{{ __('content.Be healthy:')}}</h3>
+                    <p class="reason-one-text text-white">{{ __('content.Exercising regularly helps you stay fit and clear your mind from stress and daily problems')}}</p>
                 </div>
             </div>
             <div class="col-md-6">
@@ -462,17 +462,17 @@ section.action-bar {
             </div>
             <div class="col-md-3 reason-one-main-div">
                 <div class="reason-two-main">
-                    <h3 class="reason-two text-white">Be one of us:</h3>
-                    <p class="reason-two-text text-white">By joining Zettaa you get full access to our services and our different communities and join all the activities close to you.</p>
+                    <h3 class="reason-two text-white">{{ __('content.Be one of us:')}}</h3>
+                    <p class="reason-two-text text-white">{{ __('content.By joining Zettaa you get full access to our services and our different communities and join all the activities close to you.')}}</p>
                 </div>
-            
+
                 <div class="reason-four-main">
-                    <h3 class="reason-four text-white">Be independant:</h3>
-                    <p class="reason-two-text text-white">No more memberships or club affiliation, be free to do your activity when you feel like it by creating your own activities.</p>
+                    <h3 class="reason-four text-white">{{ __('content.Be independant:')}}</h3>
+                    <p class="reason-two-text text-white">{{ __('content.No more memberships or club affiliation, be free to do your activity when you feel like it by creating your own activities.')}}</p>
                 </div>
             </div>
         </div>
-    </div>    
+    </div>
 </section>
 
 
@@ -482,14 +482,14 @@ section.action-bar {
         <div class="row">
             <div class="col-md-6">
                 <div class="how-it-was-img whywedoit-img">
-                    <img src="{{URL::to('/assets/website/images/bi-with-bar.png')}}"/>
+                    <img src="{{URL::to('/assets/website/images/bi-with-bar-1.png')}}"/>
                 </div>
             </div>
             <div class="col-md-6">
-                <h2 class="how-it-was-main-head text-white">WHY WE DO IT?</h2>
-                <p class="how-it-was-text text-white">We created this platform for everyone to use, no matter who you are or what sport you play. We value equality for all our users and we promote all sports in order to create a healthy lifestyle for our users. We want you to be able to create your community or expand the one you already have. We also want our coaches to find new clients and make their life easier for them with our platform. At Zettaa we aim to create a healthy habit for our customers by helping them exercise and get fit as well as contributing to a sustainable society</p>
-            </div>            
-        </div>   
+                <h2 class="how-it-was-main-head text-white">{{ __('content.WHY WE DO IT?')}}</h2>
+                <p class="how-it-was-text text-white">{{ __('content.We created this platform for everyone to use, no matter who you are or what sport you play. We value equality for all our users and we promote all sports in order to create a healthy lifestyle for our users. We want you to be able to create your community or expand the one you already have. We also want our coaches to find new clients and make their life easier for them with our platform. At Zettaa we aim to create a healthy habit for our customers by helping them exercise and get fit as well as contributing to a sustainable society')}}</p>
+            </div>
+        </div>
     </div>
 </section>
 
@@ -499,15 +499,15 @@ section.action-bar {
     <div class="container custom-container">
         <div class="row">
             <div class="col-md-6 howwedoit-text">
-                <h2 class="how-it-was-main-head text-white">HOW WE DO IT?</h2>
-                <p class="how-it-was-text text-white">We are able to accomplish all of our services on our platform by using an algorithm that links you directly to your sport and lead you to what you are looking for, whether you want to create or join an activity or find the right coach for you. You will be able to use your personalized dashboard that tracks your activity and will show you your progression instantly. We also offer safe payment with our partner Stripe. We make our platform easy to use, so you can find what you are looking for in just a couple clicks.</p>
+                <h2 class="how-it-was-main-head text-white">{{ __('content.HOW WE DO IT?')}}</h2>
+                <p class="how-it-was-text text-white">{{ __('content.We are able to accomplish all of our services on our platform by using an algorithm that links you directly to your sport and lead you to what you are looking for, whether you want to create or join an activity or find the right coach for you. You will be able to use your personalized dashboard that tracks your activity and will show you your progression instantly. We also offer safe payment with our partner Stripe. We make our platform easy to use, so you can find what you are looking for in just a couple clicks.')}}</p>
             </div>
             <div class="col-md-6">
                 <div class="how-it-was-img howwedoit-img">
-                    <img src="{{URL::to('/assets/website/images/bi-with-bar.png')}}"/>
+                    <img src="{{URL::to('/assets/website/images/bi-with-bar-2.png')}}"/>
                 </div>
             </div>
-        </div>   
+        </div>
     </div>
 </section>
 

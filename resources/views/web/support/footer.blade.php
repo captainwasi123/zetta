@@ -120,8 +120,8 @@
                  <ul>
                      <li> <a href="{{URL::to('about_us')}}">{{ __('content.About Usf').' Zettaa' }} </a> </li>
                     <li> <a href="{{URL::to('contact')}}"> {{ __('content.Contact') }}  </a> </li>
-                    <li> <a href="#"> Label Coach </a> </li>
-                    <li> <a href="#"> Partnership </a> </li>
+                    <li> <a href="{{URL::to('labelzettacoach')}}"> Label Coach </a> </li>
+                    <li> <a href="{{URL::to('o')}}"> Partnership </a> </li>
 
                  
                  </ul>
@@ -140,8 +140,9 @@
                     <li> <a href="{{route('web.faq')}}"> {{ __('content.Faq') }} </a> </li>
                     <li> <a href="{{route('web.terms')}}"> {{ __('content.Terms & Condition') }}  </a> </li>
                     <li> <a href="{{route('web.cookiePolicy')}}"> {{ __('content.Cookie Policy') }} </a> </li>
-                    {{--  <li> <a href="{{route('web.disclaimerPolicy')}}"> {{ __('content.Disclaimer Policy') }} </a> </li>
-                     <li> <a href="{{route('web.refund_cancel_policy')}}"> {{ __('content.Refund Policy') }} </a> </li>  --}}
+                    <li> <a href="{{route('web.disclaimerPolicy')}}"> {{ __('content.Disclaimer Policy') }} </a> </li>
+                    
+                     <li> <a href="{{route('web.refund_cancel_policy')}}"> {{ __('content.Refund Policy') }} </a> </li>
                    
                  </ul>
                  {{--  <h4 class="col-white"> {{ __('content.SOCIAL MEDIA') }} </h4>  --}}

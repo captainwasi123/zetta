@@ -1,6 +1,6 @@
 <?php
 
- 
+
 return [
     // language
 
@@ -46,7 +46,7 @@ return [
     'STARTING AT'=>'STARTING AT',
    'Check Out What Our SportsBuddy Think after their Sessions'=>' Check Out What Our SportsBuddy Think after their Sessions  ',
      // index page end
-    
+
 
 
     // about us page start
@@ -89,7 +89,7 @@ return [
     'Total Amount'=> 'Total Amount ',
     'Continue to Checkout' => 'Continue to Checkout',
    'You won`t be charged yet'=>'You won`t be charged yet  ',
-    
+
     // cart page end
 
     // COCKIEPOLICY START
@@ -116,8 +116,8 @@ return [
     'You can control your cookies, delete them and reject them in the settings of your browser.' => 'You can control your cookies, delete them and reject them in the settings of your browser.',
     '5. ACCEPTANCE'=> '5. ACCEPTANCE ',
     'Your access to and use of our site is conditioned on your acceptance of and compliance with these Cookie Policy. These Terms apply to all visitors, users and others who access or use the website. By using the website and agreeing to this policy, you consent to our use of cookies in accordance with the terms given herein.'=> 'Your access to and use of our site is conditioned on your acceptance of and compliance with these Cookie Policy. These Terms apply to all visitors, users and others who access or use the website. By using the website and agreeing to this policy, you consent to our use of cookies in accordance with the terms given herein. ',
-   
-    // coockiepolicy end 
+
+    // coockiepolicy end
 
     // DeicimPolicy start
     'LEGAL DISCLAIMER' => 'LEGAL DISCLAIMER',
@@ -142,7 +142,7 @@ return [
     'In the event any provision or part of this Disclaimer is found to be invalid or unenforceable, only that particular provision or part so found, and not the entire Disclaimer, will be inoperative.' => 'In the event any provision or part of this Disclaimer is found to be invalid or unenforceable, only that particular provision or part so found, and not the entire Disclaimer, will be inoperative.',
     '10. CHANGES OF TERMS'=> '10. CHANGES OF TERMS ',
     'As owner of the platform, we reserve the right to change the terms as needed with or without providing the users with any notice.'=> 'As owner of the platform, we reserve the right to change the terms as needed with or without providing the users with any notice. ',
-    
+
     // deciPolicy end
 
     // faq start
@@ -159,15 +159,15 @@ return [
     'Equipement:' => 'Equipement:',
     'Equipment:' => 'Equipment:',
     'On Zettaa you will be able to add the equipment you have on your dashboard. By doing this you will be able to share your equipment with other sportbuddies. You will set the price of the equipment yourself and will benefit from our safe payment methods.' => 'On Zettaa you will be able to add the equipment you have on your dashboard. By doing this you will be able to share your equipment with other sportbuddies. You will set the price of the equipment yourself and will benefit from our safe payment methods.',
-   
+
     //  faq end
 
     // PAYMENT START
 
     'Stripe Payment Gateway' => 'Stripe Payment Gateway',
     'Please enter your card details' => 'Please enter your card details',
-    
-    
+
+
     // PAYMEN END
 
 
@@ -197,7 +197,7 @@ return [
     'In the event any provision or part of this Refundand Cancellation Policy is found to be invalid or unenforceable, only that particular provision or part so found, and not the entire Refund and Cancellation Policy, will be inoperative.' => 'In the event any provision or part of this Refundand Cancellation Policy is found to be invalid or unenforceable, only that particular provision or part so found, and not the entire Refund and Cancellation Policy, will be inoperative.',
     '8. ENTIRE AGREEMENT'=> '8. ENTIRE AGREEMENT ',
     'This Refund and Cancellation Policy contains the entire agreement and understanding among the parties hereto with respect to the subject matter hereof, and supersedes all prior and contemporaneous agreements, understandings, inducements and conditions, express or implied, oral or written, of any nature whatsoever with respect to the subject matter hereof.' => 'This Refund and Cancellation Policy contains the entire agreement and understanding among the parties hereto with respect to the subject matter hereof, and supersedes all prior and contemporaneous agreements, understandings, inducements and conditions, express or implied, oral or written, of any nature whatsoever with respect to the subject matter hereof.',
-    
+
     // refund policy end
 
     // TERM START
@@ -294,7 +294,7 @@ return [
     '23.6 The above provisions of this Confidentiality section shall survive termination of this Agreement, however arising.' => '23.6 The above provisions of this Confidentiality section shall survive termination of this Agreement, however arising.',
     '24. ENTIRE AGREEMENT' => '24. ENTIRE AGREEMENT',
     'This Agreement contains the entire agreement and understanding among the parties hereto with respect to the subject matter hereof, and supersedes all prior and contemporaneous agreements, understandings, inducements and conditions, express or implied, oral or written, of any nature whatsoever with respect to the subject matter hereof. The express terms hereof control and supersede any course of performance and/or usage of the trade inconsistent with any of the terms hereof.' => 'This Agreement contains the entire agreement and understanding among the parties hereto with respect to the subject matter hereof, and supersedes all prior and contemporaneous agreements, understandings, inducements and conditions, express or implied, oral or written, of any nature whatsoever with respect to the subject matter hereof. The express terms hereof control and supersede any course of performance and/or usage of the trade inconsistent with any of the terms hereof.',
-  
+
     // TERM END
 
 
@@ -329,7 +329,7 @@ return [
     'Reviews as Activity' => 'Reviews as Activity',
     'That would be good please share any reference or similar website interms of features and functionality you need.' => 'That would be good please share any reference or similar website interms of features and functionality you need.',
     '+ See more' => '+ See more',
-    
+
     // USER PROFILE END
 
 
@@ -356,7 +356,7 @@ return [
     'SOCIAL MEDIA' => 'SOCIAL MEDIA',
     'All Rights Reserved' => 'All Rights Reserved',
     '3 rue du Port, 1204 Genève, Switzerland' => '3 rue du Port, 1204 Genève, Switzerland',
-   
+
     // FOOTER END
 
     // HEADER START
@@ -388,8 +388,8 @@ return [
     'Become a Coach' => 'Become a Coach',
     'Login' => 'Login',
     'Sports Buddies' => 'Sports Buddies',
-    
-    
+
+
     // HEADER END
 
     // MODAL START
@@ -420,7 +420,7 @@ return [
     'As an athlete, what do you think are the fundamental values for progress?' => 'As an athlete, what do you think are the fundamental values for progress?',
     'Bonus : Share with us your worst/best memory during a training or a competition.' => 'Bonus : Share with us your worst/best memory during a training or a competition.',
     'By checking this box, you declare that you have read and understood the Coach Label Zettaa document and agree to refer to it when you are in contact with your Zettaa customers.' => 'By checking this box, you declare that you have read and understood the Coach Label Zettaa document and agree to refer to it when you are in contact with your Zettaa customers.',
-   
+
     // MODAL END
 
 
@@ -430,7 +430,7 @@ return [
     'Please include' => 'Please include',
     'Project Description' => 'Project Description',
     'Write your message' => 'Write your message...',
-    
+
 
     // MESSAGE BOX END
 
@@ -455,7 +455,7 @@ return [
     'That would be good please share any reference or similar website interms of features and functionality you need.' => 'That would be good please share any reference or similar website interms of features and functionality you need.',
     'Lennon' => 'Lennon',
     '+ See more' => '+ See more',
-    
+
     // BUDDY PROFILE END
 
     // COACH PROFILE START
@@ -471,7 +471,7 @@ return [
     'Starting Excercise' => 'Starting Excercise',
     'Active Lessons' => 'Active Lessons',
     'Reviews as Activity' => 'Reviews as Activity',
-    
+
 
     // COACH PROFILE END
 
@@ -511,12 +511,12 @@ return [
     'Your browser does not support the video element.'=>'Your browser does not support the video element.',
 
 
-    
+
     // LESSON DETAIL END
 
 
     // filter->activity START
-    
+
     'Results for' => 'Results for',
     'No Results Found.' => 'No Results Found.',
     'No Filter' => 'No Filter',
@@ -525,7 +525,7 @@ return [
     'FREE' => 'FREE',
     'Female' => 'Female',
     'Male'=>'Male',
-  
+
     // // filter->activity=seach_fiter==lessonbuddies=coach END
 
 
@@ -537,7 +537,7 @@ return [
     'COACHES' => 'COACHES',
     'SPORTS BUDDY' => 'SPORTS BUDDIES',
     'LESSONS' => 'LESSONS',
-    
+
     // filter->search end
 
     // activity->details
@@ -560,7 +560,7 @@ return [
     'Available' => 'Available',
     'Not Available:' => 'Not Available:',
     'Sports Buddy`s Activity'=> 'Sports Buddy`s Activity ',
-  
+
     //Contact Us
 
      'Contact_CONTACT US' => 'CONTACT US',
@@ -611,5 +611,28 @@ return [
      'aboutus_COACH PACER' => 'COACH, PACER',
      'aboutus_HOW IT WAS' => 'HOW IT WAS',
      'aboutus_Lorem ipsum dolor sit amet consectetuer adipiscing elit sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim.' => 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim.',
-];
+
+// about
+
+    'REASONS TO USE ZETTAA' => 'REASONS TO USE ZETTAA',
+    'Save time and money:' => 'Save time and money:',
+    'Due to the centralisation of our platform, find the right partner or coach that fits your expectations easily. (whether it is financial or scheduling)' => 'Due to the centralisation of our platform, find the right partner or coach that fits your expectations easily. (whether it is financial or scheduling)',
+    'Be healthy:' => 'Be healthy:',
+    'Exercising regularly helps you stay fit and clear your mind from stress and daily problems' => 'Exercising regularly helps you stay fit and clear your mind from stress and daily problems',
+    'Be one of us:' => 'Be one of us:',
+    'By joining Zettaa you get full access to our services and our different communities and join all the activities close to you.' => 'By joining Zettaa you get full access to our services and our different communities and join all the activities close to you.',
+    'Be independant:' => 'Be independant:',
+    'No more memberships or club affiliation, be free to do your activity when you feel like it by creating your own activities.' => '>No more memberships or club affiliation, be free to do your activity when you feel like it by creating your own activities.',
+    'WHY WE DO IT?' => 'WHY WE DO IT?',
+    'We created this platform for everyone to use, no matter who you are or what sport you play. We value equality for all our users and we promote all sports in order to create a healthy lifestyle for our users. We want you to be able to create your community or expand the one you already have. We also want our coaches to find new clients and make their life easier for them with our platform. At Zettaa we aim to create a healthy habit for our customers by helping them exercise and get fit as well as contributing to a sustainable society' => 'We created this platform for everyone to use, no matter who you are or what sport you play. We value equality for all our users and we promote all sports in order to create a healthy lifestyle for our users. We want you to be able to create your community or expand the one you already have. We also want our coaches to find new clients and make their life easier for them with our platform. At Zettaa we aim to create a healthy habit for our customers by helping them exercise and get fit as well as contributing to a sustainable society',
+    'HOW WE DO IT?' => 'HOW WE DO IT?',
+    'We are able to accomplish all of our services on our platform by using an algorithm that links you directly to your sport and lead you to what you are looking for, whether you want to create or join an activity or find the right coach for you. You will be able to use your personalized dashboard that tracks your activity and will show you your progression instantly. We also offer safe payment with our partner Stripe. We make our platform easy to use, so you can find what you are looking for in just a couple clicks.' => 'We are able to accomplish all of our services on our platform by using an algorithm that links you directly to your sport and lead you to what you are looking for, whether you want to create or join an activity or find the right coach for you. You will be able to use your personalized dashboard that tracks your activity and will show you your progression instantly. We also offer safe payment with our partner Stripe. We make our platform easy to use, so you can find what you are looking for in just a couple clicks.',
+   
+ // about end 
+
+
+
+
+
+    ];
 

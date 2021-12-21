@@ -6,10 +6,15 @@
    <div class="container">
    <div class="thankyou">
       <img src="{{URL::to('/public/Tick.png/')}}" alt="" class="">
-      <h3>{{ __('content.Thnkyou_Order #:') }} 1101</h3>
+      @foreach($data as $key => $val)
+          <h3>{{ __('content.Thnkyou_Order #:') }} {{$val->id}} </h3>
+      @endforeach
+     
       <h1>{{ __('content.Thnkyou_Thankyou for your order!') }}</h1>
-      <p>{{ __('content.Thnkyou_paragraph') }}</p>
-      <center><a href="">{{ __('content.Thnkyou_Back to Home') }}</a></center>
+      <p>centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
+      <p>It was popularised in the 1960s with the release of Letraset sheets conta </p>
+
+      <center><a href="{{URL::to('/')}}">{{ __('content.Thnkyou_Back to Home') }}</a></center>
    </div>  
    </div>
 </section>

@@ -100,21 +100,11 @@
 
                <div class="row">
                   <div class="col-lg-12 pl-1 pr-1 pb-3">
-                     <p>118N Main St, Trumbauersville, United States<p>
+                     <p>3 rue du Port, 1204 Geneva, Switzerland<p>
                   </div>
                </div>
 
-               <div class="row">
-                  <div class="col-lg-12 pl-1 pr-1">
-                     <h6>{{ __('content.Contact_Phone') }}</h6>
-                  </div>
-               </div>
-
-               <div class="row">
-                  <div class="col-lg-12 pl-1 pr-1 pb-3">
-                     <p>2155655845<p>
-                  </div>
-               </div>
+               
 
                <div class="row">
                   <div class="col-lg-12 pl-1 pr-1">
@@ -124,7 +114,7 @@
 
                <div class="row">
                   <div class="col-lg-12 pl-1 pr-1">
-                     <p>abc@gooddesignin.com<p>
+                    <a href="mailto:info@zettaa.ch" alt=""> <p>info@zettaa.ch<p></a>
                   </div>
                </div>
             </div>
