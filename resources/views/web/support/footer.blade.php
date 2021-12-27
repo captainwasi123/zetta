@@ -121,7 +121,7 @@
                      <li> <a href="{{URL::to('about_us')}}">{{ __('content.About Usf').' Zettaa' }} </a> </li>
                     <li> <a href="{{URL::to('contact')}}"> {{ __('content.Contact') }}  </a> </li>
                     <li> <a href="{{URL::to('labelzettacoach')}}"> Label Coach </a> </li>
-                    <li> <a href="{{URL::to('o')}}"> Partnership </a> </li>
+                    <li> <a href="{{URL::to('partner')}}"> Partnership </a> </li>
 
                  
                  </ul>

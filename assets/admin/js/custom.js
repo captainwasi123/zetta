@@ -26,6 +26,7 @@ $(function () {
             window.location.href = host+'/reviewDelete/'+id;
         }
     });
+  
 
 
 

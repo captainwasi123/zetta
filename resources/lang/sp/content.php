@@ -1,6 +1,6 @@
 <?php
 
- 
+
 return [
     // language
 
@@ -46,7 +46,7 @@ return [
     'STARTING AT'=>'EMPEZANDO EN',
    'Check Out What Our SportsBuddy Think after their Sessions'=>'Mira lo que piensan nuestros SportsBuddy después de sus sesiones',
      // index page end
-    
+
 
 
     // about us page start
@@ -89,7 +89,7 @@ return [
     'Total Amount'=> 'Importe total',
     'Continue to Checkout' => 'Continuar con el pago',
    'You won`t be charged yet'=>'No se le cobrará todavía',
-    
+
     // cart page end
 
     // COCKIEPOLICY START
@@ -116,8 +116,8 @@ return [
     'You can control your cookies, delete them and reject them in the settings of your browser.' => 'Puede controlar sus cookies, eliminarlas y rechazarlas en la configuración de su navegador',
     '5. ACCEPTANCE'=> '5. ACEPTACIÓN ',
     'Your access to and use of our site is conditioned on your acceptance of and compliance with these Cookie Policy. These Terms apply to all visitors, users and others who access or use the website. By using the website and agreeing to this policy, you consent to our use of cookies in accordance with the terms given herein.'=> ' Su acceso y uso de nuestro sitio está condicionado a su aceptación y cumplimiento de esta Política de cookies. Estos Términos se aplican a todos los visitantes, usuarios y otras personas que acceden o utilizan el sitio web. Al utilizar el sitio web y aceptar esta política, usted acepta nuestro uso de cookies de acuerdo con los términos aquí establecidos.',
-   
-    // coockiepolicy end 
+
+    // coockiepolicy end
 
     // DeicimPolicy start
     'LEGAL DISCLAIMER' => 'RENUNCIA LEGAL',
@@ -142,7 +142,7 @@ return [
     'In the event any provision or part of this Disclaimer is found to be invalid or unenforceable, only that particular provision or part so found, and not the entire Disclaimer, will be inoperative.' => 'En el caso de que se determine que alguna disposición o parte de esta Exención de responsabilidad no es válida o no se puede hacer cumplir, solo esa disposición o parte en particular, y no toda la Exención de responsabilidad, quedará inoperante',
     '10. CHANGES OF TERMS'=> '10. CAMBIOS DE TÉRMINOS ',
     'As owner of the platform, we reserve the right to change the terms as needed with or without providing the users with any notice.'=> 'Como propietario de la plataforma, nos reservamos el derecho de cambiar los términos según sea necesario con o sin proporcionar a los usuarios un aviso.',
-    
+
     // deciPolicy end
 
     // faq start
@@ -159,15 +159,15 @@ return [
     'Equipement:' => 'Equipo',
     'Equipment:' => 'Equipo',
     'On Zettaa you will be able to add the equipment you have on your dashboard. By doing this you will be able to share your equipment with other sportbuddies. You will set the price of the equipment yourself and will benefit from our safe payment methods.' => 'En Zettaa podrás agregar el equipo que tienes en tu tablero. Al hacer esto, podrá compartir su equipo con otros amigos deportivos. Usted mismo fijará el precio del equipo y se beneficiará de nuestros métodos de pago seguros ',
-   
+
     //  faq end
 
     // PAYMENT START
 
     'Stripe Payment Gateway' => 'Stripe Payment Gateway',
     'Please enter your card details' => 'Por favor ingrese los detalles de su tarjeta',
-    
-    
+
+
     // PAYMEN END
 
 
@@ -197,7 +197,7 @@ return [
     'In the event any provision or part of this Refundand Cancellation Policy is found to be invalid or unenforceable, only that particular provision or part so found, and not the entire Refund and Cancellation Policy, will be inoperative.' => 'En el caso de que se determine que alguna disposición o parte de esta Política de Reembolso y Cancelación no es válida o no se puede hacer cumplir, solo esa disposición en particular o parte así encontrada, y no toda la Política de Reembolso y Cancelación, quedará inoperante',
     '8. ENTIRE AGREEMENT'=> ' 8. ACUERDO COMPLETO',
     'This Refund and Cancellation Policy contains the entire agreement and understanding among the parties hereto with respect to the subject matter hereof, and supersedes all prior and contemporaneous agreements, understandings, inducements and conditions, express or implied, oral or written, of any nature whatsoever with respect to the subject matter hereof.' => 'Esta Política de Reembolso y Cancelación contiene el acuerdo completo y el entendimiento entre las partes del mismo con respecto al tema del mismo, y reemplaza todos los acuerdos, entendimientos, incentivos y condiciones anteriores y contemporáneos, expresos o implícitos, orales o escritos, de cualquier naturaleza. con respecto al objeto del presente.',
-    
+
     // refund policy end
 
     // TERM START
@@ -294,7 +294,7 @@ return [
     '23.6 The above provisions of this Confidentiality section shall survive termination of this Agreement, however arising.' => '23 .6 Las disposiciones anteriores de esta sección de Confidencialidad sobrevivirán a la terminación de este Acuerdo, independientemente de cómo surja.',
     '24. ENTIRE AGREEMENT' => '24. ACUERDO COMPLETO',
     'This Agreement contains the entire agreement and understanding among the parties hereto with respect to the subject matter hereof, and supersedes all prior and contemporaneous agreements, understandings, inducements and conditions, express or implied, oral or written, of any nature whatsoever with respect to the subject matter hereof. The express terms hereof control and supersede any course of performance and/or usage of the trade inconsistent with any of the terms hereof.' => 'Este Acuerdo contiene el acuerdo completo y el entendimiento entre las partes del mismo con respecto al tema del mismo, y reemplaza todos los acuerdos, entendimientos, incentivos y condiciones anteriores y contemporáneos, expresos o implícitos, orales o escritos, de cualquier naturaleza con respecto a el objeto del mismo. Los términos expresos del presente controlan y reemplazan cualquier curso de desempeño y / o uso del comercio inconsistente con cualquiera de los términos del presente. ',
-  
+
     // TERM END
 
 
@@ -329,7 +329,7 @@ return [
     'Reviews as Activity' => 'Reseñas como actividad',
     'That would be good please share any reference or similar website interms of features and functionality you need.' => 'Sería bueno, por favor comparta cualquier referencia o sitio web similar en términos de características y funcionalidad que necesite',
     '+ See more' => '+ Ver más',
-    
+
     // USER PROFILE END
 
 
@@ -356,7 +356,7 @@ return [
     'SOCIAL MEDIA' => 'REDES SOCIALES',
     'All Rights Reserved' => 'Todos los derechos reservados',
     '3 rue du Port, 1204 Genève, Switzerland' => '3 rue du Port, 1204 Genève, Suiza',
-   
+
     // FOOTER END
 
     // HEADER START
@@ -388,8 +388,8 @@ return [
     'Become a Coach' => 'Conviértete en entrenador',
     'Login' => 'Iniciar sesión',
     'Sports Buddies' => 'Sports Buddies',
-    
-    
+
+
     // HEADER END
 
     // MODAL START
@@ -420,7 +420,7 @@ return [
     'As an athlete, what do you think are the fundamental values for progress?' => 'Como deportista, ¿cuáles crees que son los valores fundamentales para el progreso?',
     'Bonus : Share with us your worst/best memory during a training or a competition.' => 'Bonificación: comparte con nosotros tu peor / mejor recuerdo durante un entrenamiento o una competición',
     'By checking this box, you declare that you have read and understood the Coach Label Zettaa document and agree to refer to it when you are in contact with your Zettaa customers.' => 'Al marcar esta casilla, declara que ha leído y comprendido el documento Coach Label Zettaa y acepta consultarlo cuando se ponga en contacto con sus clientes de Zettaa',
-   
+
     // MODAL END
 
 
@@ -430,7 +430,7 @@ return [
     'Please include' => 'Por favor incluya',
     'Project Description' => 'Descripción del proyecto',
     'Write your message' => 'Escribe tu mensaje',
-    
+
 
     // MESSAGE BOX END
 
@@ -455,7 +455,7 @@ return [
     'That would be good please share any reference or similar website interms of features and functionality you need.' => 'Sería bueno, por favor comparta cualquier referencia o sitio web similar en términos de características y funcionalidad que necesite',
     'Lennon' => 'Lennon',
     '+ See more' => '+ Ver más',
-    
+
     // BUDDY PROFILE END
 
     // COACH PROFILE START
@@ -471,7 +471,7 @@ return [
     'Starting Excercise' => 'Ejercicio inicial ',
     'Active Lessons' => ' Lecciones activas',
     'Reviews as Activity' => 'Reseñas como actividad',
-    
+
 
     // COACH PROFILE END
 
@@ -511,12 +511,12 @@ return [
     'Your browser does not support the video element.'=>'Su navegador no es compatible con el elemento de video.',
 
 
-    
+
     // LESSON DETAIL END
 
 
     // filter->activity START
-    
+
     'Results for' => 'Resultados para',
     'No Results Found.' => 'No se han encontrado resultados.',
     'No Filter' => 'Sin filtro',
@@ -525,7 +525,7 @@ return [
     'FREE' => 'GRATIS',
     'Female' => 'Mujer',
     'Male'=>'Hombre',
-  
+
     // // filter->activity=seach_fiter==lessonbuddies=coach END
 
 
@@ -537,7 +537,7 @@ return [
     'COACHES' => 'ENTRENADORES',
     'SPORTS BUDDY' => ' AMIGO DEPORTIVO',
     'LESSONS' => 'LECCIONES',
-    
+
     // filter->search end
 
     // activity->details
@@ -612,9 +612,9 @@ return [
      'aboutus_COACH PACER' => 'ENTRENADOR, PACER',
      'aboutus_HOW IT WAS' => 'CÓMO FUE',
      'aboutus_Lorem ipsum dolor sit amet consectetuer adipiscing elit sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim.' => 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud ejercicio ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim.',
-  
 
-        
+
+
 // about
 
     'REASONS TO USE ZETTAA' => 'RAZONES PARA USAR ZETTAA',
@@ -630,8 +630,195 @@ return [
     'We created this platform for everyone to use, no matter who you are or what sport you play. We value equality for all our users and we promote all sports in order to create a healthy lifestyle for our users. We want you to be able to create your community or expand the one you already have. We also want our coaches to find new clients and make their life easier for them with our platform. At Zettaa we aim to create a healthy habit for our customers by helping them exercise and get fit as well as contributing to a sustainable society' => 'Creamos esta plataforma para que todos la usen, sin importar quién eres o qué deporte practicas. Valoramos la igualdad para todos nuestros usuarios y promovemos todos los deportes con el fin de crear un estilo de vida saludable para nuestros usuarios. Queremos que puedas crear tu comunidad o ampliar la que ya tienes. También queremos que nuestros coaches encuentren nuevos clientes y les faciliten la vida con nuestra plataforma. En Zettaa nuestro objetivo es crear un hábito saludable para nuestros clientes ayudándoles a hacer ejercicio y ponerse en forma, además de contribuir a una sociedad sostenible ',
     'HOW WE DO IT?' => '¿CÓMO LO HACEMOS?',
     'We are able to accomplish all of our services on our platform by using an algorithm that links you directly to your sport and lead you to what you are looking for, whether you want to create or join an activity or find the right coach for you. You will be able to use your personalized dashboard that tracks your activity and will show you your progression instantly. We also offer safe payment with our partner Stripe. We make our platform easy to use, so you can find what you are looking for in just a couple clicks.' => 'Podemos realizar todos nuestros servicios en nuestra plataforma mediante el uso de un algoritmo que lo vincula directamente con su deporte y lo lleva a lo que está buscando, ya sea que desee crear o unirse a una actividad o encontrar el entrenador adecuado para usted. . Podrá utilizar su panel personalizado que rastrea su actividad y le mostrará su progresión al instante. También ofrecemos pagos seguros con nuestro socio Stripe. Hacemos que nuestra plataforma sea fácil de usar, para que pueda encontrar lo que busca con solo un par de clics',
-   
- // about end 
+
+ // about end
+
+
+
+ //  lead Zetta
+ 'ZETTAA COACH' => 'ZETTAA COACH',
+ 'Our coaches are able to combine interpersonal skills and their knowledge in order to bring our customers complete satisfaction.' => 'Nuestros entrenadores pueden combinar sus habilidades interpersonales y sus conocimientos para brindar a nuestros clientes una completa satisfacción',
+ 'This is why we have gathered some key points that our coaches will have to follow in order to create harmony and guarantee you a quality standard.' => 'Es por eso que hemos reunido algunos puntos clave que nuestros entrenadores deberán seguir para crear armonía y garantizarle un estándar de calidad',
+ 'All of our coaches have previously read this document. They have accepted it and will put into practice the points listed below:' => 'Todos nuestros entrenadores han leído previamente este documento. Lo han aceptado y pondrán en práctica los puntos que se enumeran a continuación:',
+ '1. Know your field/sport' => 'una. Conoce tu campo / deporte',
+ '- To be able to teach effectively, the coach must have a thorough understanding of the sport, and his knowledge must cover both fundamentals and technique as well as the advanced systems.' => '-Para poder enseñar con eficacia, el entrenador debe tener un conocimiento profundo del deporte, y su conocimiento del mismo debe cubrir tanto los fundamentos y la técnica como los sistemas avanzados',
+ '- Experience as a player or coach is an advantage but does not necessarily make you a good coach.' => '- La experiencia como jugador o entrenador es una ventaja, pero no necesariamente te convierte en un buen entrenador',
+ '- Good physical and mental condition are essential for the lessons to run smoothly.' => '- Una buena condición física y mental es esencial para que las lecciones se desarrollen sin problemas',
+ '2.  Know your role as a coach' => 'dos. Conoce tu papel como entrenador',
+ '- In order to offer quality lessons, it is essential to master the art of pedagogy and learning methods:' => '- Para ofrecer lecciones de calidad, es fundamental dominar el arte de la pedagogía y los métodos de aprendizaje:',
+ 'a. Knowing how to define objectives ' => 'a. Saber definir objetivos',
+ 'b. Motivation and communication' => 'B. Motivación y comunicación',
+ 'c. Adapt to the athlete' => 'C. Adaptarse al deportista',
+ 'This will allow you to better target weaknesses and areas for improvement.' => 'Esto le permitirá identificar mejor las debilidades y las áreas de mejora',
+ 'a.' => 'a.',
+ 'By setting goals, you are able to measure progress, adapt your training program based on results and revise your approach when the goal is not reached.' => 'Al establecer objetivos, puede medir el progreso, adaptar su programa de formación en función de los resultados y revisar su enfoque cuando no se alcanza el objetivo',
+ 'b.' => 'b.',
+ '-  Positive attitude, good humor and enthusiasm are essential. You are a source of motivation and inspiration for your clients to surpass themselves and achieve their goals.' => '- La actitud positiva, el buen humor y la ilusión son fundamentales. Eres una fuente de motivación e inspiración para que tus clientes se superen y logren sus objetivos.',
+ '-  By adopting this method you will be able to create a climate of trust but above all an emulsion and synergy with your client.' => '- Al adoptar este método podrás crear un clima de confianza pero sobre todo una emulsión y sinergia con tu cliente.',
+ '-  By setting goals, you are able to measure progress, adapt your training program based on results and revise your approach when the goal is not reached.' => '- Al establecer metas, puede medir el progreso, adaptar su programa de capacitación en función de los resultados y revisar su enfoque cuando no se alcanza la meta',
+ '-  Be frank and honest without being offensive. Communication is a two-relationship, a good listener will make you a good coach.' => '- Sea franco y honesto sin ser ofensivo. La comunicación es una relación de dos, un buen oyente te convertirá en un buen entrenador.',
+ '-  Know how to welcome customer comments, questions, criticisms and doubts, then process them to modify your training regimen if necessary.' => '- Sepa cómo recibir los comentarios, preguntas, críticas y dudas de los clientes, y luego trátelos para modificar su régimen de capacitación si es necesario',
+ 'c.' => 'c.',
+ 'Know how to observe in order to make the necessary adjustments.' => 'Saber observar para hacer los ajustes necesarios',
+ '-  Each client is unique, by saying that you have to adapt to the different client profiles and their request.' => '- Cada cliente es único, al decir que hay que adaptarse a los diferentes perfiles de cliente y a su solicitud',
+ '- Observe carefully to provide the correct settings and advice.' => '- Observe atentamente para proporcionar los ajustes y consejos correctos.',
+ '3. Constantly renewing yourself' => '3. Renovándose constantemente',
+ '- Learn and develop new training methods that are always more varied and stimulating.' => '- Aprende y desarrolla nuevos métodos de formación que siempre son más variados y estimulantes ',
+ '- Deepen your own knowledge via a holistic approach in order to be able to answer all types of questions.' => '- Profundice sus propios conocimientos a través de un enfoque holístico para poder responder a todo tipo de preguntas',
+ '- Stay informed of the latest scientific research, training trends and available training.' => '- Manténgase informado de las últimas investigaciones científicas, tendencias de formación y formación disponible',
+ '- Make sure your equipment is up to date and not obsolete.' => '- Asegúrese de que su equipo esté actualizado y no sea obsoleto',
+ 'Don’t stop questioning your training environment.' => 'No dejes de cuestionar tu entorno de entrenamiento',
+ '4. Have discipline ' => '4. Tener disciplina  ',
+ '- Respect' => '- Respeto',
+ '- Punctuality' => '- Puntualidad',
+ '- Hygiene' => '- Higiene',
+ '- Confidentiality' => '- Confidencialidad',
+ '- Security' => '- Seguridad',
+ 'Be sure to set up a code of conduct with your client beforehand so that the work climate is suitable for both parties.' => 'Asegúrese de establecer un código de conducta con su cliente de antemano para que el clima de trabajo sea adecuado para ambas partes',
+ '5. Be passionate and positive' => '5. Sea apasionado y positivo ',
+ '- Positivity and passion are very contagious, spread the virus!' => '- ¡La positividad y la pasión son muy contagiosas, propaga el virus!',
+ '- Share a good, enriching moment and enjoy meeting exceptional individuals who are ' => '- Comparte un momento bueno y enriquecedor y disfruta conociendo a personas excepcionales que son',
+ 'members of the Zettaa community as well as committed athletes.' => 'miembros de la comunidad Zettaa así como deportistas comprometidos',
+ 'Zettaa team' => 'Equipo Zettaa',
+ 'Geneva, January 2021' => 'Ginebra, enero de 2021',
+
+// end lead zetta
+
+
+// partner
+
+'Partnership' => 'Asociación',
+'Become a partner?' => '¿Convertirse en un compañero?',
+'If you think that Zettaa can benefit your business or association please contact us at' => 'Si cree que Zettaa puede beneficiar a su empresa o asociación, contáctenos en',
+'partner@zettaa.ch.</a> We are always looking for new opportunities to help the community grow.' => 'Siempre estamos buscando nuevas oportunidades para ayudar a la comunidad a crecer ',
+
+// end parner
+
+
+
+// thank you
+
+'centuries, but also the leap into electronic typesetting, remaining essentially unchanged' => 'Siglos, pero también el salto en la composición electrónica que esencialmente permanece sin cambios',
+'It was popularised in the 1960s with the release of Letraset sheets conta' => 'Se hizo popular en la década de 1960 con la publicación de las hojas de Letraset Conta',
+
+// thank you
+
+'2.2 You may cancel a coaching order within 24 hours of purchasing and request a refund. The refund will be issued, minus a 5% transaction fee. To cancel an order, send your request to us. You must clearly state their decision to cancel, the reason for said cancellation, and their preferred method of reimbursement.' => '2.2 You may cancel a coaching order within 24 hours of purchasing and request a refund. The refund will be issued, minus a 5% transaction fee. To cancel an order, send your request to us. You must clearly state their decision to cancel, the reason for said cancellation, and their preferred method of reimbursement.',
+'2.3 Reimbursement for refunds will be provided by the best available method, based on your situation and at our sole discretion. A 5% transaction fee of the refund amount will apply and be subtracted from all refunds.' => '2.3 Reimbursement for refunds will be provided by the best available method, based on your situation and at our sole discretion. A 5% transaction fee of the refund amount will apply and be subtracted from all refunds.',
+'2.4 If you cancel after beginning sessions and/or receiving services from the coaches on our platform, you may only request a refund for the amount pertaining to remaining sessions or hours not yet logged. You will not have the right to cancel or request a refund after the services have been fully performed (after all sessions or services have been completed).' => '2.4 If you cancel after beginning sessions and/or receiving services from the coaches on our platform, you may only request a refund for the amount pertaining to remaining sessions or hours not yet logged. You will not have the right to cancel or request a refund after the services have been fully performed (after all sessions or services have been completed).',
+
+
+
+// FAQ start
+'SPORTBUDDY' => 'SPORTBUDDY',
+ 'What is a Sportbuddy?' => '¿Qué es un compañero de deportes?',
+  'The Sportbuddy section is meant for people that are looking for friends or activities in their area. You will be able to post your activities, with our filters (level, age, number of participants) we will help you find the perfect participants. You can also look for activities  created by other Sportbuddies in your area and participate in them freely. So join us and  start building your community!' => 'La sección Sportbuddy es para personas que buscan amigos o actividades en su área. Puedes publicar tus actividades, con nuestros filtros (nivel, edad, número de participantes) te ayudaremos a encontrar los participantes perfectos. También puede buscar actividades creadas por otros compañeros de deportes en su área y participar en ellas libremente. ¡Únase a nosotros y comience a construir su comunidad!',
+   'ACTIVITY' => 'ACTIVIDAD',
+  'How do I create an activity?' => '¿Cómo creo una actividad?',
+  'Register on the platform' => 'Registrarse en la plataforma',
+  'Set up your account' => 'Configurar una cuenta',
+  'Click on activities where you will see our selection of activities near you and use our filters and find the perfect match for you.' => 'Haga clic en Actividades para ver nuestra selección de actividades cerca de usted y use nuestros filtros para encontrar la solución perfecta para usted',
+  'Once you create your activity, it will appear on our activity page, the other sport buddies will be able to join as soon as it is posted.' => 'Tan pronto como haya creado su actividad, se mostrará en nuestra página de actividades. Otros fanáticos de los deportes pueden unirse tan pronto como se publique',
+  'Participate in your activity' => 'Participa en tu actividad',
+  'Repeat steps 3-5 (wink emoji)' => 'Repita los pasos 3-5 (guiño emoji)',
+  'How do I join an activity ?' => '¿Cómo participo en una actividad?',
+  'Register on the platform' => 'Registrarse en la plataforma',
+  'Set up your account' => 'Configurar una cuenta',
+  'Click on activities where you will see our selection of activities near you and use our filters and find the perfect match for you.' => 'Haga clic en Actividades para ver nuestra selección de actividades cerca de usted y use nuestros filtros para encontrar la solución perfecta para usted',
+  'Once you find the activity that suits you, be sure to join it while you can depending on the number of participants.' => 'Una vez que haya encontrado la actividad que más le convenga, dependiendo del número de participantes, debe unirse a ella todo el tiempo que pueda',
+  'Go and enjoy your activity' => 'Ve y disfruta tu actividad',
+  'Review your coach on his performance' => 'Compruebe el rendimiento de su entrenador',
+  'Repeat steps 3-6 (wink emoji)' => 'Repita los pasos 3-6 (guiño emoji)',
+  'Do I need to pay to participate in an activity?' => '¿Tengo que pagar para participar en una actividad?',
+  'An activity is always free, the Sportbuddy who created the activity can choose to lend equipment and set his own price for that equipment.' => 'Una actividad es siempre gratuita, el compañero de deportes que creó la actividad puede optar por alquilar el equipo y fijar su propio precio para ese equipo',
+  'Friends' => 'Amigos',
+  'Through your dashboard you can find other SportBuddies and add them to your friends list. It will facilitate communication and you can share activities together.' => 'Puede encontrar otros SportBuddies a través de su panel de control y agregarlos a su lista de amigos. Facilitará la comunicación y podrán compartir actividades juntos.',
+  'How do I find a coach and get started?' => '¿Cómo encuentro un entrenador y empiezo?',
+  'From the home page click on the Coach Button and find the different coaches selected by our team. You can also just type in the search bar your sport or location and you will have into the results coaches related to your requirements.' => 'Haga clic en el botón de entrenador en la página de inicio y busque los diferentes entrenadores seleccionados por nuestro equipo. También puede escribir su deporte o ubicación en la barra de búsqueda y obtendrá entrenadores que se adaptarán a sus necesidades en los resultados.',
+  'How much does it cost to book a training sessions?' => '¿Cuánto cuesta reservar un curso de formación?',
+  'All the prices for lessons are set by the coaches themselves, if you feel like a coach is overcharging for a service without a reasonable explanation please contact the support team.' => 'Todos los precios de las lecciones son fijados por los propios capacitadores. Si cree que un capacitador está pidiendo demasiado por un servicio sin una explicación adecuada, comuníquese con el equipo de soporte',
+  'Can I contact a coach before booking sessions?' => '¿Puedo ponerme en contacto con un formador antes de reservar una sesión?',
+  'Yes, you can always contact a coach for any reason, by using our messaging system.' => 'Sí, siempre puede comunicarse con un entrenador por cualquier motivo utilizando nuestro sistema de mensajería',
+  'I haven`t received a response from a coach I`ve messaged, what now?' => 'No recibí una respuesta de un entrenador al que le escribí, ¿ahora qué?',
+  'if you haven’t heard from your coach, make sure to check that the message has been sent and delivered if you still don’t have an answer after 48h our support team will help you.' => '',
+  'What is Zettaa’s cancellation policy for scheduled sessions?' => '¿Cuál es la política de cancelación de Zettaa para reuniones programadas?',
+  'attach our cancellation and refund policy' => 'Adjunte nuestra política de cancelación y reembolso',
+  'Will my unused Zettaa packages ever expire?' => '¿Caducarán mis paquetes Zettaa sin usar?',
+  'Once you buy a lesson package you have one full year to complete your lessons if you haven’t done so your lessons will expire. Note that if there is a valid reason you can always ask for a refund prior the expiration.' => 'Una vez que haya comprado un paquete de lecciones, tiene un año completo para completar sus lecciones, si aún no lo ha hecho, para que sus lecciones caduquen. Tenga en cuenta que si tiene una razón válida, siempre puede solicitar un reembolso antes de que expire.',
+  'Can I refer others to Zettaa?' => '¿Puedo recomendar a otros a Zettaa?',
+  'We encourage you to recommend Zettaa to your friends, family and sports communities that you know in order to increase the activity on the platform. In the next couple of months we will reward profiles that bring new users on the platform.. Stay tuned.' => 'Le animamos a que recomiende Zettaa a sus amigos, familiares y sus conocidas comunidades deportivas para incrementar la actividad en la plataforma. Durante los próximos meses, premiaremos los perfiles que traen nuevos usuarios a la plataforma. Manténganse al tanto.',
+  'COACHES' => 'ENTRENADOR',
+  'The coaches available on the platform are selected according to very precise criteria in order to guarantee quality services for all users and in respect of the profession of coaching.' => 'Los entrenadores disponibles en la plataforma se seleccionan de acuerdo con criterios muy precisos con el fin de garantizar servicios de alta calidad para todos los usuarios y en relación con la profesión de entrenador',
+  'How do I become a Zettaa Coach?' => '¿Cómo puedo convertirme en entrenador de Zettaa?',
+  'To become a Zettaa coach, you will have to fill out our questionnaire that includes information on your past experiences, your athletic accomplishments and more. You are then going to be reviewed by our team and we will only select the candidates that suit our criterias.' => 'Para convertirse en un entrenador de Zettaa, debe completar nuestro cuestionario, que contiene información sobre su experiencia previa, su rendimiento atlético y más. Luego será evaluado por nuestro equipo y solo seleccionaremos a los candidatos que cumplan con nuestros criterios',
+  'To become a Zettaa coach, you will have to fill out our questionnaire that includes information on your past experiences, your athletic accomplishments and more. You are then going to be reviewed by our team and we will only select the candidates that suit our criterias.' => 'Para convertirse en un entrenador de Zettaa, debe completar nuestro cuestionario, que contiene información sobre su experiencia previa, su rendimiento atlético y más. Luego será evaluado por nuestro equipo y solo seleccionaremos a los candidatos que cumplan con nuestros criterios.',
+  'LESSONS' => 'LECCIÓN',
+  'How do I create a lesson?' => '¿Cómo creo una lección?',
+  'Zettaa is an online sport platform that gives the chance to coaches to expand their visibility and help them organize their booking sessions with an agenda and secure payment. Using Zettaa is as easy as 1-2-3. to create a lesson you will have to:' => 'Zettaa es una plataforma deportiva en línea que brinda a los entrenadores la posibilidad de aumentar su visibilidad y ayudarlos a organizar sus sesiones de reserva con una agenda y un pago seguro. Usar Zettaa es tan fácil como 1-2-3. Para crear una lección necesitas:',
+   'Register on the platform' => 'Registrarse en la plataforma',
+   'Set up your account' => 'Configurar una cuenta',
+   'Go on your dashboard select lessons, then click on “create a lesson”. fill in all the information needed for the lesson (be as informative as possible)' => 'Vaya a su Panel de control, seleccione Lecciones y luego haga clic en "Crear lección". Complete toda la información necesaria para la lección (sea lo más informativo posible) ',
+   ' Once you create your lesson, it will appear on our lesson page, the client will book according to your availability.' => 'Una vez que haya creado su lección, se mostrará en nuestra página de lecciones. El cliente reserva según su disponibilidad',
+   'Coach your lesson.' => 'Entrena tu lección.',
+   'Review your client on his performance' => 'Verifique el desempeño de su cliente',
+   'Repeat steps 3-6 (wink emoji)' => 'Repita los pasos 3-6 (guiño emoji)',
+  'How do I book a lesson?' => '¿Cómo reservo una lección?',
+  'Register on the platform' => 'Registrarse en la plataforma',
+  'Set up your account' => 'Configurar una cuenta',
+  'Click on lessons where you will see our selection of coaches near you and use our filters and find the perfect match for you.' => 'Haga clic en las lecciones donde verá nuestra selección de capacitadores en su área y use nuestros filtros para encontrar el socio perfecto para usted',
+  'Once you find the lesson that suits you, you will then select the time and day according to your coach1s availability. and pay through our safe payment method (Stripe).' => 'Una vez que haya encontrado la lección adecuada para usted, elija la hora y el día según la disponibilidad de su capacitador. y pague con nuestro método de pago seguro (Stripe). ',
+  'Go and enjoy your lesson' => 'Ve y disfruta tu lección',
+  'Review your coach on his performance' => 'Compruebe el rendimiento de su entrenador',
+  'Repeat steps 3-6 (wink emoji)' => 'Repita los pasos 3-6 (guiño emoji)',
+  'How do I set my availability?' => '¿Cómo configuro mi disponibilidad?',
+  'On your dashboard select the availability slots tab on the left menu.' => 'En su panel, seleccione la pestaña de espacios disponibles en el menú de la izquierda',
+  'Set your availability for each day according to each lesson that you offer.' => 'Establezca su disponibilidad para cada día de acuerdo con cada lección que ofrezca',
+  'Your availability will reflect on your agenda when the client is booking the session.' => 'Su disponibilidad se reflejará en su agenda cuando el cliente reserve la sesión',
+  'How do I set my training locations?' => '¿Cómo configuro mis ubicaciones de entrenamiento?',
+  'When you create your lesson you will be asked to select a location, you can even add several if you need.The locations will then reflect on our map. We recommend not to use your home address for your own safety' => 'Cuando cree su lección, se le pedirá que seleccione una ubicación, incluso puede agregar varias si lo necesita. Las ubicaciones se reflejarán en nuestro mapa. Recomendamos no utilizar la dirección de su casa por su propia seguridad',
+  'Changing my price and adding group packages' => 'Cambiando mi precio y agregando paquetes grupales',
+  'You will always set your own price for your lessons, if you want to change your price,' => 'Siempre establecerá su propio precio para sus lecciones, si desea cambiar su precio',
+  'you will have to select the lesson tab on your dashboard and then click “edit”.' => 'tendrá que seleccionar la pestaña de la lección en su panel y luego hacer clic en "editar',
+  'You can offer packages which will include several lessons' => 'Puede ofrecer paquetes que incluirán varias lecciones',
+  'Messaging with Clients' => 'Mensajería con clientes',
+  'Zettaa offers a messaging system through your profile. For your own safety and to guarantee you a certain level of quality you will only communicate with your client on Zettaa.' => 'Zettaa ofrece un sistema de mensajería a través de su perfil. Por su propia seguridad y para garantizarle un cierto nivel de calidad, solo se comunicará con su cliente en Zettaa.',
+  'What happens once I complete my session?' => '¿Qué sucede una vez que complete mi sesión?',
+  'Once you complete your session your client will rate your lesson and you will receive a confirmation email for completing the lesson. For the client itself, you will need to review your coach and rate him, you will also receive an email once you complete your lesson with a post lesson survey link.' => 'Una vez que complete su sesión, su cliente calificará su lección y recibirá un correo electrónico de confirmación por completar la lección. Para el cliente en sí, deberá revisar a su entrenador y calificarlo, también recibirá un correo electrónico una vez que complete su lección con un enlace de encuesta posterior a la lección.',
+  'Are there any fees to be a ZettaaCoach?' => '¿Hay alguna tarifa para ser un ZettaaCoach?',
+  ' On Zettaa it is absolutely free to create an account, the only fees that apply are a service fee of 10% for each lesson.' => 'En Zettaa es absolutamente gratis crear una cuenta, las únicas tarifas que se aplican son una tarifa de servicio del 10% por cada lección',
+  'My client wants to pay me in cash. What should I do?' => 'Mi cliente quiere pagarme en efectivo. ¿Qué tengo que hacer?',
+  ' It is absolutely forbidden to use cash on Zettaa all the payments should be done through the website with our partner Stripe' => 'Está absolutamente prohibido usar efectivo en Zettaa, todos los pagos deben hacerse a través del sitio web con nuestro socio Stripe',
+  'How do I get paid for my Zettaa sessions?' => '¿Cómo me pagan por mis sesiones de Zettaa?',
+  ' Once you complete your session and your client has reviewed your performance, you  will receive the payment amount in your wallet section. You will then be able to submit a  withdrawal request and receive the payment in the next couple days.' => 'Una vez que complete su sesión y su cliente haya revisado su desempeño, recibirá el monto del pago en la sección de su billetera. Luego podrá enviar una solicitud de retiro y recibir el pago en los próximos días.',
+  'Who reviews our coaches?' => '¿Quién revisa a nuestros entrenadores?',
+  'After every lesson, our clients are asked to review their coaches, this is mandatory. If you have not participated in a lesson with a particular coach you can not rate or review him.' => 'Después de cada lección, se les pide a nuestros clientes que revisen a sus entrenadores, esto es obligatorio. Si no ha participado en una lección con un entrenador en particular, no puede calificarlo ni revisarlo',
+  'How do I leave a review for my coach?' => '¿Cómo le dejo una reseña a mi entrenador?',
+  'After every lesson, you will be asked to review your coach, this is mandatory, you will also receive an email once you complete your lesson with a post lesson survey link.' => 'Después de cada lección, se le pedirá que revise a su entrenador, esto es obligatorio, también recibirá un correo electrónico una vez que complete su lección con un enlace de encuesta posterior a la lección',
+  'How much does it cost to book training sessions?' => '¿Cuánto cuesta reservar sesiones de formación?',
+  'All the prices for lessons are set by the coaches themselves, if you feel like a coach is overcharging for a service without a reasonable explanation please contact the support team.' => 'Todos los precios de las lecciones los establecen los propios entrenadores, si cree que un entrenador está cobrando de más por un servicio sin una explicación razonable, comuníquese con el equipo de soporte',
+  'Can I contact a coach before booking sessions?' => '¿Puedo ponerme en contacto con un entrenador antes de reservar sesiones?',
+  'Yes, you can always contact a coach for any reason, but you can only contact him via our messaging system.' => 'Sí, siempre puedes contactar a un entrenador por cualquier motivo, pero solo puedes contactarlo a través de nuestro sistema de mensajería',
+  'I haven`t received a response from a coach I`ve messaged, what now?' => 'No he recibido una respuesta de un entrenador al que he enviado un mensaje, ¿ahora qué?',
+  'if you haven’t heard from your coach, make sure to check that the message has been sent and delivered if you still don’t have an answer after 48h our support team will help  you.' => 'Si no ha tenido noticias de su entrenador, asegúrese de verificar que el mensaje se haya enviado y entregado. Si aún no tiene una respuesta después de 48 horas, nuestro equipo de soporte lo ayudará',
+  'General Information:' => 'Información general',
+  'Which sports are available on the platform' => 'Which sports are available on the platform',
+  'The sports are divided into several distinct categories, themselves made up of several sports relating to the category. Then, it is the users who regulate the different sports practiced in each district. If you don’t find your sport you can let us know by email.' => 'Los deportes se dividen en varias categorías distintas, compuestas a su vez por varios deportes relacionados con la categoría. Luego, son los usuarios quienes regulan los diferentes deportes que se practican en cada distrito. Si no encuentra su deporte, puede hacérnoslo saber por correo electrónico',
+  'Are the sessions on the platform insured in case of accident?' => '¿Las sesiones en la plataforma están aseguradas en caso de accidente?',
+  'No, it is up to the coach or each participant to rely on their own insurance policies. Please read our Legal disclaimer.' => 'No, depende del entrenador o de cada participante confiar en sus propias pólizas de seguro. Lea nuestro descargo de responsabilidad legal.',
+  'How can I reset my password or email?' => '¿Cómo puedo restablecer mi contraseña o correo electrónico?',
+  'If you need a new password or email we will send you an email for you to be able to do so.' => 'Si necesita una nueva contraseña o correo electrónico, le enviaremos un correo electrónico para que pueda hacerlo',
+  'Does Zettaa have a mobile app?' => '¿Zettaa tiene una aplicación móvil?',
+  'We are currently working on an app, our users will be the first ones to know when it is ready' => 'Actualmente estamos trabajando en una aplicación, nuestros usuarios serán los primeros en saber cuando esté lista',
+  'How do I submit feedback about the Zettaa website?' => '¿Cómo envío comentarios sobre el sitio web de Zettaa?',
+  'We will occasionally send surveys through email for our users where they will be able to review and recommend us with their ideas. Or you can always contact us to improve our services.' => 'Ocasionalmente enviaremos encuestas por correo electrónico para nuestros usuarios donde podrán revisarnos y recomendarnos con sus ideas. O siempre puede contactarnos para mejorar nuestros servicios.',
+  'Can I use Zettaa internationally?' => '¿Puedo usar Zettaa internacionalmente?',
+  'Yes, Zettaa has been created in a way that no matter where you are, we will find you the right partner/coach to do your sports with or even find activities around you.' => 'Sí, Zettaa ha sido creado de una manera que no importa dónde se encuentre, le encontraremos el socio / entrenador adecuado para practicar su deporte o incluso encontrar actividades a su alrededor',
+  'Can I post an ad for a product instead of a service?' => 'Can I post an ad for a product instead of a service?',
+  'The platform is meant only for events to participate in either a lesson or an activity. You  can not sell products on the website. Although if you have equipment for a particula  lesson or activity you can lend it to other participants and set your own price.' => 'The platform is meant only for events to participate in either a lesson or an activity. You  can not sell products on the website. Although if you have equipment for a particula  lesson or activity you can lend it to other participants and set your own price.',
+  'If your question is not listed above contact us at' => 'If your question is not listed above contact us at',
+
+// FAQ END
+
 
 ];
 

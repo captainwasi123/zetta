@@ -489,7 +489,20 @@ use Illuminate\Support\Facades\Route;
 								Route::post('add', 'redeemController@challengesInsert');
 							});
 
-							Route::get('badges', 'redeemController@badges')->name('admin.redeem.badges');
+                            Route::prefix('badges')->group(function(){
+                                  
+                                Route::get('/', 'redeemController@badges')->name('admin.redeem.badges');
+								Route::post('add', 'redeemController@badgesInsert')->name('admin.redeem.badges.add');
+								Route::get('delete/{id}', 'redeemController@delete')->name('admin.redeem.badges.delete');
+                                Route::get('badgeEdit/{id}', 'redeemController@badgeEdit')->name('admin.redeem.badges.edit');
+
+								// Route::post('badgesupdate', 'redeemController@badgesupdate')->name('admin.redeem.badges.update');
+
+                                
+
+                            });
+
+							
 						});
 
 					//settings

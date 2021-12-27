@@ -73,6 +73,7 @@
                </div>
                <div class="col-2">
                   <div class="activity_category"> 
+                  
                      <img src="{{URL::to('/public/storage/settings/category/'.$data->category->image)}}">
                      <label>{{$data->category->name}}</label> 
                   </div>

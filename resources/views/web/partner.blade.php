@@ -46,12 +46,11 @@ section.action-bar {
 <section class="action-bar">
    <div class="container">
       <div class="term-sec1">
-         <h2>   Partnership  </h2>
+         <h2>   {{ __('content.Partnership')}}  </h2>
          
-         <h3>Become a partner? </h3>
-         <p>If you think that Zettaa can benefit your business or association please contact us at <<a href="mailto:info@zettaa.ch" alt="">
-partner@zettaa.ch.</a> We are always looking for new opportunities to help the community
-grow.
+         <h3>{{ __('content.Become a partner?')}} </h3>
+         <p>{{ __('content.If you think that Zettaa can benefit your business or association please contact us at')}} <a href="mailto:info@zettaa.ch" alt="">
+partner@zettaa.ch.</a> {{ __('content.We are always looking for new opportunities to help the community grow.')}}
  </p>
 
          </div>

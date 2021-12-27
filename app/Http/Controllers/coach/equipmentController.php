@@ -21,7 +21,7 @@ class equipmentController extends Controller
         $data['categories'] = sportsCategory::all();
 
         return view('coach.equipment.add')->with($data);
-    }
+    } 
 
     function insert(Request $request){
         $data = $request->all();

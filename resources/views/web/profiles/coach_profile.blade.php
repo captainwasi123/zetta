@@ -147,6 +147,7 @@
              <div class="row">
                 @foreach ($data->lessons as $val)
                     <div class="col-md-6 col-lg-4 col-sm-6 col-12">
+                    <a href="{{route('lesson.details', base64_encode($val->id))}}">
                         <div class="lesson-block">
                         <div class="lesson-image-block">
                             @if (empty($val->cover_img))
@@ -180,6 +181,7 @@
                             <span class="col-grey"> {{ __('content.STARTING AT') }} <b class="col-white"> {{'$'.number_format($val->packages[0]->price)}} </b> </span>
                         </div>
                         </div>
+                    </a>
                     </div>
                 @endforeach
              </div>
@@ -188,29 +190,19 @@
              </div>
              <div class="row">
                 <div class="col-md-12">
+                 @foreach (Auth::user()->reviews as  $val)
                    <div class="review-box">
-                      <img src="{{URL::to('/public/images/profile-image1.jpg')}}">
-                      <h5 class="col-white"> <b class="col-purple"> Lennon <i class="fa fa-star"> </i> </b> 5.0 </h5>
-                      <p class="col-white"> {{ __('content.That would be good please share any reference or similar website interms of features and functionality you need.') }}
+                     <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{@$val->user->profile_img}}">
+                      <h5 class="col-white"> <b class="col-purple"> {{ __('content.Lennon')}} <i class="fa fa-star"> </i> </b>{{@$val->rating}} .0 </h5>
+                      <p class="col-white"> {{@$val->review}}
                       </p>
                    </div>
-                   <div class="review-box">
-                      <img src="{{URL::to('/public/images/profile-image1.jpg')}}">
-                      <h5 class="col-white"> <b class="col-purple"> Lennon <i class="fa fa-star"> </i> </b> 5.0 </h5>
-                      <p class="col-white"> That would be good please share any reference or similar website interms of features
-                         and functionality you need.
-                      </p>
-                   </div>
-                   <div class="review-box">
-                      <img src="{{URL::to('/public/images/profile-image1.jpg')}}">
-                      <h5 class="col-white"> <b class="col-purple"> Lennon <i class="fa fa-star"> </i> </b> 5.0 </h5>
-                      <p class="col-white"> That would be good please share any reference or similar website interms of features
-                         and functionality you need.
-                      </p>
-                   </div>
-                   <div class="review-button">
-                      <button> {{ __('content.+ See more') }} </button>
-                   </div>
+                       @endforeach
+                     
+                   {{--  <div class="review-button">
+                      <button> {{ __('content.+ See more')}} </button>
+                   </div>  --}}
+                 
                 </div>
              </div>
           </div>

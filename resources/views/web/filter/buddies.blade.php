@@ -13,12 +13,12 @@
          <div class="all-actions arrows1">
             @foreach($sCategories as $val)
                   <div class="subCategory">
-                     <a href="javascript:void(0)" class="image-checkbox stickman" data-id="{{$val->id}}" data-name="{{$val->name}}"> 
-                        <input type="checkbox" id="scales" name="stickman[]" value="{{$val->name}}"> 
-                        <img src="{{URL::to('/public/storage/settings/category/')}}/{{empty($val->cat) ? $val->image : $val->cat->image}}"> {{$val->name}} 
+                     <a href="javascript:void(0)" class="image-checkbox stickman" data-id="{{$val->id}}" data-name="{{$val->name}}">
+                        <input type="checkbox" id="scales" name="stickman[]" value="{{$val->name}}">
+                        <img src="{{URL::to('/public/storage/settings/category/')}}/{{empty($val->cat) ? $val->image : $val->cat->image}}"> {{$val->name}}
                      </a>
                   </div>
-            @endforeach         
+            @endforeach
          </div>
          <div id="subCategoryBlock">
          </div>

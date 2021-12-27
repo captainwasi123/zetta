@@ -266,6 +266,8 @@
             <div class="row">
                @foreach(Auth::user()->activities as $val)
                   <div class="col-md-6 col-lg-6 col-sm-6 col-12">
+                  <a href="{{route('activity.details', base64_encode($val->id))}}">
+
                      <div class="lesson-block lesson-block3">
                         <div class="lesson-image-block">
                            <img src="{{URL::to('/public/storage/user/activity/main_image/'.$val->cover_img)}}">
@@ -273,7 +275,7 @@
                         <div class="lesson-info-block">
                            <h4> <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{empty($val->user) ? '' : $val->user->profile_img}}" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';"> {{empty($val->user) ? 'Unknown' : $val->user->fname.' '.$val->user->lname}} <span> Sports Buddy </span>  </h4>
                            <p class="descrip">
-                              {{$val->description}}
+                              {{$val->title}}
                            </p>
                            <h6> <i class="fa fa-star col-yellow"> </i> 5.0 </h6>
                         </div>
@@ -281,6 +283,7 @@
                            <span> STARTING AT <b> FREE </b> </span>
                         </div>
                      </div>
+                     </a>
                   </div>
                @endforeach
             </div>

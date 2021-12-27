@@ -347,6 +347,8 @@
             <div class="row">
                @foreach(Auth::user()->lessons as $val)
                   <div class="col-md-6 col-lg-6 col-sm-6 col-12">
+                  <a href="{{route('lesson.details', base64_encode($val->id))}}">
+
                      <div class="lesson-block lesson-block3">
                         <div class="lesson-image-block">
                            <img src="{{URL::to('/public/storage/user/lessons/main_image/'.$val->cover_img)}}">
@@ -362,6 +364,7 @@
                            <span> STARTING AT <b> {{'$'.number_format($val->packages[0]->price)}} </b> </span>
                         </div>
                      </div>
+                     </a>
                   </div>
                @endforeach
             </div>
