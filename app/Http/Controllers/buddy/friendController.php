@@ -31,7 +31,9 @@ class friendController extends Controller
                 ->when(1>0, function($q) use ($val){
                     return $q->where('fname', 'like', '%'.$val.'%')
                                 ->orWhere('lname', 'like', '%'.$val.'%');
+                                
                 })->get();
+                
         }
 
         return view('buddy.friends.searchResult', ['data' => $data]);
@@ -39,7 +41,7 @@ class friendController extends Controller
 
     function addFriend($id){
         $id = base64_decode($id);
-       
+
         $f = new friendRequest;
         $f->user_id = Auth::id();
         $f->friend_id = $id;
@@ -50,14 +52,14 @@ class friendController extends Controller
 
     function acceptRequestFriend($id){
         $id = base64_decode($id);
-       
+
         $rf = friendRequest::find($id);
 
         $f = new friends;
         $f->user_id = $rf->user_id;
         $f->friend_id = $rf->friend_id;
         $f->save();
-        
+
         friendRequest::destroy($id);
 
         return redirect()->back()->with('success', 'Friend Added.');
@@ -65,7 +67,7 @@ class friendController extends Controller
 
     function rejectRequestFriend($id){
         $id = base64_decode($id);
-       
+
         friendRequest::destroy($id);
 
         return redirect()->back()->with('success', 'Request Rejected.');
@@ -73,7 +75,7 @@ class friendController extends Controller
 
     function removeFriend($id){
         $id = base64_decode($id);
-       
+
         friends::destroy($id);
 
         return redirect()->back()->with('success', 'Friend Removed.');
