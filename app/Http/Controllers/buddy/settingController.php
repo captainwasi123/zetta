@@ -11,6 +11,8 @@ use App\Models\Language;
 use App\Models\userLang;
 use App\Models\userEducation;
 use App\Models\userCertificate;
+use App\Models\userCategorySelect;
+use App\Models\sportsCategory;
 
 class settingController extends Controller
 {
@@ -22,8 +24,23 @@ class settingController extends Controller
         $data = array(
             'countries' => country::all(),
             'languages' => Language::orderBy('name')->get(),
+            'categories' => sportsCategory::orderBy('name')->get(),
+            'userCategories' => userCategorySelect::orderBy('id', 'desc')->get(),
         );
         return view('buddy.my_account.index')->with($data);
+    }
+
+    public function add_cateogry_select(Request $request){
+        $data = $request->all();
+        $check = userCategorySelect::where('user_id', Auth::id())->where('cat_id', $data['category_id'])->first();
+        if(empty($check->id)){
+            $c = new userCategorySelect;
+            $c->user_id = Auth::id();
+            $c->cat_id = $data['category_id'];
+            $c->save();
+        }
+        
+        return redirect()->back()->with('success', 'Category updated.');
     }
 
     function uploadProfilePicture(Request $request){

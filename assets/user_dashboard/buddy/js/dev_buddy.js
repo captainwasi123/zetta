@@ -343,8 +343,8 @@ var kerywordss = [
             cancelButtonText: "No, Cancel!",
             closeOnConfirm: false,
             closeOnCancel: false
-        }, function(isConfirm){
-            if (isConfirm) {
+        }).then((result) =>{
+            if (result.isConfirmed) {
                 window.location.href = href;
             } else {
                 swal("Cancelled", "Your record is safe :)", "error");
@@ -364,8 +364,8 @@ var kerywordss = [
             cancelButtonText: "No, Cancel!",
             closeOnConfirm: false,
             closeOnCancel: false
-        }, function(isConfirm){
-            if (isConfirm) {
+        }).then((result) =>{
+            if (result.isConfirmed) {
                 window.location.href = host+"/friends/add/"+id;
             } else {
                 swal.close();
@@ -385,10 +385,11 @@ var kerywordss = [
             cancelButtonText: "No, Cancel!",
             closeOnConfirm: false,
             closeOnCancel: false
-        }, function(isConfirm){
-            if (isConfirm) {
+        }).then((result) => {
+            if (result.isConfirmed) {
                 window.location.href = host+"/friends/acceptRequest/"+id;
             } else {
+                swal.close();
             }
         });
       });
@@ -405,10 +406,11 @@ var kerywordss = [
             cancelButtonText: "No, Cancel!",
             closeOnConfirm: false,
             closeOnCancel: false
-        }, function(isConfirm){
-            if (isConfirm) {
+        }).then((result) => {
+            if (result.isConfirmed) {
                 window.location.href = host+"/friends/rejectRequest/"+id;
             } else {
+                swal.close();
             }
         });
       });

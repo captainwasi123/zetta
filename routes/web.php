@@ -224,6 +224,9 @@ use Illuminate\Support\Facades\Route;
 						Route::post('/update', 'lessonsController@update')->name('coach.lesson.update');
 
 						Route::get('/delete/{id}', 'lessonsController@delete')->name('coach.lesson.delete');
+						Route::get('/move/draft/{id}', 'lessonsController@moveLessonDraft')->name('coach.lesson.move.draft');
+						Route::get('/move/paused/{id}', 'lessonsController@moveLessonPaused')->name('coach.lesson.move.paused');
+						Route::get('/move/active/{id}', 'lessonsController@moveLessonActive')->name('coach.lesson.move.active');
 
 
 						Route::get('/sports/{id}', 'lessonsController@getSports');
@@ -319,6 +322,9 @@ use Illuminate\Support\Facades\Route;
 						Route::post('add_proof', 'settingController@addProof')->name('buddy.my_account.addProof');
 
                         Route::post('/coach_request','buddyController@coach_requet')->name('buddy.coach.request');
+
+
+						Route::post('/add_category', 'settingController@add_cateogry_select')->name('buddy.my_account.addCategory');
 					});
 
 				//Category

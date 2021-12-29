@@ -22,7 +22,9 @@ class lessonsController extends Controller
     //
     function index(){
         $data = array(
+            'paused' => lessons::where('user_id', Auth::id())->where('status', '0')->get(),
             'active' => lessons::where('user_id', Auth::id())->where('status', '1')->get(),
+            'draft' => lessons::where('user_id', Auth::id())->where('status', '2')->get(),
         );
         return view('coach.lessons.index', ['data' => $data]);
     }
@@ -127,6 +129,40 @@ class lessonsController extends Controller
 
         return redirect()->back()->with('success', 'Lesson Deleted.');
     }
+
+    function moveLessonDraft($id){
+        $id = base64_decode($id);
+
+        $l = lessons::find($id);
+        $l->status = '2';
+        $l->save();
+
+
+        return redirect()->back()->with('success', 'Lesson moved to Draft.');
+    }
+
+    function moveLessonPaused($id){
+        $id = base64_decode($id);
+
+        $l = lessons::find($id);
+        $l->status = '0';
+        $l->save();
+
+
+        return redirect()->back()->with('success', 'Lesson moved to Paused.');
+    }
+
+    function moveLessonActive($id){
+        $id = base64_decode($id);
+
+        $l = lessons::find($id);
+        $l->status = '1';
+        $l->save();
+
+
+        return redirect()->back()->with('success', 'Lesson moved to Active.');
+    }
+
 
     function getSports($id){
         $data = sports::where('category_id', $id)->orderBy('name')->get();
