@@ -198,6 +198,9 @@
                            <span class="col-white"> <i class="fa fa-star col-purple"> </i>  5.0  </span>
                            @if(count($val->favBuddy) == 0)
                            <a href="javascript:void(0)" class="col-purple fav_buddy" data-id="{{$val->id}}" id="{{$val->id}}"> <i class="fa fa-heart col-purple"></i> </a>
+                           @else
+                           <a href="javascript:void(0)" class="col-purple fav_buddy" data-id="{{$val->id}}" id="{{$val->id}}"> <i class="far fa-heart col-purple"></i> </a>
+
                            @endif
                         </div>
                      </div>
