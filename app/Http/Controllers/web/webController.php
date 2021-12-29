@@ -11,7 +11,7 @@ use App\Models\lesson\Locations;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use App\Models\activity\locations as Activity_location;
-use App\Models\userCategory;
+use App\Models\userCategorySelect;
 use App\Models\userEquipment;
 use Symfony\Component\HttpFoundation\AcceptHeader;
 use App\Models\sportsCategory;
@@ -58,7 +58,7 @@ class webController extends Controller
                                                     'type' => $type == 'all' ? '' : $type,
                                                     'add' => $add == 'all' ? '' : $add
                                                 ),
-                            'sCategories' => Auth::check() ? userCategory::where('user_id', Auth::id())->get() : sportsCategory::all());
+                            'sCategories' => Auth::check() ? userCategorySelect::where('user_id', Auth::id())->get() : sportsCategory::all());
 
             $data['sCategories'] = count($data['sCategories']) == 0 ? sportsCategory::all() : $data['sCategories'];
 
@@ -111,6 +111,7 @@ class webController extends Controller
                                 })
                                 ->latest()->paginate(6);
 
+            //dd($data['sCategories']);
             return view('web.filter.search')->with($data);
 
         }
@@ -118,7 +119,7 @@ class webController extends Controller
         function search_filter($type){
             $lesson = lessons::with('user');
             if($type == 'online_coach'){
-                $data = array('search_data' => array('val' => 'Online Coach', 'type' => $type), 'sCategories' => Auth::check() ? userCategory::where('user_id', Auth::id())->get() : sportsCategory::all());
+                $data = array('search_data' => array('val' => 'Online Coach', 'type' => $type), 'sCategories' => Auth::check() ? userCategorySelect::where('user_id', Auth::id())->get() : sportsCategory::all());
                 $data['coaches'] = $lesson ->where('availability',1)->groupBy('user_id')->paginate(18);
 
 
@@ -126,7 +127,7 @@ class webController extends Controller
 
                 return view('web.filter.search_filter')->with($data);
             }elseif($type == 'group_coach'){
-                $data = array('search_data' => array('val' => 'Group Coach', 'type' => $type), 'sCategories' => Auth::check() ? userCategory::where('user_id', Auth::id())->get() : sportsCategory::all());
+                $data = array('search_data' => array('val' => 'Group Coach', 'type' => $type), 'sCategories' => Auth::check() ? userCategorySelect::where('user_id', Auth::id())->get() : sportsCategory::all());
                 $data['coaches'] = $lesson ->where('participants','=',1)->groupBy('user_id')->paginate(18);
 
 
@@ -134,7 +135,7 @@ class webController extends Controller
 
                 return view('web.filter.search_filter')->with($data);
             }elseif($type == 'private_coach'){
-                $data = array('search_data' => array('val' => 'Private Coach', 'type' => $type), 'sCategories' => Auth::check() ? userCategory::where('user_id', Auth::id())->get() : sportsCategory::all());
+                $data = array('search_data' => array('val' => 'Private Coach', 'type' => $type), 'sCategories' => Auth::check() ? userCategorySelect::where('user_id', Auth::id())->get() : sportsCategory::all());
                 $data['coaches'] = $lesson ->where('participants','=',0)->groupBy('user_id')->paginate(18);
 
 
@@ -142,7 +143,7 @@ class webController extends Controller
 
                 return view('web.filter.search_filter')->with($data);
             }elseif($type == 'girl'){
-                $data = array('search_data' => array('val' => 'Girl Coach', 'type' => $type), 'sCategories' => Auth::check() ? userCategory::where('user_id', Auth::id())->get() : sportsCategory::all());
+                $data = array('search_data' => array('val' => 'Girl Coach', 'type' => $type), 'sCategories' => Auth::check() ? userCategorySelect::where('user_id', Auth::id())->get() : sportsCategory::all());
                 $data['coaches'] = User::where('gender','Female')
                 ->paginate(18);
 
@@ -151,7 +152,7 @@ class webController extends Controller
 
                 return view('web.filter.search_filter')->with($data);
             }elseif($type == 'friend'){
-                $data = array('search_data' => array('val' => 'Friend', 'type' => $type), 'sCategories' => Auth::check() ? userCategory::where('user_id', Auth::id())->get() : sportsCategory::all());
+                $data = array('search_data' => array('val' => 'Friend', 'type' => $type), 'sCategories' => Auth::check() ? userCategorySelect::where('user_id', Auth::id())->get() : sportsCategory::all());
                 $data['coaches'] = User::where('type','1')
                 ->paginate(18);
 
@@ -164,7 +165,7 @@ class webController extends Controller
 
 
     function all($type){
-        $data = array('search_data' => array('type' => $type), 'sCategories' => Auth::check() ? userCategory::where('user_id', Auth::id())->get() : sportsCategory::all());
+        $data = array('search_data' => array('type' => $type), 'sCategories' => Auth::check() ? userCategorySelect::where('user_id', Auth::id())->get() : sportsCategory::all());
 
         $data['sCategories'] = count($data['sCategories']) == 0 ? sportsCategory::all() : $data['sCategories'];
 

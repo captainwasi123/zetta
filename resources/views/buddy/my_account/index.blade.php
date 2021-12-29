@@ -214,13 +214,13 @@
             </div>
             <div class="profile-value1">
                <h5 class="col-purple"> Sports Category
-                  <a href="{{route('buddy.category.add')}}" class="submit-btn1">
+                  <a class="submit-btn1" data-toggle="modal" data-target="#addCategory">
                      <i class="fa fa-plus"></i> Add New
                   </a>
                </h5>
                <div class="category-sports">
-                  @foreach(Auth::user()->category as $val)
-                     <button class="cat-button1"> {{$val->name}} </button>
+                  @foreach($userCategories as $val)
+                     <button class="cat-button1"> {{$val->cat->name}} </button>
                   @endforeach
                </div>
             </div>
@@ -479,6 +479,40 @@
               <div class="modal-footer">
                   <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Close</button>
                   <button type="submit" class="btn btn-primary waves-effect">Add Education</button>
+              </div>
+            </form>
+         </div>
+         <!-- /.modal-content -->
+      </div>
+      <!-- /.modal-dialog -->
+   </div>
+
+ <div id="addCategory" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+         <div class="modal-content">
+            <form method="post" action="{{route('buddy.my_account.addCategory')}}">
+               @csrf
+              <div class="modal-header">
+                  <h4 class="modal-title" id="myModalLabel">Add Category</h4>
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+              </div>
+              <div class="modal-body">
+                  <div class="row">
+                     <div class="col-md-12">
+                        <label>Category</label>
+                        <select name="category_id" class="form-control" required>
+                           <option value="" disabled selected>Select</option>
+                           @foreach($categories as $val)
+                              <option value="{{$val->id}}">{{$val->name}}</option>
+                           @endforeach
+                        </select>
+                     </div>
+                  </div>
+                  <br>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Close</button>
+                  <button type="submit" class="btn btn-primary waves-effect">Add Category</button>
               </div>
             </form>
          </div>

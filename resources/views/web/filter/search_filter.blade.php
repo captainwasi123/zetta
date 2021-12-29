@@ -13,12 +13,11 @@
          <input type="hidden" name="type" value="Search">
          <input type="hidden" name="sValue" value="{{empty($search_data['val']) ? 'all' : $search_data['val']}}">
          <div class="all-actions arrows1">
-             {{json_encode($sCategories)}}
             @foreach($sCategories as $val)
                   <div>
                      <a href="javascript:void(0)" class="image-checkbox stickman">
                         <input type="checkbox" id="scales" name="stickman[]" value="{{$val->name}}">
-                        <img src="{{URL::to('/public/storage/settings/category/')}}/{{empty($val->cat) ? $val->image : $val->cat->image}}"> {{$val->name}}
+                        <img src="{{URL::to('/public/storage/settings/category/')}}/{{empty($val->cat) ? $val->image : $val->cat->image}}"> {{empty($val->cat) ? $val->name : $val->cat->name}}
                      </a>
                   </div>
             @endforeach         </div>

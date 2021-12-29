@@ -14,7 +14,7 @@
                   <div class="subCategory">
                      <a href="javascript:void(0)" class="image-checkbox stickman" data-id="{{$val->id}}" data-name="{{$val->name}}"> 
                         <input type="checkbox" id="scales" name="stickman[]" value="{{$val->name}}"> 
-                        <img src="{{URL::to('/public/storage/settings/category/')}}/{{empty($val->cat) ? $val->image : $val->cat->image}}"> {{$val->name}} 
+                        <img src="{{URL::to('/public/storage/settings/category/')}}/{{empty($val->cat) ? $val->image : $val->cat->image}}"> {{empty($val->cat) ? $val->name : $val->cat->name}}
                      </a>
                   </div>
             @endforeach         

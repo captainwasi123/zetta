@@ -23,9 +23,9 @@
                                  <div class="col-12 col-lg-9 col-md-9 col-sm-12">
                                     <ul class="nav nav-tabs profile-tab less-triggers" role="tablist">
                                        <li class="nav-item"> <a class=" nav-link active " data-toggle="tab" href="#tab-data1" role="tab"> Active Lesson </a> </li>
-                                       <li class="nav-item"> <a class="nav-link  " data-toggle="tab" href="#tab-data2" role="tab">Draft  </a> </li>
+                                       <li class="nav-item"> <a class="nav-link  " data-toggle="tab" href="#tab-data2" role="tab">Draft </a> </li>
                                        <li class="nav-item"> <a class="nav-link  " data-toggle="tab" href="#tab-data3" role="tab">Paused </a> </li>
-                                       <li class="nav-item"> <a class="nav-link " data-toggle="tab" href="#tab-data4" role="tab"> Lesson Schedule </a> </li>
+                                       <!-- <li class="nav-item"> <a class="nav-link " data-toggle="tab" href="#tab-data4" role="tab"> Lesson Schedule </a> </li> -->
                                     </ul>
                                  </div>
                                  <div class="col-12 col-lg-3 col-md-3 col-sm-12 text-right mob-text-left">
@@ -51,7 +51,7 @@
                                                       <tbody>
                                                          @foreach($data['active'] as $val)
                                                             <tr>
-                                                               <td id="myBtn" class="table-image2">
+                                                               <td class="table-image2">
                                                                   <img src="{{URL::to('/public/storage/user/lessons/main_image/'.$val->cover_img)}}">
                                                                   {{$val->title}}
                                                                </td>
@@ -61,22 +61,21 @@
                                                                  <div class="dropdown-wrapper">
                                                                   <a href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"> <i class="fa fa-caret-down"> </i> </a>
                                                                   <div class="dropdown-menu animated flipInY">
-                                                                     <a href="{{route('coach.lesson.edit', base64_encode($val->id))}}" class="dropdown-item"><i class="fa fa-pencil"></i> Edit </a>
+                                                                     <a href="{{route('coach.lesson.edit', base64_encode($val->id))}}" class="dropdown-item"><i class="fa fa-edit"></i> Edit </a>
+                                                                     <a href="javascript:void(0)" class="dropdown-item moveItem" data-href="{{route('coach.lesson.move.draft', base64_encode($val->id))}}"><i class="fa fa-arrow-right"></i> Move to Draft </a>
+                                                                     <a href="javascript:void(0)" class="dropdown-item moveItem" data-href="{{route('coach.lesson.move.paused', base64_encode($val->id))}}"><i class="fa fa-arrow-right"></i> Move to Paused </a>
                                                                      <div class="dropdown-divider"></div>
                                                                      <a href="javascript:void(0)" class="dropdown-item deleteItem" data-href="{{route('coach.lesson.delete', base64_encode($val->id))}}"><i class="fa fa-trash"></i> Delete </a>
                                                                   </div>
                                                               </div>
                                                                </td>
                                                             </tr>
-                                                             <tr style="border-bottom: 0px;">
-                                                               <td colspan="4" style="border-bottom: 0px !important;padding: 0px;">
-                                                                   <div id="myDropdown" class="dropdown-content">
-                                                                     <img src="https://dnpprojects.com/demo/zetta/assets/website/images/zetta-logo.png" >  
-                                                                   </div>
-                                                               </td>
-                                                              
-                                                            </tr>
                                                          @endforeach
+                                                         @if(count($data['active']) == 0)
+                                                            <tr>
+                                                               <td colspan="4"> No Lessons </td>
+                                                            </tr>
+                                                         @endif
                                                       </tbody>
                                                    </table>
                                                 </div>
@@ -90,35 +89,40 @@
                                                    <table class="table table-hover contact-list border-off" data-page-size="10">
                                                       <thead>
                                                          <tr>
-                                                            <th colspan="2"> Lesson </th>
+                                                            <th> Lesson </th>
                                                             <th class="text-center"> Orders </th>
                                                             <th class="text-center"> Cancellations </th>
                                                             <th class="text-center"> Actions </th>
                                                          </tr>
                                                       </thead>
                                                       <tbody>
-                                                         <tr>
-                                                            <td class="text-center">  <label style="margin-top: -25px;" class="custom-control custom-radio">
-                                                               <input id="radio1" name="radio" type="radio" class="custom-control-input">
-                                                               <span class="custom-control-label">  </span>
-                                                               </label>
-                                                            </td>
-                                                            <td class="table-image2">
-                                                               <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/users/5.jpg"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in Nullam at
-                                                               gravida sapien. In eget orci et massa laoreet gravida vitae at ante
-                                                            </td>
-                                                            <td class="text-center">  05 </td>
-                                                            <td class="text-center"> 02 </td>
-                                                            <td class="text-center">
-                                                               <a href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"> <i class="fa fa-caret-down"> </i> </a>
-                                                               <div class="dropdown-menu animated flipInY">
-                                                                  <a href="#" class="dropdown-item"><i class="fa fa-eye"></i> View </a>
-                                                                  <a href="#" class="dropdown-item"><i class="fa fa-pencil"></i> Edit </a>
-                                                                  <div class="dropdown-divider"></div>
-                                                                  <a href="#" class="dropdown-item"><i class="fa fa-trash"></i> Delete </a>
-                                                               </div>
-                                                            </td>
-                                                         </tr>
+                                                         @foreach($data['draft'] as $val)
+                                                            <tr>
+                                                               <td class="table-image2">
+                                                                  <img src="{{URL::to('/public/storage/user/lessons/main_image/'.$val->cover_img)}}">
+                                                                  {{$val->title}}
+                                                               </td>
+                                                               <td class="text-center"> <a href="">{{count($val->activeOrders)}} - View</a> </td>
+                                                               <td class="text-center"> {{count($val->cancelOrders)}} </td>
+                                                               <td class="text-center">
+                                                                 <div class="dropdown-wrapper">
+                                                                  <a href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"> <i class="fa fa-caret-down"> </i> </a>
+                                                                  <div class="dropdown-menu animated flipInY">
+                                                                     <a href="{{route('coach.lesson.edit', base64_encode($val->id))}}" class="dropdown-item"><i class="fa fa-pencil"></i> Edit </a>
+                                                                     <a href="javascript:void(0)" class="dropdown-item moveItem" data-href="{{route('coach.lesson.move.active', base64_encode($val->id))}}"><i class="fa fa-arrow-right"></i> Move to Active </a>
+                                                                     <a href="javascript:void(0)" class="dropdown-item moveItem" data-href="{{route('coach.lesson.move.paused', base64_encode($val->id))}}"><i class="fa fa-arrow-right"></i> Move to Paused </a>
+                                                                     <div class="dropdown-divider"></div>
+                                                                     <a href="javascript:void(0)" class="dropdown-item deleteItem" data-href="{{route('coach.lesson.delete', base64_encode($val->id))}}"><i class="fa fa-trash"></i> Delete </a>
+                                                                  </div>
+                                                              </div>
+                                                               </td>
+                                                            </tr>
+                                                         @endforeach
+                                                         @if(count($data['draft']) == 0)
+                                                            <tr>
+                                                               <td colspan="4"> No Lessons </td>
+                                                            </tr>
+                                                         @endif
                                                       </tbody>
                                                    </table>
                                                 </div>
@@ -132,86 +136,47 @@
                                                    <table class="table table-hover contact-list border-off" data-page-size="10">
                                                       <thead>
                                                          <tr>
-                                                            <th colspan="2"> Lesson </th>
+                                                            <th> Lesson </th>
                                                             <th class="text-center"> Orders </th>
                                                             <th class="text-center"> Cancellations </th>
                                                             <th class="text-center"> Actions </th>
                                                          </tr>
                                                       </thead>
                                                       <tbody>
-                                                         <tr>
-                                                            <td class="text-center">  <label style="margin-top: -25px;" class="custom-control custom-radio">
-                                                               <input id="radio1" name="radio" type="radio" class="custom-control-input">
-                                                               <span class="custom-control-label">  </span>
-                                                               </label>
-                                                            </td>
-                                                            <td class="table-image2">
-                                                               <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/users/5.jpg"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in Nullam at
-                                                               gravida sapien. In eget orci et massa laoreet gravida vitae at ante
-                                                            </td>
-                                                            <td class="text-center">  05 </td>
-                                                            <td class="text-center"> 02 </td>
-                                                            <td class="text-center">
-                                                               <a href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"> <i class="fa fa-caret-down"> </i> </a>
-                                                               <div class="dropdown-menu animated flipInY">
-                                                                  <a href="#" class="dropdown-item"><i class="fa fa-eye"></i> View </a>
-                                                                  <a href="#" class="dropdown-item"><i class="fa fa-pencil"></i> Edit </a>
-                                                                  <div class="dropdown-divider"></div>
-                                                                  <a href="#" class="dropdown-item"><i class="fa fa-trash"></i> Delete </a>
-                                                               </div>
-                                                            </td>
-                                                         </tr>
-                                                         <tr>
-                                                            <td class="text-center">  <label style="margin-top: -25px;" class="custom-control custom-radio">
-                                                               <input id="radio1" name="radio" type="radio" class="custom-control-input">
-                                                               <span class="custom-control-label">  </span>
-                                                               </label>
-                                                            </td>
-                                                            <td class="table-image2">
-                                                               <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/users/5.jpg"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in Nullam at
-                                                               gravida sapien. In eget orci et massa laoreet gravida vitae at ante
-                                                            </td>
-                                                            <td class="text-center">  05 </td>
-                                                            <td class="text-center"> 02 </td>
-                                                            <td class="text-center">
-                                                               <a href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"> <i class="fa fa-caret-down"> </i> </a>
-                                                               <div class="dropdown-menu animated flipInY">
-                                                                  <a href="#" class="dropdown-item"><i class="fa fa-eye"></i> View </a>
-                                                                  <a href="#" class="dropdown-item"><i class="fa fa-pencil"></i> Edit </a>
-                                                                  <div class="dropdown-divider"></div>
-                                                                  <a href="#" class="dropdown-item"><i class="fa fa-trash"></i> Delete </a>
-                                                               </div>
-                                                            </td>
-                                                         </tr>
-                                                         <tr>
-                                                            <td class="text-center">  <label style="margin-top: -25px;" class="custom-control custom-radio">
-                                                               <input id="radio1" name="radio" type="radio" class="custom-control-input">
-                                                               <span class="custom-control-label">  </span>
-                                                               </label>
-                                                            </td>
-                                                            <td class="table-image2">
-                                                               <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/users/5.jpg"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in Nullam at
-                                                               gravida sapien. In eget orci et massa laoreet gravida vitae at ante
-                                                            </td>
-                                                            <td class="text-center">  05 </td>
-                                                            <td class="text-center"> 02 </td>
-                                                            <td class="text-center">
-                                                               <a href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"> <i class="fa fa-caret-down"> </i> </a>
-                                                               <div class="dropdown-menu animated flipInY">
-                                                                  <a href="#" class="dropdown-item"><i class="fa fa-eye"></i> View </a>
-                                                                  <a href="#" class="dropdown-item"><i class="fa fa-pencil"></i> Edit </a>
-                                                                  <div class="dropdown-divider"></div>
-                                                                  <a href="#" class="dropdown-item"><i class="fa fa-trash"></i> Delete </a>
-                                                               </div>
-                                                            </td>
-                                                         </tr>
+                                                         @foreach($data['paused'] as $val)
+                                                            <tr>
+                                                               <td class="table-image2">
+                                                                  <img src="{{URL::to('/public/storage/user/lessons/main_image/'.$val->cover_img)}}">
+                                                                  {{$val->title}}
+                                                               </td>
+                                                               <td class="text-center"> <a href="">{{count($val->activeOrders)}} - View</a> </td>
+                                                               <td class="text-center"> {{count($val->cancelOrders)}} </td>
+                                                               <td class="text-center">
+                                                                 <div class="dropdown-wrapper">
+                                                                  <a href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"> <i class="fa fa-caret-down"> </i> </a>
+                                                                  <div class="dropdown-menu animated flipInY">
+                                                                     <a href="{{route('coach.lesson.edit', base64_encode($val->id))}}" class="dropdown-item"><i class="fa fa-pencil"></i> Edit </a>
+                                                                     <a href="javascript:void(0)" class="dropdown-item moveItem" data-href="{{route('coach.lesson.move.active', base64_encode($val->id))}}"><i class="fa fa-arrow-right"></i> Move to Active </a>
+                                                                     <a href="javascript:void(0)" class="dropdown-item moveItem" data-href="{{route('coach.lesson.move.draft', base64_encode($val->id))}}"><i class="fa fa-arrow-right"></i> Move to Draft </a>
+                                                                     <div class="dropdown-divider"></div>
+                                                                     <a href="javascript:void(0)" class="dropdown-item deleteItem" data-href="{{route('coach.lesson.delete', base64_encode($val->id))}}"><i class="fa fa-trash"></i> Delete </a>
+                                                                  </div>
+                                                              </div>
+                                                               </td>
+                                                            </tr>
+                                                         @endforeach
+                                                         @if(count($data['paused']) == 0)
+                                                            <tr>
+                                                               <td colspan="4"> No Lessons </td>
+                                                            </tr>
+                                                         @endif
                                                       </tbody>
                                                    </table>
                                                 </div>
                                              </div>
                                           </div>
                                        </div>
-                                       <div class="tab-pane" id="tab-data4" role="tabpanel">
+                                       <!-- <div class="tab-pane" id="tab-data4" role="tabpanel">
                                           <div class="row">
                                              <div class="col-md-12 col-lg-12 col-12">
                                                 <div class="table-responsive custom-table1 wallet-table">
@@ -252,7 +217,7 @@
                                                 </div>
                                              </div>
                                           </div>
-                                       </div>
+                                       </div> -->
                                     </div>
                                  </div>
                               </div>
@@ -325,22 +290,30 @@
           $.plot($("#flot-bar-chart"), [barData], barOptions);
       });
     </script>
-       <script>
-// Get the button, and when the user clicks on it, execute myFunction
-document.getElementById("myBtn").onclick = function() {myFunction()};
+<script>
+   $(document).ready(function(){
+      'use strict'
 
-/* myFunction toggles between adding and removing the show class, which is used to hide and show the dropdown content */
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
+      $(document).on('click', '.moveItem', function(){
+         var href = $(this).data('href');
 
-// Get the button, and when the user clicks on it, execute myFunction
-document.getElementById("myBtn1").onclick = function() {myFunction1()};
-
-/* myFunction toggles between adding and removing the show class, which is used to hide and show the dropdown content */
-function myFunction1() {
-  document.getElementById("myDropdown1").classList.toggle("show");
-}
+         Swal.fire({
+           title: 'Are you sure?',
+           text: "Want to move this lesson",
+           icon: 'warning',
+           showCancelButton: true,
+           confirmButtonColor: '#3085d6',
+           cancelButtonColor: '#d33',
+           confirmButtonText: 'Yes, move it!'
+         }).then((result) => {
+           if (result.isConfirmed) {
+               window.location.href = href;
+           }else{
+            swal.close()
+           }
+         })
+      });
+   });
 </script>
 
 @endsection
