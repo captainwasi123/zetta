@@ -427,8 +427,8 @@ var kerywordss = [
             cancelButtonText: "No, Cancel!",
             closeOnConfirm: false,
             closeOnCancel: false
-        }, function(isConfirm){
-            if (isConfirm) {
+        }).then((result) => {
+            if (result.isConfirmed) {
                 window.location.href = host+"/friends/remove/"+id;
             } else {
             }

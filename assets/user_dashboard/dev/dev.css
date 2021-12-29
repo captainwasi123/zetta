@@ -1,3 +1,10 @@
+.cut-text { 
+  text-overflow: ellipsis;
+  overflow: hidden; 
+  width: 210px; 
+  height: 1.2em; 
+  white-space: nowrap;
+}
 .default_link {
 	color: #994afe;
 }
