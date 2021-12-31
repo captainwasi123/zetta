@@ -307,7 +307,12 @@ var kerywordss = [
                ];
 
     $( "#keywords_val" ).autocomplete({
-      source: kerywordss
+        source: function( request, response ) {
+            var matcher = new RegExp( "^" + $.ui.autocomplete.escapeRegex( request.term ), "i" );
+            response( $.grep( kerywordss, function( item ){
+                return matcher.test( item );
+            }));
+        }
     });
 });
 

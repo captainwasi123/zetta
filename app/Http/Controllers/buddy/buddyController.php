@@ -10,6 +10,7 @@ use App\Models\earningHistory;
 use App\Models\FavouriteBuddy as FB;
 use Illuminate\Http\Request;
 use App\Models\inbox\chat;
+use App\Models\lesson\orderSessions;
 use Auth;
 
 class buddyController extends Controller
@@ -22,8 +23,12 @@ class buddyController extends Controller
                         ->distinct("sender_id", "receiver_id")
                         ->orderBy('created_at', 'desc')
                         ->get();
-                        
-      return view('buddy.dashboard', ['chat_list' => $data_list]);
+        
+        $orders = orderSessions::whereHas('orders', function($q){
+            return $q->where('buyer_id', Auth::id());
+        })->get();
+
+      return view('buddy.dashboard', ['chat_list' => $data_list, 'orders' => $orders]);
     }
 
     public function become_a_coach(){

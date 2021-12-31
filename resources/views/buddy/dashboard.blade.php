@@ -70,68 +70,92 @@
             </div>
          </div>
       </div>
-      <!-- BEGIN MODAL -->
-      <div class="modal none-border" id="my-event">
-         <div class="modal-dialog">
-            <div class="modal-content">
-               <div class="modal-header">
-                  <h4 class="modal-title"><strong>Add Event</strong></h4>
-                  <button type="button" class="close" data-dismiss="modal"
-                     aria-hidden="true">&times;</button>
-               </div>
-               <div class="modal-body"></div>
-               <div class="modal-footer">
-                  <button type="button" class="btn btn-white waves-effect"
-                     data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-success save-event waves-effect waves-light">Create
-                  event</button>
-                  <button type="button" class="btn btn-danger delete-event waves-effect waves-light"
-                     data-dismiss="modal">Delete</button>
-               </div>
-            </div>
-         </div>
-      </div>
-      <!-- Modal Add Category -->
-      <div class="modal fade none-border" id="add-new-event">
-         <div class="modal-dialog">
-            <div class="modal-content">
-               <div class="modal-header">
-                  <h4 class="modal-title"><strong>Add</strong> a category</h4>
-                  <button type="button" class="close" data-dismiss="modal"
-                     aria-hidden="true">&times;</button>
-               </div>
-               <div class="modal-body">
-                  <form role="form">
-                     <div class="row">
-                        <div class="col-md-6">
-                           <label class="control-label">Category Name</label>
-                           <input class="form-control form-white" placeholder="Enter name" type="text"
-                              name="category-name" />
-                        </div>
-                        <div class="col-md-6">
-                           <label class="control-label">Choose Category Color</label>
-                           <select class="form-control form-white" data-placeholder="Choose a color..."
-                              name="category-color">
-                              <option value="success">Success</option>
-                              <option value="danger">Danger</option>
-                              <option value="info">Info</option>
-                              <option value="primary">Primary</option>
-                              <option value="warning">Warning</option>
-                              <option value="inverse">Inverse</option>
-                           </select>
-                        </div>
-                     </div>
-                  </form>
-               </div>
-               <div class="modal-footer">
-                  <button type="button" class="btn btn-danger waves-effect waves-light save-category"
-                     data-dismiss="modal">Save</button>
-                  <button type="button" class="btn btn-white waves-effect"
-                     data-dismiss="modal">Close</button>
-               </div>
-            </div>
-         </div>
-      </div>
    </div>
 </div>
+@endsection
+
+@section('addScript')
+   <script type="text/javascript">
+      
+      !function($) {
+          "use strict";
+
+          var CalendarApp = function() {
+              this.$body = $("body")
+              this.$calendar = $('#calendar'),
+              this.$calendarObj = null
+          };
+
+
+          CalendarApp.prototype.enableDrag = function() {
+              //init events
+              $(this.$event).each(function () {
+                  // create an Event Object (http://arshaw.com/fullcalendar/docs/event_data/Event_Object/)
+                  // it doesn't need to have a start or end
+                  var eventObject = {
+                      title: $.trim($(this).text()) // use the element's text as the event title
+                  };
+                  // make the event draggable using jQuery UI
+                  $(this).draggable({
+                      zIndex: 999,
+                      revert: true,      // will cause the event to go back to its
+                      revertDuration: 0  //  original position after the drag
+                  });
+              });
+          }
+          /* Initializing */
+          CalendarApp.prototype.init = function() {
+              this.enableDrag();
+              /*  Initialize the calendar  */
+              var date = new Date();
+              var d = date.getDate();
+              var m = date.getMonth();
+              var y = date.getFullYear();
+              var form = '';
+              var today = new Date($.now());
+
+              var defaultEvents =  [
+                  @foreach($orders as $val)
+                     {
+                         title: '{{@$val->orders->lesson->title}}',
+                         start: '{{date("Y-m-d H:i:s", strtotime($val->start_date.' '.$val->start_time))}}',
+                         className: 'bg-info'
+                     },
+                  @endforeach
+               ];
+
+              var $this = this;
+              $this.$calendarObj = $this.$calendar.fullCalendar({
+                  slotDuration: '00:15:00', /* If we want to split day time each 15minutes */
+                  minTime: '08:00:00',
+                  maxTime: '19:00:00',  
+                  defaultView: 'month',  
+                  handleWindowResize: true,   
+                   
+                  header: {
+                      left: 'prev,next today',
+                      center: 'title',
+                      right: 'month,agendaWeek,agendaDay'
+                  },
+                  events: defaultEvents,
+                  editable: false,
+                  droppable: false, // this allows things to be dropped onto the calendar !!!
+                  eventLimit: false, // allow "more" link when too many events
+                  selectable: false,
+                  eventClick: function(calEvent, jsEvent, view) { $this.onEventClick(calEvent, jsEvent, view); }
+
+              });
+          },
+
+         //init CalendarApp
+          $.CalendarApp = new CalendarApp, $.CalendarApp.Constructor = CalendarApp
+          
+      }(window.jQuery),
+
+      //initializing CalendarApp
+      function($) {
+          "use strict";
+          $.CalendarApp.init()
+      }(window.jQuery);
+   </script>
 @endsection
