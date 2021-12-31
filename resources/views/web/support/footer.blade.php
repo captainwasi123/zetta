@@ -3,7 +3,7 @@
         <div class="row">
            <div class="col-md-3 col-lg-3 col-sm-12 col-12">
               <div class="footer-about">
-                 <a href=""> <img src="{{URL::to('/assets/website')}}/images/zetta-logo.png"> </a>
+                 <a href="{{URL::to('/')}}"> <img src="{{URL::to('/assets/website')}}/images/zetta-logo.png"> </a>
                  <p> United through sport	 </p>
                  
 
@@ -63,7 +63,7 @@
                           <li>
                           <a href="{{URL::to('/lang/sp')}}">
                           <img src="{{URL::to('/assets/website')}}/images/flag-4.jpg">  
-                          &nbsp; Spanisch  &nbsp;
+                          &nbsp; Española  &nbsp;
                             @if (session()->has('locale'))
                                @if (session()->get('locale') == 'sp')
                                 <span class="fa fa-check"></span>

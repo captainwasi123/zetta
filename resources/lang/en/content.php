@@ -714,7 +714,7 @@ return [
   'Click on activities where you will see our selection of activities near you and use our filters and find the perfect match for you.' => 'Click on activities where you will see our selection of activities near you and use our filters and find the perfect match for you.',
   'Once you create your activity, it will appear on our activity page, the other sport buddies will be able to join as soon as it is posted.' => 'Once you create your activity, it will appear on our activity page, the other sport buddies will be able to join as soon as it is posted.',
   'Participate in your activity' => 'Participate in your activity',
-  'Repeat steps 3-5 (wink emoji)' => 'Repeat steps 3-5 (wink emoji)',
+  'Repeat steps 3-5 (wink emoji)' => 'Repeat steps 3-5 ',
   'How do I join an activity ?' => 'How do I join an activity ?',
   'Register on the platform' => 'Register on the platform',
   'Set up your account' => 'Set up your account',
@@ -722,7 +722,7 @@ return [
   'Once you find the activity that suits you, be sure to join it while you can depending on the number of participants.' =>'Once you find the activity that suits you, be sure to join it while you can depending on the number of participants.',
   'Go and enjoy your activity' => 'Go and enjoy your activity',
   'Review your coach on his performance' => 'Review your coach on his performance',
-  'Repeat steps 3-6 (wink emoji)' => 'Repeat steps 3-6 (wink emoji)',
+  'Repeat steps 3-6 (wink emoji)' => 'Repeat steps 3-6 ',
   'Do I need to pay to participate in an activity?' => 'Do I need to pay to participate in an activity?',
   'An activity is always free, the Sportbuddy who created the activity can choose to lend equipment and set his own price for that equipment.' => 'An activity is always free, the Sportbuddy who created the activity can choose to lend equipment and set his own price for that equipment.',
   'Friends' => 'Friends',
@@ -735,7 +735,7 @@ return [
   'Yes, you can always contact a coach for any reason, by using our messaging system.' => 'Yes, you can always contact a coach for any reason, by using our messaging system.',
   'I haven`t received a response from a coach I`ve messaged, what now?' => 'I haven`t received a response from a coach I`ve messaged, what now?',
   'if you haven’t heard from your coach, make sure to check that the message has been sent and delivered if you still don’t have an answer after 48h our support team will help you.' => 'if you haven’t heard from your coach, make sure to check that the message has been sent and delivered if you still don’t have an answer after 48h our support team will help you.',
-  'What is Zettaa’s cancellation policy for scheduled sessions?' => 'What is Zettaa’s cancellation policy for scheduled sessions', 
+  'What is Zettaa’s cancellation policy for scheduled sessions?' => 'What is Zettaa’s cancellation policy for scheduled sessions',
   'attach our cancellation and refund policy' => 'attach our cancellation and refund policy',
   'Will my unused Zettaa packages ever expire?' => 'Will my unused Zettaa packages ever expire?',
   'Once you buy a lesson package you have one full year to complete your lessons if you haven’t done so your lessons will expire. Note that if there is a valid reason you can always ask for a refund prior the expiration.' => 'Once you buy a lesson package you have one full year to complete your lessons if you haven’t done so your lessons will expire. Note that if there is a valid reason you can always ask for a refund prior the expiration.',
@@ -755,7 +755,7 @@ return [
    ' Once you create your lesson, it will appear on our lesson page, the client will book according to your availability.' =>' Once you create your lesson, it will appear on our lesson page, the client will book according to your availability.',
    'Coach your lesson.' => 'Coach your lesson.',
    'Review your client on his performance' => 'Review your client on his performance',
-   'Repeat steps 3-6 (wink emoji)' => 'Repeat steps 3-6 (wink emoji)',
+   'Repeat steps 3-6 (wink emoji)' => 'Repeat steps 3-6 ',
   'How do I book a lesson?' => 'How do I book a lesson?',
   'Register on the platform' => 'Register on the platform',
   'Set up your account' => 'Set up your account',
@@ -763,7 +763,7 @@ return [
   'Once you find the lesson that suits you, you will then select the time and day according to your coach1s availability. and pay through our safe payment method (Stripe).' => 'Once you find the lesson that suits you, you will then select the time and day according to your coach1s availability. and pay through our safe payment method (Stripe).',
   'Go and enjoy your lesson' => 'Go and enjoy your lesson',
   'Review your coach on his performance' =>'Review your coach on his performance',
-  'Repeat steps 3-6 (wink emoji)' =>'Repeat steps 3-6 (wink emoji)',
+  'Repeat steps 3-6 (wink emoji)' =>'Repeat steps 3-6 ',
   'How do I set my availability?' =>  'How do I set my availability?',
   'On your dashboard select the availability slots tab on the left menu.' => 'On your dashboard select the availability slots tab on the left menu.',
   'Set your availability for each day according to each lesson that you offer.' => 'Set your availability for each day according to each lesson that you offer.',
@@ -813,5 +813,15 @@ return [
 
 // FAQ END
 
+// about last
+
+    'How it Started' => 'How it Started',
+    'Zettaa is an idea that emerged from three friends based in Geneva Switzerland. We all played ice hockey and one day in February 2021 we were looking to organize a game with our other friends but none were available. We were stuck and couldn’t find any partners to play with. We then came up with the idea to create a platform where sports passionate just like us could post their activity and get people to participate in them. We put all our time and energy to make sure to create the best platform for our users so they can go and enjoy their activity without wondering if they will find partners. We also dedicated a space for coaches to showcase their knowledge and help them find new clients.' => 'Zettaa is an idea that emerged from three friends based in Geneva Switzerland. We all played ice hockey and one day in February 2021 we were looking to organize a game with our other friends but none were available. We were stuck and couldn’t find any partners to play with. We then came up with the idea to create a platform where sports passionate just like us could post their activity and get people to participate in them. We put all our time and energy to make sure to create the best platform for our users so they can go and enjoy their activity without wondering if they will find partners. We also dedicated a space for coaches to showcase their knowledge and help them find new clients.',
+    'MEET OUR TEAM' => 'MEET OUR TEAM',
+    'REASONS TO USE ZETTAA' => 'REASONS TO USE ZETTAA',
+
+
+// about last
+    
 ];
 

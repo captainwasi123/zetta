@@ -101,8 +101,8 @@
                             <li>{{ __('content.Set up your account')}}</li>
                             <li>{{ __('content.Click on activities where you will see our selection of activities near you and use our filters and find the perfect match for you.')}}</li>
                             <li>{{ __('content.Once you create your activity, it will appear on our activity page, the other sport buddies will be able to join as soon as it is posted.')}}</li>
-                            <li>{{ __('content.Participate in your activity')}}</li> 
-                            <li>{{ __('content.Repeat steps 3-5 (wink emoji)')}}</li> 
+                            <li>{{ __('content.Participate in your activity')}}</li>
+                            <li>{{ __('content.Repeat steps 3-5 (wink emoji)')}}&#128521;</li>
                         </ol>
                     </div>
                     <button class="accordion">{{ __('content.How do I join an activity ?')}}</button>
@@ -114,7 +114,7 @@
                             <li>{{ __('content.Once you find the activity that suits you, be sure to join it while you can depending on the number of participants.')}}</li>
                             <li>{{ __('content.Go and enjoy your activity')}}</li>
                             <li>{{ __('content.Review your coach on his performance')}}</li>
-                            <li>{{ __('content.Repeat steps 3-6 (wink emoji)')}}</li>
+                            <li>{{ __('content.Repeat steps 3-6 (wink emoji)')}} &#128521;</li>
                         </ol>
                     </div>
                     <button class="accordion">{{ __('content.Do I need to pay to participate in an activity?')}}</button>
@@ -163,12 +163,12 @@
                         <p>{{ __('content.To become a Zettaa coach, you will have to fill out our questionnaire that includes information on your past experiences, your athletic accomplishments and more. You are then going to be reviewed by our team and we will only select the candidates that suit our criterias.')}}<br/>
                             {{ __('content.Read and accept our quality agreement designed by our team.')}}</p>
                     </div>
-                     <h3>{{ __('content.LESSONS')}}</h3>  
+                     <h3>{{ __('content.LESSONS')}}</h3>
                     <button class="accordion">{{ __('content.How do I create a lesson?')}}</button>
                     <div class="panel">
                        <p class="accordion-para">
                             {{ __('content.Zettaa is an online sport platform that gives the chance to coaches to expand their visibility and help them organize their booking sessions with an agenda and secure payment. Using Zettaa is as easy as 1-2-3. to create a lesson you will have to:')}}
-                       </p> 
+                       </p>
                              <ol>
                                <li> {{ __('content.Register on the platform')}}</li>
                                <li> {{ __('content.Set up your account')}}</li>
@@ -176,7 +176,7 @@
                                <li>  {{ __('content.Once you create your lesson, it will appear on our lesson page, the client will book according to your availability.')}}</li>
                                <li> {{ __('content.Coach your lesson.')}}</li>
                                <li> {{ __('content.Review your client on his performance')}}</li>
-                               <li> {{ __('content.Repeat steps 3-6 (wink emoji)')}}</li>
+                               <li> {{ __('content.Repeat steps 3-6 (wink emoji)')}}&#128521;</li>
                         </ol>
 
                     </div>
@@ -190,7 +190,7 @@
                             <li>{{ __('content.Once you find the lesson that suits you, you will then select the time and day according to your coach`s availability. and pay through our safe payment method (Stripe).')}}</li>
                             <li>{{ __('content.Go and enjoy your lesson')}}</li>
                             <li>{{ __('content.Review your coach on his performance<')}}/li>
-                            <li>{{ __('content.Repeat steps 3-6 (wink emoji)')}}</li>
+                            <li>{{ __('content.Repeat steps 3-6 (wink emoji)')}}&#128521;</li>
 
                         </ol>
                     </div>
@@ -209,7 +209,7 @@
                     <div class="panel">
                        <p>
                             {{ __('content.When you create your lesson you will be asked to select a location, you can even add several if you need.The locations will then reflect on our map. We recommend not to use your home address for your own safety')}}
-                       </p> 
+                       </p>
                     </div>
                     <button class="accordion">{{ __('content.Changing my price and adding group packages')}}</button>
                     <div class="panel">
@@ -240,7 +240,7 @@
                     <button class="accordion">{{ __('content.My client wants to pay me in cash. What should I do?')}}</button>
                     <div class="panel">
                         <p>
-                        {{ __('content.It is absolutely forbidden to use cash on Zettaa all the payments should be done through the website with our partner Stripe')}} 
+                        {{ __('content.It is absolutely forbidden to use cash on Zettaa all the payments should be done through the website with our partner Stripe')}}
 
                         </p>
                     </div>
@@ -254,7 +254,7 @@
                     <button class="accordion">{{ __('content.Who reviews our coaches?')}}</button>
                     <div class="panel">
                          <p>
-                        {{ __('content.After every lesson, our clients are asked to review their coaches, this is mandatory. If you have not participated in a lesson with a particular coach you can not rate or review him.')}}    
+                        {{ __('content.After every lesson, our clients are asked to review their coaches, this is mandatory. If you have not participated in a lesson with a particular coach you can not rate or review him.')}}
                         </p>
                     </div>
                     <button class="accordion">{{ __('content.How do I leave a review for my coach?')}}</button>
@@ -331,9 +331,9 @@
 
                         </p>
                     </div>
-                   
+
                         <h3>{{ __('content.If your question is not listed above contact us at')}} <a href="mailto:support@zettaa.ch">support@zettaa.ch</a></h3>
-                   
+
 
                 <script>
                     var acc = document.getElementsByClassName("accordion");

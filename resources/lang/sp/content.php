@@ -4,7 +4,7 @@
 return [
     // language
 
-    'language'=>'Española',
+    'language'=>'Spanish',
 
     // index page start
     'Home' => 'Inicio',
@@ -720,7 +720,7 @@ return [
   'Click on activities where you will see our selection of activities near you and use our filters and find the perfect match for you.' => 'Haga clic en Actividades para ver nuestra selección de actividades cerca de usted y use nuestros filtros para encontrar la solución perfecta para usted',
   'Once you create your activity, it will appear on our activity page, the other sport buddies will be able to join as soon as it is posted.' => 'Tan pronto como haya creado su actividad, se mostrará en nuestra página de actividades. Otros fanáticos de los deportes pueden unirse tan pronto como se publique',
   'Participate in your activity' => 'Participa en tu actividad',
-  'Repeat steps 3-5 (wink emoji)' => 'Repita los pasos 3-5 (guiño emoji)',
+  'Repeat steps 3-5 (wink emoji)' => 'Repita los pasos 3-5 ',
   'How do I join an activity ?' => '¿Cómo participo en una actividad?',
   'Register on the platform' => 'Registrarse en la plataforma',
   'Set up your account' => 'Configurar una cuenta',
@@ -728,7 +728,7 @@ return [
   'Once you find the activity that suits you, be sure to join it while you can depending on the number of participants.' => 'Una vez que haya encontrado la actividad que más le convenga, dependiendo del número de participantes, debe unirse a ella todo el tiempo que pueda',
   'Go and enjoy your activity' => 'Ve y disfruta tu actividad',
   'Review your coach on his performance' => 'Compruebe el rendimiento de su entrenador',
-  'Repeat steps 3-6 (wink emoji)' => 'Repita los pasos 3-6 (guiño emoji)',
+  'Repeat steps 3-6 (wink emoji)' => 'Repita los pasos 3-6 ',
   'Do I need to pay to participate in an activity?' => '¿Tengo que pagar para participar en una actividad?',
   'An activity is always free, the Sportbuddy who created the activity can choose to lend equipment and set his own price for that equipment.' => 'Una actividad es siempre gratuita, el compañero de deportes que creó la actividad puede optar por alquilar el equipo y fijar su propio precio para ese equipo',
   'Friends' => 'Amigos',
@@ -761,7 +761,7 @@ return [
    ' Once you create your lesson, it will appear on our lesson page, the client will book according to your availability.' => 'Una vez que haya creado su lección, se mostrará en nuestra página de lecciones. El cliente reserva según su disponibilidad',
    'Coach your lesson.' => 'Entrena tu lección.',
    'Review your client on his performance' => 'Verifique el desempeño de su cliente',
-   'Repeat steps 3-6 (wink emoji)' => 'Repita los pasos 3-6 (guiño emoji)',
+   'Repeat steps 3-6 (wink emoji)' => 'Repita los pasos 3-6 ',
   'How do I book a lesson?' => '¿Cómo reservo una lección?',
   'Register on the platform' => 'Registrarse en la plataforma',
   'Set up your account' => 'Configurar una cuenta',
@@ -769,7 +769,7 @@ return [
   'Once you find the lesson that suits you, you will then select the time and day according to your coach1s availability. and pay through our safe payment method (Stripe).' => 'Una vez que haya encontrado la lección adecuada para usted, elija la hora y el día según la disponibilidad de su capacitador. y pague con nuestro método de pago seguro (Stripe). ',
   'Go and enjoy your lesson' => 'Ve y disfruta tu lección',
   'Review your coach on his performance' => 'Compruebe el rendimiento de su entrenador',
-  'Repeat steps 3-6 (wink emoji)' => 'Repita los pasos 3-6 (guiño emoji)',
+  'Repeat steps 3-6 (wink emoji)' => 'Repita los pasos 3-6 ',
   'How do I set my availability?' => '¿Cómo configuro mi disponibilidad?',
   'On your dashboard select the availability slots tab on the left menu.' => 'En su panel, seleccione la pestaña de espacios disponibles en el menú de la izquierda',
   'Set your availability for each day according to each lesson that you offer.' => 'Establezca su disponibilidad para cada día de acuerdo con cada lección que ofrezca',
@@ -819,6 +819,16 @@ return [
 
 // FAQ END
 
+  
+// about last
+
+  'How it Started' => 'Cómo empezó',
+  'Zettaa is an idea that emerged from three friends based in Geneva Switzerland. We all played ice hockey and one day in February 2021 we were looking to organize a game with our other friends but none were available. We were stuck and couldn’t find any partners to play with. We then came up with the idea to create a platform where sports passionate just like us could post their activity and get people to participate in them. We put all our time and energy to make sure to create the best platform for our users so they can go and enjoy their activity without wondering if they will find partners. We also dedicated a space for coaches to showcase their knowledge and help them find new clients.' => 'Zettaa es una idea que surgió de tres amigos de Ginebra en Suiza. Todos jugamos hockey sobre hielo y un día de febrero de 2021 queríamos organizar un partido con nuestros otros amigos, pero no había ninguno disponible. Estábamos estancados y no podíamos encontrar compañeros con los que jugar. Luego se nos ocurrió la idea de crear una plataforma donde los amantes del deporte como nosotros puedan publicar sus actividades y hacer que la gente participe. Invertimos todo nuestro tiempo y energía para asegurarnos de que nuestros usuarios tengan la mejor plataforma para que puedan disfrutar de sus actividades sin tener que preguntarse si pueden encontrar socios. También hemos creado un espacio para que los coaches muestren sus conocimientos y les ayuden a encontrar nuevos clientes.',
+  'MEET OUR TEAM' => 'CONOCE A NUESTRO EQUIPO',
+  'REASONS TO USE ZETTAA' => 'RAZONES PARA USAR ZETTAA',
+
+
+// about last
 
 ];
 

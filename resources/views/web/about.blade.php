@@ -352,8 +352,8 @@ section.action-bar {
     <div class="container custom-container">
         <div class="row">
             <div class="col-md-6 how-it-started-text">
-                <h2 class="how-it-was-main-head text-white">How it Started</h2>
-                <p class="how-it-was-text text-white">Zettaa is an idea that emerged from three friends based in Geneva Switzerland. We all played ice hockey and one day in February 2021 we were looking to organize a game with our other friends but none were available. We were stuck and couldn’t find any partners to play with. We then came up with the idea to create a platform where sports passionate just like us could post their activity and get people to participate in them. We put all our time and energy to make sure to create the best platform for our users so they can go and enjoy their activity without wondering if they will find partners. We also dedicated a space for coaches to showcase their knowledge and help them find new clients.</p>
+                <h2 class="how-it-was-main-head text-white">{{ __('content.How it Started')}}</h2>
+                <p class="how-it-was-text text-white">{{ __('content.Zettaa is an idea that emerged from three friends based in Geneva Switzerland. We all played ice hockey and one day in February 2021 we were looking to organize a game with our other friends but none were available. We were stuck and couldn’t find any partners to play with. We then came up with the idea to create a platform where sports passionate just like us could post their activity and get people to participate in them. We put all our time and energy to make sure to create the best platform for our users so they can go and enjoy their activity without wondering if they will find partners. We also dedicated a space for coaches to showcase their knowledge and help them find new clients.')}}</p>
             </div>
             <div class="col-md-6">
                 <div class="how-it-was-img how-it-started-img">
@@ -369,7 +369,7 @@ section.action-bar {
         <div class="row">
             <div class="col-md-12 sec-3">
                 <h2 class="reasons-run-main-head text-white">{{ __('content.aboutus_TEAM') }}</h2>
-                <h2 class="reasons-run-main-head-text text-white">MEET OUR TEAM</h2>
+                <h2 class="reasons-run-main-head-text text-white">{{ __('content.MEET OUR TEAM')}}</h2>
             </div>
         </div>
         <div class="row">
@@ -441,7 +441,7 @@ section.action-bar {
         <div class="row">
               <div class="col-md-12 sec-2">
                     <h2 class="reasons-run-main-head text-white">{{ __('content.aboutus_WELCOME') }}</h2>
-                    <h2 class="reasons-run-main-head-text text-white">REASONS TO USE ZETTAA</h2>
+                    <h2 class="reasons-run-main-head-text text-white">{{ __('content.REASONS TO USE ZETTAA')}}</h2>
               </div>
         </div>
         <div class="row">
@@ -455,9 +455,10 @@ section.action-bar {
                     <p class="reason-one-text text-white">{{ __('content.Exercising regularly helps you stay fit and clear your mind from stress and daily problems')}}</p>
                 </div>
             </div>
+ 
             <div class="col-md-6">
                 <div class="center-video">
-                    <img src="{{URL::to('/assets/website/images/video-picture.png')}}"/>
+                   <a href="javascript:void(0)" id="play_video"> <img src="{{URL::to('/assets/website/images/video-picture.png')}}"/> </a>
                 </div>
             </div>
             <div class="col-md-3 reason-one-main-div">
@@ -512,4 +513,38 @@ section.action-bar {
 </section>
 
 
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="false">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content" style="background-color: transparent !important; margin-top:406px;">
+     
+      <div class="modal-body">
+        <video width="550" controls id="about_video">
+            <source src="{{URL::to('/assets/website/video/ZETTA-VERSION-FR.mp4')}}" type="video/mp4">
+           
+            Your browser does not support HTML video.
+        </video>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+@endsection
+@section('addScript')
+    <script>
+        $(document).ready(function(){
+            'use strict'
+
+            $(document).on('click', '#play_video', function(){
+                $('#exampleModalCenter').modal('show');
+                $('#about_video').trigger('play');
+            });
+        });
+    </script>
 @endsection
