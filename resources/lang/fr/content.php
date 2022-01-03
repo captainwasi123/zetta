@@ -4,7 +4,7 @@
 return [
     // language
 
-    'language'=>'French',
+    'language'=>'Französisch',
 
     // index page start
     'Home' => '',
@@ -66,6 +66,14 @@ return [
     'Tahar Petrucci:  sport afficionado, hockey player, multitalented in many areas.' => 'Tahar Petrucci : passionné de sport, joueur de hockey, multi-talentueux dans de nombreux domaines.',
     'Sylvestre Galli: sports lover, golfer, and other sport activities, studied business administration at the University of Geneva.' => 'Sylvestre Galli : amateur de sport, golfeur et autres activités sportives, a étudié la gestion d`entreprise à l`Université de Genève.',
 
+
+    
+    'Mission statement' => 'Énoncé de mission',
+    'Connect people between each other through sports and give local access to a diverse community worldwide.' => 'Connectez les gens entre eux grâce au sport et donnez un accès local à une communauté diversifiée dans le monde entier.',
+    'Vision statement' => 'Énoncé de vision',
+    'To give everyone access to sports' => 'Permettre à tous d`accéder au sport',
+    'Slogan' => 'Slogan',
+    'United through sport' => 'Unis par le sport',
     // about us page end
 
 
@@ -585,7 +593,7 @@ return [
 
      'Thnkyou_Order #: 1101' => 'Commander #:',
      'Thnkyou_Thankyou for your order!' => 'Nous vous remercions de votre commande!',
-     'Thnkyou_paragraph' => 'siècles, mais aussi le saut dans la composition électronique, resté essentiellement inchangé. Il a été popularisé dans les années 1960 avec la sortie des feuilles Letraset conta',
+     'Thnkyou_You will shortly receive a confirmation email, with all the details regarding your order. You can also access all the necessary information in your dashboard. Have a great session!' => 'Vous recevrez sous peu un e-mail de confirmation, avec tous les détails concernant votre commande. Vous pouvez également accéder à toutes les informations nécessaires dans votre tableau de bord. Bonne séance !',
      'Thnkyou_Back to Home' => 'De retour à la maison',
 
 

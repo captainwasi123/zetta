@@ -13,7 +13,7 @@ class FavouriteCoach extends Model
 
     public function coach()
     {
-        return $this->belongsTo(activities::class,'coach_id');
+        return $this->belongsTo(User::class,'coach_id');
     }
 
     public function user()

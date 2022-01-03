@@ -574,9 +574,9 @@ $(".fav_coach").click(function (e) {
         data: {},
         success: function (res) {
             if(res.status == 200){
-                $('#'+id).html('<i class="far fa-heart col-purple"></i>');
-            }else if(res.status == 300){
                 $('#'+id).html('<i class="fa fa-heart col-purple"></i>');
+            }else if(res.status == 300){
+                $('#'+id).html('<i class="far fa-heart col-purple"></i>');
             }
             
         }

@@ -47,6 +47,9 @@ class chatController extends Controller
                         ->orderBy('created_at', 'desc')
                         ->get();
 
+
+        chat::where("receiver_id",$sender)->where("sender_id",$receiver)->update(['views' => '1']);
+        
         return view('buddy.messages.chat', ['user' => $user, 'chat' =>$data, 'chat_list' => $data_list]);
     }
 

@@ -3,7 +3,7 @@
 return [
 
 
-    'language'=>'German',
+    'language'=>'Deutsch',
 
     // index page start
     'Home' => 'Zuhause',
@@ -64,6 +64,14 @@ return [
  'Tahar Petrucci:  sport afficionado, hockey player, multitalented in many areas.' => 'Tahar Petrucci: Sportbegeisterter, Hockeyspieler, Multitalent in vielen Bereichen.',
  'Sylvestre Galli: sports lover, golfer, and other sport activities, studied business administration at the University of Geneva.' => 'Sylvestre Galli: Sportliebhaber, Golfer und andere sportliche Aktivitäten, studierte Betriebswirtschaftslehre an der Universität Genf.',
 
+
+    
+    'Mission statement' => 'Leitbild',
+    'Connect people between each other through sports and give local access to a diverse community worldwide.' => 'Verbinde Menschen durch Sport miteinander und ermögliche lokalen Zugang zu einer vielfältigen Community weltweit.',
+    'Vision statement' => 'Vision-Statementn',
+    'To give everyone access to sports' => 'Um allen den Zugang zum Sport zu ermöglichen',
+    'Slogan' => 'Slogan',
+    'United through sport' => 'Vereint durch Sport',
  // about us page end
 
 
@@ -582,7 +590,7 @@ return [
 
      'Thnkyou_Order #:' => 'Befehl #:',
      'Thnkyou_Thankyou for your order!' => 'Vielen Dank für Ihren Auftrag!',
-     'Thnkyou_paragraph' => 'Jahrhunderte, sondern auch der Sprung in den elektronischen Schriftsatz, der im Wesentlichen unverändert blieb. Es wurde in den 1960er Jahren mit der Veröffentlichung von Letraset-Blättern bekannt gemacht',
+     'Thnkyou_You will shortly receive a confirmation email, with all the details regarding your order. You can also access all the necessary information in your dashboard. Have a great session!' => 'Sie erhalten in Kürze eine Bestätigungs-E-Mail mit allen Details zu Ihrer Bestellung. Sie können auch in Ihrem Dashboard auf alle notwendigen Informationen zugreifen. Hab eine tolle Sitzung!',
      'Thnkyou_Back to Home' => 'Zurück nach Hause',
 
 

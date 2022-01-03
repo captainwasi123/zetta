@@ -513,6 +513,26 @@ section.action-bar {
 </section>
 
 
+<section class="how-it-was how-we-do-it">
+    <div class="container custom-container">
+        <div class="row">
+            <div class="col-md-4 howwedoit-text">
+                <h3 class="text-white">{{ __('content.Mission statement')}}</h3>
+                <p class="how-it-was-text text-white">{{ __('content.Connect people between each other through sports and give local access to a diverse community worldwide.')}}</p>
+            </div>
+            <div class="col-md-4 howwedoit-text">
+                <h3 class="text-white">{{ __('content.Vision statement')}}</h3>
+                <p class="how-it-was-text text-white">{{ __('content.To give everyone access to sports')}}</p>
+            </div>
+            <div class="col-md-4 howwedoit-text">
+                <h3 class="text-white">{{ __('content.Slogan')}}</h3>
+                <p class="how-it-was-text text-white">{{ __('content.United through sport')}}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
 
 
 

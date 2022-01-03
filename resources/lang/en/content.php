@@ -66,6 +66,14 @@ return [
     'Tahar Petrucci:  sport afficionado, hockey player, multitalented in many areas.' => 'Tahar Petrucci:  sport afficionado, hockey player, multitalented in many areas.',
     'Sylvestre Galli: sports lover, golfer, and other sport activities, studied business administration at the University of Geneva.' => 'Sylvestre Galli: sports lover, golfer, and other sport activities, studied business administration at the University of Geneva.',
 
+    
+    'Mission statement' => 'Mission statement',
+    'Connect people between each other through sports and give local access to a diverse community worldwide.' => 'Connect people between each other through sports and give local access to a diverse community worldwide.',
+    'Vision statement' => 'Vision statement',
+    'To give everyone access to sports' => 'To give everyone access to sports',
+    'Slogan' => 'Slogan',
+    'United through sport' => 'United through sport',
+
     // about us page end
 
 
@@ -582,7 +590,7 @@ return [
 
      'Thnkyou_Order #:' => 'Order #:',
      'Thnkyou_Thankyou for your order!' => 'Thankyou for your order!',
-     'Thnkyou_paragraph' => 'centuries, but also the leap into electronic typesetting, remaining essentially unchanged. <br>It was popularised in the 1960s with the release of Letraset sheets conta',
+     'Thnkyou_You will shortly receive a confirmation email, with all the details regarding your order. You can also access all the necessary information in your dashboard. Have a great session!' => 'You will shortly receive a confirmation email, with all the details regarding your order. You can also access all the necessary information in your dashboard. Have a great session!',
      'Thnkyou_Back to Home' => 'Back to Home',
 
 

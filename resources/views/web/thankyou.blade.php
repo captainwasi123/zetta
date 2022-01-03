@@ -10,9 +10,7 @@
           <h3>{{ __('content.Thnkyou_Order #:') }} {{$val->id}} </h3>
       @endforeach
      
-      <h1>{{ __('content.Thnkyou_Thankyou for your order!') }}</h1>
-      <p>{{__('content.centuries, but also the leap into electronic typesetting, remaining essentially unchanged')}}. </p>
-      <p>{{__('content.It was popularised in the 1960s with the release of Letraset sheets conta')}} </p>
+      <h1>{{ __('content.Thnkyou_You will shortly receive a confirmation email, with all the details regarding your order. You can also access all the necessary information in your dashboard. Have a great session!')}}. </p>
 
       <center><a href="{{URL::to('/')}}">{{ __('content.Thnkyou_Back to Home') }}</a></center>
    </div>  

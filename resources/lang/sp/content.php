@@ -4,7 +4,7 @@
 return [
     // language
 
-    'language'=>'Spanish',
+    'language'=>'Española',
 
     // index page start
     'Home' => 'Inicio',
@@ -66,6 +66,14 @@ return [
     'Tahar Petrucci:  sport afficionado, hockey player, multitalented in many areas.' => 'Tahar Petrucci: aficionado al deporte, jugador de hockey, polifacético en muchas áreas',
     'Sylvestre Galli: sports lover, golfer, and other sport activities, studied business administration at the University of Geneva.' => 'Sylvestre Galli: amante de los deportes, golfista y otras actividades deportivas, estudió administración de empresas en la Universidad de Ginebra',
 
+    
+    
+    'Mission statement' => 'Estado de la misión',
+    'Connect people between each other through sports and give local access to a diverse community worldwide.' => 'Conecte a las personas entre sí a través de los deportes y brinde acceso local a una comunidad diversa en todo el mundo.',
+    'Vision statement' => 'Declaración de la visión',
+    'To give everyone access to sports' => 'Para que todos tengan acceso a los deportes.',
+    'Slogan' => 'Eslogan',
+    'United through sport' => 'Unidos a través del deporte',
     // about us page end
 
 
@@ -583,7 +591,7 @@ return [
 
      'Thnkyou_Order #:' => 'Pedido #:',
      'Thnkyou_Thankyou for your order!' => '¡Gracias por su orden!',
-     'Thnkyou_paragraph' => 'siglos, sino también el salto a la composición tipográfica electrónica, permaneciendo esencialmente sin cambios. Se popularizó en la década de 1960 con el lanzamiento de las hojas de Letraset conta',
+     'Thnkyou_You will shortly receive a confirmation email, with all the details regarding your order. You can also access all the necessary information in your dashboard. Have a great session!' => 'En breve recibirá un correo electrónico de confirmación con todos los detalles de su pedido. También puede acceder a toda la información necesaria en su panel de control. ¡Que tengas una buena sesión!',
      'Thnkyou_Back to Home' => 'De vuelta a casa',
 
 
