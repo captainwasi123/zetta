@@ -66,6 +66,7 @@
                     <ul aria-expanded="false" class="collapse">
                         <li><a href="{{route('admin.redeem.challenges')}}">Challenges</a></li>
                         <li><a href="{{route('admin.redeem.badges')}}">Badges</a></li>
+                        <li><a href="{{route('admin.redeem.rewards')}}">Rewards</a></li>
                     </ul>
                 </li>
 

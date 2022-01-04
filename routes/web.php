@@ -501,14 +501,16 @@ use Illuminate\Support\Facades\Route;
 								Route::post('add', 'redeemController@badgesInsert')->name('admin.redeem.badges.add');
 								Route::get('delete/{id}', 'redeemController@delete')->name('admin.redeem.badges.delete');
                                 Route::get('badgeEdit/{id}', 'redeemController@badgeEdit')->name('admin.redeem.badges.edit');
-
-								// Route::post('badgesupdate', 'redeemController@badgesupdate')->name('admin.redeem.badges.update');
-
-                                
-
                             });
 
-							
+							Route::prefix('rewards')->group(function(){
+								Route::get('/', 'redeemController@rewards')->name('admin.redeem.rewards');
+								Route::get('add', 'redeemController@rewardsAdd')->name('admin.redeem.rewards.add');
+								Route::post('add', 'redeemController@rewardsInsert');
+
+								Route::get('delete/{id}', 'redeemController@deleteReward')->name('admin.redeem.rewards.delete');
+							});
+
 						});
 
 					//settings

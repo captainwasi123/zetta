@@ -3,7 +3,7 @@
       <div class="user-profile-header">
          <h4> Hi, {{(Auth::user()->fname)}} </h4>
          <h6> {{Auth::user()->email}} </h6>
-         <p> <a href=""> <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/coin-icon.png"> </a> <span> Z COINS <b> 250 </b> </span> <a href="{{route('buddy.favouriteActivity')}}"> <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/heart-icon.png"> </a>  </p>
+         <p> <a href=""> <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/coin-icon.png"> </a> <span> Z COINS <b> {{empty(Auth::user()->wallet->coin) ? 0 : Auth::user()->wallet->coin}} </b> </span> <a href="{{route('buddy.favouriteActivity')}}"> <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/heart-icon.png"> </a>  </p>
       </div>
       <div class="user-profile">
          <div class="profile-img"> <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{Auth::user()->profile_img}}" alt="user" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';"/>

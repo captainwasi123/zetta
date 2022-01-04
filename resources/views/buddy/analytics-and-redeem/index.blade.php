@@ -113,16 +113,24 @@
                       </div>
                    </div>
                    <div class="row m-b-10">
-                      <div class="col-12">
-                         <span class="bonus-tag"> <img src="{{asset('public')}}/admin/assets/images/bonus-tag.jpg"> 100 </span>
-                      </div>
-                   </div>
-                   <div class="row">
-                      <div class="col-md-3 col-lg-3 col-sm-3 col-6">
-                         <div class="badge-box">
-                            <img src="{{asset('public')}}/admin/assets/images/badge1.jpg">
+                     @foreach($rewards as $val)
+                         <div class="col-md-3 col-lg-3 col-sm-3 col-6">
+                           <a href="javascript:void(0)" class="convertCoins" data-id="{{base64_encode($val->id)}}">
+                            <div class="badge-box">
+                               <img src="{{asset('public')}}/admin/assets/images/badge1.jpg">
+                               <div class="details">
+                                 <label class="reward">
+                                    <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/bonus-tag.png">
+                                    {{$val->cost}}
+                                 </label>
+                                 <label class="deadline">
+                                    <strong>$ {{$val->reward}}&nbsp;&nbsp;</strong>
+                                 </label>
+                               </div>
+                            </div>
+                           </a>
                          </div>
-                      </div>
+                     @endforeach
                    </div>
                 </div>
              </div>
@@ -131,4 +139,12 @@
     </div>
  </div>
 
+@endsection
+@section('addScript')
+   <script type="text/javascript">
+      $(document).ready(function(){
+
+         var id = $(this).data('id');
+      });
+   </script>
 @endsection

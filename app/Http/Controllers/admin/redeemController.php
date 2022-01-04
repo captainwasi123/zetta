@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\redeemChallenges;
 use App\Models\redeemBadges;
+use App\Models\redeemReward;
 use Helper;
 
 class redeemController extends Controller
@@ -84,8 +85,33 @@ class redeemController extends Controller
         }
 
 
-        
+      
+    //Rewards
+        function rewards(){
+            $data = redeemReward::latest()->get();
 
+            return view('admin.redeem.rewards.index', ['data' => $data]);
+        }
+        function rewardsAdd(){
+
+            return view('admin.redeem.rewards.add');
+        }
+
+        function rewardsInsert(Request $request){
+            $data = $request->all();
+
+            redeemReward::addRewards($data);
+
+            return redirect()->back()->with('success', 'Reward Created.');
+        }  
+
+        function deleteReward($id){
+            $id = base64_decode($id);
+
+            redeemReward::destroy($id);
+            return redirect()->back()->with('success', 'Reward Deleted.');
+
+        }
        
     
 
