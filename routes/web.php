@@ -47,6 +47,8 @@ use Illuminate\Support\Facades\Route;
 				Route::post('checkout', 'cartController@checkout')->name('web.checkout');
 			});
 
+			Route::get('getCoupon/{val}', 'cartController@getCoupon');
+
 			// languages
 			Route::get('/lang/{lang}', 'webController@changeLang' );
 			
@@ -188,16 +190,16 @@ use Illuminate\Support\Facades\Route;
 					});
 
 				//Category
-					Route::prefix('category')->group(function(){
+					Route::prefix('sports')->group(function(){
 
-						Route::get('/', 'categoryController@index')->name('coach.category');
-						Route::get('/add', 'categoryController@add')->name('coach.category.add');
+						Route::get('/', 'categoryController@index')->name('coach.sports');
+						Route::get('/add', 'categoryController@add')->name('coach.sports.add');
 						Route::post('/add', 'categoryController@insert');
 
-						Route::get('/edit/{id}', 'categoryController@edit')->name('coach.category.edit');
-						Route::post('/update', 'categoryController@update')->name('coach.category.update');
+						Route::get('/edit/{id}', 'categoryController@edit')->name('coach.sports.edit');
+						Route::post('/update', 'categoryController@update')->name('coach.sports.update');
 
-						Route::get('/delete/{id}', 'categoryController@delete')->name('coach.category.delete');
+						Route::get('/delete/{id}', 'categoryController@delete')->name('coach.sports.delete');
 					});
 
 				//Equipment
@@ -328,16 +330,16 @@ use Illuminate\Support\Facades\Route;
 					});
 
 				//Category
-					Route::prefix('category')->group(function(){
+					Route::prefix('sports')->group(function(){
 
-						Route::get('/', 'categoryController@index')->name('buddy.category');
-						Route::get('/add', 'categoryController@add')->name('buddy.category.add');
+						Route::get('/', 'categoryController@index')->name('buddy.sports');
+						Route::get('/add', 'categoryController@add')->name('buddy.sports.add');
 						Route::post('/add', 'categoryController@insert');
 
-						Route::get('/edit/{id}', 'categoryController@edit')->name('buddy.category.edit');
-						Route::post('/update', 'categoryController@update')->name('buddy.category.update');
+						Route::get('/edit/{id}', 'categoryController@edit')->name('buddy.sports.edit');
+						Route::post('/update', 'categoryController@update')->name('buddy.sports.update');
 
-						Route::get('/delete/{id}', 'categoryController@delete')->name('buddy.category.delete');
+						Route::get('/delete/{id}', 'categoryController@delete')->name('buddy.sports.delete');
 					});
 
 				//Equipment
@@ -412,6 +414,11 @@ use Illuminate\Support\Facades\Route;
 				//Analytics and Redeem
 					Route::prefix('analytics-and-redeem')->group(function(){
         		        Route::get('/', 'redeemController@index')->name('buddy.analytics_and_redeem');
+
+        		        Route::prefix('reward')->group(function(){
+
+        		        	Route::get('convert/{id}', 'redeemController@convertReward');
+        		        });
 					});
 
 				Route::get('lesson/favourite', 'CoachController@lesson_favourite')->name('coach.lesson.favourite');

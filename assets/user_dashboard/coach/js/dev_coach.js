@@ -86,6 +86,27 @@ $(document).ready(function(){
         });
     });
 
+    $(document).on('click', '.deleteItem', function(){
+        var href = $(this).data('href');
+        swal.fire({
+            title: "Are you sure?",
+            text: "You will not be able to recover this record.",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "Yes, Delete it!",
+            cancelButtonText: "No, Cancel!",
+            closeOnConfirm: false,
+            closeOnCancel: false
+        }).then((result) => {
+           if (result.isConfirmed) {
+               window.location.href = href;
+           }else{
+            swal.close()
+           }
+         });
+      });
+
     
 var kerywordss = [
                      'Ski',
@@ -315,42 +336,3 @@ var kerywordss = [
         }
     });
 });
-
-!function($) {
-    "use strict";
-
-    var SweetAlert = function() {};
-
-    //examples
-    SweetAlert.prototype.init = function() {
-
-      $(document).on('click', '.deleteItem', function(){
-        var href = $(this).data('href');
-        swal({
-            title: "Are you sure?",
-            text: "You will not be able to recover this record.",
-            type: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#DD6B55",
-            confirmButtonText: "Yes, Delete it!",
-            cancelButtonText: "No, Cancel!",
-            closeOnConfirm: false,
-            closeOnCancel: false
-        }, function(isConfirm){
-            if (isConfirm) {
-                window.location.href = href;
-            } else {
-                swal("Cancelled", "Your record is safe :)", "error");
-            }
-        });
-      });
-    },
-    //init
-    $.SweetAlert = new SweetAlert, $.SweetAlert.Constructor = SweetAlert
-}(window.jQuery),
-
-//initializing
-function($) {
-    "use strict";
-    $.SweetAlert.init()
-}(window.jQuery);

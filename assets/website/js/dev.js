@@ -73,6 +73,31 @@ $(document).ready(function(){
         });
     });
 
+    $(document).on('keyup', '#couponField', function(){
+        var val = $(this).val();
+        var ele = $(this);
+        var total = parseFloat($('#totalPrice').val());
+        $.getJSON( host+'/getCoupon/'+val, function(data) {
+            if(data.status == 100){
+                $('#discountTray').css({display: 'none'});
+                $('#finalTray').css({display: 'none'});
+                ele.css({borderColor: '#ff4141', boxShadow: '0 0 0 0.2rem rgb(255 0 0 / 25%)'});
+            }else if(data.status == 200){
+                $('#discountTray').css({display: 'none'});
+                $('#finalTray').css({display: 'none'});
+                ele.css({borderColor: '#ff4141', boxShadow: '0 0 0 0.2rem rgb(255 0 0 / 25%)'});
+            }else{
+                ele.css({borderColor: 'rgb(65 255 167)', boxShadow: 'rgb(0 173 255 / 25%) 0px 0px 0px 0.2rem'});
+                $('#discountTray').css({display: 'revert'});
+                $('#discountTrayValue').html('- $'+data.price);
+                $('#finalTray').css({display: 'revert'});
+                $('#finalTrayValue').html('$'+(total-data.price));
+            }
+        });
+    });
+
+    
+
  });
 
 

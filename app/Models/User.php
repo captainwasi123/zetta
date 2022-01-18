@@ -23,6 +23,7 @@ use App\Models\FavouriteLesson;
 use App\Models\friends;
 use App\Models\userLevel;
 use App\Models\reviews;
+use App\Models\coupons;
 use Auth;
 
 class User extends Authenticatable
@@ -80,6 +81,9 @@ class User extends Authenticatable
     }
     public function level(){
         return $this->belongsTo(userLevel::class, 'level_status');
+    }
+    public function coupons(){
+        return $this->hasMany(coupons::class, 'user_id', 'id')->orderBy('status');
     }
 
     public function reviews(){

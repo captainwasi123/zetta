@@ -80,7 +80,7 @@
                      <tbody>
 
                         <tr>
-                           <th colspan="2">
+                           <th colspan="3">
                               <h5 class="col-white"> Equipment:</h5>
                               <label class="custom-control custom-radio col-white" >
                                  <input id="radio1" name="with_without_equipment" type="radio" value="2" class="custom-control-input" checked>
@@ -94,26 +94,46 @@
                           </th>
                         </tr>
                         <tr>
-                           <th class="col-white" style="width: 70%;"> Quantity </th>
+                           <th class="col-white" style="width: 50%;"> Quantity </th>
+                           <th></th>
                            <th>
                               <input type="number" name="qty" class="form-control" value="1" required>
                            </th>
                         </tr>
                         <tr>
-                           <th class="col-white"> Amount </th>
+                           <th class="col-white" style="width: 50%;"> Coupon </th>
+                           <th colspan="2">
+                              <input type="text" name="coupon" id="couponField" class="form-control">
+                           </th>
+                        </tr>
+                        <tr>
+                           <th class="col-white" colspan="2"> Amount </th>
+                           @php $totalPrice = 0; @endphp
                            @if ($price != null)
+                           @php $totalPrice = $price; @endphp
                            <th class="col-purple text-right"> {{'$'.number_format($price)}} </th>
                            @else
                             @if (!empty($data->packages[$pack]->price))
+                              @php $totalPrice = $data->packages[$pack]->price; @endphp
                             <th class="col-purple text-right"> {{'$'.number_format($data->packages[$pack]->price)}} </th>
                             @else
                             <th class="col-purple text-right"> Free </th>
                             @endif
                            @endif
                         </tr>
+                        <tr id="discountTray">
+                           <th class="col-white" style="width: 50%;"> Discount </th>
+                           <th></th>
+                           <th class="col-purple text-right" id="discountTrayValue">  </th>
+                        </tr>
+                        <tr id="finalTray">
+                           <th class="col-white" style="width: 50%;"> Final Amount </th>
+                           <th></th>
+                           <th class="col-purple text-right" id="finalTrayValue">  </th>
+                        </tr>
                         @if($type == 'lesson' && $data->participants == 0)
                            <tr>
-                              <th colspan="2" class="col-white">
+                              <th colspan="3" class="col-white">
                                  <hr class="hr-white"> 
                               </th>
                            </tr>
@@ -121,7 +141,7 @@
                               <th class="col-white">
                                  Booking Date
                               </th>
-                              <th class="col-white">
+                              <th class="col-white" colspan="3">
                                  <input type="text" class="form-control form-dark" placeholder="Select" id="datepicker" name="booking_date" required>
                               </th>
                            </tr>
@@ -129,7 +149,7 @@
                               <th class="col-white">
                                  Booking Time
                               </th>
-                              <th class="col-white">
+                              <th class="col-white" colspan="3">
                                  <select class="form-control form-dark bookingTime" name="booking_time" required>
                                     <option value="">Select</option>
                                  </select>
@@ -138,7 +158,8 @@
                         @endif
                         
                         <tr>
-                           <td colspan="2" class="text-center no-border">
+                           <td colspan="3" class="text-center no-border">
+                              <input type="hidden" name="total_price" id="totalPrice" value="{{$totalPrice}}">
                               <button class="custom-btn1 bg-purple col-white rounded block-element2 m-t-10"> {{ __('content.Continue to Checkout') }}
                               </button>
                               <p class="col-white m-t-10 m-b-0">{{ __('content.Slogan') }} {{ __('content.You won`t be charged yet') }}  </p>

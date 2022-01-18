@@ -89,6 +89,26 @@ $(document).ready(function(){
         }
     });
 
+    $(document).on('click', '.deleteItem', function(){
+        var href = $(this).data('href');
+        swal.fire({
+            title: "Are you sure?",
+            text: "You will not be able to recover this record.",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "Yes, Delete it!",
+            cancelButtonText: "No, Cancel!",
+            closeOnConfirm: false,
+            closeOnCancel: false
+        }).then((result) => {
+           if (result.isConfirmed) {
+               window.location.href = href;
+           }else{
+            swal.close()
+           }
+         });
+      });
 
 
     

@@ -764,3 +764,9 @@ padding: 9px 30px !important;
 .newRequest-modal .modal-content {
     padding: 12px 15px;
 }
+.sportsItem{
+    display: none;
+}
+#loadmore {
+    color: #994afe !important;
+}

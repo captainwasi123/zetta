@@ -47,16 +47,12 @@
                      </a>
                   </div>
                </div>
+               <div class="col-2">
+               </div>
                <div class="col-3">
                   <div class="activity_category">
                      <img src="{{URL::to('/public/storage/settings/sports/'.$data->sports->image)}}">
                      <label>{{$data->sports->name}}</label>
-                  </div>
-               </div>
-               <div class="col-2">
-                  <div class="activity_category">
-                     <img src="{{URL::to('/public/storage/settings/category/'.$data->category->image)}}">
-                     <label>{{$data->category->name}}</label>
                   </div>
                </div>
             </div>

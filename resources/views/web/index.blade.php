@@ -103,8 +103,8 @@
                @endforeach
             </div>
             @if(count($uactivities) == 0)
-               <div class="sec-head1 m-t-20">
-                  <h5 class="col-gray gotham-bold text-center m-b-20">  {{ __('content.No Gigs Found.') }} </h5>
+               <div class="sec-head1 text-center m-t-20">
+                  <a href="{{route('buddy.activity.add')}}" class="gotham-bold btn btn-default">{{ __('content.Create an Activity') }}</a>
                </div>
             @endif
          </div>

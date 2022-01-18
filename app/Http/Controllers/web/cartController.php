@@ -10,6 +10,7 @@ use App\Models\activity\activities;
 use App\Models\ActivityOrders;
 use App\Models\saleSetting;
 use App\Models\userEquipment;
+use App\Models\coupons;
 use Auth;
 use App\Models\User;
 use App\Models\availability\holidays;
@@ -100,21 +101,34 @@ class cartController extends Controller
         $pack = base64_decode($data['pack_id']);
         $type = base64_decode($data['type']);
         $saleSetting = saleSetting::first();
+        $coupon = coupons::where('coupon', $data['coupon'])->where('status', '1')->first();
+        $coup = array('status' => '0', 'price' => 0);
+        if(!empty($coupon->id)){
+            $coup['status'] = '1';
+            $coup['price'] = $coupon->price;
+
+            $coupon->status = '2';
+            $coupon->save();
+        }
         $priceDed = 0;
         if($type == 'lesson'){
             $lesson = lessons::find($lid);
+            $oprice = $coup['status'] == '1' ? (($lesson->packages[$pack]->price*$_POST['qty'])-$coup['price']) :  $lesson->packages[$pack]->price*$_POST['qty'];
+            $ocomission = (($oprice*$_POST['qty'])/100)*$saleSetting->commision;
             $odata = array(
                 'lesson_id' => $lid,
                 'seller_id' => $lesson->user_id,
                 'plan' => $pack,
-                'price' => $lesson->packages[$pack]->price*$_POST['qty'],
+                'price' => $oprice,
                 'qty' => $_POST['qty'],
-                'commision' =>  (($lesson->packages[$pack]->price*$_POST['qty'])/100)*$saleSetting->commision,
-                'earning' => ($lesson->packages[$pack]->price*$_POST['qty'] - (($lesson->packages[$pack]->price*$_POST['qty'])/100)*$saleSetting->commision),
+                'coupon' => $coup,
+                'commision' => $ocomission,
+                'earning' => $oprice-$ocomission,
                 'booking_date' => empty($data['booking_date']) ? null : date('Y-m-d', strtotime($data['booking_date'])),
                 'booking_time' => empty($data['booking_time']) ? null : date('H:i:s', strtotime($data['booking_time'])),
             );
 
+            //dd($odata);
             $priceDed = $odata['price'];
             $oid = lessonOrders::newOrder($odata);
             
@@ -141,13 +155,17 @@ class cartController extends Controller
                 }
             }
 
+            $oprice = $coup['status'] == '1' ? ($price-$coup['price']) :  $price;
+            $ocomission = ($oprice/100)*$saleSetting->commision;
+
             $odata = array(
                 'activity_id' => $aid,
                 'seller_id' => $act->user_id,
-                'price' => $price,
+                'price' => $oprice,
                 'qty' => $_POST['qty'],
-                'commision' =>  ($price/100)*$saleSetting->commision,
-                'earning' => ($price - ($price/100)*$saleSetting->commision),
+                'coupon' => $coup,
+                'commision' =>  $ocomission,
+                'earning' => $price-$ocomission,
                 'with_without_equipment' => $data['with_without_equipment']
             );
 
@@ -235,5 +253,18 @@ class cartController extends Controller
             $select = '<option value="">No Slots Available</option>';
         }
         return $select;
+    }
+
+    public function getCoupon($val){
+        $data = coupons::where('coupon', $val)->first();
+        if(empty($data->id)){
+            return json_encode(['status' => 100, 'message' => 'Invalid Coupon.']);
+        }else{
+            if($data->status == '1'){
+                return json_encode(['status' => 300, 'message' => 'Valid Coupon.', 'price' => $data->price]);
+            }else{
+                return json_encode(['status' => 200, 'message' => 'Coupon already used.']);
+            }
+        }
     }
 }

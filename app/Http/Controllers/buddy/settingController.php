@@ -13,6 +13,7 @@ use App\Models\userEducation;
 use App\Models\userCertificate;
 use App\Models\userCategorySelect;
 use App\Models\sportsCategory;
+use App\Models\sports;
 
 class settingController extends Controller
 {
@@ -24,8 +25,8 @@ class settingController extends Controller
         $data = array(
             'countries' => country::all(),
             'languages' => Language::orderBy('name')->get(),
-            'categories' => sportsCategory::orderBy('name')->get(),
-            'userCategories' => userCategorySelect::orderBy('id', 'desc')->get(),
+            'sports' => sports::orderBy('name')->get(),
+            'userSports' => userCategorySelect::orderBy('id', 'desc')->get(),
         );
         return view('buddy.my_account.index')->with($data);
     }

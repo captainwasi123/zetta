@@ -27,13 +27,13 @@
                      <li>
                         <a href="{{route('coach.dashboard')}}" >
                            <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/nav-icon1.png">
-                           <span class="hide-menu">  Dashboard </span>
+                           <span class="hide-menu">&nbsp;&nbsp;Dashboard </span>
                         </a>
                      </li>
                      <li>
-                        <a href="{{route('coach.category')}}" >
+                        <a href="{{route('coach.sports')}}" >
                            <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/nav-icon2.png">
-                           <span class="hide-menu">   Sports Category </span>
+                           <span class="hide-menu">&nbsp;Sports </span>
                         </a>
                      </li>
                      <li>
@@ -45,31 +45,31 @@
                      <li>
                         <a href="{{route('coach.equipment')}}" >
                            <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/nav-icon4.png">
-                           <span class="hide-menu">  Equipment </span>
+                           <span class="hide-menu">  &nbsp;Equipment </span>
                         </a>
                      </li>
                      <li>
                         <a href="{{route('coach.availability')}}" >
                            <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/nav-icon5.png">
-                           <span class="hide-menu">   Availability Slots </span>
+                           <span class="hide-menu">   &nbsp;Availability Slots </span>
                         </a>
                      </li>
                      <li>
                         <a href="{{route('coach.orders')}}" >
                            <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/nav-icon6.png">
-                           <span class="hide-menu">  Orders  </span>
+                           <span class="hide-menu">  &nbsp;Orders  </span>
                         </a>
                      </li>
                      <li> 
                         <a href="{{route('coach.my_account_area')}}"> 
                            <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/nav-icon7.png"> 
-                           <span class="hide-menu">   My Account Area </span>  
+                           <span class="hide-menu">   &nbsp;My Account Area </span>  
                         </a> 
                      </li>
                      <li>
                         <a href="{{route('coach.my_wallet')}}" >
                            <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/nav-icon8.png">
-                           <span class="hide-menu">   Wallet </span>
+                           <span class="hide-menu">   &nbsp;Wallet </span>
                         </a>
                      </li>
                   </ul>
@@ -121,9 +121,9 @@
                         </a>
                      </li>
                      <li>
-                        <a href="{{route('coach.category')}}" >
+                        <a href="{{route('coach.sports')}}" >
                            <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/nav-icon2.png">
-                           <span class="hide-menu">   Sports Category </span>
+                           <span class="hide-menu">   Sports</span>
                         </a>
                      </li>
                      <li>

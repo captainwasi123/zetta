@@ -1,5 +1,5 @@
 @extends('admin.includes.master')
-@section('title', 'Sports Categories Requests | Settings')
+@section('title', 'Sports Requests | Settings')
 @section('content')
 
 <div class="row">
@@ -19,7 +19,7 @@
                         <thead>
                             <tr>
                                 <th width="10%">S#</th>
-                                <th width="55%">Category Name</th>
+                                <th width="55%">Sports Name</th>
                                 <th>Request By</th>
                                 <th width="15%"></th>
                             </tr>
@@ -45,6 +45,11 @@
                                 </tr>
                                 @php $s++; @endphp
                             @endforeach
+                            @if(count($data) == 0)
+                                <tr>
+                                    <td colspan="4">No Requests Found.</td>
+                                </tr>
+                            @endif
                         </tbody>
                     </table>
                 </div>

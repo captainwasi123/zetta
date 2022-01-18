@@ -110,6 +110,7 @@
                    <div class="row m-t-30 m-b-20">
                       <div class="col-12">
                          <span class="inform-box1"> <i class="fa fa-info"> </i> Complete Challenge to collect More Rewards  </span>
+                         <button type="button" data-toggle="modal" data-target=".couponModal" class="btn btn-primary pull-right">Coupon History</button>
                       </div>
                    </div>
                    <div class="row m-b-10">
@@ -139,12 +140,95 @@
     </div>
  </div>
 
+
+ <div class="modal fade couponModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+   <div class="modal-dialog">
+      <div class="modal-content">
+           <div class="modal-header">
+               <h4 class="modal-title" id="myModalLabel">Coupons History</h4>
+               <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+           </div>
+           <div class="modal-body">
+               <div class="row">
+                  <div class="col-md-12">
+                     <table class="table">
+                        <thead>
+                           <tr>
+                              <th>#</th>
+                              <th>Coupon Code</th>
+                              <th>Status</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           @foreach(Auth::user()->coupons as $key => $val)
+                              <tr>
+                                 <td>{{++$key}}</td>
+                                 <td>{{$val->coupon}}</td>
+                                 <td>
+                                    @switch($val->status)
+                                       @case('1')
+                                          <label class="badge badge-info">Available</label>
+                                          @break
+
+                                       @case('2')
+                                          <label class="badge badge-warning">Used</label>
+                                          @break
+                                    @endswitch
+                                 </td>
+                              </tr>
+                           @endforeach
+                           <tr>
+                        </tbody>
+                     </table>
+                  </div>
+               </div>
+               <br>
+           </div>
+      </div>
+      <!-- /.modal-content -->
+   </div>
+   <!-- /.modal-dialog -->
+</div>
+
 @endsection
 @section('addScript')
    <script type="text/javascript">
       $(document).ready(function(){
 
-         var id = $(this).data('id');
+         $(document).on('click', '.convertCoins', function(){
+            var id = $(this).data('id');
+            Swal.fire({
+              title: 'Are you sure?',
+              text: "You want to convert your coins to Coupon!",
+              icon: 'warning',
+              showCancelButton: true,
+              confirmButtonColor: '#3085d6',
+              cancelButtonColor: '#d33',
+              confirmButtonText: 'Yes, Convert it!'
+            }).then((result) => {
+              if (result.isConfirmed) {
+                  $.getJSON("{{URL::to('/buddy/analytics-and-redeem/reward/convert/')}}/"+id, function(data){
+                     if(data.status == 200){
+                        Swal.fire({
+                          icon: 'error',
+                          title: 'Oops...',
+                          text: 'Insufficient coin balance!'
+                        });
+                     }else if(data.status == 300){
+                        $('#buddyCoins').html(' '+data.balance+' ');
+                        Swal.fire({
+                          icon: 'success',
+                          title: 'Coupon#: '+data.coupon,
+                          text: 'Coupon Successfully Generated.'
+                        });
+                     }
+                  });
+              }else{
+               Swal.close();
+              }
+            });
+         });
+         
       });
    </script>
 @endsection

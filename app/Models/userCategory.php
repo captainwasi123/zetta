@@ -16,7 +16,7 @@ class userCategory extends Model
     public static function addCategory(array $data){
         $c = new userCategory;
         $c->user_id = Auth::id();
-        $c->name = $data['category'];
+        $c->name = $data['sports'];
         $c->save();
     }
 

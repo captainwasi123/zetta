@@ -4,7 +4,11 @@
     margin-top: 12px;
     margin-right: -5px;
 }
-
+.btn-default {
+    color: #fff;
+    background-color: #9948fe;
+    border-color: #6f00f9;
+}
 .activity_category label {
     color: #fff;
     font-weight: 600;
@@ -804,3 +808,12 @@ header.header-1 {
 }*/
     /*----contact page end----*/
 
+
+.summary-box .form-control {
+    background-color: transparent;
+    color: #fff;
+    border-radius: 0;
+}
+#discountTray, #finalTray{
+    display: none;
+}

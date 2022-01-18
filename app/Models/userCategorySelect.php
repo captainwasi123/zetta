@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Auth;
 use App\Models\User;
-use App\Models\sportsCategory;
+use App\Models\sports;
 
 class userCategorySelect extends Model
 {
@@ -26,7 +26,7 @@ class userCategorySelect extends Model
         return $this->belongsTo(User::class, 'user_id');
     }
 
-    public function cat(){
-        return $this->belongsTo(sportsCategory::class, 'cat_id');
+    public function sports(){
+        return $this->belongsTo(sports::class, 'cat_id');
     }
 }
