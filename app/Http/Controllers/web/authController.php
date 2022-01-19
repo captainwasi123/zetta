@@ -7,32 +7,42 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\userFavorite;
 use Auth;
+use Mail;
 
 class authController extends Controller
 {
 
     function register(Request $request){
     	$data = $request->all();
-    	if(empty($data['password'])){
-	    	$user = User::where('email', $data['email'])->count();
-	    	if($user != '0'){
-	    		return 'exist';
-	    	}else{
-	    		return $data;
-	    	}
-	    }else{
-	    	if($data['password'] != $data['confirmation_password']){
-	    		return 'nomatch';
-	    	}else{
-                if(strlen($data['password']) < 6){
-                    return 'strong';
-                }else{
-    	    		$id = User::addUser($data);
-                    Auth::loginUsingId($id);
-    	    		return 'success';
-                }
-	    	}
-	    }
+        if(empty($data['user_dob']) || empty($data['username']) || empty($data['email']) || empty($data['password'])){
+            return 'nodob';
+        }else{
+        	if(empty($data['password'])){
+    	    	$user = User::where('email', $data['email'])->count();
+    	    	if($user != '0'){
+    	    		return 'exist';
+    	    	}else{
+    	    		return $data;
+    	    	}
+    	    }else{
+    	    	if($data['password'] != $data['confirmation_password']){
+    	    		return 'nomatch';
+    	    	}else{
+                    if(strlen($data['password']) < 6){
+                        return 'strong';
+                    }else{
+        	    		$id = User::addUser($data);
+                        //Auth::loginUsingId($id);
+
+                        Mail::send('email.activation', $data, function($message) use ($data)  {
+                            $message->to($data['email'])->subject("Activate your new account");
+                            $message->from("noreply@zettaa.com", 'Zettaa');
+                        });
+        	    		return 'success';
+                    }
+    	    	}
+    	    }
+        }
     }
 
     function login(Request $request){

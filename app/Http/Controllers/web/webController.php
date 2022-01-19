@@ -59,7 +59,7 @@ class webController extends Controller
                                                     'add' => $add == 'all' ? '' : $add
                                                 ),
                             'sCategories' => Auth::check() ? userCategorySelect::where('user_id', Auth::id())->get() : sportsCategory::all());
-
+            
             $data['sCategories'] = count($data['sCategories']) == 0 ? sportsCategory::all() : $data['sCategories'];
 
 

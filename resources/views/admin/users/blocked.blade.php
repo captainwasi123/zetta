@@ -22,6 +22,7 @@
                                 <th>Name</th>
                                 <th>Email</th>
                                 <th>Gender</th>
+                                <th>Age</th>
                                 <th>Country</th>
                                 <th>Lessons</th>
                                 <th>Activities</th>
@@ -36,7 +37,8 @@
                                     <td>{{$val->fname.' '.$val->lname}}</td>
                                     <td>{{$val->email}}</td>
                                     <td>{{$val->gender}}</td>
-                                    <td>{{$val->country->nicename}}</td>
+                                    <td>{{empty($val->dob) ? '' : floor((time() - strtotime($val->dob)) / 31556926).' y'}}</td>
+                                    <td>{{@$val->country->nicename}}</td>
                                     <td>{{count($val->lessons)}}</td>
                                     <td>{{count($val->activities)}}</td>
                                     <td>{{date('d-M-Y h:i a', strtotime($val->created_at))}}

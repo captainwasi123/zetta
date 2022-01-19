@@ -22,6 +22,7 @@
                                 <th>Name</th>
                                 <th>Email</th>
                                 <th>Gender</th>
+                                <th>Age</th>
                                 <th>Country</th>
                                 <th>SignUp at</th>
                                 <th>Attachment</th>
@@ -35,7 +36,8 @@
                                     <td>{{$val->fname.' '.$val->lname}}</td>
                                     <td>{{$val->email}}</td>
                                     <td>{{$val->gender}}</td>
-                                    <td>{{$val->country->nicename}}</td>
+                                    <td>{{empty($val->dob) ? '' : floor((time() - strtotime($val->dob)) / 31556926).' y'}}</td>
+                                    <td>{{@$val->country->nicename}}</td>
                                     <td>{{date('d-M-Y h:i a', strtotime($val->created_at))}}</td>
                                     <td><a href="{{URL::to('/public/storage/user/add_proof/'.$val->add_proof_doc)}}" download="ID Proof - {{$val->fname.' '.$val->lname}}"><span class="fa fa-download"></span> Download</a></td>
                                     <td>
@@ -48,6 +50,11 @@
                                     </td>
                                 </tr>
                             @endforeach
+                            @if(count($data) == 0)
+                                <tr>
+                                    <td colspan="9">No Users Found.</td>
+                                </tr>
+                            @endif
                         </tbody>
                     </table>
                 </div>

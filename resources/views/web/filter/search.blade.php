@@ -41,7 +41,7 @@
    <section class="pad-top-40 bg-dark2">
       <div class="container">
          <div class="sec-head1 m-b-25">
-            <h4 class="gotham-bold col-white"> <small>{{ __('content.Results for')}}</small> "<span id="searchLabel">{{@$search_data['val']}}</span> | {{@$search_data['type']}}" </h4>
+            <h4 class="gotham-bold col-white"> <small>{{ __('content.Results for')}}</small> "<span id="searchLabel">{{@$search_data['val']}}</span> | {{@$search_data['add']}}" </h4>
          </div>
       </div>
    </section>

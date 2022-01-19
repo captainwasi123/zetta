@@ -68,8 +68,9 @@ class User extends Authenticatable
         $u->email = $data['email'];
         $u->password = bcrypt($data['password']);
         $u->source = '1';
-        $u->status = '1';
+        $u->status = '5';
         $u->type   = $data['user_type'];
+        $u->dob   = $data['user_dob'];
         $u->save();
 
         return $u->id;

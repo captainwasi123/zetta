@@ -22,6 +22,7 @@
                                 <th>Name</th>
                                 <th>Email</th>
                                 <th>Gender</th>
+                                <th>Age</th>
                                 <th>Country</th>
                                 <th>Answers</th>
                                 <th>Action</th>
@@ -34,6 +35,7 @@
                                     <td>{{@$val->user->fname.' '.@$val->user->lname}}</td>
                                     <td>{{@$val->user->email}}</td>
                                     <td>{{@$val->user->gender}}</td>
+                                    <td>{{empty($val->user->dob) ? '' : floor((time() - strtotime($val->user->dob)) / 31556926).' y'}}</td>
                                     <td>{{@$val->user->country->nicename}}</td>
                                     <td>
                                         <a href="javascript:void(0)" data-toggle="tooltip" data-original-title="Answers"
@@ -49,6 +51,11 @@
                                     </td>
                                 </tr>
                             @endforeach
+                            @if(count($data) == 0)
+                                <tr>
+                                    <td colspan="8">No Users Found.</td>
+                                </tr>
+                            @endif
                         </tbody>
                     </table>
                 </div>

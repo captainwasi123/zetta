@@ -386,16 +386,9 @@ $(document).ready(function(){
                   }else if(data == 'strong'){
                       $('#r_error_buddy').html('Password password is weak.');
                       $('#r_error_buddy').css({display: 'block'});
-                  }else{
-                      $('#r_social_buddy').remove();
-                      $('#r_error_buddy').css({display: 'none'});
-                      $('.email').prop('readonly',true);
-                      var elements = '<input type="text" name="username" placeholder="Username" required>';
-                      elements    += '<input type="password" placeholder="New Password" name="password" required>';
-                      elements        += '<input type="password" placeholder="Confirm Password" name="confirmation_password" required>';
-                      elements        += '<input type="hidden" class="radio-button" name="user_type" id="userTypeRegister"> ';
-                      elements        += '<button type="button" class="signUpStep2buddy halfContinue"> Continue as Sport Buddy </button> <button type="button" class="signUpStep2coach halfContinue"> Continue as Coach  </button>';
-                      $('#r_fields_buddy').html(elements);
+                  }else if(data == 'nodob'){
+                      $('#r_error_buddy').html('Please fill all fields.');
+                      $('#r_error_buddy').css({display: 'block'});
                   }
               })
               .fail(function(error) {
@@ -435,16 +428,9 @@ $(document).ready(function(){
                   }else if(data == 'strong'){
                       $('#r_error_buddy').html('Password password is weak.');
                       $('#r_error_buddy').css({display: 'block'});
-                  }else{
-                      $('#r_social_buddy').remove();
-                      $('#r_error_buddy').css({display: 'none'});
-                      $('.email').prop('readonly',true);
-                      var elements = '<input type="text" name="username" placeholder="Username" required>';
-                      elements    += '<input type="password" placeholder="New Password" name="password" required>';
-                      elements        += '<input type="password" placeholder="Confirm Password" name="confirmation_password" required>';
-                      elements        += '<input type="hidden" class="radio-button" name="user_type" id="userTypeRegister"> ';
-                      elements        += '<button type="button" class="signUpStep2buddy halfContinue"> Continue as Sport Buddy </button> <button type="button" class="signUpStep2coach halfContinue"> Continue as Coach  </button>';
-                      $('#r_fields_buddy').html(elements);
+                  }else if(data == 'nodob'){
+                      $('#r_error_buddy').html('Please fill all fields.');
+                      $('#r_error_buddy').css({display: 'block'});
                   }
               })
               .fail(function(error) {
@@ -461,7 +447,6 @@ $(document).ready(function(){
 
     
 $( "#register-form-buddy" ).submit(function( event ) {
-console.log('abc');
   // Stop form from submitting normally
   event.preventDefault();
 
@@ -491,6 +476,7 @@ console.log('abc');
                   var elements = '<input type="text" name="username" placeholder="Username" required>';
                   elements    += '<input type="password" placeholder="New Password" name="password" required>';
                   elements        += '<input type="password" placeholder="Confirm Password" name="confirmation_password" required>';
+                  elements        += '<label>Date of Birth</label><input type="date" class="form-control" name="user_dob" required> ';
                   elements        += '<input type="hidden" class="radio-button" name="user_type" id="userTypeRegister"> ';
                   elements        += '<p style="display:flex;"><input type="checkbox" name="terms" id="signUpTerms">&nbsp;&nbsp; <label for="signUpTerms">I agree to <a href="'+host+'/terms" target="_blank">Terms & Conditions</a></label></p>';
                   elements        += '<button type="button" class="signUpStep2buddy halfContinue"> Continue as Sport Buddy </button> <button type="button" class="signUpStep2coach halfContinue"> Continue as Coach  </button>';
