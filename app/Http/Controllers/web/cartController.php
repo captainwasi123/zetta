@@ -17,6 +17,8 @@ use App\Models\availability\holidays;
 use App\Models\availability\slots;
 use Stripe;
 use StripeClient;
+use Mail;
+
 
 class cartController extends Controller
 {
@@ -40,7 +42,7 @@ class cartController extends Controller
             default:
                 // code...
                 break;
-        } 
+        }
         if($type == 'lesson'){
 
             $data = lessons::find($id);
@@ -57,11 +59,11 @@ class cartController extends Controller
                     array_push($day, date('n', strtotime($value->date)));
                     array_push($day, date('j', strtotime($value->date)));
                     array_push($day, date('Y', strtotime($value->date)));
-                    
+
                     array_push($holiday, $day);
-                    
+
                     array_push($holiarr, $value->holiday);
-                    
+
                 }
                 return view('web.cart', ['data' => $data, 'pack' => $packk, 'type' => $type,'price'=>$price, 'holiday' => $holiday, 'slots' => $slots]);
             }else{
@@ -131,7 +133,7 @@ class cartController extends Controller
             //dd($odata);
             $priceDed = $odata['price'];
             $oid = lessonOrders::newOrder($odata);
-            
+
         }
         if($type == 'activity'){
             $data = $request->all();
@@ -193,20 +195,41 @@ class cartController extends Controller
           'amount' => $charge_amount,
           'currency' => 'usd'
         ]);
-        
+
         return response()->json($paymentIntent);
-       
+
     }
-    
+
     public function orderComfirmed($id, $type){
         if($type == 'lesson'){
             $d = lessonOrders::find($id);
             $d->status = '1';
             $d->save();
+
+
+            $order = lessonOrders::with(['buyer','seller','lesson'])->where('id',$id)->first();
+            $data['order'] = $order;
+
+
+            Mail::send('email.orderConfirmationLesson',$data , function($message) use ($order)  {
+                $message->to($order->buyer->email)->subject("Lesson confirmation");
+                $message->from("noreply@zettaa.com", 'Zettaa');
+            });
+
         }elseif($type == 'activity'){
             $d = ActivityOrders::find($id);
             $d->status = '1';
             $d->save();
+
+            $order = ActivityOrders::with(['buyer','seller', 'activity'])->where('id',$id)->first();
+            $data['order'] = $order;
+
+
+            Mail::send('email.orderConfirmationActivity',$data , function($message) use ($order)  {
+                $message->to($order->buyer->email)->subject("Activity confirmation");
+                $message->from("noreply@zettaa.com", 'Zettaa');
+            });
+
         }
 
         return 'success';
@@ -216,10 +239,29 @@ class cartController extends Controller
             $d = lessonOrders::find($id);
             $d->status = '1';
             $d->save();
+            
+            $order = lessonOrders::with(['buyer','seller','lesson'])->where('id',$id)->first();
+            $data['order'] = $order;
+
+
+            Mail::send('email.orderConfirmationLesson',$data , function($message) use ($order)  {
+                $message->to($order->buyer->email)->subject("Lesson confirmation");
+                $message->from("noreply@zettaa.com", 'Zettaa');
+            });
         }elseif($type == 'activity'){
             $d = ActivityOrders::find($id);
             $d->status = '1';
             $d->save();
+            
+            $order = ActivityOrders::with(['buyer','seller', 'activity'])->where('id',$id)->first();
+            $data['order'] = $order;
+
+
+            Mail::send('email.orderConfirmationActivity',$data , function($message) use ($order)  {
+                $message->to($order->buyer->email)->subject("Activity confirmation");
+                $message->from("noreply@zettaa.com", 'Zettaa');
+            });
+
         }
 
         return redirect('/')->with('success', 'Order Confirmed.');
@@ -239,9 +281,9 @@ class cartController extends Controller
                                     ->where('booking_time', $val->start_time)->first();
 
            $x = 0;
-           $buffer = 30; 
-           $start = $val->start_time; 
-           $end = $val->end_time; 
+           $buffer = 30;
+           $start = $val->start_time;
+           $end = $val->end_time;
            $end = date('H:i:s',strtotime('-'.$buffer.' minutes',strtotime($end)));
            while($start <= $end){
                 $select .= '<option value="'.$start.'">'.date('H:i:s', strtotime($start)).'</option>';

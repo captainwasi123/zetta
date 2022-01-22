@@ -6,24 +6,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 <style type="text/css">
   body
-  {
-      font-family: 'Roboto', sans-serif !important;
-      color: black;
-  }
-  a
-  {
-    text-decoration: none !important;
-  }
-  .section-1 {
-    text-align: center;
-    margin-top: -50px;
-  }
+      {
+          font-family: 'Roboto', sans-serif !important;
+          color: black;
+          margin:0px;
+      }
+      a
+      {
+        text-decoration: none !important;
+      }
+      .section-1 {
+        text-align: center;
+        margin-top: -50px !important;
+        max-width: 100%;
+        width: 65%;
+        margin: 0 auto;
+    }
   .main-section
   {
       background: white;
@@ -34,6 +35,7 @@
   {
     background:#1D242C;
     padding: 30px 0px 80px 0px;
+    text-align: center;
   }
   .logo-section img
   {

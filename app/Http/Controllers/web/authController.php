@@ -34,12 +34,14 @@ class authController extends Controller
         	    		$id = User::addUser($data);
                         //Auth::loginUsingId($id);
 
-                        Mail::send('email.activation', $data, function($message) use ($data)  {
+
+                        Mail::send('email.activation', array('id'=>$id), function($message) use ($data)  {
                             $message->to($data['email'])->subject("Activate your new account");
                             $message->from("noreply@zettaa.com", 'Zettaa');
                         });
         	    		return 'success';
                     }
+
     	    	}
     	    }
         }
@@ -59,7 +61,7 @@ class authController extends Controller
                 return 'incorrect';
             }
         }
-        
+
     	if(Auth::attempt($att)){
             if($check->type == '1'){
                 return '/buddy';
@@ -69,6 +71,27 @@ class authController extends Controller
     	}else{
     		return 'incorrect';
     	}
+    }
+
+    function confirmnwithlogin($id)
+    {
+        $u = User::find($id);
+        $u->status = '1';
+        $u->save();
+        $email=$u->email;
+        $fname=$u->username;
+
+
+        Auth::loginUsingId($id);
+
+
+            Mail::send('email.accountConfirmation', array('fname'=>$fname,  'email' => $email), function($message) use ($email)  {
+                $message->to($email)->subject("Welcome to Zettaa");
+                $message->from("noreply@zettaa.com", 'Zettaa');
+            });
+
+            return redirect('/');
+
     }
 
     function coverPic(Request $request){

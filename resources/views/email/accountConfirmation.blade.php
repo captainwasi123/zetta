@@ -6,24 +6,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 <style type="text/css">
   body
-  {
-      font-family: 'Roboto', sans-serif !important;
-      color: black;
-  }
-  a
-  {
-    text-decoration: none !important;
-  }
-  .section-1 {
-    text-align: center;
-    margin-top: -50px;
-  }
+      {
+          font-family: 'Roboto', sans-serif !important;
+          color: black;
+          margin:0px;
+      }
+      a
+      {
+        text-decoration: none !important;
+      }
+      .section-1 {
+        text-align: center;
+        margin-top: -50px !important;
+        max-width: 100%;
+        width: 65%;
+        margin: 0 auto;
+    }
   .main-section
   {
       background: white;
@@ -34,6 +35,7 @@
   {
     background:#1D242C;
     padding: 30px 0px 80px 0px;
+    text-align: center;
   }
   .logo-section img
   {
@@ -135,12 +137,12 @@ h4.sec-2 {
     text-align: left;
     font-weight: 600;
 }
-h4.sec-3 
+h4.sec-3
 {
     text-align: left;
     padding-bottom: 0px;
 }
-h4.sec-3 a 
+h4.sec-3 a
 {
     background: white;
     color: black;
@@ -151,7 +153,7 @@ p.sec-4 {
     text-align: left;
     font-weight: 600;
 }
-p.sec-6 
+p.sec-6
 {
     text-align: left;
 }
@@ -160,7 +162,7 @@ h4.sec-7 {
     padding-bottom: 20px;
     font-weight: 600;
 }
-@media screen and (max-width:519px) and (min-width:320px) { 
+@media screen and (max-width:519px) and (min-width:320px) {
   .logo-section img {
       width: 35%;
   }
@@ -205,24 +207,21 @@ h4.sec-7 {
 </head>
 <body>
 
-  <div class="logo-section text-center">
-    <img src="zetta-logo.png">
-  </div>
-  
+    @include('email.includes.header')
   <div class="container">
-    <div class="section-1">    
+    <div class="section-1">
       <div class="row">
         <div class="col-lg-2"></div>
         <div class="col-lg-8 main-section">
           <div class="section-2">
               <h2>CONFIRMATION ACCOUNT CREATED</h2>
-              <h4 class="sec-1">Object: Welcome to Zettaa</h4>
-              <h4 class="sec-1">Hi (First Name),</h4>
+              <h4 class="sec-1"> </h4>
+              <h4 class="sec-1">Hi {{$fname}},</h4>
               <p>Thanks again for joining Zettaa, the world’s leading sport sharing platform.</p>
               <h4 class="sec-2">Your sign in details</h4>
-              <h4 class="sec-3">E-mail:<a href=""> xyz@gmail.com </a></h4>.
-              <p class="sec-4">(when connecting through google or facebook)</p>
-              <p class="sec-5">Want to sign in with a password instead of your Facebook/Google+ account? send yourself a password reset email</p>
+              <h4 class="sec-3">E-mail: {{$email}} </h4>.
+              {{--  <p class="sec-4">(when connecting through google or facebook)</p>
+              <p class="sec-5">Want to sign in with a password instead of your Facebook/Google+ account? send yourself a password reset email</p>  --}}
               <h4 class="sec-2">How to get the most out of Zettaa</h4>
               <p class="sec-6">(Tu es désormais un membre à part entière de la communauté de sportifs. Zettaa est une plateforme d’individus talentueux et motivés à partager leurs passions. Prépare toi à vivre des expériences enrichissantes grâce aux différentes sessions de sports autour de chez toi.
               Que ce soit pour trouver un partenaire de sport ou un coach, Zettaa s’occupe de tout !</p>

@@ -69,6 +69,9 @@ use Illuminate\Support\Facades\Route;
 			Route::post('/register', 'authController@register');
 			Route::post('/login', 'authController@login');
 			Route::get('/logout', 'authController@logout')->name('logout');
+			Route::get('/confirmnwithlogin/{id}', 'authController@confirmnwithlogin')->name('confirmnwithlogin');
+		
+
 
 
 

@@ -6,24 +6,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
 <style type="text/css">
-  body
-  {
-      font-family: 'Roboto', sans-serif !important;
-      color: black;
-  }
-  a
-  {
-    text-decoration: none !important;
-  }
-  .section-1 {
-    text-align: center;
-    margin-top: -50px;
-  }
+ body
+      {
+          font-family: 'Roboto', sans-serif !important;
+          color: black;
+          margin:0px;
+      }
+        table, td, th {
+        border: 1px solid black;
+        }
+
+ table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
   .main-section
   {
       background: white;
@@ -34,6 +40,7 @@
   {
     background:#1D242C;
     padding: 30px 0px 80px 0px;
+    text-align: center;
   }
   .logo-section img
   {
@@ -189,16 +196,30 @@ p.sec-3 {
 .section-6 a {
     font-size: 12px;
 }
+       table, td, th {
+        border: 1px solid black;
+        }
+
+ table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
 }
 </style>
 
 
 </head>
 <body>
-
-  <div class="logo-section text-center">
-    <img src="zetta-logo.png">
-  </div>
+   @include('email.includes.header')
   
   <div class="container">
     <div class="section-1">    
@@ -207,15 +228,43 @@ p.sec-3 {
         <div class="col-lg-8 main-section">
           <div class="section-2">
               <h2>PURCHASE/BOOKING CONFIRMATION EMAIL:</h2>
-              <h2 class="sec-1">Activity</h2>
-              <h4 class="sec-1">Object: Activity confirmation n°00000</h4>
-              <h4 class="sec-1">Hi (First Name),</h4>
-              <p class="sec-3">Thank you for choosing to participate with (username of the creator of the gig activity) on the (date and location).</p>
-              <h4 class="sec-1">Order Summary (# order n°0000) </h4>
-              <h4 class="sec-1">(order summary as in the dashboard)</h4>
+            
+              <h4 class="sec-1"></h4>
+              <h4 class="sec-1">Hi, {{@$order->buyer->username}}</h4>
+              <p class="sec-3">Thank you for choosing to participate with {{@$order->seller->fname  }}  {{@$order->seller->lname  }} on the {{@$order->created_at  }}  {{@$order->activity->locations[0]->address}} .</p>
+              <h4 class="sec-1">Order  #{{$order->id}} </h4>
+              <div style="overflow-x:auto;">
+          <table >
+            <thead>
+                <tr>
+                <th scope="col">Order Number</th>
+                <th scope="col">Title</th>
+               <th scope="col">buyer Name</th>
+               <th scope="col">Seller Name</th>
+              
+                     <th scope="col">Price</th>
+                        <th scope="col">Quantity</th>
+                           
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <th scope="row">{{$order->id}}</th>
+                <th scope="row">{{@$order->activity->title}}</th>
+                <th scope="row">{{@$order->buyer->username}}</th>
+                <th scope="row">{{@$order->seller->username}}</th>
+               
+                <th scope="row">{{$order->price}}</th>
+                <th scope="row">{{$order->qty}}</th>
+                         
+                </tr>
+            </tbody>
+          </table>
+          </div>
+
               <p class="sec-2">If you are in need of equipment for this activity, remember that you can find some <a href="#"> <span style="color:#6c28a9"> here  </span></a> For any reason of cancellation <a href="#"> <span style="color:#6c28a9"> Click here . </span></a> Please take a look at our <a href="#"> <span style="color:#6c28a9"> cancellation </span></a> and  <a href="#"> <span style="color:#6c28a9"> refund  policy. </span></a></p>
-              <p class="sec-4">Enjoy your (sport/sub-category of the gig) activity.</p>
-              <a href="#"> ACTIVATE YOUR ACCOUNT </a>
+              <p class="sec-4">Enjoy your {{@$order->activity->category->name}} activity.</p>
+            
           </div>
           <div class="section-3">
             <p>Thanks</p>

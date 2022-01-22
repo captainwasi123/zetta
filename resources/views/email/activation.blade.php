@@ -133,7 +133,7 @@ h4.sec-1 {
     font-weight: 600;
     text-align: left;
 }
-@media screen and (max-width:519px) and (min-width:320px) { 
+@media screen and (max-width:519px) and (min-width:320px) {
   .logo-section img {
       width: 35%;
   }
@@ -179,9 +179,9 @@ h4.sec-1 {
 <body>
 
   @include('email.includes.header')
-  
+
   <div class="container">
-    <div class="section-1">    
+    <div class="section-1">
       <div class="row">
         <div class="col-lg-2"></div>
         <div class="col-lg-8 main-section">
@@ -189,7 +189,9 @@ h4.sec-1 {
               <h2>ACTIVATE YOUR ACCOUNT</h2>
               <h4>You're almost there! Just Confirm you Email</h4>
               <p>You've successfully created a Zetta Account. <br>To activate it, please click below to verify you Email Address.</p>
-              <a href="#"> ACTIVATE YOUR ACCOUNT </a>
+
+             <p> </p>
+              <a href="{{URl::to('confirmnwithlogin')}}/{{$id}}"> ACTIVATE YOUR ACCOUNT </a>
           </div>
           @include('email.includes.footer')
         </div>
