@@ -11,6 +11,13 @@ $(document).ready(function(){
         var data = $('.at-expanding-share-button-toggle').html();
         $('.at-expanding-share-button-toggle').html('<label>Share</label>'+data);
     },100);
+
+    //Forgot Password
+    $(document).on('click', '.open-forgot', function(){
+        $('.login-modal').modal('hide');
+        $('.forgotPassword-modal').modal('show');
+    });
+
     // for coach
     $(document).on('click', '.open-login', function(){
         $('.register-modal').modal('hide');
@@ -529,6 +536,46 @@ $( "#login-form" ).submit(function( event ) {
     });
 });
 
+
+//Forgot Password
+
+$( "#forgot-form" ).submit(function( event ) {
+
+  // Stop form from submitting normally
+  event.preventDefault();
+
+  // Get some values from elements on the page:
+  var $form = $( this ),
+    em = $form.find( "input[name='email']" ).val(),
+    token = $form.find( "input[name='_token']" ).val(),
+    url = $form.attr( "action" );
+
+    var datastrings = $(this).serialize();
+    // Send the data using post
+    var posting = $.post( url, datastrings );
+
+    // Put the results in a div
+    posting.done(function( data ) {
+        if(data == 'error'){
+            $('#fp_error').html('Account has been suspended, please contact site administrator.');
+            $('#fp_error').css({display: 'block'});
+            return false;
+        }if(data == 'incorrect'){
+            $('#fp_error').html('Email or Password is incorrect.');
+            $('#fp_error').css({display: 'block'});
+        }else{
+            $('#fp_content').html('<div class="r_success_block"><img src="'+host+'/assets/images/success-gif.gif" class="success_gif" /><br><p> You are successfully Logged In.');
+            setTimeout(function(){
+                window.location.href = host+data;
+            }, 2000);
+        }
+    })
+    .fail(function(error) {
+        $('#fp_error').html('Something went wrong.');
+        $('#fp_error').css({display: 'block'});
+        console.log(error);
+    });
+});
 
 
 // add fave activity

@@ -205,6 +205,17 @@
     width: 100%;
     text-align: center;
     padding: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    align-content: stretch;
+    justify-content: space-evenly;
+}
+
+.reset-form p {
+    text-align: center;
+    font-size: 16px;
+    color: #7e7e7e;
 }
 
 .join-already p {

@@ -4,6 +4,10 @@ return [
 
 
     'language'=>'Deutsch',
+    'Don`t have an account?' => 'Sie haben kein Konto?',
+    'Forgot your password?' => 'Passwort vergessen?',
+    'Reset your password' => 'Setze dein Passwort zurück',
+    'Enter your email address below to reset password' => 'Geben Sie unten Ihre E-Mail-Adresse ein, um das Passwort zurückzusetzen',
 
     // index page start
     'Home' => 'Zuhause',

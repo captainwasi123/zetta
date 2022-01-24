@@ -25,6 +25,7 @@ use Illuminate\Support\Facades\Route;
 			Route::get('/partner', 'webController@partner');
 			
 
+			Route::post('/forgot-password', 'webController@forgotPassword');
 
 			Route::get('/about_us', 'webController@aboutUs');
 			Route::get('/all/{type}', 'webController@all')->name('web.all');

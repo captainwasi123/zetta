@@ -5,6 +5,10 @@ return [
     // language
 
     'language'=>'Española',
+    'Don`t have an account?' => '¿No tienes una cuenta?',
+    'Forgot your password?' => '¿Olvidaste tu contraseña?',
+    'Reset your password' => 'Restablecer su contraseña',
+    'Enter your email address below to reset password' => 'Ingrese su dirección de correo electrónico a continuación para restablecer la contraseña',
 
     // index page start
     'Home' => 'Inicio',

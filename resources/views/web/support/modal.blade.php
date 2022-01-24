@@ -36,6 +36,29 @@
 </div>
 
 
+
+<div class="modal fade forgotPassword-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+   <div class="modal-dialog modal-lg" role="document" style="max-width: 500px;">
+      <div class="modal-content" id="fp_content">
+         <div class="join-pop-head">
+            <h3> {{ __('content.Reset your password')}} <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button> </h3>
+         </div>
+         <div class="join-form reset-form">
+            <p>  {{ __('content.Enter your email address below to reset password')}}</p>
+            <form id="forgot-form" action="{{URL::to('/forgot-password')}}">
+               {{csrf_field()}}
+               <input type="email" class="email_reg" placeholder="{{ __('content.Enter your email')}}" name="email" required>
+               <span id="fp_error" class="error_span"></span>
+               <button type="submit">  {{ __('content.Continue')}}  </button>
+            </form>
+         </div>
+         <div class="join-already">
+            <p>  {{ __('content.Already a member?')}} <a href="javascript:void(0)" class="open-login" data-dismiss="modal"> {{ __('content.Sign In')}}  </a> </p>
+         </div>
+      </div>
+   </div>
+</div>
+
 {{-- for buddy --}}
 
 <div class="modal fade register-modal-buddy" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
@@ -102,6 +125,7 @@
             </form>
          </div>
          <div class="join-already">
+            <p>  {{ __('content.Forgot your password?')}} <a href="javascript:void(0)" class="open-forgot"> Reset </a> </p>
             <p>  {{ __('content.Don`t have an account?')}} <a href="javascript:void(0)" class="open-join"> Sign Up </a> </p>
          </div>
       </div>

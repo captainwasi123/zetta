@@ -5,6 +5,10 @@ return [
     // language
 
     'language'=>'Französisch',
+    'Don`t have an account?' => 'Vous n`avez pas de compte ?',
+    'Forgot your password?' => 'Mot de passe oublié?',
+    'Reset your password' => 'réinitialisez votre mot de passe',
+    'Enter your email address below to reset password' => 'Entrez votre adresse e-mail ci-dessous pour réinitialiser le mot de passe',
 
     // index page start
     'Home' => '',

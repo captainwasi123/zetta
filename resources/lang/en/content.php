@@ -5,6 +5,10 @@ return [
     // language
 
     'language'=>'English',
+    'Don`t have an account?' => 'Don`t have an account?',
+    'Forgot your password?' => 'Forgot your password?',
+    'Reset your password' => 'Reset your password',
+    'Enter your email address below to reset password' => 'Enter your email address below to reset password',
 
     // index page start
     'Home' => 'Home',
