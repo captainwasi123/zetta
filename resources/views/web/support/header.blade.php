@@ -253,7 +253,7 @@ header.header-2 .logo a img {
          </div>
       @else
          <div class="header-buttons ">
-            <a href="javascript:void(0)" class="open-join header-btn1"> {{ __('content.Register')}} </a>
+            <a href="javascript:void(0)" class="open-join-buddy header-btn1"> {{ __('content.Register')}} </a>
             <!-- <a href="javascript:void(0)" class="open-join-coach header-btn2"> {{ __('content.Become a Coach')}} </a> -->
             <a href="javascript:void(0)" class="open-login header-btn3"> {{ __('content.Login')}} </a>
          </div>
