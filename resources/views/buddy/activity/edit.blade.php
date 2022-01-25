@@ -131,25 +131,26 @@
                </select>
             </div>
          </div>
-
-         <div class="row center-row">
-            <div class="col-md-3 col-lg-3 col-12">
-                <div class="field-name">
-                   <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/field-icon10.png">
-                   <h5> Friend Participant </h5>
+         <div id="friend_participant" style="{{$data->activity_type == '2' ? 'display: none' : ''}}">
+            <div class="row center-row">
+               <div class="col-md-3 col-lg-3 col-12">
+                   <div class="field-name">
+                      <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/field-icon10.png">
+                      <h5> Friend Participant </h5>
+                   </div>
                 </div>
-             </div>
-            <div class="col-md-6 col-lg-6 col-12">
-                <select name="friend" id="friend" class="form-field1">
-                    <option value="">select friend</option>
-                     @foreach ($users as $val)
-                         <option value="{{$val->id}}"
-                            @if (@$friend->friend_id == $val->id)
-                                selected
-                            @endif
-                            >{{$val->fname .' '. $val->lname}}</option>
-                     @endforeach
-                </select>
+               <div class="col-md-6 col-lg-6 col-12">
+                   <select name="friend" id="friend" class="form-field1">
+                       <option value="">select friend</option>
+                        @foreach ($users as $val)
+                            <option value="{{$val->id}}"
+                               @if (@$friend->friend_id == $val->id)
+                                   selected
+                               @endif
+                               >{{$val->fname .' '. $val->lname}}</option>
+                        @endforeach
+                   </select>
+               </div>
             </div>
          </div>
          <div class="row center-row">
@@ -433,6 +434,15 @@
        $(document).on('click', '.closeLocation', function(){
             $(this).parent().remove();
        });
+
+       $('input[type=radio][name=activityType]').change(function() {
+         if (this.value == '2') {
+            $('#friend_participant').show();
+         }
+         else if (this.value == '1') {
+            $('#friend_participant').hide();
+         }
+      });
    });
 
    function initialize(field) {
