@@ -50,7 +50,7 @@ class settingController extends Controller
         $u = User::find(Auth::id());
         $u->profile_img = $filename;
         $u->save();
-        $file->move(base_path('/public/user/profile_img/'), $filename);
+        $file->move(base_path('/public/storage/user/profile_img/'), $filename);
 
         return redirect()->back();
     }
