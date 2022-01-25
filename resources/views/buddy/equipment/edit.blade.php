@@ -54,7 +54,7 @@
             <div class="col-md-6 col-lg-6 col-12 ">
                <div class="inc-dec">
                   <select name="sports" class="form-field1" id="sports_id" required>
-                      <option value="{{$val->sports_id}}">{{@$data->sports->name}}</option>
+                      <option value="{{$data->sports_id}}" selected>{{@$data->sports->name}}</option>
                   </select> 
                </div>
             </div>
