@@ -440,7 +440,7 @@
                         <div class="text-right mob-text-left field_borders">
                            <label class="custom-control custom-radio">
                               <input id="radio1" name="gender" type="radio" value="Male" class="custom-control-input"
-                                 {{Auth::user()->gender == 'Male' ? 'checked' : ''}}
+                                 {{Auth::user()->gender == 'Male' ? 'checked' : ''}} {{empty(Auth::user()->gender) ? 'checked' : ''}}
                               >
                               <span class="custom-control-label">Male</span>
                            </label>&nbsp;&nbsp;
