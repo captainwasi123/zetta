@@ -146,41 +146,18 @@
                         <input type="text" class="form-field3" value="@foreach($data->user->category as $val){{$val->name}}, @endforeach" readonly="" name="">
                      </div>
                   </div>
-               </div>
-               <div class="description-profile2">
-                  <p class="col-grey">
-                     {{empty($data->user) ? '' : $data->user->description}}
-                  </p>
-               </div>
-            </div>
-            <div class="sec-head1 m-t-40 m-b-15 extra">
-               <h3 class="col-white"> {{ __('content.Reviews as Sport Buddy')}} </h3>
-            </div>
-            <div class="review-slider arrows3 extra">
-               <div class="review-box">
-                  <img src="{{URL::to('/assets/website')}}/images/profile-image1.jpg">
-                  <h5 class="col-white"> <b class="col-purple"> Lennon <i class="fa fa-star"> </i> </b> 5.0 </h5>
-                  <p class="col-white"> That would be good please share any reference or similar website interms of features
-                     and functionality you need.
-                  </p>
-               </div>
-               <div class="review-box">
-                  <img src="{{URL::to('/assets/website')}}/images/profile-image1.jpg">
-                  <h5 class="col-white"> <b class="col-purple"> Lennon <i class="fa fa-star"> </i> </b> 5.0 </h5>
-                  <p class="col-white"> That would be good please share any reference or similar website interms of features
-                     and functionality you need.
-                  </p>
-               </div>
-               <div class="review-box">
-                  <img src="{{URL::to('/assets/website')}}/images/profile-image1.jpg">
-                  <h5 class="col-white"> <b class="col-purple"> Lennon <i class="fa fa-star"> </i> </b> 5.0 </h5>
-                  <p class="col-white"> That would be good please share any reference or similar website interms of features
-                     and functionality you need.
-                  </p>
+                  <div class="row m-b-20">
+                     <div class="col-md-12">
+                        <div class="description-profile2">
+                           <p class="col-grey">
+                              {{empty($data->user) ? '' : $data->user->description}}
+                           </p>
+                        </div>
+                     </div>
+                  </div>
                </div>
             </div>
-            <div class="sec-head1 m-t-60 m-b-15 m-t-40">
-               <br>
+            <div class="sec-head1 m-t-40 m-b-15">
                <h3 class="col-white"> {{ __('content.Reviews as Sport Buddy')}} </h3>
             </div>
             <div class="review-slider arrows3">
