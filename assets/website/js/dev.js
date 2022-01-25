@@ -107,6 +107,19 @@ $(document).ready(function(){
 
  });
 
+$('.searchForm').submit(function(event) {
+    event.preventDefault(); 
+    
+    var $form = $(this);
+    var values = getFormData($form);
+
+    if(values['country'] == ''){
+        alert('Please enter the valid address!');
+    }else{
+        $(this).unbind('submit').submit();
+    }
+
+});
 
 jQuery(function ($) {
    // init the state from the input
@@ -687,3 +700,14 @@ $(window).on("load resize", function() {
     $dropdown.off("mouseenter mouseleave");
   }
 });
+
+function getFormData($form){
+    var unindexed_array = $form.serializeArray();
+    var indexed_array = {};
+
+    $.map(unindexed_array, function(n, i){
+        indexed_array[n['name']] = n['value'];
+    });
+
+    return indexed_array;
+}

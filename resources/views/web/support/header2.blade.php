@@ -28,7 +28,7 @@ nav.navbar.navbar-expand-lg.navbar-dark {
          <img src="{{URL::to('/assets/website')}}/images/hamburger.png">
       </div>
       <div class="search-form">
-         <form method="get" action="{{route('web.search')}}">
+         <form method="get" class="searchForm" action="{{route('web.search')}}">
             <div class="label-field3">
                <i class="fa fa-search"> </i>
                <input type="text" placeholder="{{ __('content.Choose a Sport')}}" name="val" id="header_sports_val" value="{{isset($search_data['val']) ? $search_data['val'] : ''}}">
@@ -165,7 +165,7 @@ nav.navbar.navbar-expand-lg.navbar-dark {
          <img src="{{URL::to('/assets/website')}}/images/hamburger.png">
       </div>
       <div class="search-form">
-         <form method="get" action="{{route('web.search')}}">
+         <form method="get" class="searchForm" action="{{route('web.search')}}">
             <div class="label-field3">
                <i class="fa fa-search"> </i>
                <input type="text" placeholder="{{ __('content.Choose a Sport')}}" name="val" value="{{isset($search_data['val']) ? $search_data['val'] : ''}}" required>

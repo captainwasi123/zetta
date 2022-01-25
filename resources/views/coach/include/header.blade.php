@@ -22,7 +22,7 @@
                      <li class="nav-item m-l-10"> <a class="nav-link sidebartoggler hidden-sm-down text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="ti-menu"></i></a> </li>
                   </div>
                      <div class="search-form desktop-v">
-                        <form method="get" action="{{route('web.search')}}">
+                        <form method="get" class="searchForm" action="{{route('web.search')}}">
                            <div class="label-field3">
                               <i class="fa fa-search"> </i>
                               <input type="text" placeholder="Choose a Sport" name="val" id="keywords_val" value="{{isset($search_data['val']) ? $search_data['val'] : ''}}">

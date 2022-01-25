@@ -26,6 +26,22 @@ $(document).ready(function(){
     });
 
 
+
+
+$('.searchForm').submit(function(event) {
+    event.preventDefault(); 
+    
+    var $form = $(this);
+    var values = getFormData($form);
+
+    if(values['country'] == ''){
+        alert('Please enter the valid address!');
+    }else{
+        $(this).unbind('submit').submit();
+    }
+
+});
+
     $(document).on('click', '.addServicePackage', function(){
         var data = '<tr><td>  <textarea class="table-field1" placeholder="Service" name="service_basic[]"></textarea></td><td> <textarea class="table-field1" placeholder="Service" name="service_standard[]"></textarea></td><td> <textarea class="table-field1" placeholder="Service" name="service_premium[]"></textarea></td></tr>';
         $('#package_block').before(data);
@@ -336,3 +352,16 @@ var kerywordss = [
         }
     });
 });
+
+
+
+function getFormData($form){
+    var unindexed_array = $form.serializeArray();
+    var indexed_array = {};
+
+    $.map(unindexed_array, function(n, i){
+        indexed_array[n['name']] = n['value'];
+    });
+
+    return indexed_array;
+}

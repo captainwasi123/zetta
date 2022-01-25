@@ -22,7 +22,7 @@
                <h2 class="gotham-bold col-white"> {{ __('content.Find The') }} <br/> {{ __('content.Perfect Sport Buddy') }}</h2>
             </div>
             <div class="search-form">
-               <form method="get" action="{{route('web.search')}}">
+               <form method="get" class="searchForm" action="{{route('web.search')}}">
                   <div class="label-field3 autocomplete">
                      <i class="fa fa-search"> </i>
                      <input type="text" placeholder="{{ __('content.Choose a Sport') }}" name="val" id="keywords_val">

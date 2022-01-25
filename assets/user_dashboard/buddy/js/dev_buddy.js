@@ -14,6 +14,21 @@ $(document).ready(function(){
 // 
 
 
+
+$('.searchForm').submit(function(event) {
+    event.preventDefault(); 
+    
+    var $form = $(this);
+    var values = getFormData($form);
+
+    if(values['country'] == ''){
+        alert('Please enter the valid address!');
+    }else{
+        $(this).unbind('submit').submit();
+    }
+
+});
+
     $(document).on('click', '.fav_act', function() {
          var id = $(this).data('id');
         var element = $(this);
@@ -482,3 +497,16 @@ function($) {
     "use strict";
     $.SweetAlert.init()
 }(window.jQuery);
+
+
+
+function getFormData($form){
+    var unindexed_array = $form.serializeArray();
+    var indexed_array = {};
+
+    $.map(unindexed_array, function(n, i){
+        indexed_array[n['name']] = n['value'];
+    });
+
+    return indexed_array;
+}
