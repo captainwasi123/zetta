@@ -50,56 +50,57 @@
             </div>
             <div class="boxes-slider1 arrows1">
                @foreach($uactivities as $val)
-
-                  <div>
-                     <a href="{{route('activity.details', base64_encode($val->id))}}">
-                        <div class="lesson-block">
-                           <div class="lesson-tag">
-                              <img src="{{URL::to('/assets/website')}}/images/activity.png">
-                           </div>
-                           
-                           <div class="lesson-image-block">
-                              <img src="{{URL::to('/public/storage/user/activity/main_image/'.$val->cover_img)}}">
-                           </div>
-                           <div class="lesson-title-block">
-                              <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{empty($val->user) ? '' : $val->user->profile_img}}" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';">
-                              <h4>  {{empty($val->user->fname) ? 'Anonymous' : $val->user->fname.' '.$val->user->lname}} <span> {{ __('content.Sports Buddy') }} </span>  </h4>
-                              <div class="zoom-tag">
-                                 @if($val->availability != '2')
-                                    <img src="{{URL::to('/assets/website')}}/images/zoom-logo.png" title="Online Zoom Classes">
-                                 @endif
-                                 @php $availability_for = json_decode($val->availability_for); @endphp
-                                 @if(!empty($availability_for))
-                                 @foreach($availability_for as $value)
+                  @if(!empty($val->user))
+                     <div>
+                        <a href="{{route('activity.details', base64_encode($val->id))}}">
+                           <div class="lesson-block">
+                              <div class="lesson-tag">
+                                 <img src="{{URL::to('/assets/website')}}/images/activity.png">
+                              </div>
+                              
+                              <div class="lesson-image-block">
+                                 <img src="{{URL::to('/public/storage/user/activity/main_image/'.$val->cover_img)}}">
+                              </div>
+                              <div class="lesson-title-block">
+                                 <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{empty($val->user) ? '' : $val->user->profile_img}}" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';">
+                                 <h4>  {{empty($val->user->fname) ? 'Anonymous' : $val->user->fname.' '.$val->user->lname}} <span> {{ __('content.Sports Buddy') }} </span>  </h4>
+                                 <div class="zoom-tag">
+                                    @if($val->availability != '2')
+                                       <img src="{{URL::to('/assets/website')}}/images/zoom-logo.png" title="Online Zoom Classes">
+                                    @endif
+                                    @php $availability_for = json_decode($val->availability_for); @endphp
+                                    @if(!empty($availability_for))
+                                    @foreach($availability_for as $value)
+                                       
+                                       @if($value == '1')
+                                          <img src="{{URL::to('/assets/')}}/65+.png" title="For Senior Citizen">
+                                       @endif
+                                       @if($value == '2')
+                                          <img src="{{URL::to('/assets/')}}/teenager.png" title="For Teenager">
+                                       @endif
+                                       @if($value == '3')
+                                          <img src="{{URL::to('/assets/')}}/handicapped.png" title="For Handicapped">
+                                       @endif
                                     
-                                    @if($value == '1')
-                                       <img src="{{URL::to('/assets/')}}/65+.png" title="For Senior Citizen">
+                                    @endforeach
                                     @endif
-                                    @if($value == '2')
-                                       <img src="{{URL::to('/assets/')}}/teenager.png" title="For Teenager">
-                                    @endif
-                                    @if($value == '3')
-                                       <img src="{{URL::to('/assets/')}}/handicapped.png" title="For Handicapped">
-                                    @endif
-                                 
-                                 @endforeach
-                                 @endif
+                                 </div>
+                              </div>
+                              <div class="lesson-info-block">
+                                 <p class="lesson-title">{{$val->title}}</p>
+                                 <h6 class="col-white m-b-15"> <i class="fa fa-star col-yellow"> </i> 5.0 </h6>
+                                 <h6 class="col-white m-b-15 lesson-catagory-text" style="float: right;">
+                                 <p class="bg-purple col-white custom-btn12 cut-sports" title="{{$val->sports->name}}">{{$val->sports->name}}</p>
+                                 </h6>
+                              </div>
+                              <div class="lesson-rating-block gig">
+                              <p id="count{{$val->id}}" class="countDownP"></p>
+                              @php array_push($arr, array('id' => $val->id, 'date' => date('M d, Y H:i:s', strtotime($val->held_date)))); @endphp
                               </div>
                            </div>
-                           <div class="lesson-info-block">
-                              <p class="lesson-title">{{$val->title}}</p>
-                              <h6 class="col-white m-b-15"> <i class="fa fa-star col-yellow"> </i> 5.0 </h6>
-                              <h6 class="col-white m-b-15 lesson-catagory-text" style="float: right;">
-                              <p class="bg-purple col-white custom-btn12 cut-sports" title="{{$val->sports->name}}">{{$val->sports->name}}</p>
-                              </h6>
-                           </div>
-                           <div class="lesson-rating-block gig">
-                           <p id="count{{$val->id}}" class="countDownP"></p>
-                           @php array_push($arr, array('id' => $val->id, 'date' => date('M d, Y H:i:s', strtotime($val->held_date)))); @endphp
-                           </div>
-                        </div>
-                     </a>
-                  </div>
+                        </a>
+                     </div>
+                  @endif
                @endforeach
             </div>
             @if(count($uactivities) == 0)
@@ -230,91 +231,92 @@
             </div>
             <div class="boxes-slider1 arrows1">
                @foreach($activities as $val)
-
-                  <div>
-                     <a href="{{route('activity.details', base64_encode($val->id))}}">
-                        <div class="lesson-block">
-                           <div class="lesson-tag">
-                              <img src="{{URL::to('/assets/website')}}/images/activity.png">
-                           </div>
-                           
-                           <div class="lesson-image-block">
-                              <img src="{{URL::to('/public/storage/user/activity/main_image/'.$val->cover_img)}}">
-                           </div>
-                           <div class="lesson-title-block">
-                              <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{empty($val->user) ? '' : $val->user->profile_img}}" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';">
-                              <h4>  {{empty($val->user->fname) ? 'Anonymous' : $val->user->fname.' '.$val->user->lname}} <span>Sports Buddy </span>  </h4>
-                              <div class="zoom-tag">
-                                 @if($val->availability != '2')
-                                    <img src="{{URL::to('/assets/website')}}/images/zoom-logo.png" title="Online Zoom Classes">
-                                 @endif
-                                 @php $availability_for = json_decode($val->availability_for); @endphp
-                                 
-                                   @if(!empty($availability_for))
-                                 @foreach($availability_for as $value)
+                  @if(!empty($val->user))
+                     <div>
+                        <a href="{{route('activity.details', base64_encode($val->id))}}">
+                           <div class="lesson-block">
+                              <div class="lesson-tag">
+                                 <img src="{{URL::to('/assets/website')}}/images/activity.png">
+                              </div>
+                              
+                              <div class="lesson-image-block">
+                                 <img src="{{URL::to('/public/storage/user/activity/main_image/'.$val->cover_img)}}">
+                              </div>
+                              <div class="lesson-title-block">
+                                 <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{empty($val->user) ? '' : $val->user->profile_img}}" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';">
+                                 <h4>  {{empty($val->user->fname) ? 'Anonymous' : $val->user->fname.' '.$val->user->lname}} <span>Sports Buddy </span>  </h4>
+                                 <div class="zoom-tag">
+                                    @if($val->availability != '2')
+                                       <img src="{{URL::to('/assets/website')}}/images/zoom-logo.png" title="Online Zoom Classes">
+                                    @endif
+                                    @php $availability_for = json_decode($val->availability_for); @endphp
                                     
-                                    @if($value == '1')
-                                       <img src="{{URL::to('/assets/')}}/65+.png" title="For Senior Citizen">
+                                      @if(!empty($availability_for))
+                                    @foreach($availability_for as $value)
+                                       
+                                       @if($value == '1')
+                                          <img src="{{URL::to('/assets/')}}/65+.png" title="For Senior Citizen">
+                                       @endif
+                                       @if($value == '2')
+                                          <img src="{{URL::to('/assets/')}}/teenager.png" title="For Teenager">
+                                       @endif
+                                       @if($value == '3')
+                                          <img src="{{URL::to('/assets/')}}/handicapped.png" title="For Handicapped">
+                                       @endif
+                                    
+                                    @endforeach
                                     @endif
-                                    @if($value == '2')
-                                       <img src="{{URL::to('/assets/')}}/teenager.png" title="For Teenager">
+                                 </div>
+                              </div>
+                              <div class="lesson-info-block">
+                                 <p class="lesson-title">{{$val->title}}</p>
+                                 <h6 class="col-white m-b-15"> <i class="fa fa-star col-yellow"> </i> 5.0 </h6>
+                                 <h6 class="col-white m-b-15 lesson-catagory-text" style="float: right;">
+                                 <p class="bg-purple col-white custom-btn12 cut-sports" title="{{$val->sports->name}}">{{$val->sports->name}}</p>
+                                 </h6>
+                              </div>
+                              <div class="lesson-rating-block">
+                                 <a href="javascript:void(0)" data-id="{{$val->id}}" class="col-purple fav_act" id="{{$val->id}}" >
+                                    @if(Auth::check())
+                                       @php $fv = 0; @endphp
+                                       @foreach (auth()->user()->fav_activity as $act)
+                                           @if ($val->id == $act->activity_id && $act->user_id == auth()->user()->id)
+                                               @php $fv = 1; @endphp
+                                           @endif
+                                       @endforeach
+                                       @if ($fv == 1)
+                                           <i class="fa fa-heart col-purple"></i>
+                                       @else
+                                           <i class="far fa-heart col-purple"></i>
+                                       @endif
+                                    @else
+                                       <i class="far fa-heart col-purple"></i>
                                     @endif
-                                    @if($value == '3')
-                                       <img src="{{URL::to('/assets/')}}/handicapped.png" title="For Handicapped">
-                                    @endif
-                                 
-                                 @endforeach
-                                 @endif
+                               </a>
+                                 <span class="col-grey">  <b class="col-white">
+                                   @if (count($val->equipment)>0)
+                                       @php
+                                           $ids = [];
+                                           $price = 0;
+                                       @endphp
+                                       @foreach ($val->equipment as $k => $val)
+                                           @php
+                                             $price = $price+$val->user_equipment->price;
+                                               $ids[$k] = $val->equip_id;
+                                           @endphp
+                                       @endforeach
+                                        {{--  {{'$'.number_format($price)}}  --}}
+                                    {{$price=__('content.PARTICIPATE')}}
+                                         
+                                   @else
+                                    {{ __('content.PARTICIPATE') }}
+                                   @endif
+                                     </b> </span>
                               </div>
                            </div>
-                           <div class="lesson-info-block">
-                              <p class="lesson-title">{{$val->title}}</p>
-                              <h6 class="col-white m-b-15"> <i class="fa fa-star col-yellow"> </i> 5.0 </h6>
-                              <h6 class="col-white m-b-15 lesson-catagory-text" style="float: right;">
-                              <p class="bg-purple col-white custom-btn12 cut-sports" title="{{$val->sports->name}}">{{$val->sports->name}}</p>
-                              </h6>
-                           </div>
-                           <div class="lesson-rating-block">
-                              <a href="javascript:void(0)" data-id="{{$val->id}}" class="col-purple fav_act" id="{{$val->id}}" >
-                                 @if(Auth::check())
-                                    @php $fv = 0; @endphp
-                                    @foreach (auth()->user()->fav_activity as $act)
-                                        @if ($val->id == $act->activity_id && $act->user_id == auth()->user()->id)
-                                            @php $fv = 1; @endphp
-                                        @endif
-                                    @endforeach
-                                    @if ($fv == 1)
-                                        <i class="fa fa-heart col-purple"></i>
-                                    @else
-                                        <i class="far fa-heart col-purple"></i>
-                                    @endif
-                                 @else
-                                    <i class="far fa-heart col-purple"></i>
-                                 @endif
-                            </a>
-                              <span class="col-grey">  <b class="col-white">
-                                @if (count($val->equipment)>0)
-                                    @php
-                                        $ids = [];
-                                        $price = 0;
-                                    @endphp
-                                    @foreach ($val->equipment as $k => $val)
-                                        @php
-                                          $price = $price+$val->user_equipment->price;
-                                            $ids[$k] = $val->equip_id;
-                                        @endphp
-                                    @endforeach
-                                     {{--  {{'$'.number_format($price)}}  --}}
-                                 {{$price=__('content.PARTICIPATE')}}
-                                      
-                                @else
-                                 {{ __('content.PARTICIPATE') }}
-                                @endif
-                                  </b> </span>
-                           </div>
-                        </div>
-                     </a>
-                  </div>
+                        </a>
+                     </div>
+                  @endif
                @endforeach
             </div>
          </div>
@@ -328,79 +330,81 @@
             </div>
             <div class="boxes-slider1 arrows1">
                @foreach($lessons as $val)
-                  <div>
-                     <a href="{{route('lesson.details', base64_encode($val->id))}}">
-                        <div class="lesson-block">
-                           <div class="lesson-tag">
-                              <img src="{{URL::to('/assets/website')}}/images/lesson.png">
-                           </div>
-                           <div class="lesson-image-block">
-                              <img src="{{URL::to('/public/storage/user/lessons/main_image/'.$val->cover_img)}}">
-                           </div>
-                           <div class="lesson-title-block">
-                              <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{empty($val->user) ? '' : $val->user->profile_img}}" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';">
-                              <h4> {{empty($val->user->fname) ? 'Anonymous' : $val->user->fname.' '.$val->user->lname}} <span> Coach </span>  </h4>
-                              <div class="zoom-tag">
-                                 @if($val->availability != '2')
-                                    <img src="{{URL::to('/assets/website')}}/images/zoom-logo.png" title="Online Zoom Classes">
-                                 @endif
-                                 
-                                 @php $availability_for = json_decode($val->availability_for); @endphp
-                                 
-                                @if(!empty($availability_for))
-                                 @foreach($availability_for as $value)
+                  @if(!empty($val->user))
+                     <div>
+                        <a href="{{route('lesson.details', base64_encode($val->id))}}">
+                           <div class="lesson-block">
+                              <div class="lesson-tag">
+                                 <img src="{{URL::to('/assets/website')}}/images/lesson.png">
+                              </div>
+                              <div class="lesson-image-block">
+                                 <img src="{{URL::to('/public/storage/user/lessons/main_image/'.$val->cover_img)}}">
+                              </div>
+                              <div class="lesson-title-block">
+                                 <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{empty($val->user) ? '' : $val->user->profile_img}}" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';">
+                                 <h4> {{empty($val->user->fname) ? 'Anonymous' : $val->user->fname.' '.$val->user->lname}} <span> Coach </span>  </h4>
+                                 <div class="zoom-tag">
+                                    @if($val->availability != '2')
+                                       <img src="{{URL::to('/assets/website')}}/images/zoom-logo.png" title="Online Zoom Classes">
+                                    @endif
                                     
-                                    @if($value == '1')
-                                       <img src="{{URL::to('/assets/')}}/65+.png" title="For Senior Citizen">
+                                    @php $availability_for = json_decode($val->availability_for); @endphp
+                                    
+                                   @if(!empty($availability_for))
+                                    @foreach($availability_for as $value)
+                                       
+                                       @if($value == '1')
+                                          <img src="{{URL::to('/assets/')}}/65+.png" title="For Senior Citizen">
+                                       @endif
+                                       @if($value == '2')
+                                          <img src="{{URL::to('/assets/')}}/teenager.png" title="For Teenager">
+                                       @endif
+                                       @if($value == '3')
+                                          <img src="{{URL::to('/assets/')}}/handicapped.png" title="For Handicapped">
+                                       @endif
+                                    
+                                    @endforeach
                                     @endif
-                                    @if($value == '2')
-                                       <img src="{{URL::to('/assets/')}}/teenager.png" title="For Teenager">
+                                 </div>
+                              </div>
+                               
+                             
+                              <div class="lesson-info-block">
+                                 <p class="lesson-title">{{$val->title}}</p>
+                                 <h6 class="col-white m-b-15"> <i class="fa fa-star col-yellow"> </i> 5.0 </h6>
+                                 <h6 class="col-white m-b-15 lesson-catagory-text" style="float: right;">
+                                 <p class="bg-purple col-white custom-btn12 cut-sports" title="{{$val->sports->name}}">{{$val->sports->name}}</p>
+                                 </h6>
+                              </div>
+                              <div class="lesson-rating-block">
+                               <a href="javascript:void(0)" class="col-purple fav_lesson " data-id="{{$val->id}}" id="fl{{$val->id}}" >
+                                   @if(Auth::check())
+                                       @php $fv = 0; @endphp
+                                       @foreach (auth()->user()->fav_lesson as $lsn)
+                                           @if ($val->id == $lsn->lesson_id && $lsn->user_id == auth()->user()->id)
+                                               @php $fv = 1; @endphp
+                                           @endif
+                                       @endforeach
+                                       @if ($fv == 1)
+                                           <i class="fa fa-heart col-purple"></i>
+                                       @else
+                                           <i class="far fa-heart col-purple"></i>
+                                       @endif
+                                    @else
+                                       <i class="far fa-heart col-purple"></i>
                                     @endif
-                                    @if($value == '3')
-                                       <img src="{{URL::to('/assets/')}}/handicapped.png" title="For Handicapped">
-                                    @endif
-                                 
-                                 @endforeach
-                                 @endif
+                               </a>
+                                 <span class="col-grey">  {{ __('content.STARTING AT') }} <b class="col-white">
+                                   @if (count($val->packages)>0)
+                                   {{'$'.number_format($val->packages[0]->price)}} </b>
+                                   @endif
+
+                               </span>
                               </div>
                            </div>
-                            
-                          
-                           <div class="lesson-info-block">
-                              <p class="lesson-title">{{$val->title}}</p>
-                              <h6 class="col-white m-b-15"> <i class="fa fa-star col-yellow"> </i> 5.0 </h6>
-                              <h6 class="col-white m-b-15 lesson-catagory-text" style="float: right;">
-                              <p class="bg-purple col-white custom-btn12 cut-sports" title="{{$val->sports->name}}">{{$val->sports->name}}</p>
-                              </h6>
-                           </div>
-                           <div class="lesson-rating-block">
-                            <a href="javascript:void(0)" class="col-purple fav_lesson " data-id="{{$val->id}}" id="fl{{$val->id}}" >
-                                @if(Auth::check())
-                                    @php $fv = 0; @endphp
-                                    @foreach (auth()->user()->fav_lesson as $lsn)
-                                        @if ($val->id == $lsn->lesson_id && $lsn->user_id == auth()->user()->id)
-                                            @php $fv = 1; @endphp
-                                        @endif
-                                    @endforeach
-                                    @if ($fv == 1)
-                                        <i class="fa fa-heart col-purple"></i>
-                                    @else
-                                        <i class="far fa-heart col-purple"></i>
-                                    @endif
-                                 @else
-                                    <i class="far fa-heart col-purple"></i>
-                                 @endif
-                            </a>
-                              <span class="col-grey">  {{ __('content.STARTING AT') }} <b class="col-white">
-                                @if (count($val->packages)>0)
-                                {{'$'.number_format($val->packages[0]->price)}} </b>
-                                @endif
-
-                            </span>
-                           </div>
-                        </div>
-                     </a>
-                  </div>
+                        </a>
+                     </div>
+                  @endif
                @endforeach
             </div>
          </div>

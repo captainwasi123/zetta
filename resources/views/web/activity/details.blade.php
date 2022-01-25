@@ -106,7 +106,7 @@
                <div>
                   <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{empty($data->user) ? '' : $data->user->profile_img}}" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';">
                </div>
-               <a href="{{route('web.buddy.details', base64_encode($data->user->id))}}">
+               <a href="{{route('web.buddy.details', base64_encode(@$data->user->id))}}">
                   <h4 class="col-white no-margin m-t-0 m-b-0"> {{empty($data->user->fname) ? 'Anonymous' : $data->user->fname.' '.$data->user->lname}} </h4>
                </a>
                <h6 class="col-grey"> {{ __('content.Sports Buddy')}} </h6>
@@ -143,7 +143,7 @@
                         </div>
                      </div>
                      <div class="col-md-7 col-lg-7 col-12">
-                        <input type="text" class="form-field3" value="@foreach($data->user->category as $val){{$val->name}}, @endforeach" readonly="" name="">
+                        <input type="text" class="form-field3" value="@if(!empty($data->user->category))@foreach($data->user->category as $val){{$val->name}}, @endforeach @endif" readonly="" name="">
                      </div>
                   </div>
                   <div class="row m-b-20">
