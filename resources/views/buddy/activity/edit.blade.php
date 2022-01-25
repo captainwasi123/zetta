@@ -210,7 +210,7 @@
                </div>
             </div>
             <div class="col-md-6 col-lg-6 col-12">
-               <input type="file" name="cover_image" class="form-field1" accept="image/png, image/jpeg, image/jpg" required>
+               <input type="file" name="cover_image" class="form-field1" accept="image/png, image/jpeg, image/jpg">
                <span class="info-tag1"> Allowed File types are jpg, jpeg, png </span>
                <br>
                <img src="{{URL::to('/public/storage/user/activity/main_image/'.$data->cover_img)}}" width="100px">
