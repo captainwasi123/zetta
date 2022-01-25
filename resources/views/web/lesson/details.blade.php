@@ -103,7 +103,7 @@
                </div>
             </div>
 
-            <div class="lesson-holder-details m-t-40">
+            <div class="lesson-holder-details m-t-40 m-b-15">
                <div class="profile-details1">
                   <div class="row center-row m-b-20">
                      <div class="col-md-5 col-lg-5 col-12">
@@ -127,38 +127,18 @@
                         <input type="text" class="form-field3" value="@foreach($data->user->category as $val){{$val->name}}, @endforeach" readonly="" name="">
                      </div>
                   </div>
-               </div>
-               <div class="description-profile2">
-                  <p class="col-grey">
-                     {{empty($data->user) ? '' : $data->user->description}}
-                  </p>
+                  <div class="row center-row m-b-20">
+                     <div class="col-md-12">
+                        <div class="description-profile2">
+                           <p class="col-grey">
+                              {{empty($data->user) ? '' : $data->user->description}}
+                           </p>
+                        </div>
+                     </div>
+                  </div>
                </div>
             </div>
-            <div class="sec-head1 m-t-40 m-b-15 extra">
-               <h3 class="col-white"> {{ __('content.Reviews as Coach')}} </h3>
-            </div>
-            <div class="review-slider arrows3 extra">
-               <div class="review-box">
-                  <img src="{{URL::to('/assets/website')}}/images/profile-image1.jpg">
-                  <h5 class="col-white"> <b class="col-purple"> Lennon <i class="fa fa-star"> </i> </b> 5.0 </h5>
-                  <p class="col-white"> {{ __('content.That would be good please share any reference or similar website interms of features and functionality you need.')}}
-                  </p>
-               </div>
-               <div class="review-box">
-                  <img src="{{URL::to('/assets/website')}}/images/profile-image1.jpg">
-                  <h5 class="col-white"> <b class="col-purple"> Lennon <i class="fa fa-star"> </i> </b> 5.0 </h5>
-                  <p class="col-white"> That would be good please share any reference or similar website interms of features
-                     and functionality you need.
-                  </p>
-               </div>
-               <div class="review-box">
-                  <img src="{{URL::to('/assets/website')}}/images/profile-image1.jpg">
-                  <h5 class="col-white"> <b class="col-purple"> Lennon <i class="fa fa-star"> </i> </b> 5.0 </h5>
-                  <p class="col-white"> That would be good please share any reference or similar website interms of features
-                     and functionality you need.
-                  </p>
-               </div>
-            </div><div class="sec-head1 m-t-40 m-b-15">
+           <div class="sec-head1 m-t-40 m-b-15">
                <h3 class="col-white"> {{ __('content.Reviews as Coach')}} </h3>
             </div>
             <div class="review-slider arrows3">

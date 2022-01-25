@@ -1713,7 +1713,6 @@ ul.list-type1 li {
 .lesson-holder-details {
     float: left;
     width: 100%;
-    max-width: 600px;
     border: 1px solid grey;
     padding: 10px 0px;
 }
