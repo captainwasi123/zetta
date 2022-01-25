@@ -26,7 +26,7 @@ class settingController extends Controller
             'countries' => country::all(),
             'languages' => Language::orderBy('name')->get(),
             'sports' => sports::orderBy('name')->get(),
-            'userSports' => userCategorySelect::orderBy('id', 'desc')->get(),
+            'userSports' => userCategorySelect::where('user_id', Auth::id())->orderBy('id', 'desc')->get(),
         );
         return view('buddy.my_account.index')->with($data);
     }
