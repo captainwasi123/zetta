@@ -55,6 +55,7 @@
          </div>
          <div class="row">
             @foreach($lessons as $val)
+                  @if(!empty($val->user))
                <div class="col-md-4 col-lg-2 col-sm-4">
                   <a href="{{route('lesson.details', base64_encode($val->id))}}">
                      <div class="lesson-block">
@@ -120,6 +121,7 @@
                      </div>
                   </a>
                </div>
+               @endif
             @endforeach
             @if(count($lessons) == 0)
                <h4>{{ __('content.No Results Found.')}}</h4>
@@ -138,6 +140,7 @@
          </div>
          <div class="row" id="resultBlock">
             @foreach($activities as $val)
+                  @if(!empty($val->user))
                <div class="col-md-4 col-lg-2 col-sm-4">
                   <a href="{{route('activity.details', base64_encode($val->id))}}">
                      <div class="lesson-block">
@@ -220,6 +223,7 @@
                      </div>
                   </a>
                </div>
+               @endif
             @endforeach
             @if(count($activities) == 0)
                <h4>{{ __('content.No Results Found.')}}</h4>

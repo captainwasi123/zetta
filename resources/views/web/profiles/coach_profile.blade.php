@@ -190,7 +190,7 @@
              </div>
              <div class="row">
                 <div class="col-md-12">
-                 @foreach (Auth::user()->reviews as  $val)
+                 @foreach ($data->reviews as  $val)
                    <div class="review-box">
                      <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{@$val->user->profile_img}}">
                       <h5 class="col-white"> <b class="col-purple"> {{ __('content.Lennon')}} <i class="fa fa-star"> </i> </b>{{@$val->rating}} .0 </h5>
