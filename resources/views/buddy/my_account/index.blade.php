@@ -6,7 +6,7 @@
    <div class="row">
       <div class="col-md-6 col-lg-6 col-sm-12 col-12">
          <div class="profile-pic-upload">
-            <form method="post" action="{{route('coach.my_account.profileImage')}}" id="profile_form" enctype="multipart/form-data">
+            <form method="post" action="{{route('buddy.my_account.profileImage')}}" id="profile_form" enctype="multipart/form-data">
                @csrf
                <div class="avatar-upload">
                   <div class="avatar-edit">
