@@ -1438,6 +1438,7 @@ ul.list-type1 li {
 .lesson-title-block img {
     position: absolute;
     width: 24px;
+    height: 24px;
     left: 7px;
     border-radius: 100%;
     top: 10px;
