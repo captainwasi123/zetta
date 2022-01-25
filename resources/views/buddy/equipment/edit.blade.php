@@ -48,7 +48,7 @@
             <div class="col-md-3 col-lg-3 col-12">
                <div class="field-name">
                   <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/field-icon9.png">
-                  <h5> Sports </h5>
+                  <h5> Sports</h5>
                </div>
             </div>
             <div class="col-md-6 col-lg-6 col-12 ">
