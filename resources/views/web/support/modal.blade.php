@@ -35,7 +35,7 @@
    </div>
 </div>
 
-
+{{--  forget password  --}}
 
 <div class="modal fade forgotPassword-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
    <div class="modal-dialog modal-lg" role="document" style="max-width: 500px;">
@@ -58,6 +58,8 @@
       </div>
    </div>
 </div>
+
+
 
 {{-- for buddy --}}
 

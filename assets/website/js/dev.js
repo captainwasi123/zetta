@@ -537,7 +537,7 @@ $( "#login-form" ).submit(function( event ) {
 });
 
 
-//Forgot Password
+//Forgot Password 
 
 $( "#forgot-form" ).submit(function( event ) {
 
@@ -547,24 +547,24 @@ $( "#forgot-form" ).submit(function( event ) {
   // Get some values from elements on the page:
   var $form = $( this ),
     em = $form.find( "input[name='email']" ).val(),
-    token = $form.find( "input[name='_token']" ).val(),
     url = $form.attr( "action" );
 
     var datastrings = $(this).serialize();
     // Send the data using post
+    console.log(datastrings);
     var posting = $.post( url, datastrings );
 
     // Put the results in a div
     posting.done(function( data ) {
         if(data == 'error'){
-            $('#fp_error').html('Account has been suspended, please contact site administrator.');
+            $('#fp_error').html('.');
             $('#fp_error').css({display: 'block'});
             return false;
         }if(data == 'incorrect'){
-            $('#fp_error').html('Email or Password is incorrect.');
+            $('#fp_error').html('Email is incorrect.');
             $('#fp_error').css({display: 'block'});
         }else{
-            $('#fp_content').html('<div class="r_success_block"><img src="'+host+'/assets/images/success-gif.gif" class="success_gif" /><br><p> You are successfully Logged In.');
+            $('#fp_content').html('<div class="r_success_block"><img src="'+host+'/assets/images/success-gif.gif" class="success_gif" /><br><p> We have sent a email for reset password.');
             setTimeout(function(){
                 window.location.href = host+data;
             }, 2000);

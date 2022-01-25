@@ -17,15 +17,18 @@ use Illuminate\Support\Facades\Route;
 
 // Web Routes
 	Route::namespace('web')->middleware('changeLang')->group(function(){
-		
+
 		// Main Pages
 			Route::get('/', 'webController@index');
 			Route::get('/contact', 'webController@contact');
 			Route::get('/thankyou', 'webController@thankyou');
 			Route::get('/partner', 'webController@partner');
-			
 
-			Route::post('/forgot-password', 'webController@forgotPassword');
+
+			Route::post('/forgot-password', 'webController@forgotPassword')->name('forgot-password');
+            Route::get('reset-password/{token}', 'webController@showResetPasswordForm')->name('reset.password.get');
+            Route::post('reset-password', 'webController@submitResetPasswordForm')->name('reset.password.post');
+
 
 			Route::get('/about_us', 'webController@aboutUs');
 			Route::get('/all/{type}', 'webController@all')->name('web.all');
@@ -52,7 +55,7 @@ use Illuminate\Support\Facades\Route;
 
 			// languages
 			Route::get('/lang/{lang}', 'webController@changeLang' );
-			
+
 			//Footer Pages
 
 			Route::get('terms', 'webController@terms')->name('web.terms');
@@ -71,7 +74,7 @@ use Illuminate\Support\Facades\Route;
 			Route::post('/login', 'authController@login');
 			Route::get('/logout', 'authController@logout')->name('logout');
 			Route::get('/confirmnwithlogin/{id}', 'authController@confirmnwithlogin')->name('confirmnwithlogin');
-		
+
 
 
 
@@ -116,12 +119,12 @@ use Illuminate\Support\Facades\Route;
                 Route::get('/activity/add/{id}','FavouriteController@fav_activity')->name('favourite.activity.add');
                 Route::get('/activity/delete//{id}','FavouriteController@delfavactivity')->name('favourite.activity.del');
 
-				
+
 
                 // add favourite Lesson
                 Route::get('/lesson/add/{id}','FavouriteController@fav_lesson')->name('favourite.lesson.add');
                 Route::get('/lesson/delete/{id}','FavouriteController@delfavlesson')->name('favourite.lesson.del');
-                
+
 
                 // add favourite Coach
                 Route::get('/coach/add/{id}','FavouriteController@fav_coach')->name('favourite.coach.add');
@@ -132,7 +135,7 @@ use Illuminate\Support\Facades\Route;
                 Route::get('/buddy/add/{id}','FavouriteController@fav_buddy')->name('favourite.buddy.add');
                 Route::get('/buddy/delete/{id}','FavouriteController@delfavbuddy')->name('favourite.buddy.del');
 
-                
+
 
             });
 
@@ -290,7 +293,7 @@ use Illuminate\Support\Facades\Route;
 				Route::get('/favouriteBuddy', 'buddyController@favouriteBuddy')->name('buddy.favouriteBuddy');
 
 
-				
+
 
 				//Messenger
 					Route::prefix('inbox')->group(function(){
@@ -507,7 +510,7 @@ use Illuminate\Support\Facades\Route;
 							});
 
                             Route::prefix('badges')->group(function(){
-                                  
+
                                 Route::get('/', 'redeemController@badges')->name('admin.redeem.badges');
 								Route::post('add', 'redeemController@badgesInsert')->name('admin.redeem.badges.add');
 								Route::get('delete/{id}', 'redeemController@delete')->name('admin.redeem.badges.delete');

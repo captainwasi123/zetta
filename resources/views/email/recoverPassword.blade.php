@@ -186,9 +186,7 @@ p.sec-3 a {
 </head>
 <body>
 
-  <div class="logo-section text-center">
-    <img src="zetta-logo.png">
-  </div>
+    @include('email.includes.header')
   
   <div class="container">
     <div class="section-1">    
@@ -197,10 +195,9 @@ p.sec-3 a {
         <div class="col-lg-8 main-section">
           <div class="section-2">
               <h2>FORGOT PASSWORD</h2>
-              <h4 class="sec-1">Object: password reset </h4>
               <h4 class="sec-2">Reset your password</h4>
               <p class="sec-3">You’re receiving this email because you requested a password reset for your Zettaa account. Please tap the button below to choose a new password. This link will expire in 1 hour.If you didn’t initiate this change, please email us on <a href="">help@zettaa.ch</a> and let us know </p>    
-              <a href="#"> Reset Password </a>
+              <a href="{{ route('reset.password.get', $token)}}"> Reset Password </a>
           </div>
           <div class="section-3">
             <p>Thanks</p>
