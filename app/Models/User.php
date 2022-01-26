@@ -70,7 +70,7 @@ class User extends Authenticatable
         $u->source = '1';
         $u->status = '5';
         $u->type   = $data['user_type'];
-        $u->dob   = $data['user_dob'];
+        $u->dob   = date('Y-m-d', strtotime($data['user_dob']));
         $u->save();
 
         return $u->id;

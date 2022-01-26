@@ -8,6 +8,7 @@
   <script src="{{URL::to('/assets/website')}}/js/functions.js"> </script>
  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key={{env('GOOGLE_MAP_KEY')}}&libraries=places"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script type="text/javascript" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/jquery.inputmask.bundle.js"></script>
   <script>
    google.maps.event.addDomListener(window, 'load', initialize);
    function initialize() {

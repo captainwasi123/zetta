@@ -496,11 +496,12 @@ $( "#register-form-buddy" ).submit(function( event ) {
                   var elements = '<input type="text" name="username" placeholder="Username" required>';
                   elements    += '<input type="password" placeholder="New Password" name="password" required>';
                   elements        += '<input type="password" placeholder="Confirm Password" name="confirmation_password" required>';
-                  elements        += '<label>Date of Birth</label><input type="date" class="form-control" name="user_dob" required> ';
+                  elements        += '<label>Date of Birth</label><input type="text" id="dob_field" placeholder="dd-mm-yyyy" class="form-control" name="user_dob" required> ';
                   elements        += '<input type="hidden" class="radio-button" name="user_type" id="userTypeRegister"> ';
                   elements        += '<p style="display:flex;"><input type="checkbox" name="terms" id="signUpTerms">&nbsp;&nbsp; <label for="signUpTerms">I agree to <a href="'+host+'/terms" target="_blank">Terms & Conditions</a></label></p>';
                   elements        += '<button type="button" class="signUpStep2buddy halfContinue"> Continue as Sport Buddy </button> <button type="button" class="signUpStep2coach halfContinue"> Continue as Coach  </button>';
                   $('#r_fields_buddy').html(elements);
+                  $("#dob_field").inputmask({"mask": "99-99-9999"});
               }
           })
           .fail(function(error) {
