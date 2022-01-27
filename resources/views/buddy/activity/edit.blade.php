@@ -43,7 +43,7 @@
                </div>
             </div>
             <div class="col-md-6 col-lg-6 col-12">
-               <select class="select2 select2-multiple" style="width: 100%" name="equipments[]" multiple="multiple" data-placeholder="Enter Equipment" required>
+               <select class="select2 select2-multiple" style="width: 100%" name="equipments[]" multiple="multiple" data-placeholder="Enter Equipment">
                   @foreach($equip as $val)
                      <option value="{{$val->id}}"
                         @foreach($data->equipment as $eq)
@@ -97,27 +97,6 @@
                </div>
             </div>
          </div>
-
-         <div class="row center-row">
-            <div class="col-md-3 col-lg-3 col-12">
-               <div class="field-name">
-                  <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/field-icon9.png">
-                  <h5> Category </h5>
-               </div>
-            </div>
-            <div class="col-md-6 col-lg-6 col-12">
-               <select name="category" class="form-field1" id="category_field" required>
-                   <option value="">Select</option>
-                    @foreach ($categories as $val)
-                        <option value="{{$val->id}}"
-                            @if ($data->category_id == $val->id)
-                                selected
-                            @endif
-                            >{{$val->name}}</option>
-                    @endforeach
-               </select>
-            </div>
-         </div>
          <div class="row center-row">
             <div class="col-md-3 col-lg-3 col-12">
                <div class="field-name">
@@ -127,10 +106,27 @@
             </div>
             <div class="col-md-6 col-lg-6 col-12">
                <select name="sports" class="form-field1" id="sports_id" required>
-                   <option value="{{$data->sports_id}}">{{@$data->sports->name}}</option>
+                   <option value="" disabled selected>Select</option>
+                   @php $checkSports = array(); @endphp
+                   @if(count($userSports) > 0)
+                      <optgroup label="Favourite Sports">
+                          @foreach ($userSports as $val)
+                              <option value="{{$val->cat_id}}" {{$data->sports_id == $val->cat_id ? 'selected' : ''}}>{{$val->sports->name}}</option>
+                              @php array_push($checkSports, $val->cat_id); @endphp
+                          @endforeach
+                       </optgroup>
+                    @endif
+                    <optgroup label="All Sports">
+                       @foreach ($sports as $val)
+                           @if(!in_array($val->id, $checkSports))
+                              <option value="{{$val->id}}" {{$data->sports_id == $val->id ? 'selected' : ''}}>{{$val->name}}</option>
+                           @endif
+                       @endforeach
+                    </optgroup>
                </select>
             </div>
          </div>
+
          <div id="friend_participant" style="{{$data->activity_type == '2' ? 'display: none' : ''}}">
             <div class="row center-row">
                <div class="col-md-3 col-lg-3 col-12">
@@ -282,7 +278,7 @@
                   <div class="inline-1">
                      <label class="custom-control custom-radio">
                      <input id="radio1" name="availability" type="radio" value="1" class="custom-control-input" {{$data->availability == '1' ? 'checked' : ''}}>
-                     <span class="custom-control-label"> Only Zoom Activity </span>
+                     <span class="custom-control-label"> Only Online Activity </span>
                      </label>
                      <label class="custom-control custom-radio">
                      <input id="radio2" name="availability" type="radio" value="2" class="custom-control-input" {{$data->availability == '2' ? 'checked' : ''}}>

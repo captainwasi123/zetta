@@ -14,6 +14,7 @@ use App\Models\lesson\skills;
 use App\Models\sportsCategory;
 use App\Models\sports;
 use App\Models\FavouriteLesson as FL;
+use App\Models\userCategorySelect;
 
 use Auth;
 
@@ -31,9 +32,10 @@ class lessonsController extends Controller
 
     function add(){
         $equip = userEquipment::where('user_id', Auth::id())->get();
-        $categories = sportsCategory::orderBy('name')->get();
+        $sports = sports::orderBy('name')->get();
+        $userSports  = userCategorySelect::where('user_id', Auth::id())->orderBy('id', 'desc')->get();
 
-        return view('coach.lessons.add', ['equip' => $equip, 'categories' => $categories]);
+        return view('coach.lessons.add', ['equip' => $equip, 'sports' => $sports, 'userSports' => $userSports]);
     }
 
     function insert(Request $request){
@@ -72,11 +74,12 @@ class lessonsController extends Controller
     function edit($id){
         $id = base64_decode($id);
         $data = lessons::with('packages')->find($id);
-        $categories = sportsCategory::all();
         if(!empty($data->id)){
             $equip = userEquipment::where('user_id', Auth::id())->get();
+            $sports = sports::orderBy('name')->get();
+            $userSports  = userCategorySelect::where('user_id', Auth::id())->orderBy('id', 'desc')->get();
 
-            return view('coach.lessons.edit', ['data' => $data, 'equip' => $equip, 'categories' => $categories]);
+            return view('coach.lessons.edit', ['data' => $data, 'equip' => $equip, 'sports' => $sports, 'userSports' => $userSports]);
         }else{
             return redirect()->back();
         }

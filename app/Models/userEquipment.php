@@ -17,7 +17,6 @@ class userEquipment extends Model
         $l = new userEquipment;
         $l->user_id = Auth::id();
         $l->name = $data['name'];
-        $l->category_id = $data['category'];
         $l->sports_id = $data['sports'];
         $l->qty = $data['qty'];
         $l->package = $data['package'];
@@ -30,7 +29,6 @@ class userEquipment extends Model
     public static function updateEquipment(array $data){
         $l = userEquipment::find(base64_decode($data['eid']));
         $l->name = $data['name'];
-        $l->category_id = $data['category'];
         $l->sports_id = $data['sports'];
         $l->qty = $data['qty'];
         $l->package = $data['package'];

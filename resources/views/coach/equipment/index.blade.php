@@ -23,7 +23,6 @@
                                  <thead>
                                     <tr>
                                        <th> Title </th>
-                                       <th> Category </th>
                                        <th> Sports </th>
                                        <th> Quantity </th>
                                        <th> Settings </th>
@@ -39,15 +38,14 @@
                                                 {{$val->name}}
                                              </a>
                                           </td>
-                                          <td>{{@$val->category->name}}</td>
                                           <td>{{@$val->sports->name}}</td>
                                           <td> {{$val->qty}} </td>
                                           <td>
                                              <a href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"> <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/wheel-icon.png"> </a>
                                              <div class="dropdown-menu animated flipInY">
-                                                <a href="{{route('coach.equipment.edit', base64_encode($val->id))}}" class="dropdown-item"><i class="fa fa-pencil"></i> Edit </a>
+                                                <a href="{{route('coach.equipment.edit', base64_encode($val->id))}}" class="dropdown-item"><i class="fa fa-edit"></i> Edit </a>
                                                 <div class="dropdown-divider"></div>
-                                                <a href="javascript:void(0)" class="dropdown-item deleteItem" data-href="{{route('coach.equipment.delete', base64_encode($val->id))}}"><i class="fa fa-trash"></i> Delete </a>
+                                                <a href="javascript:void(0)" class="dropdown-item deleteItem" data-href="{{route('coach.equipment.delete', base64_encode($val->id))}}"><i class="fa fa-trash"></i> &nbsp;Delete </a>
                                              </div>
                                           </td>
                                           <td> {{empty($val->price) ? 'Free' : '$'.number_format($val->price,2)}} </td>

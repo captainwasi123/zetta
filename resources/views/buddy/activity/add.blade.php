@@ -42,7 +42,7 @@
                </div>
             </div>
             <div class="col-md-6 col-lg-6 col-12">
-               <select class="select2 select2-multiple" style="width: 100%" name="equipments[]" multiple="multiple" data-placeholder="Enter Equipment" required>
+               <select class="select2 select2-multiple" style="width: 100%" name="equipments[]" multiple="multiple" data-placeholder="Enter Equipment">
                   @foreach($equip as $val)
                      <option value="{{$val->id}}">{{$val->name}}</option>
                   @endforeach
@@ -114,28 +114,28 @@
             <div class="col-md-3 col-lg-3 col-12">
                <div class="field-name">
                   <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/field-icon9.png">
-                  <h5> Category </h5>
-               </div>
-            </div>
-            <div class="col-md-6 col-lg-6 col-12">
-               <select name="category" class="form-field1" id="category_field" required>
-                   <option value="">Select</option>
-                    @foreach ($categories as $val)
-                        <option value="{{$val->id}}">{{$val->name}}</option>
-                    @endforeach
-               </select>
-            </div>
-         </div>
-         <div class="row center-row">
-            <div class="col-md-3 col-lg-3 col-12">
-               <div class="field-name">
-                  <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/field-icon9.png">
                   <h5> Sports </h5>
                </div>
             </div>
             <div class="col-md-6 col-lg-6 col-12">
-               <select name="sports" class="form-field1" id="sports_id" required>
-                   <option value="">Select</option>
+               <select name="sports" class="form-field1" required>
+                   <option value="" disabled selected>Select</option>
+                   @php $checkSports = array(); @endphp
+                   @if(count($userSports) > 0)
+                      <optgroup label="Favourite Sports">
+                          @foreach ($userSports as $val)
+                              <option value="{{$val->cat_id}}">{{$val->sports->name}}</option>
+                              @php array_push($checkSports, $val->cat_id); @endphp
+                          @endforeach
+                       </optgroup>
+                    @endif
+                    <optgroup label="All Sports">
+                       @foreach ($sports as $val)
+                           @if(!in_array($val->id, $checkSports))
+                              <option value="{{$val->id}}">{{$val->name}}</option>
+                           @endif
+                       @endforeach
+                    </optgroup>
                </select>
             </div>
          </div>
@@ -221,7 +221,7 @@
             </div>
             <div class="col-md-3 col-lg-3 col-12">
                <div class="pic-uploader1">
-                  <input type="time" placeholder="" class="form-field1" name="held_time" required>
+                  <input type="text" id="picker3" placeholder="" class="form-field1" name="held_time" value="{{date('H:i')}}" readonly required>
                </div>
             </div>
          </div>
@@ -237,7 +237,7 @@
                   <div class="inline-1">
                      <label class="custom-control custom-radio">
                      <input id="radio1" name="availability" type="radio" value="1" class="custom-control-input">
-                     <span class="custom-control-label"> Only Zoom Activity </span>
+                     <span class="custom-control-label"> Only Online Activity </span>
                      </label>
                      <label class="custom-control custom-radio">
                      <input id="radio2" name="availability" type="radio" value="2" class="custom-control-input">
@@ -298,8 +298,10 @@
    <link href="{{URL::to('/')}}/assets/user_dashboard/plugins/multiselect/css/multi-select.css" rel="stylesheet" type="text/css" />
    <link href="{{URL::to('/')}}/assets/user_dashboard/plugins/bootstrap-select/bootstrap-select.min.css" rel="stylesheet" />
    <link href="{{URL::to('/')}}/assets/user_dashboard/plugins/select2/dist/css/select2.min.css" rel="stylesheet" type="text/css" />
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/dmuy/MDTimePicker@v1.0.2-rc2/mdtimepicker.min.css">
 @endsection
 @section('addScript')
+   <script src="https://cdn.jsdelivr.net/gh/dmuy/MDTimePicker@v1.0.2-rc2/mdtimepicker.min.js"></script>
    <script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
    <script src="{{URL::to('/')}}/assets/user_dashboard/plugins/bootstrap-select/bootstrap-select.min.js" type="text/javascript"></script>
    <script type="text/javascript" src="{{URL::to('/')}}/assets/user_dashboard/plugins/multiselect/js/jquery.multi-select.js"></script>
@@ -309,6 +311,12 @@
    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key={{env('GOOGLE_MAP_KEY')}}&libraries=places"></script>
 <script type="text/javascript">
+
+   $(document).ready(function(){
+      'use strict'
+
+      $('#picker3').mdtimepicker({ is24hour: true });
+   });
 
    CKEDITOR.replace( 'description' );
    $("form").submit( function(e) {
@@ -320,6 +328,7 @@
     });
    var r = 0;
    jQuery(document).ready(function() {
+
 
        $("input[name='tch3']").TouchSpin();
        $('.dropify').dropify();

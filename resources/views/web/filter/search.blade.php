@@ -360,14 +360,6 @@
             @endforeach
          @endforeach
       ];
-      var ulocations = [
-            @foreach ($coaches as $val)
-               ['{{$val->fname.' '.$val->lname}}', {{$val->lat}}, {{$val->lng}}, '{{empty($val->coach_request_status) ? "Sports Buddy" : "Coach, Sports Buddy"}}', "{{route('web.buddy.details', base64_encode($val->id))}}"],
-            @endforeach
-            @foreach ($buddies as $val)
-               ['{{$val->fname.' '.$val->lname}}', {{$val->lat}}, {{$val->lng}}, '{{empty($val->coach_request_status) ? "Sports Buddy" : "Coach, Sports Buddy"}}', "{{route('web.buddy.details', base64_encode($val->id))}}"],
-            @endforeach
-      ];
 
       $(document).ready(function(){  
          mapset();

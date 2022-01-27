@@ -6,6 +6,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\userEquipment;
 use App\Models\sportsCategory;
+use App\Models\userCategorySelect;
+use App\Models\sports;
+use Auth;
 
 class equipmentController extends Controller
 {
@@ -18,7 +21,8 @@ class equipmentController extends Controller
     }
 
     function add(){
-        $data['categories'] = sportsCategory::all();
+        $data['sports'] = sports::orderBy('name')->get();
+        $data['userSports']  = userCategorySelect::where('user_id', Auth::id())->orderBy('id', 'desc')->get();
 
         return view('coach.equipment.add')->with($data);
     } 
@@ -41,10 +45,11 @@ class equipmentController extends Controller
 
     function edit($id){
         $id = base64_decode($id);
-        $data = userEquipment::find($id);
-        $categories = sportsCategory::all();
-        if(!empty($data->id)){
-            return view('coach.equipment.edit', ['data' => $data, 'categories' => $categories]);
+        $data['data'] = userEquipment::find($id);
+        $data['sports'] = sports::orderBy('name')->get();
+        $data['userSports']  = userCategorySelect::where('user_id', Auth::id())->orderBy('id', 'desc')->get();
+        if(!empty($data['data']->id)){
+            return view('coach.equipment.edit')->with($data);
         }else{
             return redirect()->back();
         }

@@ -11,6 +11,7 @@ use App\Models\FavouriteBuddy as FB;
 use Illuminate\Http\Request;
 use App\Models\inbox\chat;
 use App\Models\lesson\orderSessions;
+use App\Models\activity\activities;
 use Auth;
 
 class buddyController extends Controller
@@ -28,7 +29,9 @@ class buddyController extends Controller
             return $q->where('buyer_id', Auth::id());
         })->get();
 
-      return view('buddy.dashboard', ['chat_list' => $data_list, 'orders' => $orders]);
+        $activities = activities::orderBy('held_date')->get();
+
+      return view('buddy.dashboard', ['chat_list' => $data_list, 'orders' => $orders, 'activities' => $activities]);
     }
 
     public function become_a_coach(){

@@ -122,6 +122,13 @@
                          className: 'bg-info'
                      },
                   @endforeach
+                  @foreach($activities as $val)
+                     {
+                         title: '{{$val->title}}',
+                         start: '{{date("Y-m-d H:i:s", strtotime($val->held_date))}}',
+                         className: 'bg-primary'
+                     },
+                  @endforeach
                ];
 
               var $this = this;

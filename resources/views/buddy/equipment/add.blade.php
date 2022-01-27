@@ -27,31 +27,29 @@
             <div class="col-md-3 col-lg-3 col-12">
                <div class="field-name">
                   <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/field-icon9.png">
-                  <h5> Category </h5>
-               </div>
-            </div>
-            <div class="col-md-6 col-lg-6 col-12 ">
-               <div class="inc-dec">
-                  <select name="category" class="form-field1" id="category_field" required>
-                      <option value="">Select</option>
-                       @foreach ($categories as $val)
-                           <option value="{{$val->id}}">{{$val->name}}</option>
-                       @endforeach
-                  </select> 
-               </div>
-            </div>
-         </div>
-         <div class="row center-row">
-            <div class="col-md-3 col-lg-3 col-12">
-               <div class="field-name">
-                  <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/field-icon9.png">
                   <h5> Sports </h5>
                </div>
             </div>
             <div class="col-md-6 col-lg-6 col-12 ">
                <div class="inc-dec">
                   <select name="sports" class="form-field1" id="sports_id" required>
-                      <option value="">Select</option>
+                     <option value="" disabled selected>Select</option>
+                      @php $checkSports = array(); @endphp
+                      @if(count($userSports) > 0)
+                         <optgroup label="Favourite Sports">
+                             @foreach ($userSports as $val)
+                                 <option value="{{$val->cat_id}}">{{$val->sports->name}}</option>
+                                 @php array_push($checkSports, $val->cat_id); @endphp
+                             @endforeach
+                          </optgroup>
+                       @endif
+                       <optgroup label="All Sports">
+                          @foreach ($sports as $val)
+                              @if(!in_array($val->id, $checkSports))
+                                 <option value="{{$val->id}}">{{$val->name}}</option>
+                              @endif
+                          @endforeach
+                       </optgroup>
                   </select> 
                </div>
             </div>

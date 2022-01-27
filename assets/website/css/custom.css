@@ -1455,7 +1455,7 @@ ul.list-type1 li {
     display: block;
     color: grey;
     font-size: 12px;
-    margin-top: 4px;
+    margin-top: 0px;
 }
 
 .zoom-tag {

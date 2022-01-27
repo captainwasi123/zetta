@@ -15,6 +15,7 @@ use App\Models\sportsCategory;
 use App\Models\sports;
 use App\Models\friends as friendsList;
 use App\Models\FavouriteActivity as FA;
+use App\Models\userCategorySelect;
 use Auth;
 
 class activityController extends Controller
@@ -33,9 +34,10 @@ class activityController extends Controller
     function add(){
         $equip = userEquipment::where('user_id', Auth::id())->get();
         $users = friendsList::where('user_id',Auth::id())->get();
-        $categories = sportsCategory::orderBy('name')->get();
+        $sports = sports::orderBy('name')->get();
+        $userSports  = userCategorySelect::where('user_id', Auth::id())->orderBy('id', 'desc')->get();
 
-        return view('buddy.activity.add', ['equip' => $equip,'users'=>$users, 'categories' => $categories]);
+        return view('buddy.activity.add', ['equip' => $equip,'users'=>$users, 'sports' => $sports, 'userSports' => $userSports]);
     }
 
     function insert(Request $request){
@@ -70,9 +72,10 @@ class activityController extends Controller
             $equip = userEquipment::where('user_id', Auth::id())->get();
             $users = friendsList::where('user_id',Auth::id())->get();
             $friend = friends::where('activity_id',$id)->first();
-            $categories = sportsCategory::all();
+            $userSports  = userCategorySelect::where('user_id', Auth::id())->orderBy('id', 'desc')->get();
+            $sports = sports::orderBy('name')->get();
 
-            return view('buddy.activity.edit', ['equip' => $equip, 'data' => $data,'users'=>$users,'friend'=>$friend, 'categories' => $categories]);
+            return view('buddy.activity.edit', ['equip' => $equip, 'data' => $data,'users'=>$users,'friend'=>$friend, 'userSports' => $userSports, 'sports' => $sports]);
         }else{
             return redirect()->back();
         }

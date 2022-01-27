@@ -100,11 +100,7 @@
         </div>
         </div>
         <div class="col-md-7 col-lg-7 col-sm-12 col-12 text-right mob-text-left">
-        <div class="wallet-filters m-b-20">
-            <h5 class="col-white"> WITHDRAW </h5>
-            <a href="" class="wallet-btn1"> <img src="{{asset('public/admin')}}/assets/images/paypal-logo.png" width="24"> PAYPAL ACCOUNT </a>
-            <a href="" class="wallet-btn1"> <img src="{{asset('public/admin')}}/assets/images/paypal-logo.png" width="24"> PAYPAL ACCOUNT </a>
-        </div>
+        
         </div>
     </div>
     <div class="row">

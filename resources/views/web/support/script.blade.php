@@ -3,6 +3,14 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="{{URL::to('/assets/website')}}/js/bootstrap.min.js"> </script>
   <script src="{{URL::to('/assets/website')}}/js/slick-slider.js"> </script>
+  @php $sportss = \App\Models\sports::all(); @endphp
+  <script type="text/javascript">
+    var kerywordss = [
+      @foreach($sportss as $val)  
+        "{{ __('content.'.$val->name)}}",
+      @endforeach
+    ];
+  </script>
 
   <script src="{{URL::to('/assets/website')}}/js/dev.js"> </script>
   <script src="{{URL::to('/assets/website')}}/js/functions.js"> </script>

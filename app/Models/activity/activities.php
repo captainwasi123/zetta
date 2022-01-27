@@ -28,7 +28,6 @@ class activities extends Model
         $l->participants = $data['participants'];
         $l->group_members = empty($data['group_members']) ? null : $data['group_members'];
         $l->activity_type = $data['activityType'];
-        $l->category_id = $data['category'];
         $l->sports_id = $data['sports'];
         $l->held_date = $data['held_date'].' '.$data['held_time'];
         $l->availability = $data['availability'];
@@ -57,7 +56,6 @@ class activities extends Model
         $l->participants = $data['participants'];
         $l->group_members = empty($data['group_members']) ? null : $data['group_members'];
         $l->activity_type = $data['activityType'];
-        $l->category_id = $data['category'];
         $l->sports_id = $data['sports'];
         $l->held_date = $data['held_date'].' '.$data['held_time'];
         $l->availability = $data['availability'];

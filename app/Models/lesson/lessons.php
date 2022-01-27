@@ -34,7 +34,6 @@ class lessons extends Model
         $l->availability = $data['availability'];
         $l->availability_for = empty($data['availability_for']) ? null :  json_encode($data['availability_for']);
 
-        $l->category_id = $data['category'];
         $l->sports_id = $data['sports'];
         $l->status = '1';
         $l->save();
@@ -79,7 +78,6 @@ class lessons extends Model
         $l->held_date = $data['held_date'].' '.$data['held_time'];
         $l->availability = $data['availability'];
         $l->availability_for = empty($data['availability_for']) ? null :  json_encode($data['availability_for']);
-        $l->category_id = $data['category'];
         $l->sports_id = $data['sports'];
         $l->save();
         $id = $l->id;
