@@ -498,20 +498,15 @@
       var alocations = [
             @foreach ($alocation as $val)
                @if(!empty($val->activity))
-                  ['{{$val->activity->title}}', {{$val->lat}}, {{$val->lng}}, '{{$val->activity->user->fname}} {{$val->activity->user->lname}}', "{{route('activity.details', base64_encode($val->activity->id))}}"],
+                  ['{{@$val->activity->title}}', {{$val->lat}}, {{$val->lng}}, '{{@$val->activity->user->fname}} {{$val->activity->user->lname}}', "{{route('activity.details', base64_encode($val->activity->id))}}"],
                @endif
             @endforeach
       ];
       var llocations = [
             @foreach ($llocation as $val)
                @if(!empty($val->lesson))
-                  ['{{$val->lesson->title}}', {{$val->lat}}, {{$val->lng}}, '{{$val->lesson->user->fname}} {{$val->lesson->user->lname}}', "{{route('lesson.details', base64_encode($val->lesson->id))}}"],
+                  ['{{@$val->lesson->title}}', {{$val->lat}}, {{$val->lng}}, '{{@$val->lesson->user->fname}} {{$val->lesson->user->lname}}', "{{route('lesson.details', base64_encode($val->lesson->id))}}"],
                @endif
-            @endforeach
-      ];
-      var ulocations = [
-            @foreach ($ulocation as $val)
-               ['{{$val->fname.' '.$val->lname}}', {{$val->lat}}, {{$val->lng}}, '{{empty($val->coach_request_status) ? "Sports Buddy" : "Coach, Sports Buddy"}}', "{{route('web.buddy.details', base64_encode($val->id))}}"],
             @endforeach
       ];
 
