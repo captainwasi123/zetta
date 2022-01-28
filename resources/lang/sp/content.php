@@ -4,7 +4,7 @@
 return [
     // language
 
-    'language'=>'Española',
+    'language'=>'Español',
     'Don`t have an account?' => '¿No tienes una cuenta?',
     'Forgot your password?' => '¿Olvidaste tu contraseña?',
     'Reset your password' => 'Restablecer su contraseña',

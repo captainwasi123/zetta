@@ -30,13 +30,42 @@ class webController extends Controller
 {
 
     function index(){
+        $date = date('Y-m-d');
         $data = array(
-        	'lessons' => lessons::with('packages')->where('status', '1')->latest()->limit(10)->get(),
-            'uactivities' => activities::where('status', '1')->where('activity_type', '1')->whereDate('held_date', '>', Carbon::now())->orderBy('held_date', 'asc')->limit(10)->get(),
-            'activities' => activities::with(['user','equipment','equipment.user_equipment'])->where('status', '1')->where('activity_type', '1')->latest()->limit(10)->get(),
-            'alocation' => Activity_location::where('lat', '!=', null)->where('lng', '!=', null)->groupBy('lat', 'lng')->get(),
-            'llocation' => Locations::where('lat', '!=', null)->where('lng', '!=', null)->groupBy('lat', 'lng')->get(),
-            'ulocation' => User::where('status', '1')->where('lat', '!=', null)->where('lng', '!=', null)->get(),
+        	'lessons' => lessons::with('packages')
+                            ->where('status', '1')
+                            ->latest()
+                            ->limit(10)
+                            ->get(),
+
+            'uactivities' => activities::where('status', '1')
+                            ->where('activity_type', '1')
+                            ->whereDate('held_date', '>', Carbon::now())
+                            ->orderBy('held_date', 'asc')
+                            ->limit(10)
+                            ->get(),
+
+            'activities' => activities::with(['user','equipment','equipment.user_equipment'])
+                            ->whereDate('held_date', '>', Carbon::now())
+                            ->where('status', '1')
+                            ->where('activity_type', '1')
+                            ->latest()
+                            ->limit(10)
+                            ->get(),
+
+            'alocation' => Activity_location::where('lat', '!=', null)
+                            ->where('lng', '!=', null)
+                            ->whereHas('activity', function($q){
+                                return $q->where('activity_type', '1')
+                                            ->whereDate('held_date', '>', Carbon::now());
+                            })
+                            ->groupBy('lat', 'lng')
+                            ->get(),
+
+            'llocation' => Locations::where('lat', '!=', null)
+                            ->where('lng', '!=', null)
+                            ->groupBy('lat', 'lng')
+                            ->get(),
             'sports' => sports::all()
         );
         //dd($data['uactivities']);
@@ -82,6 +111,8 @@ class webController extends Controller
                                 ->latest()->paginate(6);
 
             $data['activities'] = activities::where('status', '1')
+                                ->where('activity_type', '1')
+                                ->whereDate('held_date', '>', Carbon::now())
                                 ->when($type != 'all', function($w) use ($type){
                                     return $w->whereHas('user', function($q) use ($type){
                                         return $q->whereHas('country', function($qq) use ($type){

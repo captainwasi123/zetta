@@ -4,7 +4,7 @@
 return [
     // language
 
-    'language'=>'Französisch',
+    'language'=>'Français',
     'Don`t have an account?' => 'Vous n`avez pas de compte ?',
     'Forgot your password?' => 'Mot de passe oublié?',
     'Reset your password' => 'réinitialisez votre mot de passe',

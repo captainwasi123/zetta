@@ -117,14 +117,14 @@
               var defaultEvents =  [
                   @foreach($orders as $val)
                      {
-                         title: '{{@$val->orders->lesson->title}}',
+                         title: ' | {{@$val->orders->lesson->title}}',
                          start: '{{date("Y-m-d H:i:s", strtotime($val->start_date.' '.$val->start_time))}}',
                          className: 'bg-info'
                      },
                   @endforeach
                   @foreach($activities as $val)
                      {
-                         title: '{{$val->title}}',
+                         title: ' | {{$val->title}}',
                          start: '{{date("Y-m-d H:i:s", strtotime($val->held_date))}}',
                          className: 'bg-primary'
                      },
@@ -134,8 +134,8 @@
               var $this = this;
               $this.$calendarObj = $this.$calendar.fullCalendar({
                   slotDuration: '00:15:00', /* If we want to split day time each 15minutes */
-                  minTime: '08:00:00',
-                  maxTime: '19:00:00',  
+                  minTime: '00:00:00',
+                  maxTime: '23:59:59',  
                   defaultView: 'month',  
                   handleWindowResize: true,   
                    
@@ -145,6 +145,7 @@
                       right: 'month,agendaWeek,agendaDay'
                   },
                   events: defaultEvents,
+                  timeFormat: 'H:mm',
                   editable: false,
                   droppable: false, // this allows things to be dropped onto the calendar !!!
                   eventLimit: false, // allow "more" link when too many events
