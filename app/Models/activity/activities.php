@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\activity\equipments;
 use App\Models\activity\locations;
 use App\Models\activity\medias;
+use App\Models\activity\skills;
 use Auth;
 use App\Models\FavouriteActivity;
 use App\Models\sportsCategory;
@@ -118,6 +119,9 @@ class activities extends Model
 
 
 
+    public function skills(){
+        return $this->hasMany(skills::class, 'activity_id', 'id');
+    }
     public function equipment(){
         return $this->hasMany(equipments::class, 'activity_id', 'id');
     }

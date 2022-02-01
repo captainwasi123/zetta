@@ -61,7 +61,7 @@
                                        <div class="block-element">
                                           <div class="row">
                                              <div class="col-md-12 col-12 col-sm-12 col-lg-12 text-right mob-text-left">
-                                                <a href="" class="custom-btn2 m-b-10"> Weekly Schedule </a>
+                                                <a href="{{route('coach.availability')}}" class="custom-btn2 m-b-10"> Weekly Schedule </a>
                                              </div>
                                           </div>
                                           <div class="block-element pl-4">

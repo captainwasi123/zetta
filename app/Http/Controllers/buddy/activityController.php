@@ -10,6 +10,7 @@ use App\Models\activity\medias;
 use App\Models\activity\equipments;
 use App\Models\activity\friends;
 use App\Models\activity\locations;
+use App\Models\activity\skills;
 use App\Models\User;
 use App\Models\sportsCategory;
 use App\Models\sports;
@@ -43,7 +44,14 @@ class activityController extends Controller
     function insert(Request $request){
         $data = $request->all();
         $id = activities::addActivity($data);
-
+        if(!empty($data['skill_level'])){
+            foreach($data['skill_level'] as $val){
+                $s = new skills;
+                $s->activity_id = $id;
+                $s->skills = $val;
+                $s->save();
+            }
+        }
         if ($request->hasFile('cover_image')) {
             $file = $request->file('cover_image');
             $filename = date('dmyHis').'.'.$file->getClientOriginalExtension();
@@ -111,7 +119,15 @@ class activityController extends Controller
     function update(Request $request){
         $data = $request->all();
         $id = activities::editActivity($data);
-
+        skills::where('activity_id', $id)->delete();
+        if(!empty($data['skill_level'])){
+            foreach($data['skill_level'] as $val){
+                $s = new skills;
+                $s->activity_id = $id;
+                $s->skills = $val;
+                $s->save();
+            }
+        }
         if ($request->hasFile('cover_image')) {
             $file = $request->file('cover_image');
             $filename = date('dmyHis').'.'.$file->getClientOriginalExtension();

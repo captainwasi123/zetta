@@ -100,6 +100,44 @@
          <div class="row center-row">
             <div class="col-md-3 col-lg-3 col-12">
                <div class="field-name">
+                  <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/field-icon10.png">
+                  <h5> Skill Level </h5>
+               </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-12">
+               <div class="inline-1">
+                   <label class="custom-control custom-checkbox">
+                      <input name="skill_level[]" type="checkbox" value="Beginner" class="custom-control-input"
+                        @foreach($data->skills as $val)
+                           {{$val->skills == 'Beginner' ? 'checked' : ''}}
+                        @endforeach
+                      >
+                      <span class="custom-control-label"> Beginner </span>
+                   </label>
+
+                   <label class="custom-control custom-checkbox">
+                      <input name="skill_level[]" type="checkbox" value="Intermediate" class="custom-control-input"
+                        @foreach($data->skills as $val)
+                           {{$val->skills == 'Intermediate' ? 'checked' : ''}}
+                        @endforeach
+                      >
+                      <span class="custom-control-label"> Intermediate </span>
+                   </label>
+
+                   <label class="custom-control custom-checkbox">
+                      <input name="skill_level[]" type="checkbox" value="Advanced" class="custom-control-input"
+                        @foreach($data->skills as $val)
+                           {{$val->skills == 'Advanced' ? 'checked' : ''}}
+                        @endforeach
+                      >
+                      <span class="custom-control-label"> Advanced </span>
+                   </label>
+                </div>
+            </div>
+         </div>
+         <div class="row center-row">
+            <div class="col-md-3 col-lg-3 col-12">
+               <div class="field-name">
                   <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/field-icon9.png">
                   <h5> Sports </h5>
                </div>

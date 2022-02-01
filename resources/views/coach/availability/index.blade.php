@@ -88,7 +88,7 @@
    <div class="block-element m-t-30">
       <div class="row m-b-20">
          <div class="col-12">
-            <h5 class="col-white"> Schedule your coach programm by entering at what time you can propose your sport. </h5>
+            <h5 class="col-white"> Schedule your holidays. </h5>
          </div>
       </div>
       <div class="row">
@@ -97,7 +97,7 @@
                @csrf
                <div class="slot-2">
                   <span class="col-white"> Holidays </span>
-                  <input type="text" class="form-field3 mydatepicker" name="holidate" placeholder="mm/dd/yyyy" required>
+                  <input type="text" class="form-field3 mydatepicker" name="holidate" placeholder="dd/mm/yyyy" required>
                </div>
          </div>
          <div class="col-md-5 col-lg-3  col-12">
@@ -233,7 +233,7 @@
       $(document).ready(function(){
          'use strict'
 
-         jQuery('.mydatepicker').datepicker();
+         jQuery('.mydatepicker').datepicker({format: 'dd/mm/yyyy'});
          
          $('.clockpicker').clockpicker({
             donetext: 'Done',

@@ -20,7 +20,7 @@ class userAuth
         if(Auth::check()){
             return $next($request);
         }else{
-            return redirect('/');
+            return redirect('/')->with('loginValidate', 'Invalid');
         }
     }
 }

@@ -10,6 +10,12 @@
         "{{ __('content.'.$val->name)}}",
       @endforeach
     ];
+
+    @if(session()->has('loginValidate'))
+      $(document).ready(function(){
+          $('.login-modal').modal('show');
+      });
+    @endif
   </script>
 
   <script src="{{URL::to('/assets/website')}}/js/dev.js"> </script>
