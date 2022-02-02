@@ -11,9 +11,6 @@
 </div>
 <div class="section-5">
   <a href="javascript::void(0)">
-    <i class="fa fa-phone"></i> 252255222
-  </a>
-  <a href="javascript::void(0)">
     <i class="fa fa-map-marker"></i> 3 rue du Port, 1204 Genève, Switzerland
   </a>
   <a href="mailto::info@zettaa.ch">

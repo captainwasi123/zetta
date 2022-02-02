@@ -1,5 +1,5 @@
 @extends('coach.include.master')
-@section('title', 'My Account Settings')
+@section('title', 'Coach Analytics')
 
 @section('content')
 @php 

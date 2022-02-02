@@ -88,6 +88,22 @@
                <div>
                   <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{empty($data->user) ? '' : $data->user->profile_img}}" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';">
                </div>
+               @if(!empty($data->user))
+                  @switch($data->user->level_status)
+                     @case('1')
+                        <img class="badge-img" src="{{URL::to('/')}}/assets/website/images/badge/1.png">
+                        @break
+
+                     @case('2')
+                        <img class="badge-img" src="{{URL::to('/')}}/assets/website/images/badge/2.png">
+                        @break
+                        
+                     @case('3')
+                        <img class="badge-img" src="{{URL::to('/')}}/assets/website/images/badge/top-rated.png">
+                        @break
+                        
+                  @endswitch
+               @endif
                <a href="{{route('web.coach.details', base64_encode($data->user->id))}}">
                   <h4 class="col-white no-margin m-t-0 m-b-0"> {{empty($data->user->fname) ? 'Anonymous' : $data->user->fname.' '.$data->user->lname}} </h4>
                </a>

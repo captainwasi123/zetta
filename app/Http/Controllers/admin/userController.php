@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\CoachRequest;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Mail;
 
 class userController extends Controller
 {
@@ -113,6 +114,12 @@ class userController extends Controller
         $u->type = 2;
         $u->coach_request_status = 2;
         $u->save();
+
+        $data = array('email' => $u->email);
+        Mail::send('email.coachConfirmation', $data, function($message) use ($data)  {
+            $message->to($data['email'])->subject("Coach Approval");
+            $message->from("noreply@zettaa.com", 'Zettaa');
+        });
         $req->delete();
         return redirect()->back()->with('success', 'User Request For Coach Is Approved.');
     }

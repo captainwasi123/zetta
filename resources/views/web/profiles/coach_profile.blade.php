@@ -13,10 +13,6 @@
              <div class="profile-actions-wrapper">
                 <div class="profile-image-uploader">
                    <div class="avatar-upload">
-                      {{-- <div class="avatar-edit avatar-edit2">
-                         <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" />
-                         <label for="imageUpload"></label>
-                      </div> --}}
                       <div class="avatar-preview">
                          <div id="imagePreview" style="@if(empty($data->profile_img))
                             background-image: url('{{URL::to('/')}}/public/user-placeholder.jpg');
@@ -25,6 +21,22 @@
                           @endif);">
                          </div>
                       </div>
+                      @if(!empty($data->level_status))
+                        @switch($data->level_status)
+                           @case('1')
+                              <img class="badge-img" src="{{URL::to('/')}}/assets/website/images/badge/1.png">
+                              @break
+
+                           @case('2')
+                              <img class="badge-img" src="{{URL::to('/')}}/assets/website/images/badge/2.png">
+                              @break
+                              
+                           @case('3')
+                              <img class="badge-img" src="{{URL::to('/')}}/assets/website/images/badge/top-rated.png">
+                              @break
+                              
+                        @endswitch
+                     @endif
                    </div>
                    <div class="profile-image-name text-center">
                       <h4 class="col-purple"> {{ __('content.Hi Coach') }}  </h4>

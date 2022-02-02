@@ -20,7 +20,7 @@ class coachAuth
         if(Auth::check() && Auth::user()->type == 2){
             return $next($request);
         }else{
-            return redirect('/');
+            return redirect('/')->with('loginValidate', 'Invalid');
         }
     }
 }

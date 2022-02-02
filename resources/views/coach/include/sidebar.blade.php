@@ -63,7 +63,7 @@
                      <li> 
                         <a href="{{route('coach.my_account_area')}}"> 
                            <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/nav-icon7.png"> 
-                           <span class="hide-menu">   &nbsp;My Account Area </span>  
+                           <span class="hide-menu">   &nbsp;Coach Analatics </span>  
                         </a> 
                      </li>
                      <li>

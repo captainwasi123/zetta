@@ -272,7 +272,7 @@ use Illuminate\Support\Facades\Route;
 					});
 
 				//My Account Area
-					Route::prefix('my_account_area')->group(function(){
+					Route::prefix('analytics')->group(function(){
 
 						Route::get('/', 'myaccountController@index')->name('coach.my_account_area');
 					});

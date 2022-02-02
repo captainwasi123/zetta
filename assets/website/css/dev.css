@@ -20,7 +20,20 @@
     margin-bottom: 4px;
     margin-top: 5px;
 }
-
+.lesson-holder-profile .badge-img {
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    bottom: 0;
+    left: 93px;
+}
+.avatar-upload .badge-img {
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    bottom: 0;
+    left: 130px;
+}
 .join-pop-head {
     text-align: center;
     margin-bottom: 10px;
