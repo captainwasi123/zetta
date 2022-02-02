@@ -107,7 +107,7 @@ $(document).ready(function(){
 
  });
 
-$('.searchForm').submit(function(event) {
+$(document).on('submit', '.searchForm', function(event) {
     event.preventDefault(); 
     
     var $form = $(this);
@@ -246,7 +246,7 @@ $(document).ready(function(){
 
 
     
-$( "#register-form-buddy" ).submit(function( event ) {
+$(document).on('submit', '#register-form-buddy', function( event ) {
   // Stop form from submitting normally
   event.preventDefault();
 
@@ -292,7 +292,7 @@ $( "#register-form-buddy" ).submit(function( event ) {
     });
 
 
-$( "#login-form" ).submit(function( event ) {
+$(document).on('submit', '#login-form', function( event ) {
 
   // Stop form from submitting normally
   event.preventDefault();
@@ -333,7 +333,7 @@ $( "#login-form" ).submit(function( event ) {
 
 //Forgot Password 
 
-$( "#forgot-form" ).submit(function( event ) {
+$(document).on('submit', '#forgot-form', function( event ) {
 
   // Stop form from submitting normally
   event.preventDefault();
