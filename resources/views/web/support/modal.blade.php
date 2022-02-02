@@ -128,7 +128,7 @@
          </div>
          <div class="join-already">
             <p>  {{ __('content.Forgot your password?')}} <a href="javascript:void(0)" class="open-forgot"> Reset </a> </p>
-            <p>  {{ __('content.Don`t have an account?')}} <a href="javascript:void(0)" class="open-join"> Sign Up </a> </p>
+            <p>  {{ __('content.Don`t have an account?')}} <a href="javascript:void(0)" class="open-join-buddy"> Sign Up </a> </p>
          </div>
       </div>
    </div>
