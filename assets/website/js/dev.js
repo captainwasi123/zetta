@@ -107,7 +107,7 @@ $(document).ready(function(){
 
  });
 
-$(document).on('submit', '.searchForm', function(event) {
+$('.searchForm').submit( function(event) {
     event.preventDefault(); 
     
     var $form = $(this);

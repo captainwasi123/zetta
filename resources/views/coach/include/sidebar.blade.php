@@ -5,7 +5,7 @@
                <div class="user-profile-header">
                   <h4> Hi, {{(Auth::user()->fname)}} </h4>
                   <h6> {{Auth::user()->email}} </h6>
-                  <p> <a href=""> <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/coin-icon.png"> </a> <span> Z COINS <b> {{empty(Auth::user()->wallet->coin) ? 0 : Auth::user()->wallet->coin}} </b> </span> <a href="{{route('coach.favouriteCoach')}}"> <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/heart-icon.png"> </a>  </p>
+                  <p> <a href="{{route('buddy.analytics_and_redeem')}}"> <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/coin-icon.png"> </a> <span> Z COINS <b> {{empty(Auth::user()->wallet->coin) ? 0 : Auth::user()->wallet->coin}} </b> </span> <a href="{{route('coach.favouriteCoach')}}"> <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/heart-icon.png"> </a>  </p>
                </div>
                <div class="user-profile">
                   <div class="profile-img">
