@@ -94,6 +94,16 @@
         </script>
 
     @endif
+    @if(session()->has('error'))
+        <script type="text/javascript">
+            Swal.fire(
+              'Alert!',
+              "{{ session()->get('error') }}",
+              'warning'
+            );
+        </script>
+
+    @endif
 
     @yield('addScript')
 

@@ -42,12 +42,22 @@ class friendController extends Controller
     function addFriend($id){
         $id = base64_decode($id);
 
-        $f = new friendRequest;
-        $f->user_id = Auth::id();
-        $f->friend_id = $id;
-        $f->save();
+        $u1 = friendRequest::where('friend_id', $id)->first();
+        $u2 = friends::where('friend_id', $id)->first();
 
-        return redirect('/buddy/friends')->with('success', 'Friend Request Sent.');
+        if(!empty($u1->id)){
+            return redirect('/buddy/friends')->with('error', 'Request Already Sent.');
+        }elseif(!empty($u2->id)){
+            return redirect('/buddy/friends')->with('error', 'Already Friend.');
+        }else{
+            
+            $f = new friendRequest;
+            $f->user_id = Auth::id();
+            $f->friend_id = $id;
+            $f->save();
+
+            return redirect('/buddy/friends')->with('success', 'Friend Request Sent.');
+        }
     }
 
     function acceptRequestFriend($id){

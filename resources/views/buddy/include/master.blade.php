@@ -97,10 +97,20 @@
         <script type="text/javascript">
             Swal.fire(
               'Pending!',
-              "{{ session()->get('success') }}",
+              "{{ session()->get('pending') }}",
               'warning'
             );
         </script>
+    @endif
+    @if(session()->has('error'))
+        <script type="text/javascript">
+            Swal.fire(
+              'Alert!',
+              "{{ session()->get('error') }}",
+              'warning'
+            );
+        </script>
+
     @endif
 
     @yield('addScript')
