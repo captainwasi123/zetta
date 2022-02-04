@@ -176,48 +176,7 @@
                                              </div>
                                           </div>
                                        </div>
-                                       <!-- <div class="tab-pane" id="tab-data4" role="tabpanel">
-                                          <div class="row">
-                                             <div class="col-md-12 col-lg-12 col-12">
-                                                <div class="table-responsive custom-table1 wallet-table">
-                                                   <table class="table table-hover contact-list border-off" data-page-size="10">
-                                                      <thead>
-                                                         <tr>
-                                                            <th colspan="2"> Lesson </th>
-                                                            <th class="text-center"> Orders </th>
-                                                            <th class="text-center"> Cancellations </th>
-                                                            <th class="text-center"> Actions </th>
-                                                         </tr>
-                                                      </thead>
-                                                      <tbody>
-                                                         <tr>
-                                                            <td class="text-center">  <label style="margin-top: -25px;" class="custom-control custom-radio">
-                                                               <input id="radio1" name="radio" type="radio" class="custom-control-input">
-                                                               <span class="custom-control-label">  </span>
-                                                               </label>
-                                                            </td>
-                                                            <td class="table-image2">
-                                                               <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/users/5.jpg"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in Nullam at
-                                                               gravida sapien. In eget orci et massa laoreet gravida vitae at ante
-                                                            </td>
-                                                            <td class="text-center">  05 </td>
-                                                            <td class="text-center"> 02 </td>
-                                                            <td class="text-center">
-                                                               <a href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"> <i class="fa fa-caret-down"> </i> </a>
-                                                               <div class="dropdown-menu animated flipInY">
-                                                                  <a href="#" class="dropdown-item"><i class="fa fa-eye"></i> View </a>
-                                                                  <a href="#" class="dropdown-item"><i class="fa fa-pencil"></i> Edit </a>
-                                                                  <div class="dropdown-divider"></div>
-                                                                  <a href="#" class="dropdown-item"><i class="fa fa-trash"></i> Delete </a>
-                                                               </div>
-                                                            </td>
-                                                         </tr>
-                                                      </tbody>
-                                                   </table>
-                                                </div>
-                                             </div>
-                                          </div>
-                                       </div> -->
+                                       
                                     </div>
                                  </div>
                               </div>
