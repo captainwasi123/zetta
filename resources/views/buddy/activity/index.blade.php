@@ -124,16 +124,6 @@
                                                                </td>
 
                                                             </tr>
-                                                            <tr style="border-bottom: 0px;">
-                                                               <td colspan="4" style="border-bottom: 0px !important;padding: 0px;">
-                                                                   <div id="myDropdown" class="dropdown-content">
-                                                                     <img src="https://dnpprojects.com/demo/zetta/assets/website/images/zetta-logo.png" >  
-                                                                   </div>
-                                                               </td>
-                                                              
-                                                            </tr>
-                                                            
-                                                           
 
                                                          @endforeach
                                                          @if(count($data['draft']) == 0)
@@ -188,17 +178,6 @@
                                                                </td>
 
                                                             </tr>
-                                                            <tr style="border-bottom: 0px;">
-                                                               <td colspan="4" style="border-bottom: 0px !important;padding: 0px;">
-                                                                   <div id="myDropdown" class="dropdown-content">
-                                                                     <img src="https://dnpprojects.com/demo/zetta/assets/website/images/zetta-logo.png" >  
-                                                                   </div>
-                                                               </td>
-                                                              
-                                                            </tr>
-                                                            
-                                                           
-
                                                          @endforeach
                                                          @if(count($data['paused']) == 0)
                                                             <tr>
