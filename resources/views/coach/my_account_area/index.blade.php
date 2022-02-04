@@ -194,7 +194,7 @@
                </div>
                <div class="rating-bar">
                   <div class="progress ">
-                     <div class="progress-bar bg-yellow" style="width: {{($reviews['5']/$reviews['total'])*100}}%; height:15px;" role="progressbar"> </div>
+                     <div class="progress-bar bg-yellow" style="width: {{empty($reviews['5']) ? '' : ($reviews['5']/$reviews['total'])*100}}%; height:15px;" role="progressbar"> </div>
                   </div>
                </div>
                <div>
@@ -207,7 +207,7 @@
                </div>
                <div class="rating-bar">
                   <div class="progress ">
-                     <div class="progress-bar bg-yellow" style="width: {{($reviews['4']/$reviews['total'])*100}}%; height:15px;" role="progressbar"> </div>
+                     <div class="progress-bar bg-yellow" style="width: {{empty($reviews['4']) ? '' : ($reviews['4']/$reviews['total'])*100}}%; height:15px;" role="progressbar"> </div>
                   </div>
                </div>
                <div>
@@ -220,7 +220,7 @@
                </div>
                <div class="rating-bar">
                   <div class="progress ">
-                     <div class="progress-bar bg-yellow" style="width: {{($reviews['3']/$reviews['total'])*100}}%; height:15px;" role="progressbar"> </div>
+                     <div class="progress-bar bg-yellow" style="width: {{empty($reviews['3']) ? '' : ($reviews['3']/$reviews['total'])*100}}%; height:15px;" role="progressbar"> </div>
                   </div>
                </div>
                <div>
@@ -233,7 +233,7 @@
                </div>
                <div class="rating-bar">
                   <div class="progress ">
-                     <div class="progress-bar bg-yellow" style="width:  {{($reviews['2']/$reviews['total'])*100}}%; height:15px;" role="progressbar"> </div>
+                     <div class="progress-bar bg-yellow" style="width:  {{empty($reviews['2']) ? '' : ($reviews['2']/$reviews['total'])*100}}%; height:15px;" role="progressbar"> </div>
                   </div>
                </div>
                <div>
@@ -246,7 +246,7 @@
                </div>
                <div class="rating-bar">
                   <div class="progress ">
-                     <div class="progress-bar bg-yellow" style="width:  {{($reviews['1']/$reviews['total'])*100}}%; height:15px;" role="progressbar"> </div>
+                     <div class="progress-bar bg-yellow" style="width:  {{empty($reviews['1']) ? '' : ($reviews['1']/$reviews['total'])*100}}%; height:15px;" role="progressbar"> </div>
                   </div>
                </div>
                <div>
