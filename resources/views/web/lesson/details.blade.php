@@ -519,7 +519,12 @@
 
                <div class="block-element3 m-t-30">
                   <p class="m-b-0" style="padding:0px 30px">
-                     <a href="javascript:void(0)" class="block-element2 bg-white col-purple rounded custom-btn1 text-center getUserMessage" data-id="{{base64_encode(@$data->user->id)}}"> Contact Coach  </a> </p>
+                     @if(Auth::check())
+                        <a href="javascript:void(0)" class="block-element2 bg-white col-purple rounded custom-btn1 text-center getUserMessage" data-id="{{base64_encode(@$data->user->id)}}"> Contact Coach  </a>
+                     @else
+                        <a href="javascript:void(0)" class="block-element2 bg-white col-purple rounded custom-btn1 text-center open-login"> Contact Coach  </a>
+                     @endif 
+                  </p>
                </div>
             </div>
 

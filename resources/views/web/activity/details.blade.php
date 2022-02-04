@@ -394,7 +394,14 @@
                </div>
                <div class="block-element3 m-t-30">
                   <!-- <p class="m-b-0" style="padding:0px 30px">   <a href="{{URL::to('/buddy/inbox/chat/'.base64_encode($data->user_id))}}/{{empty($data->user->fname) ? 'Newuser' : $data->user->fname.' '.$data->user->lname}}" class="block-element2 bg-white col-purple rounded custom-btn1 text-center" data-toggle="modal" data-target="#myModal"> Contact Buddy  </a> </p> -->
-                  <p class="m-b-0" style="padding:0px 30px">   <a href="javascript:void(0)" class="block-element2 bg-white col-purple rounded custom-btn1 text-center getUserMessage" data-id="{{base64_encode(@$data->user->id)}}"> Contact Buddy  </a> </p>
+                  <p class="m-b-0" style="padding:0px 30px">   
+                     @if(Auth::check())
+                     <a href="javascript:void(0)" class="block-element2 bg-white col-purple rounded custom-btn1 text-center getUserMessage" data-id="{{base64_encode(@$data->user->id)}}"> Contact Buddy  </a> 
+                     @else
+                     <a href="javascript:void(0)" class="block-element2 bg-white col-purple rounded custom-btn1 text-center open-login"> Contact Buddy  </a> 
+                     @endif
+
+                  </p>
                   <br>
                   @if(session()->has('success'))
                       <div class="alert alert-success">
