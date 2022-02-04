@@ -70,7 +70,7 @@ header.header-2 .logo a img {
               </div>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> {{ __('content.Sports Buddy')}} <i class="fas fa-chevron-down"></i></a>
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> {{ __('content.Sports Buddies')}} <i class="fas fa-chevron-down"></i></a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 @if(Auth::check())
                     <a class="dropdown-item" href="{{route('buddy.activity.add')}}">{{ __('content.Create a Activity')}}</a>

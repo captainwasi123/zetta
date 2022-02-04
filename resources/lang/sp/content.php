@@ -42,7 +42,7 @@ return [
     '5.0'=>'5.0',
     '1 Review'=>'1 Revisión',
     'Sport Buddy Activities'=>'Actividades de amigos deportivos',
-    'Sports Buddy'=>'Sports Buddy',
+    'Sports Buddy'=>'Sports Buddies',
     'PARTICIPATE'=>'PARTICIPATE',
     'Coach Lessons'=>'Coach Lessons',
     'Coach'=>'CEntrenador',
