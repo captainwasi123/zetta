@@ -1,5 +1,5 @@
 @extends('web.support.master2')
-@section('title', 'FAQ')
+@section('title', 'ZETTAA COACH')
 @section('addStyle')
 <style>
     
@@ -54,15 +54,15 @@ section.action-bar {
         <p>{{ __('content.All of our coaches have previously read this document. They have accepted it and will put into practice the points listed below:')}}</p>
          
          <h3>{{ __('content.1. Know your field/sport')}}</h3>
-         <p>{{ __('content.- To be able to teach effectively, the coach must have a thorough understanding of the sport, and his knowledge must cover both fundamentals and technique as well as the advanced systems. ')}}</p>
-         <p>{{ __('content.- Experience as a player or coach is an advantage but does not necessarily make you a good coach. ')}}</p>
-         <p>{{ __('content.- Good physical and mental condition are essential for the lessons to run smoothly. ')}}</p>
+         <p>{{ __('content.- To be able to teach effectively, the coach must have a thorough understanding of the sport, and his knowledge must cover both fundamentals and technique as well as the advanced systems.')}}</p>
+         <p>{{ __('content.- Experience as a player or coach is an advantage but does not necessarily make you a good coach.')}}</p>
+         <p>{{ __('content.- Good physical and mental condition are essential for the lessons to run smoothly.')}}</p>
 
          <h3>{{ __('content.2.  Know your role as a coach')}}</h3>
-         <p>{{ __('content.- In order to offer quality lessons, it is essential to master the art of pedagogy and learning methods:  ')}}</p>
-         <p>{{ __('content.a. Knowing how to define objectives  ')}}</p>
-         <p>{{ __('content.b. Motivation and communication ')}}</p>
-         <p>{{ __('content.c. Adapt to the athlete ')}}</p>
+         <p>{{ __('content.- In order to offer quality lessons, it is essential to master the art of pedagogy and learning methods:')}}</p>
+         <p>{{ __('content.a. Knowing how to define objectives ')}}</p>
+         <p>{{ __('content.b. Motivation and communication')}}</p>
+         <p>{{ __('content.c. Adapt to the athlete')}}</p>
 
          <h4>{{ __('content.This will allow you to better target weaknesses and areas for improvement.')}}</h4>
 
@@ -96,7 +96,7 @@ section.action-bar {
              <h3>{{ __('content.3. Constantly renewing yourself')}}</h3>
         <p>{{ __('content.- Learn and develop new training methods that are always more varied and stimulating.')}}
         </p>
-        <p>{{ __('content.- Deepen your own knowledge via a holistic approach in order to be able to answer all types of questions')}}
+        <p>{{ __('content.- Deepen your own knowledge via a holistic approach in order to be able to answer all types of questions.')}}
         </p>        
          <p>{{ __('content.- Stay informed of the latest scientific research, training trends and available training.')}}
         </p>
