@@ -134,9 +134,9 @@
              </div>
              <div class="row">
                  @foreach ($data->media as $media)
-                    <div class="col-md-4 col-lg-3 col-sm-4 col-12">
+                    <div class="col-md-6 col-lg-6 col-sm-6 col-12">
                         <div class="video-box m-b-25">
-                            <video controls>
+                            <video style="width: 100%;height: 310px;" controls>
                                 <source src="{{URL::to('/')}}/public/storage/user/media/{{$media->media}}" type="video/mp4">
                             </video>
                         </div>
