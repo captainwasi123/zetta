@@ -63,7 +63,7 @@
                           <li>
                           <a href="{{URL::to('/lang/sp')}}">
                           <img src="{{URL::to('/assets/website')}}/images/flag-4.jpg">  
-                          &nbsp; Española  &nbsp;
+                          &nbsp; Español  &nbsp;
                             @if (session()->has('locale'))
                                @if (session()->get('locale') == 'sp')
                                 <span class="fa fa-check"></span>
@@ -74,7 +74,7 @@
                           <li>
                           <a href="{{URL::to('/lang/fr')}}">
                           <img src="{{URL::to('/assets/website')}}/images/flag-1.jpg">
-                            &nbsp; Französisch  &nbsp;
+                            &nbsp; Français  &nbsp;
                             @if (session()->has('locale'))
                                @if (session()->get('locale') == 'fr')
                                 <span class="fa fa-check"></span>
