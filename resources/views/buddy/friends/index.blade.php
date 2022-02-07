@@ -8,7 +8,13 @@
     width: 110%;
     max-height: 750px !important;
   }
+  .friend-action a:nth-child(1) {
+    padding: 0px 10px;
+}
 
+.friend-action {
+    display: flex;
+}
 @media only screen and (max-width: 767px) {
   .inbox-aside {
     max-width: 100%;
@@ -85,13 +91,24 @@
                                               <td> <i class="fa fa-star col-yellow"> </i> 4.8 </td>
                                               <td> Country: {{@$val->user->country->nicename}} </td>
                                               <td> Since: {{date('Y', strtotime(@$val->user->created_at))}} </td>
-                                              <td class="">
+                                              <!-- <td class="">
                                                  <a href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-ellipsis-v"> </i> </a>
                                                  <div class="dropdown-menu animated flipInY" style="">
                                                     <a href="javascript:void(0)" data-id="{{base64_encode($val->id)}}" class="dropdown-item approveFriendRequest"> Accept Request </a>
                                                     <div class="dropdown-divider"></div>
                                                     <a href="javascript:void(0)" data-id="{{base64_encode($val->id)}}" class="dropdown-item rejectFriendRequest" style="color:red !important;"> Reject Request </a>
                                                  </div>
+                                              </td> -->
+                                              <td>
+                                                <div class="friend-action">
+                                                  <a href="javascript:void(0)" data-id="{{base64_encode($val->id)}}" class=" approveFriendRequest" style="color:green !important;">
+                                                  <i class="fa fa-check" aria-hidden="true"></i> 
+                                                </a>
+                                                <a href="javascript:void(0)" data-id="{{base64_encode($val->id)}}" class="rejectFriendRequest" style="color:red !important;"> 
+                                                  <i class="fa fa-times" aria-hidden="true"></i> 
+                                                </a>
+                                                </div>
+                                                
                                               </td>
                                            </tr>
                                        @endforeach

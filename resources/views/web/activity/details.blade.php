@@ -121,6 +121,12 @@
                <div class="col-white"  >
                   {!! $data->description !!}
                </div>
+               <br>
+                <h4>Address:</h3>
+                <ul>
+                  <li>North Karachi</li>
+                  <li>5 Star Chowrangi</li>
+                </ul>
             </div>
             <div class="lesson-holder-details m-t-40">
                <div class="profile-details1">

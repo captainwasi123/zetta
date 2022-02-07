@@ -12,6 +12,9 @@
         top: auto!important;
         right: 0px!important;
     }
+    .bg-dark2 ul li {
+      color: white;
+    }
 </style>
 @endsection
 @section('content')
@@ -83,6 +86,7 @@
             </div>
             <div class="lesson-holder-about m-t-0 no-border">
                <h3 class="col-white m-b-15"> {{ __('content.About The Coach')}} </h3>
+
             </div>
             <div class="lesson-holder-profile">
                <div>
@@ -112,11 +116,17 @@
             </div>
 
             <div class="lesson-holder-about">
-               <h3 class="col-white m-b-15"> {{ __('content.About The Lesson')}} </h3>
-               <h5 class="col-white m-b-30" >  {{$data->title}} </h5>
-               <div class="col-white"  >
-                  {!! $data->description !!}
-               </div>
+                 <h3 class="col-white m-b-15"> {{ __('content.About The Lesson')}} </h3>
+                 <h5 class="col-white m-b-30" >  {{$data->title}} </h5>
+                 <div class="col-white"  >
+                    {!! $data->description !!}
+                 </div>
+                <br>
+                <h4>Address:</h3>
+                <ul>
+                  <li>North Karachi</li>
+                  <li>5 Star Chowrangi</li>
+                </ul>
             </div>
 
             <div class="lesson-holder-details m-t-40 m-b-15">
