@@ -9,6 +9,7 @@ use App\Models\activity\activities;
 use App\Models\lesson\lessons;
 use App\Models\lesson\Locations;
 use App\Models\User;
+use App\Models\friends;
 use Illuminate\Support\Facades\DB;
 use App\Models\activity\locations as Activity_location;
 use App\Models\userCategorySelect;
@@ -344,9 +345,17 @@ class webController extends Controller
     function buddyDetails($id)
     {
         $id = base64_decode($id);
+        $friend = 0;
+        if(Auth::check()){
+            $f = friends::where('friend_id', $id)->where('user_id', Auth::id())->first();
+            $f2 = friends::where('friend_id', Auth::id())->where('user_id', $id)->first();
+            if(!empty($f->id) || !empty($f2->id)){
+                $friend = 1;
+            }
+        }
         $data = User::with(['country','langs','category','education','certificate','equipment','activities','media'])->find($id);
         if(!empty($data->id)){
-            return view('web.profiles.buddy_profile', ['data' => $data]);
+            return view('web.profiles.buddy_profile', ['data' => $data, 'friend' => $friend]);
         }else{
             return redirect()->back();
         }

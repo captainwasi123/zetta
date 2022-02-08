@@ -8,6 +8,7 @@ return [
     'Forgot your password?' => 'Passwort vergessen?',
     'Reset your password' => 'Setze dein Passwort zurück',
     'Enter your email address below to reset password' => 'Geben Sie unten Ihre E-Mail-Adresse ein, um das Passwort zurückzusetzen',
+    'Skill Level' => 'Fähigkeits Level',
 
     // index page start
     'Home' => 'Zuhause',

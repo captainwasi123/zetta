@@ -9,7 +9,7 @@ return [
     'Forgot your password?' => 'Forgot your password?',
     'Reset your password' => 'Reset your password',
     'Enter your email address below to reset password' => 'Enter your email address below to reset password',
-
+    'Skill Level' => 'Skill Level',
     // index page start
     'Home' => 'Home',
     'Find The' => 'Find The',

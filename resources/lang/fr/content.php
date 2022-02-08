@@ -9,6 +9,7 @@ return [
     'Forgot your password?' => 'Mot de passe oublié?',
     'Reset your password' => 'réinitialisez votre mot de passe',
     'Enter your email address below to reset password' => 'Entrez votre adresse e-mail ci-dessous pour réinitialiser le mot de passe',
+    'Skill Level' => 'Niveau de compétence',
 
     // index page start
     'Home' => '',

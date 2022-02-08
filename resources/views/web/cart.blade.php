@@ -78,21 +78,28 @@
                   
                   <table>
                      <tbody>
-
-                        <tr>
-                           <th colspan="3">
-                              <h5 class="col-white"> Equipment:</h5>
-                              <label class="custom-control custom-radio col-white" >
-                                 <input id="radio1" name="with_without_equipment" type="radio" value="2" class="custom-control-input" checked>
-                                 <span class="custom-control-label"> With Equipment  </span>
-                              </label>       
-                                   
-                              <label class="custom-control custom-radio col-white">
-                                 <input id="radio2" name="with_without_equipment" type="radio" value="1" class="custom-control-input">
-                                 <span class="custom-control-label"> Without Equipment </span>
-                              </label>
-                          </th>
-                        </tr>
+                        @if($type != 'lesson')
+                           @if(count($data->equipment) > 0)
+                              <tr>
+                                 <th colspan="3">
+                                    <h5 class="col-white"> Equipment:</h5>
+                                    <label class="custom-control custom-radio col-white" >
+                                       <input id="radio1" name="with_without_equipment" type="radio" value="2" class="custom-control-input" checked>
+                                       <span class="custom-control-label"> With Equipment  </span>
+                                    </label>       
+                                         
+                                    <label class="custom-control custom-radio col-white">
+                                       <input id="radio2" name="with_without_equipment" type="radio" value="1" class="custom-control-input">
+                                       <span class="custom-control-label"> Without Equipment </span>
+                                    </label>
+                                </th>
+                              </tr>
+                           @else
+                              <input type="hidden" name="with_without_equipment" value="1">
+                           @endif
+                        @else
+                           <input type="hidden" name="with_without_equipment" value="1">
+                        @endif
                         <tr>
                            <th class="col-white" style="width: 50%;"> Quantity </th>
                            <th></th>

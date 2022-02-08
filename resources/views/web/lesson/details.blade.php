@@ -122,10 +122,11 @@
                     {!! $data->description !!}
                  </div>
                 <br>
-                <h4>Address:</h3>
+                <h4>Location:</h3>
                 <ul>
-                  <li>North Karachi</li>
-                  <li>5 Star Chowrangi</li>
+                  @foreach ($location as $val)
+                     <li>{{$val->address}}</li>
+                  @endforeach
                 </ul>
             </div>
 
@@ -463,6 +464,20 @@
                                        @break
                                  @endswitch
                               </li>
+                              <li class="block-element2"> <i class="fa fa-check col-purple"> </i>
+                                 {{ __('content.Skill Level')}}:
+                                 <table class="table table-striped col-white" style="margin-bottom: -10px;">
+                                    <tbody>
+                                       @foreach($data->skills as $key => $value)
+                                          <tr>
+                                            <td class="equ-table">{{$value->skills}}</td>
+                                            <td class="equ-table"></td>
+                                          </tr>
+                                       @endforeach
+                                    </tbody>
+                                 </table>
+                              </li>
+
                               <li class="block-element2"> <i class="fa fa-check col-purple"> </i>
                                  {{ __('content.Available For')}}:
                                  <strong>

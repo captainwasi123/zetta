@@ -43,10 +43,11 @@ class chatController extends Controller
                       ->get();
         $data_list = chat::where("sender_id",$sender)
                         ->orWhere("receiver_id",$sender)
-                        ->distinct("sender_id", "receiver_id")
-                        ->orderBy('created_at', 'desc')
+                        ->groupBy("sender_id")
+                        ->orderBy('created_at', 'asc')
                         ->get();
 
+        //dd($data_list);
 
         chat::where("receiver_id",$sender)->where("sender_id",$receiver)->update(['views' => '1']);
         
