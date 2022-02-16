@@ -89,8 +89,11 @@ nav.navbar.navbar-expand-lg.navbar-dark {
         </div>
       </nav>
       @if(Auth::check())
-         <div class="header-login">
+         <div class="header-login sss">
             <div class="dropdown">
+              <a href="{{route('buddy.messages')}}" class="noti-mobile"> 
+                  <i class="fa fa-envelope" id="mnotiBadge" style="font-size: 2rem;padding-right: 11px;color: #fff;">  </i>
+               </a>
                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{Auth::user()->profile_img}}" alt="user" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';"> <i class="fa fa-caret-down"> </i>
                </button>
