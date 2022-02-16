@@ -21,8 +21,6 @@ class buddyController extends Controller
         $sender = Auth::id();
         $data_list = chat::where("sender_id",$sender)
                         ->orWhere("receiver_id",$sender)
-                        ->distinct("sender_id", "receiver_id")
-                        ->orderBy('created_at', 'desc')
                         ->get();
         
         $orders = orderSessions::whereHas('orders', function($q){
@@ -31,7 +29,7 @@ class buddyController extends Controller
 
         $activities = activities::orderBy('held_date')->get();
 
-      return view('buddy.dashboard', ['chat_list' => $data_list, 'orders' => $orders, 'activities' => $activities]);
+      return view('buddy.dashboard', ['chat_list' => $data_list->reverse(), 'orders' => $orders, 'activities' => $activities]);
     }
 
     public function become_a_coach(){

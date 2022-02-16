@@ -19,10 +19,8 @@ class chatController extends Controller
         $sender = Auth::id();
         $data_list = chat::where("sender_id",$sender)
                         ->orWhere("receiver_id",$sender)
-                        ->distinct("sender_id", "receiver_id")
-                        ->orderBy('created_at', 'desc')
                         ->get();
-        return view('buddy.messages.mess', ['chat_list' => $data_list]);
+        return view('buddy.messages.mess', ['chat_list' => $data_list->reverse()]);
     }
 
     function inboxChat($id, $name){
@@ -41,17 +39,23 @@ class chatController extends Controller
                                 ->Where("receiver_id",$sender);
                       })
                       ->get();
-        $data_list = chat::where("sender_id",$sender)
-                        ->orWhere("receiver_id",$sender)
-                        ->groupBy("sender_id")
-                        ->orderBy('created_at', 'asc')
+        $data_list = chat::Where(function($query) use ($sender, $receiver)
+                        {
+                            $query->where("sender_id",$sender)
+                                ->where("receiver_id",$receiver);
+                        })
+                        ->orWhere(function($query) use ($sender, $receiver)
+                        {
+                            $query->Where("sender_id",$receiver)
+                                ->Where("receiver_id",$sender);
+                        })
                         ->get();
 
-        //dd($data_list);
+        //dd($data_list->reverse());
 
         chat::where("receiver_id",$sender)->where("sender_id",$receiver)->update(['views' => '1']);
         
-        return view('buddy.messages.chat', ['user' => $user, 'chat' =>$data, 'chat_list' => $data_list]);
+        return view('buddy.messages.chat', ['user' => $user, 'chat' =>$data, 'chat_list' => $data_list->reverse()]);
     }
 
     function sendMessage(Request $request){
@@ -101,7 +105,7 @@ class chatController extends Controller
                            <div class="box bg-light-inverse">'.$data['message'].'</div>
                         </div>
                         <div class="chat-img"><img  src="'.URL::to('/').'/public/storage/user/profile_img/'.Auth::user()->profile_img.'" onerror="this.onerror=null;this.src='.URL::to('/').'/public/user-placeholder.jpg;"> </div>
-                        <div class="chat-time">'.$timestamp->diffForHumans().'</div>
+                        <div class="chat-time">now</div>
                         '.$attach_block.'
                      </li>';
 

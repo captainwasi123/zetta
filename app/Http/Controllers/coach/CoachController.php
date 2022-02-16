@@ -21,10 +21,8 @@ class CoachController extends Controller
         $sender = Auth::id();
         $data['chat_list'] = chat::where("sender_id",$sender)
                         ->orWhere("receiver_id",$sender)
-                        ->distinct("sender_id", "receiver_id")
-                        ->orderBy('created_at', 'desc')
                         ->get();
-
+        $data['chat_list'] = $data['chat_list']->reverse();
         $data['orders'] = orders::with(['buyer','lesson'])->where('seller_id', Auth::id())->where('status',1)->latest()->get();
         return view('coach.dashboard')->with($data);
     }

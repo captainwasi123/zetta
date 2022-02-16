@@ -27,7 +27,7 @@
                                              <li>
                                                 <a href="{{URL::to('/buddy/inbox/chat/'.base64_encode($val->sender->id))}}/{{empty($val->sender->fname) ? 'Newuser' : $val->sender->fname.' '.$val->sender->lname}}">
                                                    <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{$val->sender->profile_img}}" alt="user" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';" class="img-circle"> 
-                                                   <span> {{empty($val->sender->fname) ? 'Newuser' : $val->sender->fname.' '.$val->sender->lname}} <sub class="time-msg"> {{$val->created_at->diffForHumans()}} </sub> </span> 
+                                                   <span> {{empty($val->sender->fname) ? 'Newuser' : $val->sender->fname.' '.$val->sender->lname}} <sub class="time-msg"> {{timeCustom($val->created_at)}} </sub> </span> 
                                                    <b> {{$val->message}} </b> 
                                                 </a>
                                              </li>
@@ -38,7 +38,7 @@
                                              <li>
                                                 <a href="{{URL::to('/buddy/inbox/chat/'.base64_encode($val->receiver->id))}}/{{empty($val->receiver->fname) ? 'Newuser' : $val->receiver->fname.' '.$val->receiver->lname}}">
                                                    <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{$val->receiver->profile_img}}" alt="user" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';" class="img-circle"> 
-                                                   <span> {{empty($val->receiver->fname) ? 'Newuser' : $val->receiver->fname.' '.$val->receiver->lname}} <sub class="time-msg"> {{$val->created_at->diffForHumans()}} </sub> </span> 
+                                                   <span> {{empty($val->receiver->fname) ? 'Newuser' : $val->receiver->fname.' '.$val->receiver->lname}} <sub class="time-msg"> {{timeCustom($val->created_at)}} </sub> </span> 
                                                    <b> {{$val->message}} </b> 
                                                 </a>
                                              </li>
@@ -72,6 +72,37 @@
       </div>
    </div>
 </div>
+
+@php
+   function timeCustom($time){
+      $time = strtotime($time);
+      $curr = date('Y-m-d H:i:s');
+      $curr = strtotime($curr);
+      $final = '';
+
+      $totalSecondsDiff = abs($time-$curr); //42600225
+      $totalMinutesDiff = $totalSecondsDiff/60; //710003.75
+      $totalHoursDiff   = $totalSecondsDiff/60/60;//11833.39
+      $totalDaysDiff    = $totalSecondsDiff/60/60/24; //493.05
+      $totalMonthsDiff  = $totalSecondsDiff/60/60/24/30; //16.43
+      $totalYearsDiff   = $totalSecondsDiff/60/60/24/365; //1.35
+
+      if($totalYearsDiff >= 1){
+         $final = number_format($totalYearsDiff).' years ago';
+      }elseif($totalMonthsDiff >= 1){
+         $final = number_format($totalMonthsDiff).' months ago';
+      }elseif($totalDaysDiff >= 1){
+         $final = number_format($totalDaysDiff).' days ago';
+      }elseif($totalHoursDiff >= 1){
+         $final = number_format($totalHoursDiff).' hours ago';
+      }elseif($totalMinutesDiff >= 1){
+         $final = number_format($totalMinutesDiff).' minutes ago';
+      }elseif($totalSecondsDiff >= 1){
+         $final = number_format($totalSecondsDiff).' secounds ago';
+      }
+      return $final;
+   }
+@endphp
 @endsection
 
 @section('addScript')
