@@ -214,7 +214,10 @@
 
 
       $(document).ready(function(){
-         chatScrollDown();
+         
+         $('#talksall').stop().animate({
+           scrollTop: $('#talksall')[0].scrollHeight
+         }, 500);
 
          getMessage('{{Auth::id()}}', '{{$user->id}}', '{{env("PUSHER_APP_KEY")}}');
       });
