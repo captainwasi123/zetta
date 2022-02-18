@@ -39,16 +39,8 @@ class chatController extends Controller
                                 ->Where("receiver_id",$sender);
                       })
                       ->get();
-        $data_list = chat::Where(function($query) use ($sender, $receiver)
-                        {
-                            $query->where("sender_id",$sender)
-                                ->where("receiver_id",$receiver);
-                        })
-                        ->orWhere(function($query) use ($sender, $receiver)
-                        {
-                            $query->Where("sender_id",$receiver)
-                                ->Where("receiver_id",$sender);
-                        })
+        $data_list = chat::where("sender_id",$sender)
+                        ->orWhere("receiver_id",$sender)
                         ->get();
 
         //dd($data_list->reverse());
