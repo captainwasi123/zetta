@@ -79,6 +79,9 @@ $( "#sendchat" ).submit(function( event ) {
         // disabled the submit button
         $("#btnSubmit").prop("disabled", true);
 
+        $("textarea[name='message']").val(null);
+        $(".emoji-wysiwyg-editor").html(null);
+        $('#fileAttachName').html(null);
         $.ajax({
             type: "POST",
             enctype: 'multipart/form-data',

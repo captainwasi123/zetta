@@ -36,6 +36,7 @@ class activities extends Model
         $l->availability_for = empty($data['availability_for']) ? null :  json_encode($data['availability_for']);
         // $l->availability_for = json_encode($data['availability_for']);
         $l->status = '1';
+        $l->created_at = date('Y-m-d H:i:s');
         $l->save();
         $id = $l->id;
 
