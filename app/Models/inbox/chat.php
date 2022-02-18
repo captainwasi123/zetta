@@ -21,6 +21,7 @@ class chat extends Model
     	$c->file_attach = $filename;
         $c->file_name = $file_fullname;
     	$c->status = '1';
+        $c->created_at = date('Y-m-d H:i:s');
     	$c->save();
 
     	return $c->created_at;

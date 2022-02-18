@@ -46,7 +46,7 @@
        <section class="pad-top-40 bg-dark2 pad-bot-20">
          <div class="container-fluid">
             <div class="sec-head1 m-b-40">
-               <h2 class="col-white gotham-bold text-center m-b-20"> {{ __('content.Upcoming Events') }}  </h2>
+               <h2 class="col-white gotham-bold text-center m-b-20"> {{ __('content.Upcoming Events') }} </h2>
             </div>
             <div class="boxes-slider1 arrows1">
                @foreach($uactivities as $val)
