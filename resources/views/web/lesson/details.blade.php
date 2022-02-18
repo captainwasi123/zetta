@@ -123,7 +123,7 @@
                  </div>
                 <br>
                 <h4>Location:</h3>
-                <ul>
+                <ul style="color: #fff;">
                   @foreach ($location as $val)
                      <li>{{$val->address}}</li>
                   @endforeach
