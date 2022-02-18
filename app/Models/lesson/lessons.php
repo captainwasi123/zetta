@@ -36,6 +36,7 @@ class lessons extends Model
 
         $l->sports_id = $data['sports'];
         $l->status = '1';
+        $l->created_at = date('Y-m-d H:i:s');
         $l->save();
         $id = $l->id;
 
