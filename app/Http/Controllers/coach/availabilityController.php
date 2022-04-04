@@ -38,7 +38,7 @@ class availabilityController extends Controller
 
     function insertHoliday(Request $request){
         $data = $request->all();
-        holidays::addHoliday($data['holidate']);
+        holidays::addHoliday(date('Y-m-d', strtotime($data['holidate'])));
 
         return redirect()->back()->with('success', 'New Holiday Added.');
     }

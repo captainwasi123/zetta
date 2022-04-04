@@ -33,6 +33,17 @@
       <!-- Footer Section Ends Here -->
       <!-- Bootstrap Javascript -->
          @include('web.support.script')
+         <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+         @if(session()->has('success'))
+            <script type="text/javascript">
+               Swal.fire(
+                 'Success!',
+                 "{{ session()->get('success') }}",
+                 'success'
+               );
+            </script>
+
+         @endif
          @yield('addScript')
    </body>
 </html>

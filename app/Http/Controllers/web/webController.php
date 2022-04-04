@@ -460,6 +460,17 @@ class webController extends Controller
 
             return view('web.contact');
         }
+        public function contactSubmit(Request $request){
+            $data = $request->all();
+            $edata = array('name' => $data['name'], 'email' => $data['email'], 'detail' => $data['message']);
+            //dd($data);
+            Mail::send('email.contact_form', $edata, function($message) use ($data)  {
+                $message->to('info@zettaasports.com')->subject("New Inquiry From Contact Us Form | Zettaa");
+                $message->from("noreply@zettaa.com", 'Zettaa');
+            });
+
+            return redirect()->back()->with('success', 'Inquiry Received. One of our concern will contact you shortly.');
+        }
 
         public function thankyou(){
             $data=order::where('buyer_id', Auth::id())->where('status', '1')->latest()->limit(1)->get();

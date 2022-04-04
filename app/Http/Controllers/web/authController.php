@@ -25,26 +25,31 @@ class authController extends Controller
     	    		return $data;
     	    	}
     	    }else{
-    	    	if($data['password'] != $data['confirmation_password']){
-    	    		return 'nomatch';
-    	    	}else{
-                    if(strlen($data['password']) < 6){
-                        return 'strong';
-                    }else{
-        	    		$id = User::addUser($data);
-                        $userAdd = User::find($id);
-                        if($userAdd->email_status == '0'){
-                            Mail::send('email.activation', array('id'=>$userAdd->id), function($message) use ($data)  {
-                                $message->to($data['email'])->subject("Activate your new account");
-                                $message->from("noreply@zettaa.com", 'Zettaa');
-                            });
-                            $userAdd->email_status = '1';
-                            $userAdd->save();
+                $user = User::where('email', $data['email'])->count();
+                if($user != '0'){
+                    return 'exist';
+                }else{
+        	    	if($data['password'] != $data['confirmation_password']){
+        	    		return 'nomatch';
+        	    	}else{
+                        if(strlen($data['password']) < 6){
+                            return 'strong';
+                        }else{
+            	    		$id = User::addUser($data);
+                            $userAdd = User::find($id);
+                            if($userAdd->email_status == '0'){
+                                Mail::send('email.activation', array('id'=>$userAdd->id), function($message) use ($data)  {
+                                    $message->to($data['email'])->subject("Activate your new account");
+                                    $message->from("noreply@zettaa.com", 'Zettaa');
+                                });
+                                $userAdd->email_status = '1';
+                                $userAdd->save();
+                            }
+                	    	return 'success';
                         }
-            	    	return 'success';
-                    }
 
-    	    	}
+        	    	}
+                }
     	    }
         }
     }

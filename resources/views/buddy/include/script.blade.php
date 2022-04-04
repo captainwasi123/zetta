@@ -15,7 +15,6 @@
 <script src="{{URL::to('/')}}/assets/user_dashboard/buddy/js/dashboard1.js"></script>
 <script src="{{URL::to('/')}}/assets/user_dashboard/plugins/styleswitcher/jQuery.style.switcher.js"></script>
 <script src="{{URL::to('/')}}/assets/user_dashboard/plugins/bootstrap/js/bootstrap.min.js"></script>
-<script src="{{URL::to('/')}}/assets/user_dashboard/plugins/sweetalert/sweetalert.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="{{URL::to('/')}}/assets/user_dashboard/buddy/js/dev_buddy.js"></script>
 <script src="https://js.pusher.com/7.0/pusher.min.js"></script>

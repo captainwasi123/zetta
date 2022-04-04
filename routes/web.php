@@ -21,6 +21,7 @@ use Illuminate\Support\Facades\Route;
 		// Main Pages
 			Route::get('/', 'webController@index');
 			Route::get('/contact', 'webController@contact');
+			Route::post('/contact', 'webController@contactSubmit');
 			Route::get('/thankyou', 'webController@thankyou');
 			Route::get('/partner', 'webController@partner');
 

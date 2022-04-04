@@ -469,8 +469,8 @@
                     data: formData,
                     dataType: "json",
                     success: function (res) {
-                        console.log(res)
                         $('.chat-list').append(res.html);
+                        $('.summernote').summernote('reset');
                     }
                 });
             })

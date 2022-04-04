@@ -7,34 +7,6 @@
           <h3> Your Zettaa Lead  </h3>
        </div>
     </div>
-    <div class="block-element m-b-10">
-       <div class="lead-details">
-          <p class="col-silver">
-             <span> <b class="bg-danger"></b> Number Of Hours </span>
-             <span> <b class="bg-purple"></b> Number Of Activities </span>
-             <span> <b class="bg-success"></b> Number Of Different Sports </span>
-          </p>
-       </div>
-    </div>
-    <div class="block-element">
-        <div class="card">
-              <div class="card-body">
-                  <h4 class="card-title">Product line Chart</h4>
-                  <ul class="list-inline text-right">
-                      <li>
-                          <h5><i class="fa fa-circle m-r-5 text-inverse"></i>iPhone</h5>
-                      </li>
-                      <li>
-                          <h5><i class="fa fa-circle m-r-5 text-info"></i>iPad</h5>
-                      </li>
-                      <li>
-                          <h5><i class="fa fa-circle m-r-5 text-success"></i>iPod</h5>
-                      </li>
-                  </ul>
-                  <div id="morris-area-chart"></div>
-              </div>
-          </div>
-    </div>
     <div class="block-element m-t-30 m-b-30">
        <div class="row">
           <div class="col-12">

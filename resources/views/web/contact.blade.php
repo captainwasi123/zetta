@@ -39,16 +39,17 @@
                      <h1>{{ __('content.Contact_SEND MESSAGE') }}</h1>    
                   </div>
                </div>
-               <form>
+               <form method="post">
+                  @csrf
                   <div class="row">
                      <div class="col-lg-6 pl-1 pr-1">
                         <div class="form-group">
-                           <input type="text" class="form-control" id="usr" placeholder="{{ __('content.Contact_Name') }}">
+                           <input type="text" class="form-control" name="name" placeholder="{{ __('content.Contact_Name') }}" required>
                         </div>         
                      </div>
                      <div class="col-lg-6 pl-1 pr-1">
                         <div class="form-group">
-                           <input type="email" class="form-control" id="email" placeholder="{{ __('content.Contact_Email') }}">
+                           <input type="email" class="form-control" name="email" placeholder="{{ __('content.Contact_Email') }}" required>
                         </div>       
                      </div>
                   </div>
@@ -56,7 +57,7 @@
                <div class="row">
                   <div class="col-lg-12 pl-1 pr-1">
                      <div class="form-group">
-                        <textarea rows="6" class="form-control" id="textarea" placeholder="{{ __('content.Contact_Message') }}"></textarea>
+                        <textarea rows="6" class="form-control" placeholder="{{ __('content.Contact_Message') }}" name="message" required></textarea>
                      </div>      
                   </div>
                </div>
@@ -64,7 +65,7 @@
                <div class="row">
                   <div class="col-lg-12 pl-1 pr-1">
                      <div class="form-group">
-                        <input type="checkbox" id="" name="checkbox" value=""><label for=""> {{ __('content.I agree that my submitted data is being collected and stored') }}</label>               
+                        <input type="checkbox" name="terms" required><label for=""> {{ __('content.I agree that my submitted data is being collected and stored') }}</label>               
                      </div>      
                   </div>
                </div>

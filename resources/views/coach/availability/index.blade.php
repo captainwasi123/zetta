@@ -97,7 +97,7 @@
                @csrf
                <div class="slot-2">
                   <span class="col-white"> Holidays </span>
-                  <input type="text" class="form-field3 mydatepicker" name="holidate" placeholder="dd/mm/yyyy" required>
+                  <input type="text" class="form-field3 mydatepicker" name="holidate" placeholder="dd-mm-yyyy" required>
                </div>
          </div>
          <div class="col-md-5 col-lg-3  col-12">
@@ -233,7 +233,7 @@
       $(document).ready(function(){
          'use strict'
 
-         jQuery('.mydatepicker').datepicker({format: 'dd/mm/yyyy'});
+         jQuery('.mydatepicker').datepicker({format: 'dd-mm-yyyy'});
          
          $('.clockpicker').clockpicker({
             donetext: 'Done',

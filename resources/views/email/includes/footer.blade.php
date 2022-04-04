@@ -1,6 +1,6 @@
 <div class="section-3">
   <p>Thanks</p>
-  <p>The Zetta Team</p>
+  <p>The Zettaa Team</p>
 </div>
 <div class="section-4">
   <a href="#"><img src="https://dnpprojects.com/demo/zetta/assets/website/images/fb-icon.jpg"></a>
@@ -26,5 +26,5 @@
   <a href="https://dnpprojects.com/demo/zetta/disclaimerPolicy">Disclaimer Policy</a>
 </div>
 <div class="footer">
-  <p>© 2021 zettaa. All Rights Reserved</p>
+  <p>© 2022 zettaa. All Rights Reserved</p>
 </div>
