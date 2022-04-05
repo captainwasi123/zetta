@@ -884,3 +884,20 @@ header.header-1 {
 #discountTray, #finalTray{
     display: none;
 }
+
+.medium-password {
+    background-color: #ff7600;
+    font-weight: 600;
+    color: #000000b5;
+}
+
+.weak-password {
+    background-color: red;
+    font-weight: 700;
+}
+
+.strong-password {
+    background-color: #29a500;
+    font-weight: 600;
+    color: #ffffff;;
+}

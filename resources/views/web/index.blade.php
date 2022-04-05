@@ -371,7 +371,7 @@
                              
                               <div class="lesson-info-block">
                                  <p class="lesson-title">{{$val->title}}</p>
-                                 <h6 class="col-white m-b-15"> <i class="fa fa-star col-yellow"> </i> 5.0 </h6>
+                                 <h6 class="col-white m-b-15"> <i class="fa fa-star col-yellow"> </i> {{$val->user->avgRating[0]->aggregate}} </h6>
                                  <h6 class="col-white m-b-15 lesson-catagory-text" style="float: right;">
                                  <p class="bg-purple col-white custom-btn12 cut-sports" title="{{$val->sports->name}}">{{$val->sports->name}}</p>
                                  </h6>

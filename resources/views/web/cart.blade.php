@@ -100,13 +100,17 @@
                         @else
                            <input type="hidden" name="with_without_equipment" value="1">
                         @endif
+                        @if($data->participants == 1)
                         <tr>
-                           <th class="col-white" style="width: 50%;"> Quantity </th>
+                           <th class="col-white" style="width: 50%;"> No. of participants </th>
                            <th></th>
                            <th>
                               <input type="number" name="qty" class="form-control" value="1" required>
                            </th>
                         </tr>
+                        @else
+                           <input type="hidden" name="qty" class="form-control" value="1">
+                        @endif
                         <tr>
                            <th class="col-white" style="width: 50%;"> Coupon </th>
                            <th colspan="2">
@@ -169,7 +173,6 @@
                               <input type="hidden" name="total_price" id="totalPrice" value="{{$totalPrice}}">
                               <button class="custom-btn1 bg-purple col-white rounded block-element2 m-t-10"> {{ __('content.Continue to Checkout') }}
                               </button>
-                              <p class="col-white m-t-10 m-b-0">{{ __('content.Slogan') }} {{ __('content.You won`t be charged yet') }}  </p>
                            </td>
                         </tr>
                      </tbody>

@@ -269,6 +269,7 @@
                      <div class="tab-pane active" id="tabs-1" role="tabpanel">
                         <div class="package-content">
                            <div class="package-content-head">
+                              @if (count($data->equipment)>0)
                               <h3 class="m-b-20 col-white"> {{ __('content.Price')}} <b class="col-purple">
                                 @if (count($data->equipment)>0)
                                     @php
@@ -285,7 +286,7 @@
                                 @else
                                 FREE
                                 @endif </b> </h3>
-                              
+                              @endif
                               <h5 class="col-white m-b-20"> 
                                  <img src="{{URL::to('/assets/website')}}/images/clock-icon.jpg">  
                                  {{date('d-M-Y H:i:s', strtotime($data->held_date))}}
@@ -300,14 +301,7 @@
                                     <i class="fa fa-check col-purple"> </i> 
                                     {{ $data->group_members == 1 ?    'Participant :'.count($data->activeOrders).'/'.$data->group_members.' Member' :  'Participant :'.count($data->activeOrders).'/'.$data->group_members.' Members'}} 
                                  </li>
-
-                                        
-                                        
-
-                                 @endif
-                                
-                             
-
+                              @endif
                               <li class="block-element2"> <i class="fa fa-check col-purple"> </i> {{$data->location_covered == '0' ? 'Open Location' : 'Covered Location'}} </li>
                               <li class="block-element2"> <i class="fa fa-check col-purple"> </i> 
                                  @switch($data->availability)
@@ -389,7 +383,7 @@
                            </ul>
                   
                            <div class="block-element2 m-t-30">
-                              <p class="m-b-10" >  <a href="{{URL::to('/cart/activity/'.base64_encode($data->id).'/basic')}}" class="block-element2 bg-purple col-white rounded custom-btn1 text-center"> Continue
+                              <p class="m-b-10" >  <a href="{{URL::to('/cart/activity/'.base64_encode($data->id).'/basic')}}" class="block-element2 bg-purple col-white rounded custom-btn1 text-center"> Participate
                                 @if (count($data->equipment)>0)
                                     @php
                                         $ids = [];
@@ -403,7 +397,6 @@
                                     @endforeach
                                      ({{'$'.number_format($price)}})
                                 @else
-                                {{ __('content.FREE')}}
                                 @endif
 
                             </a> </p>

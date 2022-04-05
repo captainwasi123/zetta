@@ -469,7 +469,7 @@ class webController extends Controller
                 $message->from("noreply@zettaa.com", 'Zettaa');
             });
 
-            return redirect()->back()->with('success', 'Inquiry Received. One of our concern will contact you shortly.');
+            return redirect()->back()->with('success', 'The Zettaa team thank you for your message. We will make sure to respond as soon as possible.');
         }
 
         public function thankyou(){
