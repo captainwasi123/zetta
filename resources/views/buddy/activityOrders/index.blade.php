@@ -7,15 +7,14 @@
 <div class="box-wrapper1">
     <div class="block-element">
        <div class="sec-head1">
-          <h3> Manage Lesson Orders  </h3>
+          <h3> Manage Activity Orders  </h3>
        </div>
     </div>
     <div class="block-element m-b-20 custom-table1">
        <div class="row">
           <div class="col-lg-6 col-sm-6 col-md-6 col-12">
              <div class="order-sorting-text m-b-10">
-                <a href="{{route('buddy.order')}}" class="{{$status == '0' ? 'active' : ''}}"> Active </a>
-                <a href="{{route('buddy.order.delivered')}}" class="col-silver {{$status == '1' ? 'active' : ''}}"> Delivered </a>
+                <a href="{{route('buddy.order')}}" class="{{$status == '1' ? 'active' : ''}}"> Active </a>
                 <a href="{{route('buddy.order.cancelled')}}" class="col-silver {{$status == '2' ? 'active' : ''}}"> Cancelled </a>
              </div>
           </div>
@@ -30,8 +29,8 @@
                 <thead>
                      <tr>
                         <th> # </th>
-                        <th> Seller </th>
-                        <th> Lesson </th>
+                        <th> Buyer </th>
+                        <th> Activity </th>
                         <th> Qty </th>
                         <th> Total Amount</th>
                         <th> Type </th>
@@ -42,43 +41,35 @@
                      </tr>
                   </thead>
                   <tbody>
-                     @foreach($data as $val)
+                     @foreach($data as $key => $val)
                         <tr>
-                           <td>{{$val->id}}</td>
+                           <td>{{++$key}}</td>
                            <td>
-                              <a  href="{{route('web.coach.details', base64_encode(@$val->seller->id))}}" target="_blank"><img src="{{URL::to('/')}}/public/storage/user/profile_img/{{empty($val->seller) ? '' : $val->seller->profile_img}}" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';" width="40" class="img-circle" /> {{empty($val->seller) ? 'Unknown' : $val->seller->fname.' '.$val->seller->lname}} </a>
+                              <a href="{{route('web.buddy.details', base64_encode(@$val->buyer->id))}}" target="_blank"><img src="{{URL::to('/')}}/public/storage/user/profile_img/{{empty($val->seller) ? '' : $val->buyer->profile_img}}" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';" width="40" class="img-circle" /> {{empty($val->buyer) ? 'Unknown' : $val->buyer->fname.' '.$val->buyer->lname}} </a>
                            </td>
                            <td>
-                               {{empty($val->lesson) ? '' : $val->lesson->title}}
+                               {{empty($val->activity) ? '' : $val->activity->title}}
                             </td>
                             <td> {{$val->qty}} </td>
                            <td> {{'$'.number_format($val->price, 2)}} </td>
                            <td>
-                              @if(!empty($val->lesson))
-                                 {{$val->lesson->participants == '0' ? 'Single Lesson' : 'Group Lesson'}}
+                              @if(!empty($val->activity))
+                                 {{$val->activity->participants == '0' ? 'Single Activity' : 'Group Activity'}}
                               @endif
                            </td>
                            <td>
-                              @if(empty($val->booking_date) && $val->lesson->participants != '0')
-                                 @if(!empty($val->lesson))
-                                    {{date('d-M-Y h:i a', strtotime($val->lesson->held_date))}}
-                                 @endif
-                              @else
-                                 {{date('d-M-Y h:i a', strtotime($val->booking_date.' '.$val->booking_time))}}
-                              @endif
+                              {{date('d-M-Y h:i a', strtotime($val->activity->held_date))}}
                            </td>
                            <td>
-                              @if($val->status == '0')
+                              @if($val->status == '1')
                                  <span class="label bg-success"> Active </span>
-                              @elseif($val->status == '1')
-                                 <span class="label bg-primary"> Delivered </span>
                               @else
                                  <span class="label bg-danger"> Cancelled </span>
                               @endif
                            </td>
                            <td>{{date('d-M-Y h:i a', strtotime($val->created_at))}}</td>
                            <td>  
-                              <a href="{{route('buddy.orders.view',base64_encode($val->id))}}" class="label bg-green2">  Details 
+                              <a href="{{route('buddy.activityOrder.view',base64_encode($val->id))}}" class="label bg-green2">  Details 
                               </a> 
                            </td>
                         </tr>

@@ -75,7 +75,10 @@ margin-bottom: 0;
 .halfContinue {
     width: 49.5% !important;
 }
-
+.already_friend {
+    background-color: #9a49ff !important;
+    color: #fff !important;
+}
 .modal-content {
     float: left;
     width: 100%;

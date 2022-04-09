@@ -383,23 +383,34 @@
                            </ul>
                   
                            <div class="block-element2 m-t-30">
-                              <p class="m-b-10" >  <a href="{{URL::to('/cart/activity/'.base64_encode($data->id).'/basic')}}" class="block-element2 bg-purple col-white rounded custom-btn1 text-center"> Participate
-                                @if (count($data->equipment)>0)
-                                    @php
-                                        $ids = [];
-                                        $price = 0;
-                                    @endphp
-                                    @foreach ($data->equipment as $k => $val)
-                                        @php
-                                            $price = $price+$val->user_equipment->price;
-                                            $ids[$k] = $val->equip_id;
-                                        @endphp
-                                    @endforeach
-                                     ({{'$'.number_format($price)}})
-                                @else
-                                @endif
-
-                            </a> </p>
+                              <p class="m-b-10" >  
+                                 @if($data->participants == '0' && count($data->activeOrders) > 0)
+                                    <a href="javascript:void(0)" class="block-element2 bg-purple col-white rounded custom-btn1 text-center">
+                                       Completely Reserved
+                                    </a>
+                                 @elseif($data->participants == '1' && count($data->activeOrders) >= $data->group_members)
+                                    <a href="javascript:void(0)" class="block-element2 bg-purple col-white rounded custom-btn1 text-center">
+                                       Completely Reserved
+                                    </a>
+                                 @else
+                                    <a href="{{URL::to('/cart/activity/'.base64_encode($data->id).'/basic')}}" class="block-element2 bg-purple col-white rounded custom-btn1 text-center"> Participate
+                                       @if (count($data->equipment)>0)
+                                          @php
+                                              $ids = [];
+                                              $price = 0;
+                                          @endphp
+                                          @foreach ($data->equipment as $k => $val)
+                                              @php
+                                                  $price = $price+$val->user_equipment->price;
+                                                  $ids[$k] = $val->equip_id;
+                                              @endphp
+                                          @endforeach
+                                           ({{'$'.number_format($price)}})
+                                       @else
+                                       @endif
+                                    </a> 
+                                 @endif
+                              </p>
                            </div>
                         </div>
                      </div>

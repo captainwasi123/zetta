@@ -46,8 +46,12 @@
 
                       <div class="profile-btn">
                          @if(Auth::check())
-                         <a href="javascript:void(0)" class="bg-white col-purple rounded custom-btn1 text-center addFriend" data-id="{{base64_encode(@$data->id)}}">&nbsp;&nbsp;&nbsp;&nbsp;Add Friend&nbsp;&nbsp;&nbsp;&nbsp;</a>
-                         <a href="javascript:void(0)" class="bg-white col-purple rounded custom-btn1 text-center getUserMessage"  data-id="{{base64_encode(@$data->id)}}">Send Message</a>
+                           @if(count($data->checkFriend) > 0)
+                              <a href="javascript:void(0)" class="bg-white col-purple rounded custom-btn1 text-center already_friend">Already Friend</a>
+                           @else
+                              <a href="javascript:void(0)" class="bg-white col-purple rounded custom-btn1 text-center addFriend" data-id="{{base64_encode(@$data->id)}}">&nbsp;&nbsp;&nbsp;&nbsp;Add Friend&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                           @endif
+                           <a href="javascript:void(0)" class="bg-white col-purple rounded custom-btn1 text-center getUserMessage"  data-id="{{base64_encode(@$data->id)}}">Send Message</a>
                          @else
                          <a href="javascript:void(0)" class="bg-white col-purple rounded custom-btn1 text-center open-login">&nbsp;&nbsp;&nbsp;&nbsp;Add Friend&nbsp;&nbsp;&nbsp;&nbsp;</a>
                          <a href="javascript:void(0)" class="bg-white col-purple rounded custom-btn1 text-center open-login">Send Message</a>

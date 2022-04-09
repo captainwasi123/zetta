@@ -33,7 +33,9 @@
 
                       <div class="profile-btn">
                          @if(Auth::check())
-                           @if($friend == 0)
+                           @if(count($data->checkFriend) > 0)
+                              <a href="javascript:void(0)" class="bg-white col-purple rounded custom-btn1 text-center already_friend">Already Friend</a>
+                           @else
                               <a href="javascript:void(0)" class="bg-white col-purple rounded custom-btn1 text-center addFriend" data-id="{{base64_encode(@$data->id)}}">&nbsp;&nbsp;&nbsp;&nbsp;Add Friend&nbsp;&nbsp;&nbsp;&nbsp;</a>
                            @endif
                          <a href="javascript:void(0)" class="bg-white col-purple rounded custom-btn1 text-center getUserMessage"  data-id="{{base64_encode(@$data->id)}}">Send Message</a>

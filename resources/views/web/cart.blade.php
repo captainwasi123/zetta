@@ -194,7 +194,8 @@
             $( "#datepicker" ).datepicker({ 
                minDate: new Date("{{date('d-M-Y')}}"),
                beforeShowDay: nonWorkingDates,
-               dateFormat: 'dd-mm-yy' 
+               dateFormat: 'dd-mm-yy',
+               firstDay: 1
             });
 
             $(document).on('change', '#datepicker', function(){
