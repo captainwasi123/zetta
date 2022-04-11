@@ -5,7 +5,7 @@
                <div class="user-profile-header">
                   <h4> Hi, {{(Auth::user()->fname)}} </h4>
                   <h6> {{Auth::user()->email}} </h6>
-                  <p> <a href="{{route('buddy.analytics_and_redeem')}}"> <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/coin-icon.png"> </a> <span> Z COINS <b> {{empty(Auth::user()->wallet->coin) ? 0 : Auth::user()->wallet->coin}} </b> </span> <a href="{{route('coach.favouriteCoach')}}"> <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/heart-icon.png"> </a>  </p>
+                  <p> <a href="{{route('buddy.analytics_and_redeem')}}"> <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/coin-icon.png"> </a> <span> Z COINS <b> {{empty(Auth::user()->wallet->coin) ? 0 : Auth::user()->wallet->coin}} </b> </span> <a href="{{route('buddy.favouriteCoach')}}"> <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/heart-icon.png"> </a>  </p>
                </div>
                <div class="user-profile">
                   <div class="profile-img">
@@ -17,10 +17,6 @@
                   <div class="account-btn1 text-center">
                      <a href="{{URL::to('/buddy')}}" class="custom-btn1"> SWITCH TO SPORTS BUDDY </a>
                   </div>
-
-                  <!-- <div class="profile-text">
-                     <a href="{{route('coach.messages')}}" class="" > INBOX <i class="mdi mdi-email"> <b class="notif-icon1"> 5  </b> </i>  </a>
-                  </div> -->
                </div>
               <nav class="sidebar-nav">
                   <ul id="sidebarnav">

@@ -904,3 +904,10 @@ header.header-1 {
     font-weight: 600;
     color: #ffffff;;
 }
+.review-box .col-white span {
+    color: #c5c5c5;
+    font-size: 11px;
+}
+.review-box p.col-white {
+    margin-top: -8px;
+}

@@ -129,7 +129,7 @@
                   @endforeach
                 </ul>
             </div>
-            <div class="lesson-holder-details m-t-40">
+            <div class="lesson-holder-details m-t-40 m-b-20">
                <div class="profile-details1">
                   <div class="row center-row m-b-20">
                      <div class="col-md-5 col-lg-5 col-12">
@@ -165,30 +165,24 @@
                </div>
             </div>
             <div class="sec-head1 m-t-40 m-b-15">
-               <h3 class="col-white"> {{ __('content.Reviews as Sport Buddy')}} </h3>
+               <h3 class="col-white"> <br>{{ __('content.Reviews as Sport Buddy')}} </h3>
             </div>
             <div class="review-slider arrows3">
-               <div class="review-box">
-                  <img src="{{URL::to('/assets/website')}}/images/profile-image1.jpg">
-                  <h5 class="col-white"> <b class="col-purple"> Lennon <i class="fa fa-star"> </i> </b> 5.0 </h5>
-                  <p class="col-white"> That would be good please share any reference or similar website interms of features
-                     and functionality you need.
-                  </p>
-               </div>
-               <div class="review-box">
-                  <img src="{{URL::to('/assets/website')}}/images/profile-image1.jpg">
-                  <h5 class="col-white"> <b class="col-purple"> Lennon <i class="fa fa-star"> </i> </b> 5.0 </h5>
-                  <p class="col-white"> That would be good please share any reference or similar website interms of features
-                     and functionality you need.
-                  </p>
-               </div>
-               <div class="review-box">
-                  <img src="{{URL::to('/assets/website')}}/images/profile-image1.jpg">
-                  <h5 class="col-white"> <b class="col-purple"> Lennon <i class="fa fa-star"> </i> </b> 5.0 </h5>
-                  <p class="col-white"> That would be good please share any reference or similar website interms of features
-                     and functionality you need.
-                  </p>
-               </div>
+               @foreach($data->user->reviews as $re)
+                  <div class="review-box">
+                     <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{@$re->user->profile_img}}" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';">
+                     <h5 class="col-white"> <b class="col-purple"> {{empty($re->user->fname) ? 'Anonymous' : $re->user->fname.' '.$re->user->lname}} <i class="fa fa-star"> </i> </b> {{number_format($re->rating, 1)}} </h5>
+                     <p class="col-white"> 
+                        <span>{{date('d-M-Y h:i a', strtotime($re->created_at))}}</span><br>
+                        {{empty($re->review) ? '-' : $re->review}}
+                     </p>
+                  </div>
+               @endforeach
+               @if(count($data->user->reviews) == 0)
+                  <div>
+                     <p class="col-white">No Reviews Found.</p>
+                  </div>
+               @endif
             </div>
             
             <div class="all-ratings m-t-40">
@@ -198,37 +192,37 @@
                         <div class="rating-bar-box">
                            <div> 5 star </div>
                            <div class="progress">
-                              <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                              <div class="progress-bar" role="progressbar" style="width: {{empty($reviews['5']) ? '' : ($reviews['5']/$reviews['total'])*100}}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                            </div>
-                           <div> (364) </div>
+                           <div> ({{$reviews['5']}}) </div>
                         </div>
                         <div class="rating-bar-box">
                            <div> 4 star </div>
                            <div class="progress">
-                              <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                              <div class="progress-bar" role="progressbar" style="width: {{empty($reviews['4']) ? '' : ($reviews['4']/$reviews['total'])*100}}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                            </div>
-                           <div> (364) </div>
+                           <div> ({{$reviews['4']}}) </div>
                         </div>
                         <div class="rating-bar-box">
                            <div> 3 star </div>
                            <div class="progress">
-                              <div class="progress-bar" role="progressbar" style="width: 40%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                              <div class="progress-bar" role="progressbar" style="width: {{empty($reviews['3']) ? '' : ($reviews['3']/$reviews['total'])*100}}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                            </div>
-                           <div> (364) </div>
+                           <div> ({{$reviews['3']}}) </div>
                         </div>
                         <div class="rating-bar-box">
                            <div> 2 star </div>
                            <div class="progress">
-                              <div class="progress-bar" role="progressbar" style="width: 55%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                              <div class="progress-bar" role="progressbar" style="width: {{empty($reviews['2']) ? '' : ($reviews['2']/$reviews['total'])*100}}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                            </div>
-                           <div> (364) </div>
+                           <div> ({{$reviews['2']}}) </div>
                         </div>
                         <div class="rating-bar-box">
                            <div> 1 star </div>
                            <div class="progress">
-                              <div class="progress-bar" role="progressbar" style="width: 15%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                              <div class="progress-bar" role="progressbar" style="width: {{empty($reviews['1']) ? '' : ($reviews['1']/$reviews['total'])*100}}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                            </div>
-                           <div> (64) </div>
+                           <div> ({{$reviews['1']}}) </div>
                         </div>
                      </div>
                   </div>

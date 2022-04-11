@@ -23,6 +23,7 @@ use App\Events\sendChat;
 use Pusher\Pusher;
 use App\Models\orders\order;
 use Illuminate\Support\Str;
+use App\Models\reviews;
 use Mail;
 use URL;
 use App;
@@ -299,11 +300,19 @@ class webController extends Controller
             $data = activities::with(['equipment','equipment.user_equipment'])->find($id);
             $location = Activity_location::where('activity_id',$id)->get();
 
-
             if(!empty($data->id)){
+                $reviews = array(
+                    '1' => reviews::where('seller_id', $data->user_id)->where('rating', '1')->count(),
+                    '2' => reviews::where('seller_id', $data->user_id)->where('rating', '2')->count(),
+                    '3' => reviews::where('seller_id', $data->user_id)->where('rating', '3')->count(),
+                    '4' => reviews::where('seller_id', $data->user_id)->where('rating', '4')->count(),
+                    '5' => reviews::where('seller_id', $data->user_id)->where('rating', '5')->count(),
+                    'total' => reviews::where('seller_id', $data->user_id)->count(),
+                );
+
                 $tactivities = activities::where('status', '1')->where('user_id', $data->user_id)->where('id', '!=', $id)->latest()->limit(10)->get();
                 $oactivities = activities::where('status', '1')->where('user_id', '!=', $data->user_id)->latest()->limit(10)->get();
-                return view('web.activity.details', ['data' => $data, 'tactivities' => $tactivities, 'oactivities' => $oactivities,'location' => $location]);
+                return view('web.activity.details', ['data' => $data, 'tactivities' => $tactivities, 'oactivities' => $oactivities,'location' => $location, 'reviews' => $reviews]);
             }else{
                 return redirect()->back();
             }
@@ -319,9 +328,18 @@ class webController extends Controller
             $less_location = Locations::where('lesson_id',$id)->get();
 
             if(!empty($data->id)){
+                $reviews = array(
+                    '1' => reviews::where('seller_id', $data->user_id)->where('rating', '1')->count(),
+                    '2' => reviews::where('seller_id', $data->user_id)->where('rating', '2')->count(),
+                    '3' => reviews::where('seller_id', $data->user_id)->where('rating', '3')->count(),
+                    '4' => reviews::where('seller_id', $data->user_id)->where('rating', '4')->count(),
+                    '5' => reviews::where('seller_id', $data->user_id)->where('rating', '5')->count(),
+                    'total' => reviews::where('seller_id', $data->user_id)->count(),
+                );
+                
                 $tlessons = lessons::where('status', '1')->where('user_id', $data->user_id)->where('id', '!=', $id)->latest()->limit(10)->get();
                 $olessons = lessons::where('status', '1')->where('user_id', '!=', $data->user_id)->latest()->limit(10)->get();
-                return view('web.lesson.details', ['data' => $data, 'tlessons' => $tlessons, 'olessons' => $olessons,'location' => $less_location]);
+                return view('web.lesson.details', ['data' => $data, 'tlessons' => $tlessons, 'olessons' => $olessons,'location' => $less_location, 'reviews' => $reviews]);
             }else{
                 return redirect()->back();
             }

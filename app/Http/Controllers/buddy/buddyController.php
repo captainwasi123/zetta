@@ -8,6 +8,9 @@ use App\Models\ActivityOrders;
 use App\Models\User;
 use App\Models\earningHistory;
 use App\Models\FavouriteBuddy as FB;
+use App\Models\FavouriteCoach as FC;
+use App\Models\FavouriteActivity as FA;
+use App\Models\FavouriteLesson as FL;
 use Illuminate\Http\Request;
 use App\Models\inbox\chat;
 use App\Models\lesson\orderSessions;
@@ -92,14 +95,31 @@ class buddyController extends Controller
 
 
     function favouriteBuddy(){
-        
-   
+
         $data=FB::where('user_id', Auth::id())->get();
-  
-       
         return view('buddy.favouriteBuddy',['data' => $data]);
     }
 
+    function favouriteCoach(){
+
+        $data=FC::where('user_id', Auth::id())->get();
+        return view('buddy.favouriteCoach',['data' => $data]);
+    }
+
+    function favouriteLesson(){
+
+        $data=FL::where('user_id', Auth::id())->get();
+        return view('buddy.favouriteLesson',['data' => $data]);
+    }
+
+    function favouriteActivity(){
+        
+   
+        $data=FA::where('user_id', Auth::id())->get();
+  
+
+        return view('buddy.favouriteActivity',['data' => $data]);
+    }
 
    
 }

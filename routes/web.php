@@ -290,8 +290,10 @@ use Illuminate\Support\Facades\Route;
 
 				Route::get('/', 'buddyController@index')->name('buddy.dashboard');
 				Route::get('/become_a_coach', 'buddyController@become_a_coach')->name('buddy.become_a_coach');
-				Route::get('/favouriteActivity', 'activityController@favouriteActivity')->name('buddy.favouriteActivity');
+				Route::get('/favouriteActivity', 'buddyController@favouriteActivity')->name('buddy.favouriteActivity');
 				Route::get('/favouriteBuddy', 'buddyController@favouriteBuddy')->name('buddy.favouriteBuddy');
+				Route::get('/favouriteCoach', 'buddyController@favouriteCoach')->name('buddy.favouriteCoach');
+				Route::get('/favouriteLesson', 'buddyController@favouriteLesson')->name('buddy.favouriteLesson');
 
 
 
