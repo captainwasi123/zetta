@@ -770,3 +770,6 @@ padding: 9px 30px !important;
 #loadmore {
     color: #994afe !important;
 }
+.ui-menu-item-wrapper strong {
+    font-weight: 600 !important;
+}
