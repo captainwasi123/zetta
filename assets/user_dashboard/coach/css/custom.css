@@ -171,6 +171,7 @@ b, strong {
 }
 .user-profile .profile-img img {
     width: 100%;
+    height: 100px;
     padding: 5px;
     border: none;
     border-radius: 100%;
@@ -3608,12 +3609,13 @@ body.mini-sidebar a.navbar-brand img {
     }
 
 
-    .header-login .dropdown button img {
-            width: 38px;
-            border-radius: 25px;
+.header-login .dropdown button img {
+    width: 38px;
+    height: 38px;
+    border-radius: 25px;
 }
-   .header-login .dropdown button {
-   background: none !important;
+.header-login .dropdown button {
+    background: none !important;
     border: none !important;
     padding: 10px 10px !important;
     outline: none !important;

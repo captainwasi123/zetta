@@ -112,7 +112,12 @@
                   <h4 class="col-white no-margin m-t-0 m-b-0"> {{empty($data->user->fname) ? 'Anonymous' : $data->user->fname.' '.$data->user->lname}} </h4>
                </a>
                <h6 class="col-grey"> {{ __('content.Coach')}} </h6>
-               <h5 class="col-purple m-b-15"> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> <i class="fa fa-star col-purple"> </i> 5.0  </h5>
+               @php 
+                  $rating_avg = empty($data->user->avgRating) ? '0' : $data->user->avgRating[0]->aggregate; 
+               @endphp
+               <h5 class="col-purple m-b-15"> 
+                  <i class="fa fa-star col-purple"> </i> <strong>{{number_format($rating_avg, 1)}}</strong>
+               </h5>
             </div>
 
             <div class="lesson-holder-about">
