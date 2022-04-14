@@ -33,6 +33,7 @@
                         <th> Activity </th>
                         <th> Qty </th>
                         <th> Total Amount</th>
+                        <th> Equipments </th>
                         <th> Type </th>
                         <th> BookingTime </th>
                         <th> Status </th>
@@ -45,7 +46,7 @@
                         <tr>
                            <td>{{++$key}}</td>
                            <td>
-                              <a href="{{route('web.buddy.details', base64_encode(@$val->buyer->id))}}" target="_blank"><img src="{{URL::to('/')}}/public/storage/user/profile_img/{{empty($val->seller) ? '' : $val->buyer->profile_img}}" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';" width="40" class="img-circle" /> {{empty($val->buyer) ? 'Unknown' : $val->buyer->fname.' '.$val->buyer->lname}} </a>
+                              <a href="{{route('web.buddy.details', base64_encode(@$val->buyer->id))}}" target="_blank" class="order_profile_link"><img src="{{URL::to('/')}}/public/storage/user/profile_img/{{empty($val->seller) ? '' : $val->buyer->profile_img}}" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';" width="40" class="img-circle" /> {{empty($val->buyer) ? 'Unknown' : $val->buyer->fname.' '.$val->buyer->lname}} </a>
                            </td>
                            <td>
                                {{empty($val->activity) ? '' : $val->activity->title}}
@@ -53,12 +54,17 @@
                             <td> {{$val->qty}} </td>
                            <td> {{'$'.number_format($val->price, 2)}} </td>
                            <td>
+                              @foreach($val->equipments as $eq)
+                                 <span class="badge badge-info badge-pill">{{@$eq->equip->name}}</span>
+                              @endforeach 
+                           </td>
+                           <td>
                               @if(!empty($val->activity))
                                  {{$val->activity->participants == '0' ? 'Single Activity' : 'Group Activity'}}
                               @endif
                            </td>
                            <td>
-                              {{date('d-M-Y h:i a', strtotime($val->activity->held_date))}}
+                              {{date('d-M-Y h:i a', strtotime(@$val->activity->held_date))}}
                            </td>
                            <td>
                               @if($val->status == '1')

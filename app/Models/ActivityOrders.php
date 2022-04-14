@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\activity\activities;
 use App\Models\userWallet;
+use App\Models\activityOrderEquipment;
 use Auth;
 
 class ActivityOrders extends Model
@@ -33,6 +34,9 @@ class ActivityOrders extends Model
     }
 
 
+    public function equipments(){
+        return $this->hasMany(activityOrderEquipment::class, 'order_id', 'id');
+    }
     public function buyer(){
         return $this->belongsTo(User::class, 'buyer_id');
     }

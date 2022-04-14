@@ -1,3 +1,7 @@
+.contact-list td img {
+    width: 30px !important;
+    height: 30px !important;
+}
 .cut-text { 
   text-overflow: ellipsis;
   overflow: hidden; 
@@ -770,7 +774,6 @@ padding: 9px 30px !important;
 #loadmore {
     color: #994afe !important;
 }
-<<<<<<< HEAD
 
 
 
@@ -820,8 +823,6 @@ div.timeline-calendar-mobile {
 .mobile-inbox-wrapper2 .chat-person-name {
     padding: 10px 15px 10px 15px;
 }
-=======
 .ui-menu-item-wrapper strong {
     font-weight: 600 !important;
->>>>>>> 6cea33c2e75b304f37d26fc80df489fea3531262
 }

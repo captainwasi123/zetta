@@ -1,3 +1,36 @@
+
+.cart_profile .lesson-holder-profile div img {
+    position: absolute;
+    left: 0px;
+    top: -2px;
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+}
+.cart_profile .lesson-holder-profile {
+    padding-left: 90px;
+}
+.cart_profile .lesson-holder-profile h6, .cart_profile .cart_profile_rating{
+    margin-top: 0px;
+    margin-bottom: 2px;
+}
+.cart_profile .collapse-btn1{
+    margin-top: 20px;
+}
+.cart_profile{
+    margin-top: 50px;
+}
+.cart_profile .lesson-holder-profile .badge-img {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    bottom: 0;
+    left: 55px;
+}
+.equip_tray {
+    padding-left: 25px;
+    display: none;
+}
 .activity_category {
     text-align: center;
     float: right;
@@ -885,7 +918,6 @@ header.header-1 {
     display: none;
 }
 
-<<<<<<< HEAD
 /*Issues Fixing*/
 
 
@@ -951,7 +983,6 @@ div.timeline-calendar-mobile {
 .mobile-inbox-wrapper2 .chat-person-name {
     padding: 10px 15px 10px 15px;
 }
-=======
 .medium-password {
     background-color: #ff7600;
     font-weight: 600;
@@ -974,40 +1005,4 @@ div.timeline-calendar-mobile {
 }
 .review-box p.col-white {
     margin-top: -8px;
-}
-.cart_profile .lesson-holder-profile div img {
-    position: absolute;
-    left: 0px;
-    top: -2px;
-    width: 80px;
-    height: 80px;
-    border-radius: 100%;
-}
-.cart_profile .lesson-holder-profile {
-    padding-left: 90px;
-}
-.cart_profile .lesson-holder-profile h6, .cart_profile .cart_profile_rating{
-    margin-top: 0px;
-    margin-bottom: 2px;
-}
-.cart_profile .collapse-btn1{
-    margin-top: 20px;
-}
-.cart_profile{
-    margin-top: 50px;
-}
-.cart_profile .lesson-holder-profile .badge-img {
-    width: 30px;
-    height: 30px;
-    position: absolute;
-    bottom: 0;
-    left: 55px;
-<<<<<<< HEAD
-}
-.equip_tray {
-    padding-left: 25px;
-    display: none;
-=======
->>>>>>> 6cea33c2e75b304f37d26fc80df489fea3531262
->>>>>>> 8cc42112418a03808eb63ab2bda834069e73b4b1
 }
