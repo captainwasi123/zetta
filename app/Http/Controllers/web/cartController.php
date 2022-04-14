@@ -145,9 +145,11 @@ class cartController extends Controller
             $act = activities::find($aid);
             $price = 0;
             if($data['with_without_equipment'] == '2'){
-                foreach($data['equipment_item'] as $val){
-                    $ace = userEquipment::where('id', $val)->first();
-                    $price = $price+$ace->price;
+                if(!empty($data['equipment_item'])){
+                    foreach($data['equipment_item'] as $val){
+                        $ace = userEquipment::where('id', $val)->first();
+                        $price = $price+$ace->price;
+                    }
                 }
             }
 
@@ -170,11 +172,13 @@ class cartController extends Controller
             $oid = ActivityOrders::newOrder($odata);
 
             if($data['with_without_equipment'] == '2'){
-                foreach($data['equipment_item'] as $val){
-                    $ace = new activityOrderEquipment;
-                    $ace->order_id = $oid;
-                    $ace->equipment_id = $val;
-                    $ace->save();
+                if(!empty($data['equipment_item'])){
+                    foreach($data['equipment_item'] as $val){
+                        $ace = new activityOrderEquipment;
+                        $ace->order_id = $oid;
+                        $ace->equipment_id = $val;
+                        $ace->save();
+                    }
                 }
             }
         }

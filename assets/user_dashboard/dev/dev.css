@@ -1,3 +1,7 @@
+.contact-list td img {
+    width: 30px !important;
+    height: 30px !important;
+}
 .cut-text { 
   text-overflow: ellipsis;
   overflow: hidden; 
@@ -770,9 +774,12 @@ padding: 9px 30px !important;
 #loadmore {
     color: #994afe !important;
 }
+<<<<<<< HEAD
  
 
 
+=======
+>>>>>>> e9780b6e38611fcf3a5523316401f8e42005c646
 
 button.toggle-trig1 {
     background: none;
@@ -843,6 +850,7 @@ div.timeline-calendar-mobile {
 .mobile-inbox-wrapper2 .chat-person-name {
     padding: 5px 15px 5px 15px;
 }
+<<<<<<< HEAD
  
 .ui-menu-item-wrapper strong {
     font-weight: 600 !important;
@@ -926,3 +934,8 @@ body ul.chat-list {
 }
 }
 
+=======
+.ui-menu-item-wrapper strong {
+    font-weight: 600 !important;
+}
+>>>>>>> e9780b6e38611fcf3a5523316401f8e42005c646
