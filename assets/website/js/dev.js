@@ -50,38 +50,6 @@ var host = '';
     });
 
 
-    //Search Autocomplete
-        /*$( "#keywords_val" ).autocomplete({
-            source: function( request, response ) {
-                var matcher = new RegExp( "^" + $.ui.autocomplete.escapeRegex( request.term ), "i" );
-                response( $.grep( kerywordss, function( item ){
-                    return matcher.test( item );
-                }));
-            } 
-        });*/
-
-        $( "#keywords_val" ).autocomplete({
-           source: kerywordss
-        }).data("ui-autocomplete")._renderItem = function( ul, item ) {
-            let txt = String(item.value).replace(new RegExp(this.term, "gi"),"<strong>$&</strong>");
-            return $("<li></li>")
-                .data("ui-autocomplete-item", item)
-                .append("<div>" + txt + "</div>")
-                .appendTo(ul);
-        };
-        $( "#keywords_val" ).autocomplete("option");
-
-        $( "#header_sports_val" ).autocomplete({
-           source: kerywordss
-        }).data("ui-autocomplete")._renderItem = function( ul, item ) {
-            let txt = String(item.value).replace(new RegExp(this.term, "gi"),"<strong>$&</strong>");
-            return $("<li></li>")
-                .data("ui-autocomplete-item", item)
-                .append("<div>" + txt + "</div>")
-                .appendTo(ul);
-        };
-        $( "#header_sports_val" ).autocomplete("option");
-
 
 
     $(document).on('click', '.getUserMessage', function(){
@@ -140,6 +108,40 @@ var host = '';
         }
 
     });
+
+
+
+    //Search Autocomplete
+        /*$( "#keywords_val" ).autocomplete({
+            source: function( request, response ) {
+                var matcher = new RegExp( "^" + $.ui.autocomplete.escapeRegex( request.term ), "i" );
+                response( $.grep( kerywordss, function( item ){
+                    return matcher.test( item );
+                }));
+            } 
+        });*/
+
+        $( "#keywords_val" ).autocomplete({
+           source: kerywordss
+        }).data("ui-autocomplete")._renderItem = function( ul, item ) {
+            let txt = String(item.value).replace(new RegExp(this.term, "gi"),"<strong>$&</strong>");
+            return $("<li></li>")
+                .data("ui-autocomplete-item", item)
+                .append("<div>" + txt + "</div>")
+                .appendTo(ul);
+        };
+        $( "#keywords_val" ).autocomplete("option");
+
+        $( "#header_sports_val" ).autocomplete({
+           source: kerywordss
+        }).data("ui-autocomplete")._renderItem = function( ul, item ) {
+            let txt = String(item.value).replace(new RegExp(this.term, "gi"),"<strong>$&</strong>");
+            return $("<li></li>")
+                .data("ui-autocomplete-item", item)
+                .append("<div>" + txt + "</div>")
+                .appendTo(ul);
+        };
+        $( "#header_sports_val" ).autocomplete("option");
 
 $('.searchForm').submit( function(event) {
     event.preventDefault(); 
