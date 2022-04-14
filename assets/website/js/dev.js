@@ -1,10 +1,6 @@
 var host = '';
 
 
-$(document).ready(function(){
-    'use strict'
-
-
     host = $("meta[name='host']").attr("content");
 
     setTimeout(function(){
@@ -121,10 +117,6 @@ $(document).ready(function(){
     });
 
     
-
-
- });
-
 //Equipment
     $(document).on('change', '.equipRadio', function() {
         if ($(this).val() == '1') {
