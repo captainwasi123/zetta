@@ -1,6 +1,9 @@
 var host = '';
 
 
+$(document).ready(function(){
+
+
     host = $("meta[name='host']").attr("content");
 
     setTimeout(function(){
@@ -50,6 +53,8 @@ var host = '';
     });
 
 
+    
+
 
 
     $(document).on('click', '.getUserMessage', function(){
@@ -85,31 +90,6 @@ var host = '';
     });
 
     
-//Equipment
-    $(document).on('change', '.equipRadio', function() {
-        if ($(this).val() == '1') {
-            $('.equip_tray').css({display: 'none'});
-        }
-        else if ($(this).val() == '2') {
-            $('.equip_tray').css({display: 'block'});
-        }
-    });
-    $(document).on('click', '.equipCheckbox', function() {
-        var tprice = parseFloat($('.tprice').val());
-        var price = parseFloat($(this).data('price'));
-        if ($(this).is(':checked')) {
-            tprice = tprice+price;
-            $('.tprice').val(tprice);
-            $('.tprice_tray').html('$'+tprice);
-        }else{
-            tprice = tprice-price;
-            $('.tprice').val(tprice);
-            $('.tprice_tray').html('$'+tprice);
-        }
-
-    });
-
-
 
     //Search Autocomplete
         /*$( "#keywords_val" ).autocomplete({
@@ -142,6 +122,33 @@ var host = '';
                 .appendTo(ul);
         };
         $( "#header_sports_val" ).autocomplete("option");
+
+
+ });
+
+//Equipment
+    $(document).on('change', '.equipRadio', function() {
+        if ($(this).val() == '1') {
+            $('.equip_tray').css({display: 'none'});
+        }
+        else if ($(this).val() == '2') {
+            $('.equip_tray').css({display: 'block'});
+        }
+    });
+    $(document).on('click', '.equipCheckbox', function() {
+        var tprice = parseFloat($('.tprice').val());
+        var price = parseFloat($(this).data('price'));
+        if ($(this).is(':checked')) {
+            tprice = tprice+price;
+            $('.tprice').val(tprice);
+            $('.tprice_tray').html('$'+tprice);
+        }else{
+            tprice = tprice-price;
+            $('.tprice').val(tprice);
+            $('.tprice_tray').html('$'+tprice);
+        }
+
+    });
 
 $('.searchForm').submit( function(event) {
     event.preventDefault(); 
