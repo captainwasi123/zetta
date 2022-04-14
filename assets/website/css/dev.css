@@ -885,6 +885,73 @@ header.header-1 {
     display: none;
 }
 
+<<<<<<< HEAD
+/*Issues Fixing*/
+
+
+@media screen and (max-width:767px) and (min-width:519px) { 
+section.fitness-bar2 {
+    margin-top: 105px !important;
+}
+
+header.header-1 {
+ 
+    background: black !important;
+}
+.all-actions div a img {
+    height: 35px;
+    margin-bottom: 5px;
+}
+}
+
+
+
+/*Issues Fixing*/
+
+@media screen and (max-width:600px) and (min-width:300px) { 
+
+div.timeline-calendar-mobile {
+    padding: 0px !important;
+}
+.timeline-calendar-mobile .fc button {
+    font-size: 14px !important;
+    padding: 0px 8px !important;
+}
+.timeline-calendar-mobile .fc-toolbar .fc-center {
+    width: 100% !important;
+    text-align: center !important;
+}
+.timeline-calendar-mobile .fc-toolbar .fc-center h2 {
+    text-align: center;
+    width: 100%;
+}
+div.timeline-calendar-mobile {
+    padding: 0px !important;
+    margin-top: 30px !important;
+}
+
+.timeline-calendar-mobile .fc-toolbar .fc-left  {
+     padding: 0px 5px !important; 
+}
+.timeline-calendar-mobile .fc-toolbar .fc-right {
+    padding: 0px;
+    float: right;
+}
+.mobile-inbox-wrapper .chat-main-box.inbox-aside {
+    min-height: 0px !important;
+    height: auto !important;
+}
+.mobile-inbox-wrapper .empty-chat {
+    position: static;
+    width: 100% !important;
+}
+.mobile-inbox-wrapper2 .chat-left-inner {
+    height: auto !important;
+}
+.mobile-inbox-wrapper2 .chat-person-name {
+    padding: 10px 15px 10px 15px;
+}
+=======
 .medium-password {
     background-color: #ff7600;
     font-weight: 600;
@@ -935,8 +1002,12 @@ header.header-1 {
     position: absolute;
     bottom: 0;
     left: 55px;
+<<<<<<< HEAD
 }
 .equip_tray {
     padding-left: 25px;
     display: none;
+=======
+>>>>>>> 6cea33c2e75b304f37d26fc80df489fea3531262
+>>>>>>> 8cc42112418a03808eb63ab2bda834069e73b4b1
 }

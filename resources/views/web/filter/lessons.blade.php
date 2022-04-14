@@ -3,7 +3,7 @@
 
 @section('content')
 
-<section class="action-bar">
+<section class="action-bar fitness-bar2">
    <div class="container">
       <form id="stickmanForm">
          @csrf

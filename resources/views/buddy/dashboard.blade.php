@@ -61,7 +61,7 @@
                            <div class="sec-head1 ps">
                               <h3> Timeline   </h3>
                            </div>
-                        <div class="card-body b-l calender-sidebar">
+                        <div class="card-body b-l calender-sidebar timeline-calendar-mobile">
                            <div id="calendar"></div>
                         </div>
                      </div>
