@@ -75,7 +75,10 @@ margin-bottom: 0;
 .halfContinue {
     width: 49.5% !important;
 }
-
+.already_friend {
+    background-color: #9a49ff !important;
+    color: #fff !important;
+}
 .modal-content {
     float: left;
     width: 100%;
@@ -573,9 +576,6 @@ b.notif-icon2 {
     color: #ffffff;
 }
 
-#ui-id-1 {
-    margin-top: 60px !important;
-}
 
 .subCategoryTray {
     border-top: 1px solid #585858;
@@ -885,6 +885,7 @@ header.header-1 {
     display: none;
 }
 
+<<<<<<< HEAD
 /*Issues Fixing*/
 
 
@@ -950,4 +951,56 @@ div.timeline-calendar-mobile {
 .mobile-inbox-wrapper2 .chat-person-name {
     padding: 10px 15px 10px 15px;
 }
+=======
+.medium-password {
+    background-color: #ff7600;
+    font-weight: 600;
+    color: #000000b5;
+}
+
+.weak-password {
+    background-color: red;
+    font-weight: 700;
+}
+
+.strong-password {
+    background-color: #29a500;
+    font-weight: 600;
+    color: #ffffff;;
+}
+.review-box .col-white span {
+    color: #c5c5c5;
+    font-size: 11px;
+}
+.review-box p.col-white {
+    margin-top: -8px;
+}
+.cart_profile .lesson-holder-profile div img {
+    position: absolute;
+    left: 0px;
+    top: -2px;
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+}
+.cart_profile .lesson-holder-profile {
+    padding-left: 90px;
+}
+.cart_profile .lesson-holder-profile h6, .cart_profile .cart_profile_rating{
+    margin-top: 0px;
+    margin-bottom: 2px;
+}
+.cart_profile .collapse-btn1{
+    margin-top: 20px;
+}
+.cart_profile{
+    margin-top: 50px;
+}
+.cart_profile .lesson-holder-profile .badge-img {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    bottom: 0;
+    left: 55px;
+>>>>>>> 6cea33c2e75b304f37d26fc80df489fea3531262
 }

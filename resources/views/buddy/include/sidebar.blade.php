@@ -70,7 +70,13 @@
             <li>
                <a href="{{route('buddy.order')}}">
                   <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/nav-icon6.png">
-                  <span class="hide-menu">  &nbsp;&nbsp;Orders  </span>
+                  <span class="hide-menu">  &nbsp;&nbsp;Lesson Orders  </span>
+               </a>
+            </li>
+            <li>
+               <a href="{{route('buddy.activityOrder')}}">
+                  <img src="{{URL::to('/')}}/assets/user_dashboard/buddy/images/nav-icon6.png">
+                  <span class="hide-menu">  &nbsp;&nbsp;Activity Orders  </span>
                </a>
             </li>
             <li>

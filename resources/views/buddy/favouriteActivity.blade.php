@@ -5,8 +5,8 @@
    <div class="container-fluid">
       <div class="box-wrapper1">
          <div class="block-element m-b-25">
-            <a href="{{route('coach.favouriteCoach')}}" class="custom-btn3 m-r-15"> Coach  </a>
-            <a href="{{route('coach.favouriteLesson')}}" class="custom-btn3 m-r-15"> Lessons  </a>
+            <a href="{{route('buddy.favouriteCoach')}}" class="custom-btn3 m-r-15"> Coach  </a>
+            <a href="{{route('buddy.favouriteLesson')}}" class="custom-btn3 m-r-15"> Lessons  </a>
             <a href="{{route('buddy.favouriteBuddy')}}" class="custom-btn3 m-r-15"> Sports Buddy  </a>
             <a href="{{route('buddy.favouriteActivity')}}" class="custom-btn4"> Activity  </a>
          </div>
@@ -61,6 +61,11 @@
                      </a>
                   </div>
                @endforeach
+               @if(count($data) == 0)
+                  <div class="col-md-12">
+                     <p class="col-white">No Data Found.</p>
+                  </div>
+               @endif
             </div>
          </div>
       </div>

@@ -36,8 +36,40 @@
                      <div class="col-white">
                         {!! $data->description !!}
                      </div>
-                     <h6 class="col-purple"> <i class="fa fa-star"> </i> <i class="fa fa-star"> </i> <i class="fa fa-star"> </i> <i class="fa fa-star"> </i> <i class="fa fa-star"> </i> <b> 5.0 </b>  </h6>
-                     <button class="  collapse-btn1"   data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">  {{ __('content.Hide what included') }}  </button>
+                     <div class="cart_profile">
+                        <div class="lesson-holder-profile">
+                           <div>
+                              <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{empty($data->user) ? '' : $data->user->profile_img}}" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';">
+                           </div>
+                           @if(!empty($data->user))
+                              @switch($data->user->level_status)
+                                 @case('1')
+                                    <img class="badge-img" src="{{URL::to('/')}}/assets/website/images/badge/1.png">
+                                    @break
+
+                                 @case('2')
+                                    <img class="badge-img" src="{{URL::to('/')}}/assets/website/images/badge/2.png">
+                                    @break
+                                    
+                                 @case('3')
+                                    <img class="badge-img" src="{{URL::to('/')}}/assets/website/images/badge/top-rated.png">
+                                    @break
+                                    
+                              @endswitch
+                           @endif
+                           <a href="{{route('web.coach.details', base64_encode($data->user->id))}}">
+                              <h4 class="col-white no-margin m-t-0 m-b-0"> {{empty($data->user->fname) ? 'Anonymous' : $data->user->fname.' '.$data->user->lname}} </h4>
+                           </a>
+                           <h6 class="col-grey">{{$type == 'activity' ? 'Sports Buddy' : 'Coach'}}</h6>
+                           @php 
+                              $rating_avg = empty($data->user->avgRating) ? '0' : $data->user->avgRating[0]->aggregate; 
+                           @endphp
+                           <h5 class="col-purple cart_profile_rating">
+                              <i class="fa fa-star col-purple"> </i> <strong>{{number_format($rating_avg, 1)}}</strong>  
+                           </h5>
+                        </div>
+                        <button class="  collapse-btn1"   data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">  {{ __('content.Hide what included') }}  </button>
+                     </div>
                   </div>
                </div>
                <div class="col-md-0 col-lg-4 col-sm-6 col-12">
@@ -100,13 +132,17 @@
                         @else
                            <input type="hidden" name="with_without_equipment" value="1">
                         @endif
+                        @if($data->participants == 1)
                         <tr>
-                           <th class="col-white" style="width: 50%;"> Quantity </th>
+                           <th class="col-white" style="width: 50%;"> No. of participants </th>
                            <th></th>
                            <th>
                               <input type="number" name="qty" class="form-control" value="1" required>
                            </th>
                         </tr>
+                        @else
+                           <input type="hidden" name="qty" class="form-control" value="1">
+                        @endif
                         <tr>
                            <th class="col-white" style="width: 50%;"> Coupon </th>
                            <th colspan="2">
@@ -169,7 +205,6 @@
                               <input type="hidden" name="total_price" id="totalPrice" value="{{$totalPrice}}">
                               <button class="custom-btn1 bg-purple col-white rounded block-element2 m-t-10"> {{ __('content.Continue to Checkout') }}
                               </button>
-                              <p class="col-white m-t-10 m-b-0">{{ __('content.Slogan') }} {{ __('content.You won`t be charged yet') }}  </p>
                            </td>
                         </tr>
                      </tbody>
@@ -191,7 +226,8 @@
             $( "#datepicker" ).datepicker({ 
                minDate: new Date("{{date('d-M-Y')}}"),
                beforeShowDay: nonWorkingDates,
-               dateFormat: 'dd-mm-yy' 
+               dateFormat: 'dd-mm-yy',
+               firstDay: 1
             });
 
             $(document).on('change', '#datepicker', function(){

@@ -169,18 +169,6 @@ class activityController extends Controller
     }
 
 
-
-    
-    function favouriteActivity(){
-        
-   
-        $data=FA::where('user_id', Auth::id())->get();
-  
-
-        return view('buddy.favouriteActivity',['data' => $data]);
-    }
-
-
     function deleteMedia($id){
         $id = base64_decode($id);
 

@@ -290,8 +290,10 @@ use Illuminate\Support\Facades\Route;
 
 				Route::get('/', 'buddyController@index')->name('buddy.dashboard');
 				Route::get('/become_a_coach', 'buddyController@become_a_coach')->name('buddy.become_a_coach');
-				Route::get('/favouriteActivity', 'activityController@favouriteActivity')->name('buddy.favouriteActivity');
+				Route::get('/favouriteActivity', 'buddyController@favouriteActivity')->name('buddy.favouriteActivity');
 				Route::get('/favouriteBuddy', 'buddyController@favouriteBuddy')->name('buddy.favouriteBuddy');
+				Route::get('/favouriteCoach', 'buddyController@favouriteCoach')->name('buddy.favouriteCoach');
+				Route::get('/favouriteLesson', 'buddyController@favouriteLesson')->name('buddy.favouriteLesson');
 
 
 
@@ -404,7 +406,7 @@ use Illuminate\Support\Facades\Route;
 
 					});
 
-				//Orders
+				//Lesson Orders
 					Route::prefix('orders')->group(function(){
 
 						Route::get('/', 'orderController@index')->name('buddy.order');
@@ -417,6 +419,15 @@ use Illuminate\Support\Facades\Route;
                         Route::post('submitReview', 'orderController@submitReview')->name('buddy.review.submit');
 
                         Route::post('sessionRequest', 'orderController@sessionRequest')->name('buddy.session.request');
+					});
+
+				//Activity Orders
+					Route::prefix('activityOrders')->group(function(){
+
+						Route::get('/', 'activityOrderController@index')->name('buddy.activityOrder');
+						Route::get('/cancelled', 'activityOrderController@cancelled')->name('buddy.activityOrder.cancelled');
+						Route::get('/delivered', 'activityOrderController@delivered')->name('buddy.activityOrder.delivered');
+                        Route::get('/detail/{id}', 'activityOrderController@orderView')->name('buddy.activityOrder.view');
 					});
 
 				//Analytics and Redeem
