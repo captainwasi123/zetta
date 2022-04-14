@@ -496,3 +496,17 @@ $(function() {
 
 
 
+ 
+
+ $(document).ready(function(){
+
+
+ 
+
+      $(".toggle-trig1").click(function(){
+
+        $(".toggle-content1").slideToggle();
+     })
+
+
+ })

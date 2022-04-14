@@ -12,8 +12,9 @@
                 <div class="open-panel"><i class="ti-angle-right"></i></div>
                 <div class="chat-left-inner">
                    <div class="sec-head4">
-                      <h5> All Conversations </h5>
+                      <h5> All Conversations <button class="toggle-trig1"> <i class="fa fa-angle-right"> </i> </button> </h5>
                    </div>
+                   <div class="toggle-content1">
                    <ul class="chatonline style-none ">
                      @foreach($chat_list as $val)
                         @if($val->sender_id != Auth::id())
@@ -48,6 +49,7 @@
 
                      <li class="p-20"></li>
                    </ul>
+                 </div>
                 </div>
              </div>
           </div>

@@ -12,8 +12,9 @@
                 <div class="open-panel"><i class="ti-angle-right"></i></div>
                 <div class="chat-left-inner">
                    <div class="sec-head4">
-                      <h5> All Conversations </h5>
+                      <h5> All Conversations <button class="toggle-trig1"> <i class="fa fa-angle-right"> </i> </button> </h5>
                    </div>
+                   <div class="toggle-content1">
                    <ul class="chatonline style-none ">
                      @foreach($chat_list as $val)
                         @if($val->sender_id != Auth::id())
@@ -48,6 +49,7 @@
 
                      <li class="p-20"></li>
                    </ul>
+                 </div>
                 </div>
              </div>
           </div>
@@ -140,8 +142,9 @@
        </div>
        <div class="col-md-2 col-lg-2 col-12 col-sm-12 no-pad border-5">
           <div class="chat-about-details-head">
-             <h4> About me </h4>
+             <h4> About me <button class="toggle-trig2"> <i class="fa fa-angle-right"> </i> </button> </h4>
           </div>
+          <div class="toggle-content2">
           <div class="chat-about-details">
              <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{$user->profile_img}}" alt="user" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';">
              <h5> {{empty($user->fname) ? $user->email : $user->fname.' '.$user->lname}} </h5>
@@ -164,6 +167,7 @@
                 </tbody>
              </table>
           </div>
+        </div>
        </div>
     </div>
 </div>

@@ -514,3 +514,28 @@ function getFormData($form){
 
     return indexed_array;
 }
+
+
+
+ $(document).ready(function(){
+
+
+ 
+
+      $(".toggle-trig1").click(function(){
+
+        $(".toggle-content1").slideToggle();
+        $(this).children("i").toggleClass("fa-angle-right");
+        $(this).children("i").toggleClass("fa-angle-down");
+     })
+
+
+        $(".toggle-trig2").click(function(){
+
+        $(".toggle-content2").slideToggle();
+        $(this).children("i").toggleClass("fa-angle-right");
+        $(this).children("i").toggleClass("fa-angle-down");
+     })
+
+
+ })
