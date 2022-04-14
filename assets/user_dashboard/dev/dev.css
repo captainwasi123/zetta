@@ -802,6 +802,20 @@ button.toggle-trig2 {
 
 /*Issues Fixing*/
 
+
+@media screen and (max-width:1160px) and (min-width:1000px) { 
+.label-field3 {
+    display: inline-block;
+    width: 160px;
+    position: relative;
+}
+.header-1 .container {
+    max-width: 100% !important;
+}
+
+}
+
+
 @media screen and (max-width:600px) and (min-width:300px) { 
 
 div.timeline-calendar-mobile {
