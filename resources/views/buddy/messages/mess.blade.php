@@ -4,7 +4,7 @@
 @section('content')
 @php $list_item = array(); @endphp
 
-<div class="box-wrapper2 chatheight">
+<div class="box-wrapper2 chatheight mobile-inbox-wrapper">
     <div class="row">
        <div class="col-md-3 col-lg-3 col-12 col-sm-3 no-pad bg-white">
           <div class="chat-main-box inbox-aside" style="width: 100%">

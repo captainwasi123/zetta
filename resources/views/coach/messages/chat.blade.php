@@ -4,9 +4,9 @@
 @section('content')
 @php $list_item = array(); @endphp
 
-<div class="box-wrapper2">
+<div class="box-wrapper2 mobile-inbox-wrapper2">
     <div class="row">
-       <div class="col-md-3 col-lg-3 col-12 col-sm-3 no-pad bg-white">
+       <div class="col-md-3 col-lg-3 col-12 col-sm-12 no-pad bg-white">
           <div class="chat-main-box inbox-aside" style="width: 100%">
              <div class="chat-left-aside" style="width: 100%;">
                 <div class="open-panel"><i class="ti-angle-right"></i></div>
@@ -52,7 +52,7 @@
              </div>
           </div>
        </div>
-       <div class="col-md-7 col-lg-7 col-12 col-sm-3 no-pad">
+       <div class="col-md-7 col-lg-7 col-12 col-sm-12 no-pad">
           <div class="chat-main-box">
              <div class="card m-b-0">
                 <!-- .chat-row -->
@@ -138,7 +138,7 @@
              </div>
           </div>
        </div>
-       <div class="col-md-2 col-lg-2 col-12 col-sm-3 no-pad border-5">
+       <div class="col-md-2 col-lg-2 col-12 col-sm-12 no-pad border-5">
           <div class="chat-about-details-head">
              <h4> About me </h4>
           </div>
