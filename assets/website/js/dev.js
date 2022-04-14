@@ -122,7 +122,32 @@ $(document).ready(function(){
 
     
 
+
  });
+
+//Equipment
+    $(document).on('change', '.equipRadio', function() {
+        if ($(this).val() == '1') {
+            $('.equip_tray').css({display: 'none'});
+        }
+        else if ($(this).val() == '2') {
+            $('.equip_tray').css({display: 'block'});
+        }
+    });
+    $(document).on('click', '.equipCheckbox', function() {
+        var tprice = parseFloat($('.tprice').val());
+        var price = parseFloat($(this).data('price'));
+        if ($(this).is(':checked')) {
+            tprice = tprice+price;
+            $('.tprice').val(tprice);
+            $('.tprice_tray').html('$'+tprice);
+        }else{
+            tprice = tprice-price;
+            $('.tprice').val(tprice);
+            $('.tprice_tray').html('$'+tprice);
+        }
+
+    });
 
 $('.searchForm').submit( function(event) {
     event.preventDefault(); 

@@ -8,6 +8,7 @@ use App\Models\lesson\lessons;
 use App\Models\lesson\orders as lessonOrders;
 use App\Models\activity\activities;
 use App\Models\ActivityOrders;
+use App\Models\activityOrderEquipment;
 use App\Models\saleSetting;
 use App\Models\userEquipment;
 use App\Models\coupons;
@@ -144,16 +145,9 @@ class cartController extends Controller
             $act = activities::find($aid);
             $price = 0;
             if($data['with_without_equipment'] == '2'){
-                if (count($act->equipment)>0){
-                    $ids = [];
-
-                    foreach ($act->equipment as $k => $val){
-                        $ids[$k] = $val->equip_id;
-                    }
-
-                    foreach ($userequipment->whereIn('id',$ids) as $equ){
-                        $price += $equ->price;
-                    }
+                foreach($data['equipment_item'] as $val){
+                    $ace = userEquipment::where('id', $val)->first();
+                    $price = $price+$ace->price;
                 }
             }
 
@@ -172,9 +166,17 @@ class cartController extends Controller
             );
 
             $priceDed = $odata['price'];
-            $priceDed = $odata['price'];
 
             $oid = ActivityOrders::newOrder($odata);
+
+            if($data['with_without_equipment'] == '2'){
+                foreach($data['equipment_item'] as $val){
+                    $ace = new activityOrderEquipment;
+                    $ace->order_id = $oid;
+                    $ace->equipment_id = $val;
+                    $ace->save();
+                }
+            }
         }
 
         if($priceDed == 0){
