@@ -18,8 +18,9 @@
                               <div class="open-panel"><i class="ti-angle-right"></i></div>
                               <div class="chat-left-inner">
                                  <div class="chat-sidebar-head">
-                                    <h5> Inbox <a href="{{route('buddy.messages')}}" class="custom-btn6"> VIEW ALL  </a>  </h5>
+                                    <h5> Inbox <button class="toggle-trig1"> <i class="fa fa-angle-right"> </i> </button>  <a href="{{route('buddy.messages')}}" class="custom-btn6"> VIEW ALL  </a>  </h5>
                                  </div>
+                                 <div class="toggle-content1">
                                  <ul class="chatonline style-none ">
                                     @foreach($chat_list as $val)
                                        @if($val->sender_id != Auth::id())
@@ -53,6 +54,7 @@
                                     @endif 
                                     <li class="p-20"></li>
                                  </ul>
+                               </div>
                               </div>
                            </div>
                         </div>

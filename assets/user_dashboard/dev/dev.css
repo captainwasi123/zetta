@@ -841,7 +841,7 @@ div.timeline-calendar-mobile {
     height: auto !important;
 }
 .mobile-inbox-wrapper2 .chat-person-name {
-    padding: 10px 15px 10px 15px;
+    padding: 5px 15px 5px 15px;
 }
  
 .ui-menu-item-wrapper strong {
@@ -881,6 +881,48 @@ button.toggle-trig2 {
 .mobile-inbox-wrapper .chat-list {
     height: 150px !important;
     overflow-y: auto !important;
+}
+.chat-sidebar-head h5 a {
+    margin-right: 10px;
+}
+.chat-main-box .chat-left-aside .open-panel {
+    display: none;
+}
+.inbox-aside {
+    margin-bottom: 10px !important
+}
+.inbox-aside .sec-head4 {
+    padding: 15px 15px;
+}
+.inbox-aside .sec-head4 h5 {
+ 
+    font-size: 15px;
+}
+
+.chat-main-box .chat-person-name h4 {
+    padding: 5px 0px 0px 0px;
+    font-weight: 500;
+    color: white;
+    font-size: 15px;
+    letter-spacing: 0.4px;
+    margin: 0px 0px 4px 0px;
+}
+.chat-open-head p {
+    display: none;
+}
+.chat-about-details-head {
+    text-align: left;
+    padding: 10px 10px;
+}
+.chat-about-details-head h4 {
+    margin: 0px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    font-size: 17px;
+    color: white;
+}
+body ul.chat-list {
+    padding: 5px 10px !important;
 }
 }
 

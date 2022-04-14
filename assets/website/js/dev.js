@@ -2,7 +2,6 @@ var host = '';
 
 
 $(document).ready(function(){
-    'use strict'
 
 
     host = $("meta[name='host']").attr("content");
@@ -54,37 +53,7 @@ $(document).ready(function(){
     });
 
 
-    //Search Autocomplete
-        /*$( "#keywords_val" ).autocomplete({
-            source: function( request, response ) {
-                var matcher = new RegExp( "^" + $.ui.autocomplete.escapeRegex( request.term ), "i" );
-                response( $.grep( kerywordss, function( item ){
-                    return matcher.test( item );
-                }));
-            } 
-        });*/
-
-        $( "#keywords_val" ).autocomplete({
-           source: kerywordss
-        }).data("ui-autocomplete")._renderItem = function( ul, item ) {
-            let txt = String(item.value).replace(new RegExp(this.term, "gi"),"<strong>$&</strong>");
-            return $("<li></li>")
-                .data("ui-autocomplete-item", item)
-                .append("<div>" + txt + "</div>")
-                .appendTo(ul);
-        };
-        $( "#keywords_val" ).autocomplete("option");
-
-        $( "#header_sports_val" ).autocomplete({
-           source: kerywordss
-        }).data("ui-autocomplete")._renderItem = function( ul, item ) {
-            let txt = String(item.value).replace(new RegExp(this.term, "gi"),"<strong>$&</strong>");
-            return $("<li></li>")
-                .data("ui-autocomplete-item", item)
-                .append("<div>" + txt + "</div>")
-                .appendTo(ul);
-        };
-        $( "#header_sports_val" ).autocomplete("option");
+    
 
 
 
@@ -122,7 +91,64 @@ $(document).ready(function(){
 
     
 
+    //Search Autocomplete
+        /*$( "#keywords_val" ).autocomplete({
+            source: function( request, response ) {
+                var matcher = new RegExp( "^" + $.ui.autocomplete.escapeRegex( request.term ), "i" );
+                response( $.grep( kerywordss, function( item ){
+                    return matcher.test( item );
+                }));
+            } 
+        });*/
+
+        $( "#keywords_val" ).autocomplete({
+           source: kerywordss
+        }).data("ui-autocomplete")._renderItem = function( ul, item ) {
+            let txt = String(item.value).replace(new RegExp(this.term, "gi"),"<strong>$&</strong>");
+            return $("<li></li>")
+                .data("ui-autocomplete-item", item)
+                .append("<div>" + txt + "</div>")
+                .appendTo(ul);
+        };
+        $( "#keywords_val" ).autocomplete("option");
+
+        $( "#header_sports_val" ).autocomplete({
+           source: kerywordss
+        }).data("ui-autocomplete")._renderItem = function( ul, item ) {
+            let txt = String(item.value).replace(new RegExp(this.term, "gi"),"<strong>$&</strong>");
+            return $("<li></li>")
+                .data("ui-autocomplete-item", item)
+                .append("<div>" + txt + "</div>")
+                .appendTo(ul);
+        };
+        $( "#header_sports_val" ).autocomplete("option");
+
+
  });
+
+//Equipment
+    $(document).on('change', '.equipRadio', function() {
+        if ($(this).val() == '1') {
+            $('.equip_tray').css({display: 'none'});
+        }
+        else if ($(this).val() == '2') {
+            $('.equip_tray').css({display: 'block'});
+        }
+    });
+    $(document).on('click', '.equipCheckbox', function() {
+        var tprice = parseFloat($('.tprice').val());
+        var price = parseFloat($(this).data('price'));
+        if ($(this).is(':checked')) {
+            tprice = tprice+price;
+            $('.tprice').val(tprice);
+            $('.tprice_tray').html('$'+tprice);
+        }else{
+            tprice = tprice-price;
+            $('.tprice').val(tprice);
+            $('.tprice_tray').html('$'+tprice);
+        }
+
+    });
 
 $('.searchForm').submit( function(event) {
     event.preventDefault(); 

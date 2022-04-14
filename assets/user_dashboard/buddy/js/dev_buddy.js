@@ -527,7 +527,7 @@ function getFormData($form){
         $(".toggle-content1").slideToggle();
         $(this).children("i").toggleClass("fa-angle-right");
         $(this).children("i").toggleClass("fa-angle-down");
-     })
+     });
 
 
         $(".toggle-trig2").click(function(){
@@ -535,7 +535,7 @@ function getFormData($form){
         $(".toggle-content2").slideToggle();
         $(this).children("i").toggleClass("fa-angle-right");
         $(this).children("i").toggleClass("fa-angle-down");
-     })
+     });
 
 
- })
+ });
