@@ -918,10 +918,7 @@ header.header-1 {
     display: none;
 }
 
-<<<<<<< HEAD
  
-=======
->>>>>>> e9780b6e38611fcf3a5523316401f8e42005c646
 /*Issues Fixing*/
 
 
@@ -987,10 +984,7 @@ div.timeline-calendar-mobile {
 .mobile-inbox-wrapper2 .chat-person-name {
     padding: 10px 15px 10px 15px;
 }
-<<<<<<< HEAD
  
-=======
->>>>>>> e9780b6e38611fcf3a5523316401f8e42005c646
 .medium-password {
     background-color: #ff7600;
     font-weight: 600;
@@ -1013,7 +1007,7 @@ div.timeline-calendar-mobile {
 }
 .review-box p.col-white {
     margin-top: -8px;
-<<<<<<< HEAD
+ 
 }
 .cart_profile .lesson-holder-profile div img {
     position: absolute;
@@ -1042,17 +1036,9 @@ div.timeline-calendar-mobile {
     position: absolute;
     bottom: 0;
     left: 55px;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
 }
+ 
 .equip_tray {
     padding-left: 25px;
     display: none;
-=======
->>>>>>> 6cea33c2e75b304f37d26fc80df489fea3531262
->>>>>>> 8cc42112418a03808eb63ab2bda834069e73b4b1
->>>>>>> 9388e27981c09074d5d8738af5c013edaa5f7811
-=======
->>>>>>> e9780b6e38611fcf3a5523316401f8e42005c646
-}
+ }
