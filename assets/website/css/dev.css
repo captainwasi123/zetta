@@ -947,6 +947,10 @@ header.header-1 {
 a.header-btn3 {
     padding: 6px 18px;
 }
+.search-form {
+    float: left;
+    margin-left: 20px;
+}
 }
 
 
@@ -968,6 +972,7 @@ header.header-1 {
     height: 35px;
     margin-bottom: 5px;
 }
+
 }
 
 
@@ -1075,3 +1080,20 @@ div.timeline-calendar-mobile {
     padding-left: 25px;
     display: none;
  }
+ .mobile-inbox-wrapper2 .chat-list {
+     height: 300px !important;
+    overflow-y: auto !important;
+    max-width: 310px !important;
+}
+.mobile-inbox-wrapper .chat-list {
+    height: 300px !important;
+    overflow-y: auto !important;
+    max-width: 310px !important;
+}
+  html body .chat-list {
+    height: 300px !important;
+    overflow-y: auto !important;
+    max-width: 310px !important;
+}
+
+}
