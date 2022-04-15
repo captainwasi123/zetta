@@ -929,7 +929,24 @@ header.header-1 {
 .header-1 .container {
     max-width: 100% !important;
 }
-
+.header-1 .navbar-dark .navbar-nav .nav-link {
+    color: white;
+    font-size: 14px;
+    padding: 10px 8px !important;
+}
+.header-1  ul.navbar-nav.mr-auto li {
+    padding-right: 2px;
+}
+.header-1  a.header-btn1 {
+    color: white;
+    padding: 10px 5px;
+    font-weight: 400;
+    letter-spacing: 0.7px;
+    font-size: 14px;
+}
+a.header-btn3 {
+    padding: 6px 18px;
+}
 }
 
 
