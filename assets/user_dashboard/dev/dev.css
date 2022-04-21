@@ -31,7 +31,7 @@
 .cut-textc { 
   text-overflow: ellipsis;
   overflow: hidden; 
-  width: 160px; 
+  width: 190px; 
   height: 1.2em; 
   white-space: nowrap;
 }
