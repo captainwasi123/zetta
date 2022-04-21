@@ -803,6 +803,7 @@ button.toggle-trig2 {
 /*Issues Fixing*/
 
 
+
 @media screen and (max-width:1160px) and (min-width:1000px) { 
 .label-field3 {
     display: inline-block;
@@ -812,7 +813,28 @@ button.toggle-trig2 {
 .header-1 .container {
     max-width: 100% !important;
 }
-
+.header-1 .navbar-dark .navbar-nav .nav-link {
+    color: white;
+    font-size: 14px;
+    padding: 10px 8px !important;
+}
+.header-1  ul.navbar-nav.mr-auto li {
+    padding-right: 2px;
+}
+.header-1  a.header-btn1 {
+    color: white;
+    padding: 10px 5px;
+    font-weight: 400;
+    letter-spacing: 0.7px;
+    font-size: 14px;
+}
+a.header-btn3 {
+    padding: 6px 18px;
+}
+.search-form {
+    float: left;
+    margin-left: 20px;
+}
 }
 
 
@@ -892,12 +914,14 @@ button.toggle-trig2 {
     display: none !important;
 }
 .mobile-inbox-wrapper2 .chat-list {
-    height: 150px !important;
+     height: 300px !important;
     overflow-y: auto !important;
+    max-width: 310px !important;
 }
 .mobile-inbox-wrapper .chat-list {
-    height: 150px !important;
+    height: 300px !important;
     overflow-y: auto !important;
+    max-width: 310px !important;
 }
 .chat-sidebar-head h5 a {
     margin-right: 10px;
@@ -940,6 +964,18 @@ button.toggle-trig2 {
 }
 body ul.chat-list {
     padding: 5px 10px !important;
+}
+.page-titles h3 {
+ 
+    margin-bottom: 0px !important;
+}
+.page-titles {
+    margin-bottom: 5px;
+}
+ html body div.chat-list {
+    height: 300px !important;
+    overflow-y: auto !important;
+    max-width: 310px !important;
 }
 }
 

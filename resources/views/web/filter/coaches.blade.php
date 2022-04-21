@@ -3,6 +3,46 @@
 
 @section('content')
 
+
+<style type="text/css">
+   
+   @media screen and (max-width:767px) and (min-width:520px) { 
+
+ 
+section.action-bar {
+    margin-top: 75px !important;
+}
+.logo {
+    position: relative;
+    left: 80px;
+    width: auto;
+}
+.header-buttons {
+    float: left;
+    width: auto;
+    margin-top: 5px;
+    margin-left: 80px;
+}
+.logo a img {
+    width: 100px;
+    margin-top: 6px;
+}
+header.header-1 {
+    padding: 15px 0px !important;
+}
+.header-login .dropdown img {
+    width: 31px;
+    height: 31px;
+    border-radius: 100%;
+}
+   }
+
+   @media screen and (max-width:519px) and (min-width:320px) { 
+
+   }
+
+</style>
+
 <section class="action-bar fitness-bar2">
    <div class="container">
       <form id="stickmanForm">

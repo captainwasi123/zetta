@@ -929,7 +929,28 @@ header.header-1 {
 .header-1 .container {
     max-width: 100% !important;
 }
-
+.header-1 .navbar-dark .navbar-nav .nav-link {
+    color: white;
+    font-size: 14px;
+    padding: 10px 8px !important;
+}
+.header-1  ul.navbar-nav.mr-auto li {
+    padding-right: 2px;
+}
+.header-1  a.header-btn1 {
+    color: white;
+    padding: 10px 5px;
+    font-weight: 400;
+    letter-spacing: 0.7px;
+    font-size: 14px;
+}
+a.header-btn3 {
+    padding: 6px 18px;
+}
+.search-form {
+    float: left;
+    margin-left: 20px;
+}
 }
 
 
@@ -951,6 +972,7 @@ header.header-1 {
     height: 35px;
     margin-bottom: 5px;
 }
+
 }
 
 
@@ -1058,3 +1080,20 @@ div.timeline-calendar-mobile {
     padding-left: 25px;
     display: none;
  }
+ .mobile-inbox-wrapper2 .chat-list {
+     height: 300px !important;
+    overflow-y: auto !important;
+    max-width: 310px !important;
+}
+.mobile-inbox-wrapper .chat-list {
+    height: 300px !important;
+    overflow-y: auto !important;
+    max-width: 310px !important;
+}
+  html body .chat-list {
+    height: 300px !important;
+    overflow-y: auto !important;
+    max-width: 310px !important;
+}
+
+}
