@@ -9,6 +9,7 @@ use App\Models\lesson\orders as lessonOrders;
 use App\Models\activity\activities;
 use App\Models\ActivityOrders;
 use App\Models\activityOrderEquipment;
+use App\Models\orders\equipments as lessonOrderEquipment;
 use App\Models\saleSetting;
 use App\Models\userEquipment;
 use App\Models\coupons;
@@ -47,7 +48,8 @@ class cartController extends Controller
         if($type == 'lesson'){
 
             $data = lessons::find($id);
-            $price = null;
+            $price = $data->packages[$packk]->price;
+
             if(!empty($data->id)){
 
                 $holiday = array();
@@ -66,6 +68,7 @@ class cartController extends Controller
                     array_push($holiarr, $value->holiday);
 
                 }
+                //dd(['data' => $data, 'pack' => $packk, 'type' => $type,'price'=>$price, 'holiday' => $holiday, 'slots' => $slots]);
                 return view('web.cart', ['data' => $data, 'pack' => $packk, 'type' => $type,'price'=>$price, 'holiday' => $holiday, 'slots' => $slots]);
             }else{
                 return redirect('/');
@@ -116,7 +119,15 @@ class cartController extends Controller
         $priceDed = 0;
         if($type == 'lesson'){
             $lesson = lessons::find($lid);
-            $oprice = $coup['status'] == '1' ? (($lesson->packages[$pack]->price*$_POST['qty'])-$coup['price']) :  $lesson->packages[$pack]->price*$_POST['qty'];
+            $oprice = $coup['status'] == '1' ? (($lesson->packages[$pack]->price)-$coup['price']) :  $lesson->packages[$pack]->price;
+            if($data['with_without_equipment'] == '2'){
+                if(!empty($data['equipment_item'])){
+                    foreach($data['equipment_item'] as $val){
+                        $ace = userEquipment::where('id', $val)->first();
+                        $oprice = $oprice+$ace->price;
+                    }
+                }
+            }
             $ocomission = (($oprice*$_POST['qty'])/100)*$saleSetting->commision;
             $odata = array(
                 'lesson_id' => $lid,
@@ -134,6 +145,17 @@ class cartController extends Controller
             //dd($odata);
             $priceDed = $odata['price'];
             $oid = lessonOrders::newOrder($odata);
+
+            if($data['with_without_equipment'] == '2'){
+                if(!empty($data['equipment_item'])){
+                    foreach($data['equipment_item'] as $val){
+                        $ace = new lessonOrderEquipment;
+                        $ace->order_id = $oid;
+                        $ace->equipment_id = $val;
+                        $ace->save();
+                    }
+                }
+            }
 
         }
         if($type == 'activity'){

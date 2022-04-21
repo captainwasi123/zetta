@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Models\lesson\lessons;
 use App\Models\userWallet;
 use App\Models\lesson\orderSessions;
+use App\Models\orders\equipments as lessonOrderEquipment;
 use Auth;
 
 class orders extends Model
@@ -35,7 +36,9 @@ class orders extends Model
     }
 
 
-
+    public function equipments(){
+        return $this->hasMany(lessonOrderEquipment::class, 'order_id', 'id');
+    }
     public function buyer(){
         return $this->belongsTo(User::class, 'buyer_id');
     }

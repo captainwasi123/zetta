@@ -34,6 +34,7 @@
                         <th> Lesson </th>
                         <th> Qty </th>
                         <th> Total Amount</th>
+                        <th> Equipments </th>
                         <th> Type </th>
                         <th> BookingTime </th>
                         <th> Status </th>
@@ -53,6 +54,11 @@
                             </td>
                             <td> {{$val->qty}} </td>
                            <td> {{'$'.number_format($val->price, 2)}} </td>
+                           <td>
+                              @foreach($val->equipments as $eq)
+                                 <span class="badge badge-info badge-pill">{{@$eq->equip->name}}</span>
+                              @endforeach 
+                           </td>
                            <td>
                               @if(!empty($val->lesson))
                                  {{$val->lesson->participants == '0' ? 'Single Lesson' : 'Group Lesson'}}

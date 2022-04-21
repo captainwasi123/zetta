@@ -36,6 +36,7 @@
                      <th> Total Amount </th>
                      <th> Site Commision </th>
                      <th> Total Earning </th>
+                     <th> Equipments </th>
                      <th> Type </th>
                      <th> BookingTime </th>
                      <th> Seesion </th>
@@ -57,6 +58,11 @@
                         <td> {{'$'.number_format($val->price, 2)}} </td>
                         <td> {{'$'.number_format($val->commision, 2)}} </td>
                         <td> {{'$'.number_format($val->earning, 2)}} </td>
+                        <td>
+                           @foreach($val->equipments as $eq)
+                              <span class="badge badge-info badge-pill">{{@$eq->equip->name}}</span>
+                           @endforeach 
+                        </td>
                         <td>
                            @if(!empty($val->lesson))
                               {{$val->lesson->participants == '0' ? 'Single Lesson' : 'Group Lesson'}}

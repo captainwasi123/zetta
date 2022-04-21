@@ -110,37 +110,34 @@
                   
                   <table>
                      <tbody>
-                        @if($type != 'lesson')
-                           @if(count($data->equipment) > 0)
-                              <tr>
-                                 <th colspan="3">
-                                    <h5 class="col-white"> Equipment:</h5>
-                                    <label class="custom-control custom-radio col-white">
-                                       <input id="radio2" name="with_without_equipment" type="radio" value="1" class="custom-control-input equipRadio" checked>
-                                       <span class="custom-control-label"> Without Equipment </span>
-                                    </label>
+                        @if(count($data->equipment) > 0)
+                           <tr>
+                              <th colspan="3">
+                                 <h5 class="col-white"> Equipment:</h5>
+                                 <label class="custom-control custom-radio col-white">
+                                    <input id="radio2" name="with_without_equipment" type="radio" value="1" class="custom-control-input equipRadio" checked>
+                                    <span class="custom-control-label"> Without Equipment </span>
+                                 </label>
 
-                                    <label class="custom-control custom-radio col-white" >
-                                       <input id="radio1" name="with_without_equipment" type="radio" value="2" class="custom-control-input equipRadio">
-                                       <span class="custom-control-label"> With Equipment  </span>
-                                    </label> 
+                                 <label class="custom-control custom-radio col-white" >
+                                    <input id="radio1" name="with_without_equipment" type="radio" value="2" class="custom-control-input equipRadio">
+                                    <span class="custom-control-label"> With Equipment  </span>
+                                 </label> 
 
-                                    <div class="equip_tray">
-                                       @foreach($data->equipment as $key => $equ)
-                                          <label class="custom-control custom-checkbox col-white">
-                                             <input id="checkbox2" name="equipment_item[]" type="checkbox" value="{{@$equ->user_equipment->id}}" class="custom-control-input equipCheckbox" data-price="{{@$equ->user_equipment->price}}">
-                                             <span class="custom-control-label"> {{ @$equ->user_equipment->name}} </span>
-                                          </label>
-                                       @endforeach
-                                    </div>           
-                                </th>
-                              </tr>
-                           @else
-                              <input type="hidden" name="with_without_equipment" value="1">
-                           @endif
+                                 <div class="equip_tray">
+                                    @foreach($data->equipment as $key => $equ)
+                                       <label class="custom-control custom-checkbox col-white">
+                                          <input id="checkbox2" name="equipment_item[]" type="checkbox" value="{{@$equ->user_equipment->id}}" class="custom-control-input equipCheckbox" data-price="{{@$equ->user_equipment->price}}">
+                                          <span class="custom-control-label"> {{ @$equ->user_equipment->name}} </span>
+                                       </label>
+                                    @endforeach
+                                 </div>           
+                             </th>
+                           </tr>
                         @else
                            <input type="hidden" name="with_without_equipment" value="1">
                         @endif
+
                         @if($data->participants == 1)
                         <tr>
                            <th class="col-white" style="width: 50%;"> No. of participants </th>
@@ -159,10 +156,10 @@
                            </th>
                         </tr>
                         <tr>
-                           @php $totalPrice = 0; @endphp
+                           @php $totalPrice = $type == 'lesson' ? $price : 0; @endphp
                            <th class="col-white" colspan="2"> Amount </th>
-                           <th class="col-purple text-right tprice_tray">$0</th>
-                           <input type="hidden" name="tprice" class="tprice" value="0">
+                           <th class="col-purple text-right tprice_tray">${{$totalPrice}}</th>
+                           <input type="hidden" name="tprice" class="tprice" value="{{$totalPrice}}">
                         </tr>
                         <tr id="discountTray">
                            <th class="col-white" style="width: 50%;"> Discount </th>
