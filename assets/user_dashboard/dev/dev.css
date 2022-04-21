@@ -28,7 +28,7 @@
 	font-weight: 400 !important;
 	margin-bottom: 0 !important;
 }
-.cut-text { 
+.cut-textc { 
   text-overflow: ellipsis;
   overflow: hidden; 
   width: 160px; 
