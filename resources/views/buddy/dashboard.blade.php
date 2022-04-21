@@ -29,7 +29,7 @@
                                                 <a href="{{URL::to('/buddy/inbox/chat/'.base64_encode($val->sender->id))}}/{{empty($val->sender->fname) ? 'Newuser' : $val->sender->fname.' '.$val->sender->lname}}">
                                                    <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{$val->sender->profile_img}}" alt="user" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';" class="img-circle"> 
                                                    <span> {{empty($val->sender->fname) ? 'Newuser' : $val->sender->fname.' '.$val->sender->lname}} <sub class="time-msg"> {{timeCustom($val->created_at)}} </sub> </span> 
-                                                   <b> {{$val->message}} </b> 
+                                                   <b class="cut-textc"> {{$val->message}} </b> 
                                                 </a>
                                              </li>
                                              @php array_push($list_item, $val->sender_id); @endphp
@@ -40,7 +40,7 @@
                                                 <a href="{{URL::to('/buddy/inbox/chat/'.base64_encode($val->receiver->id))}}/{{empty($val->receiver->fname) ? 'Newuser' : $val->receiver->fname.' '.$val->receiver->lname}}">
                                                    <img src="{{URL::to('/')}}/public/storage/user/profile_img/{{$val->receiver->profile_img}}" alt="user" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';" class="img-circle"> 
                                                    <span> {{empty($val->receiver->fname) ? 'Newuser' : $val->receiver->fname.' '.$val->receiver->lname}} <sub class="time-msg"> {{timeCustom($val->created_at)}} </sub> </span> 
-                                                   <b> {{$val->message}} </b> 
+                                                   <b class="cut-textc"> {{$val->message}} </b> 
                                                 </a>
                                              </li>
                                              @php array_push($list_item, $val->receiver_id); @endphp

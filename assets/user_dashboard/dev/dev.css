@@ -28,6 +28,13 @@
 	font-weight: 400 !important;
 	margin-bottom: 0 !important;
 }
+.cut-text { 
+  text-overflow: ellipsis;
+  overflow: hidden; 
+  width: 160px; 
+  height: 1.2em; 
+  white-space: nowrap;
+}
 .edu_block {
     padding-bottom: 10px;
 }
