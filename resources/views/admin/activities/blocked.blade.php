@@ -33,9 +33,9 @@
                                 <tr>
                                     <td>{{++$key}}</td>
                                     <td>{{$val->title}}</td>
-                                    <td>{{$val->user->fname.' '.$val->user->lname}}</td>
-                                    <td>{{$val->locations[0]->address}}</td>
-                                    <td>{{$val->location_covered == '0' ? 'No' : 'Yes'}}</td>
+                                    <td>{{@$val->user->fname.' '.@$val->user->lname}}</td>
+                                    <td>{{@$val->locations[0]->address}}</td>
+                                    <td>{{@$val->location_covered == '0' ? 'No' : 'Yes'}}</td>
                                     <td>
                                         {{$val->activity_type == '1' ? 'Public' : 'Private'}}
                                     </td>

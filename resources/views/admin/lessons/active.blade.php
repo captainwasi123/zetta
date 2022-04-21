@@ -33,9 +33,9 @@
                                 <tr>
                                     <td>{{++$key}}</td>
                                     <td>{{$val->title}}</td>
-                                    <td>{{$val->user->fname.' '.$val->user->lname}}</td>
-                                    <td>{{$val->locations[0]->address}}</td>
-                                    <td>{{$val->location_covered == '0' ? 'No' : 'Yes'}}</td>
+                                    <td>{{@$val->user->fname.' '.@$val->user->lname}}</td>
+                                    <td>{{@$val->locations[0]->address}}</td>
+                                    <td>{{@$val->location_covered == '0' ? 'No' : 'Yes'}}</td>
                                     <td>
                                         @if($val->availability == '1' || $val->availability == '3')
                                             <span class="badge badge-primary">Online Classes</span>
