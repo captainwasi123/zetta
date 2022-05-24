@@ -50,6 +50,7 @@ use Illuminate\Support\Facades\Route;
 			Route::middleware('userAuth')->group(function(){
 
 				Route::post('checkout', 'cartController@checkout')->name('web.checkout');
+				Route::get('checkout', 'cartController@checkoutGet');
 			});
 
 			Route::get('getCoupon/{val}', 'cartController@getCoupon');

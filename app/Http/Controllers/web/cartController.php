@@ -212,6 +212,10 @@ class cartController extends Controller
         }
     }
 
+    function checkoutGet(){
+        return redirect()->back();
+    }
+
     //Payment
     public function stripePayment(Request $request)
     {
