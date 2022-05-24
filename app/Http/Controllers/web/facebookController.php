@@ -56,6 +56,7 @@ class facebookController extends Controller
                 'facebook_id'=> $user->id,
                 'status'	=> '1',
                 'source'	=> '3',
+                'type'    => '1',
                 'password' => encrypt('123456dummy')
             ]);
 

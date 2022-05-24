@@ -30,9 +30,10 @@ class buddyController extends Controller
             return $q->where('buyer_id', Auth::id());
         })->get();
 
+        $activityOrders = ActivityOrders::where('buyer_id', Auth::id())->where('status', '1')->get();
         $activities = activities::where('user_id', Auth::id())->orderBy('held_date')->get();
 
-      return view('buddy.dashboard', ['chat_list' => $data_list->reverse(), 'orders' => $orders, 'activities' => $activities]);
+      return view('buddy.dashboard', ['chat_list' => $data_list->reverse(), 'orders' => $orders, 'activities' => $activities, 'activityOrders' => $activityOrders]);
     }
 
     public function become_a_coach(){

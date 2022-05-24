@@ -42,8 +42,12 @@ class friendController extends Controller
     function addFriend($id){
         $id = base64_decode($id);
 
-        $u1 = friendRequest::where('friend_id', $id)->first();
-        $u2 = friends::where('friend_id', $id)->first();
+        $u1 = friendRequest::where(['friend_id' => $id, 'user_id' => Auth::id()])
+                        ->orWhere(['user_id' => $id, 'friend_id' => Auth::id()])
+                        ->first();
+        $u2 = friends::where(['friend_id' => $id, 'user_id' => Auth::id()])
+                        ->orWhere(['user_id' => $id, 'friend_id' => Auth::id()])
+                        ->first();
 
         if(!empty($u1->id)){
             return redirect('/buddy/friends')->with('error', 'Request Already Sent.');

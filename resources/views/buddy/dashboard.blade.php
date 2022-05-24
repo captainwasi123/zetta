@@ -162,6 +162,13 @@
                          className: 'bg-primary'
                      },
                   @endforeach
+                  @foreach($activityOrders as $val)
+                     {
+                         title: ' | {{$val->activity->title}}',
+                         start: '{{date("Y-m-d H:i:s", strtotime($val->activity->held_date))}}',
+                         className: 'bg-warning'
+                     },
+                  @endforeach
                ];
 
               var $this = this;
@@ -171,7 +178,6 @@
                   maxTime: '23:59:59',  
                   defaultView: 'month',  
                   handleWindowResize: true,   
-                   
                   header: {
                       left: 'prev,next today',
                       center: 'title',
