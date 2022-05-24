@@ -127,7 +127,7 @@
                                  <div class="equip_tray">
                                     @foreach($data->equipment as $key => $equ)
                                        <label class="custom-control custom-checkbox col-white">
-                                          <input id="checkbox2" name="equipment_item[]" type="checkbox" value="{{@$equ->user_equipment->id}}" class="custom-control-input equipCheckbox" data-price="{{@$equ->user_equipment->price}}">
+                                          <input id="checkbox2" name="equipment_item[]" type="checkbox" value="{{@$equ->user_equipment->id}}" class="custom-control-input equipCheckbox" data-price="{{empty($equ->user_equipment->price) ? 0 : $equ->user_equipment->price}}">
                                           <span class="custom-control-label"> {{ @$equ->user_equipment->name}} </span>
                                        </label>
                                     @endforeach

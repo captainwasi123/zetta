@@ -350,9 +350,18 @@ class webController extends Controller
         function coachDetails($id)
         {
             $id = base64_decode($id);
+            $is_friend = 0;
             $data = User::with(['country','langs','category','education','certificate','equipment','lessons','activities','media'])->find($id);
+            if(Auth::check()){
+                $f = friends::where(['user_id' => $id, 'friend_id' => Auth::id()])
+                                ->orWhere(['user_id' => Auth::id(), 'friend_id' => $id])
+                                ->first();
+                if(!empty($f->id)){
+                    $is_friend = 1;
+                }
+            }
             if(!empty($data->id)){
-                return view('web.profiles.coach_profile', ['data' => $data]);
+                return view('web.profiles.coach_profile', ['data' => $data, 'is_friend' => $is_friend]);
             }else{
                 return redirect()->back();
             }
@@ -363,17 +372,18 @@ class webController extends Controller
     function buddyDetails($id)
     {
         $id = base64_decode($id);
-        $friend = 0;
+        $is_friend = 0;
         if(Auth::check()){
-            $f = friends::where('friend_id', $id)->where('user_id', Auth::id())->first();
-            $f2 = friends::where('friend_id', Auth::id())->where('user_id', $id)->first();
-            if(!empty($f->id) || !empty($f2->id)){
-                $friend = 1;
+            $f = friends::where(['user_id' => $id, 'friend_id' => Auth::id()])
+                            ->orWhere(['user_id' => Auth::id(), 'friend_id' => $id])
+                            ->first();
+            if(!empty($f->id)){
+                $is_friend = 1;
             }
         }
         $data = User::with(['country','langs','category','education','certificate','equipment','activities','media'])->find($id);
         if(!empty($data->id)){
-            return view('web.profiles.buddy_profile', ['data' => $data, 'friend' => $friend]);
+            return view('web.profiles.buddy_profile', ['data' => $data, 'is_friend' => $is_friend]);
         }else{
             return redirect()->back();
         }

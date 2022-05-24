@@ -469,7 +469,7 @@
                         <select name="finish_year" class="form-control" required>
                            <option value="" disabled selected>Select</option>
                            @php $sy = date('Y'); @endphp
-                           @for($x=$sy; $x>($sy-30); $x--)
+                           @for($x=$sy; $x>($sy-60); $x--)
                               <option>{{$x}}</option>
                            @endfor
                         </select>
