@@ -237,24 +237,14 @@
              </div>
              <div class="support-box1 m-b-30">
                 <h5 class="col-white"> WANT TO GET <br/> SUPPORT </h5>
-                <p class="m-b-10">    <a href="" class="custom-btn2 bg-purple"> SUPPORT </a> </p>
-                <h6> <a href="" class="col-purple"> <b> <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/learn-more-icon.png"> LEARN MORE </b> </a> </h6>
+                <p class="m-b-10">    <a href="{{URL::to('/contact')}}" class="custom-btn2 bg-purple" target="_blank"> SUPPORT </a> </p>
+                <h6> <a href="{{URL::to('/about_us')}}" class="col-purple" target="_blank"> <b> <img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/learn-more-icon.png"> LEARN MORE </b> </a> </h6>
              </div>
              <div class="order-detail-box text-center m-b-30">
-                <h4 class="m-b-15"> Order #FO71025F2BF81  <b> {{'$'.number_format($data->price, 2)}}  </b> </h4>
-                <p class="m-b-10"> Buyer:{{$data->buyer->fname}} <a href="" class="col-green"> view history </a> </p>
+                <h4 class="m-b-15"> Order #{{$data->id}}  | <b> {{'$'.number_format($data->price, 2)}}  </b> </h4>
+                <p class="m-b-10"> Buyer:{{$data->buyer->fname}} <a href="{{route('buddy.order')}}" class="col-green"> view history </a> </p>
                 <p class="m-b-20"> {{$data->created_at->format('m,d,y')}} </p>
-                <a href="{{route('activity.details', base64_encode($data->activity_id))}}" class="custom-btn2"> VIEW GIG </a>
-             </div>
-             <!-- <div class="order-box1 support-box1 text-center m-b-30">
-                <a href="" class="bg-danger custom-btn2"> ORDER CANCEL </a>
-                <h5 class="col-white m-b-5 m-t-20"> ORDER REQUIREMENTS  </h5>
-                <p class="m-b-0 col-silver"> Your buyer has filled out the requirements</p>
-             </div> -->
-             <div class="order-box1 support-box1 text-center">
-                <h5 class="col-white m-b-5"> ORDER STARTED  </h5>
-                <p class="m-b-15 col-silver"> Your buyer has filled out the requirements</p>
-                <a  class="custom-btn2 col-white">{{$data->created_at->format('h:i:s M D,Y')}} </a>
+                <a href="{{route('lesson.details', base64_encode($data->lesson_id))}}" class="custom-btn2" target="_blank"> VIEW GIG </a>
              </div>
           </div>
        </div>

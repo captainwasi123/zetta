@@ -160,6 +160,10 @@ class activities extends Model
     public function activeOrders(){
         return $this->hasMany(ActivityOrders::class, 'activity_id', 'id')->where('status', '1');
     }
+    public function activeOrdersQty(){
+        return $this->activeOrders()
+          ->selectRaw('sum(qty) as orderQty');
+    }
     public function cancelOrders(){
         return $this->hasMany(ActivityOrders::class, 'activity_id', 'id')->where('status', '2');
     }

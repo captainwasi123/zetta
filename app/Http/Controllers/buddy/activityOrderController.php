@@ -17,7 +17,7 @@ class activityOrderController extends Controller
     function index(){
         $data = ActivityOrders::where('seller_id', Auth::id())->where('status', '1')->latest()->get();
 
-        return view('buddy.activityOrders.index', ['data' => $data, 'status' => '0']);
+        return view('buddy.activityOrders.index', ['data' => $data, 'status' => '1']);
     }
 
     function cancelled(){

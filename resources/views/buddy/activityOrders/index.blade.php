@@ -15,7 +15,7 @@
           <div class="col-lg-6 col-sm-6 col-md-6 col-12">
              <div class="order-sorting-text m-b-10">
                 <a href="{{route('buddy.activityOrder')}}" class="{{$status == '1' ? 'active' : ''}}"> Active </a>
-                <a href="{{route('buddy.activityOrder.cancelled')}}" class="col-silver {{$status == '2' ? 'active' : ''}}"> Cancelled </a>
+                <a href="{{route('buddy.activityOrder.cancelled')}}" class="{{$status == '2' ? 'active' : ''}}"> Cancelled </a>
              </div>
           </div>
           <div class="col-lg-6 col-sm-6 col-md-6 col-12 text-right mob-text-left">
@@ -82,7 +82,7 @@
                      @endforeach
                      @if(count($data) == 0)
                         <tr>
-                           <td colspan="10" align="center">No Order Found</td>
+                           <td colspan="11" align="center">No Order Found</td>
                         </tr>
                      @endif
                 </tbody>

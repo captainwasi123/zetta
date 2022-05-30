@@ -14,8 +14,8 @@
          <div class="col-lg-6 col-sm-6 col-md-6 col-12">
             <div class="order-sorting-text m-b-10">
                <a href="{{route('coach.orders')}}" class="{{$status == '0' ? 'active' : ''}}"> Active </a>
-               <a href="{{route('coach.orders.delivered')}}" class="col-silver {{$status == '1' ? 'active' : ''}}"> Delivered  </a>
-               <a href="{{route('coach.orders.cancelled')}}" class="col-silver {{$status == '2' ? 'active' : ''}}"> Cancellation </a>
+               <a href="{{route('coach.orders.delivered')}}" class="{{$status == '1' ? 'active' : ''}}"> Delivered  </a>
+               <a href="{{route('coach.orders.cancelled')}}" class="{{$status == '2' ? 'active' : ''}}"> Cancellation </a>
             </div>
          </div>
          <div class="col-lg-6 col-sm-6 col-md-6 col-12 text-right mob-text-left">

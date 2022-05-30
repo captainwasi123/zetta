@@ -35,7 +35,7 @@
 </style>
 @endsection
 @section('content')
-
+@php $bookedMember = 0; @endphp
 <section class="pad-bot-40 bg-dark2 activity-section">
    <div class="container">
       <div class="row">
@@ -296,9 +296,12 @@
                                  <i class="fa fa-check col-purple"> </i> {{$data->participants == '0' ? 'Single Activity' : 'Group Activity'}} 
                               </li>
                               @if($data->participants > 0)
-                                 <li class="block-element2">                       
+                                 <li class="block-element2">    
+                                    @php 
+                                       $bookedMember = empty($data->activeOrdersQty[0]) ? 0 : $data->activeOrdersQty[0]->orderQty;
+                                    @endphp                   
                                     <i class="fa fa-check col-purple"> </i> 
-                                    {{ $data->group_members == 1 ?    'Participant :'.count($data->activeOrders).'/'.$data->group_members.' Member' :  'Participant :'.count($data->activeOrders).'/'.$data->group_members.' Members'}} 
+                                    {{ $data->group_members == 1 ?    'Participant :'.$bookedMember.'/'.$data->group_members.' Member' :  'Participant :'.$bookedMember.'/'.$data->group_members.' Members'}} 
                                  </li>
                               @endif
                               <li class="block-element2"> <i class="fa fa-check col-purple"> </i> {{$data->location_covered == '0' ? 'Open Location' : 'Covered Location'}} </li>
@@ -383,11 +386,11 @@
                   
                            <div class="block-element2 m-t-30">
                               <p class="m-b-10" >  
-                                 @if($data->participants == '0' && count($data->activeOrders) > 0)
+                                 @if($data->participants == '0' && $bookedMember > 0)
                                     <a href="javascript:void(0)" class="block-element2 bg-purple col-white rounded custom-btn1 text-center">
                                        Completely Reserved
                                     </a>
-                                 @elseif($data->participants == '1' && count($data->activeOrders) >= $data->group_members)
+                                 @elseif($data->participants == '1' && $bookedMember >= $data->group_members)
                                     <a href="javascript:void(0)" class="block-element2 bg-purple col-white rounded custom-btn1 text-center">
                                        Completely Reserved
                                     </a>

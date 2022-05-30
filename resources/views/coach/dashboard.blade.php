@@ -85,7 +85,7 @@
                                                             @foreach ($orders as $val)
                                                                 <tr>
                                                                     <td>
-                                                                    <a href="javascript:void(0)"><img src="{{URL::to('/')}}/assets/user_dashboard/coach/images/users/5.jpg" alt="user" width="40" class="img-circle"> {{$val->buyer->fname . " " .$val->buyer->lname}} </a>
+                                                                    <a href="javascript:void(0)"><img src="{{URL::to('/')}}/public/storage/user/profile_img/{{$val->buyer->profile_img}}" alt="user" onerror="this.onerror=null;this.src='{{URL::to('/')}}/assets/user_dashboard/user.png';" alt="user" width="40" class="img-circle"> {{$val->buyer->fname . " " .$val->buyer->lname}} </a>
                                                                     </td>
                                                                     <td>  ${{$val->price}} </td>
                                                                     {{-- <td>1:100  </td> --}}
