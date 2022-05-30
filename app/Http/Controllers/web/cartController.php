@@ -235,7 +235,7 @@ class cartController extends Controller
     public function orderComfirmed($id, $type){
         if($type == 'lesson'){
             $d = lessonOrders::find($id);
-            $d->status = '1';
+            $d->status = '0';
             $d->save();
 
 
@@ -269,7 +269,7 @@ class cartController extends Controller
     public function orderComfirmedFree($id, $type){
         if($type == 'lesson'){
             $d = lessonOrders::find($id);
-            $d->status = '1';
+            $d->status = '0';
             $d->save();
             
             $order = lessonOrders::with(['buyer','seller','lesson'])->where('id',$id)->first();
